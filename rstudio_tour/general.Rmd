@@ -1,0 +1,55 @@
+
+![](../images/rstudio.png){style="width: 85%;"}
+
+<br>
+
+<div class="red-note" style="float: left; width: 54%; height: 384px;">
+### _1._ Code Editor {-}
+
+This is where you write your scripts and document your work. Move your cursor to a line of code and then click `[Ctrl] + [Enter]` to run the code. The tabs at the top of the code editor show the scripts and data sets you have open. The script is your home and where we spend most of our time.
+</div>
+
+
+<div class="red-note" style="float: left; width: 45%; height: 384px; margin-left: 1%;">
+### _3._ Workspace {-}
+
+This pane shows all of the objects and functions that you have created, as well as a history of the code you have run during your current session. The environment tab shows all of your objects and functions. The history tab shows the code you have run. Note the _broom_ icon below the Connections tab. This cleans shop and allows you to clear all of the objects in your workspace.
+</div>
+
+<div style="clear: both; margin-bottom: -4px;"></div>
+
+<div class="red-note" style="float: left; width: 54%; height: 510px; margin-top: 0;">
+### _2._ R Console {-}
+
+This is where code is actually executed by the computer. It shows code that you have run and the messages returned by that code. You can input code directly into the console and run it, but it won't be saved for later. That's why we usually run our code directly from a script in the code editor. 
+
+You may see some _scary_ warnings and errors appear here after running code. __Warnings__ are helpful messages that let you know the results may not be exactly what you expected. __Errors__ on the other hand, mean the code was unable to run. Usually this means there was a typo, or we forgot to run an important step higher up in our script.
+</div>
+
+
+<div class="red-note" style="float: left; width: 45%; height: 510px; margin-left: 1%; margin-top: 0;">
+### _4._ Plots and files {-}
+
+These tabs allow you to view and open files in your current directory, view plots and other visual objects like maps, view your installed packages and their functions, and access the help window. 
+
+The `Files` tab is especially handy for finding a file you want and clicking it to op_en it. You can also click the `More ` option and select _"Show Folder in a New Window"_ as a shortcut to open your project folder.
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+## Customize R Studio {-}
+
+Let's add a little style so R Studio feels like home. Follow these steps to change the font-size and color scheme: 
+
+1. Go to __Tools__ on the top navigation bar. 
+2. Choose `Global Options...`
+3. Choose `Appearance` with the paint bucket.
+4. Increase the `Editor Font size`
+5. Pick an Editor theme you like.
+    - The default is `Textmate` if you want to go back
+
+<img src="../images/font_change.png" style="width: 65%; margin-top: 14px; margin-left: 2%;">
+
+<br>

@@ -1,0 +1,58 @@
+
+Or say we want to label all the porgs over _60 cm_ as `tall`, and everyone else as `short`. Whenever we want to add a column where the value depends on the value found in another column. We can use `ifelse()`.
+
+> Or maybe we're trying to save some money and want to flag all the items that cost less than 500 credits. 
+> How? 
+>
+
+## `mutate()` + `ifelse()` is powerful! {-}
+
+![](../images/yoda_rise_sm.png){style="width: 74%; margin-left: 12%"}
+
+<br>
+
+
+### On the cheap {-}
+
+Let's use `mutate()` and `ifelse()` to add a column named `affordable` to our scrap data.
+
+```{r ifelse, message=F, warning=F}
+# Add an affordable column
+scrap <- scrap %>% 
+         mutate(affordable = ifelse(price_per_unit < 500, 
+                                    "Cheap", 
+                                    "Expensive"))
+```
+
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+Use your new column and `filter()` to create a new `cheap_scrap` table.
+</div>
+
+
+<div class="quiz">
+### Pop Quiz! {-}
+
+__What is the cheapest item?__
+
+<input type="radio" name="cheap"> _Black box_         <br> 
+<input type="radio" name="cheap"> _Electrotelescope_  <br> 
+<input type="radio" name="cheap"> _Atomic drive_      <br> 
+<input type="radio" name="cheap"> _Enviro filter_     <br> 
+<input type="radio" name="cheap"> _Main drive_        <br>
+<br>
+
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
+<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `Black box`  
+
+_You win! _
+
+</p></details></div>
+
+<br>
+
+

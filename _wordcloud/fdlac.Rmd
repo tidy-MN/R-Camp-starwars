@@ -1,0 +1,79 @@
+
+![](../images/name_cloud_fdl.png){style="width: 100%; margin-top: 12px;"}
+
+Let's launch ourselves into the unknown and use R to make a `Word Cloud`. With a little copy and pasting we can make a cool image out of everyone's name in the class. Consider this an RStudio warm-up.
+
+We're going to make this graphic, and you're going to make your name really <span style="font-size: 26px;"> __BIG__ </span>.
+
+
+### INSTRUCTIONS {-}
+
+1. Open R Studio
+
+![](../images/rstudio_open.png){style="width: 35%;"}
+
+<br>
+
+2. Copy the code below into your script in RStudio. Start with the line `install.packages` and end with the line `color = 'random-dark')`.
+
+```{r wordcloud, eval=F}
+install.packages(c("wordcloud2", "dplyr"))
+library(wordcloud2)
+library(dplyr)
+
+class <- c("Kari"     = 8, 
+           "Nathan"   = 8, 
+           "Eric"     = 8, 
+           "Carma"    = 9, 
+           "Sarah"    = 8, 
+           "Phil"     = 9, 
+           "Brandy"   = 9, 
+           "Kayla"    = 8, 
+           "Shane"    = 9, 
+           "Vallen"   = 8, 
+           "Nick"     = 9,
+           "Tyler"    = 9,
+           "R"        = 26, 
+           "2019"     = 20,
+           "Fond du Lac" = 16,
+           "Porgs!"    = 14,
+           "Endor"     = 10,
+           "Jakku"     = 10,
+           "BB8"       = 12,
+           "Rey"       = 8,
+           "Melinda"   = 8, 
+           "Kristie"   = 8, 
+           "Joy"       = 8, 
+           "Dorian"    = 8)
+
+# Add 20 random Star Wars names as small text, size = 4
+class <- c(class, rep(4, 20))
+
+names(class)[(length(class)-19):length(class)] <- sample_n(starwars, 20)$name      
+
+# Plot the Word Cloud
+wordcloud2(data.frame(word = names(class), freq = class), 
+           size  = 1, 
+           color = 'random-dark')
+
+```
+
+<br>
+
+3. In R Studio click on __File > New File > R Script__. You will see a code editor window open. 
+
+![](../images/new_script_file.png){style="width: 65%; margin-bottom: 18px;"}
+
+4. Paste the copied code into the upper left hand window. This is your code editor.  
+5. Highlight all of the code and hit `CTRL + ENTER`.
+
+> You should see a Word Cloud pop up in the lower right of RStudio.
+
+6. Now try increasing the number next to your name.  
+7. Run the code again.
+8. Make your name even __BIGGER!__
+
+
+![](../images/rstudio_viewer_wordcloud.png){width="75%"}
+
+<br>

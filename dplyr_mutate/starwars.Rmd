@@ -1,0 +1,55 @@
+
+`mutate() ` can edit existing columns in a data frame or add new values that are calculated from existing columns.
+
+
+## Add a column {-}
+
+First, let's add a column with our names. That way Rey can thank us personally when her ship is finally up and running. 
+```{r mutate-1, warning=F, message=F}
+# Add your name as a column
+scrap <- mutate(scrap, scrap_finder = "BB8")
+
+```
+
+
+## Add several columns {-}
+
+Let's also add a new column to document the data measurement method.
+
+```{r mutate2columns, echo=T, eval=T}
+#  Add your name as a column and
+#  some information about the method
+scrap <- mutate(scrap, 
+                scrap_finder    = "BB8",
+                measure_method  = "REM-24")
+
+## REM = Republic Equivalent Method
+```
+
+
+## Change a column  {-}
+<hr class="hrlvl2">
+
+Remember how the units of Tons was written two ways: "TONS" and "Tons"? We can use `mutate()` together with `tolower()` to make sure all of the scrap units are written in lower case. This will help prevent them from getting grouped separately in our plots and summaries.
+
+```{r mutate-2000}
+# Set units to all lower-case
+scrap <- mutate(scrap, units = tolower(units))
+
+# toupper() changes all of the letters to upper-case.
+```
+
+
+## Add calculated columns {-}
+
+In our work we often use `mutate` to convert units for measurements. In this case, let's estimate the total pounds for the scrap items that are reported in tons. 
+
+
+### Tons `to` Pounds conversion {-}
+
+We can use `mutate()` to convert the `amount` column to pounds. Multiply the `amount` column by 2000 to get new values for a column named `amount_lbs`.
+
+```{r, message=F, warning=F}
+scrap_pounds <- mutate(scrap, amount_lbs = amount * 2000)
+```
+

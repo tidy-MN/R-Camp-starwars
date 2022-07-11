@@ -1,0 +1,22 @@
+
+### Units update {-}
+
+Let's use `ifelse` to update the units column to all be written as "Tons".
+
+```{r ifelse, message=F, warning=F}
+library(dplyr)
+library(readr)
+
+# Get the data
+scrap <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv")
+
+# Convert the TONS in all capital letters to title case "Tons"
+# On Day 1 we did this using tolower()
+
+scrap <- scrap %>% 
+         mutate(units = ifelse(units == "TONS", 
+                               "Tons", 
+                               units))
+```
+
+<br>

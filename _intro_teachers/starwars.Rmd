@@ -1,0 +1,29 @@
+<div class="row3">
+
+<div class="column4" style="border: 0;">
+<img src="images/barbara_sq.png" width="200">
+</div>
+
+<div class="column4" style="border: 0;">
+<img src="images/dorian.jpg" width="200">
+</div>
+
+<div class="column4" style="border: 0;">
+<img src="images/kristie_sq.png" width="200">
+</div>
+
+<div class="column4" style="border: 0;">
+<img src="images/yoda_sq.png" width="200">
+</div>
+
+</div>
+
+<br>
+
+Yes, we look exactly like our profile photos.   
+
+We like __R__.
+
+We aren't computer scientists and that's okay! 
+
+We make lots of mistakes. Mistakes are funny. You can laugh with us. 

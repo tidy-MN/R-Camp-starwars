@@ -1,0 +1,59 @@
+
+## The `ggplot()` sandwich {-}
+
+![](../images/auto_plot.gif){style="margin-top: -22px; margin-left: -40px; max-width: 110%;"}
+
+<h5 style="font-size: 28px; font-weight: bold; margin-top: -42px;"> A `ggplot` has 3 ingredients. </h5>
+
+
+## 1. The base plot {-}
+```{r, echo = T, eval = T}
+library(ggplot2)
+```
+
+```{r, echo=T, eval=T}
+ggplot(scrap)
+```
+
+<br>
+
+> we load version 2 of the package `library(ggplot2)`, but the function to make the plot is only `ggplot()`. No `2`. _Sorry._ 
+
+
+## 2. The the X, Y _aesthetics_  {-}
+
+The _aesthetics_ assign the columns from the data that you want to use in the chart. This is where you set the `X`-`Y` variables that determine the dimensions of the plot.
+
+```{r, eval = T}
+ggplot(scrap, aes(x = origin, y = amount)) 
+```
+
+
+## 3. The layers or _geometries_  {-}
+```{r, eval = T}
+ggplot(scrap, aes(x = origin, y = amount)) + geom_col()
+```
+
+<br>
+
+## Colors {-}
+<hr class="hrlvl2">
+
+Now let's change the fill color to match the origin.
+```{r, eval = T}
+ggplot(scrap, aes(x = origin, y = amount, fill = origin)) +
+  geom_col() 
+```
+
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+Try making a column plot showing the total amount of scrap for each `destination` or for each `item`.
+
+```{r, eval = F, echo = T}
+ggplot(scrap, aes(x = destination, y = amount )) + geom_col()
+```
+</div>
+
+<br>

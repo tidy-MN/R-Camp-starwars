@@ -1,0 +1,85 @@
+
+
+![](../images/sw_guesswho.jpg){width="280" align="right" style="margin-top: -65px; margin-left: 24px; margin-right: 8px;"}
+
+> Are you the best Jedi detective out there? Let's play a game to find out. 
+
+<br>
+
+Guess what else comes with the `dplyr` package? A **Star Wars data set**.
+
+#### Open the data set: {-}
+
+1. Load the `dplyr` package from your `library()`
+1. Pull the Star Wars dataset into your environment.
+    
+```{r}
+library(dplyr)
+
+people <- starwars
+```
+
+### <span style="text-decoration: underline;"> Rules </span> {-}
+
+1. __You have a _top secret_ identity.__
+1. Scroll through the Star Wars dataset and find a character you find interesting.
+    - _Or run `sample_n(starwars_data, 1)` to choose one at random._
+1. __Keep it hidden!__ Don't show your neighbor the character you chose.
+1. Take turns asking each other questions about your partner's Star Wars character. 
+1. Use the answers to build a `filter()` function and narrow down the potential characters your neighbor may have picked. 
+
+
+For example: Here's a `filter()` statement that filters the data to the character _Plo Koon_.
+
+<div style="width: 90%; margin-left: 8%">
+```{r, eval=F}
+mr_koon <- filter(people,
+                  mass       < 100,
+                  eye_color  != "blue",
+                  gender     == "male",
+                  homeworld  == "Dorin",
+                  birth_year > 20)
+
+```
+</div>
+
+Elusive answers are allowed. For example, if someone asks: _What is your character's mass?_ 
+
+- You can respond: 
+    - _My character's mass is equal to one less than their age._
+- Or if you're feeling generous you can respond:
+    - _My character's mass is definitely more than 100, but less than 140._
+
+
+### My character has __NO__ hair! _(Missing values)_ {-}
+
+Sometimes a character will be missing a specific attribute. We learned earlier how R stores missing values as `NA`. If your character has a missing value for hair color, one of your filter statements would be ` is.na(hair_color) `. 
+
+<br>
+
+<span style="margin-top: 18px; color: green;"> __WINNER!__ </span>
+
+The winner is the first to guess their neighbor's character.
+
+
+<details>
+<summary class = "btn_code_green"> __WINNERS Click here!__ </summary>
+
+<div class="data" style="margin-top: -12px;">
+<p>
+
+![](../images/cat_win.jpg){width="96%"}
+
+</p></div>
+</details>
+
+
+<br>
+
+<div class="note">
+### Want to rematch? {-}
+
+How about make it best of __3__ games? 
+</div>
+
+<br>

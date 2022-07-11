@@ -1,0 +1,13 @@
+
+Monitoring data and meteorological data often arrive at our desks separately, but usually we want them joined together.
+
+![](../images/left_join_venn.png){style="width: 55%;"}
+
+<br><hr>
+
+
+### How to join 2 tables {-}
+
+A general `left_join()` function looks like the code below.
+
+### `left_join(table1, table2, by = c("columns to join by"))` {-}

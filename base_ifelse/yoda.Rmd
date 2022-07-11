@@ -1,0 +1,13 @@
+
+### `[If this is true]`, `"Do this"`, `"Otherwise do this"` {-}
+
+![](../images/yoda_lightsaber.jpg){style="width: 47%; margin-left: 26%; margin-top: 12px; margin-bottom: 28px;"}
+
+Here's a handy `ifelse` statement to help you identify lightsabers.
+
+<div class="well" style="margin-top: 10px:">
+`ifelse( `__Lightsaber__ <span style="color: green;">is __GREEN__?</span>, __Yes!__ ` Then Yoda's it is,` __No!__ ` Then not Yoda's)`
+</div>
+
+<br>
+

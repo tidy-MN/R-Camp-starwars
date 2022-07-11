@@ -1,0 +1,22 @@
+
+### Calibration error {-}
+
+![](../images/cratertown.png){align="left" style="width: 44%; margin-top: 18px; margin-right: 24px;"}
+
+We just received news that __Cratertown's__ scale was rigged. It was miscalibrated to overestimate the tons of outgoing scrap. Smart! But that means we have some junk data mixed in with our scrap data. Let's use `ifelse` to reduce the tonnage by `10%`, but only for the scrap from `Cratertown`.
+
+<br>
+
+<div style="clear: both;"></div>
+
+```{r calibrate, eval=T}
+# Reduce the amount of scrap from Cratertown by 10%
+## Multiply the column "amount" * 0.90 
+## Use ifelse() to only select rows where the origin == "Cratertown"
+scrap <- scrap %>% 
+         mutate(amount = ifelse(origin == "Cratertown", 
+                                amount * 0.90, 
+                                amount))
+```
+
+<br>

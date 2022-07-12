@@ -1,0 +1,77 @@
+---
+title: "Help!"
+comments: false
+tags: [help]
+output: 
+  blogdown::html_page: 
+    self_contained: false
+---
+
+
+
+<div id="cheatsheets" class="section level3 unnumbered">
+<h3>Cheatsheets</h3>
+<p><a href="https://www.rstudio.com/wp-content/uploads/2018/08/data-visualization-2.1.png">
+<img src="../images/cheatsheet_ggplot.jpg" style="width: 47%; float: right; margin-left: 20px; margin-top: -16px;" />
+</a></p>
+<p>Use cheatsheets to refresh your memory and find new functions or plots.</p>
+<ul>
+<li>In RStudio go to <code>Help &gt; Cheatsheets</code>
+<ul>
+<li><strong>Data Transformation</strong> :: Helpful functions for cleaning and arranging your data.<br />
+</li>
+<li><strong>Data Visualization</strong> :: Great reference for all your <code>ggplot</code>’ing options.</li>
+</ul></li>
+</ul>
+</div>
+<div id="find-new-packages-and-functions" class="section level3 unnumbered">
+<h3>Find new packages and functions</h3>
+<ul>
+<li>Search packages in R with <a href="https://github.com/RhoInc/CRANsearcher">CRANsearcher</a></li>
+<li><a href="https://ropensci.org/packages/">ROpenSci</a> has packages and data for all types of environmental and “scientific” work.</li>
+<li>For water <svg viewBox="0 0 352 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"> <path d="M205.22 22.09c-7.94-28.78-49.44-30.12-58.44 0C100.01 179.85 0 222.72 0 333.91 0 432.35 78.72 512 176 512s176-79.65 176-178.09c0-111.75-99.79-153.34-146.78-311.82zM176 448c-61.75 0-112-50.25-112-112 0-8.84 7.16-16 16-16s16 7.16 16 16c0 44.11 35.89 80 80 80 8.84 0 16 7.16 16 16s-7.16 16-16 16z"></path></svg> the <a href="https://github.com/USGS-R">USGS</a> shares water quality focused packages on GitHub.</li>
+</ul>
+<p><strong>Searching online</strong></p>
+<ul>
+<li>Google: include <code>r</code> or <code>rstats</code> + <code>"the question"</code></li>
+<li>Search or post on <a href="https://stackoverflow.com/questions/12675147/how-can-we-make-xkcd-style-graphs">stackoverflow.com</a> + the <code>[r]</code> tag</li>
+</ul>
+<p><strong>Inside R</strong></p>
+<ul>
+<li>Get function help and package info in R with <code>?arrange()</code> or <code>help(dplyr)</code></li>
+</ul>
+<p><strong>Teams</strong></p>
+<ul>
+<li>Post a question to the <a href="https://teams.microsoft.com/l/channel/19%3ad589e61e13f245279211cce4e9a930e9%40thread.tacv2/Help%2520requests?groupId=6cd8293a-b134-455b-abce-b55adade3e64&amp;tenantId=eb14b046-24c4-4519-8f26-b89c2159828c">Teams channel</a></li>
+</ul>
+<p><br></p>
+</div>
+<div id="troubleshooting" class="section level2">
+<h2>Troubleshooting</h2>
+<p>These are a few of the things we personally forget to do all the time and cause 90% of our errors. They’re good first checks if R starts throwing errors or behaving strangely.</p>
+<ul>
+<li><p>Make sure all parentheses are balanced so that every opening <code>(</code> has a corresponding closing <code>)</code>.</p></li>
+<li><p>R doesn’t love <code>\</code> backward slashes like <em>Windows</em>, check that they didn’t sneak into your expression somewhere. When in doubt use the <code>/</code> forward slash.</p></li>
+<li><p>If you think you have completed typing your code, and instead of seeing the <code>&gt;</code> command prompt at the console you see the <code>+</code> character instead. That’s a good sign that either R is still thinking very-very hard, or it is still waiting for you to complete your expression. You can hit <code>Esc</code> or <code>Ctrl-C</code> to force your way back to the console and try typing your code again.</p></li>
+<li><p>R is very picking about spelling. So are meteorologists when talking about <em>lighting storms</em>.</p></li>
+</ul>
+<p><img src="../images/lightning_spelling.jpg" /></p>
+<ul>
+<li>In <code>ggplot</code> we build up plots one piece at a time by adding expressions to one another with the <code>+</code> character. When doing this, make sure the <code>+</code> goes at the end of each line, and not the beginning.</li>
+</ul>
+<p>Put the <code>+</code> sign here to make <code>ggplot</code> happy:</p>
+<pre class="r"><code>ggplot(data = mpg, aes(x = displ, y = hwy)) +
+    geom_point()</code></pre>
+<p>Put it on the next line to make <code>ggplot</code> sad:</p>
+<pre class="r"><code>ggplot(data = mpg, aes(x = displ, y = hwy))
+  + geom_point()</code></pre>
+<p><br></p>
+</div>
+<div id="error-messages" class="section level2">
+<h2>Error messages</h2>
+<p>Not all error messages are helpful or easy to interpret, but they do seem to be getting better in many R packages. When googling an error message it can help to put the entire message in quotes. For the error below we would search for <code>"Error in fit[5, 100, ] : subscript out of bounds"</code>.</p>
+<div align="center" style="margin-top: 24px;">
+<p><img src="../images/warnings%20and%20errors.jpeg" style="width: 50%;" /></p>
+</div>
+<p><br></p>
+</div>

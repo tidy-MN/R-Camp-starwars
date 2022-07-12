@@ -1,0 +1,227 @@
+---
+title: Install & Update
+comments: false
+hidden: true
+tags: [install, update]
+output: 
+  blogdown::html_page: 
+    self_contained: false
+    toc: true
+---
+
+
+<style> 
+code {color: #FF69B4 !important;} 
+
+blockquote { padding: 5px 10px; }
+
+.note
+{
+     background-color: #f0f7fb;
+     border-left: solid 4px #3498db;
+     border-radius: 25px;
+     font-size: 17px;
+     font-style: normal;
+     line-height: 19px;
+     overflow: hidden;
+     padding: 10px;
+     padding-top: 12px;
+     padding-bottom: 14px;
+     margin-top: 18px;
+     margin-bottom: 15px;
+     padding-left: 22px;
+}
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T)
+#<style> code {color: #535353 !important;} </style>
+```
+
+<br>
+
+# Install `R` 
+
+<hr>
+
+![](../../images/R_recipe.png){style="float: left; width: 41%; margin-top: 26px; margin-right: 28px; margin-bottom: 26px; margin-left: -12px;"}
+
+The R language and its tools are built by people from around the world. They help you perform data analysis in an easy to follow step-by-step fashion, much like a recipe for cookies. And once you find your favorite recipe, you can use it over again on new data or even share it with your collaborators.
+
+
+
+</br>
+
+
+# Install `RStudio` 
+<hr>
+
+![](../../images/rstudio-hex.png){style="float: right; margin-top: -22px;"}
+
+<br>
+
+__RStudio__ is the handy user interface we use to write R scripts and keep our projects organized. It isn't required to use R, but it makes things a whole lot easier.
+
+<br><br>
+
+
+__Install RStudio__  
+
+<div class="well" style="margin-top: 4px;">
+1. Open the Software Center
+2. Search for RStudio
+3. Choose the blue R bubble
+4. Click `[ Install ]`
+
+> **RStudio** 
+>
+> <img src="https://d33wubrfki0l68.cloudfront.net/dd8ddc34fe29a71c81183dbe3436cfabbb540e44/b7152/assets/img/rstudio-ball.svg" width="120" style="float: left; margin-left: 10px;"> 
+<div style="clear: both;"></div>
+
+
+
+</div>
+
+<br>
+
+# Install `R packages`
+<hr>
+
+R comes installed with many built-in functions and tools to help do your work. On top of this foundation, what is often referred to as _base R_, contributors from around the world have created tools that make R easier and accomplish more with your data. These add-ons are called `packages`, and are made available to everyone to download for free. Below are a few examples, grouped into general categories. 
+
+
+__Packages used in this training__ 
+
+>  Load data
+
+`readr`     Load data from text files: tab, comma, and other delimited files.  
+`readxl`    Load data from Excel.  
+`janitor`   Clean and simplify column names.  
+`DBI`       Load data from databases  
+`haven`     Load SAS, SPSS, and Stata files.    
+
+<br>
+
+>  Manipulate data
+
+`dplyr`        Essential shortcuts to subset, summarize, rearrange, and join data sets.  
+`tidyr`        Reshape tables and unpack multiple inputs stored in single cell.  
+`stringr`      Tools to edit and clean text and character strings.  
+`lubridate`    Tools to format dates and perform calculations based on time.  
+
+<br>
+
+>  Charts and visuals
+
+`ggplot2`      Essential package for plots and charts.  
+
+<br>
+
+> Maps 
+
+`leaflet`      Display spatial data and make interactive maps.  
+`sf`           Simple features for GIS and maps, a spatial format using data frames to perform spatial analysis.  
+
+<br>
+
+> General
+
+`remotes`    Install packages directly from online sources like GitHub and Gitlab.  
+
+<br>
+
+<div class="note">
+
+### Add R packages
+
+To use a _package_ you first need to install it -- much like a free App for your phone. To get a jump start on the workshop, you can copy the text below and paste it into the RStudio console. The console is found on the left-side of the screen when you open RStudio. 
+
+
+```{r, eval=F}
+new_packages <- c("readr", "readxl", "dplyr", "stringr", "tidyr",
+                  "ggplot2", "lubridate", "janitor", "curl")
+
+install.packages(new_packages)
+```
+
+
+![](../../images/install_screen.png){style="margin-top: 4px; width: 75%;"}
+
+<br>
+
+Then press `ENTER` to begin the installation. If all goes well, you should start to see some messages appear similar to this, which provide information on the installation progress.
+
+![](../../images/install_msg.png){width="75%"}
+
+<br>
+
+Did it work? Try running the code below to load the `readr` package from your library and see if it is installed.
+```{r, eval=F}
+library(readr)
+```
+
+</div>
+
+<br>
+
+__Additional recommended packages__
+
+> __Load data__
+
+`RODBC`     Load data from Access and Oracle databases.  
+`RMySQL`, `RPostgresSQL`, and `RSQLite` for connecting to SQL databases.  
+`pdftools`  Read PDF documents.  
+`googledrive` Read and write files to your Google Drive.  
+`foreign`   Load data from Minitab and Systat.  
+`R.matlab`  Load data from Matlab.  
+
+<br>
+
+> __Manipulate data__
+
+`stringr`      Tools to edit and clean text and character strings.  
+
+<br>
+
+> __Charts and visuals__
+
+`ggsave`  Export charts in various formats and sizes.  
+`hrbrthemes` , `ggpomological`, `ggthemes`   Chart themes for ggplot.  
+`viridis`, `wesanderson`, `ghibli`   Color palettes.  
+`rmarkdown`    Write summary reports and save as PDF, Word document, presentation, or website.  
+
+<br>
+
+> __Maps__
+
+`tidycensus`   Download Census and American Community Survey data.  
+
+<br>
+
+
+<br>
+
+# Update `R packages`
+<hr>
+
+There are two places to update R packages in RStudio.
+
+<br>
+
+#### 1. In the `Files and Plots` area in the bottom right, under the `Packages` tab:
+
+Click the green __Update__ button next to Install.
+
+<img src="../images/updatepackages_1.PNG" style="width: 50%;">
+
+<br>
+
+#### 2. In the `Tools` tab above at the top above the Code Editor:
+
+Choose the 2nd option -> _"Check for Package Updates..."_
+
+<img src="../images/updatepackages_2.PNG" style="width: 50%;">
+
+<br>
+

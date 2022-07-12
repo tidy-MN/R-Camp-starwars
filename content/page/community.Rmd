@@ -1,0 +1,67 @@
+---
+title: "R community"
+comments: false
+output: 
+  blogdown::html_page: 
+    self_contained: false
+---
+
+
+<div align="center">
+
+## The growth of R user groups worldwide
+
+![](../images/rladies_map.gif){style="width: 70%;"}
+
+</div>
+
+
+<br>
+
+__Online Communities__
+
+![](../images/rladies_sf_tweet.png){style="width: 50%; float: right; margin-left: 20px; margin-top: -26px;"}
+
+- `#rstats` on [Twitter](https://twitter.com/search?q=%23rstats&src=typd&lang=en)
+- [RStudio's question forum](https://community.rstudio.com/)
+- [R Weekly](https://rweekly.org/) shares weekly highlights from across the R world 
+- [R Ladies meetups](https://rladies.org/)
+    - R Ladies Global [Twitter](https://twitter.com/rladiesglobal?lang=en)
+- [R for data science learning community](https://www.rfordatasci.com/)    
+- [ROpenSci](https://ropensci.org/)
+    - [Packages & Data](https://ropensci.org/packages/)
+- Teams    
+    - [MPCA](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)    
+    - [MDH](https://teams.microsoft.com/l/channel/19%3aj8WkD4Kx77zVY1Hm7_IH0pDWyVXgVSh3_FS0UQ63Xl41%40thread.tacv2/General?groupId=6cd8293a-b134-455b-abce-b55adade3e64&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
+
+<div style="margin-top: 4px; clear:both;"> </div>
+
+<div style="float: left; width: 43%; max-width: 43%; margin-top: 12px; overflow:hidden;">
+
+![](../images/useR_2018.png)
+
+</div>
+
+
+<div style="margin-top: 38px; float: left; width: 50%; margin-left: 5%;">
+
+__Conferences__
+
+- useR Conferences
+    - 2022 [virtual](https://user2022.r-project.org/)
+    - 2021 [online recordings](https://user2021.r-project.org/recordings/)
+    - 2019 in [Toulouse, France](http://www.user2019.fr/)
+    - 2018 in [Brisbane, Australia](https://user2018.r-project.org/)
+    
+- [RStudio Conferences & workshops](https://www.rstudio.com/conference/)
+    - 2022: Washington DC, July 25-28
+
+</div>
+
+
+<div style="margin-top: 5px; clear:both;"> </div>
+
+
+<br>
+
+##

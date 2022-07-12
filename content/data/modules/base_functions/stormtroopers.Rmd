@@ -1,0 +1,77 @@
+
+<details>
+<summary class = "btn_code_blue"> __REVIEW: Functions & arguments__ </summary>
+
+<p>
+<div class="well" style="background-color: lightblue; margin-top: -13px;">
+_Functions_ perform steps based on inputs called _arguments_ and usually return an output object. There are _functions_ in R that are really complex but most boil down to the same general setup:
+
+```{r, eval=F}
+new_output <- function(argument_input1, argument_input2)
+```
+
+You can make your own functions in R and name them almost anything you like, even `my_amazing_starwars_function()`.
+
+<br>
+
+
+![](../images/clonetrooper_fathead.png){width="220" style="float: left; margin-right: 36px; margin-top: -2px;"}
+
+<br>
+
+You can think of a _function_ like a plan for making Clone Troopers.
+
+<br>
+
+```{r, eval=F} 
+create_clones(host       = "Jango Fett", 
+              n_troopers = 2000)
+```
+
+<br>
+
+The _function_ above creates Clone Troopers based on two _arguments_: the `host` and `n_troopers`. When we have more than one _argument_, we use a comma to separate them. With some luck, the function will successfully return a new object - a group of 2,000 Clone Troopers.
+
+<div style="clear: both;"> </div>
+
+__The `sum()` function__
+
+We can use the `sum()` function to find the sum age of our Star Wars characters.
+
+```{r}
+starwars_ages  <- c(19,19,25)
+
+# Call the sum function with starwars_ages as input
+ages_sum <- sum(starwars_ages) # Assigns the output to starwars_ages_sum
+
+# Print the starwars_ages_sum value to the console
+ages_sum
+
+```
+
+<br>
+
+The `sum()` function takes the _starwars_ages_ vector as input, performs a calculation, and returns a number. Note that we assigned the output to the name `ages_sum`. 
+
+If we don't assign the output it will be printed to the console and not saved.
+
+```{r}
+# Alternative without assigning output
+sum(starwars_ages) 
+```
+
+<br>
+
+<div class="note">
+### Note {-}
+The original `starwars_ages` vector has not changed. Each function has its own "environment" and its calculations happen inside a bubble. In general, what happens inside a function won't change your objects outside of the function. 
+</div>
+
+```{r}
+starwars_ages
+```
+
+<br>
+</div></p></details>
+
+<br>

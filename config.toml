@@ -1,0 +1,104 @@
+baseurl = "https://mn-r.netlify.app/"
+DefaultContentLanguage = "en"
+title = "Learn R"
+theme = "beautifulhugo"
+summaryLength = 20
+metaDataFormat = "yaml"
+#highlightjsLang = ["r"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "static/data/*", "content/page/data/*", "page/data/*"]
+#relativeURLs = true
+uglyURLs = true
+
+[Params]
+  #useHLJS = true
+  #homeTitle = "Home page header" # Set a different text for the header on the home page
+  #themeColor = ".theme-base-08"
+  #subtitle = "Subtitle text here"
+  logo     = "images/BB8_rnd_icon.png"
+  #favicon = "images/BB8_rnd_icon.png"
+  #logo    = "https://ui-avatars.com/api/?background=363636&color=fff&size=128&font-size=.6&name=R&rounded=true"
+  favicon = "https://ui-avatars.com/api/?background=2E2E2E&color=fff&font-size=.7&name=R&size=128&rounded=true"
+  dateFormat = "January 2, 2006"
+  showthedate = false
+  commit = true
+  showsocial = false
+  rss = false
+  comments = false
+  readingTime = false
+  wordCount = false
+  socialShare = false
+  delayDisqus = false
+  showRelatedPosts = false
+  showDatesOnPosts = false
+  showDatesOnPages = false
+  showDates = false
+  #relativeURLs = true
+  uglyURLs = true
+  highlightjsVersion = "9.13.1"
+  highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsLang = ["r"]
+  highlightjsTheme = "github"
+  #gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+
+[Author]
+  name = "R2D2"
+  #email = "kvaled@gmail.com"
+  #github = "learnr"
+  #twitter = "KvaleDor"
+  #gitlab = "username"
+
+[[menu.main]]
+    name = "Install R"
+    url = "page/install.html"
+    weight = 1
+
+[[menu.main]]
+    name = "Get started"
+    url = "page/get_started.html"
+    weight = 2
+
+[[menu.main]]
+    identifier = "Training"
+    name = "Training"
+    weight = 4
+
+[[menu.main]]
+    parent = "Training"
+    name = "Agenda"
+    url = "post/agenda.html"
+    weight = 2
+
+[[menu.main]]
+    parent = "Training"
+    name = "Day-1"
+    url = "post/day-1.html"
+    weight = 1
+
+[[menu.main]]
+    parent = "Training"
+    name = "Day-2"
+    url = "post/day-2.html"
+    weight = 1
+
+[[menu.main]]
+    parent = "Training"
+    name = "Day-3"
+    url = "post/day-3.html"
+    weight = 1
+
+[[menu.main]]
+    name = "Community"
+    url = "page/community.html"
+    weight = 3
+
+[[menu.main]]
+    name = "Help"
+    url = "page/help.html"
+    weight = 4
+
+[[menu.main]]
+    name = "Agenda"
+    url = "page/agenda.html"
+    weight = 5
+    

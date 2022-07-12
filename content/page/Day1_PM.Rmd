@@ -1,0 +1,129 @@
+---
+title: "Day 1 - PM"
+output: 
+  blogdown::html_page: 
+    toc: true   
+    toc_depth: 1
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE, eval=F)
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_color.R")
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_mod.R")
+```
+
+
+## Data exploration {-} 
+```{r glimpse, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_install/general.Rmd'}
+```
+
+
+## Get to know your data frame {-}
+```{r glimpse, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_glimpse/starwars.Rmd'}
+```
+
+
+```{r tools, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_toolbox/general.Rmd'}
+```
+
+
+# Porg tables 
+<hr>
+
+A poggle of porgs volunteered to help us demo the `dplyr` functions. 
+
+```{r porg-tabs, results='asis', echo=F}
+cat(readLines("porg_tabs.txt"))
+```
+
+
+# `select()`
+<hr>
+```{r select, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_select/starwars.Rmd'}
+```
+
+
+# Sort with `arrange()` 
+<hr>
+```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_arrange/starwars.Rmd'}
+```
+
+
+# R BINGO! {-}
+<hr class="hr2">
+
+```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/games_bingo/general.Rmd'}
+```
+
+
+# `filter()`
+<hr>
+```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_filter/starwars.Rmd'}
+```
+
+<div class="well">
+Let's calculate some new columns to help focus Rey's scavenging work.
+</div>
+
+
+# `mutate()`
+<hr>
+```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_mutate/starwars.Rmd'}
+```
+
+
+## Final stretch! {-}
+<hr class="hrlvl2">
+```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_filter/ionengine.Rmd'}
+```
+
+
+# Save our data
+<hr>
+```{r save, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/readr_write/scrap_pounds.Rmd'}
+```
+
+
+# Plots with _ggplot2_
+<hr>
+
+#### _Plot the data, Plot the data, Plot the data_ {-}
+
+<br>
+
+![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
+
+```{r child = 'X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Modules/ggplot_sandwich/sandwich.Rmd'}
+```
+
+
+
+# Shutdown complete
+<hr>
+```{r shutdown, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/shutdown.Rmd'}
+```
+
+
+```{r fun_stormtroopers, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_functions/stormtroopers.Rmd'}
+```
+
+
+# <i class="fas fa-globe-americas" style="color: #0077be;"></i> New data -> New project! {-}
+<hr class="hr2">
+```{r earth-data, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_yourdata/ozone_start.Rmd'}
+```
+
+![](../images/scaryR.jpg){style="margin-left: 11%; width: 78%;"}
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}
+
+<br>

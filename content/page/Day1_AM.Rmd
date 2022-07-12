@@ -1,0 +1,196 @@
+---
+title: "Day 1 - AM"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
+---
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+library(knitr)
+library(magrittr)
+
+opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=F)
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
+#mod_url <- "https://raw.githubusercontent.com/MPCA-air/r-modules/master/modules/"
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_color.R")
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_mod.R")
+```
+
+![](../images/day1_bb8_sq.png){style="float: right; margin-right: 0; width: 260px; margin-top: -287px;"}
+
+<div style="clear: both;"></div>
+
+<br>
+
+
+# Good morning! {-}
+<hr class="hr2">
+
+![](../images/nien_nunb_sq.jpg){class="avatar border" style="border: 2px; float: left; margin-left: 1%;"}
+
+<img src="../images/maz_kanata_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;">
+
+<img src="../images/jarjar_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;">
+
+<img src="../images/ackbar_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;">
+
+<img src="../images/yoda_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;">
+
+We like __R__ and data.
+
+We aren't computer scientists -- and that's okay! 
+
+We will make lots of mistakes. Mistakes are funny. Please laugh along with us.
+
+<br><br><hr class="hr2">
+
+<br>
+
+# What's R? 
+<hr>
+```{r candy, child='../data/modules/ggplot_examples/candy.Rmd', eval=TRUE}
+```
+
+
+# <i class="fa fa-group" aria-hidden="true" style="color: steelblue;"></i> Introductions {-}
+<hr class="hr2">
+```{r intros, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_intro_group/starwars.Rmd'}
+```
+
+
+# RStudio - A Grand Tour 
+<hr>
+```{r Rtour, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/rstudio_tour/general.Rmd'}
+```
+
+
+# Why R? {-}
+<hr class="hr2">
+```{r whyR, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_whyr/itep.Rmd'}
+```
+
+
+## Example ozone analysis {-}
+```{r ex-ozone2, results="asis", echo=F, warning=F}
+cat(knitr::knit_child("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_example_7steps/ozone.Rmd", quiet = TRUE, envir = parent.frame()))
+```
+
+
+# Show <span style="color: #3498db;"> & </span> Tell
+<hr>
+
+<br>
+
+>
+> Insert magic here...
+>
+
+<br>
+
+
+## Data awaits us... {-}
+
+![](../images/rey_bb8_sand_dunes.gif){style="width: 70%; margin-left: 10%;"}
+
+<br>
+
+<div class="well">
+Let's go find some trouble. While BB8 works on tracking down data for us from his droid friends, we'll get to know his internal computer. 
+</div>
+
+
+## New data -> New R project {-}
+<hr class="hrlvl2">
+
+Let's make a new project for our `Jakku` scrap analysis.
+```{r set-params, include=F}
+params <- list(name1 = 'jakku1.R', name2 = 'day1.R')
+```
+
+```{r, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/rstudio_newproject/general.Rmd'}
+```
+
+
+# Names and things
+<hr>
+```{r child = 'X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Modules/base_assignment/starwars.Rmd'}
+```
+
+
+## Add a `#comment`
+```{r comments, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_comments.Rmd'}
+```
+
+
+# Read data
+<hr>
+```{r read-csv, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/readr_csv/starwars.Rmd'}
+```
+
+
+# Add packages &#x1F4E6; *(R Apps)*  
+<hr>
+```{r new-pkg, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_packages/readr.Rmd'}
+```
+
+
+## Read the data
+
+Let's load the _readr_ package so we can use the `read_csv() ` function to read the Jakku scrap data.
+```{r read_snippet, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/readr_load/scrap_snippet.Rmd'}
+```
+
+
+### {-}
+```{r fun-options, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_functions/fun_options.Rmd'}
+```
+
+
+# ggplot2
+<hr>
+
+### _Plot the data, Plot the data, Plot the data_ {-}
+
+![](../images/ggplot2_hex.png){width="164" style="float: left; margin-right: 26px; margin-top: 10px;  margin-left: 0;"}
+
+<br>
+
+```{r ggplot25, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/ggplot_install/scrap.Rmd'}
+```
+
+
+```{r order_arguments, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_functions/order_arguments.Rmd'}
+```
+
+
+# <i class="far fa-question-circle" aria-hidden="true" style="font-size: 48px;"></i> Get help! {-}
+<hr class="hr2">
+
+Lost in an ERROR message? Is something behaving strangely and want to know why? Want ideas for a new chart?   
+
+Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning resources. 
+
+<br>
+
+```{r recap, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/recap/day1.Rmd'}
+```
+
+
+# <i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms {-} 
+```{r key-terms, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/key_terms/day1.Rmd'}
+```
+
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}
+
+<br>

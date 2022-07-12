@@ -1,0 +1,183 @@
+---
+title: Install & Update
+comments: false
+hidden: true
+tags: [install, update]
+output: 
+  blogdown::html_page: 
+    self_contained: false
+    toc: true
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#install-r">Install <code>R</code></a></li>
+<li><a href="#install-rstudio">Install <code>RStudio</code></a></li>
+<li><a href="#install-r-packages">Install <code>R packages</code></a>
+<ul>
+<li><a href="#add-r-packages">Add R packages</a></li>
+</ul></li>
+<li><a href="#update-r-packages">Update <code>R packages</code></a></li>
+</ul>
+</div>
+
+<style> 
+code {color: #FF69B4 !important;} 
+
+blockquote { padding: 5px 10px; }
+
+.note
+{
+     background-color: #f0f7fb;
+     border-left: solid 4px #3498db;
+     border-radius: 25px;
+     font-size: 17px;
+     font-style: normal;
+     line-height: 19px;
+     overflow: hidden;
+     padding: 10px;
+     padding-top: 12px;
+     padding-bottom: 14px;
+     margin-top: 18px;
+     margin-bottom: 15px;
+     padding-left: 22px;
+}
+
+</style>
+<p><br></p>
+<div id="install-r" class="section level1">
+<h1>Install <code>R</code></h1>
+<hr>
+<p><img src="../../images/R_recipe.png" style="float: left; width: 41%; margin-top: 26px; margin-right: 28px; margin-bottom: 26px; margin-left: -12px;" /></p>
+<p>The R language and its tools are built by people from around the world. They help you perform data analysis in an easy to follow step-by-step fashion, much like a recipe for cookies. And once you find your favorite recipe, you can use it over again on new data or even share it with your collaborators.</p>
+<p></br></p>
+</div>
+<div id="install-rstudio" class="section level1">
+<h1>Install <code>RStudio</code></h1>
+<hr>
+<p><img src="../../images/rstudio-hex.png" style="float: right; margin-top: -22px;" /></p>
+<p><br></p>
+<p><strong>RStudio</strong> is the handy user interface we use to write R scripts and keep our projects organized. It isn’t required to use R, but it makes things a whole lot easier.</p>
+<p><br><br></p>
+<p><strong>Install RStudio</strong></p>
+<div class="well" style="margin-top: 4px;">
+<ol style="list-style-type: decimal">
+<li>Open the Software Center</li>
+<li>Search for RStudio</li>
+<li>Choose the blue R bubble</li>
+<li>Click <code>[ Install ]</code></li>
+</ol>
+<blockquote>
+<p><strong>RStudio</strong></p>
+<img src="https://d33wubrfki0l68.cloudfront.net/dd8ddc34fe29a71c81183dbe3436cfabbb540e44/b7152/assets/img/rstudio-ball.svg" width="120" style="float: left; margin-left: 10px;">
+<div style="clear: both;">
+
+</div>
+</blockquote>
+</div>
+<p><br></p>
+</div>
+<div id="install-r-packages" class="section level1">
+<h1>Install <code>R packages</code></h1>
+<hr>
+<p>R comes installed with many built-in functions and tools to help do your work. On top of this foundation, what is often referred to as <em>base R</em>, contributors from around the world have created tools that make R easier and accomplish more with your data. These add-ons are called <code>packages</code>, and are made available to everyone to download for free. Below are a few examples, grouped into general categories.</p>
+<p><strong>Packages used in this training</strong></p>
+<blockquote>
+<p>Load data</p>
+</blockquote>
+<p><code>readr</code> Load data from text files: tab, comma, and other delimited files.<br />
+<code>readxl</code> Load data from Excel.<br />
+<code>janitor</code> Clean and simplify column names.<br />
+<code>DBI</code> Load data from databases<br />
+<code>haven</code> Load SAS, SPSS, and Stata files.</p>
+<p><br></p>
+<blockquote>
+<p>Manipulate data</p>
+</blockquote>
+<p><code>dplyr</code> Essential shortcuts to subset, summarize, rearrange, and join data sets.<br />
+<code>tidyr</code> Reshape tables and unpack multiple inputs stored in single cell.<br />
+<code>stringr</code> Tools to edit and clean text and character strings.<br />
+<code>lubridate</code> Tools to format dates and perform calculations based on time.</p>
+<p><br></p>
+<blockquote>
+<p>Charts and visuals</p>
+</blockquote>
+<p><code>ggplot2</code> Essential package for plots and charts.</p>
+<p><br></p>
+<blockquote>
+<p>Maps</p>
+</blockquote>
+<p><code>leaflet</code> Display spatial data and make interactive maps.<br />
+<code>sf</code> Simple features for GIS and maps, a spatial format using data frames to perform spatial analysis.</p>
+<p><br></p>
+<blockquote>
+<p>General</p>
+</blockquote>
+<p><code>remotes</code> Install packages directly from online sources like GitHub and Gitlab.</p>
+<p><br></p>
+<div id="add-r-packages" class="section level3 note">
+<h3>Add R packages</h3>
+<p>To use a <em>package</em> you first need to install it – much like a free App for your phone. To get a jump start on the workshop, you can copy the text below and paste it into the RStudio console. The console is found on the left-side of the screen when you open RStudio.</p>
+<pre class="r"><code>new_packages &lt;- c(&quot;readr&quot;, &quot;readxl&quot;, &quot;dplyr&quot;, &quot;stringr&quot;, &quot;tidyr&quot;,
+                  &quot;ggplot2&quot;, &quot;lubridate&quot;, &quot;janitor&quot;, &quot;curl&quot;)
+
+install.packages(new_packages)</code></pre>
+<p><img src="../../images/install_screen.png" style="margin-top: 4px; width: 75%;" /></p>
+<p><br></p>
+<p>Then press <code>ENTER</code> to begin the installation. If all goes well, you should start to see some messages appear similar to this, which provide information on the installation progress.</p>
+<p><img src="../../images/install_msg.png" style="width:75.0%" /></p>
+<p><br></p>
+<p>Did it work? Try running the code below to load the <code>readr</code> package from your library and see if it is installed.</p>
+<pre class="r"><code>library(readr)</code></pre>
+</div>
+<p><br></p>
+<p><strong>Additional recommended packages</strong></p>
+<blockquote>
+<p><strong>Load data</strong></p>
+</blockquote>
+<p><code>RODBC</code> Load data from Access and Oracle databases.<br />
+<code>RMySQL</code>, <code>RPostgresSQL</code>, and <code>RSQLite</code> for connecting to SQL databases.<br />
+<code>pdftools</code> Read PDF documents.<br />
+<code>googledrive</code> Read and write files to your Google Drive.<br />
+<code>foreign</code> Load data from Minitab and Systat.<br />
+<code>R.matlab</code> Load data from Matlab.</p>
+<p><br></p>
+<blockquote>
+<p><strong>Manipulate data</strong></p>
+</blockquote>
+<p><code>stringr</code> Tools to edit and clean text and character strings.</p>
+<p><br></p>
+<blockquote>
+<p><strong>Charts and visuals</strong></p>
+</blockquote>
+<p><code>ggsave</code> Export charts in various formats and sizes.<br />
+<code>hrbrthemes</code> , <code>ggpomological</code>, <code>ggthemes</code> Chart themes for ggplot.<br />
+<code>viridis</code>, <code>wesanderson</code>, <code>ghibli</code> Color palettes.<br />
+<code>rmarkdown</code> Write summary reports and save as PDF, Word document, presentation, or website.</p>
+<p><br></p>
+<blockquote>
+<p><strong>Maps</strong></p>
+</blockquote>
+<p><code>tidycensus</code> Download Census and American Community Survey data.</p>
+<p><br></p>
+<p><br></p>
+</div>
+<div id="update-r-packages" class="section level1">
+<h1>Update <code>R packages</code></h1>
+<hr>
+<p>There are two places to update R packages in RStudio.</p>
+<p><br></p>
+<div id="in-the-files-and-plots-area-in-the-bottom-right-under-the-packages-tab" class="section level4">
+<h4>1. In the <code>Files and Plots</code> area in the bottom right, under the <code>Packages</code> tab:</h4>
+<p>Click the green <strong>Update</strong> button next to Install.</p>
+<p><img src="../images/updatepackages_1.PNG" style="width: 50%;"></p>
+<p><br></p>
+</div>
+<div id="in-the-tools-tab-above-at-the-top-above-the-code-editor" class="section level4">
+<h4>2. In the <code>Tools</code> tab above at the top above the Code Editor:</h4>
+<p>Choose the 2nd option -&gt; <em>“Check for Package Updates…”</em></p>
+<p><img src="../images/updatepackages_2.PNG" style="width: 50%;"></p>
+<p><br></p>
+</div>
+</div>

@@ -1,0 +1,117 @@
+
+The `filter()` function creates a subset of the data based on the value of one or more columns. 
+Let's take a look at the records with the origin `"All"`.
+
+```{r filter12, eval=T}
+filter(scrap, origin == "All")
+```
+
+<br>
+
+<div class="note">
+### <i class="fas fa-hand-spock"></i> Spock-tip! {-}
+
+We use a `==` (double equals sign) for comparing values. A `==` makes the comparison "is it equal to?" and returns a True or False answer. So the code above will returns only the rows where the condition `origin == "All"` is TRUE.
+
+A single equals sign `=` is used within functions to set options, for example `read_csv(file = "starwars_scrap_jakku.csv")`. It's not a big deal if you mix them up the first time. R is often helpful and will let you know which one is needed.
+</div>
+
+
+## Comparing values {-}
+<hr class="hrlvl2">
+
+![](../images/porg_heights.png){style="float: right; margin-top: -94px; width: 40%;"}
+
+
+We use a variety of comparisons when processing data. Sometimes we only want concentrations above a certain level, or days below a given temperature, or sites that have missing observations. 
+
+We use the __Menu__ of comparisons below to find the data we want.
+
+> <h3 style="margin-top: 8px; margin-bottom: -4px;"> Menu of comparisons </h3>
+>
+> | Symbol | Comparison               |
+> |:-------|:-------------------------|
+> | `>`    | greater than             |
+> | `>=`   | greater than or equal to |
+> | `<`    | less than                |
+> | `<=`   | less than or equal to    |
+> | `==`   | equal to                 |
+> | `!=`   | NOT equal to             |
+> | `%in%` | value is in a list: `X %in% c(1,3,7)` |
+> | `is.na(...)`  | is the value missing? |
+> | `str_detect(col_name, "word")`  | "word" appears in text? |
+>
+
+<br>
+
+<div class="tip">
+### <i class="fas fa-user-astronaut" style="color: green"></i> Explore! {-}
+
+Try comparing some things in the console to see if you get what you'd expect. R doesn't always think like we do.
+
+```{r, eval=F}
+4 != 5
+
+4 == 4
+
+4 < 3
+
+4 > c(1, 3, 5)
+
+5 == c(1, 3, 5)
+
+5 %in% c(1, 3, 5)
+
+2 %in% c(1, 3, 5)
+
+2 == NA
+```
+</div>
+
+
+## Dropping rows 
+<hr class="hrlvl2">
+
+Let's look at the data without the _All_ category. Look in the comparison table above to find the `NOT` operator. We're going to filter our data to keep only the origins that are `NOT equal to` "All".
+
+```{r filter-all}
+scrap <- filter(scrap, origin != "All")
+```
+
+We can arrange the data in ascending order by `item` to confirm the "All" category is gone.
+
+```{r filter-arrange, message=F, warning=F}
+# Arrange data
+scrap <- arrange(scrap, item)
+
+head(scrap)
+```
+
+<br>
+
+<div class="well">
+Now let's take another look at that bar chart. Is there anything else that is less than perfect with our data?
+
+```{r ggplot-noAll}
+library(ggplot2)
+
+ggplot(scrap, aes(x = origin, y = amount)) + geom_col()
+``` 
+</div>
+
+
+## Multiple filters {-} 
+<hr class="hrlvl2">
+
+We can add multiple comparisons to `filter()` to further restrict the data we pull from a larger data set. Only the records that pass the conditions of all the comparisons will be pulled into the new data frame. 
+
+The code below filters the data to only scrap records with an origin of `Outskirts` __AND__ a destination of `Niima Outpost`.
+
+```{r filter-multi, eval=F}
+outskirts_to_niima <- filter(scrap, 
+                             origin        == "Outskirts", 
+                             destination   == "Niima Outpost")
+```
+
+<br>
+

@@ -1,9 +1,0 @@
-
-
-> <h2 style="color: black; margin-top: 8px;"> <i class="fas fa-robot" aria-hidden="true"></i>  Robot recap </h2>
->
-> - What packages have we added to our `library`?
->
-> - What new functions have we learned?
->
-

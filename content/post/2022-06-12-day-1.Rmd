@@ -1,0 +1,39 @@
+---
+title: Day 1
+date: '2018-12-09'
+showDate: false
+showAuthor: false
+summary: 'Power on your droids people, it’s time to get started. Junk Boss Plutt is up to no-good and we’ve got scrap to find...'
+slug: 'day-1'
+categories: [training]
+tags: [training]
+type: ''
+image: 'https://mpca-air.github.io/RTrain/images/day1_bb8_sq.png' 
+imageWidth: '27%'
+imageFloat: 'left'
+---
+
+
+![](../images/day1_bb8_sq.png){width="240" style="float: right; margin-left: 34px; margin-top: 70px; margin-bottom: 64px;"}
+
+<h1 style="margin-top:-5px;"> Welcome to Jakku! </h1>
+<hr>
+
+You are BB8 and you've arrived to just in time. Rey needs your help!
+
+The Junk boss Unkar is up to no-good and Rey needs to find some ship parts before she can escape this dusty rock. With your help she can finally get off Jakku and join forces with the New Republic. 
+
+
+## Blast off!
+
+<div style="margin-left: 4%;">
+
+### <i class="fa fa-rocket" style="font-size:24px"></i> [Part 1 (Morning)](../page/day1_am.html) 
+
+`Lunch break` <i class="fa fa-utensils"></i> ☕
+
+### <i class="fa fa-rocket" style="font-size:24px"></i> [Part 2 (Afternoon)](../page/day1_pm.html) 
+
+</div>
+<br>
+

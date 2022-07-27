@@ -17,7 +17,7 @@ library(rmarkdown)
 library(knitr)
 library(magrittr)
 
-opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=F)
+opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
 
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
@@ -46,11 +46,11 @@ source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_m
 
 <img src="../images/yoda_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;">
 
-We like __R__ and data.
+We like __R__.
 
 We aren't computer scientists -- and that's okay! 
 
-We will make lots of mistakes. Mistakes are funny. Please laugh along with us.
+We make lots of mistakes. Mistakes are how we learn. They are also funny. Please laugh with us.
 
 <br><br><hr class="hr2">
 
@@ -58,7 +58,7 @@ We will make lots of mistakes. Mistakes are funny. Please laugh along with us.
 
 # What's R? 
 <hr>
-```{r candy, child='../../static/modules/ggplot/ggplot_examples/candy.Rmd', eval=TRUE}
+```{r candy, child='../../static/modules/ggplot/ggplot_examples/candy.Rmd'}
 ```
 
 
@@ -86,7 +86,7 @@ cat(knitr::knit_child("../../static/modules/_example_7steps/ozone.Rmd", quiet = 
 ```
 
 
-# Show <span style="color: #3498db;"> & </span> Tell
+## Show <span style="color: #3498db;"> & </span> Tell
 <hr>
 
 <br>

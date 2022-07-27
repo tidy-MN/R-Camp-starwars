@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://mn-r.netlify.app/categories.html</loc>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/post/day-3.html</loc>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/post.html</loc>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/tags.html</loc>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/</loc>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/tags/training.html</loc>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/categories/training.html</loc>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/where_am_i.html</loc>
+    <lastmod>2018-12-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page.html</loc>
+    <lastmod>2018-12-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/post/day-2.html</loc>
+    <lastmod>2018-12-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/post/day-1.html</loc>
+    <lastmod>2018-12-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/agenda.html</loc>
+    <lastmod>2018-12-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/tags/agenda.html</loc>
+    <lastmod>2018-12-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/data/modules/rstudio_newproject/general.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/images/banner.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/explore_wind_rose.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/compare_years.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/data.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/day1_am.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/day1_pm.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/day2_am.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/day2_pm.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/day3_am.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/day3_pm.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/explore_messy_emissions.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/explore_gis_maps.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/get_started.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/help.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/images.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/install.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/level1_jakku_explore.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/level2_porg_exposure.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/level3_example_outline.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/community.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/tags/help.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/tags/install.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/tags/update.html</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

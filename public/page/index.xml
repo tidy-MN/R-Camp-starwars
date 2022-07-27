@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Learn R</title>
+    <link>https://mn-r.netlify.app/page.html</link>
+    <description>Recent content in Pages on Learn R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 11 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mn-r.netlify.app/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Folder paths</title>
+      <link>https://mn-r.netlify.app/page/where_am_i.html</link>
+      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/where_am_i.html</guid>
+      <description>Power on your droid young Jedi, it’s time to get started. Junk Boss Plutt is up to no-good once again and we’ve got scrap to find&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Agenda</title>
+      <link>https://mn-r.netlify.app/page/agenda.html</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/agenda.html</guid>
+      <description>R Camp || Day 1 Morning: 9:00am-12:00 (3 hrs) || Planets visited: Jakku || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Air, wind and roses</title>
+      <link>https://mn-r.netlify.app/page/explore_wind_rose.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/explore_wind_rose.html</guid>
+      <description>div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.</description>
+    </item>
+    
+    <item>
+      <title>Compare years</title>
+      <link>https://mn-r.netlify.app/page/compare_years.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/compare_years.html</guid>
+      <description>div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.</description>
+    </item>
+    
+    <item>
+      <title>Day 1 - AM</title>
+      <link>https://mn-r.netlify.app/page/day1_am.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/day1_am.html</guid>
+      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.</description>
+    </item>
+    
+    <item>
+      <title>Day 1 - PM</title>
+      <link>https://mn-r.netlify.app/page/day1_pm.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/day1_pm.html</guid>
+      <description>1 Porg tables 2 select() 3 Sort with arrange() R BINGO! 4 filter() 5 mutate() 6 Save our data 7 Plots with ggplot2 8 Shutdown complete  New data -&amp;gt; New project!</description>
+    </item>
+    
+    <item>
+      <title>Day 2 - AM</title>
+      <link>https://mn-r.netlify.app/page/day2_am.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/day2_am.html</guid>
+      <description>div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.</description>
+    </item>
+    
+    <item>
+      <title>Day 2 - PM</title>
+      <link>https://mn-r.netlify.app/page/day2_pm.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/day2_pm.html</guid>
+      <description>div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.</description>
+    </item>
+    
+    <item>
+      <title>Day 3 - AM</title>
+      <link>https://mn-r.netlify.app/page/day3_am.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/day3_am.html</guid>
+      <description>div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.</description>
+    </item>
+    
+    <item>
+      <title>Day 3 - PM</title>
+      <link>https://mn-r.netlify.app/page/day3_pm.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/day3_pm.html</guid>
+      <description>Your turn Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data.</description>
+    </item>
+    
+    <item>
+      <title>From Messy to Tidy data</title>
+      <link>https://mn-r.netlify.app/page/explore_messy_emissions.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/explore_messy_emissions.html</guid>
+      <description>a.sourceLine { display: inline-block; line-height: 1.25; } a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; } a.sourceLine:empty { height: 1.</description>
+    </item>
+    
+    <item>
+      <title>GIS and Shapefiles</title>
+      <link>https://mn-r.netlify.app/page/explore_gis_maps.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/explore_gis_maps.html</guid>
+      <description>div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.</description>
+    </item>
+    
+    <item>
+      <title>Get started</title>
+      <link>https://mn-r.netlify.app/page/get_started.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/get_started.html</guid>
+      <description>Trial - Dip your toes in your browser Online courses MDH examples scripts Recordings Learn R from inside R Book reading Training    code {color: #FF69B4 !</description>
+    </item>
+    
+    <item>
+      <title>Help!</title>
+      <link>https://mn-r.netlify.app/page/help.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/help.html</guid>
+      <description>Cheatsheets 
+Use cheatsheets to refresh your memory and find new functions or plots.
+ In RStudio go to Help &amp;gt; Cheatsheets  Data Transformation :: Helpful functions for cleaning and arranging your data.</description>
+    </item>
+    
+    <item>
+      <title>Install &amp; Update</title>
+      <link>https://mn-r.netlify.app/page/install.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/install.html</guid>
+      <description>Install R Install RStudio Install R packages  Add R packages  Update R packages    code {color: #FF69B4 !</description>
+    </item>
+    
+    <item>
+      <title>Jakku scrap economy</title>
+      <link>https://mn-r.netlify.app/page/level1_jakku_explore.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/level1_jakku_explore.html</guid>
+      <description>a.sourceLine { display: inline-block; line-height: 1.25; } a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; } a.sourceLine:empty { height: 1.</description>
+    </item>
+    
+    <item>
+      <title>Porg biomonitoring data</title>
+      <link>https://mn-r.netlify.app/page/level2_porg_exposure.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/level2_porg_exposure.html</guid>
+      <description>a.sourceLine { display: inline-block; line-height: 1.25; } a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; } a.sourceLine:empty { height: 1.</description>
+    </item>
+    
+    <item>
+      <title>R Training | Analysis Outline</title>
+      <link>https://mn-r.netlify.app/page/level3_example_outline.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/level3_example_outline.html</guid>
+      <description>You’re ready to blast off on your own. The example outline below includes some placeholder code based on ozone measurements and is presented as a helpful starting point for your analysis.</description>
+    </item>
+    
+    <item>
+      <title>R community</title>
+      <link>https://mn-r.netlify.app/page/community.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/community.html</guid>
+      <description>The growth of R user groups worldwide  
+Online Communities
+ #rstats on Twitter RStudio’s question forum R Weekly shares weekly highlights from across the R world R Ladies meetups  R Ladies Global Twitter  R for data science learning community</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,389 @@
+---
+title: "Day 2 - PM"
+output: 
+  blogdown::html_page: 
+    toc: true
+    toc_depth: 1
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=F, message=F)
+knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+library(ggplot2)
+library(readr)
+library(dplyr)
+
+# Read in the full scrap data
+scrap <- read_csv("scrap_day2_pm.csv")
+```
+
+<style>
+h1 .header-section-number {background: #62BE2C;}
+hr {background: #62BE2C;}
+</style>
+
+
+# `summarize()` this
+<hr>
+```{r summarize, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_summarize/summarize.Rmd'}
+```
+
+
+# `group_by()` what
+<hr>
+```{r group-by, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_groupby/group_by.Rmd'}
+```
+
+
+# Guess Who? {-}
+<h2 style="margin-top: -24px;"> _Star Wars edition_ </h2>
+```{r guesswho, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/games_guesswho/starwars.Rmd'}
+```
+
+
+# `ifelse()`
+<hr>
+```{r if-yoda, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_ifelse/yoda.Rmd'}
+```
+
+```{r if-cheap, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_ifelse/cheap_items.Rmd'}
+```
+
+
+> __CONGRATULATIONS__ of galactic proportions to you. 
+>
+> We now have a clean and tidy data set. If BB8 ever receives new data again, we can re-run this script and in seconds we'll have it all cleaned up.
+>
+
+<div style="clear: both;"></div>
+
+
+# Plots with _ggplot2_
+<hr>
+
+#### _Plot the data, Plot the data, Plot the data_ {-}
+
+<br>
+
+![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
+
+```{r gg-sand, child = 'X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Modules/ggplot_sandwich/sandwich.Rmd'}
+```
+
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+Try making a scatterplot of any two columns.
+
+_Hint: Numeric variables will be more informative._
+
+```{r, eval=F, echo=T}
+ggplot(scrap, aes(x = __column1__, y = __column2__)) + geom_point()
+```
+</div>
+
+
+## Colors {-}
+<hr class="hrlvl2">
+
+Now let's use color to show the origins of the scrap
+```{r, eval=T}
+ggplot(scrap, aes(x = destination, y = credits, color = origin)) +
+  geom_point()
+```
+
+<br>
+
+This is a **A LOT** of detail. Let's make a bar chart and add up the sales to make it easier to understand.
+
+```{r, eval = T}
+ggplot(scrap, aes(x = destination, y = credits, fill = origin)) + geom_col()
+```
+
+
+>
+> It's still tricky to compare sales by origin. Let's change the position of the columns. 
+>
+
+
+```{r, eval = T}
+ggplot(scrap, aes(x = destination, y = credits, fill = origin)) +
+  geom_col(position = "dodge")
+```
+
+
+
+# More Plots
+<hr>
+
+## Colors {-}
+<hr class="hrlvl2">
+
+Now let's use color to show the destinations of the scrap.
+
+```{r, eval=T, echo = T}
+ggplot(scrap, aes(x = origin, y = credits, color = destination)) +
+  geom_point()
+```
+
+<br>
+
+
+<div class="note">
+### <i class="fas fa-hand-spock"></i> Spock-tip! {-}
+
+One easy way to experiment with colors is to add layers like `scale_fill_brewer` or `scale_colour_brewer` to your plot which will link to RcolorBrewer palettes so you can have accessible color schemes.
+</div>
+
+
+## Bar charts {-}
+
+This is way too much detail. Let's simplify and make a bar chart that adds up all the sales. Note that we use `fill=` inside `aes()` instead of `color=`. If we use color, we get a colorful outline and gray bars.
+
+
+```{r, eval = T, echo = T}
+ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
+  geom_col()
+```
+
+<br>
+
+Let's change the position of the bars to make it easier to compare sales by destination for each origin? Remember, you can use `help(geom_col)` to learn about the different options for that plot. Feel free to do the same with other `geom_`'s as well.
+
+
+```{r, eval = T, echo = T}
+ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
+  geom_col(position = "dodge")
+```
+
+
+## Facet wrap {-}
+
+Does the chart feel crowded to you? Let's use the `facet wrap` function to put each origin on a separate chart.
+
+```{r, eval = T, echo = T}
+ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
+  geom_col(position = "dodge") +
+  facet_wrap("destination")
+```
+
+
+## Labels {-}
+
+We can add lables to the chart by adding the `labs()` layer. Let's give our chart from above a title.
+
+__Titles and labels__
+```{r, eval = T, echo = T}
+ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
+  geom_col(position = "dodge") +
+  facet_wrap("destination") +
+  labs(title    = "Scrap sales by origin and destination",
+       subtitle = "Planet Jakku",
+       x        = "Origin", 
+       y        = "Total sales")
+```
+
+<br>
+
+
+## Add lines {-}
+
+> More layers! Let's say we were advised to avoid sales that were over _50 Billion_ credits. Let's add that as a horizontal line to our chart. For that, we use `geom_hline()`.
+
+__Reference lines__
+```{r}
+ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
+  geom_col(position = "dodge") +
+  facet_wrap("destination") +
+  labs(title    = "Scrap sales by origin and destination",
+       subtitle = "Planet Jakku",
+       x        = "Origin", 
+       y        = "Total sales") +
+     geom_hline(yintercept = 5E+10, color = "orange", size = 2)
+```
+
+
+
+## Drop `2.2e+06` scientific notation {-}
+
+Want to get rid of that ugly scientific notation? We can use `options(scipen = 999)`. Note that this is a general setting in R. Once you use `options(scipen = 999)` in your current session, you don't have to use it again. _(Like loading a package, you only need to run the line once when you start a new R session)._
+
+<br>
+
+```{r, eval=T, echo=T}
+options(scipen = 999)
+
+ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
+  geom_col(position = "dodge") +
+  facet_wrap("destination") +
+  theme_bw() +
+  labs(title = "Scrap sales by origin and destination", 
+       x     = "Origin", 
+       y     = "Total sales")
+```
+
+<br>
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+Let's say we don't like printing so many zeros and want the labels to be in __Millions__ of credits. Any ideas on how to make that happen?
+</div>
+
+
+## Themes {-}
+
+You may not like the appearance of these plots. `ggplot2` uses `theme` functions to change the appearance of a plot. Try some.
+
+```{r, eval=T, echo=T}
+ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
+  geom_col(position = "dodge") +
+  facet_wrap("destination") +
+  theme_bw()
+```
+
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+Be bold and make a __boxplot__. We've covered how to do a scatterplot with `geom_point` and a bar chart with `geom_col`, but how would you make a boxplot showing the prices at each destination? Feel free to experiment with `color` ,`facet_wrap`, `theme`, and `labs`. 
+
+> May the force be with you.
+
+</div>
+
+
+## Save plots {-}
+<hr class="hrlvl2">
+```{r glossary, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/ggplot_save/save_plot.Rmd'}
+```
+
+
+# It's Finn time {-}
+<hr class="hr2">
+
+Seriously, let's pay that ransom already. 
+
+>
+> __Q:__  __Where should we go to get our 10,000 Black boxes?__
+>
+
+<br>
+
+```{r, echo=F}
+cheap_scrap <- filter(scrap, item == "Black box")
+```
+
+
+__Step 1:__ Make a `geom_col()` plot showing the total pounds of Black boxes shipped to each destination. 
+
+```{r, eval=F}
+ggplot(cheap_scrap, aes(x =  ______ , y =  ______ )) + 
+   geom_
+```
+
+<details>
+<summary class="btn_code">_Show code_</summary>
+
+<div class="quiz" style="margin-top: -9px;">
+<p>
+
+```{r}
+ggplot(cheap_scrap, aes(x = destination, y = total_pounds) ) + 
+   geom_col()
+```
+
+</p></div></details>
+
+
+
+<div class="quiz">
+### Pop Quiz! {-}
+
+__Which destination has the most pounds of the cheapest item?__
+
+<input type="radio" name="town"> _Trade caravan_  <br> 
+<input type="radio" name="town"> _Niima Outpost_  <br> 
+<input type="radio" name="town"> _Raiders_        <br> 
+<br>
+
+<details>
+<summary class="btn_code">_Show solution_</summary>
+
+<p>
+<i class="fa fa-check" style="color: green;"></i> `Raiders`  
+
+_Woop! Go get em! So long Jakku - see you never!_
+
+</p>
+</details></div>
+
+
+<br>
+
+
+## <i class="fa fa-star" style="color: gold"></i>😻CONCATULATIONS!😻 <i class="fa fa-star" style="color: gold"></i> {-}
+<hr>
+
+>
+> __Woop!__ 
+>
+> Super-serious kudos to you. You have earned yourself a great award. 
+>
+
+<br><br>
+<hr>
+
+# Plot Glossary {-}
+<hr class="hr2">
+```{r glossary, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/ggplot_glossary/glossary.Rmd'}
+```
+
+
+# Homeworld training {-}
+<hr class="hr2">
+
+![](../images/porg.png){style="float: right; margin-top: -10px;"}
+
+1. Load one of the data sets below into R
+    - Porg contamination on Ahch-To: "https://itep-r.netlify.com/data/porg_samples.csv"
+    - Planet Endor air samples: "https://itep-r.netlify.com/data/air_endor.csv"
+    - Or use data from a recent project of yours  
+
+<br>
+  
+2. Create 2 plots using the data. 
+3. _Don't worry if it looks_ __really weird__. _Consider it art and try again._  
+
+
+
+<div class="note">
+### <i class="fas fa-hand-spock"></i> Spock-tip! {-}
+
+When you add more layers using `+` remember to place it at the end of each line.
+
+```{r, eval = F, echo = T}
+# This will work
+ggplot(scrap, aes(x = origin, y = credits)) +
+  geom_point()
+
+# So will this
+ggplot(scrap, aes(x = origin, y = credits)) + geom_point()
+
+# But this won't
+ggplot(scrap, aes(x = origin, y = credits))
+  + geom_point()
+
+```
+</div>
+
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-2.html) {-}

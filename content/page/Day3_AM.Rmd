@@ -1,0 +1,311 @@
+---
+title: "Day 3 - AM"
+output: 
+  blogdown::html_page: 
+    toc: true
+    toc_depth: 1
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
+knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+
+# Day 1 review
+<hr class="hrlvl2">
+
+## Get to know your __Data Frame__ {-}
+
+| Function | Information             |  
+|:------|:---------------------------|  
+| `names(scrap)`  | column names            |  
+| `nrow(...)`     | number of rows          |  
+| `ncol(...)`     | number of columns       | 
+| `summary(...)`  | summary of all column values (ex. _max_, _mean_, _median_)  | 
+| `glimpse(...)`  | column names + a glimpse of first values (requires _dplyr_ package)   |  
+
+<br>
+
+
+## Filtering {-}
+
+> <h3 style="margin-top: 8px; margin-bottom: -4px;"> Menu of comparisons </h3>
+>
+> | Symbol | Comparison               |
+> |:-------|:-------------------------|
+> | `>`    | greater than             |
+> | `>=`   | greater than or equal to |
+> | `<`    | less than                |
+> | `<=`   | less than or equal to    |
+> | `==`   | equal to                 |
+> | `!=`   | NOT equal to             |
+> | `%in%` | value is in a list: `X %in% c(1,3,7)` |
+> | `is.na(...)`  | is the value missing? |
+> | `str_detect(col_name, "word")`  | "word" appears in text? |
+>
+
+<br>
+
+```{r tools, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_toolbox/general.Rmd'}
+```
+
+
+## `dplyr` with Porgs {-}
+
+The _poggle_ of porgs has returned to help us review `dplyr` functions. 
+
+<br>
+
+```{r porg-tabs, results='asis', echo=F}
+cat(readLines("porg_tabs.txt"))
+```
+
+
+
+## Day 2 review
+<hr class="hrlvl2">
+
+![](../images/ggplot2_hex.png){align="right" width="145" style="margin-right: 70px; margin-top: -28px;"}
+
+## The `ggplot()` sandwich {-}
+
+![](../images/auto_plot.gif){style="margin-top: -22px; max-width: 108%; margin-bottom: -16px;"}
+
+
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+#### Who's the tallest of them all?
+
+```{r, eval=F}
+# Install new packages
+install.packages("ggrepel")
+```
+
+<br>
+
+```{r, message=F, warning=F}
+# Load packages
+library(dplyr)
+library(ggplot2)
+library(ggrepel)
+
+# Get starwars character data
+star_df <- starwars
+```
+
+<br>
+
+```{r, warning=F}
+# What is this?
+glimpse(star_df)
+```
+
+<br>
+
+Plot a histogram of the character heights.
+
+```{r, message=F, warning=F}
+# Height distribution
+ggplot(star_df, aes(x = height)) + geom_histogram(fill = "hotpink")
+```
+
+<br>
+
+<div class="note">
+
+- Try changing the fill color to __"<span style="color: #FD6A02;">darkorange</span>"__.
+
+- Try making a histogram of the column `mass`.
+
+</div>
+
+<br>
+
+Plot comparisons between height and mass with `geom_point(...)`.
+```{r, eval=F, message=F, warning=F}
+# Height vs. Mass scatterplot
+ggplot(star_df, aes(y = mass, x = height)) +
+   geom_point(aes(color = species), size = 5)
+```
+<br>
+
+Who's who? Let's add some labels to the points.
+```{r, eval=F, message=F, warning=F}
+# Add labels
+ggplot(star_df, aes(y = mass, x = height)) +
+  geom_point(aes(color = species), size = 5) +
+  geom_text_repel(aes(label = name))
+
+
+# Use a log scale for Mass on the y-axis
+ggplot(star_df, aes(y = mass, x = height)) +
+  geom_point(aes(color = species), size = 5) +
+  geom_text_repel(aes(label = name)) +
+  scale_y_log10()
+
+```
+
+<br>
+
+Let's drop the "Hutt" species before plotting.
+```{r, eval=F, message=F, warning=F}
+# Without the Hutt
+ggplot(filter(star_df, species != "Hutt"), aes(y = mass, x = height)) +
+  geom_point(aes(color = species), size = 5) +
+  geom_text_repel(aes(label = name, color = species))
+
+```
+
+<br>
+
+We can add `facet_wrap` to make a chart for each species.
+```{r, eval=T, message=F, warning=F}
+# Split out by species
+ggplot(star_df, aes(x = mass, y = height)) +
+  geom_point(aes(color = species), size = 3) +
+  facet_wrap("species") +
+  guides(color = FALSE)
+```
+
+
+# <i class="fas fa-cloud"></i> AQS format
+<hr class="hr2">
+```{r aqs-format, child="X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/air_aqs/save_aqs.Rmd"}
+```
+ 
+ 
+# <i class="fa fa-group" style="color: steelblue;"></i> Share with friends
+
+## Create a GitHub account {-}
+<hr class="hrlvl2">
+
+It's time to share with the world. [Join GitHub](https://github.com/)
+
+[![](../images/join_github.png)](https://github.com/)
+
+
+## Add a new repository
+
+Now we can create a new `repository` to store some of our new R plots and scripts. Click the bright green `New` button to get started.
+
+![](../images/new_repo.png)
+
+- Give it a short name like `Rplots`
+- Keep it public
+- [x] Check the box to initialize with a README 
+- Click `[ Create repository ]`
+
+## Add a plot
+
+Click `Upload files` to add an image of an R plot or one of your scripts as an `.R` file.
+
+![](../images/upload_files.png)
+
+
+# <i class="fas fa-globe-americas"></i> Back to Earth
+<hr class="hrlvl2">
+
+You're free! Go ahead and return to Earth: frolic in the grass, jump in a lake. Now that we're back, let's look at some data to get fully reacclimated. 
+ 
+<br>
+
+Choose one of the data exercises below to begin.
+
+<div class="row3" style="margin-top: 20px;">
+
+<div class="column3"><div align="center" style="margin-left: -18px;">
+<a href="explore_wind_rose.html"> __Air and Wind__ </a>
+</div></div> 
+
+<div class="column3"> <div align="center">
+<a href="explore_GIS_maps.html" style="margin-left: auto;"> __Maps for humans__ </a></div></div> 
+
+<div class="column3"> <div align="center">
+<a href="explore_messy_emissions.html" style="margin-left: auto;"> __Tidy emissions__ </a></div></div> 
+
+
+</div>
+
+
+<div class="row3">
+
+<div class="column3" style="height: 160px; max-height: 160px;">
+<div class="" style="border: 0px solid grey;">
+<a href="explore_wind_rose.html">
+![](../images/wind_freq.png){style="width: 290px; margin-top: 14px;"}
+</a>
+</div></div>
+
+<div class="column3" style="height: 160px; max-height: 160px;">
+<div class="" style="border: 1px solid grey; max-height: 160px; overflow: hidden;">
+<a href="explore_GIS_maps.html"><img src="../images/map_Hennepin.png" style="width: 290px;"></a>
+</div></div>
+
+<div class="column3" style="height: 160px; max-height: 160px;">
+<div class="" style="border: 1px solid grey; max-height: 160px; overflow: hidden;">
+<a href="explore_messy_emissions.html"><img src="../images/messy_lab.png" style="width: 290px;"></a>
+</div></div>
+
+</div>
+
+
+<div class="row3">
+<div class="column3">
+
+Explore the connection between wind direction, wind speed, and pollution concentrations near Fond du Lac. Make a wind rose and then a `pollution rose`, two of my favorite flowers.  
+
+</div>
+
+<div class="column3">
+
+Study the housing habits of Earthlings. Create interactive maps showing the spatial clustering of different social characteristics of the human species.  
+
+</div> 
+
+<div class="column3">
+
+Start with messy wide data and transform into a tidy table ready for easy plotting, summarizing, and comparing. For the grand finale, read an entire folder of files into 1 table.
+
+</div>
+
+</div>
+
+<div class="row3" style = "margin-top: 2px;">
+<div class="column3">
+
+Media: `air`   
+Planet: `Earth`
+
+</div>
+
+<div class="column3">
+
+Media: `social-human`   
+Planet: `Earth`
+
+</div>
+
+<div class="column3">
+
+Media: `air`   
+Planet: `Earth`
+
+</div>
+</div>
+
+<br>
+
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../page/day3_am.html) {-}
+
+<br>

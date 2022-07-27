@@ -4,9 +4,9 @@
 - id: shortdateFormat
   translation: "2 Jan, 2006 15:04:05"
 - id: postedOnDate
-  translation: "發表於 {{ . }}"
+  translation: "發表於 {{ .Count }}"
 - id: lastModified
-  translation: "(最後修改於 {{ . }})"
+  translation: "(最後修改於 {{ .Count }})"
 - id: translationsLabel
   translation: "其他語言: "
 - id: translationsSeparator
@@ -33,7 +33,7 @@
 
 # Footer
 - id: poweredBy # Accepts HTML
-  translation: '由 <a href="https://gohugo.io">Hugo v{{ .Site.Hugo.Version }}</a> 提供 &nbsp;&bull;&nbsp; 主題 <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> 移植自 <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>'
+  translation: '由 <a href="http://gohugo.io">Hugo v{{ .Hugo.Version }}</a> 提供 &nbsp;&bull;&nbsp; 主題 <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> 移植自 <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>'
 
 # Navigation
 - id: toggleNavigation
@@ -51,13 +51,13 @@
 - id: noComment
   translation: "沒有評論"
 - id: oneComment
-  translation: "則評論"
+  translation: "評論"
 - id: moreComment
-  translation: "則評論"
+  translation: "更多評論"
 - id: useMarkdown
   translation: "您可以使用Markdown語法"
 - id: yourName
-  translation: "您的名字"
+  translation: "您的大名"
 - id: yourEmail
   translation: "您的電子信箱"
 - id: yourWebsite
@@ -67,7 +67,7 @@
 - id: show
   translation: "顯示"
 - id: comments
-  translation: "則評論"
+  translation: "條評論" 
 
 # Related posts
 - id: seeAlso

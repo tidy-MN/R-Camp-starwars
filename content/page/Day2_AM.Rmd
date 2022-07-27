@@ -1,0 +1,140 @@
+---
+title: "Day 2 - AM"
+output: 
+  blogdown::html_page: 
+    toc: true
+    toc_depth: 1
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+---
+
+<style>
+h1 .header-section-number {background: #62BE2C;}
+hr {background: #62BE2C;}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
+knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+## Good morning, Jedis! {-}
+<hr class="hrlvl2">
+
+![](../images/day2_bb8_sq.png){width="260" style="float: left; margin-right: 60px; margin-top: -10px;"}
+
+## Schedule  {-}
+
+    - Review of Day 1
+    - Dates continued...
+    - Summarize your data
+    - Pipe together functions
+    - Join two tables by a shared column
+    - Calculate new columns
+    - Summarize for each group
+    - Save data
+
+<br>
+
+
+## Porg review {-}
+<hr class="hrlvl2">
+
+The _poggle_ of porgs has returned to help review the `dplyr` functions. Follow along by downloading the __porg__ data from the URL below.
+
+```{r, eval = F}
+library(readr)
+porgs <- read_csv("https://itep-r.netlify.com/data/porg_data.csv")
+```
+
+<br>
+
+```{r porg-tabs, results='asis', echo=F}
+cat(readLines("porg_tabs.txt"))
+```
+
+<br>
+
+
+# New mission! 
+<hr>
+```{r endor-all, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/lubridate_examples/endor.Rmd'}
+```
+
+
+# Pipe it together: ` A %>% B `
+<hr>
+```{r pipe-intro, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_pipe/intro.Rmd'}
+```
+
+>
+> __So where were we?__ 
+>
+> Right! We we're enjoying our time on beautiful lush Endor. But aren't we missing somebody...?
+>
+
+
+# Finn needs us! {-}
+
+That's enough _scuttlebutting_ on Endor, Finn needs us back on Jakku. It turns out we forgot to pick-up Finn when we left. Now he's being held ransom by Junk Boss Plutt. We'll need to act fast to get to him before the Empire does. __Blast off!__ 
+
+<br>
+
+![](../images/finn_run.gif){style="margin-left: 18%; width: 60%; margin-top: 6px;"}
+
+<br>
+
+```{r convert-tbl, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/ton_conversion_tbl.Rmd'}
+```
+
+
+# Join tables with `left_join()`
+<hr>
+```{r intro-join, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_leftjoin/intro_scrap.Rmd'}
+```
+
+```{r porg-join, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_leftjoin/porg_names.Rmd'}
+```
+
+```{r c3po-join, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_leftjoin/c3po_xtra_rows.Rmd'}
+```
+
+
+## Back to the scrap yard {-}
+<hr class="hrlvl2">
+```{r join-convert, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_leftjoin/convert_&_scrap.Rmd'}
+```
+
+```{r calc-lbs-item, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_mutate/pounds_per_scrap.Rmd'}
+```
+
+
+<div class="note" style="line-height: 1.6;">
+### Note {-}
+
+Analysts often get asked questions:
+
+- What's the highest number? 
+- What's the lowest number? 
+- What was the average tons of scrap from Cratertown last year? 
+- Which town's scrap was worth the most credits?
+
+</div>
+
+
+```{r, include=F}
+# Save scrap data for Day 2 PM
+write_csv(scrap, "scrap_day2_pm.csv")
+```
+
+<br>
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-2.html) {-}
+
+<br>
+

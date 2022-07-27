@@ -40,7 +40,6 @@ uglyURLs = true
   highlightjsTheme = "github"
   #gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
-
 [Author]
   name = "R2D2"
   #email = "kvaled@gmail.com"
@@ -48,26 +47,18 @@ uglyURLs = true
   #twitter = "KvaleDor"
   #gitlab = "username"
 
-[[menu.main]]
-    name = "Install R"
-    url = "page/install.html"
-    weight = 1
 
-[[menu.main]]
-    name = "Get started"
-    url = "page/get_started.html"
-    weight = 2
 
 [[menu.main]]
     identifier = "Training"
     name = "Training"
-    weight = 4
+    weight = 1
 
 [[menu.main]]
     parent = "Training"
     name = "Agenda"
-    url = "post/agenda.html"
-    weight = 2
+    url = "page/agenda.html"
+    weight = 1
 
 [[menu.main]]
     parent = "Training"
@@ -88,17 +79,24 @@ uglyURLs = true
     weight = 1
 
 [[menu.main]]
+    name = "Install R"
+    url = "page/install.html"
+    weight = 2
+
+[[menu.main]]
+    name = "Get started"
+    url = "page/get_started.html"
+    weight = 3
+
+[[menu.main]]
     name = "Community"
     url = "page/community.html"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Help"
     url = "page/help.html"
-    weight = 4
-
-[[menu.main]]
-    name = "Agenda"
-    url = "page/agenda.html"
     weight = 5
+
+
     

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>update on Learn R</title>
+    <link>https://mn-r.netlify.app/tags/update.html</link>
+    <description>Recent content in update on Learn R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://mn-r.netlify.app/tags/update/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install &amp; Update</title>
+      <link>https://mn-r.netlify.app/page/install.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/install.html</guid>
+      <description>Install R Install RStudio Install R packages  Add R packages  Update R packages    code {color: #FF69B4 !</description>
+    </item>
+    
+  </channel>
+</rss>

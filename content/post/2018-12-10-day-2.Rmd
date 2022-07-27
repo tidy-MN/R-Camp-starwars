@@ -1,0 +1,37 @@
+---
+title: Day 2
+date: '2018-12-10'
+showDate: false
+showAuthor: false
+summary: 'We are blasting off to a new planet where our journey continues...'
+slug: 'day-2'
+categories: [training]
+tags: [training]
+type: ''
+image: 'https://mpca-air.github.io/RTrain/images/day2_bb8_sq.png' 
+imageWidth: '27%'
+imageFloat: 'left'
+---
+
+
+![](https://mpca-air.github.io/RTrain/images/day2_bb8_sq.png){width="240" style="float: left; margin-right: 34px; margin-top: 70px; margin-bottom: 10px;"}
+
+<h1 style="margin-top:-5px;"> A new day! </h1>
+<hr>
+
+
+We are blasting off to a new planet where our journey continues. New friends and challenges await!
+
+
+<div style="margin-left: 4%;">
+
+## Blast off!
+
+### <i class="fa fa-rocket" style="font-size:24px"></i> [Part 1  (Morning)](../page/day2_am.html)
+
+### <i class="fa fa-rocket" style="font-size:24px"></i> [Part 2 (Afternoon)](../page/day2_pm.html) 
+
+</div>
+
+<br>
+

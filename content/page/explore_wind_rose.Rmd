@@ -1,0 +1,298 @@
+---
+title: "Air, wind and roses"
+output: 
+  blogdown::html_page: 
+    toc: false
+    toc_depth: 2
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+---
+
+
+Let's take a look at some air pollution data stored in an Excel file.
+
+## Download the data
+
+<a href="https://itep-r.netlify.com/data/la_jolla_pm25_wind_data.xls">
+<span class = "btn_code_blue"> __DOWNLOAD__  </span></a> —  La Jolla PM25 data
+
+
+## Install packages
+```{r, eval=F}
+
+# Get devtools for installing new packages from GitHub
+install.packages("devtools", dependencies = TRUE)
+
+# Load the devtools library 
+library(devtools)
+
+# Install openair for windrose functions
+install_github('davidcarslaw/openair')
+```
+
+
+## Load the data
+```{r, warning=F, message=F}
+
+# Load packages
+library(openair)
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+
+# Set the path to your the Excel file
+excel_path <- "data/la_jolla_pm25_wind_data.xls"
+```
+
+```{r, include=F, echo=F}
+excel_path <- "../data/la_jolla_pm25_wind_data.xls"
+#excel_path <- "../data/2014_AQS_FondduLac.xlsx"
+
+if(F) {
+air_data <- air_data %>% 
+            rename(wind_dir   = "Wind Direction (Degrees)",
+                   wind_mph   = "Wind Speed (mph)",
+                   pm25       = "PM2.5 Conc (ug/m3)") %>%
+            rename_all(tolower)
+
+}
+
+```
+
+```{r}
+# Read the file
+air_data <- read_excel(excel_path)
+```
+
+## Explore the data
+
+What are the column names? 
+
+```{r, eval=F}
+
+names(air_data)
+
+glimpse(air_data)
+
+summary(air_data)
+
+```
+
+
+
+## Simplify the column names
+```{r}
+
+# Drop special characters and shorten names
+# Set all names to lowercase
+air_data <- air_data %>% 
+            rename(pm25 = "PM2.5 Conc (ug/m3)", 
+                   wd   = "Wind Direction (Degrees)",
+                   ws   = "Wind Speed (mph)") %>%
+            rename_all(tolower)
+
+# We need numbers for our data, not text
+# Set wind speed and wind direction to numeric
+air_data <- air_data %>% 
+            mutate(wd   = as.numeric(wd),
+                   ws   = as.numeric(ws))
+
+```
+
+
+## Plot the data
+
+Create a plot to show the distribution of each of the columns containing observations: `wind speed`, `wind direction`, and `concentration`.
+
+
+```{r, eval=F}
+
+ggplot(air_data, aes(x = ?, y = ?)) + geom_point()
+
+
+```
+
+## Clean ship
+
+Let's drop the non-sense values. We can't use the rows that have a missing windspeed or wind direction observation.
+
+```{r, eval=T}
+air_data <- filter(air_data, 
+                   !is.na(ws), 
+                   !is.na(wd),
+                   !is.na(pm25),
+                   ws > 0)
+```
+
+## Wind rose
+
+Now let's make some wind roses.
+
+```{r, eval=T}
+
+# Plot the data
+windRose(air_data)
+
+polarFreq(air_data)
+```
+
+```{r, eval=F}
+#-- Fine tune  wind rose
+polarFreq(air_data, ws.int =5, ws.upper = 35)
+
+polarFreq(air_data, ws.int =0.8, breaks = seq(2:30))
+
+```
+
+
+## Pollution rose
+
+To make a pollution rose we can replace the name of the wind speed column with the name of PM2.5 column - `"PM2.5 Conc (ug/m3)"`
+
+```{r, eval=T}
+
+# Pollution concentrations based on wind directions
+pollutionRose(air_data, 
+              pollutant = "pm25",
+              key.footer = "PM2.5 ug/m3")
+              
+```
+
+
+
+## Time series
+
+<a href="https://github.com/itep-data/learnR/raw/master/content/data/2014_AQS_FondduLac.xlsx">
+<span class = "btn_code_blue"> __DOWNLOAD__  </span></a> —  Ozone air data
+
+```{r, eval=F}
+library(lubridate)
+library(readr)
+library(ggplot2)
+
+# Read the file
+excel_path <- "data/2014_AQS_FondduLac.xlsx"
+
+air_data <- read_excel(excel_path)
+```
+
+```{r, echo=F}
+# Read the file
+excel_path <- "../data/2014_AQS_FondduLac.xlsx"
+
+air_data <- read_excel(excel_path)
+
+head(air_data, 5)
+```
+
+
+## Explore the data
+```{r, eval=F}
+
+names(air_data)
+
+glimpse(air_data)
+```
+
+
+## Simplify the column names
+```{r}
+
+# Set all names to lowercase
+air_data <- air_data %>% 
+            rename_all(tolower) %>%
+            rename(site = site_catid)
+
+```
+
+## Let's focus on PM2.5
+
+Use filter to select only the `parameter` code `88101`.
+
+```{r, eval=F}
+
+air_data <- filter(air_data, parameter == ??)
+```
+
+
+```{r}
+
+air_data <- filter(air_data, parameter == 88101)
+```
+
+
+
+Let's summarize the observations by day and then make a time series chart to see how the pollution concentrations are changing over time.
+
+__Add monthly statistics__
+```{r}
+
+# Add a month column
+air_data <- air_data %>% 
+            mutate(day   = day(date),
+                   month = month(date),
+                   year  = year(date))
+
+
+# Find average PM25 concentration for each day
+#   - And upper and lower 10th percentile concentration
+air_summary <- group_by(air_data, site, year, month, day, date) %>%
+               summarize(conc_avg  = mean(conc, na.rm = T),
+                         conc_10th = quantile(conc, 0.10, na.rm = T),
+                         conc_90th = quantile(conc, 0.90, na.rm = T)) %>%
+               ungroup()
+
+
+```
+
+
+__Plot a line chart__
+```{r}
+
+ggplot(air_summary, aes(x = date, y = conc_avg)) +
+   geom_line() +
+   facet_wrap(~ site)
+
+```
+
+
+Now we can add a confidence band behind the line showing the upper and lower 10th percentile of the observations.
+
+```{r}
+
+ggplot(air_summary, aes(x = date, y = conc_avg)) + 
+   geom_smooth(method ="loess", level = 0.90) +
+   geom_line(color = "tomato") +
+   facet_wrap(~site)
+
+```
+
+
+__What happens when you increase the `level = 0.90` up to `0.999`, making the shaded band a 99% confidence interval?__
+
+__Try adding another confidence band, but make it a linear model: `method = "lm"`, and set the color to "black". Does the new line predict the concentration to be going down or up at each site?__
+
+
+```{r}
+
+ggplot(air_summary, aes(x = date, y = conc_avg)) + 
+   geom_smooth(method = "loess", level = 0.999) +
+   geom_line(color = "tomato") +
+   geom_smooth(method = "lm", level = 0.90, color = "black") +
+   facet_wrap(~site)
+
+```
+
+<br>
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Day 3-AM](day3_am.html) {-}
+
+<br>
+
+
+<br>

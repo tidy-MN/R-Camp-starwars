@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Air, wind and roses - Learn R</title>
+  <meta property="og:title" content="Air, wind and roses" />
+  <meta name="twitter:title" content="Air, wind and roses" />
+  <meta name="description" content="div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.">
+  <meta property="og:description" content="div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.">
+  <meta name="twitter:description" content="div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.">
+  <meta name="author" content="R2D2"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/mn-r.netlify.app\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/mn-r.netlify.app\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/mn-r.netlify.app\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/mn-r.netlify.app\/page\/explore_wind_rose.html",
+          "name": "Air, wind and roses"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "R2D2"
+  },
+  "headline": "Air, wind and roses",
+  "description" : "div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.",
+  "inLanguage" : "en",
+  "wordCount":  1009 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/mn-r.netlify.app\/page\/explore_wind_rose.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/mn-r.netlify.app\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Air, wind and roses" />
+<meta property="og:description" content="div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.">
+<meta property="og:image" content="https://mn-r.netlify.app/images/BB8_rnd_icon.png" />
+<meta property="og:url" content="https://mn-r.netlify.app/page/explore_wind_rose.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="Air, wind and roses" />
+  <meta name="twitter:description" content="div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.">
+  <meta name="twitter:image" content="https://mn-r.netlify.app/images/BB8_rnd_icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://mn-r.netlify.app/images/BB8_rnd_icon.png" />
+  <meta name="twitter:image" content="https://mn-r.netlify.app/images/BB8_rnd_icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://mn-r.netlify.app/page/explore_wind_rose.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.55.0" />
+  <link rel="alternate" href="https://mn-r.netlify.app/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://mn-r.netlify.app/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://mn-r.netlify.app/css/syntax.css" /><link rel="stylesheet" href="https://mn-r.netlify.app/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://mn-r.netlify.app/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/page/agenda.html">Agenda</a>
+                
+                  <a href="/post/day-1.html">Day-1</a>
+                
+                  <a href="/post/day-2.html">Day-2</a>
+                
+                  <a href="/post/day-3.html">Day-3</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Get started" href="/page/get_started.html">Get started</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://mn-r.netlify.app/">
+            <img class="avatar-img" src="https://mn-r.netlify.app/images/BB8_rnd_icon.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>Air, wind and roses</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+</style>
+  <link rel="stylesheet" href="css\camp_style.css" type="text/css" />
+
+
+<p>Let’s take a look at some air pollution data stored in an Excel file.</p>
+<div id="download-the-data" class="section level2">
+<h2>Download the data</h2>
+<p><a href="https://itep-r.netlify.com/data/la_jolla_pm25_wind_data.xls"> <span class="btn_code_blue"> <strong>DOWNLOAD</strong> </span></a> — La Jolla PM25 data</p>
+</div>
+<div id="install-packages" class="section level2">
+<h2>Install packages</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get devtools for installing new packages from GitHub</span>
+<span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># Load the devtools library </span>
+<span class="kw">library</span>(devtools)
+
+<span class="co"># Install openair for windrose functions</span>
+<span class="kw">install_github</span>(<span class="st">&#39;davidcarslaw/openair&#39;</span>)</code></pre></div>
+</div>
+<div id="load-the-data" class="section level2">
+<h2>Load the data</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load packages</span>
+<span class="kw">library</span>(openair)
+<span class="kw">library</span>(readxl)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(lubridate)
+
+<span class="co"># Set the path to your the Excel file</span>
+excel_path &lt;-<span class="st"> &quot;data/la_jolla_pm25_wind_data.xls&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Read the file</span>
+air_data &lt;-<span class="st"> </span><span class="kw">read_excel</span>(excel_path)</code></pre></div>
+</div>
+<div id="explore-the-data" class="section level2">
+<h2>Explore the data</h2>
+<p>What are the column names?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(air_data)
+
+<span class="kw">glimpse</span>(air_data)
+
+<span class="kw">summary</span>(air_data)</code></pre></div>
+</div>
+<div id="simplify-the-column-names" class="section level2">
+<h2>Simplify the column names</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Drop special characters and shorten names</span>
+<span class="co"># Set all names to lowercase</span>
+air_data &lt;-<span class="st"> </span>air_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">            </span><span class="kw">rename</span>(<span class="dt">pm25 =</span> <span class="st">&quot;PM2.5 Conc (ug/m3)&quot;</span>, 
+                   <span class="dt">wd   =</span> <span class="st">&quot;Wind Direction (Degrees)&quot;</span>,
+                   <span class="dt">ws   =</span> <span class="st">&quot;Wind Speed (mph)&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">            </span><span class="kw">rename_all</span>(tolower)
+
+<span class="co"># We need numbers for our data, not text</span>
+<span class="co"># Set wind speed and wind direction to numeric</span>
+air_data &lt;-<span class="st"> </span>air_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">            </span><span class="kw">mutate</span>(<span class="dt">wd   =</span> <span class="kw">as.numeric</span>(wd),
+                   <span class="dt">ws   =</span> <span class="kw">as.numeric</span>(ws))</code></pre></div>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+</div>
+<div id="plot-the-data" class="section level2">
+<h2>Plot the data</h2>
+<p>Create a plot to show the distribution of each of the columns containing observations: <code>wind speed</code>, <code>wind direction</code>, and <code>concentration</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(air_data, <span class="kw">aes</span>(<span class="dt">x =</span> ?, <span class="dt">y =</span> ?)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+</div>
+<div id="clean-ship" class="section level2">
+<h2>Clean ship</h2>
+<p>Let’s drop the non-sense values. We can’t use the rows that have a missing windspeed or wind direction observation.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">air_data &lt;-<span class="st"> </span><span class="kw">filter</span>(air_data, 
+                   <span class="op">!</span><span class="kw">is.na</span>(ws), 
+                   <span class="op">!</span><span class="kw">is.na</span>(wd),
+                   <span class="op">!</span><span class="kw">is.na</span>(pm25),
+                   ws <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</code></pre></div>
+</div>
+<div id="wind-rose" class="section level2">
+<h2>Wind rose</h2>
+<p>Now let’s make some wind roses.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot the data</span>
+<span class="kw">windRose</span>(air_data)</code></pre></div>
+<p><img src="/page/explore_wind_rose_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">polarFreq</span>(air_data)</code></pre></div>
+<p><img src="/page/explore_wind_rose_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#-- Fine tune  wind rose</span>
+<span class="kw">polarFreq</span>(air_data, <span class="dt">ws.int =</span><span class="dv">5</span>, <span class="dt">ws.upper =</span> <span class="dv">35</span>)
+
+<span class="kw">polarFreq</span>(air_data, <span class="dt">ws.int =</span><span class="fl">0.8</span>, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">30</span>))</code></pre></div>
+</div>
+<div id="pollution-rose" class="section level2">
+<h2>Pollution rose</h2>
+<p>To make a pollution rose we can replace the name of the wind speed column with the name of PM2.5 column - <code>&quot;PM2.5 Conc (ug/m3)&quot;</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Pollution concentrations based on wind directions</span>
+<span class="kw">pollutionRose</span>(air_data, 
+              <span class="dt">pollutant =</span> <span class="st">&quot;pm25&quot;</span>,
+              <span class="dt">key.footer =</span> <span class="st">&quot;PM2.5 ug/m3&quot;</span>)</code></pre></div>
+<p><img src="/page/explore_wind_rose_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="time-series" class="section level2">
+<h2>Time series</h2>
+<p><a href="https://github.com/itep-data/learnR/raw/master/content/data/2014_AQS_FondduLac.xlsx"> <span class="btn_code_blue"> <strong>DOWNLOAD</strong> </span></a> — Ozone air data</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lubridate)
+<span class="kw">library</span>(readr)
+<span class="kw">library</span>(ggplot2)
+
+<span class="co"># Read the file</span>
+excel_path &lt;-<span class="st"> &quot;data/2014_AQS_FondduLac.xlsx&quot;</span>
+
+air_data &lt;-<span class="st"> </span><span class="kw">read_excel</span>(excel_path)</code></pre></div>
+<pre><code>## # A tibble: 5 x 12
+##   StateCode CountyCode SiteNum Latitude Longitude Date               
+##       &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;dttm&gt;             
+## 1        27        137    7001     47.5     -92.5 2014-01-01 00:00:00
+## 2        27        137    7001     47.5     -92.5 2014-01-01 00:00:00
+## 3        27        137    7001     47.5     -92.5 2014-01-01 00:00:00
+## 4        27        137    7001     47.5     -92.5 2014-01-01 00:00:00
+## 5        27        137    7001     47.5     -92.5 2014-01-01 00:00:00
+## # ... with 6 more variables: Time &lt;dttm&gt;, Hour &lt;dbl&gt;, Parameter &lt;dbl&gt;,
+## #   Conc &lt;dbl&gt;, site_catid &lt;chr&gt;, Year &lt;dbl&gt;</code></pre>
+</div>
+<div id="explore-the-data-1" class="section level2">
+<h2>Explore the data</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(air_data)
+
+<span class="kw">glimpse</span>(air_data)</code></pre></div>
+</div>
+<div id="simplify-the-column-names-1" class="section level2">
+<h2>Simplify the column names</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Set all names to lowercase</span>
+air_data &lt;-<span class="st"> </span>air_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">            </span><span class="kw">rename_all</span>(tolower) <span class="op">%&gt;%</span>
+<span class="st">            </span><span class="kw">rename</span>(<span class="dt">site =</span> site_catid)</code></pre></div>
+</div>
+<div id="lets-focus-on-pm2.5" class="section level2">
+<h2>Let’s focus on PM2.5</h2>
+<p>Use filter to select only the <code>parameter</code> code <code>88101</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">air_data &lt;-<span class="st"> </span><span class="kw">filter</span>(air_data, parameter <span class="op">==</span><span class="st"> </span>??)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">air_data &lt;-<span class="st"> </span><span class="kw">filter</span>(air_data, parameter <span class="op">==</span><span class="st"> </span><span class="dv">88101</span>)</code></pre></div>
+<p>Let’s summarize the observations by day and then make a time series chart to see how the pollution concentrations are changing over time.</p>
+<p><strong>Add monthly statistics</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Add a month column</span>
+air_data &lt;-<span class="st"> </span>air_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">            </span><span class="kw">mutate</span>(<span class="dt">day   =</span> <span class="kw">day</span>(date),
+                   <span class="dt">month =</span> <span class="kw">month</span>(date),
+                   <span class="dt">year  =</span> <span class="kw">year</span>(date))
+
+
+<span class="co"># Find average PM25 concentration for each day</span>
+<span class="co">#   - And upper and lower 10th percentile concentration</span>
+air_summary &lt;-<span class="st"> </span><span class="kw">group_by</span>(air_data, site, year, month, day, date) <span class="op">%&gt;%</span>
+<span class="st">               </span><span class="kw">summarize</span>(<span class="dt">conc_avg  =</span> <span class="kw">mean</span>(conc, <span class="dt">na.rm =</span> T),
+                         <span class="dt">conc_10th =</span> <span class="kw">quantile</span>(conc, <span class="fl">0.10</span>, <span class="dt">na.rm =</span> T),
+                         <span class="dt">conc_90th =</span> <span class="kw">quantile</span>(conc, <span class="fl">0.90</span>, <span class="dt">na.rm =</span> T)) <span class="op">%&gt;%</span>
+<span class="st">               </span><span class="kw">ungroup</span>()</code></pre></div>
+<p><strong>Plot a line chart</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(air_summary, <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> conc_avg)) <span class="op">+</span>
+<span class="st">   </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">   </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>site)</code></pre></div>
+<p><img src="/page/explore_wind_rose_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Now we can add a confidence band behind the line showing the upper and lower 10th percentile of the observations.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(air_summary, <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> conc_avg)) <span class="op">+</span><span class="st"> </span>
+<span class="st">   </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span><span class="st">&quot;loess&quot;</span>, <span class="dt">level =</span> <span class="fl">0.90</span>) <span class="op">+</span>
+<span class="st">   </span><span class="kw">geom_line</span>(<span class="dt">color =</span> <span class="st">&quot;tomato&quot;</span>) <span class="op">+</span>
+<span class="st">   </span><span class="kw">facet_wrap</span>(<span class="op">~</span>site)</code></pre></div>
+<p><img src="/page/explore_wind_rose_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><strong>What happens when you increase the <code>level = 0.90</code> up to <code>0.999</code>, making the shaded band a 99% confidence interval?</strong></p>
+<p><strong>Try adding another confidence band, but make it a linear model: <code>method = &quot;lm&quot;</code>, and set the color to “black”. Does the new line predict the concentration to be going down or up at each site?</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(air_summary, <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> conc_avg)) <span class="op">+</span><span class="st"> </span>
+<span class="st">   </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">level =</span> <span class="fl">0.999</span>) <span class="op">+</span>
+<span class="st">   </span><span class="kw">geom_line</span>(<span class="dt">color =</span> <span class="st">&quot;tomato&quot;</span>) <span class="op">+</span>
+<span class="st">   </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">level =</span> <span class="fl">0.90</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span>
+<span class="st">   </span><span class="kw">facet_wrap</span>(<span class="op">~</span>site)</code></pre></div>
+<p><img src="/page/explore_wind_rose_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><br></p>
+<div id="return-to-day-3-am" class="section level3 unnumbered">
+<h3><i class="fa fa-rocket" aria-hidden="true"></i> Return to <a href="day3_am.html">Day 3-AM</a></h3>
+<p><br></p>
+<p><br></p>
+</div>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2018
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://mn-r.netlify.app/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          &nbsp;&bull;&nbsp;[<a href="true"></a>]
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://mn-r.netlify.app/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://mn-r.netlify.app/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

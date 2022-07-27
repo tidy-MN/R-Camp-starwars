@@ -1,0 +1,39 @@
+---
+title: Day 3
+date: '2018-12-12'
+showDate: false
+showAuthor: false
+summary: "Onward and upward. It's time to head out on your own..."
+slug: 'day-3'
+categories: [training]
+tags: [training]
+type: ''
+image: 'https://mpca-air.github.io/RTrain/images/day3_sq.png' 
+imageWidth: '27%'
+imageFloat: 'left'
+---
+
+![](https://mpca-air.github.io/RTrain/images/day3_sq.png){width="240" style="float: left; margin-right: 20px; margin-top: 94px; margin-bottom: 88px;"}
+
+<h1 style="margin-top:-15px;"> Return to Earth! </h1>
+<hr>
+
+
+Onward and upward. It's time for you to head out on your own.
+
+
+<div style="margin-left: 4%; margin-top: 26px;">
+
+# Blast off!
+
+### <i class="fa fa-rocket" style="font-size:24px"></i> [Part 1 (Morning)](../page/day3_am.html) 
+
+### <i class="fa fa-rocket" style="font-size:24px"></i> [Part 2 (Afternoon)](../page/day3_pm.html) 
+
+</div>
+
+<br>
+
+<div style="clear:both;"></div>
+
+<br>

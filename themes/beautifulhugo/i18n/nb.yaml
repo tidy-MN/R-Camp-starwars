@@ -4,9 +4,9 @@
 - id: shortdateFormat
   translation: "2 Jan, 2006 15:04:05"
 - id: postedOnDate
-  translation: "Postet {{ . }}"
+  translation: "Postet {{ .Count }}"
 - id: lastModified
-  translation: "(Sist endret {{ . }})"
+  translation: "(Sist endret {{ .Count }})"
 - id: translationsLabel
   translation: "Andre språk: "
 - id: translationsSeparator
@@ -33,7 +33,7 @@
 
 # Footer
 - id: poweredBy # Accepts HTML
-  translation: 'Kjører på <a href="https://gohugo.io">Hugo v{{ .Site.Hugo.Version }}</a>&nbsp;&bull;&nbsp; Tema fra <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> tilpasset fra <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>'
+  translation: 'Kjører på <a href="http://gohugo.io">Hugo v{{ .Hugo.Version }}</a>&nbsp;&bull;&nbsp; Tema fra <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> tilpasset til <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>'
 
 # Navigation
 - id: toggleNavigation

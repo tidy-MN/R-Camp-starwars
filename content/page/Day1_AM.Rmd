@@ -58,31 +58,31 @@ We will make lots of mistakes. Mistakes are funny. Please laugh along with us.
 
 # What's R? 
 <hr>
-```{r candy, child='../data/modules/ggplot_examples/candy.Rmd', eval=TRUE}
+```{r candy, child='../data/modules/ggplot/ggplot_examples/candy.Rmd', eval=TRUE}
 ```
 
 
 # <i class="fa fa-group" aria-hidden="true" style="color: steelblue;"></i> Introductions {-}
 <hr class="hr2">
-```{r intros, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_intro_group/starwars.Rmd'}
+```{r intros, child='../modules/intro/_intro_group/starwars.Rmd'}
 ```
 
 
 # RStudio - A Grand Tour 
 <hr>
-```{r Rtour, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/rstudio_tour/general.Rmd'}
+```{r Rtour, child='../modules/intro/rstudio_tour/general.Rmd'}
 ```
 
 
 # Why R? {-}
 <hr class="hr2">
-```{r whyR, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_whyr/itep.Rmd'}
+```{r whyR, child='../modules/intro/_whyr/mpca.Rmd'}
 ```
 
 
 ## Example ozone analysis {-}
 ```{r ex-ozone2, results="asis", echo=F, warning=F}
-cat(knitr::knit_child("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_example_7steps/ozone.Rmd", quiet = TRUE, envir = parent.frame()))
+cat(knitr::knit_child("../modules/_example_7steps/ozone.Rmd", quiet = TRUE, envir = parent.frame()))
 ```
 
 
@@ -94,6 +94,14 @@ cat(knitr::knit_child("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Eval
 >
 > Insert magic here...
 >
+
+<br>
+
+
+# Join the team 
+<hr>
+```{r droid-app, child='../data/modules/intro/droid_application.Rmd', eval=TRUE}
+```
 
 <br>
 
@@ -117,42 +125,42 @@ Let's make a new project for our `Jakku` scrap analysis.
 params <- list(name1 = 'jakku1.R', name2 = 'day1.R')
 ```
 
-```{r, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/rstudio_newproject/general.Rmd'}
+```{r, child='../modules/intro/rstudio_newproject/general.Rmd'}
 ```
 
 
 # Names and things
 <hr>
-```{r child = 'X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Modules/base_assignment/starwars.Rmd'}
+```{r child = '../Modules/base/base_assignment/starwars.Rmd'}
 ```
 
 
 ## Add a `#comment`
-```{r comments, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_comments.Rmd'}
+```{r comments, child='../modules/_comments.Rmd'}
 ```
 
 
 # Read data
 <hr>
-```{r read-csv, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/readr_csv/starwars.Rmd'}
+```{r read-csv, child='../modules/readr/readr_csv/starwars.Rmd'}
 ```
 
 
 # Add packages &#x1F4E6; *(R Apps)*  
 <hr>
-```{r new-pkg, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_packages/readr.Rmd'}
+```{r new-pkg, child='../modules/_packages/readr.Rmd'}
 ```
 
 
 ## Read the data
 
 Let's load the _readr_ package so we can use the `read_csv() ` function to read the Jakku scrap data.
-```{r read_snippet, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/readr_load/scrap_snippet.Rmd'}
+```{r read_snippet, child='../modules/readr/readr_load/scrap_snippet.Rmd'}
 ```
 
 
 ### {-}
-```{r fun-options, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_functions/fun_options.Rmd'}
+```{r fun-options, child='../modules/base/base_functions/fun_options.Rmd'}
 ```
 
 
@@ -165,11 +173,11 @@ Let's load the _readr_ package so we can use the `read_csv() ` function to read 
 
 <br>
 
-```{r ggplot25, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/ggplot_install/scrap.Rmd'}
+```{r ggplot25, child='../modules/ggplot/ggplot_install/scrap.Rmd'}
 ```
 
 
-```{r order_arguments, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_functions/order_arguments.Rmd'}
+```{r order_arguments, child='../modules/base/base_functions/order_arguments.Rmd'}
 ```
 
 
@@ -182,12 +190,12 @@ Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning re
 
 <br>
 
-```{r recap, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/recap/day1.Rmd'}
+```{r recap, child='../modules/recap/day1.Rmd'}
 ```
 
 
 # <i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms {-} 
-```{r key-terms, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/key_terms/day1.Rmd'}
+```{r key-terms, child='../modules/key_terms/day1.Rmd'}
 ```
 
 

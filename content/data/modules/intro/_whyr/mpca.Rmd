@@ -4,7 +4,6 @@
 ## R Community {-}
 
 - See the [R Community](https://itep-r.netlify.com/page/community.html) page.
-- MPCA sharing + questions - [R questions](https://github.com/MPCA-air/R-questions) 
 - Finding R Help - [Get Help!](help.html)
 - [R Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
 

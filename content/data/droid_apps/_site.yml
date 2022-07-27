@@ -1,0 +1,12 @@
+name: "."
+title: "Rey's Scrap Team"
+description: |
+  Rey's Scrap Team
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Droid App #77"
+      href: index.html
+
+
+output: distill::distill_article

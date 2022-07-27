@@ -1,0 +1,25 @@
+---
+title: "Data Sweeper the gonk Droid"
+image: https://raw.githubusercontent.com/MPCA-data/R2D2_rescue_mission/main/trash_droid_rev.png
+color1: "#5A59A3"
+color2: "#C66060"
+angle: 130
+css: droid.css
+
+links:
+  - label: Vimeo
+    url: "https://vimeo.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: Email
+    url: "mailto:email@email.com"
+output:
+  postcards::onofre
+---
+ 
+**Hello!**  I am a classically trained data scientist living on planet Endor. Wherever I go I bring a supply of good energy. Currently, I work for the Oculus Corp. But I have been feeling rebellious lately. I love talking about soccer and discussing true crime podcasts.
+
+You need to see me <span style="font-size: 155%;"> SWEEPING</span>.
+
+
+

@@ -34,17 +34,7 @@ survey <- read_csv('candy,rating
                    "Nerds",           5 
                    "Sour Patch Kids", 8')
 
-
-#------- Column plot with dark theme ---------#
-ggplot(survey, 
-       aes(x = candy, y = rating)) +
-  geom_col(aes(fill = candy), show.legend = FALSE) +
-  labs(title    = "Candy Champions", 
-       subtitle = "Very official candy ratings",
-       caption  = "Data from Pechanga survey 2050") +
-  coord_flip() +
-  #scale_fill_viridis_d()
-  theme_ft_rc(base_size = 14) 
+ 
  
 ```
 

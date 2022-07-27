@@ -50,7 +50,7 @@ We like __R__.
 
 We aren't computer scientists -- and that's okay! 
 
-We make lots of mistakes. Mistakes are how we learn. They are also funny. Please laugh with us.
+We make lots of mistakes. Mistakes are how we learn. They are also funny. Laugh with us!
 
 <br><br><hr class="hr2">
 
@@ -86,8 +86,8 @@ cat(knitr::knit_child("../../static/modules/_example_7steps/ozone.Rmd", quiet = 
 ```
 
 
-## Show <span style="color: #3498db;"> & </span> Tell
-<hr>
+## Show <span style="color: #3498db;"> & </span> Tell {-}
+
 
 <br>
 
@@ -98,7 +98,7 @@ cat(knitr::knit_child("../../static/modules/_example_7steps/ozone.Rmd", quiet = 
 <br>
 
 
-# Join the team 
+# Help Wanted!
 <hr>
 ```{r droid-app, child='../../static/modules/intro/droid_app/droid_application.Rmd', eval=TRUE}
 ```

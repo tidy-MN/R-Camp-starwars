@@ -405,7 +405,6 @@ div.alert a {
     overflow: hidden;
     line-height: 1;
     vertical-align: middle;
-    background-color: gray;
     flex-shrink: 0;
     margin-right: 16px;
     box-shadow: 0 0 0 1px gray;

@@ -2,11 +2,10 @@
 
 <img src="../images/trash_droid_rev.png" class="avatar" />
 
-<span style="font-size: 18px;"> **Help Wanted!** </span> 
+Rey and BB8 just posted a wanted ad for a data droid. This is your chance. If you want to join the team, you'll need to submit an application. 
 
-Rey and BB8 posted a wanted ad for a data droid that can do some number crunching. If you want to help, you'll need to submit an application. 
 
-Customize the application below to put your personal spin on a data droid looking for work.
+> Customize the application below to put your personal spin on a data droid looking for work.
 
 <hr class="hr2" style="margin-top: 4px;">
 
@@ -27,12 +26,12 @@ nickname <- "Data Sweeper"
 ## Your top skill
 skill <- "sweeping"
 
-#------------- Submit --------------------# 
+#------------------ Submit ---------------------# 
+## -- Option 1. Run all the lines above and then run the line below -or-
+## -- Option 2. Click the Source button at the top-right of the script screen 
+### -- (the one with the blue arrow). 
+### -- This runs all the lines in your script.
 
-# Ready to submit your application?
-
-## -- Run all the lines above and then run the line below -or-
-## -- Click the Source button at the top-right of the script screen (the one with the blue arrow). This will run everything in your script.
 source("https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/intro/droid_apps/submit_app.R")
  
 ```
@@ -43,7 +42,7 @@ source("https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/i
 
 <br>
 
-## Nice work!
+## Nice work! {-}
 
 > After a lot of flying text and some installations, something like this should appear.
 
@@ -55,10 +54,9 @@ source("https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/i
 6. Re-run the code again.
 7. Try adding the section below to your script:
 
-## Optional addition
+## Bonus {-}
 ```{r}
-# Optional
-## Edit your personal introduction below
+# Edit your personal introduction 
 
 # Droid bio
 intro <- "**Hello!**  I am a classically trained data scientist living on planet Endor. Wherever I go I bring a supply of good energy. I currently work for the Oculus Corp, but I have been feeling rebellious lately. I love talking about urban forests and discussing true crime podcasts."
@@ -71,7 +69,7 @@ intro <- "**Hello!**  I am a classically trained data scientist living on planet
 
 
 <div class="tip">
-### <img src="../images/yoda_baby_sq.png" style="width: 60px; float: left; margin-top: -6px;"> Yoda says {-}
+### <img src="../images/yoda_baby_sq.png" style="width: 40px; float: left; margin-top: -3px; margin-right: 6px;"> Yoda says {-}
 
 - R makes reports with R Markdown. 
 - R Markdown combines code and text to create dynamic reports with charts, presentations, and webpages.

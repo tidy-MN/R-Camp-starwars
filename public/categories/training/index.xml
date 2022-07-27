@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>training on Learn R</title>
+    <link>https://mn-r.netlify.app/categories/training.html</link>
+    <description>Recent content in training on Learn R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 12 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mn-r.netlify.app/categories/training/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Day 3</title>
+      <link>https://mn-r.netlify.app/post/day-3.html</link>
+      <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/post/day-3.html</guid>
+      <description>Onward and upward. It&amp;rsquo;s time to head out on your own&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Folder paths</title>
+      <link>https://mn-r.netlify.app/page/where_am_i.html</link>
+      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/where_am_i.html</guid>
+      <description>Power on your droid young Jedi, it’s time to get started. Junk Boss Plutt is up to no-good once again and we’ve got scrap to find&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Day 2</title>
+      <link>https://mn-r.netlify.app/post/day-2.html</link>
+      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/post/day-2.html</guid>
+      <description>We are blasting off to a new planet where our journey continues&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Day 1</title>
+      <link>https://mn-r.netlify.app/post/day-1.html</link>
+      <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/post/day-1.html</guid>
+      <description>Power on your droids people, it’s time to get started. Junk Boss Plutt is up to no-good and we’ve got scrap to find&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Agenda</title>
+      <link>https://mn-r.netlify.app/page/agenda.html</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/agenda.html</guid>
+      <description>R Camp || Day 1 Morning: 9:00am-12:00 (3 hrs) || Planets visited: Jakku || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

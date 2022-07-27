@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data on Learn R</title>
+    <link>https://mn-r.netlify.app/data.html</link>
+    <description>Recent content in Data on Learn R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://mn-r.netlify.app/data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://mn-r.netlify.app/data/modules/rstudio_newproject/general.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/data/modules/rstudio_newproject/general.html</guid>
+      <description>general.utf8.md /*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */ !function(a,b){&#34;object&#34;==typeof module&amp;&amp;&#34;object&#34;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(&#34;jQuery requires a window with a document&#34;</description>
+    </item>
+    
+  </channel>
+</rss>

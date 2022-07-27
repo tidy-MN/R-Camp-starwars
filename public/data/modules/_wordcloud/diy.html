@@ -1,0 +1,90 @@
+
+
+
+<details>
+<summary class="btn_code" style="font-size: 15px;">
+<i class="fa fa-star"></i> BONUS <i class="fa fa-star"></i>     Build your own Word Cloud
+</summary>
+<div class="quiz" style="margin-top: 0;">
+<p>
+<p>Let’s launch ourselves into the unknown and use R to make a <code>Word Cloud</code>. With a little copy-pasting we can make a fun image out of everyone’s name in the class.</p>
+<p>Since you’re such a big deal, we can also help you make your name really <span style="font-size: 26px;"> <strong>BIG</strong> </span>.</p>
+<hr style="margin-top: 4px;">
+<h3>
+INSTRUCTIONS
+</h3>
+<ol style="list-style-type: decimal">
+<li><p>Open R Studio</p></li>
+<li><p>Copy the code below into your script in RStudio. Start with the line <code>install.packages</code> and end with the line <code>color = 'random-dark')</code>.</p></li>
+</ol>
+<pre class="r"><code>install.packages(c(&quot;wordcloud2&quot;, &quot;dplyr&quot;))
+library(wordcloud2)
+library(dplyr)
+
+#---- Class names ----# 
+class &lt;- c(&quot;Steve&quot;    = 8, 
+           &quot;Mike&quot;     = 9, 
+           &quot;Eric&quot;     = 8, 
+           &quot;Hannah&quot;   = 9, 
+           &quot;Jon&quot;      = 8, 
+           &quot;Mary&quot;     = 9, 
+           &quot;Min&quot;      = 9, 
+           &quot;Aida&quot;     = 9,
+           &quot;Matthias&quot; = 8,
+           &quot;Gao&quot;      = 9,
+           &quot;Ben&quot;      = 9,
+           &quot;Eva&quot;      = 9,
+           &quot;James&quot;    = 10,
+           &quot;Kitty&quot;    = 11,
+           &quot;Zeb&quot;      = 9,
+           #---- Fun names ----#
+           &quot;R&quot;        = 26, 
+           &quot;2019&quot;     = 20,
+           &quot;MPCA&quot;     = 16,
+           &quot;Porgs!&quot;    = 84,
+           &quot;Endor&quot;     = 10,
+           &quot;Jakku&quot;     = 10,
+           &quot;BB8&quot;       = 12,
+           &quot;Rey&quot;       = 8,
+           &quot;Derek&quot;     = 8, 
+           &quot;Kristie&quot;   = 8, 
+           &quot;Barbara&quot;   = 8, 
+           &quot;Dorian&quot;    = 8)
+
+# Add 20 Star Wars names as small text, size = 4
+class &lt;- c(class, rep(4, 20))
+
+names(class)[(length(class) - 19):length(class)] &lt;- sample_n(starwars, 20)$name      
+
+# Plot the Word Cloud with the &quot;random-dark&quot; color theme
+wordcloud2(data.frame(word = names(class), freq = class), 
+           size  = 1, 
+           color = &#39;random-dark&#39;)</code></pre>
+<p><br></p>
+<ol start="3" style="list-style-type: decimal">
+<li>In R Studio click on <strong>File &gt; New File &gt; R Script</strong>. You will see a code editor window open.</li>
+</ol>
+<p><img src="images/new_script_file.png" style="width: 65%; margin-bottom: 18px;" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Paste the copied code into the upper left hand window. This is your code editor.<br />
+</li>
+<li>Highlight all of the code and hit <code>CTRL + ENTER</code>.</li>
+<li>You should see a Word Cloud pop up in the lower right of RStudio.</li>
+<li>Now try increasing the number next to your name.<br />
+</li>
+<li>Run the code again.
+<ul>
+<li>You may need to increase the size of the <code>Viewer</code> window shown below to make enough room for your name to appear. You can also click the <code>Zoom</code> icon to create a bigger word cloud.</li>
+</ul></li>
+<li>Make your name even <strong>BIGGER!</strong></li>
+</ol>
+<p><img src="images/rstudio_viewer_wordcloud.png" style="width:75.0%" /></p>
+<p><br>
+<br></p>
+<h3>
+Congrats rebel droid!
+</h3>
+</p>
+</div>
+</details>
+<p><br></p>

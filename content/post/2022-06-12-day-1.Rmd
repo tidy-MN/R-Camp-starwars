@@ -19,7 +19,7 @@ imageFloat: 'left'
 <h1 style="margin-top:-5px;"> Welcome to Jakku! </h1>
 <hr>
 
-You are BB8 and you've arrived to just in time. Rey needs your help!
+You've arrived just in time. Rey and BB8 need your help!
 
 The Junk boss Unkar is up to no-good and Rey needs to find some ship parts before she can escape this dusty rock. With your help she can finally get off Jakku and join forces with the New Republic. 
 

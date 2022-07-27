@@ -1,0 +1,45 @@
+item,units,pounds
+Bulkhead,Cubic Yards,321
+Hull Panel,Cubic Yards,641
+Repulsorlift array,Cubic Yards,467
+Starship sensor array,Cubic Yards,637
+Acceleration compensator,Items,1.5
+Activation cylinder,Items,25
+Antishock field,Items,153
+Atmospheric processor,Items,467
+Atmospheric thrusters,Items,2697
+Atomic drive,Items,5001
+Attitude thruster,Items,1369
+Backup hyperdrive,Items,45
+Black box,Items,15
+Carbon-Durasteel Armor,Items,4
+Dual-drive system,Items,78
+Electrotelescope,Items,198
+Energy-wave detector,Items,125
+Enviro filter,Items,3
+Full-spectrum transceiver,Items,457
+Hyperdrive,Items,6021
+Inertial compensator,Items,687
+Ion drive,Items,945
+Magnetic turbine,Items,6872
+Main drive,Items,789
+Microthruster,Items,39
+Optical transducer panel,Items,1237
+Repulsorlift generator,Items,232
+Aural sensor,Tons,2000
+Dedicated energy receptor,Tons,2000
+Electromagnetic discharge filter,Tons,2000
+Flight recorder,Tons,2000
+Hyperdrive motivator,Tons,2000
+Ion engine,Tons,2000
+Landing jet,Tons,2000
+Lateral thruster,Tons,2000
+Maneuvering jet,Tons,2000
+Navigation computer,Tons,2000
+Proximity sensor,Tons,2000
+Reactant agitator injector,Tons,2000
+Retrorocket,Tons,2000
+Sublight drive,Tons,2000
+Sublight engine,Tons,2000
+Turbo injector,Tons,2000
+Vitus-Series Attitude Thrusters,Tons,2000

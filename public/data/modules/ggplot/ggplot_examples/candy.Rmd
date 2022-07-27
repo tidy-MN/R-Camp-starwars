@@ -1,0 +1,88 @@
+
+<div style="padding: 22px; background-color: #93bf6636;  border-radius: 14px;">
+
+![](../images/candy_ratings_blk.png){style="width: 98%; margin-top: 12px; margin-bottom: 22px;"}
+
+Let's launch ourselves into the unknown and make a __candy plot__. With a little copy-pasting we can make an informative chart of everyone's favorite candy. 
+
+Since you have the best taste, let's make your candy <span style="font-size: 26px;"> __BIG__ </span>.
+
+<hr class="hr2" style="margin-top: 4px;">
+
+<h3> Instructions </h3>
+
+1. Copy all the code below. Hold __SHIFT__ and highlight all of the lines, until you reach `theme_ft_rc(base_size = 14)`.
+
+```{r wordcloud, eval=F}
+#-----------  Install packages  ---------------#
+install.packages("ggplot2")
+install.packages("readr")
+install.packages("hrbrthemes")
+
+
+#-------------  Load packages  ----------------#
+library(ggplot2)
+library(readr)
+library(hrbrthemes)
+
+
+#---------------- Candy data ------------------# 
+survey <- read_csv('candy,rating
+                   "Snickers",        14 
+                   "Almond Joy",      40 
+                   "Hersheys Kisses", 16 
+                   "Nerds",           5 
+                   "Sour Patch Kids", 8')
+
+ 
+ 
+```
+
+
+2. Open R Studio
+    - Select __File > New File > R Script__. You will see a code editor window open. 
+    - _Or click the paper icon with the green plus at the top left._
+
+![](../images/new_script_file.png){style="width: 65%; margin-bottom: 18px;"}
+
+3. Paste the copied code into the upper left hand window. This is your code editor.  
+4. Highlight all of the code and hit __CTRL+ENTER__.
+
+> This chart should appear in the lower right of RStudio.
+
+![](../images/candy_ratings_blk_viewer.png){width="60%"}
+
+<br>
+
+5. Change the name of a candy to something even better.
+6. Re-run the code again.
+7. Try increasing the number next to the new candy.
+
+>
+> <i class="fas fa-star" style="color: #f6cd00;"></i>__Bonus__<i class="fas fa-star" style="color: #f6cd00;"></i> 
+> 
+> - Add another candy and rating to the data.
+> - Add your name to the subtitle.
+> - Delete the hashtag in front of the `scale_viridis...` line. 
+>     - What happens when you re-run the code?
+> - Change the `show.legend =` value to `TRUE`
+>     - What happens?
+
+<h4> Congrats rebel droid! </h4>
+</div>
+
+<br>
+
+
+<div class="tip">
+### <i class="fas fa-hand-spock" style="color:#040707;"></i> Spock-tip! {-}
+
+- You don't need to memorize everything. Yay!
+    - Absorb what's possible. You can always look up details later.
+- R is a tool. You can use it without understanding all the inner workings. 
+- You are free to break things. Create errors. Make the computer angry. Learn through "mistakes". R will forgive you.
+- _Cheat_ if you're stuck.
+   - There's no test and you can't really _win_. So share with your neighbors. Copy others. 
+
+</div>
+

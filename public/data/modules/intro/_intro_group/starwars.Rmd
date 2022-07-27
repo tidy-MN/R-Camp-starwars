@@ -1,0 +1,45 @@
+
+Let's introduce ourselves and the data we love. Chat with your __partner__ and get to know 3 things about them.
+
+<br>
+
+__Things to share:__  
+
+![](../images/starwars_group.jpg){align="right" style="width: 48%; margin-left: 18px; margin-top: 10px;"}
+
+<div class="note" style="margin-top: 0; padding-top: 22px;">
+
+- Your name or Star Wars alias 
+- Types of data you have
+    - Who you share it with
+- Something you want to get from the workshop
+- The funniest part of your data
+- The most repetitive part?
+__Hint:__ _Maybe this is something you can automate with R_ 
+
+</div>
+
+<br>
+
+<div class="well">
+### Go Team {-}
+
+We're going to need to work together to help Rey get off the dusty planet Jakku. 
+Use each other as a resource. Share ideas, share code, collaborate. Make bad jokes.
+
+
+**Here's one:**
+
+<details>
+<summary class = "btn_code">   __Which Jedi is best at opening PDF files? >__  </summary>
+<div class="quiz" style="margin-top: -6px; border-radius: 0;">
+<p>
+
+__A:__ `Adobe Wan Kenobi`?
+ 
+![](../images/obi_wan.jpg){width="238"}
+
+</div></p></details>
+</div>
+
+<br>

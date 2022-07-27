@@ -88,10 +88,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#rstudio---a-grand-tour"><span class="toc-section-number">2</span> RStudio - A Grand Tour</a></li>
 <li><a href="#why-r">Why R?</a></li>
 <li><a href="#show-tell"><span class="toc-section-number">3</span> Show <span style="color: #3498db;"> &amp; </span> Tell</a></li>
-<li><a href="#names-and-things"><span class="toc-section-number">4</span> Names and things</a></li>
-<li><a href="#read-data"><span class="toc-section-number">5</span> Read data</a></li>
-<li><a href="#add-packages-r-apps"><span class="toc-section-number">6</span> Add packages 📦 <em>(R Apps)</em></a></li>
-<li><a href="#ggplot2"><span class="toc-section-number">7</span> ggplot2</a></li>
+<li><a href="#join-the-team"><span class="toc-section-number">4</span> Join the team</a></li>
+<li><a href="#names-and-things"><span class="toc-section-number">5</span> Names and things</a></li>
+<li><a href="#read-data"><span class="toc-section-number">6</span> Read data</a></li>
+<li><a href="#add-packages-r-apps"><span class="toc-section-number">7</span> Add packages 📦 <em>(R Apps)</em></a></li>
+<li><a href="#ggplot2"><span class="toc-section-number">8</span> ggplot2</a></li>
 <li><a href="#get-help"><i class="far fa-question-circle" aria-hidden="true" style="font-size: 48px;"></i> Get help!</a></li>
 <li><a href="#key-terms"><i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms</a></li>
 </ul>
@@ -150,19 +151,7 @@ Instructions
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Almond Joy&quot;,      40 </span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Hersheys Kisses&quot;, 16 </span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Nerds&quot;,           5 </span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Sour Patch Kids&quot;, 8&#39;</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#------- Column plot with dark theme ---------#</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(survey, </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> candy, <span class="at">y =</span> rating)) <span class="sc">+</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> candy), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">&quot;Candy Champions&quot;</span>, </span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Very official candy ratings&quot;</span>,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption  =</span> <span class="st">&quot;Data from Pechanga survey 2050&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_viridis_d()</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>(<span class="at">base_size =</span> <span class="dv">14</span>) </span></code></pre></div>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Sour Patch Kids&quot;, 8&#39;</span>)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Open R Studio
 <ul>
@@ -245,6 +234,82 @@ Congrats rebel droid!
 <p>Insert magic here…</p>
 </blockquote>
 <p><br></p>
+</div>
+<div id="join-the-team" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Join the team</h1>
+<hr>
+<div style="padding: 22px; border-radius: 14px;">
+
+<p><img src="../images/droid_app.png" style="width: 98%; margin-top: 12px; margin-bottom: 22px;" /></p>
+<p><img src="../images/droid_app.png" class="avatar" /></p>
+<div id="help-wanted" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> <strong>Help Wanted!</strong></h2>
+<p>Rey and BB8 posted a wanted ad for a data droid that can do some number crunching. If you want to help, you’ll need to submit an application.</p>
+<p>Customize the application below to put your personal spin on a data droid looking for work.</p>
+<hr class="hr2" style="margin-top: 4px;">
+<h3>
+Instructions
+</h3>
+<ol style="list-style-type: decimal">
+<li>Copy the code below.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------- Customize your Application -------------# </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pick a droid model</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 Options: &quot;Mouse&quot;, &quot;R2D2&quot;, &quot;Gonk&quot;, &quot;C3PO&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>droid <span class="ot">&lt;-</span> <span class="st">&quot;r2d2&quot;</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Give your droid a nickname</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>nickname <span class="ot">&lt;-</span> <span class="st">&quot;Data Sweeper&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Your top skill</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>skill <span class="ot">&lt;-</span> <span class="st">&quot;sweeping&quot;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#------------- Submit --------------------# </span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Ready to submit your application?</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="do">## -- Run all the lines above and then run the line below -or-</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="do">## -- Click the Source button at the top-right of the script screen (the one with the blue arrow). This will run everything in your script.</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/intro/droid_apps/submit_app.R&quot;</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>In RStudio, paste the copied code into the upper-left script window.</li>
+<li>Edit the fields to your liking.</li>
+<li>Highlight all of the code and hit <strong>CTRL+ENTER</strong>.</li>
+</ol>
+<p><br></p>
+</div>
+<div id="nice-work" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Nice work!</h2>
+<blockquote>
+<p>After a lot of flying text and some installations, something like this should appear.</p>
+</blockquote>
+<p><img src="../images/droid_app.png" style="width:60.0%" /></p>
+<p><br></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Try making some more changes to the application.</li>
+<li>Re-run the code again.</li>
+<li>Try adding the section below to your script:</li>
+</ol>
+</div>
+<div id="optional-addition" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Optional addition</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Edit your personal introduction below</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Droid bio</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>intro <span class="ot">&lt;-</span> <span class="st">&quot;**Hello!**  I am a classically trained data scientist living on planet Endor. Wherever I go I bring a supply of good energy. I currently work for the Oculus Corp, but I have been feeling rebellious lately. I love talking about urban forests and discussing true crime podcasts.&quot;</span></span></code></pre></div>
+</div>
+<p><br></p>
+<div id="yoda-tip" class="section level3 unnumbered tip">
+<h3><i style="color:#040707;">&lt;(°.°)&gt;</i> Yoda-tip!</h3>
+<ul>
+<li>R makes reports with R Markdown.</li>
+<li>R Markdown combines code and text to create reports with charts, presentations, and as you’ve just seen webpages.</li>
+</ul>
+</div>
+<p><br></p>
+</div>
 <div id="data-awaits-us" class="section level2 unnumbered">
 <h2>Data awaits us…</h2>
 <p><img src="../images/rey_bb8_sand_dunes.gif" style="width: 70%; margin-left: 10%;" /></p>
@@ -259,30 +324,30 @@ Congrats rebel droid!
 <p>Let’s make a new project for our <code>Jakku</code> scrap analysis.</p>
 </div>
 </div>
-<div id="names-and-things" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Names and things</h1>
+<div id="names-and-things" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Names and things</h1>
 <hr>
-<div id="add-a-comment" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Add a <code>#comment</code></h2>
+<div id="add-a-comment" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Add a <code>#comment</code></h2>
 </div>
 </div>
-<div id="read-data" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Read data</h1>
+<div id="read-data" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Read data</h1>
 <hr>
 </div>
-<div id="add-packages-r-apps" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Add packages 📦 <em>(R Apps)</em></h1>
+<div id="add-packages-r-apps" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Add packages 📦 <em>(R Apps)</em></h1>
 <hr>
-<div id="read-the-data" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Read the data</h2>
+<div id="read-the-data" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Read the data</h2>
 <p>Let’s load the <em>readr</em> package so we can use the <code>read_csv()</code> function to read the Jakku scrap data.</p>
 <div id="section" class="section level3 unnumbered">
 <h3 class="unnumbered"></h3>
 </div>
 </div>
 </div>
-<div id="ggplot2" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> ggplot2</h1>
+<div id="ggplot2" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> ggplot2</h1>
 <hr>
 <div id="plot-the-data-plot-the-data-plot-the-data" class="section level3 unnumbered">
 <h3><em>Plot the data, Plot the data, Plot the data</em></h3>

@@ -31,13 +31,13 @@
   </url>
   
   <url>
-    <loc>https://mn-r.netlify.app/tags/training.html</loc>
+    <loc>https://mn-r.netlify.app/categories/training.html</loc>
     <lastmod>2018-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mn-r.netlify.app/categories/training.html</loc>
+    <loc>https://mn-r.netlify.app/tags/training.html</loc>
     <lastmod>2018-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -75,11 +75,6 @@
   </url>
   
   <url>
-    <loc>https://mn-r.netlify.app/data/modules/rstudio_newproject/general.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://mn-r.netlify.app/images/banner.html</loc>
     <priority>0</priority>
   </url>
@@ -90,11 +85,6 @@
   
   <url>
     <loc>https://mn-r.netlify.app/page/compare_years.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://mn-r.netlify.app/data.html</loc>
-    <priority>0</priority>
   </url>
   
   <url>

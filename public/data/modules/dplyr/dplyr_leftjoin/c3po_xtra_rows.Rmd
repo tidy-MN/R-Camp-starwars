@@ -1,0 +1,183 @@
+
+<details>
+<summary class="btn_code_blue"> 
+<span style="color: #f6cd00;"><i class="fas fa-star"></i>__BONUS__<i class="fas fa-star"></i></span> __More joining__</summary>
+
+<div class="note" style="margin-top: -10px;">
+<p>
+
+### Star Wars characters {-}
+
+**left_join()** is used to add columns to your table by pulling them from another table. Imagine you have the 2 Star Wars tables below. One table includes character names and heights; the second has names and homeworlds. Since both tables share a common name column, we can join the tables together using the name columns as the joining key. 
+
+<style type="text/css"> 
+.table {width: 30%;} 
+</style>
+
+<br>
+
+<div style="float: left;">
+
+`starwars_heights`
+```{r, echo=F, warning=F, message=F}
+library(dplyr)
+library(knitr)
+
+starwars_heights <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
+                               height = c(172, 167, 202, 150, 246))       
+
+starwars_homeworlds <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
+                                  homeworld = c("Tatooine", "Tatooine", "Tatooine", "Alderaan", "Ryloth"))
+
+
+kable(starwars_heights)
+
+```
+
+</div>
+
+<div style="float: left; margin-left: 15%;">
+
+`starwars_homeworlds`
+```{r, echo =F, warning=F, message=F}
+kable(starwars_homeworlds)
+```
+
+</div>
+
+<div style="clear: both;"> </div>
+
+<br>
+
+__Uh oh!__ There's no "Ayla Secura" in the height table and there's no "Greedo" in the homeworld table. Can we still join the tables? Run the code below to see what happens.
+
+<br>
+
+```{r, warning=F, message=F, results='hide', echo=T}
+library(dplyr)
+   
+# Create new tables 
+starwars_heights <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
+                               height = c(172, 167, 202, 150, 246))      
+
+starwars_homeworlds <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
+                                  homeworld = c("Tatooine", "Tatooine", "Tatooine", "Alderaan", "Ryloth"))
+
+# Join the tables together by starwars_name
+## Tell left_join which columns to use as the key with:  
+##     by = c("key_left" = "key_right")
+height_and_homeworld <- left_join(starwars_heights, starwars_homeworlds, 
+                                  by = c("starwars_name" = "starwars_name"))
+
+height_and_homeworld
+```
+
+<br>
+
+```{r, echo = F}
+kable(height_and_homeworld)
+```
+
+<br>
+
+#### Did it work? {-}
+
+When **left_join** adds the `homeworlds` column to the *starwars_heights* table it only adds a value for the characters when the tables have a matching character name. When R couldn't find "Greedo" in the homeworld table, the Star Wars character's homeworld was recorded as missing or _`NA`_.  
+
+<br>
+
+
+
+### Multiple records {-}
+
+<div>
+![](../images/c3po.png){style="width: 13%; float: left; margin-top: 12px; margin-right: 4px;"} ![](../images/c3po.png){style="width: 13%; float: left; margin-top: 12px; margin-right: 28px;"}
+</div>
+
+<br>
+
+Now imagine the table `starwars_homeworld` has two records for C-3PO, each with a different homeworld listed.  
+
+What will happen when you join the two tables?
+
+<div style="clear: both;"> <br> </div>
+
+
+<div style="float: left;">
+
+`starwars_heights`
+
+```{r, echo=F, warning=F, message=F}
+library(knitr)
+
+# Create height table 
+starwars_heights <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
+                               height = c(172, 167, 202, 150, 246))
+kable(starwars_heights)
+
+```
+
+</div>
+
+
+<div style="float: left; margin-left: 15%;">
+
+`starwars_homeworlds`
+
+```{r, echo =F, warning=F, message=F}
+
+kable(data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
+                                    homeworld = c("Tatooine", "Tatooine", "Tantive IV", "Tatooine", "Alderaan", "Ryloth")))
+```
+
+</div>
+
+<div style="clear: both;"> </div>
+
+<br>
+
+When you run the code below you'll see that **left_join** is very thorough and adds each additional homeworld it finds for _C-3PO_ as a new row in the joined table. 
+
+```{r, warning=F, message=F, results='hide'}
+# Create new tables 
+starwars_heights <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
+                               height  = c(172, 167, 202, 150, 173))
+
+
+starwars_homeworlds <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
+                                  homeworld = c("Tatooine", "Tatooine", "Tantive IV", "Tatooine", "Alderaan", "Ryloth"))
+
+# Join the tables together by Star Wars character name
+height_and_homeworld <- left_join(starwars_heights, starwars_homeworlds)
+
+# Check number of rows
+nrow(height_and_homeworld)
+
+height_and_homeworld
+```
+
+<br>
+
+```{r, echo = F}
+kable(height_and_homeworld)
+```
+
+<br>
+
+<div class="blockquote">
+This results in a table with one extra row than we started with in our heights table. So growing table sizes are a sign of duplicate records when using **left_join()**. 
+
+In practice, when you see this you'll want to investigate why one of your tables has duplicate entries, especially if the observation for the two rows is different, as it was for _C-3PO's_ homeword. 
+
+Are there really two different Star Wars characters named _C-3PO_, or maybe someone made two different guesses about the droid's homeworld, or maybe the data simply has a mistake. 
+
+</div>
+
+</p></div>
+</details>
+
+<style type="text/css"> 
+.table {width: auto;} 
+</style>
+
+<br>

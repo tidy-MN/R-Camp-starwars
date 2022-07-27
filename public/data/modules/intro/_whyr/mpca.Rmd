@@ -1,0 +1,29 @@
+
+![](../images/rladies_map.gif){style="width: 97%;"}
+
+## R Community {-}
+
+- See the [R Community](https://itep-r.netlify.com/page/community.html) page.
+- Finding R Help - [Get Help!](help.html)
+- [R Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+
+## When we use R {-}
+
+- To connect to databases
+- To read data from websites
+- To document and share methods
+- When data will have frequent updates
+- When we want to improve a process over time
+
+
+## R is for reading {-}
+
+![](../images/R_recipe.png){style="width: 54%; float: left; margin-right: 28px; margin-left: -16px; margin-top: 9px; margin-bottom: 12px;"}
+
+Lucky for us, R code doesn't have to be only math equations. R let's us do data analysis in a step-by-step fashion, much like creating a recipe for cookies. And just like a recipe, we can start at the top and read our way down to the bottom. 
+
+<div style="clear: both;"></div>
+
+
+<br>
+

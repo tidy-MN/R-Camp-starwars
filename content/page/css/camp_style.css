@@ -409,4 +409,5 @@ div.alert a {
     flex-shrink: 0;
     margin-right: 16px;
     box-shadow: 0 0 0 1px gray;
+    float: left;
 }

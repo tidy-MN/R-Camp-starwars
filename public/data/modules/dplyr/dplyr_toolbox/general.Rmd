@@ -1,0 +1,22 @@
+
+# <i class="fa fa-toolbox"></i> Your analysis toolbox  {-}
+<hr class="hr2">
+
+`dplyr` is the hero for most analysis tasks. With these six functions you can accomplish just about anything you want with your data.
+
+<div class="pinkcode">
+
+<br>
+
+>
+> | Function      | Job                                                 |  
+> |:--------------|:----------------------------------------------------|  
+> | `select()`    | Select individual columns to drop or keep           |  
+> | `arrange()`   | Sort a table top-to-bottom based on the values of a column |  
+> | `filter()`    | Keep only a subset of rows depending on the values of a column      | 
+> | `mutate()`    | Add new columns or update existing columns          | 
+> | `summarize()` | Calculate a single summary for an entire table     |   
+> | `group_by()`  | Sort data into groups based on the values of a column  |  
+>
+
+</div>

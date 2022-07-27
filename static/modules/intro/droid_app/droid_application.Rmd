@@ -1,0 +1,81 @@
+<div style="padding: 22px; border-radius: 14px;">
+
+![](../images/droid_app.png){style="width: 98%; margin-top: 12px; margin-bottom: 22px;"}
+
+<img src="../images/droid_app.png" class="avatar" />
+
+## **Help Wanted!** 
+
+Rey and BB8 posted a wanted ad for a data droid that can do some number crunching. If you want to help, you'll need to submit an application. 
+
+Customize the application below to put your personal spin on a data droid looking for work.
+
+<hr class="hr2" style="margin-top: 4px;">
+
+<h3> Instructions </h3>
+
+1. Copy the code below.
+
+```{r droid, eval=F}
+#--------- Customize your Application -------------# 
+
+# Pick a droid model
+## 4 Options: "Mouse", "R2D2", "Gonk", "C3PO"
+droid <- "r2d2" 
+
+# Give your droid a nickname
+nickname <- "Data Sweeper"
+
+## Your top skill
+skill <- "sweeping"
+
+#------------- Submit --------------------# 
+
+# Ready to submit your application?
+
+## -- Run all the lines above and then run the line below -or-
+## -- Click the Source button at the top-right of the script screen (the one with the blue arrow). This will run everything in your script.
+source("https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/intro/droid_apps/submit_app.R")
+ 
+```
+
+2. In RStudio, paste the copied code into the upper-left script window.
+3. Edit the fields to your liking.
+4. Highlight all of the code and hit __CTRL+ENTER__.
+
+<br>
+
+## Nice work!
+
+> After a lot of flying text and some installations, something like this should appear.
+
+![](../images/droid_app.png){width="60%"}
+
+<br>
+
+5. Try making some more changes to the application.
+6. Re-run the code again.
+7. Try adding the section below to your script:
+
+## Optional addition
+```{r}
+# Optional
+## Edit your personal introduction below
+
+# Droid bio
+intro <- "**Hello!**  I am a classically trained data scientist living on planet Endor. Wherever I go I bring a supply of good energy. I currently work for the Oculus Corp, but I have been feeling rebellious lately. I love talking about urban forests and discussing true crime podcasts."
+```
+
+
+</div>
+
+<br>
+
+
+<div class="tip">
+### <i style="color:#040707;"><(°.°)></i> Yoda-tip! {-}
+
+- R makes reports with R Markdown. 
+- R Markdown combines code and text to create reports with charts, presentations, and as you've just seen webpages.
+</div>
+

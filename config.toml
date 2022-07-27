@@ -5,7 +5,7 @@ theme = "beautifulhugo"
 summaryLength = 20
 metaDataFormat = "yaml"
 #highlightjsLang = ["r"]
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "static/data/*", "content/page/data/*", "page/data/*"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "static/data/.*", "content/page/data/.*", "page/data/*"]
 #relativeURLs = true
 uglyURLs = true
 

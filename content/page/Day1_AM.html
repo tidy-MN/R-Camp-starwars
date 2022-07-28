@@ -372,34 +372,34 @@ Use each other as a resource. Share ideas, share code, collaborate. Make bad jok
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2016-07-19</td>
+<td align="right">17</td>
+<td align="right">73.4</td>
+</tr>
+<tr class="even">
 <td align="left">27-137-7001</td>
-<td align="left">2016-09-24</td>
+<td align="left">2017-07-09</td>
 <td align="right">8</td>
-<td align="right">66.2</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2017-09-10</td>
-<td align="right">2</td>
-<td align="right">53.6</td>
+<td align="right">71.6</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2016-05-21</td>
-<td align="right">4</td>
-<td align="right">59.6</td>
+<td align="left">2017-10-19</td>
+<td align="right">11</td>
+<td align="right">62.6</td>
 </tr>
 <tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2018-09-05</td>
-<td align="right">6</td>
-<td align="right">64.4</td>
+<td align="left">27-137-7554</td>
+<td align="left">2018-05-30</td>
+<td align="right">10</td>
+<td align="right">75.2</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2018-06-27</td>
-<td align="right">13</td>
-<td align="right">63.8</td>
+<td align="left">2018-08-28</td>
+<td align="right">16</td>
+<td align="right">71.6</td>
 </tr>
 </tbody>
 </table>
@@ -534,11 +534,13 @@ Use each other as a resource. Share ideas, share code, collaborate. Make bad jok
 <hr>
 <div style="padding: 22px; border-radius: 14px;">
 
-<p><img src="../images/trash_droid_rev.png" class="avatar" /></p>
+<p><img src="../images/trash_droid_rev.png" style="width: 150px; float: left; margin-right: 30px;" /></p>
 <p>Rey and BB8 just posted a wanted ad for a data droid. This is your chance. If you want to join the team, you’ll need to submit an application.</p>
+<div style="clear: both">
 <blockquote>
-<p>Customize the application below to put your personal spin on a data droid looking for work.</p>
+<p>Customize the application below to apply to join the team.</p>
 </blockquote>
+</div>
 <hr class="hr2" style="margin-top: 4px;">
 <h3>
 Instructions
@@ -566,16 +568,13 @@ Instructions
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/intro/droid_apps/submit_app.R&quot;</span>)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
-<li>In RStudio, paste the copied code into the upper-left script window.</li>
-<li>Edit the fields to your liking.</li>
-<li>Highlight all of the code and hit <strong>CTRL+ENTER</strong>.</li>
+<li>Paste the copied code into the upper-left script window of RStudio.</li>
+<li>Edit the name fields to your liking.</li>
+<li>Highlight all of the code and click <kbd> <strong>CTRL</strong></kbd> + <kbd> <strong>ENTER</strong></kbd>.</li>
 </ol>
-<p><br></p>
 <div id="nice-work" class="section level2 unnumbered">
 <h2>Nice work!</h2>
-<blockquote>
 <p>After a lot of flying text and some installations, something like this should appear.</p>
-</blockquote>
 <p><img src="../images/droid_app.png" style="width:60.0%" /></p>
 <p><br></p>
 <ol start="5" style="list-style-type: decimal">
@@ -589,11 +588,15 @@ Instructions
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Edit your personal introduction </span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Droid bio</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>intro <span class="ot">&lt;-</span> <span class="st">&quot;**Hello!**  I am a classically trained data scientist living on planet Endor. Wherever I go I bring a supply of good energy. I currently work for the Oculus Corp, but I have been feeling rebellious lately. I love talking about urban forests and discussing true crime podcasts.&quot;</span></span></code></pre></div>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>intro <span class="ot">&lt;-</span> <span class="st">&quot;**Hello!**  I am a classically trained data scientist living on planet Endor. </span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="st">Wherever I go I bring a supply of good energy. I currently work for the Oculus Corp, </span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="st">but I have been feeling rebellious lately. I love talking about urban forests and discussing</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="st">true crime podcasts.&quot;</span></span></code></pre></div>
 </div>
 <p><br></p>
-<div id="yoda-says-1" class="section level3 unnumbered tip">
-<h3><img src="../images/yoda_baby_sq.png" style="width: 40px; float: left; margin-top: -3px; margin-right: 6px;"> Yoda says</h3>
+<div id="yoda-says-1" class="section level3 unnumbered droid">
+<h3>Yoda says</h3>
+<p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
 <ul>
 <li>R makes reports with R Markdown.</li>
 <li>R Markdown combines code and text to create dynamic reports with charts, presentations, and webpages.</li>
@@ -601,12 +604,12 @@ Instructions
 </div>
 <p><br></p>
 </div>
-<div id="data-awaits-us" class="section level2 unnumbered">
-<h2>Data awaits us…</h2>
+<div id="youre-on-the-team-lets-find-some-data" class="section level2 unnumbered">
+<h2>You’re on the TEAM! Let’s find some data…</h2>
 <p><img src="../images/rey_bb8_sand_dunes.gif" style="width: 70%; margin-left: 10%;" /></p>
 <p><br></p>
 <div class="well">
-<p>Let’s go find some trouble. While BB8 works on tracking down data for us from his droid friends, we’ll get to know his internal computer.</p>
+<p>Let’s prepare for some real garbage data. While BB8 tracks down data from his scrapyard friends, we can get to know R.</p>
 </div>
 </div>
 <div id="new-data---new-r-project" class="section level2 unnumbered">
@@ -727,12 +730,12 @@ It’s more officially known as the <em>assignment operator</em>.</p>
 <p><br></p>
 <details>
 <summary class="btn_code_blue">
-<strong>Deleting data is okay!</strong> &gt;
+<strong>Deleting data is okay!</strong>
 </summary>
+<div class="note" style="margin-top: 0;">
 <p>
-<div class="note">
 <p>Don’t worry about deleting data or objects in R. You can always recreate them! When R loads your data it copies the contents and then cuts off any connection to the original data. So your original data remain safe and won’t suffer any accidental changes. That means if something disappears or goes wrong in R, it’s okay. We can re-run the R script to get the data back.</p>
-It’s common to frequently re-run your entire R script during your analysis.
+It’s common and good practice to frequently <strong>re-run</strong> your entire R script during your analysis.
 <br>
 </p>
 </div>
@@ -858,8 +861,8 @@ Note
 </div>
 <p><br></p>
 </div>
-<div id="add-a-comment" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Add a <code>#comment</code></h2>
+<div id="add-a-comment" class="section level2 unnumbered">
+<h2>Add a <code>#comment</code></h2>
 <p>The lines of code in the scripts that start with a <code>#</code> in front are called comments.
 Every line that starts with a <code>#</code> is ignored and won’t be run as R code.
 You can use the <code>#</code> to add notes in your script to make it easier for others and yourself to understand what is happening and why.
@@ -1019,8 +1022,8 @@ Note
 <li><code>library(package-name)</code></li>
 </ol>
 </div>
-<div id="read-the-data-1" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Read the data</h2>
+<div id="read-the-data-1" class="section level2 unnumbered">
+<h2>Read the data</h2>
 <p>Let’s load the <em>readr</em> package so we can use the <code>read_csv()</code> function to read the Jakku scrap data.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;readr&quot;)</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>

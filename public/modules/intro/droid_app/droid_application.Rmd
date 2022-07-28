@@ -1,12 +1,13 @@
 <div style="padding: 22px; border-radius: 14px;">
 
-<img src="../images/trash_droid_rev.png" class="avatar" />
+<img src="../images/trash_droid_rev.png" style="width: 150px; float: left; margin-right: 30px;" />
 
 Rey and BB8 just posted a wanted ad for a data droid. This is your chance. If you want to join the team, you'll need to submit an application. 
 
+<div style="clear: both">
+> Customize the application below to apply to join the team.
 
-> Customize the application below to put your personal spin on a data droid looking for work.
-
+</div>
 <hr class="hr2" style="margin-top: 4px;">
 
 <h3> Instructions </h3>
@@ -36,15 +37,14 @@ source("https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/i
  
 ```
 
-2. In RStudio, paste the copied code into the upper-left script window.
-3. Edit the fields to your liking.
-4. Highlight all of the code and hit __CTRL+ENTER__.
+2. Paste the copied code into the upper-left script window of RStudio.
+3. Edit the name fields to your liking.
+4. Highlight all of the code and click <kbd> **CTRL**</kbd> + <kbd> **ENTER**</kbd>.
 
-<br>
 
 ## Nice work! {-}
 
-> After a lot of flying text and some installations, something like this should appear.
+After a lot of flying text and some installations, something like this should appear.
 
 ![](../images/droid_app.png){width="60%"}
 
@@ -59,7 +59,10 @@ source("https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/i
 # Edit your personal introduction 
 
 # Droid bio
-intro <- "**Hello!**  I am a classically trained data scientist living on planet Endor. Wherever I go I bring a supply of good energy. I currently work for the Oculus Corp, but I have been feeling rebellious lately. I love talking about urban forests and discussing true crime podcasts."
+intro <- "**Hello!**  I am a classically trained data scientist living on planet Endor. 
+Wherever I go I bring a supply of good energy. I currently work for the Oculus Corp, 
+but I have been feeling rebellious lately. I love talking about urban forests and discussing
+true crime podcasts."
 ```
 
 
@@ -68,8 +71,10 @@ intro <- "**Hello!**  I am a classically trained data scientist living on planet
 <br>
 
 
-<div class="tip">
-### <img src="../images/yoda_baby_sq.png" style="width: 40px; float: left; margin-top: -3px; margin-right: 6px;"> Yoda says {-}
+<div class="droid">
+###  Yoda says {-}
+
+<img src="../images/yoda_baby_sq.png" class="yoda-img">
 
 - R makes reports with R Markdown. 
 - R Markdown combines code and text to create dynamic reports with charts, presentations, and webpages.

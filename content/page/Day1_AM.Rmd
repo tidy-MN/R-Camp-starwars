@@ -106,14 +106,14 @@ cat(knitr::knit_child("../../static/modules/_example_7steps/ozone.Rmd", quiet = 
 <br>
 
 
-## Data awaits us... {-}
+## You're on the TEAM! Let's find some data... {-}
 
 ![](../images/rey_bb8_sand_dunes.gif){style="width: 70%; margin-left: 10%;"}
 
 <br>
 
 <div class="well">
-Let's go find some trouble. While BB8 works on tracking down data for us from his droid friends, we'll get to know his internal computer. 
+Let's prepare for some real garbage data. While BB8 tracks down data from his scrapyard friends, we can get to know R. 
 </div>
 
 
@@ -135,7 +135,7 @@ params <- list(name1 = 'jakku1.R', name2 = 'day1.R')
 ```
 
 
-## Add a `#comment`
+## Add a `#comment` {-}
 ```{r comments, child='../../static/modules/_comments.Rmd'}
 ```
 
@@ -152,7 +152,7 @@ params <- list(name1 = 'jakku1.R', name2 = 'day1.R')
 ```
 
 
-## Read the data
+## Read the data {-}
 
 Let's load the _readr_ package so we can use the `read_csv() ` function to read the Jakku scrap data.
 ```{r read_snippet, child='../../static/modules/readr/readr_load/scrap_snippet.Rmd'}

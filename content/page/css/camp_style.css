@@ -146,7 +146,7 @@ blockquote
 
 .note h3 {
   color: #eeeef3;
-  background: #6238ff;
+  background: #5e666d;
   margin-top: -13px;
   margin-bottom: 16px;
   margin-left: -26px;
@@ -200,14 +200,51 @@ blockquote
      margin-bottom: 26px;
 }
 
+.yoda
+{
+    background-color: #d2f0c6;
+    border: solid 1px #86af49;
+    /* border-radius: 25px; */
+    font-size: 17px;
+    /* line-height: 19px; */
+    /* overflow: hidden; */
+    padding: 0px;
+    padding-top: 2px;
+    padding-bottom: 14px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    border-left: solid 56px #f5f5f3;
+}
+
+.yoda:after {
+    display: block;
+    content: "";
+    width: 45px;
+    background: transparent url('../images/yoda_baby_sq.png') no-repeat;
+}
+
+.yoda-img {
+    width: 45px;
+    float: left;
+    margin-top: -52px;
+    margin-left: -50px;
+    margin-bottom: -38px;
+    padding-top: -1px;
+    margin-right: 23px;
+}
+
+.yoda.h3 {
+  padding-left: 25px;
+  margin-top: -13px;
+}
+
 table {margin-top: 20px; margin-bottom: 18px;}
 
-.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5;}
+.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow: inherit;}
 
-pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5;}
+pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow: inherit;}
 
-.data
-{
+.data {
      background-color: #d2f0c6;
      border-left: solid 5px #86af49;
      border-radius: 25px;
@@ -410,3 +447,4 @@ div.alert a {
     box-shadow: 0 0 0 1px gray;
     float: left;
 }
+

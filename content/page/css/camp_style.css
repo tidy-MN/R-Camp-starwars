@@ -216,11 +216,11 @@ blockquote
     border-left: solid 56px #f5f5f3;
 }
 
-.yoda:after {
-    display: block;
-    content: "";
-    width: 45px;
-    background: transparent url('../images/yoda_baby_sq.png') no-repeat;
+div.yoda {
+  background-image: url('../images/yoda_baby_sq.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left center;
 }
 
 .yoda-img {
@@ -240,9 +240,9 @@ blockquote
 
 table {margin-top: 20px; margin-bottom: 18px;}
 
-.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow: inherit;}
+.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow-y: clip;}
 
-pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow: inherit;}
+pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow-y: clip;}
 
 .data {
      background-color: #d2f0c6;

@@ -1,16 +1,17 @@
 <div style="padding: 22px; border-radius: 14px;">
 
-<img src="../images/trash_droid_rev.png" style="width: 150px; float: left; margin-right: 30px;" />
+<img src="../images/trash_droid_rev.png" style="width: 120px; float: left; margin-right: 30px; margin-bottom: 12px;" />
 
-Rey and BB8 just posted a wanted ad for a data droid. This is your chance. If you want to join the team, you'll need to submit an application. 
+Rey and BB8 just posted a wanted ad for a data droid. This is your chance. But if you want to join the team, you'll need to submit an application. 
 
 <div style="clear: both">
-> Customize the application below to apply to join the team.
+> Customize the application below to apply. The first step is picking a droid.
 
 </div>
-<hr class="hr2" style="margin-top: 4px;">
+
 
 <h3> Instructions </h3>
+<hr class="hr2" style="margin-top: 4px;">
 
 1. Copy the code below.
 
@@ -32,7 +33,6 @@ skill <- "sweeping"
 ## -- Option 2. Click the Source button at the top-right of the script screen 
 ### -- (the one with the blue arrow). 
 ### -- This runs all the lines in your script.
-
 source("https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/intro/droid_apps/submit_app.R")
  
 ```
@@ -44,7 +44,7 @@ source("https://raw.githubusercontent.com/MPCA-data/R-Camp/main/static/modules/i
 
 ## Nice work! {-}
 
-After a lot of flying text and some installations, something like this should appear.
+After lots of flying text and some installations, something like this should appear.
 
 ![](../images/droid_app.png){width="60%"}
 
@@ -52,26 +52,26 @@ After a lot of flying text and some installations, something like this should ap
 
 5. Try making some more changes to the application.
 6. Re-run the code again.
-7. Try adding the section below to your script:
 
-## Bonus {-}
+### Bonus {-}
+
+You can add a personal touch to your droid by updating their bio section.
+
+`Copy`+`paste` the code below into your script, make edits, and re-run. You know the drill.
 ```{r}
-# Edit your personal introduction 
-
-# Droid bio
+# Your droid bio
 intro <- "**Hello!**  I am a classically trained data scientist living on planet Endor. 
 Wherever I go I bring a supply of good energy. I currently work for the Oculus Corp, 
 but I have been feeling rebellious lately. I love talking about urban forests and discussing
 true crime podcasts."
 ```
 
-
 </div>
 
 <br>
 
 
-<div class="droid">
+<div class="yoda">
 ###  Yoda says {-}
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">

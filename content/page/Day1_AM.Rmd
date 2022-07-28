@@ -17,6 +17,8 @@ library(rmarkdown)
 library(knitr)
 library(magrittr)
 
+xaringanExtra::use_clipboard()
+
 opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
 
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
@@ -36,15 +38,14 @@ source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_m
 # Good morning! {-}
 <hr class="hr2">
 
-![](../images/nien_nunb_sq.jpg){class="avatar border" style="border: 2px; float: left; margin-left: 1%;"}
+<img src="../images/yoda_sq.png" class="avatar" style="border: 2px; float: left; margin-left: 1%;" />
 
-<img src="../images/maz_kanata_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;">
+<img src="../images/nien_nunb_sq.jpg" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;" />
+<img src="../images/maz_kanata_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;" />
+<img src="../images/jarjar_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;" />
+<img src="../images/ackbar_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;" />
 
-<img src="../images/jarjar_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;">
 
-<img src="../images/ackbar_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;">
-
-<img src="../images/yoda_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;">
 
 We like __R__.
 
@@ -86,13 +87,10 @@ cat(knitr::knit_child("../../static/modules/_example_7steps/ozone.Rmd", quiet = 
 ```
 
 
-## Show <span style="color: #3498db;"> & </span> Tell {-}
-
-
 <br>
 
 >
-> Insert magic here...
+> ## Show <span style="color: #3498db;"> & </span> Tell {-}
 >
 
 <br>
@@ -106,7 +104,9 @@ cat(knitr::knit_child("../../static/modules/_example_7steps/ozone.Rmd", quiet = 
 <br>
 
 
-## You're on the TEAM! Let's find some data... {-}
+## You're on the TEAM!  {-}
+
+**Data awaits...**
 
 ![](../images/rey_bb8_sand_dunes.gif){style="width: 70%; margin-left: 10%;"}
 

@@ -45,6 +45,7 @@ source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_m
 <img src="../images/jarjar_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;" />
 <img src="../images/ackbar_sq.png" class="avatar" style="border: 2px; margin-left: 12px; margin-bottom: 42px;" />
 
+<div style="clear: both;"></div>
 
 We like __R__.
 

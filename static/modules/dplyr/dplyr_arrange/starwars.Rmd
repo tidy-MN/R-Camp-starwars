@@ -41,8 +41,8 @@ __Hint:__ You can view the entire table by clicking on it in the upper-right _En
 </div>
 
 
-<div class="note">
-### <i class="fas fa-hand-spock"></i> Spock-tip! {-}
+<div class="yoda">
+###  Yoda says {-}
 
 When you save an arranged data table it maintains its order. This is perfect for sending people a quick __` Top 10 `__ list of pollutants or sites.
 

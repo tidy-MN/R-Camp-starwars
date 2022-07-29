@@ -366,8 +366,8 @@ _Woop! Go get em! So long Jakku - see you never!_
 
 
 
-<div class="note">
-### <i class="fas fa-hand-spock"></i> Spock-tip! {-}
+<div class="yoda">
+###  Yoda says {-}
 
 When you add more layers using `+` remember to place it at the end of each line.
 

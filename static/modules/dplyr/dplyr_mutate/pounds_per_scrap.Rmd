@@ -9,6 +9,7 @@ Now that we have pounds per unit we can use `mutate` to calculate the total poun
 
 
 ```{r, echo=F, eval=F}
+library(dplyr)
 scrap <- scrap %>% 
          mutate(total_pounds = amount * pounds_per_unit)
 ```
@@ -94,7 +95,7 @@ scrap <- scrap %>%
 ```
 
 
-## Price per item {-}
+## Price per item $ {-}
 
 __Great!__ Let's add one last column. We can divide the shipment's _credits_ by the _amount_ of items to get the `price_per_unit`.
 

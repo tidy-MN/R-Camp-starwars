@@ -21,7 +21,7 @@ library(readr)
 library(dplyr)
 
 # Read in the full scrap data
-scrap <- read_csv("scrap_day2_pm.csv")
+scrap <- read_csv("scrap_day2pm.csv")
 ```
 
 <style>
@@ -263,7 +263,7 @@ Be bold and make a __boxplot__. We've covered how to do a scatterplot with `geom
 
 ## Save plots {-}
 <hr class="hrlvl2">
-```{r glossary, child='../../static/modules/ggplot/ggplot/ggplot_save/save_plot.Rmd'}
+```{r glossary, child='../../static/modules/ggplot/ggplot_save/save_plot.Rmd'}
 ```
 
 

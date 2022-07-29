@@ -25,16 +25,16 @@ source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_m
 
 
 ## Data exploration {-} 
-```{r glimpse, child='../../static/modules/dplyr_install/general.Rmd'}
+```{r glimpse, child='../../static/modules/dplyr/dplyr_install/general.Rmd'}
 ```
 
 
 ## Get to know your data frame {-}
-```{r glimpse, child='../../static/modules/dplyr_glimpse/starwars.Rmd'}
+```{r glimpse, child='../../static/modules/dplyr/dplyr_glimpse/starwars.Rmd'}
 ```
 
 
-```{r tools, child='../../static/modules/dplyr_toolbox/general.Rmd'}
+```{r tools, child='../../static/modules/dplyr/dplyr_toolbox/general.Rmd'}
 ```
 
 
@@ -50,13 +50,13 @@ cat(readLines("porg_tabs.txt"))
 
 # `select()`
 <hr>
-```{r select, child='../../static/modules/dplyr_select/starwars.Rmd'}
+```{r select, child='../../static/modules/dplyr/dplyr_select/starwars.Rmd'}
 ```
 
 
 # Sort with `arrange()` 
 <hr>
-```{r arrange, child='../../static/modules/dplyr_arrange/starwars.Rmd'}
+```{r arrange, child='../../static/modules/dplyr/dplyr_arrange/starwars.Rmd'}
 ```
 
 
@@ -69,7 +69,7 @@ cat(readLines("porg_tabs.txt"))
 
 # `filter()`
 <hr>
-```{r arrange, child='../../static/modules/dplyr_filter/starwars.Rmd'}
+```{r arrange, child='../../static/modules/dplyr/dplyr_filter/starwars.Rmd'}
 ```
 
 <div class="well">
@@ -79,19 +79,19 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 
 # `mutate()`
 <hr>
-```{r arrange, child='../../static/modules/dplyr_mutate/starwars.Rmd'}
+```{r arrange, child='../../static/modules/dplyr/dplyr_mutate/starwars.Rmd'}
 ```
 
 
 ## Final stretch! {-}
 <hr class="hrlvl2">
-```{r arrange, child='../../static/modules/dplyr_filter/ionengine.Rmd'}
+```{r arrange, child='../../static/modules/dplyr/dplyr_filter/ionengine.Rmd'}
 ```
 
 
 # Save our data
 <hr>
-```{r save, child='../../static/modules/readr_write/scrap_pounds.Rmd'}
+```{r save, child='../../static/modules/readr/readr_write/scrap_pounds.Rmd'}
 ```
 
 
@@ -104,7 +104,7 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 
 ![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
 
-```{r child = '../../static/modules/ggplot_sandwich/sandwich.Rmd'}
+```{r child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
 ```
 
 
@@ -112,10 +112,6 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 # Shutdown complete
 <hr>
 ```{r shutdown, child='../../static/modules/shutdown.Rmd'}
-```
-
-
-```{r fun_stormtroopers, child='../../static/modules/base_functions/stormtroopers.Rmd'}
 ```
 
 

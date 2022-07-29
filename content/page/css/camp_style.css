@@ -1,16 +1,20 @@
 
 code {color: #535353}
 
+fa {
+  margin-right: 10px;
+}
+
 .blue {
   color: #3498db;
   background: #3498db;
 }
 
 hr {
-  margin-top: -48px;
+  margin-top: -46px;
   margin-bottom: 30px;
   margin-left: 12px;
-  background: #FF6347;
+  background: #e53256;
   height: 0.2em;
 }
 
@@ -26,7 +30,7 @@ hr {
 
 
 h1 .header-section-number {
-  background: #FF6347;
+  background: #e53256;
   color: white;
   border-radius: 27px;
   -moz-border-radius: 27px;
@@ -92,7 +96,7 @@ h1 .header-section-number {
 blockquote
 {
      background-color: #f0f7fb;
-     border-radius: 15px;
+     border-radius: 7px;
      color: #525252;
      font-size: 17px;
      font-style: normal;
@@ -132,9 +136,9 @@ blockquote
   border-radius: 25px;
   border: solid 1px #babfc28f;
   background-color: #f0f7fb;
-  font-size: 17px;
+  font-size: 19px;
   font-style: normal;
-  line-height: 19px;
+  line-height: 28px;
   overflow: hidden;
   padding: 22px;
   padding-top: 12px;
@@ -158,7 +162,7 @@ blockquote
 
 .red-note
 {
-     background-color: #f8f5f3;
+     background-color: #fbfbfb;
      border: solid 1px #babfc28f;
      /*border-left: solid 6px #E15611; */
      border-radius: 25px;
@@ -175,7 +179,7 @@ blockquote
 
 .red-note h3 {
   color: #f5f5f5;
-  background: #EB490C;
+  background: #5e666d;
   margin-top: -4px;
   margin-bottom: 16px;
   margin-left: -26px;
@@ -208,28 +212,27 @@ blockquote
     font-size: 17px;
     /* line-height: 19px; */
     /* overflow: hidden; */
-    padding: 0px;
-    padding-top: 2px;
-    padding-bottom: 14px;
+    padding: 14px;
+    padding-top: 0;
     margin-top: 10px;
     margin-bottom: 12px;
-    border-left: solid 56px #f5f5f3;
+    border-left: solid 57px #f5f5f3;
 }
 
 div.yoda {
   background-image: url('../images/yoda_baby_sq.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: left center;
+  background-position: left 28% top 54%;
+  background-size: 48px;
 }
 
 .yoda-img {
     width: 45px;
     float: left;
     margin-top: -52px;
-    margin-left: -50px;
+    margin-left: -63px;
     margin-bottom: -38px;
-    padding-top: -1px;
     margin-right: 23px;
 }
 
@@ -240,7 +243,9 @@ div.yoda {
 
 table {margin-top: 20px; margin-bottom: 18px;}
 
-.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow-y: clip;}
+.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow-y: clip !important;}
+
+div.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow-y: clip !important;}
 
 pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #fbfbfb; overflow-y: clip;}
 
@@ -264,15 +269,18 @@ pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-heig
      background: #f5f5f5;
      border-left: solid 8px #ff3860; /* #00d1b2; */
      border-radius: 25px;
-     font-size: 15px;
-     line-height: 17px;
+     font-size: 18px;
+     line-height: 22px;
      overflow: hidden;
      padding: 22px;
      padding-top: 4px;
      padding-bottom: 16px;
      margin-top: 45px;
      margin-bottom: 30px;
+}
 
+.quiz > p {
+  line-height: 160%
 }
 
 #oneline {
@@ -297,6 +305,7 @@ pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-heig
       display: inline-block;
       padding: 6px 12px;
       margin-bottom: 0;
+      margin-top: 15px;
       font-size: 15px;
       color: #fff;
       background-color: #e53256;  /* #00d1b2; #ff3860; */
@@ -327,7 +336,7 @@ pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-heig
       margin-bottom: 0;
       font-size: 15px;
       color: #fff;
-      background-color: #337ab7;
+      background-color: #75aadb;
       border-color: #2e6da4;
       line-height: 1.43;
       text-align: center;
@@ -373,7 +382,7 @@ h3 {
 }
 
 body {
-  font-size: 18px;
+  font-size: 19px;
 }
 
 

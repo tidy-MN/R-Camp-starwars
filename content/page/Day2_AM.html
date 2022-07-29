@@ -15,53 +15,79 @@ output:
 <link href="/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-pre, code { background-color: #f8f8f8; }
-code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code > span.dt { color: #204a87; } /* DataType */
-code > span.dv { color: #0000cf; } /* DecVal */
-code > span.bn { color: #0000cf; } /* BaseN */
-code > span.fl { color: #0000cf; } /* Float */
-code > span.ch { color: #4e9a06; } /* Char */
-code > span.st { color: #4e9a06; } /* String */
-code > span.co { color: #8f5902; font-style: italic; } /* Comment */
-code > span.ot { color: #8f5902; } /* Other */
-code > span.al { color: #ef2929; } /* Alert */
-code > span.fu { color: #000000; } /* Function */
-code > span.er { color: #a40000; font-weight: bold; } /* Error */
-code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #000000; } /* Constant */
-code > span.sc { color: #000000; } /* SpecialChar */
-code > span.vs { color: #4e9a06; } /* VerbatimString */
-code > span.ss { color: #4e9a06; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #000000; } /* Variable */
-code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code > span.ex { } /* Extension */
-code > span.at { color: #c4a000; } /* Attribute */
-code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-  <link rel="stylesheet" href="css\camp_style.css" type="text/css" />
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
 
 <div id="TOC">
 <ul>
 <li><a href="#new-mission"><span class="toc-section-number">1</span> New mission!</a></li>
 <li><a href="#dates"><span class="toc-section-number">2</span> <i class="fa fa-calendar" aria-hidden="true"></i> Dates</a></li>
-<li><a href="#calendar-plots"><span class="toc-section-number">3</span> Calendar plots</a></li>
-<li><a href="#pipe-it-together-a-b"><span class="toc-section-number">4</span> Pipe it together: <code>A %&gt;% B</code></a></li>
+<li><a href="#pipe-it-together-a-b"><span class="toc-section-number">3</span> Pipe it together: <code>A %&gt;% B</code></a></li>
 <li><a href="#finn-needs-us">Finn needs us!</a></li>
-<li><a href="#jakku-re-visited"><span class="toc-section-number">5</span> Jakku re-visited</a></li>
-<li><a href="#join-tables-with-left_join"><span class="toc-section-number">6</span> Join tables with <code>left_join()</code></a></li>
+<li><a href="#jakku-re-visited"><span class="toc-section-number">4</span> Jakku re-visited</a></li>
+<li><a href="#join-tables-with-left_join"><span class="toc-section-number">5</span> Join tables with <code>left_join()</code></a></li>
 </ul>
 </div>
 
@@ -72,10 +98,7 @@ hr {background: #62BE2C;}
 <div id="good-morning-jedis" class="section level2 unnumbered">
 <h2>Good morning, Jedis!</h2>
 <hr class="hrlvl2">
-<div class="figure">
-<img src="../images/day2_bb8_sq.png" style="float: left; margin-right: 60px; margin-top: -10px;" width="260" />
-
-</div>
+<p><img src="../images/day2_bb8_sq.png" style="float: left; margin-right: 60px; margin-top: -10px;" width="260" /></p>
 </div>
 <div id="schedule" class="section level2 unnumbered">
 <h2>Schedule</h2>
@@ -93,10 +116,9 @@ hr {background: #62BE2C;}
 <h2>Porg review</h2>
 <hr class="hrlvl2">
 <p>The <em>poggle</em> of porgs has returned to help review the <code>dplyr</code> functions. Follow along by downloading the <strong>porg</strong> data from the URL below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
-porgs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/porg_data.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/porg_data.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
-<style> img {margin: 0;} </style>
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
 <a class="nav-link" id="porgs-tab" data-toggle="tab" href="#porgs" role="tab" aria-controls="porgs" aria-selected="true"> porgs </a>
@@ -122,30 +144,30 @@ porgs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
 <div id="porgs" class="tab-pane fade active in" role="tabpanel" aria-labelledby="porgs-tab">
-<img src="../images/porgs/porgs_tbl.png" style="width: 85%;" /> <br><br>
+<img src="images/porgs/porgs_tbl.png" style="width: 85%;" /> <br><br>
 </div>
 <div id="select" class="tab-pane fade" role="tabpanel" aria-labelledby="select-tab">
-<img src="../images/porgs/select_card.png" style="width: 90%;" /> <br><br> <img src="../images/porgs/select_drop.png" style="width: 65%;" /> <img src="../images/porgs/select_drop_tbl.png" style="width: 80%; margin-left: 5%; margin-top: 12px;" /> <br><br>
+<img src="images/porgs/select_card.png" style="width: 90%;" /> <br><br> <img src="images/porgs/select_drop.png" style="width: 65%;" /> <img src="images/porgs/select_drop_tbl.png" style="width: 80%; margin-left: 5%; margin-top: 12px;" /> <br><br>
 </div>
 <div id="arrange" class="tab-pane fade" role="tabpanel" aria-labelledby="arrange-tab">
-<img src="../images/porgs/arrange.png" style="width: 65%;" /> <img src="../images/porgs/arrange_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="../images/porgs/arrange_desc.png" style="width: 57%;" /> <img src="../images/porgs/arrange_tbl_desc.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
+<img src="images/porgs/arrange.png" style="width: 65%;" /> <img src="images/porgs/arrange_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="images/porgs/arrange_desc.png" style="width: 57%;" /> <img src="images/porgs/arrange_tbl_desc.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
 </div>
 <div id="filter" class="tab-pane fade" role="tabpanel" aria-labelledby="filter-tab">
-<img src="../images/porgs/filter.png" style="width: 65%;" /> <img src="../images/porgs/filter_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="../images/porgs/filter2.png" style="width: 75%;" /> <img src="../images/porgs/filter2_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
+<img src="images/porgs/filter.png" style="width: 65%;" /> <img src="images/porgs/filter_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="images/porgs/filter2.png" style="width: 75%;" /> <img src="images/porgs/filter2_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
 </div>
 <div id="mutate3" class="tab-pane fade" role="tabpanel" aria-labelledby="mutate3-tab">
-<img src="../images/porgs/mutate_card.png" style="width: 88%;" /> <br><br>
+<img src="images/porgs/mutate_card.png" style="width: 88%;" /> <br><br>
 </div>
 <div id="summarize" class="tab-pane fade" role="tabpanel" aria-labelledby="summarize-tab">
-<img src="../images/porgs/summarize_card.png" style="width: 88%;" /> <br><br>
+<img src="images/porgs/summarize_card.png" style="width: 88%;" /> <br><br>
 </div>
 <div id="group_by" class="tab-pane fade" role="tabpanel" aria-labelledby="group_by-tab">
-<img src="../images/porgs/groupby_card.png" style="width: 92%;" /> <br><br>
+<img src="images/porgs/groupby_card.png" style="width: 92%;" /> <br><br>
 </div>
 </div>
 <p><br></p>
 </div>
-<div id="new-mission" class="section level1">
+<div id="new-mission" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> New mission!</h1>
 <hr>
 <p>The Wookies want our help. BB8 just received new data from the wookies suggesting there was a large magnetic storm just before <code>Site 1</code> burned down on Endor. Sounds like we’re going to be <strong>STORM CHASERS</strong>! <em>Mission accepted.</em></p>
@@ -153,8 +175,9 @@ porgs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class
 <div id="get-the-dataset" class="section level3 unnumbered">
 <h3>Get the dataset</h3>
 <p>While we’re relaxing and flying to Endor let’s get set up with the new data.</p>
-<div class="tip">
-<h3 id="endor-setup" class="unnumbered">Endor setup</h3>
+</div>
+<div id="endor-setup" class="section level3 unnumbered tip">
+<h3>Endor setup</h3>
 <ol style="list-style-type: decimal">
 <li>Download the data.
 <ul>
@@ -166,54 +189,51 @@ porgs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class
 </ol>
 <p><br></p>
 <p>Now we can read in the data from the data folder with our favorite <code>read_csv</code> function.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
-<span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(janitor)
-
-air_endor &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/air_endor.csv&quot;</span>)
-
-<span class="kw">names</span>(air_endor)
-
-<span class="co"># Clean the column names</span>
-air_endor &lt;-<span class="st"> </span><span class="kw">clean_names</span>(air_endor)
-
-<span class="kw">names</span>(air_endor)</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>air_endor <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/air_endor.csv&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(air_endor)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the column names</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>air_endor <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_endor)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(air_endor)</span></code></pre></div>
 <pre><code>## [1] &quot;analyte&quot;        &quot;lab_code&quot;       &quot;units&quot;          &quot;start_run_date&quot;
 ## [5] &quot;site_name&quot;      &quot;long_site_name&quot; &quot;planet&quot;         &quot;result&quot;</code></pre>
 </div>
 <p><br></p>
-<div class="note">
-<h3 id="note" class="unnumbered">Note</h3>
+<div id="note" class="section level3 unnumbered note">
+<h3>Note</h3>
 <p>When your project is open, RStudio sets the working directory to your project folder. When reading files from a folder outside of your project, you’ll need to use the full file path location.</p>
-<p>For example, for a file on the <strong>X-drive</strong>: <code>X://Programs/Air_Quality/Ozone_data.csv</code> <br></p>
-</div>
+<p>For example, for a file on the <strong>X-drive</strong>: <code>X://Programs/Air_Quality/Ozone_data.csv</code>
+<br></p>
 </div>
 <div id="welcome-to-endor" class="section level2 unnumbered">
 <h2>Welcome to Endor!</h2>
 <hr class="hrlvl2">
-<div class="figure">
-<img src="https://itep-r.netlify.com/images/planet_endor.jpg" style="width: 75%; margin-top: -4px; margin-left: 11%;" />
-
-</div>
+<p><img src="https://itep-r.netlify.com/images/planet_endor.jpg" style="width: 75%; margin-top: -4px; margin-left: 11%;" /></p>
 <p><br></p>
 <p><strong>Let’s get to know the Endor data.</strong></p>
 <p>Remember the ways?</p>
 <p><strong>Hint:</strong> <code>summary()</code>, <code>glimpse()</code>, <code>nrow()</code>, <code>distinct()</code></p>
 <p><br></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(air_endor)</code></pre></div>
-<pre><code>## Observations: 1,190
-## Variables: 8
-## $ analyte        &lt;chr&gt; &quot;1-Methylnaphthalene&quot;, &quot;1-Methylnaphthalene&quot;, &quot;...
-## $ lab_code       &lt;chr&gt; &quot;HV-403&quot;, &quot;HV-408&quot;, &quot;HV-411&quot;, &quot;HV-415&quot;, &quot;HV-418...
-## $ units          &lt;chr&gt; &quot;ng/m3&quot;, &quot;ng/m3&quot;, &quot;ng/m3&quot;, &quot;ng/m3&quot;, &quot;ng/m3&quot;, &quot;n...
-## $ start_run_date &lt;chr&gt; &quot;7/11/2016&quot;, &quot;7/23/2016&quot;, &quot;8/5/2016&quot;, &quot;8/16/201...
-## $ site_name      &lt;chr&gt; &quot;battlesite1&quot;, &quot;battlesite1&quot;, &quot;battlesite1&quot;, &quot;b...
-## $ long_site_name &lt;chr&gt; &quot;Endor_Tana_forestmoon_battlesite1&quot;, &quot;Endor_Tan...
-## $ planet         &lt;chr&gt; &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;E...
-## $ result         &lt;dbl&gt; 0.00291, 0.00000, 0.00000, 0.00608, 0.00000, 0....</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(air_endor)</span></code></pre></div>
+<pre><code>## Rows: 1,190
+## Columns: 8
+## $ analyte        &lt;chr&gt; &quot;1-Methylnaphthalene&quot;, &quot;1-Methylnaphthalene&quot;, &quot;1-Methyl…
+## $ lab_code       &lt;chr&gt; &quot;HV-403&quot;, &quot;HV-408&quot;, &quot;HV-411&quot;, &quot;HV-415&quot;, &quot;HV-418&quot;, &quot;HV-4…
+## $ units          &lt;chr&gt; &quot;ng/m3&quot;, &quot;ng/m3&quot;, &quot;ng/m3&quot;, &quot;ng/m3&quot;, &quot;ng/m3&quot;, &quot;ng/m3&quot;, &quot;…
+## $ start_run_date &lt;chr&gt; &quot;7/11/2016&quot;, &quot;7/23/2016&quot;, &quot;8/5/2016&quot;, &quot;8/16/2016&quot;, &quot;8/2…
+## $ site_name      &lt;chr&gt; &quot;battlesite1&quot;, &quot;battlesite1&quot;, &quot;battlesite1&quot;, &quot;battlesit…
+## $ long_site_name &lt;chr&gt; &quot;Endor_Tana_forestmoon_battlesite1&quot;, &quot;Endor_Tana_forest…
+## $ planet         &lt;chr&gt; &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;…
+## $ result         &lt;dbl&gt; 0.00291, 0.00000, 0.00000, 0.00608, 0.00000, 0.00000, 0…</code></pre>
 <p><br></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">distinct</span>(air_endor, analyte)</code></pre></div>
-<pre><code>## # A tibble: 27 x 1
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(air_endor, analyte)</span></code></pre></div>
+<pre><code>## # A tibble: 27 × 1
 ##    analyte             
 ##    &lt;chr&gt;               
 ##  1 1-Methylnaphthalene 
@@ -226,16 +246,17 @@ air_endor &lt;-<span class="st"> </span><span class="kw">clean_names</span>(air_
 ##  8 Benzo[c]fluorene    
 ##  9 Benzo[e]pyrene      
 ## 10 Benzo[g,h,i]perylene
-## # ... with 17 more rows</code></pre>
+## # … with 17 more rows</code></pre>
 <p><br></p>
 <p><strong>Woah! That’s definitely more analytes than we need.</strong></p>
 <p>We only want to know about <code>magnetic_field</code> data. Let’s filter down to that analyte.</p>
 <p><br></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mag_endor &lt;-<span class="st"> </span><span class="kw">filter</span>(air_endor, analyte <span class="op">==</span><span class="st"> &quot;magnetic_field&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(air_endor, analyte <span class="sc">==</span> <span class="st">&quot;magnetic_field&quot;</span>)</span></code></pre></div>
 <p><strong>Boom!</strong> How many rows are left now?</p>
 <p><br></p>
 <blockquote>
-<p>Ok. According to the request we received, the Resistance is only interested in observations from year <strong><code>2017</code></strong>. So let’s filter the data down to only dates for that year.</p>
+<p>Ok. According to the request we received, the Resistance is only interested in observations from year <strong><code>2017</code></strong>.
+So let’s filter the data down to only dates for that year.</p>
 <p><strong>How do we filter on the date column?</strong></p>
 </blockquote>
 <p><br></p>
@@ -244,15 +265,12 @@ air_endor &lt;-<span class="st"> </span><span class="kw">clean_names</span>(air_
 </div>
 </div>
 </div>
-<div id="dates" class="section level1">
+<div id="dates" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> <i class="fa fa-calendar" aria-hidden="true"></i> Dates</h1>
 <hr>
 <div id="enter-the-lubridate-package." class="section level3 unnumbered">
 <h3>Enter the <code>lubridate</code> package.</h3>
-<div class="figure">
-<img src="../images/lubridate.png" style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" />
-
-</div>
+<p><img src="../images/lubridate.png" style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" /></p>
 <p><br></p>
 <p>It’s about time! Lubridate makes working with dates much easier.</p>
 <p>We can find how much time has elapsed, add or subtract days, and find seasonal and day of the week averages.</p>
@@ -265,6 +283,10 @@ air_endor &lt;-<span class="st"> </span><span class="kw">clean_names</span>(air_
 <div id="convert-text-to-a-date" class="section level3 unnumbered">
 <h3>Convert text to a DATE</h3>
 <table>
+<colgroup>
+<col width="5%" />
+<col width="94%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Function</th>
@@ -299,6 +321,10 @@ air_endor &lt;-<span class="st"> </span><span class="kw">clean_names</span>(air_
 <div id="get-date-parts" class="section level3 unnumbered">
 <h3>Get date parts</h3>
 <table>
+<colgroup>
+<col width="5%" />
+<col width="94%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Function</th>
@@ -352,12 +378,17 @@ air_endor &lt;-<span class="st"> </span><span class="kw">clean_names</span>(air_
 </div>
 <div id="install-lubridate" class="section level2 unnumbered">
 <h2>Install <code>lubridate</code></h2>
-<p>Run: <code>install.packages(&quot;lubridate&quot;)</code></p>
-<div class="note">
-<h3 id="clean-the-dates" class="unnumbered"><i class="fa fa-broom" aria-hidden="true"></i> Clean the dates</h3>
-<h4 id="real-world-examples" class="unnumbered">Real world examples</h4>
+<p>Run: <code>install.packages("lubridate")</code></p>
+<div id="clean-the-dates" class="section level3 unnumbered note">
+<h3><i class="fa fa-broom" aria-hidden="true"></i> Clean the dates</h3>
+<div id="real-world-examples" class="section level4 unnumbered">
+<h4>Real world examples</h4>
 <p>Does your date column look like one of these? Here’s the <code>lubridate</code> function to tell R that the column is a date.</p>
 <table>
+<colgroup>
+<col width="23%" />
+<col width="76%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Format</th>
@@ -375,11 +406,11 @@ air_endor &lt;-<span class="st"> </span><span class="kw">clean_names</span>(air_
 </tr>
 <tr class="odd">
 <td>“05/18/2019 8:00 CDT”</td>
-<td align="left"><code>mdy_hm(date_column, tz = &quot;US/Central&quot;)</code></td>
+<td align="left"><code>mdy_hm(date_column, tz = "US/Central")</code></td>
 </tr>
 <tr class="even">
 <td>“05/18/2019 11:05:32 PDT”</td>
-<td align="left"><code>mdy_hms(date_column, tz = &quot;US/Pacific&quot;)</code></td>
+<td align="left"><code>mdy_hms(date_column, tz = "US/Pacific")</code></td>
 </tr>
 </tbody>
 </table>
@@ -425,13 +456,11 @@ air_endor &lt;-<span class="st"> </span><span class="kw">clean_names</span>(air_
 </table>
 </div>
 </div>
+</div>
 <div id="small-problem" class="section level2 unnumbered">
 <h2>Small problem</h2>
 <hr class="hrlvl2">
-<div class="figure">
-<img src="../images/access_denied.jpg" style="width: 40%; float: left; margin-top: 4px; margin-right: 28px;" />
-
-</div>
+<p><img src="../images/access_denied.jpg" style="width: 40%; float: left; margin-top: 4px; margin-right: 28px;" /></p>
 <p><strong>Oh no!</strong> BB8 got locked out of the system! You need the passcode before you can unlock the data.</p>
 <p>There’s a cryptic note on the pad next to you… <em>“Marty’s birthday”.</em> Could that be the hint to the passcode???</p>
 <p>We need to determine when Marty’s birthday is…time to get out our detective hats.</p>
@@ -445,66 +474,75 @@ air_endor &lt;-<span class="st"> </span><span class="kw">clean_names</span>(air_
 <p><em>“Hmmm… Let’s see, I think it was around the 22nd week of the year. Yep. That’s it.”</em></p>
 </blockquote>
 <p><br></p>
-<div class="tip">
-<h3 id="explore" class="unnumbered"><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
+<div id="explore" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <p>After some more interviews you now have a list of dates that could be Marty’s birthday. Find the date that occurred on the Tuesday of the 22nd week of the year.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lubridate)
-
-date1 &lt;-<span class="st"> &quot;7/2/2019&quot;</span>
-
-date2 &lt;-<span class="st"> &quot;28/05/2019&quot;</span>
-
-date3 &lt;-<span class="st"> &quot;June 4th, 2019&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>date1 <span class="ot">&lt;-</span> <span class="st">&quot;7/2/2019&quot;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>date2 <span class="ot">&lt;-</span> <span class="st">&quot;28/05/2019&quot;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>date3 <span class="ot">&lt;-</span> <span class="st">&quot;June 4th, 2019&quot;</span></span></code></pre></div>
 <p><strong>Step 1:</strong> Use <code>mdy(date)</code> or <code>dmy(date)</code> to convert the dates to the universal date format.</p>
 <p><br></p>
 <p><em>Are you sure you want to click this button? There’s no going back.</em></p>
-<details> <summary class = "btn_code"><em>Show code</em></summary>
+<details>
+<summary class="btn_code">
+<em>Show code</em>
+</summary>
 <div class="card" style="margin-top: -13px;">
 <p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Use mdy() or dmy() to format dates</span>
-
-<span class="co">#1</span>
-date1 &lt;-<span class="st"> </span><span class="kw">mdy</span>(<span class="st">&quot;7/2/2019&quot;</span>)
-
-<span class="co">#2</span>
-date2 &lt;-<span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;28/05/2019&quot;</span>)
-
-<span class="co">#3</span>
-date3 &lt;-<span class="st"> </span><span class="kw">mdy</span>(<span class="st">&quot;June 4th, 2019&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use mdy() or dmy() to format dates</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#1</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>date1 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;7/2/2019&quot;</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#2</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>date2 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;28/05/2019&quot;</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#3</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>date3 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;June 4th, 2019&quot;</span>)</span></code></pre></div>
 </p>
 </div>
-<p></details></p>
+</details>
 <p><strong>Step 2:</strong> Find the day of the week using <code>wday(date)</code>, and week of the year using <code>week(date)</code>.</p>
-<details> <summary class = "btn_code"><em>Show code</em></summary>
+<details>
+<summary class="btn_code">
+<em>Show code</em>
+</summary>
 <div class="card" style="margin-top: -13px;">
 <p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Use wday() and week() to get date info</span>
-
-<span class="co">#1</span>
-date1 &lt;-<span class="st"> </span><span class="kw">mdy</span>(<span class="st">&quot;7/2/2019&quot;</span>)
-<span class="kw">wday</span>(date1, <span class="dt">label =</span> <span class="ot">TRUE</span>, <span class="dt">abbr =</span> <span class="ot">FALSE</span>)
-<span class="kw">week</span>(date1)
-
-<span class="co">#2</span>
-date2 &lt;-<span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;28/05/2019&quot;</span>)
-<span class="kw">wday</span>(date2, <span class="dt">label =</span> <span class="ot">TRUE</span>, <span class="dt">abbr =</span> <span class="ot">FALSE</span>)
-<span class="kw">week</span>(date2)
-
-<span class="co">#3</span>
-date3 &lt;-<span class="st"> </span><span class="kw">mdy</span>(<span class="st">&quot;June 4th, 2019&quot;</span>)
-<span class="kw">wday</span>(date3, <span class="dt">label =</span> <span class="ot">TRUE</span>, <span class="dt">abbr =</span> <span class="ot">FALSE</span>)
-<span class="kw">week</span>(date3)</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use wday() and week() to get date info</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#1</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>date1 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;7/2/2019&quot;</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(date1, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">week</span>(date1)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#2</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>date2 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;28/05/2019&quot;</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(date2, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">week</span>(date2)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#3</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>date3 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;June 4th, 2019&quot;</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(date3, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">week</span>(date3)</span></code></pre></div>
 </p>
 </div>
-<p></details></p>
+</details>
 <p><br></p>
-<details> <summary class = "btn_code"><em>Show answer</em></summary>
+<details>
+<summary class="btn_code">
+<em>Show answer</em>
+</summary>
 <div class="card" style="margin-top: -13px;">
 <p>
-<code>&quot;28/05/2019&quot;</code> or <code>May 28th, 2019</code>
+<code>"28/05/2019"</code> or <code>May 28th, 2019</code>
 </p>
 </div>
-<p></details></p>
+</details>
 </div>
 <blockquote>
 <p>Congrats! BB8 successfully accessed the backup system. The data is back online!</p>
@@ -515,96 +553,43 @@ date3 &lt;-<span class="st"> </span><span class="kw">mdy</span>(<span class="st"
 <h2>Back on Endor!</h2>
 <hr class="hrlvl2">
 <p>Let’s use the <code>mdy()</code> function to turn the <code>start_run_date</code> column into a nicely formatted date.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lubridate)
-
-mag_endor &lt;-<span class="st"> </span><span class="kw">mutate</span>(mag_endor, <span class="dt">date =</span> <span class="kw">mdy</span>(start_run_date),
-                               <span class="dt">year =</span> <span class="kw">year</span>(date))</code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mag_endor, <span class="at">date =</span> <span class="fu">mdy</span>(start_run_date),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                               <span class="at">year =</span> <span class="fu">year</span>(date))</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>Ok, back to work.</p>
 <p>Let’s filter to only the rows where the <strong><code>year</code></strong> equals <strong><code>2017</code></strong>.</p>
 </blockquote>
 <p><br></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mag_endor &lt;-<span class="st"> </span><span class="kw">filter</span>(mag_endor, year <span class="op">==</span><span class="st"> </span><span class="dv">2017</span>)</code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(mag_endor, year <span class="sc">==</span> <span class="dv">2017</span>)</span></code></pre></div>
 </div>
 <div id="time-series" class="section level2 unnumbered">
 <h2>Time series</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
-
-<span class="kw">ggplot</span>(mag_endor, <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> result)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;tomato&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">5</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)  <span class="co"># alpha changes transparency</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mag_endor, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> result)) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">&quot;tomato&quot;</span>) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)  <span class="co"># alpha changes transparency</span></span></code></pre></div>
 <p><img src="/page/Day2_AM_files/figure-html/endor-time-1.png" width="960" /></p>
 <p>Looks like the measurements definitely picked up a signal towards the end of the year.</p>
 <p><br></p>
-<div class="data">
-<h3 id="mystery-solved" class="unnumbered">Mystery solved!</h3>
+<div id="mystery-solved" class="section level3 unnumbered data">
+<h3>Mystery solved!</h3>
 <p>Aha! There really was a spike in the magnetic field in November. Hopefully, the <em>Resistance</em> will reward us handsomely for this information.</p>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="calendar-plots" class="section level1">
-<h1><span class="header-section-number">3</span> Calendar plots</h1>
-<hr>
-<div class="note">
-<h2 style="margin-top: 12px;">
-</h2>
-<div class="figure">
-<img src="../images/endor_lego_sq.PNG" align="left" style="width: 23%; margin-top: 6px; margin-right: 34px; margin-bottom: 10px;" />
-
-</div>
-<p>Calendar plots are good for zooming in to see specific days when elevated observations may have occurred. Maybe we can pinpoint what day that magnetic storm may have occurred.</p>
-<h4>
-<code>openair</code> package
-</h4>
-<p>There is a calendar plot function in the package <code>openair</code>. Let’s install <code>openair</code>, load it, and use <code>calendarplot()</code> to make a calendar of the observations.</p>
-<p><br></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;openair&quot;</span>)</code></pre></div>
-<p><br></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(openair)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">calendarPlot</span>(mag_endor,
-             <span class="dt">pollutant    =</span> <span class="st">&quot;result&quot;</span>,
-             <span class="dt">statistic    =</span> <span class="st">&quot;mean&quot;</span>,
-             <span class="dt">year         =</span> <span class="dv">2017</span>,
-             <span class="dt">annotate     =</span> <span class="st">&quot;date&quot;</span>,
-             <span class="dt">digits       =</span> <span class="dv">0</span>,
-             <span class="dt">key.footer   =</span> <span class="st">&quot;nT&quot;</span>,
-             <span class="dt">par.settings =</span> <span class="kw">list</span>(<span class="dt">fontsize       =</span> <span class="kw">list</span>(<span class="dt">text =</span> <span class="dv">14</span>),
-                                 <span class="dt">layout.heights =</span> <span class="kw">list</span>(<span class="dt">top.padding =</span> <span class="dv">1</span>)),
-             <span class="dt">main =</span> <span class="st">&quot;Magnetic Field Strength at Endor Battle Site 1&quot;</span>)</code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/cal-for-web-1.png" width="2880" /></p>
-<p><br></p>
-<p>Let’s zoom in and filter the calendar to only 3 months: <em>October, November, December</em>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mag_endor &lt;-<span class="st"> </span><span class="kw">mutate</span>(mag_endor, <span class="dt">month =</span> <span class="kw">month</span>(date))
-                        
-mag_endor &lt;-<span class="st"> </span><span class="kw">filter</span>(mag_endor, month <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>))
-
-<span class="kw">calendarPlot</span>(mag_endor,
-             <span class="dt">pollutant    =</span> <span class="st">&quot;result&quot;</span>,
-             <span class="dt">statistic    =</span> <span class="st">&quot;mean&quot;</span>,
-             <span class="dt">year         =</span> <span class="dv">2017</span>,
-             <span class="dt">annotate     =</span> <span class="st">&quot;date&quot;</span>,
-             <span class="dt">digits       =</span> <span class="dv">0</span>,
-             <span class="dt">key.footer   =</span> <span class="st">&quot;nT&quot;</span>,
-             <span class="dt">par.settings =</span> <span class="kw">list</span>(<span class="dt">fontsize       =</span> <span class="kw">list</span>(<span class="dt">text =</span> <span class="dv">14</span>),
-                                 <span class="dt">layout.heights =</span> <span class="kw">list</span>(<span class="dt">top.padding =</span> <span class="dv">1</span>)),
-             <span class="dt">main =</span> <span class="st">&quot;Magnetic Field Strength at Endor Battle Site 1&quot;</span>)</code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/cal-for-web-months-1.png" width="2880" /></p>
-<p><br></p>
-</div>
-</div>
-<div id="pipe-it-together-a-b" class="section level1">
-<h1><span class="header-section-number">4</span> Pipe it together: <code>A %&gt;% B</code></h1>
+<div id="pipe-it-together-a-b" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Pipe it together: <code>A %&gt;% B</code></h1>
 <hr>
 <p><strong>Let the <code>%&gt;%</code> guide you.</strong></p>
 <blockquote>
 <p><strong>I wish I could type the name of the data less often.</strong></p>
 </blockquote>
-<div class="figure">
-<img src="../images/pipe.png" style="margin-right: 20px; width: 136px; float: left; margin-top: 12px;" />
-
-</div>
+<p><img src="../images/pipe.png" style="margin-right: 20px; width: 136px; float: left; margin-top: 12px;" /></p>
 <p><strong>You can with the <em>pipe</em>!</strong></p>
 <p>Use the <code>%&gt;%</code> to chain functions together and make our scripts more streamlined.</p>
 <div style="clear: both;">
@@ -615,36 +600,37 @@ mag_endor &lt;-<span class="st"> </span><span class="kw">filter</span>(mag_endor
 <div class="blockquote">
 <p><strong><code>#1:</code></strong> It eliminates the need for nested parentheses.</p>
 <p>Say you wanted to take the sum of 3 numbers and then take the log and then round the final result.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">log</span>(<span class="kw">sum</span>(<span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>))))</code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>))))</span></code></pre></div>
 <p>The code doesn’t look much like the words we used to describe it. Let’s pipe it so we can read the code from left to right.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">log</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">round</span>()</code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>) <span class="sc">%&gt;%</span> <span class="fu">sum</span>() <span class="sc">%&gt;%</span> <span class="fu">log</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>()</span></code></pre></div>
 </div>
 <p><br></p>
 <div class="blockquote">
 <p><strong><code>#2:</code></strong> We can combine many processing steps into one cohesive chunk.</p>
 <p>Here are some of the functions we’ve applied to the scrap data so far:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scrap &lt;-<span class="st"> </span><span class="kw">arrange</span>(scrap, <span class="kw">desc</span>(price_per_pound))
-
-scrap &lt;-<span class="st"> </span><span class="kw">filter</span>(scrap, origin <span class="op">!=</span><span class="st"> &quot;All&quot;</span>)
-
-scrap &lt;-<span class="st"> </span><span class="kw">mutate</span>(scrap, 
-                <span class="dt">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,
-                <span class="dt">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, <span class="fu">desc</span>(price_per_pound))</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
 <p>We can use the <code>%&gt;%</code> operator to pipe or chain them together.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scrap &lt;-<span class="st"> </span>scrap <span class="op">%&gt;%</span>
-<span class="st">           </span><span class="kw">arrange</span>(<span class="kw">desc</span>(price_per_pound)) <span class="op">%&gt;%</span>
-<span class="st">           </span><span class="kw">filter</span>(origin <span class="op">!=</span><span class="st"> &quot;All&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">           </span><span class="kw">mutate</span>(<span class="dt">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,
-                  <span class="dt">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">arrange</span>(<span class="fu">desc</span>(price_per_pound)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">filter</span>(origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
 </div>
-<div class="tip">
-<h3 id="explore-1" class="unnumbered"><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
+</div>
+<div id="explore-1" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <p>Similar to above, use the <code>%&gt;%</code> to combine the two Endor lines below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Filter to only magnetic_field measurements</span>
-mag_endor &lt;-<span class="st"> </span><span class="kw">filter</span>(air_endor, analyte <span class="op">==</span><span class="st"> &quot;magnetic_field&quot;</span>)
-
-<span class="co"># Add a date column to the filtered data</span>
-mag_endor &lt;-<span class="st"> </span><span class="kw">mutate</span>(mag_endor, <span class="dt">date =</span> <span class="kw">mdy</span>(start_run_date))</code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter to only magnetic_field measurements</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(air_endor, analyte <span class="sc">==</span> <span class="st">&quot;magnetic_field&quot;</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a date column to the filtered data</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mag_endor, <span class="at">date =</span> <span class="fu">mdy</span>(start_run_date))</span></code></pre></div>
 </div>
 <p><br></p>
 <blockquote>
@@ -652,43 +638,39 @@ mag_endor &lt;-<span class="st"> </span><span class="kw">mutate</span>(mag_endor
 <p>Right! We we’re enjoying our time on beautiful lush Endor. But aren’t we missing somebody…?</p>
 </blockquote>
 </div>
-</div>
 <div id="finn-needs-us" class="section level1 unnumbered">
 <h1>Finn needs us!</h1>
 <p>That’s enough <em>scuttlebutting</em> on Endor, Finn needs us back on Jakku. It turns out we forgot to pick-up Finn when we left. Now he’s being held ransom by Junk Boss Plutt. We’ll need to act fast to get to him before the Empire does. <strong>Blast off!</strong></p>
 <p><br></p>
-<div class="figure">
-<img src="../images/finn_run.gif" style="margin-left: 18%; width: 60%; margin-top: 6px;" />
-
-</div>
+<p><img src="../images/finn_run.gif" style="margin-left: 18%; width: 60%; margin-top: 6px;" /></p>
 <p><br></p>
 <div class="tip">
 <h3 style="margin-top: 13px;">
 Update from BB8!
 </h3>
 <p>BB8 was busy on our flight back to Jakku, and recovered a <strong>full</strong> set of scrap records from the notorious Unkar Plutt. Let’s take a look.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
-<span class="kw">library</span>(dplyr)
-
-<span class="co"># Read in the full scrap database</span>
-scrap &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the full scrap database</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="jakku-re-visited" class="section level1">
-<h1><span class="header-section-number">5</span> Jakku re-visited</h1>
+<div id="jakku-re-visited" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Jakku re-visited</h1>
 <hr>
 <p>Okay, so we’re back on this ol’ dust bucket. Let’s try not to forget anyone this time. We’re quickly running out of friends on this planet.</p>
 <div id="a-scrappy-ransom" class="section level2 unnumbered">
 <h2>A scrappy ransom</h2>
 <p>Mr. Baddy Plutt is demanding <strong>10,000 items</strong> of scrap for Finn. Sounds expensive, but lucky for us he didn’t clarify the exact items. Let’s find the scrap that weighs the least per shipment and try to make this transaction as light as possible.</p>
 <p>Take a look at our <strong>NEW</strong> scrap data and see if we have the weight of all the items.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># What unit types are in the data?</span>
-<span class="kw">unique</span>(scrap<span class="op">$</span>units)</code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What unit types are in the data?</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(scrap<span class="sc">$</span>units)</span></code></pre></div>
 <pre><code>## [1] &quot;Cubic Yards&quot; &quot;Items&quot;       &quot;Tons&quot;</code></pre>
 <p><br></p>
 <p><strong>Or return results as a data frame</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">distinct</span>(scrap, units)</code></pre></div>
-<pre><code>## # A tibble: 3 x 1
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 1
 ##   units      
 ##   &lt;chr&gt;      
 ## 1 Cubic Yards
@@ -706,21 +688,18 @@ scrap &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class
 </div>
 <div id="weight-conversion" class="section level2 unnumbered">
 <h2>Weight conversion</h2>
-<div class="figure">
-<img src="../images/rey_bb8.jpg" align="right" style="width: 35%; margin-top: 0px; margin-left: 15px; margin-right: 0px;" />
-
-</div>
+<p><img src="../images/rey_bb8.jpg" align="right" style="width: 35%; margin-top: 0px; margin-left: 15px; margin-right: 0px;" /></p>
 <p>It took a while, but with a few droid bribes BB8 was able to track down a <em>Weight conversion table</em> from his droid buddies. Our current data shows the total cubic yards for some scrap shipments, but not how much the shipment weighs.</p>
 <div id="read-the-weight-conversion-table" class="section level3 unnumbered">
 <h3>Read the weight conversion table</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The data&#39;s URL</span>
-convert_url &lt;-<span class="st"> &quot;https://rtrain.netlify.com/data/conversion_table.csv&quot;</span>
-
-<span class="co"># Read the conversion data</span>
-convert &lt;-<span class="st"> </span><span class="kw">read_csv</span>(convert_url)
-
-<span class="kw">head</span>(convert, <span class="dv">3</span>)</code></pre></div>
-<pre><code>## # A tibble: 3 x 3
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The data&#39;s URL</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>convert_url <span class="ot">&lt;-</span> <span class="st">&quot;https://rtrain.netlify.com/data/conversion_table.csv&quot;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the conversion data</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>convert <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(convert_url)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(convert, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 3
 ##   item               units       pounds_per_unit
 ##   &lt;chr&gt;              &lt;chr&gt;                 &lt;dbl&gt;
 ## 1 Bulkhead           Cubic Yards             321
@@ -734,17 +713,14 @@ convert &lt;-<span class="st"> </span><span class="kw">read_csv</span>(convert_u
 </div>
 </div>
 </div>
-<div id="join-tables-with-left_join" class="section level1">
-<h1><span class="header-section-number">6</span> Join tables with <code>left_join()</code></h1>
+<div id="join-tables-with-left_join" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Join tables with <code>left_join()</code></h1>
 <hr>
 <div id="join-2-tables" class="section level2 unnumbered">
 <h2>Join 2 tables</h2>
-<div class="figure">
-<img src="../images/leftjoin_scrap.png" style="width: 55%; margin-left: 18%; margin-bottom: 12px;" />
-
-</div>
+<p><img src="../images/leftjoin_scrap.png" style="width: 55%; margin-left: 18%; margin-bottom: 12px;" /></p>
 <blockquote>
-<h3 id="left_joinscrap-convert-by-ccolumns-to-join-by" class="unnumbered"><code>left_join(scrap, convert, by = c(&quot;columns to join by&quot;))</code></h3>
+<h3 id="left_joinscrap-convert-by-ccolumns-to-join-by" class="unnumbered"><code>left_join(scrap, convert, by = c("columns to join by"))</code></h3>
 </blockquote>
 <p><code>left_join()</code> works like a zipper to combine 2 tables based on one or more variables. It’s called “left”-join because the entire table on the left side is retained.</p>
 <p>Anything that matches from the right table gets to join the party, but any rows that don’t have a matching ID will be ignored.</p>
@@ -754,33 +730,28 @@ convert &lt;-<span class="st"> </span><span class="kw">read_csv</span>(convert_u
 <p>Remember our porg friends? How rude of us not to share their names. <strong>Wups!</strong></p>
 <p>Here’s a table of their names.</p>
 <div style="margin-left: 30px; margin-top: 24px; width: 37%; max-width: 37%; margin-bottom: 22px;">
-<div class="figure">
-<img src="../images/porgs/porg_names_tbl.png" />
-
-</div>
+<p><img src="../images/porgs/porg_names_tbl.png" /></p>
 </div>
 <blockquote>
 <p><strong>Hey now!</strong> Who’s who? Let’s join their names to the rest of the data.</p>
 </blockquote>
-<div class="figure">
-<img src="../images/porgs/leftjoin_porgs.png" style="width: 90%; max-width: 85%;" />
-
-</div>
+<p><img src="../images/porgs/leftjoin_porgs.png" style="width: 90%; max-width: 85%;" /></p>
 <p><br></p>
 </div>
 <div id="the-joined-result" class="section level3 unnumbered">
 <h3><strong>The joined result:</strong></h3>
 <div class="well">
-<div class="figure">
-<img src="../images/porgs/porgs_and_names.png" style="width: 85%; max-width: 85%;" />
-
-</div>
+<p><img src="../images/porgs/porgs_and_names.png" style="width: 85%; max-width: 85%;" /></p>
 </div>
 <p><br></p>
-<p><details> <summary class="btn_code_blue"> <span style="color: #f6cd00;"><i class="fas fa-star"></i><strong>BONUS</strong><i class="fas fa-star"></i></span> <strong>More joining</strong></summary></p>
+<details>
+<summary class="btn_code_blue">
+<span style="color: #f6cd00;"><i class="fas fa-star"></i><strong>BONUS</strong><i class="fas fa-star"></i></span> <strong>More joining</strong>
+</summary>
 <div class="note" style="margin-top: -10px;">
 <p>
-<h3 id="star-wars-characters" class="unnumbered">Star Wars characters</h3>
+<div id="star-wars-characters" class="section level3 unnumbered">
+<h3>Star Wars characters</h3>
 <p><strong>left_join()</strong> is used to add columns to your table by pulling them from another table. Imagine you have the 2 Star Wars tables below. One table includes character names and heights; the second has names and homeworlds. Since both tables share a common name column, we can join the tables together using the name columns as the joining key.</p>
 <style type="text/css"> 
 .table {width: 30%;} 
@@ -858,22 +829,22 @@ convert &lt;-<span class="st"> </span><span class="kw">read_csv</span>(convert_u
 <p><br></p>
 <p><strong>Uh oh!</strong> There’s no “Ayla Secura” in the height table and there’s no “Greedo” in the homeworld table. Can we still join the tables? Run the code below to see what happens.</p>
 <p><br></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
-   
-<span class="co"># Create new tables </span>
-starwars_heights &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">starwars_name =</span> <span class="kw">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), 
-                               <span class="dt">height =</span> <span class="kw">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">246</span>))      
-
-starwars_homeworlds &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">starwars_name =</span> <span class="kw">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), 
-                                  <span class="dt">homeworld =</span> <span class="kw">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))
-
-<span class="co"># Join the tables together by starwars_name</span>
-## Tell left_join which columns to use as the key with:  
-##     by = c(&quot;key_left&quot; = &quot;key_right&quot;)
-height_and_homeworld &lt;-<span class="st"> </span><span class="kw">left_join</span>(starwars_heights, starwars_homeworlds, 
-                                  <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;starwars_name&quot;</span> =<span class="st"> &quot;starwars_name&quot;</span>))
-
-height_and_homeworld</code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">246</span>))      </span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by starwars_name</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Tell left_join which columns to use as the key with:  </span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="do">##     by = c(&quot;key_left&quot; = &quot;key_right&quot;)</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds, </span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;starwars_name&quot;</span> <span class="ot">=</span> <span class="st">&quot;starwars_name&quot;</span>))</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
 <p><br></p>
 <table>
 <thead>
@@ -912,10 +883,14 @@ height_and_homeworld</code></pre></div>
 </tbody>
 </table>
 <p><br></p>
-<h4 id="did-it-work" class="unnumbered">Did it work?</h4>
+<div id="did-it-work" class="section level4 unnumbered">
+<h4>Did it work?</h4>
 <p>When <strong>left_join</strong> adds the <code>homeworlds</code> column to the <em>starwars_heights</em> table it only adds a value for the characters when the tables have a matching character name. When R couldn’t find “Greedo” in the homeworld table, the Star Wars character’s homeworld was recorded as missing or <em><code>NA</code></em>.</p>
 <p><br></p>
-<h3 id="multiple-records" class="unnumbered">Multiple records</h3>
+</div>
+</div>
+<div id="multiple-records" class="section level3 unnumbered">
+<h3>Multiple records</h3>
 <div>
 <p><img src="../images/c3po.png" style="width: 13%; float: left; margin-top: 12px; margin-right: 4px;" /> <img src="../images/c3po.png" style="width: 13%; float: left; margin-top: 12px; margin-right: 28px;" /></p>
 </div>
@@ -1000,21 +975,21 @@ height_and_homeworld</code></pre></div>
 </div>
 <p><br></p>
 <p>When you run the code below you’ll see that <strong>left_join</strong> is very thorough and adds each additional homeworld it finds for <em>C-3PO</em> as a new row in the joined table.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create new tables </span>
-starwars_heights &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">starwars_name =</span> <span class="kw">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), 
-                               <span class="dt">height  =</span> <span class="kw">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">173</span>))
-
-
-starwars_homeworlds &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">starwars_name =</span> <span class="kw">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), 
-                                  <span class="dt">homeworld =</span> <span class="kw">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tantive IV&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))
-
-<span class="co"># Join the tables together by Star Wars character name</span>
-height_and_homeworld &lt;-<span class="st"> </span><span class="kw">left_join</span>(starwars_heights, starwars_homeworlds)
-
-<span class="co"># Check number of rows</span>
-<span class="kw">nrow</span>(height_and_homeworld)
-
-height_and_homeworld</code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height  =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">173</span>))</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tantive IV&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by Star Wars character name</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds)</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Check number of rows</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(height_and_homeworld)</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
 <p><br></p>
 <table>
 <thead>
@@ -1065,7 +1040,8 @@ height_and_homeworld</code></pre></div>
 </div>
 </p>
 </div>
-<p></details></p>
+</div>
+</details>
 <style type="text/css"> 
 .table {width: auto;} 
 </style>
@@ -1077,15 +1053,15 @@ height_and_homeworld</code></pre></div>
 <hr class="hrlvl2">
 <p>Let’s apply our new <code>left_join()</code> skills to the scrap data.</p>
 <p>First, let’s re-read the full scrap data.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
-<span class="kw">library</span>(dplyr)
-
-<span class="co"># Read in the larger scrap database</span>
-scrap &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)
-
-<span class="co"># what units types are in the data? </span>
-<span class="kw">distinct</span>(scrap, units)</code></pre></div>
-<pre><code>## # A tibble: 3 x 1
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the larger scrap database</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># what units types are in the data? </span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 1
 ##   units      
 ##   &lt;chr&gt;      
 ## 1 Cubic Yards
@@ -1094,32 +1070,33 @@ scrap &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class
 <div id="join-the-conversion-table-to-scrap" class="section level3 unnumbered">
 <h3>Join the conversion table to scrap</h3>
 <p>Look at the tables. What columns in both tables do we want to join <strong>by</strong>?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(scrap)</code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(scrap)</span></code></pre></div>
 <p>Let’s join by <code>item</code> and <code>units</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Join the scrap to the conversion table</span>
-scrap &lt;-<span class="st"> </span><span class="kw">left_join</span>(scrap, convert, 
-                   <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;item&quot;</span>  =<span class="st"> &quot;item&quot;</span>, 
-                          <span class="st">&quot;units&quot;</span> =<span class="st"> &quot;units&quot;</span>))</code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the scrap to the conversion table</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert, </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;item&quot;</span>  <span class="ot">=</span> <span class="st">&quot;item&quot;</span>, </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;units&quot;</span> <span class="ot">=</span> <span class="st">&quot;units&quot;</span>))</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p><strong>Want to save on typing?</strong></p>
 </blockquote>
 <p><code>left_join()</code> will automatically search for matching columns if you don’t use the <code>by=</code> argument. So if you know 2 tables share a column name you don’t have to specify how to join them. The code below does the same as above.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scrap &lt;-<span class="st"> </span><span class="kw">left_join</span>(scrap, convert)
-
-<span class="kw">head</span>(scrap, <span class="dv">4</span>)</code></pre></div>
-<pre><code>## # A tibble: 4 x 8
-##   receipt_date item  origin destination amount units price_per_pound
-##   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
-## 1 4/1/2013     Bulk~ Crate~ Raiders       4017 Cubi~           1005.
-## 2 4/2/2013     Star~ Outsk~ Trade cara~   1249 Cubi~           1129.
-## 3 4/3/2013     Star~ Outsk~ Niima Outp~   4434 Cubi~           1129.
-## 4 4/4/2013     Hull~ Crate~ Raiders        286 Cubi~            843.
-## # ... with 1 more variable: pounds_per_unit &lt;dbl&gt;</code></pre>
-<div class="quiz">
-<h3 id="help" class="unnumbered"><strong>Help!</strong></h3>
-<p>For more details, you can type <code>?left_join</code> to see all the arguments and options. <br></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap, <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 8
+##   receipt_date item              origin destination amount units price_per_pound
+##   &lt;chr&gt;        &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+## 1 4/1/2013     Bulkhead          Crate… Raiders       4017 Cubi…           1005.
+## 2 4/2/2013     Starship sensor … Outsk… Trade cara…   1249 Cubi…           1129.
+## 3 4/3/2013     Starship sensor … Outsk… Niima Outp…   4434 Cubi…           1129.
+## 4 4/4/2013     Hull Panel        Crate… Raiders        286 Cubi…            843.
+## # … with 1 more variable: pounds_per_unit &lt;dbl&gt;</code></pre>
 </div>
+<div id="help" class="section level3 unnumbered quiz">
+<h3><strong>Help!</strong></h3>
+<p>For more details, you can type <code>?left_join</code> to see all the arguments and options.
+<br></p>
 </div>
 </div>
 <div id="total-pounds-per-shipment" class="section level2 unnumbered">
@@ -1128,21 +1105,24 @@ scrap &lt;-<span class="st"> </span><span class="kw">left_join</span>(scrap, con
 <p>Let’s <code>mutate()</code>!</p>
 <p>Now that we have pounds per unit we can use <code>mutate</code> to calculate the total pounds for each shipment.</p>
 <p><strong>Fill in the blank</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scrap &lt;-<span class="st"> </span>scrap <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">         </span><span class="kw">mutate</span>(<span class="dt">total_pounds =</span> amount <span class="op">*</span><span class="st">  </span>_____________ )</code></pre></div>
-<details> <summary class = "btn_code"><em>Show code</em></summary>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span>  _____________ )</span></code></pre></div>
+<details>
+<summary class="btn_code">
+<em>Show code</em>
+</summary>
 <p>
 <div class="quiz" style="margin-top: -6px;">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scrap &lt;-<span class="st"> </span>scrap <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">         </span><span class="kw">mutate</span>(<span class="dt">total_pounds =</span> amount <span class="op">*</span><span class="st"> </span>pounds_per_unit)</code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span> pounds_per_unit)</span></code></pre></div>
 </div>
 </p>
-<p></details></p>
+</details>
 </div>
 <div id="total-price-per-shipment" class="section level2 unnumbered">
 <h2>Total price per shipment</h2>
-<div class="tip">
-<h3 id="explore-2" class="unnumbered"><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
+<div id="explore-2" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
 <a class="nav-link" id="totalprice-tab" data-toggle="tab" href="#totalprice" role="tab" aria-controls="totalprice" aria-selected="true">Total price</a>
@@ -1201,12 +1181,12 @@ scrap <- scrap %>%
 <div id="price-per-item" class="section level2 unnumbered">
 <h2>Price per item</h2>
 <p><strong>Great!</strong> Let’s add one last column. We can divide the shipment’s <em>credits</em> by the <em>amount</em> of items to get the <code>price_per_unit</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculate the price per unit</span>
-scrap &lt;-<span class="st"> </span>scrap <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">         </span><span class="kw">mutate</span>(<span class="dt">price_per_unit =</span> credits <span class="op">/</span><span class="st"> </span>amount)</code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the price per unit</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">price_per_unit =</span> credits <span class="sc">/</span> amount)</span></code></pre></div>
 <p><br></p>
-<div class="note" style="line-height: 1.6;">
-<h3 id="note-1" class="unnumbered">Note</h3>
+<div id="note-1" class="section level3 unnumbered note" style="line-height: 1.6;">
+<h3>Note</h3>
 <p>Analysts often get asked questions:</p>
 <ul>
 <li>What’s the highest number?</li>

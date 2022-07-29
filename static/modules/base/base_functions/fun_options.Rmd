@@ -7,7 +7,7 @@
 <p>
 ### Function options {-}
 
-Functions have options that you can change to control their behavior. You can set these optins using _arguments_. Let's look at a few of the arguments for the function `read_csv()`.
+Functions have options —also called arguments— that change how they behave. You can set these optins using _arguments_. Let's look at a few of the arguments for the function `read_csv()`.
 
 <br><br>
 
@@ -24,13 +24,14 @@ Let's open the help window with `?read_csv` and try to find an argument that can
 There's a lot of them! But the `skip` argument looks like it could be helpful. Take a look at the description near the bottom. The default is `skip = 0`, which reads every line, but we can skip the first line by writing `skip = 1`. Let's try.
 
 ```{r, eval=F}
-read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv", skip = 1)
+read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv", 
+         skip = 1)
 ```
 
 
 <h3> Limit the number of rows </h3>
 
-Other types of data have weird last rows that are a _subtotal_ or just report "END OF DATA". Sometimes we want `read_csv` to ignore the last row, or only pull in a million lines because you don't want to bog down the memory on an old laptop. 
+Some types of data have last rows that show the _total_ or report "END OF DATA". In these cases we may want `read_csv` to ignore the last row of data, or for large data sets we may only want to pull in a 100 lines of data to see what you're working with. 
 
 Let's look through the help window to find an argument that can help us. Type `?read_csv` and scroll down.
 
@@ -38,7 +39,9 @@ The `n_max` argument looks like it could be helpful. The default is `n_max = Inf
 
 ```{r, eval=F}
 # Read in 100 rows
-small_data <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv", skip = 1, n_max = 100)
+small_data <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv", 
+                       skip = 1, 
+                       n_max = 100)
 
 # Remove the data
 rm(small_data)
@@ -46,11 +49,11 @@ rm(small_data)
 ```
 
 
-<h3> <i class="fas fa-hand-spock"></i> Spock-tip! </h3>
+<h3> Secret window </h3>
 
-__To see all of a function's arguments:__
+__To see all of a function's arguments__
 
-- Enter its name in the console followed by a parenthesis.
+- Type its name in the console followed by a parenthesis.
     - Type `read_csv( `
 - Press `TAB` on the keyboard.
 - Explore the drop-down menu of the available arguments. 
@@ -63,7 +66,7 @@ __To see all of a function's arguments:__
 
 __Which of these is a valid function call?__
 
-<input type="radio" name="func"> _train("concentrate" "Force")_           <br> 
+<input type="radio" name="func"> _fly(2 "ships")_                         <br> 
 <input type="radio" name="func"> _shoot, "lightsaber", "Death Ray"_       <br> 
 <input type="radio" name="func"> _replicate(100000000, "clones")_         <br> 
 <input type="radio" name="func"> _fight(until   Empire    conquered)_     <br> 

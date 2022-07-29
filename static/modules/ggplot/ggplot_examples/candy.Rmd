@@ -48,7 +48,7 @@ survey <- read_csv('candy,rating
 3. Paste the copied code into the upper left hand window. This is your code editor.  
 4. Highlight all of the code and hit __CTRL+ENTER__.
 
-> This chart should appear in the lower right of RStudio.
+> This chart will appear in the lower right of RStudio.
 
 ![](../images/candy_ratings_blk_viewer.png){width="60%"}
 
@@ -59,7 +59,7 @@ survey <- read_csv('candy,rating
 7. Try increasing the number next to the new candy.
 
 >
-> <i class="fas fa-star" style="color: #f6cd00;"></i>**__Bonus__**<i class="fas fa-star" style="color: #f6cd00;"></i> 
+> <i class="fa fa-user-astronaut" style="color:#f6cd00; margin-right: 12px;"></i>**__Explore!__**
 > 
 > - Add another candy and rating to the data.
 > - Add your name to the subtitle.
@@ -68,15 +68,17 @@ survey <- read_csv('candy,rating
 > - Change the `show.legend =` value to `TRUE`
 >     - What happens?
 
-<h4> Congrats rebel droid! </h4>
 </div>
 
 <br>
 
 
-<div class="tip">
-### <img src="../images/yoda_baby_sq.png" style="width: 40px; float: left; margin-top: -3px; margin-right: 6px;"> Yoda says {-}
-- You don't need to memorize everything. Yay!
+<div class="yoda">
+###  Yoda says {-}
+
+<img src="../images/yoda_baby_sq.png" class="yoda-img">
+
+- It's okay! You don't need to memorize everything.
     - Absorb what's possible. You can look up the details later.
 - You are free to break things. Create errors. Make the computer angry. Learn through mistakes. R will forgive you.
 - _Cheat_ if you're stuck.

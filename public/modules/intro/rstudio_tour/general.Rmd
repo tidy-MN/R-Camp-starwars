@@ -28,11 +28,12 @@ You may see some _scary_ warnings and errors appear here after running code. __W
 
 
 <div class="red-note" style="float: left; width: 45%; height: 510px; margin-left: 1%; margin-top: 0;">
+
 ### _4._ Plots and files {-}
 
-These tabs allow you to view and open files in your current directory, view plots and other visual objects like maps, view your installed packages and their functions, and access the help window. 
+These tabs allow you to view and open files in your current directory, view plots and other visual objects like maps, view your installed packages, and access the help window. 
 
-The `Files` tab is especially handy for finding a file you want and clicking it to op_en it. You can also click the `More ` option and select _"Show Folder in a New Window"_ as a shortcut to open your project folder.
+The `Files` tab is especially handy for finding a file you want and clicking it to open it. You can also click the `More ` option and select _"Show Folder in a New Window"_ as a shortcut to open your project folder.
 </div>
 
 
@@ -41,7 +42,9 @@ The `Files` tab is especially handy for finding a file you want and clicking it 
 
 ## Customize R Studio {-}
 
-Let's add a little style so R Studio feels like home. Follow these steps to change the font-size and color scheme: 
+Let's add a little style. 
+
+**Here's how to change the font and color theme**
 
 1. Go to __Tools__ on the top navigation bar. 
 2. Choose `Global Options...`
@@ -52,4 +55,4 @@ Let's add a little style so R Studio feels like home. Follow these steps to chan
 
 <img src="../images/font_change.png" style="width: 65%; margin-top: 14px; margin-left: 2%;">
 
-<br>
+

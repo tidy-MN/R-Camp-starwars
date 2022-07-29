@@ -54,7 +54,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
-```{r tools, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_toolbox/general.Rmd'}
+```{r tools, child='../../static/modules/dplyr/dplyr_toolbox/general.Rmd'}
 ```
 
 
@@ -178,11 +178,6 @@ ggplot(star_df, aes(x = mass, y = height)) +
 ```
 
 
-# <i class="fas fa-cloud"></i> AQS format
-<hr class="hr2">
-```{r aqs-format, child="X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/air_aqs/save_aqs.Rmd"}
-```
- 
  
 # <i class="fa fa-group" style="color: steelblue;"></i> Share with friends
 

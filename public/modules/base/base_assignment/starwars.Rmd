@@ -2,9 +2,8 @@
 You can assign values to new objects using the "left arrow" `<- `. It's typed with a less-than sign `<` followed by a hyphen `-`. 
 It's more officially known as the _assignment operator_. 
 
-<br>
 
-#### Let's make a droid! {-}
+### Let's make a droid! {-}
 
 Try adding the code below to your R script to create an object called `droid`.
 
@@ -34,17 +33,18 @@ wookie
 
 __Break some things__
 ```{r, eval=F}
-# To save text to an object we use quotes: "text"
-
 # Try this:
 wookie <- Chewbacca
+
 ```
 
+
+- Create an error or warning no one has reported yet.
 
 <div class="red-note" style="width: 93%;">
 ### Error! {-}
 
-Without quotes, R looks for an object called Chewbacca, and then lets you know that it couldn't find one. Let's try again after adding quotation marks around `Chewbacca`. 
+Without quotes, R looks for an object called Chewbacca, and then lets you know that it couldn't find one. Let's try again but add quotation marks around `"Chewbacca"`. 
 </div>
 
 <br>
@@ -147,7 +147,7 @@ It's common and good practice to frequently **re-run** your entire R script duri
 </div></details>
 
 
-## What's a good name? 
+## What's a good name? {-}
 
 Everything has a name in R and you can name things almost anything you like, even `TOP_SECRET_shhhhhh...` or `data_McData_face`.
 
@@ -182,7 +182,7 @@ wookies! <- "Everyone"
 88b <- "droid"
 
 # But they can contain numbers
-wookie1    <- "Chewbacca"
+wookie1 <- "Chewbacca"
 
 bb8 <- "droid"
 
@@ -191,10 +191,15 @@ n_wookies <- 10,000  # Error
 
 n_wookies <- 10000
 ```
+
+<br> 
+
+- Try to create a **new** error or warning you haven't seen yet.
+
 </div>
 
 
-## Collect multiple items
+## Collect multiple items {-}
 
 We can put multiple values inside `c()` to make a vector of items. It's like a chain of items, where each additional item is connected by a comma. The `c` stands for _concatenate_ or to _collect_.
   
@@ -228,7 +233,7 @@ This window shows all of the objects we've created so far and the types of data 
 </div>
 
 
-## Make a table
+## Make a table {-}
 
 ![](../images/vector_to_dataframe.png){width="510" style="margin-left: 100px;"}
 
@@ -304,7 +309,7 @@ starwars_df$ages
 
 ### Pop Quiz! {-}
 
-__Which of these object names are valid?__ _(Hint: You can test them.)_
+__Which object name is valid?__ _(Hint: You can test them in R.)_
 
 <input type="radio" name="object"> _my starwars fandom_  <br> 
 <input type="radio" name="object"> _my_wookies55_        <br> 

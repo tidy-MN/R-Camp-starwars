@@ -22,16 +22,16 @@ scrap
 <br>
 
 
-<div class="tip">
-### <i class="fas fa-hand-spock"></i> Spock-tip! {-}
+<div class="yoda">
+###  Yoda says {-}
 
-Notice the row of `<three>` letter abbreviations under the column names? These describe the data type of each column.
+Notice the row of `<chr>` letter abbreviations under the column names? These describe the data type of each column.
 
 - `<chr>` stands for __character__ vector or a string of characters. Examples: _"apple"_, _"apple5"_, _"5 red apples"_  
 - `<int>` stands for __integer__. Examples: _5_, _34_, _1071_  
-- `<dbl>` stands for __double__. Examples: _5.0000_, _3.4E-6_, _10.7106_
+- `<dbl>` stands for __double__. Examples: _5.000_, _3.4E-6_, _10.710_
 
-We'll explore more data types later on, such as `dates` and `logical` (TRUE/FALSE).
+We'll see more data types later on, such as `dates` and `logical` (TRUE/FALSE).
 </div>
 
 

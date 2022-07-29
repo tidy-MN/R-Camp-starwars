@@ -45,4 +45,3 @@ If we don't include `skip=`, R will assume the value `1` is meant for the functi
 
 </p></div></details>
 
-<br>

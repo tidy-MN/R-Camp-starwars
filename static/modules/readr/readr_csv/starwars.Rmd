@@ -1,5 +1,6 @@
 
-The first step of a good scrap audit is reading in some data to figure out where all the scrap is coming from. 
+To help find the junk we need for our ship we're going to conduct a scrap audit. The first step of a good audit is reading in data determine where all the scrap is coming from. 
+
 Here's a small dataset showing the scrap economy on Jakku. It was salvaged from a crash site, but the transfer was incomplete.
 
 ```{r ex-data1, echo=F, message=F, warning=F}
@@ -21,7 +22,7 @@ kable(scrap)
 
 This looks like it could be useful. Now, if only we had some more data to work with...
 
-## New Message _(1)_ {-}
+## New Message {-}
 
 <details>
 <summary class = "btn_code_green">_Incoming..._ _BB8_</summary>
@@ -51,7 +52,7 @@ Electromagnetic filter,Tuanul,Niima Outpost,107,Tons,188.2
 
 <br>
 
-__You:__ _Yikes! This looks like a mess! What can I do with this?_
+__You:__ _Yikes! This looks like a dense mess! What can I do with this?_
 
 </div>
 </p></details>
@@ -59,14 +60,14 @@ __You:__ _Yikes! This looks like a mess! What can I do with this?_
 
 ## CSV to the rescue {-}
 
-The main data format used in R is the __CSV__ _(comma-separated values)_. A __CSV__ is a simple text file that can be opened in R and most other stats software, including Excel. It looks squished together as plain text, but that's okay! When opened in R, the text becomes a familiar looking table with columns and rows. 
+The main data format used in R is the __CSV__ _(comma-separated values)_. A __CSV__ is a simple text file that can be opened in R and most other data tools, including Excel. It looks squished together as plain text, but that's okay! When opened in R, the text becomes a familiar looking table with columns and rows. 
 
 Before we launch ahead, let's add a _package_ to R that will help us read __CSV__ files.
 
 <br>
 
 <details>
-<summary class = "btn_code_blue"> How to save a CSV from Excel </summary>
+<summary class = "btn_code_blue"> Save a CSV from Excel </summary>
 <p>
 <div class="note">
 
@@ -86,8 +87,6 @@ __Step 2:__  Save as CSV
 __Step 3:__ Return to RStudio and open your project. Look at your _Files_ tab in the lower right window. Click on the _CSV_ file you saved and choose __View File__. 
 
 __Success!__
-
-<br>
 
 </div></p></details>
 

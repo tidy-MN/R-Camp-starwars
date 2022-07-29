@@ -63,13 +63,13 @@ cat(readLines("porg_tabs.txt"))
 
 # New mission! 
 <hr>
-```{r endor-all, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/lubridate_examples/endor.Rmd'}
+```{r endor-all, child='../../static/modules/lubridate_examples/endor.Rmd'}
 ```
 
 
 # Pipe it together: ` A %>% B `
 <hr>
-```{r pipe-intro, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_pipe/intro.Rmd'}
+```{r pipe-intro, child='../../static/modules/dplyr/dplyr_pipe/intro.Rmd'}
 ```
 
 >
@@ -89,28 +89,28 @@ That's enough _scuttlebutting_ on Endor, Finn needs us back on Jakku. It turns o
 
 <br>
 
-```{r convert-tbl, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/ton_conversion_tbl.Rmd'}
+```{r convert-tbl, child='../../static/modules/ton_conversion_tbl.Rmd'}
 ```
 
 
 # Join tables with `left_join()`
 <hr>
-```{r intro-join, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_leftjoin/intro_scrap.Rmd'}
+```{r intro-join, child='../../static/modules/dplyr/dplyr_leftjoin/intro_scrap.Rmd'}
 ```
 
-```{r porg-join, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_leftjoin/porg_names.Rmd'}
+```{r porg-join, child='../../static/modules/dplyr/dplyr_leftjoin/porg_names.Rmd'}
 ```
 
-```{r c3po-join, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_leftjoin/c3po_xtra_rows.Rmd'}
+```{r c3po-join, child='../../static/modules/dplyr/dplyr_leftjoin/c3po_xtra_rows.Rmd'}
 ```
 
 
 ## Back to the scrap yard {-}
 <hr class="hrlvl2">
-```{r join-convert, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_leftjoin/convert_&_scrap.Rmd'}
+```{r join-convert, child='../../static/modules/dplyr/dplyr_leftjoin/convert_&_scrap.Rmd'}
 ```
 
-```{r calc-lbs-item, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_mutate/pounds_per_scrap.Rmd'}
+```{r calc-lbs-item, child='../../static/modules/dplyr/dplyr_mutate/pounds_per_scrap.Rmd'}
 ```
 
 

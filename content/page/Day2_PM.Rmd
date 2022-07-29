@@ -32,28 +32,28 @@ hr {background: #62BE2C;}
 
 # `summarize()` this
 <hr>
-```{r summarize, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_summarize/summarize.Rmd'}
+```{r summarize, child='../../static/modules/dplyr/dplyr_summarize/summarize.Rmd'}
 ```
 
 
 # `group_by()` what
 <hr>
-```{r group-by, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_groupby/group_by.Rmd'}
+```{r group-by, child='../../static/modules/dplyr/dplyr_groupby/group_by.Rmd'}
 ```
 
 
 # Guess Who? {-}
 <h2 style="margin-top: -24px;"> _Star Wars edition_ </h2>
-```{r guesswho, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/games_guesswho/starwars.Rmd'}
+```{r guesswho, child='../../static/modules/games_guesswho/starwars.Rmd'}
 ```
 
 
 # `ifelse()`
 <hr>
-```{r if-yoda, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_ifelse/yoda.Rmd'}
+```{r if-yoda, child='../../static/modules/base/base_ifelse/yoda.Rmd'}
 ```
 
-```{r if-cheap, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_ifelse/cheap_items.Rmd'}
+```{r if-cheap, child='../../static/modules/base/base_ifelse/cheap_items.Rmd'}
 ```
 
 
@@ -74,7 +74,7 @@ hr {background: #62BE2C;}
 
 ![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
 
-```{r gg-sand, child = 'X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Modules/ggplot_sandwich/sandwich.Rmd'}
+```{r gg-sand, child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
 ```
 
 
@@ -137,8 +137,8 @@ ggplot(scrap, aes(x = origin, y = credits, color = destination)) +
 <br>
 
 
-<div class="note">
-### <i class="fas fa-hand-spock"></i> Spock-tip! {-}
+<div class="yoda">
+###  Yoda says {-}
 
 One easy way to experiment with colors is to add layers like `scale_fill_brewer` or `scale_colour_brewer` to your plot which will link to RcolorBrewer palettes so you can have accessible color schemes.
 </div>
@@ -263,7 +263,7 @@ Be bold and make a __boxplot__. We've covered how to do a scatterplot with `geom
 
 ## Save plots {-}
 <hr class="hrlvl2">
-```{r glossary, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/ggplot_save/save_plot.Rmd'}
+```{r glossary, child='../../static/modules/ggplot/ggplot/ggplot_save/save_plot.Rmd'}
 ```
 
 
@@ -344,7 +344,7 @@ _Woop! Go get em! So long Jakku - see you never!_
 
 # Plot Glossary {-}
 <hr class="hr2">
-```{r glossary, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/ggplot_glossary/glossary.Rmd'}
+```{r glossary, child='../../static/modules/ggplot/ggplot_glossary/glossary.Rmd'}
 ```
 
 

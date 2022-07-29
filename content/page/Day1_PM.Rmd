@@ -15,6 +15,8 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE, eval=F)
 
+xaringanExtra::use_clipboard()
+
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_color.R")
@@ -23,16 +25,16 @@ source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_m
 
 
 ## Data exploration {-} 
-```{r glimpse, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_install/general.Rmd'}
+```{r glimpse, child='../../static/modules/dplyr_install/general.Rmd'}
 ```
 
 
 ## Get to know your data frame {-}
-```{r glimpse, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_glimpse/starwars.Rmd'}
+```{r glimpse, child='../../static/modules/dplyr_glimpse/starwars.Rmd'}
 ```
 
 
-```{r tools, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_toolbox/general.Rmd'}
+```{r tools, child='../../static/modules/dplyr_toolbox/general.Rmd'}
 ```
 
 
@@ -48,26 +50,26 @@ cat(readLines("porg_tabs.txt"))
 
 # `select()`
 <hr>
-```{r select, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_select/starwars.Rmd'}
+```{r select, child='../../static/modules/dplyr_select/starwars.Rmd'}
 ```
 
 
 # Sort with `arrange()` 
 <hr>
-```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_arrange/starwars.Rmd'}
+```{r arrange, child='../../static/modules/dplyr_arrange/starwars.Rmd'}
 ```
 
 
 # R BINGO! {-}
 <hr class="hr2">
 
-```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/games_bingo/general.Rmd'}
+```{r arrange, child='../../static/modules/games_bingo/general.Rmd'}
 ```
 
 
 # `filter()`
 <hr>
-```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_filter/starwars.Rmd'}
+```{r arrange, child='../../static/modules/dplyr_filter/starwars.Rmd'}
 ```
 
 <div class="well">
@@ -77,19 +79,19 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 
 # `mutate()`
 <hr>
-```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_mutate/starwars.Rmd'}
+```{r arrange, child='../../static/modules/dplyr_mutate/starwars.Rmd'}
 ```
 
 
 ## Final stretch! {-}
 <hr class="hrlvl2">
-```{r arrange, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/dplyr_filter/ionengine.Rmd'}
+```{r arrange, child='../../static/modules/dplyr_filter/ionengine.Rmd'}
 ```
 
 
 # Save our data
 <hr>
-```{r save, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/readr_write/scrap_pounds.Rmd'}
+```{r save, child='../../static/modules/readr_write/scrap_pounds.Rmd'}
 ```
 
 
@@ -102,24 +104,24 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 
 ![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
 
-```{r child = 'X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Modules/ggplot_sandwich/sandwich.Rmd'}
+```{r child = '../../static/modules/ggplot_sandwich/sandwich.Rmd'}
 ```
 
 
 
 # Shutdown complete
 <hr>
-```{r shutdown, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/shutdown.Rmd'}
+```{r shutdown, child='../../static/modules/shutdown.Rmd'}
 ```
 
 
-```{r fun_stormtroopers, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/base_functions/stormtroopers.Rmd'}
+```{r fun_stormtroopers, child='../../static/modules/base_functions/stormtroopers.Rmd'}
 ```
 
 
 # <i class="fas fa-globe-americas" style="color: #0077be;"></i> New data -> New project! {-}
 <hr class="hr2">
-```{r earth-data, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/_yourdata/ozone_start.Rmd'}
+```{r earth-data, child='../../static/modules/_yourdata/ozone_start.Rmd'}
 ```
 
 ![](../images/scaryR.jpg){style="margin-left: 11%; width: 78%;"}

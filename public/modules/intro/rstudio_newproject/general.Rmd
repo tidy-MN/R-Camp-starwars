@@ -11,7 +11,7 @@ __Step 1:__ Start a new project
 - Choose _New Project..._
 - Choose _New Directory_
 - Choose _New Project_
-- Enter a project name such as `"starwars"`
+- Enter a project name such as `"Rcamp"`
 - Select _Browse..._ and choose a folder where you normally perform your work. 
 - Click _Create Project_
 

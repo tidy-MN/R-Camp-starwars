@@ -370,11 +370,4 @@ Aha! There really was a spike in the magnetic field in November. Hopefully, the 
 
 <br>
 
-# Calendar plots 
-<hr>
-
-<div class="note">
-```{r cal-plot, child='X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/modules/openair/calendar_plot.Rmd'}
-```
-</div>
 

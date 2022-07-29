@@ -1,45 +1,40 @@
 
-Let's introduce ourselves and the data we love. Chat with your __partner__ and get to know 3 things about them.
+![](../images/starwars_group.jpg){style="width: 70%; margin-left: auto; margin-top: 0; margin-bottom: 23px"}
 
-<br>
+Let's introduce ourselves and the data we love. Chat with your __partner__ and get to know some things about them.
 
-__Things to share:__  
 
-![](../images/starwars_group.jpg){align="right" style="width: 48%; margin-left: 18px; margin-top: 10px;"}
-
-<div class="note" style="margin-top: 0; padding-top: 22px;">
+__Chit-chat ideas__  
 
 - Your name or Star Wars alias 
 - Types of data you have
     - Who you share it with
 - Something you want to get from the workshop
 - The funniest part of your data
-- The most repetitive part?
-__Hint:__ _Maybe this is something you can automate with R_ 
+- The most repetitive part? __Hint:__ _Maybe this is something you can automate with R_ 
 
-</div>
 
 <br>
 
 <div class="well">
-### Go Team {-}
+
+<span style="font-size: 26px;">**Go Team**</span>
 
 We're going to need to work together to help Rey get off the dusty planet Jakku. 
-Use each other as a resource. Share ideas, share code, collaborate. Make bad jokes.
+Use each other as a resource. Share ideas, share code, collaborate. Puns and bad jokes are encouraged.
 
 
 **Here's one:**
 
 <details>
-<summary class = "btn_code">   __Which Jedi is best at opening PDF files? >__  </summary>
+<summary class = "btn_code"> __Which Jedi is best at opening PDF files? >__  </summary>
 <div class="quiz" style="margin-top: -6px; border-radius: 0;">
 <p>
 
-__A:__ `Adobe Wan Kenobi`?
+__A:__ `Adobe Wan Kenobi`
  
 ![](../images/obi_wan.jpg){width="238"}
 
-</div></p></details>
+</div></p>
+</details>
 </div>
-
-<br>

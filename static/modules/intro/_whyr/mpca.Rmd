@@ -3,9 +3,9 @@
 
 ## R Community {-}
 
-- See the [R Community](https://itep-r.netlify.com/page/community.html) page.
-- Finding R Help - [Get Help!](help.html)
+- Help requests and questions on Teams
 - [R Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+- Finding R Help - See [Get Help!](help.html)
 
 ## When we use R {-}
 

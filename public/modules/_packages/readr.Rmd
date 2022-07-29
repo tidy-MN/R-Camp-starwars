@@ -32,14 +32,14 @@ __Add a package to your library__
 
 Your installed packages are stored in your R _library_. The `Packages` tab on the right shows all of the available packages installed in your library. When you want to use one of them, you load it in R. 
 
-Loading a package is like opening an App on your phone. To load a package we use the `library()` function.
-Once you load it, the package will stay loaded until you close RStudio.
+Loading a package is like opening an App on your phone. To load a package we use the `library()` function. You will need to load the package everytime you "turn on" RStudio. 
+Once you load it, the package will stay loaded until you close (shut down) RStudio.
  
 
 <div class="note">
 <h3> Note </h3>
 
-__The 2 steps to using a packag in R:__
+__The 2 steps to using a package in R__
 
 1. `install.packages("package-name")`
 1. `library(package-name)`	

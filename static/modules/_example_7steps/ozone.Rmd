@@ -2,13 +2,13 @@
 Here's an example air monitoring project from start to finish.
 
 <details>
-<summary class = "btn_code"> __EXAMPLE__ - Ozone data project > </summary>
+<summary class="btn_code"> __EXAMPLE__: Ozone data project  **>** </summary>
+
 <div class="quiz" style="margin-top: 0; background-color: white;">
-<p><br>
 
-Imagine we just received 3 years worth of ozone monitoring data to summarize. __Fun!__ Below is an example workflow we might follow using R.
+Imagine we just received 3 years worth of ozone monitoring data to summarize. __Fun!__ 
 
-<div class="note" style="padding-top: 12px;">
+Below is an example workflow we might follow in R.
 
 1. Read the data
 1. Simplify columns
@@ -162,10 +162,13 @@ ggsave("results/2015-2017 - Ozone vs Temp.pdf")
 ![](../images/github_example_ozone.png){style="width: 95%;"}
 </a>
 
+<br>
 <div class="well">
-Having an exact record of what you did can be great documentation for yourself and others. It's also handy when you want to repeat the same analysis on new data. Then you only need to copy the script, update the read data line, and push run to get a whole new set of fancy charts.
+Having an exact record of your analysis is great documentation for yourself and others. It's also handy when you want to repeat the same analysis on new data. Then you only need to copy the script, update the read data line, and push run to get a whole new set of fancy charts.
 </div>
 
-</p></div></details>
+</div>
+
+</details>
 
 <br>

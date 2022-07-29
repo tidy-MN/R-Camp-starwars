@@ -126,7 +126,6 @@ Analysts often get asked questions:
 
 </div>
 
-
 ```{r, include=F}
 # Save scrap data for Day 2 PM
 write_csv(scrap, "scrap_day2_pm.csv")

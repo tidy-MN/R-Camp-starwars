@@ -18,19 +18,86 @@ output:
 <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
 <link href="/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
   <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
 
 <div id="TOC">
 <ul>
-<li><a href="#porg-tables"><span class="toc-section-number">1</span> Porg tables</a></li>
-<li><a href="#select"><span class="toc-section-number">2</span> <code>select()</code></a></li>
-<li><a href="#sort-with-arrange"><span class="toc-section-number">3</span> Sort with <code>arrange()</code></a></li>
+<li><a href="#dplyr"><span class="toc-section-number">1</span> dplyr</a></li>
+<li><a href="#glimpse-summary"><span class="toc-section-number">2</span> <code>glimpse()</code> &amp; <code>summary()</code></a></li>
+<li><a href="#your-analysis-toolbox"><i class="fa fa-toolbox"></i> Your analysis toolbox</a></li>
+<li><a href="#porg-tables"><span class="toc-section-number">3</span> Porg tables</a></li>
+<li><a href="#select"><span class="toc-section-number">4</span> <code>select()</code></a></li>
+<li><a href="#sort-with-arrange"><span class="toc-section-number">5</span> Sort with <code>arrange()</code></a></li>
 <li><a href="#r-bingo">R BINGO!</a></li>
-<li><a href="#filter"><span class="toc-section-number">4</span> <code>filter()</code></a></li>
-<li><a href="#mutate"><span class="toc-section-number">5</span> <code>mutate()</code></a></li>
-<li><a href="#save-our-data"><span class="toc-section-number">6</span> Save our data</a></li>
-<li><a href="#plots-with-ggplot2"><span class="toc-section-number">7</span> Plots with <em>ggplot2</em></a></li>
-<li><a href="#shutdown-complete"><span class="toc-section-number">8</span> Shutdown complete</a></li>
+<li><a href="#filter"><span class="toc-section-number">6</span> <code>filter()</code></a></li>
+<li><a href="#mutate"><span class="toc-section-number">7</span> <code>mutate()</code></a></li>
+<li><a href="#save-our-data"><span class="toc-section-number">8</span> Save our data</a></li>
+<li><a href="#plots-with-ggplot2"><span class="toc-section-number">9</span> Plots with <em>ggplot2</em></a></li>
+<li><a href="#shutdown-complete"><span class="toc-section-number">10</span> Shutdown complete</a></li>
 <li><a href="#new-data---new-project"><i class="fas fa-globe-americas" style="color: #0077be;"></i> New data -&gt; New project!</a></li>
 </ul>
 </div>
@@ -38,64 +105,816 @@ output:
 <div id="data-exploration" class="section level2 unnumbered">
 <h2>Data exploration</h2>
 </div>
+<div id="dplyr" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> dplyr</h1>
+<hr>
+<p><img src="../images/dplyr_hex.png" align="left" style="margin-right: 32px; margin-top: 8px; margin-bottom: 20px;" width="128" /></p>
+<p><br></p>
+<p><strong>You’ve unlocked a new package!</strong></p>
+<p><br></p>
+<div style="clear: both; margin-top: 22px;">
+
+</div>
+<p><b> <em>dplyr</em> </b> is the go-to tool for exploring, re-arranging, and summarizing data.</p>
+<p>Use <code>install.packages("dplyr")</code> to add <em>dplyr</em> to your library.</p>
+<div style="clear: both; margin-top: 22px;">
+
+</div>
+<p>Then try loading the package from your library to test if it was installed.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
 <div id="get-to-know-your-data-frame" class="section level2 unnumbered">
 <h2>Get to know your data frame</h2>
+<p>Use these functions to describe your data.</p>
+<div id="data-frame-info" class="section level3 unnumbered">
+<h3>Data frame info</h3>
+<div class="pinkcode">
+<table>
+<colgroup>
+<col width="13%" />
+<col width="2%" />
+<col width="83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th></th>
+<th align="left">Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>names(scrap)</code></td>
+<td></td>
+<td align="left">column names</td>
+</tr>
+<tr class="even">
+<td align="left"><code>nrow(...)</code></td>
+<td></td>
+<td align="left">number of rows</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ncol(...)</code></td>
+<td></td>
+<td align="left">number of columns</td>
+</tr>
+<tr class="even">
+<td align="left"><code>summary(...)</code></td>
+<td></td>
+<td align="left">summary of all column values (ex. <em>max</em>, <em>mean</em>, <em>median</em>)</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>glimpse(...)</code></td>
+<td></td>
+<td align="left">column names + a glimpse of first values (requires <em>dplyr</em> package)</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="porg-tables" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Porg tables</h1>
+</div>
+</div>
+</div>
+<div id="glimpse-summary" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> <code>glimpse()</code> &amp; <code>summary()</code></h1>
+<hr>
+<p><code>glimpse()</code> tells you what type of data and how much data you have.</p>
+<div id="lets-read-the-data-into-r-and-give-these-a-whirl." class="section level3 unnumbered">
+<h3>Let’s read the data into R and give these a whirl.</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View your whole dataframe and the types of data it contains</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(scrap)</span></code></pre></div>
+<pre><code>## Rows: 1,132
+## Columns: 7
+## $ receipt_date    &lt;chr&gt; &quot;4/1/2013&quot;, &quot;4/2/2013&quot;, &quot;4/3/2013&quot;, &quot;4/4/2013&quot;, &quot;4/5/2…
+## $ item            &lt;chr&gt; &quot;Flight recorder&quot;, &quot;Proximity sensor&quot;, &quot;Vitus-Series A…
+## $ origin          &lt;chr&gt; &quot;Outskirts&quot;, &quot;Outskirts&quot;, &quot;Reestki&quot;, &quot;Tuanul&quot;, &quot;Tuanul…
+## $ destination     &lt;chr&gt; &quot;Niima Outpost&quot;, &quot;Raiders&quot;, &quot;Raiders&quot;, &quot;Raiders&quot;, &quot;Nii…
+## $ amount          &lt;dbl&gt; 887, 7081, 4901, 707, 107, 32109, 862, 13944, 7788, 10…
+## $ units           &lt;chr&gt; &quot;Tons&quot;, &quot;Tons&quot;, &quot;Tons&quot;, &quot;Tons&quot;, &quot;Tons&quot;, &quot;Tons&quot;, &quot;Tons&quot;…
+## $ price_per_pound &lt;dbl&gt; 590.93, 1229.03, 225.54, 145.27, 188.28, 1229.03, 1485…</code></pre>
+<p><br></p>
+<p><code>summary()</code> gives you a quick report of your numeric data.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary gives us the means, mins, and maxima </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(scrap)</span></code></pre></div>
+<pre><code>##  receipt_date           item              origin          destination       
+##  Length:1132        Length:1132        Length:1132        Length:1132       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##                                                                             
+##                                                                             
+##                                                                             
+##                                                                             
+##      amount           units           price_per_pound   
+##  Min.   :     65   Length:1132        Min.   :   145.3  
+##  1st Qu.:   1544   Class :character   1st Qu.:   259.6  
+##  Median :   4099   Mode  :character   Median :   790.7  
+##  Mean   :  18751                      Mean   :  3811.7  
+##  3rd Qu.:   7475                      3rd Qu.:  1496.7  
+##  Max.   :2971601                      Max.   :579215.3  
+##  NA&#39;s   :910                          NA&#39;s   :910</code></pre>
+<p><br></p>
+</div>
+<div id="explore" class="section level3 unnumbered tip">
+<h3><i class="fas fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore!</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try some more on your own</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>()</span></code></pre></div>
+</div>
+</div>
+<div id="your-analysis-toolbox" class="section level1 unnumbered">
+<h1><i class="fa fa-toolbox"></i> Your analysis toolbox</h1>
+<hr class="hr2">
+<p><code>dplyr</code> is the hero for most analysis tasks. With these six functions you can accomplish just about anything you want with your data.</p>
+<div class="pinkcode">
+<p><br></p>
+<blockquote>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="77%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th align="left">Job</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>select()</code></td>
+<td align="left">Select individual columns to drop or keep</td>
+</tr>
+<tr class="even">
+<td align="left"><code>arrange()</code></td>
+<td align="left">Sort a table top-to-bottom based on the values of a column</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>filter()</code></td>
+<td align="left">Keep only a subset of rows depending on the values of a column</td>
+</tr>
+<tr class="even">
+<td align="left"><code>mutate()</code></td>
+<td align="left">Add new columns or update existing columns</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>summarize()</code></td>
+<td align="left">Calculate a single summary for an entire table</td>
+</tr>
+<tr class="even">
+<td align="left"><code>group_by()</code></td>
+<td align="left">Sort data into groups based on the values of a column</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+<div id="porg-tables" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Porg tables</h1>
 <hr>
 <p>A poggle of porgs volunteered to help us demo the <code>dplyr</code> functions.</p>
+<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="porgs-tab" data-toggle="tab" href="#porgs" role="tab" aria-controls="porgs" aria-selected="true"> porgs </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="select-tab" data-toggle="tab" href="#select" role="tab" aria-controls="select" aria-selected="false"> <code>select</code> </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="arrange-tab" data-toggle="tab" href="#arrange" role="tab" aria-controls="arrange" aria-selected="false"> <code>arrange</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="filter-tab" data-toggle="tab" href="#filter" role="tab" aria-controls="filter" aria-selected="false"> <code>filter</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="mutate3-tab" data-toggle="tab" href="#mutate3" role="tab" aria-controls="mutate3" aria-selected="false"> <code>mutate</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="summarize-tab" data-toggle="tab" href="#summarize" role="tab" aria-controls="summarize" aria-selected="false"> <code>summarize</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="group_by-tab" data-toggle="tab" href="#group_by" role="tab" aria-controls="group_by" aria-selected="false"> <code>group_by</code></a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="porgs" class="tab-pane fade active in" role="tabpanel" aria-labelledby="porgs-tab">
+<img src="images/porgs/porgs_tbl.png" style="width: 85%;" /> <br><br>
 </div>
-<div id="select" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> <code>select()</code></h1>
-<hr>
+<div id="select" class="tab-pane fade" role="tabpanel" aria-labelledby="select-tab">
+<img src="images/porgs/select_card.png" style="width: 90%;" /> <br><br> <img src="images/porgs/select_drop.png" style="width: 65%;" /> <img src="images/porgs/select_drop_tbl.png" style="width: 80%; margin-left: 5%; margin-top: 12px;" /> <br><br>
 </div>
-<div id="sort-with-arrange" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Sort with <code>arrange()</code></h1>
+<div id="arrange" class="tab-pane fade" role="tabpanel" aria-labelledby="arrange-tab">
+<img src="images/porgs/arrange.png" style="width: 65%;" /> <img src="images/porgs/arrange_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="images/porgs/arrange_desc.png" style="width: 57%;" /> <img src="images/porgs/arrange_tbl_desc.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
+</div>
+<div id="filter" class="tab-pane fade" role="tabpanel" aria-labelledby="filter-tab">
+<img src="images/porgs/filter.png" style="width: 65%;" /> <img src="images/porgs/filter_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="images/porgs/filter2.png" style="width: 75%;" /> <img src="images/porgs/filter2_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
+</div>
+<div id="mutate3" class="tab-pane fade" role="tabpanel" aria-labelledby="mutate3-tab">
+<img src="images/porgs/mutate_card.png" style="width: 88%;" /> <br><br>
+</div>
+<div id="summarize" class="tab-pane fade" role="tabpanel" aria-labelledby="summarize-tab">
+<img src="images/porgs/summarize_card.png" style="width: 88%;" /> <br><br>
+</div>
+<div id="group_by" class="tab-pane fade" role="tabpanel" aria-labelledby="group_by-tab">
+<img src="images/porgs/groupby_card.png" style="width: 92%;" /> <br><br>
+</div>
+</div>
+</div>
+<div id="select" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> <code>select()</code></h1>
 <hr>
+<p>Use the <code>select()</code> function to:</p>
+<ul>
+<li>Drop columns you no longer need</li>
+<li>Pull-out a few columns to create a new table</li>
+<li>Rearrange or change the order of columns</li>
+</ul>
+<div id="drop-columns-with-a-minus-sign--col_name" class="section level2 unnumbered">
+<h2>Drop columns with a minus sign: <code>-col_name</code></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the destination column</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(scrap, <span class="sc">-</span>destination)</span></code></pre></div>
+<pre><code>## # A tibble: 1,132 × 6
+##    receipt_date item                         origin amount units price_per_pound
+##    &lt;chr&gt;        &lt;chr&gt;                        &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+##  1 4/1/2013     Flight recorder              Outsk…    887 Tons             591.
+##  2 4/2/2013     Proximity sensor             Outsk…   7081 Tons            1229.
+##  3 4/3/2013     Vitus-Series Attitude Thrus… Reest…   4901 Tons             226.
+##  4 4/4/2013     Aural sensor                 Tuanul    707 Tons             145.
+##  5 4/5/2013     Electromagnetic discharge f… Tuanul    107 Tons             188.
+##  6 4/6/2013     Proximity sensor             Tuanul  32109 Tons            1229.
+##  7 4/7/2013     Hyperdrive motivator         Tuanul    862 Tons            1485.
+##  8 4/8/2013     Landing jet                  Reest…  13944 Tons            1497.
+##  9 4/9/2013     Electromagnetic discharge f… Crate…   7788 Tons             188.
+## 10 4/10/2013    Sublight engine              Outsk…  10642 Tons            7211.
+## # … with 1,122 more rows</code></pre>
+</div>
+<div id="drop-multiple-columns" class="section level2 unnumbered">
+<h2>Drop multiple columns</h2>
+<p>Use <code>-c(col_name1, col_name2)</code> or <code>-col_name1, -col_name2</code> to drop multiple columns.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the destination and units columns</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(scrap, <span class="sc">-</span><span class="fu">c</span>(destination, units, amount))</span></code></pre></div>
+<pre><code>## # A tibble: 1,132 × 4
+##    receipt_date item                             origin     price_per_pound
+##    &lt;chr&gt;        &lt;chr&gt;                            &lt;chr&gt;                &lt;dbl&gt;
+##  1 4/1/2013     Flight recorder                  Outskirts             591.
+##  2 4/2/2013     Proximity sensor                 Outskirts            1229.
+##  3 4/3/2013     Vitus-Series Attitude Thrusters  Reestki               226.
+##  4 4/4/2013     Aural sensor                     Tuanul                145.
+##  5 4/5/2013     Electromagnetic discharge filter Tuanul                188.
+##  6 4/6/2013     Proximity sensor                 Tuanul               1229.
+##  7 4/7/2013     Hyperdrive motivator             Tuanul               1485.
+##  8 4/8/2013     Landing jet                      Reestki              1497.
+##  9 4/9/2013     Electromagnetic discharge filter Cratertown            188.
+## 10 4/10/2013    Sublight engine                  Outskirts            7211.
+## # … with 1,122 more rows</code></pre>
+</div>
+<div id="keep-only-3-columns" class="section level2 unnumbered">
+<h2>Keep only 3 columns</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep item, amount and price_per_pound columns</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(scrap, item, amount, price_per_pound)</span></code></pre></div>
+<pre><code>## # A tibble: 1,132 × 3
+##    item                             amount price_per_pound
+##    &lt;chr&gt;                             &lt;dbl&gt;           &lt;dbl&gt;
+##  1 Flight recorder                     887            591.
+##  2 Proximity sensor                   7081           1229.
+##  3 Vitus-Series Attitude Thrusters    4901            226.
+##  4 Aural sensor                        707            145.
+##  5 Electromagnetic discharge filter    107            188.
+##  6 Proximity sensor                  32109           1229.
+##  7 Hyperdrive motivator                862           1485.
+##  8 Landing jet                       13944           1497.
+##  9 Electromagnetic discharge filter   7788            188.
+## 10 Sublight engine                   10642           7211.
+## # … with 1,122 more rows</code></pre>
+</div>
+<div id="everything-else-the-same" class="section level2 unnumbered">
+<h2><code>everything()</code> else the same</h2>
+<p><code>select()</code> also works to change the order of columns.
+The code below puts the <code>item</code> column first and then moves the <code>units</code> and <code>amount</code> columns directly after <code>item</code>.</p>
+<p>We then keep <code>evertyhing()</code> else the same.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the `item`, `units`, and `amount` columns the first three columns</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Leave `everything()` else in the same order</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(scrap, item, units, amount, <span class="fu">everything</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1,132 × 7
+##    item             units amount receipt_date origin destination price_per_pound
+##    &lt;chr&gt;            &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;                 &lt;dbl&gt;
+##  1 Flight recorder  Tons     887 4/1/2013     Outsk… Niima Outp…            591.
+##  2 Proximity sensor Tons    7081 4/2/2013     Outsk… Raiders               1229.
+##  3 Vitus-Series At… Tons    4901 4/3/2013     Reest… Raiders                226.
+##  4 Aural sensor     Tons     707 4/4/2013     Tuanul Raiders                145.
+##  5 Electromagnetic… Tons     107 4/5/2013     Tuanul Niima Outp…            188.
+##  6 Proximity sensor Tons   32109 4/6/2013     Tuanul Trade cara…           1229.
+##  7 Hyperdrive moti… Tons     862 4/7/2013     Tuanul Trade cara…           1485.
+##  8 Landing jet      Tons   13944 4/8/2013     Reest… Niima Outp…           1497.
+##  9 Electromagnetic… Tons    7788 4/9/2013     Crate… Raiders                188.
+## 10 Sublight engine  Tons   10642 4/10/2013    Outsk… Niima Outp…           7211.
+## # … with 1,122 more rows</code></pre>
+</div>
+</div>
+<div id="sort-with-arrange" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Sort with <code>arrange()</code></h1>
+<hr>
+<p>Rey wants to know what the highest priced items are. Use <code>arrange()</code> to find the highest priced scrap item and see which origins might have a lot of them.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange scrap items by price</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, price_per_pound)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View the top 6 rows</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 7
+##   receipt_date item         origin      destination amount units price_per_pound
+##   &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+## 1 4/4/2013     Aural sensor Tuanul      Raiders        707 Tons             145.
+## 2 5/22/2013    Aural sensor Outskirts   Niima Outp…   3005 Tons             145.
+## 3 5/23/2013    Aural sensor Tuanul      Raiders       6204 Tons             145.
+## 4 6/4/2013     Aural sensor Tuanul      Raiders       3120 Tons             145.
+## 5 6/10/2013    Aural sensor Blowback T… Niima Outp…   2312 Tons             145.
+## 6 6/20/2013    Aural sensor Outskirts   Trade cara…   6272 Tons             145.</code></pre>
+<p><br></p>
+<blockquote>
+<p>What, only <code>145 credits</code>!? That’s not much at all. Oh wait…that’s the smallest one on top.</p>
+</blockquote>
+<div id="big-things-first-desc" class="section level2 unnumbered">
+<h2>Big things first: <code>desc()</code></h2>
+<p>To arrange a column in descending order with the biggest numbers on top, we use: <code>desc(price_per_pound)</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Put most expensive items on top</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, <span class="fu">desc</span>(price_per_pound))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View the top 8 rows</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap, <span class="dv">8</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 8 × 7
+##   receipt_date item            origin   destination amount units price_per_pound
+##   &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+## 1 12/31/2016   Total           All      All         2.97e6 Tons          579215.
+## 2 4/10/2013    Sublight engine Outskir… Niima Outp… 1.06e4 Tons            7211.
+## 3 4/14/2013    Sublight engine Outskir… Raiders     2.38e3 Tons            7211.
+## 4 4/15/2013    Sublight engine Cratert… Raiders     6.31e3 Tons            7211.
+## 5 4/16/2013    Sublight engine Tuanul   Trade cara… 3.98e3 Tons            7211.
+## 6 5/14/2013    Sublight engine Cratert… Raiders     2.99e2 Tons            7211.
+## 7 6/14/2013    Sublight engine Blowbac… Raiders     8.58e3 Tons            7211.
+## 8 8/6/2013     Sublight engine Cratert… Raiders     1.77e3 Tons            7211.</code></pre>
+<p><br></p>
+<div id="explore-1" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
+<p>Try arranging by more than one column, such as <code>price_per_pound</code> and <code>amount</code>. What happens?</p>
+<p><strong>Hint:</strong> You can view the entire table by clicking on it in the upper-right <em>Environment</em> tab.</p>
+</div>
+<div id="spock-tip" class="section level3 unnumbered note">
+<h3><i class="fas fa-hand-spock"></i> Spock-tip!</h3>
+<p>When you save an arranged data table it maintains its order. This is perfect for sending people a quick <strong><code>Top 10</code></strong> list of pollutants or sites.</p>
+</div>
+</div>
 </div>
 <div id="r-bingo" class="section level1 unnumbered">
 <h1>R BINGO!</h1>
 <hr class="hr2">
+<p><img src="../images/star-wars-bingo-image.jpg" align="center" style="margin: auto; margin-top: 10px; margin-bottom: 12px;" width="350" /></p>
+<blockquote>
+<p><strong>We don’t have free spaces.</strong> Sorry, we are very mean people.</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>We’re going to call-out the bingo words using an R function.</li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get pretty colors</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;viridis&quot;</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># List of all the words</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>bingo_words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;median()&quot;</span>, <span class="st">&quot;nrow()&quot;</span>, <span class="st">&quot;glimpse()&quot;</span>, <span class="st">&quot;sum()&quot;</span>, <span class="st">&quot;head()&quot;</span>, <span class="st">&quot;tail()&quot;</span>, <span class="st">&quot;arrange()&quot;</span>, <span class="st">&quot;write_csv()&quot;</span>, <span class="st">&quot;geom_col()&quot;</span>, <span class="st">&quot;filter()&quot;</span>, <span class="st">&quot;ncol()&quot;</span>, <span class="st">&quot;sd()&quot;</span>, <span class="st">&quot;summarise()&quot;</span>, <span class="st">&quot;quantile()&quot;</span>, <span class="st">&quot;install.packages()&quot;</span>, <span class="st">&quot;geom_point()&quot;</span>, <span class="st">&quot;unique()&quot;</span>, <span class="st">&quot;select()&quot;</span>, <span class="st">&quot;mean()&quot;</span>, <span class="st">&quot;min()&quot;</span>, <span class="st">&quot;left_join()&quot;</span>, <span class="st">&quot;read_csv()&quot;</span>, <span class="st">&quot;nth()&quot;</span>, <span class="st">&quot;ggplot()&quot;</span>, <span class="st">&quot;library()&quot;</span>, <span class="st">&quot;n()&quot;</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Shuffle the words randomly</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>bingo_words <span class="ot">&lt;-</span> <span class="fu">sample</span>(bingo_words)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the draw number</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop thru each word</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(bingo_words)) {</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(n)</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot the word</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  call_fun <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>), <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="fu">sample</span>(<span class="fu">viridis_pal</span>()(<span class="dv">30</span>), <span class="dv">1</span>), <span class="at">size =</span> <span class="dv">177</span>) <span class="sc">+</span> </span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_label</span>(<span class="at">label =</span> bingo_words[n], <span class="at">size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_void</span>()</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(call_fun)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">readline</span>(<span class="at">prompt=</span><span class="st">&quot;Press Enter...&quot;</span>)</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="filter" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> <code>filter()</code></h1>
+<div id="filter" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> <code>filter()</code></h1>
 <hr>
+<p>The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.
+Let’s take a look at the records with the origin <code>"All"</code>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(scrap, origin <span class="sc">==</span> <span class="st">&quot;All&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 7
+##   receipt_date item  origin destination  amount units price_per_pound
+##   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+## 1 12/31/2016   Total All    All         2971601 Tons          579215.</code></pre>
+<p><br></p>
+<div id="spock-tip-1" class="section level3 unnumbered note">
+<h3><i class="fas fa-hand-spock"></i> Spock-tip!</h3>
+<p>We use a <code>==</code> (double equals sign) for comparing values. A <code>==</code> makes the comparison “is it equal to?” and returns a True or False answer. So the code above will returns only the rows where the condition <code>origin == "All"</code> is TRUE.</p>
+<p>A single equals sign <code>=</code> is used within functions to set options, for example <code>read_csv(file = "starwars_scrap_jakku.csv")</code>. It’s not a big deal if you mix them up the first time. R is often helpful and will let you know which one is needed.</p>
+</div>
+<div id="comparing-values" class="section level2 unnumbered">
+<h2>Comparing values</h2>
+<hr class="hrlvl2">
+<p><img src="../images/porg_heights.png" style="float: right; margin-top: -94px; width: 40%;" /></p>
+<p>We use a variety of comparisons when processing data. Sometimes we only want concentrations above a certain level, or days below a given temperature, or sites that have missing observations.</p>
+<p>We use the <strong>Menu</strong> of comparisons below to find the data we want.</p>
+<blockquote>
+<h3 style="margin-top: 8px; margin-bottom: -4px;">
+Menu of comparisons
+</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Comparison</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>&gt;</code></td>
+<td align="left">greater than</td>
+</tr>
+<tr class="even">
+<td align="left"><code>&gt;=</code></td>
+<td align="left">greater than or equal to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>&lt;</code></td>
+<td align="left">less than</td>
+</tr>
+<tr class="even">
+<td align="left"><code>&lt;=</code></td>
+<td align="left">less than or equal to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>==</code></td>
+<td align="left">equal to</td>
+</tr>
+<tr class="even">
+<td align="left"><code>!=</code></td>
+<td align="left">NOT equal to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>%in%</code></td>
+<td align="left">value is in a list: <code>X %in% c(1,3,7)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>is.na(...)</code></td>
+<td align="left">is the value missing?</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>str_detect(col_name, "word")</code></td>
+<td align="left">“word” appears in text?</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><br></p>
+<div id="explore-2" class="section level3 unnumbered tip">
+<h3><i class="fas fa-user-astronaut" style="color: green"></i> Explore!</h3>
+<p>Try comparing some things in the console to see if you get what you’d expect. R doesn’t always think like we do.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">!=</span> <span class="dv">5</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">==</span> <span class="dv">4</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">&lt;</span> <span class="dv">3</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">&gt;</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">==</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">==</span> <span class="cn">NA</span></span></code></pre></div>
+</div>
+</div>
+<div id="dropping-rows" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Dropping rows</h2>
+<hr class="hrlvl2">
+<p>Let’s look at the data without the <em>All</em> category. Look in the comparison table above to find the <code>NOT</code> operator. We’re going to filter our data to keep only the origins that are <code>NOT equal to</code> “All”.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>)</span></code></pre></div>
+<p>We can arrange the data in ascending order by <code>item</code> to confirm the “All” category is gone.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange data</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, item)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 7
+##   receipt_date item         origin      destination amount units price_per_pound
+##   &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+## 1 4/4/2013     Aural sensor Tuanul      Raiders        707 Tons             145.
+## 2 5/22/2013    Aural sensor Outskirts   Niima Outp…   3005 Tons             145.
+## 3 5/23/2013    Aural sensor Tuanul      Raiders       6204 Tons             145.
+## 4 6/4/2013     Aural sensor Tuanul      Raiders       3120 Tons             145.
+## 5 6/10/2013    Aural sensor Blowback T… Niima Outp…   2312 Tons             145.
+## 6 6/20/2013    Aural sensor Outskirts   Trade cara…   6272 Tons             145.</code></pre>
+<p><br></p>
+<div class="well">
+<p>Now let’s take another look at that bar chart. Is there anything else that is less than perfect with our data?</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="/page/Day1_PM_files/figure-html/ggplot-noAll-1.png" width="672" /></p>
+</div>
+</div>
+<div id="multiple-filters" class="section level2 unnumbered">
+<h2>Multiple filters</h2>
+<hr class="hrlvl2">
+<p>We can add multiple comparisons to <code>filter()</code> to further restrict the data we pull from a larger data set. Only the records that pass the conditions of all the comparisons will be pulled into the new data frame.</p>
+<p>The code below filters the data to only scrap records with an origin of <code>Outskirts</code> <strong>AND</strong> a destination of <code>Niima Outpost</code>.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>outskirts_to_niima <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                             origin        <span class="sc">==</span> <span class="st">&quot;Outskirts&quot;</span>, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                             destination   <span class="sc">==</span> <span class="st">&quot;Niima Outpost&quot;</span>)</span></code></pre></div>
+<p><br></p>
 <div class="well">
 <p>Let’s calculate some new columns to help focus Rey’s scavenging work.</p>
 </div>
 </div>
-<div id="mutate" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> <code>mutate()</code></h1>
+</div>
+<div id="mutate" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> <code>mutate()</code></h1>
 <hr>
+<p><code>mutate()</code> can edit existing columns in a data frame or add new values that are calculated from existing columns.</p>
+<div id="add-a-column" class="section level2 unnumbered">
+<h2>Add a column</h2>
+<p>First, let’s add a column with our names. That way Rey can thank us personally when her ship is finally up and running.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your name as a column</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, <span class="at">scrap_finder =</span> <span class="st">&quot;BB8&quot;</span>)</span></code></pre></div>
+</div>
+<div id="add-several-columns" class="section level2 unnumbered">
+<h2>Add several columns</h2>
+<p>Let’s also add a new column to document the data measurement method.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  Add your name as a column and</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  some information about the method</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="do">## REM = Republic Equivalent Method</span></span></code></pre></div>
+</div>
+<div id="change-a-column" class="section level2 unnumbered">
+<h2>Change a column</h2>
+<hr class="hrlvl2">
+<p>Remember how the units of Tons was written two ways: “TONS” and “Tons”? We can use <code>mutate()</code> together with <code>tolower()</code> to make sure all of the scrap units are written in lower case. This will help prevent them from getting grouped separately in our plots and summaries.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set units to all lower-case</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, <span class="at">units =</span> <span class="fu">tolower</span>(units))</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># toupper() changes all of the letters to upper-case.</span></span></code></pre></div>
+</div>
+<div id="add-calculated-columns" class="section level2 unnumbered">
+<h2>Add calculated columns</h2>
+<p>In our work we often use <code>mutate</code> to convert units for measurements. In this case, let’s estimate the total pounds for the scrap items that are reported in tons.</p>
+<div id="tons-to-pounds-conversion" class="section level3 unnumbered">
+<h3>Tons <code>to</code> Pounds conversion</h3>
+<p>We can use <code>mutate()</code> to convert the <code>amount</code> column to pounds. Multiply the <code>amount</code> column by 2000 to get new values for a column named <code>amount_lbs</code>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>scrap_pounds <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, <span class="at">amount_lbs =</span> amount <span class="sc">*</span> <span class="dv">2000</span>)</span></code></pre></div>
+</div>
+</div>
 <div id="final-stretch" class="section level2 unnumbered">
 <h2>Final stretch!</h2>
 <hr class="hrlvl2">
+<blockquote>
+<p>We now have all the tools we need.</p>
+<p>To get Rey’s ship working we need to track down more of the scrap item: <strong><code>Ion engine</code></strong>.</p>
+</blockquote>
+<p><strong>Step 1:</strong></p>
+<ul>
+<li><strong>filter</strong> the data to only <code>Ion engine</code></li>
+</ul>
+<p><br></p>
+<details>
+<summary class="btn_code_blue">
+<em>Show code</em>
+</summary>
+<p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grab only the items named &quot;Ion engine&quot;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>scrap_pounds <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap_pounds, item <span class="sc">==</span> <span class="st">&quot;Ion engine&quot;</span>)</span></code></pre></div>
+</p>
+</details>
+<br><br>
+<hr class="hr2">
+<p>Next <em>arrange</em> the data in descending order of pounds so Rey knows where the highest amount of <code>Ion engine</code> scrap comes from.</p>
+<p><strong>Step 2:</strong></p>
+<ul>
+<li><strong>arrange</strong> in descending order by <code>amount_lbs</code></li>
+</ul>
+<p><br></p>
+<details>
+<summary class="btn_code_blue">
+<em>Show code</em>
+</summary>
+<p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange data</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>scrap_pounds <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap_pounds, <span class="fu">desc</span>(amount_lbs))</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Return the origin of the highest amount_lbs of scrap</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap_pounds, <span class="dv">1</span>)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the total amount_lbs by origin</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap_pounds, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount_lbs)) <span class="sc">+</span> </span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+</p>
+</details>
+<div id="complete-the-mission" class="section level3 unnumbered quiz">
+<h3>Complete the mission!</h3>
+<p><strong>For the item <code>Ion engine</code>, which origin has the most <code>amount_lbs</code>?</strong></p>
+<p><input type="radio" name="ion"> <em>Tuanul</em> <br>
+<input type="radio" name="ion"> <em>Cratertown</em> <br>
+<input type="radio" name="ion"> <em>Outskirts</em> <br>
+<input type="radio" name="ion"> <em>Reestki</em> <br></p>
+<p><br></p>
+<details>
+<summary class="btn_code">
+<em>Show solution</em>
+</summary>
+<p>
+<p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>Cratertown</code></p>
+<em>Yes!! You receive the ship parts to repair Rey’s Millennium Falcon. Onward!</em>
+</p>
+</details>
+</div>
+<div style="clear: both;">
+
 </div>
 </div>
-<div id="save-our-data" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Save our data</h1>
+<div id="first-mission-complete" class="section level2 unnumbered">
+<h2>First mission complete!</h2>
+<p><strong>Nice work!</strong> Rey got a great deal on her engines and even traded in some scrap for spending cash. <em>You’ve got the music in you, oh, oh, oh… Sorry.</em></p>
+<p><br></p>
+<blockquote>
+<p><strong>Time to get off this dusty planet, we’re flying to Endor!</strong></p>
+</blockquote>
+<p><img src="../images/blast_off_ship_jakku.gif" style="margin-left: 12%; width: 75%;" /></p>
+<p><br></p>
+</div>
+</div>
+<div id="save-our-data" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Save our data</h1>
 <hr>
+<p>You can’t break your original dataset if you name your edited data something new. Let’s use the <code>readr</code> package to save our new CSV with the tons converted to pounds.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data as a CSV file </span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap_pounds, <span class="st">&quot;scrap_in_pounds.csv&quot;</span>)</span></code></pre></div>
+<blockquote>
+<p>Where did R save the file?</p>
+<p><em>Hint:</em> You can look in the lower right <code>[Files]</code> tab.</p>
+</blockquote>
+<p><br></p>
+<p>Let’s create a new <code>results/</code> folder to keep our processed data separate from any raw data we receive. Now we can add <code>results/</code> to our file path when we save the file.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data as a CSV file to results folder</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap_pounds, <span class="st">&quot;results/scrap_in_pounds.csv&quot;</span>)</span></code></pre></div>
+<p><br></p>
 </div>
-<div id="plots-with-ggplot2" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Plots with <em>ggplot2</em></h1>
+<div id="plots-with-ggplot2" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Plots with <em>ggplot2</em></h1>
 <hr>
 <div id="plot-the-data-plot-the-data-plot-the-data" class="section level4 unnumbered">
 <h4><em>Plot the data, Plot the data, Plot the data</em></h4>
 <p><br></p>
 <p><img src="../images/ggplot2_hex.png" align="right" style="margin-right: 70px; margin-top: -124px;" width="180" /></p>
 </div>
+<div id="the-ggplot-sandwich" class="section level2 unnumbered">
+<h2>The <code>ggplot()</code> sandwich</h2>
+<p><img src="../images/auto_plot.gif" style="margin-top: -22px; margin-left: -40px; max-width: 110%;" /></p>
+<h5 style="font-size: 28px; font-weight: bold; margin-top: -42px;">
+A <code>ggplot</code> has 3 ingredients.
+</h5>
 </div>
-<div id="shutdown-complete" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Shutdown complete</h1>
+<div id="the-base-plot" class="section level2 unnumbered">
+<h2>1. The base plot</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap)</span></code></pre></div>
+<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><br></p>
+<blockquote>
+<p>we load version 2 of the package <code>library(ggplot2)</code>, but the function to make the plot is only <code>ggplot()</code>. No <code>2</code>. <em>Sorry.</em></p>
+</blockquote>
+</div>
+<div id="the-the-x-y-aesthetics" class="section level2 unnumbered">
+<h2>2. The the X, Y <em>aesthetics</em></h2>
+<p>The <em>aesthetics</em> assign the columns from the data that you want to use in the chart. This is where you set the <code>X</code>-<code>Y</code> variables that determine the dimensions of the plot.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount)) </span></code></pre></div>
+<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="the-layers-or-geometries" class="section level2 unnumbered">
+<h2>3. The layers or <em>geometries</em></h2>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><br></p>
+</div>
+<div id="colors" class="section level2 unnumbered">
+<h2>Colors</h2>
+<hr class="hrlvl2">
+<p>Now let’s change the fill color to match the origin.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount, <span class="at">fill =</span> origin)) <span class="sc">+</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() </span></code></pre></div>
+<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div id="explore-3" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
+<p>Try making a column plot showing the total amount of scrap for each <code>destination</code> or for each <code>item</code>.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount )) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="shutdown-complete" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Shutdown complete</h1>
 <hr>
+<p>When you close R for the first time you’ll see some options about saving your workspace, history, and other files. In general, we advise against saving these files. This will help RStudio open a fresh and clean environment every time you start it. And it’s easy enough to re-run your script next time you open your project.</p>
+<p>Follow these steps to set these options permanently, and not have to see the pop-up windows when you close R.</p>
+<p><strong>Turn off <em>Save Workspace</em> </strong></p>
+<ol style="list-style-type: decimal">
+<li>Go to <code>Tools &gt; Global Options....</code> on the top RStudio navigation bar</li>
+<li>On the first screen:
+<ul>
+<li><input type="checkbox" disabled="" />
+Uncheck Restore .Rdata into workspace at startup</li>
+<li>Set <em>Save workspace to .RData on exit</em> to [“Never?].</li>
+<li><input type="checkbox" disabled="" />
+Uncheck Always save history</li>
+</ul></li>
+</ol>
+<p><br></p>
 </div>
 <div id="new-data---new-project" class="section level1 unnumbered">
 <h1><i class="fas fa-globe-americas" style="color: #0077be;"></i> New data -&gt; New project!</h1>
 <hr class="hr2">
+<p>It’s time for some Earth data. Use your new R skills to explore some data from closer to home.</p>
+<div id="set-up-your-project" class="section level2 unnumbered">
+<h2>Set up your project</h2>
+<ul>
+<li>Open a new project</li>
+<li>Open a new R script</li>
+<li>Create a <code>data</code> folder in your project directory</li>
+<li>Copy your data to that folder</li>
+</ul>
+</div>
+<div id="begin-your-analysis" class="section level2 unnumbered">
+<h2>Begin your analysis</h2>
+</div>
+<div id="read-data-into-r" class="section level2 unnumbered">
+<h2>1. Read data into R</h2>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read a CSV file</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/My-data.csv&quot;</span>)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Have an EXCEL file?</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="do">## You can use read_excel() from the readxl package</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(readxl)</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Read an EXCEL file</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/My-data.xlsx&quot;</span>)</span></code></pre></div>
+</div>
+<div id="clean-the-column-names" class="section level2 unnumbered">
+<h2>2. Clean the column names</h2>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_data)</span></code></pre></div>
+</div>
+<div id="get-to-know-your-data" class="section level2 unnumbered">
+<h2>3. Get to know your data</h2>
+<blockquote>
+<p>Hint: <code>summary()</code>, <code>glimpse()</code>, <code>nrow()</code>, <code>names()</code></p>
+</blockquote>
+</div>
+<div id="plot-the-data" class="section level2 unnumbered">
+<h2>4. Plot the data</h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Remember the ggplot sandwich!</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> TEMP_F, <span class="at">y =</span> OZONE)) <span class="sc">+</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> site_name))</span></code></pre></div>
+<blockquote>
+<p>Keep exploring…</p>
+</blockquote>
+<p><br></p>
 <p><img src="../images/scaryR.jpg" style="margin-left: 11%; width: 78%;" /></p>
 <div id="return-to-homebase" class="section level3 unnumbered">
 <h3><i class="fa fa-rocket" aria-hidden="true"></i> Return to <a href="../post/day-1.html">Homebase</a></h3>
 <p><br></p>
+</div>
 </div>
 </div>

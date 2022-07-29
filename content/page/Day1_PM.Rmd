@@ -13,7 +13,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE, eval=F)
+knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE)
 
 xaringanExtra::use_clipboard()
 

@@ -12,6 +12,12 @@ output:
     monofont: Source Code Pro
 ---
 
+<style>
+h1 .header-section-number {background: #62BE2C;}
+hr {background: #62BE2C;}
+</style>
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=TRUE, warning=F, message=F)
 knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
@@ -23,11 +29,6 @@ library(dplyr)
 # Read in the full scrap data
 scrap <- read_csv("scrap_day2pm.csv")
 ```
-
-<style>
-h1 .header-section-number {background: #62BE2C;}
-hr {background: #62BE2C;}
-</style>
 
 
 # `summarize()` this

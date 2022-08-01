@@ -82,22 +82,21 @@ We make lots of mistakes. Mistakes are how we learn. They are also funny. Laugh 
 
 
 ## Example ozone analysis {-}
-```{r ex-ozone2, results="asis", echo=F, warning=F}
-cat(knitr::knit_child("../../static/modules/_example_7steps/ozone.Rmd", quiet = TRUE, envir = parent.frame()))
+```{r ex-ozone2, child='../../static/modules/_example_7steps/ozone.Rmd'}
 ```
 
 
 <br>
 
 
-## Show <span style="color: #3498db;"> and </span> Tell {-}
->
+## Show and Tell {-}
 
 <br>
 
 
 # Help Wanted!
 <hr>
+
 ```{r droid-app, child='../../static/modules/intro/droid_app/droid_application.Rmd', eval=TRUE}
 ```
 
@@ -113,14 +112,16 @@ cat(knitr::knit_child("../../static/modules/_example_7steps/ozone.Rmd", quiet = 
 <br>
 
 <div class="well">
-While BB8 tracks down data from his scrapyard friends, we'll prepare for some garbage data. Let's get to know R and RStudio. 
+While BB8 tracks down data from his scrapyard friends, we'll prepare for some garbage data. 
+
+Let's get to know R and RStudio. 
 </div>
 
 
 # New mission, New R project 
 <hr>
 
-Start a new project for our analysis.
+Start a new project for your analysis.
 ```{r set-params, include=F}
 params <- list(name1 = 'jakku1.R', name2 = 'day1.R')
 ```

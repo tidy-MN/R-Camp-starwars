@@ -40,7 +40,7 @@ enableEmoji: true
 
 ## R Camp
 
-![](../images/Rstudio_ex.png){style="max-width: 46%; margin-top: 0; margin-left: 0; margin-right: 32px; margin-bottom: 20px; float: left;"}
+![](../images/Rstudio_ex.png){style="max-width: 46%; margin-top: 10px; margin-left: 0; margin-right: 32px; margin-bottom: 20px; float: left;"}
 <div style="clear: both;"> </div>
 
 

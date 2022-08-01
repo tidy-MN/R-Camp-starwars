@@ -1,0 +1,378 @@
+
+
+The Wookies want our help. BB8 just received new data from the wookies suggesting there was a large magnetic storm just before `Site 1` burned down on Endor. Sounds like we're going to be __STORM CHASERS__!  _Mission accepted._
+
+<br>
+
+### Get the dataset {-}
+
+While we're relaxing and flying to Endor let's get set up with the new data.
+
+<div class="tip">
+
+### Endor setup {-}
+
+1. Download the data.
+    - <a href="https://itep-r.netlify.com/data/air_endor.csv"><span class="btn_code_blue" style="margin-bottom: 10px; margin-top: 12px;"> __DOWNLOAD__  </span></a> -  Get the Endor monitoring data
+1. Create a new folder called `data` in your project folder.
+1. Move the downloaded Endor file to there.
+1. Create a new R script called `endor.R`
+
+<br>
+
+Now we can read in the data from the data folder with our favorite `read_csv` function.
+
+```{r, endor-air-read, eval=F}
+library(readr)
+library(dplyr)
+library(janitor)
+
+air_endor <- read_csv("data/air_endor.csv")
+
+names(air_endor)
+
+# Clean the column names
+air_endor <- clean_names(air_endor)
+
+names(air_endor)
+```
+
+```{r, endor-air-read2, echo=F, message=F}
+library(readr)
+library(dplyr)
+library(janitor)
+
+air_endor <- read_csv("https://itep-r.netlify.com/data/air_endor.csv")
+
+air_endor <- clean_names(air_endor)
+
+names(air_endor)
+```
+</div>
+
+<br>
+
+<div class="note">
+
+### Note {-}
+
+When your project is open, RStudio sets the working directory to your project folder. When reading files from a folder outside of your project, you'll need to use the full file path location.
+
+For example, for a file on the __X-drive__: `X://Programs/Air_Quality/Ozone_data.csv`
+<br>
+
+</div>
+
+
+## Welcome to Endor! {-}
+<hr class="hrlvl2">
+
+![](https://itep-r.netlify.com/images/planet_endor.jpg){style="width: 75%; margin-top: -4px; margin-left: 11%;"}
+
+<br>
+
+__Let's get to know the Endor data.__
+
+Remember the ways?
+
+__Hint:__ `summary()`, `glimpse()`, `nrow()`, `distinct()`
+
+
+<br>
+
+
+```{r, endor-air2}
+glimpse(air_endor)
+```
+
+<br>
+```{r, dist}
+distinct(air_endor, analyte)
+```
+<br>
+
+__Woah! That's definitely more analytes than we need.__ 
+
+We only want to know about `magnetic_field` data. Let's filter down to that analyte.
+
+<br>
+```{r, endor-air-filter}
+mag_endor <- filter(air_endor, analyte == "magnetic_field")
+```
+
+__Boom!__ How many rows are left now?
+
+<br>
+
+
+>
+> Ok. According to the request we received, the Resistance is only interested in observations from year __`2017`__. 
+> So let's filter the data down to only dates for that year.
+>
+> __How do we filter on the date column?__
+>
+>
+
+<br>
+
+<div class="well">
+With time series data it's helpful for R to know which columns are __dates__. Dates come in many formats and the standard format in R is `2019-01-15`, also referred to as _Year-Month-Day_ format. We use the __`lubridate`__ package to help format our dates.
+</div>
+
+
+# <i class="fa fa-calendar" aria-hidden="true"></i> Dates
+<hr>
+
+### Enter the `lubridate` package. {-}
+
+![](../images/lubridate.png){style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;"}
+
+
+<br>
+
+It's about time! Lubridate makes working with dates much easier.
+
+We can find how much time has elapsed, add or subtract days, and find seasonal and day of the week averages.
+
+<br>
+
+<div style="clear: both;"></div>
+
+<br>
+
+
+### Install `lubridate` {-}
+
+**Run:** 
+```{r, eval=F}  
+install.packages("lubridate")
+```
+
+<br>
+
+### Convert text to a `DATE` {-}
+
+| Function    |  Order of date elements                                 |
+|----|:-----------------------------------------------------------------|
+|`mdy()  `    | Month-Day-Year :: `05-18-2019` or `05/18/2019`                 |
+|`dmy()  `    | Day-Month-Year (Euro dates) :: `18-05-2019` or `18/05/2019`    |
+|`ymd()  `    | Year-Month-Day (science dates) :: `2019-05-18` or `2019/05/18` |
+|`ymd_hm() `  | Year-Month-Day Hour:Minutes ::  `2019-05-18 8:35 AM`          |
+|`ymd_hms() ` | Year-Month-Day Hour:Minutes:Seconds ::  `2019-05-18 8:35:22 AM`    |
+
+<br>
+
+### Get date parts {-}
+
+| Function   |  Date element                                            |
+|----|:-----------------------------------------------------------------|
+|`year()  `  | Year          |
+|`month()`   | Month as _1,2,3_; For _Jan, Feb, Mar_ use `label=TRUE`  |
+|`week()`    | Week of the year  |
+|`day()`     | Day of the month  |
+|`wday()`    | Day of the week as _1,2,3_; For _Sun, Mon, Tue_ use `label=TRUE` |
+| _- Time -_   |            |
+|`hour() `   |  Hour of the day _(24hr)_ |
+|`minute() ` |  Minutes   |
+|`second() ` |  Seconds   |
+|`tz()  `    |  Time zone |
+
+
+<br>
+
+
+
+<div class="note">
+### <i class="fa fa-broom" aria-hidden="true"></i> Clean the dates {-}
+
+#### Real world examples {-}
+
+Does your date column look like one of these? Here's the `lubridate` function to tell R that the column is a date.
+
+
+| Format |  Function to use         |   
+|--------|:-------------------------|  
+| "05/18/2019" | `mdy(date_column)  ` |  
+| "May 18, 2019" | `mdy(date_column)  `       |
+| "05/18/2019 8:00 CDT" | `mdy_hm(date_column, tz = "US/Central")  `|
+| "05/18/2019 11:05:32 PDT" | `mdy_hms(date_column, tz = "US/Pacific")  `|
+
+<br>
+
+__European dates__
+
+| Format |  Function to use         |   
+|--------|:-------------------------| 
+| "30.05.2019" | `dmy(date_column) `  |
+| "30-05-2019" | `dmy(date_column) `  |
+| "30/05/2019" | `dmy(date_column) `  |
+
+<br>
+
+__All number dates__
+
+| Format |  Function to use         |   
+|--------|:-------------------------| 
+| "20190518" | `ymd(sample_date) `  |
+
+</div>
+
+
+
+## Small problem {-}
+<hr class="hrlvl2">
+
+![](../images/access_denied.jpg){style="width: 40%; float: left; margin-top: 4px; margin-right: 28px;"}
+
+__Oh no!__ BB8 got locked out of the system! You need the passcode before you can unlock the data. 
+
+There's a cryptic note on the pad next to you... _"Moonie's birthday"._ Could that be the hint to the passcode?
+
+We need to determine when Moonie's birthday is...time to get out our detective hats.
+
+You ask the lead engineer: 
+
+__So when is Moonie's birthday?__
+
+> _"I think it's on a Tuesday this year"_
+
+__Any more helpful clues? Anything?__
+
+> _"Hmmm... Let's see, I think it was around the 22nd week of the year. Yep. That's it."_
+
+<br>
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+After some more interviews you now have a list of dates that could be Marty's birthday. Find the date that occurred on the Tuesday of the 22nd week of the year.
+
+```{r lubridate-puzzle, warning=F, message=F, eval=F}
+library(lubridate)
+
+date1 <- "7/2/2019"
+
+date2 <- "28/05/2019"
+
+date3 <- "June 4th, 2019"
+```
+
+
+__Step 1:__ Use `mdy(date)` or `dmy(date)` to convert the dates to the universal date format.
+
+<br>
+
+_Are you sure you want to click this button? There's no going back._
+
+<details>
+<summary class = "btn_code">_Show code_</summary>
+<div class="card" style="margin-top: -13px;">
+<p>
+```{r, warning=F, message=F, eval = F}
+# Use mdy() or dmy() to format dates
+
+#1
+date1 <- mdy("7/2/2019")
+
+#2
+date2 <- dmy("28/05/2019")
+
+#3
+date3 <- mdy("June 4th, 2019")
+```
+</p></div>
+</details>
+
+__Step 2:__ Find the day of the week using `wday(date)`, and week of the year using `week(date)`.
+
+
+<details>
+<summary class = "btn_code">_Show code_</summary>
+<div class="card" style="margin-top: -13px;">
+<p>
+```{r, warning=F, message=F, eval=F}
+# Use wday() and week() to get date info
+
+#1
+date1 <- mdy("7/2/2019")
+wday(date1, label = TRUE, abbr = FALSE)
+week(date1)
+
+#2
+date2 <- dmy("28/05/2019")
+wday(date2, label = TRUE, abbr = FALSE)
+week(date2)
+
+#3
+date3 <- mdy("June 4th, 2019")
+wday(date3, label = TRUE, abbr = FALSE)
+week(date3)
+```
+</p></div>
+</details>
+
+<br>
+
+<details>
+<summary class = "btn_code">_Show answer_</summary>
+<div class="card" style="margin-top: -13px;">
+<p>
+`"28/05/2019"` or `May 28th, 2019`
+</p></div>
+</details>
+
+</div>
+
+> Congrats! BB8 successfully accessed the backup system. The data is back online!
+
+
+<br>
+
+
+## Back on Endor! {-}
+<hr class="hrlvl2">
+
+Let's use the `mdy()` function to turn the `start_run_date` column into a nicely formatted date.
+
+```{r endor-air-mutate, message=F}
+library(lubridate)
+
+mag_endor <- mutate(mag_endor, date = mdy(start_run_date),
+                               year = year(date))
+```
+<br>
+
+> Ok, back to work. 
+>
+> Let's filter to only the rows where the __`year`__ equals __`2017`__.
+>
+
+<br>
+```{r endor-air-filter-year}
+mag_endor <- filter(mag_endor, year == 2017)
+```
+
+
+## Time series {-}
+```{r endor-time, message=F}
+library(ggplot2)
+
+ggplot(mag_endor, aes(x = date, y = result)) +
+  geom_line(size = 2, color = "tomato") +
+  geom_point(size = 5, alpha = 0.5)  # alpha changes transparency
+
+```
+
+Looks like the measurements definitely picked up a signal towards the end of the year.
+
+<br>
+
+<div class="data">
+### Mystery solved! {-}
+
+Aha! There really was a spike in the magnetic field in November. Hopefully, the _Resistance_ will reward us handsomely for this information.
+</div>
+
+<br>
+
+

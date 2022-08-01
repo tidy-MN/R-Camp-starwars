@@ -49,7 +49,7 @@ rm(small_data)
 ```
 
 
-<h3> Secret window </h3>
+<h3> See function options </h3>
 
 __To see all of a function's arguments__
 
@@ -66,19 +66,17 @@ __To see all of a function's arguments__
 
 __Which of these is a valid function call?__
 
-<input type="radio" name="func"> _fly(2 "ships")_                         <br> 
-<input type="radio" name="func"> _shoot, "lightsaber", "Death Ray"_       <br> 
-<input type="radio" name="func"> _replicate(100000000, "clones")_         <br> 
-<input type="radio" name="func"> _fight(until   Empire    conquered)_     <br> 
-<input type="radio" name="func"> _scrap(100 Datapads, "Hyperdrives")_     <br>
+<input type="radio" name="func"> _fly(2 "ships")_                   <br> 
+<input type="radio" name="func"> _find, "lightsaber", "Yoda"_       <br> 
+<input type="radio" name="func"> _build(1000, "droids")_         <br> 
+<input type="radio" name="func"> _wait(until   Empire    leaves)_     <br> 
+<input type="radio" name="func"> _scrap(100-Datapads, "Hyperdrives")_ <br>
 
-<br>
 
 <details>
 <summary class = "btn_code">_Show solution_</summary>
-
 <p>
-<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `replicate(100000000, "clones")`  
+<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `build(1000, "droids")`  
 
 _Correct! You are ready to audit a Junk dealer._
 

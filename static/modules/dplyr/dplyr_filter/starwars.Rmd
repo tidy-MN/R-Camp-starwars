@@ -93,13 +93,18 @@ head(scrap)
 <br>
 
 <div class="well">
-Now let's take another look at that bar chart. Is there anything else that is less than perfect with the data?
+Now let's take another look at that bar chart.
 
 ```{r ggplot-noAll}
 library(ggplot2)
 
 ggplot(scrap, aes(x = origin, y = amount)) + geom_col()
 ``` 
+
+<br>
+
+### Great work! {-}
+
 </div>
 
 

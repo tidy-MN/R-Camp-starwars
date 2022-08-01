@@ -3,6 +3,8 @@
 
 > __What is an _R package_?__
 
+<br>
+
 A _package_ is a small add-on for R, it's like a phone App for your phone. 
 They add capabilities like statistical functions, mapping powers, and special charts to R. In order to use a new package we first need to install it. Let's try it!
 

@@ -22,7 +22,7 @@ Use these functions to describe your data.
 `glimpse()` tells you what type of data and how much data you have.
 
 
-### Let's read the data into R and give these a whirl. {-}
+### Let's read the scrap data into R and take a look. {-}
 
 ```{r glimpse, warning=F, message=F}
 library(readr)
@@ -48,8 +48,9 @@ summary(scrap)
 <div class="tip">
 ### <i class="fas fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore! {-}
 
+Try some more of the dataframe / table description functions.
+
 ```{r summary-try, eval=F}
-# Try some more on your own
 nrow()
 
 ncol()

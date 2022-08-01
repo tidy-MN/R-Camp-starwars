@@ -37,6 +37,7 @@ source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_m
 ```{r tools, child='../../static/modules/dplyr/dplyr_toolbox/general.Rmd'}
 ```
 
+<br>
 
 # Porg tables 
 <hr>
@@ -95,8 +96,9 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 ```
 
 
-# Where am I?
-<hr>
+## Where am I? {-}
+<hr class="hrlvl2">
+
 ```{r save, child='where_am_i.Rmd'}
 ```
 
@@ -106,6 +108,7 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 <hr>
 
 <br>
+
 #### _Plot the data, Plot the data, Plot the data_ {-}
 
 <br>
@@ -113,7 +116,8 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 ![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
 
 
-This is going to be a long flight. 
+This is going to be a long flight. Let's warm up our plotting machines so they are ready for Endor. To get started, let's answer Rey's question about where the most scrap was sent to on Jakku.
+
 ```{r child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
 ```
 

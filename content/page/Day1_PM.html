@@ -96,10 +96,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#filter"><span class="toc-section-number">6</span> <code>filter()</code></a></li>
 <li><a href="#mutate"><span class="toc-section-number">7</span> <code>mutate()</code></a></li>
 <li><a href="#saving-data"><span class="toc-section-number">8</span> Saving data</a></li>
-<li><a href="#where-am-i"><span class="toc-section-number">9</span> Where am I?</a></li>
-<li><a href="#where-am-i-1"><span class="toc-section-number">10</span> Where am I?</a></li>
-<li><a href="#plots-with-ggplot2"><span class="toc-section-number">11</span> Plots with <em>ggplot2</em></a></li>
-<li><a href="#shutdown-complete"><span class="toc-section-number">12</span> Shutdown complete</a></li>
+<li><a href="#plots-with-ggplot2"><span class="toc-section-number">9</span> Plots with <em>ggplot2</em></a></li>
+<li><a href="#shutdown-complete"><span class="toc-section-number">10</span> Shutdown complete</a></li>
 </ul>
 </div>
 
@@ -178,8 +176,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> <code>glimpse()</code> &amp; <code>summary()</code></h1>
 <hr>
 <p><code>glimpse()</code> tells you what type of data and how much data you have.</p>
-<div id="lets-read-the-data-into-r-and-give-these-a-whirl." class="section level3 unnumbered">
-<h3>Let’s read the data into R and give these a whirl.</h3>
+<div id="lets-read-the-scrap-data-into-r-and-take-a-look." class="section level3 unnumbered">
+<h3>Let’s read the scrap data into R and take a look.</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -220,12 +218,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="explore" class="section level3 unnumbered tip">
 <h3><i class="fas fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore!</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try some more on your own</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>()</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>()</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>()</span></code></pre></div>
+<p>Try some more of the dataframe / table description functions.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>()</span></code></pre></div>
 </div>
 </div>
 <div id="your-analysis-toolbox" class="section level1 unnumbered">
@@ -273,6 +271,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </div>
+<p><br></p>
 </div>
 <div id="porg-tables" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Porg tables</h1>
@@ -632,11 +631,15 @@ Menu of comparisons
 ## 6 6/20/2013    Aural sensor Outskirts   Trade cara…   6272 Tons             145.</code></pre>
 <p><br></p>
 <div class="well">
-<p>Now let’s take another look at that bar chart. Is there anything else that is less than perfect with the data?</p>
+<p>Now let’s take another look at that bar chart.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
 <p><img src="/page/Day1_PM_files/figure-html/ggplot-noAll-1.png" width="672" /></p>
+<p><br></p>
+<div id="great-work" class="section level3 unnumbered">
+<h3>Great work!</h3>
+</div>
 </div>
 </div>
 <div id="multiple-filters" class="section level2 unnumbered">
@@ -701,7 +704,7 @@ Menu of comparisons
 </blockquote>
 <p><strong>Step 1:</strong></p>
 <ul>
-<li><strong>filter</strong> the data to only <code>Ion engine</code></li>
+<li><strong>filter</strong> the data to only the rows where the item’s name is <code>"Ion engine"</code></li>
 </ul>
 <p><br></p>
 <details>
@@ -718,7 +721,7 @@ Menu of comparisons
 <p>Next <em>arrange</em> the data in descending order of pounds so Rey knows where the highest amount of <code>Ion engine</code> scrap comes from.</p>
 <p><strong>Step 2:</strong></p>
 <ul>
-<li><strong>arrange</strong> in descending order by <code>amount_lbs</code></li>
+<li><strong>arrange</strong> the table in descending order by <code>amount_lbs</code></li>
 </ul>
 <p><br></p>
 <details>
@@ -781,43 +784,47 @@ Menu of comparisons
 <p><em>Hint:</em> You can look in the lower right <code>[Files]</code> tab.</p>
 </blockquote>
 <p><br></p>
-<p>Let’s create a new <code>results/</code> folder to keep our processed data separate from any raw data we receive. Now we can add <code>results/</code> to our file path when we save the file.</p>
+<p>Let’s create a new <code>results/</code> folder to keep our processed data separate from any raw data we receive. Now we can add <code>results/</code> to our file path in <code>write_csv()</code> to tell R to put the file in that folder.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data as a CSV file to results folder</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap_pounds, <span class="st">&quot;results/scrap_in_pounds.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
-</div>
-<div id="where-am-i" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> Where am I?</h1>
-<hr>
-<p><img src="../../images/day1_bb8_sq.png" style="float: right; margin-left: 34px; margin-top: 55px; margin-bottom: 64px;" width="240" /></p>
-</div>
-<div id="where-am-i-1" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Where am I?</h1>
-<hr>
-<p>When you open a new R project in RStudio your working directory is your project folder. Your project folder is like your home planet, and is the default location R will look for data files. To load a file called <code>new_data.csv</code> in your project folder, all you need to do is:</p>
+<div id="where-am-i" class="section level2 unnumbered">
+<h2>Where am I?</h2>
+<hr class="hrlvl2">
+<p>When you open a new R project in RStudio your working directory is your project folder. Your project folder is like your home planet, and is the default location R will look for data files.</p>
+<p>To load a file called <code>new_data.csv</code> stored directly in your project folder, you only need to enter its name as the file path:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;new_data.csv&quot;</span>)</span></code></pre></div>
 <p><strong>But what if the data is located in a different folder?</strong></p>
-<p>If you remember land lines, your phone automatically assumes the default Area Code when you dial a number. And when you want to call another Area Code, you have to dial it in. Similarly, you have to tell R to go look in another folder to access files outside of your home directory.</p>
-<div id="example-1" class="section level3" number="10.0.1">
-<h3><span class="header-section-number">10.0.1</span> Example 1</h3>
-<p>To load a file called <code>Ewok_data.csv</code> located in the folder <code>Endor</code> inside your project folder, you would type:</p>
+<p>Have you ever tried to call a different country? Your phone automatically assumes the default or home Country Code is the one you’re standing in when you dial a number. But when you want to call another country, like Canada, you have to add the Country Code to the front of the number you’re dialing.</p>
+<p>Similarly, to access files outside of your home directory you will need to tell R to go look in another folder.</p>
+<div id="example-1" class="section level3 unnumbered">
+<h3>Example 1</h3>
+<p>Say you have a folder <code>Endor</code> placed in your project folder, and inside it there’s a file called <code>Ewok_data.csv</code>. To read it into R, you would write:</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Endor/Ewok_data.csv&quot;</span>)</span></code></pre></div>
 <p><strong>NOTE:</strong> The slash used for file paths in R is a forward leaning slash (<code>/</code>), and is the opposite of the slash commonly seen in folder locations on <em>Windows</em> computers. If you get an <strong>*ERROR*</strong>, remember to check your slash.</p>
 </div>
-<div id="example-2" class="section level3" number="10.0.2">
-<h3><span class="header-section-number">10.0.2</span> Example 2</h3>
-<p>If a file is completely outside of your project, you’ll want to include the entire file path. An entire file path usually begins with the letter of the computer drive, such as <code>C:/</code> or <code>X:/</code>. Loading a file called <code>secret_data.csv</code> directly from your Desktop would look something like this:</p>
+<div id="example-2" class="section level3 unnumbered">
+<h3>Example 2</h3>
+<p>If a file is completely outside of your project, you’ll want to include the entire file path for you computer. An entire file path usually begins with the letter of the computer drive, such as <code>C:/</code> or <code>X:/</code>. Loading a file called <code>secret_data.csv</code> directly from your Desktop would look something like this:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;C:/Users/me/Desktop/secret_data.csv&quot;</span>)</span></code></pre></div>
 </div>
+<div id="yoda-says-1" class="section level3 unnumbered yoda">
+<h3>Yoda says</h3>
+<p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
+<p>File paths with your user name in them don’t share well with others and they also run the risk of breaking if the data is ever moved. It’s best to store data in your project as much as possible to avoid using full file paths.</p>
 </div>
-<div id="plots-with-ggplot2" class="section level1" number="11">
-<h1><span class="header-section-number">11</span> Plots with <em>ggplot2</em></h1>
+</div>
+</div>
+<div id="plots-with-ggplot2" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Plots with <em>ggplot2</em></h1>
 <hr>
-<p><br>
-#### <em>Plot the data, Plot the data, Plot the data</em> {-}</p>
+<p><br></p>
+<div id="plot-the-data-plot-the-data-plot-the-data" class="section level4 unnumbered">
+<h4><em>Plot the data, Plot the data, Plot the data</em></h4>
 <p><br></p>
 <p><img src="../images/ggplot2_hex.png" align="right" style="margin-right: 70px; margin-top: -124px;" width="180" /></p>
-<p>This is going to be a long flight.</p>
+<p>This is going to be a long flight. Let’s warm up our plotting machines so they are ready for Endor. To get started, let’s answer Rey’s question about where the most scrap was sent to on Jakku.</p>
+</div>
 <div id="the-ggplot-sandwich" class="section level2 unnumbered">
 <h2>The <code>ggplot()</code> sandwich</h2>
 <p><img src="../images/auto_plot.gif" style="margin-top: -22px; margin-left: -40px; max-width: 110%;" /></p>
@@ -838,20 +845,20 @@ A <code>ggplot</code> has 3 ingredients.
 <div id="the-the-x-y-aesthetics" class="section level2 unnumbered">
 <h2>2. The the X, Y <em>aesthetics</em></h2>
 <p>The <em>aesthetics</em> assign the columns from the data that you want to use in the chart. This is where you set the <code>X</code>-<code>Y</code> variables that determine the dimensions of the plot.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount)) </span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount)) </span></code></pre></div>
 <p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="the-layers-or-geometries" class="section level2 unnumbered">
 <h2>3. The layers or geometries</h2>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
 <p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="colors" class="section level2 unnumbered">
 <h2>Colors</h2>
 <hr class="hrlvl2">
-<p>Now let’s change the fill color to match the origin.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount, <span class="at">fill =</span> origin)) <span class="sc">+</span></span>
+<p>Now let’s change the fill color to match the destination.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() </span></code></pre></div>
 <p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p><br></p>
@@ -860,8 +867,10 @@ A <code>ggplot</code> has 3 ingredients.
 <h2>Sorting</h2>
 <hr class="hrlvl2">
 <p>Let’s order things from lowest to highest.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(origin, amount, sum), <span class="at">y =</span> amount, <span class="at">fill =</span> origin)) <span class="sc">+</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(destination, amount, <span class="at">FUN =</span> sum), <span class="at">y =</span> amount, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Destination&quot;</span>,</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;The most scrap was sent to from Tuanul&quot;</span>)</span></code></pre></div>
 <p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p><br></p>
 <div id="explore-3" class="section level3 unnumbered tip">
@@ -872,8 +881,8 @@ A <code>ggplot</code> has 3 ingredients.
 <p><br></p>
 </div>
 </div>
-<div id="shutdown-complete" class="section level1" number="12">
-<h1><span class="header-section-number">12</span> Shutdown complete</h1>
+<div id="shutdown-complete" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Shutdown complete</h1>
 <hr>
 <p>When you close R for the first time you’ll see some options about saving your workspace, history, and other files. In general, we advise against saving these files. This will help RStudio open a fresh and clean environment every time you start it. It’s easy enough to re-run your script next time you open your project.</p>
 <p>Follow these steps to set these options permanently, and not see the pop-up windows when you close R.</p>
@@ -884,9 +893,9 @@ A <code>ggplot</code> has 3 ingredients.
 <ul>
 <li><input type="checkbox" disabled="" />
 Uncheck Restore .Rdata into workspace at startup</li>
-<li>Set <em>Save workspace to .RData on exit</em> to [“Never?].</li>
+<li>Set <em>Save workspace to .RData on exit</em> to [Never].</li>
 <li><input type="checkbox" disabled="" />
-Uncheck Always save history</li>
+Under <strong>History</strong>, uncheck Always save history</li>
 </ul></li>
 </ol>
 <p><br></p>

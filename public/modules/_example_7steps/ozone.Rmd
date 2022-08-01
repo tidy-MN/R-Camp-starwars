@@ -19,7 +19,6 @@ Below is an example workflow we might follow in R.
 1. Save the results
 1. __Share__ with friends
 
-</div>
 
 ```{r create, include=F, eval=F, echo=F}
 library(readxl)

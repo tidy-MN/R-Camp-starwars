@@ -56,11 +56,14 @@ After lots of flying text and some installations, something like this should app
 5. Try making some more changes to the application.
 6. Re-run the code again.
 
+> **7. <i class="fas fa-envelope"></i> Email your script to the instructor.**
+
+
 ### Bonus {-}
 
 You can add a personal touch to your droid by updating their bio section.
 
-`Copy`+`paste` the code below into your script, make edits, and re-run. You know the drill.
+`Copy`+`paste` the code below into your script, make edits, and re-run the script.
 ```{r}
 # Your droid bio
 intro <- "**Hello!**  I am a classically trained data scientist living on planet Endor. 
@@ -78,7 +81,10 @@ intro <- "**Hello!**  I am a classically trained data scientist living on planet
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
 
-- R makes reports with R Markdown. 
-- R Markdown combines code and text to create dynamic reports with charts, presentations, and webpages.
+- R Markdown does magic. 
+- It combines code and text to create dynamic reports, presentations, and webpages.
+- You are reading the magic made with R Markdown right now. Even this word right `here` is R Markdown.
+- We'll cover R Markdown more on day 3.
+
 </div>
 

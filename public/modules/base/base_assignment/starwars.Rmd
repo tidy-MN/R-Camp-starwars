@@ -1,6 +1,8 @@
 
-You can assign values to new objects using the "left arrow" `<- `. It's typed with a less-than sign `<` followed by a hyphen `-`. 
-It's more officially known as the _assignment operator_. 
+You can assign values to new objects using the "left arrow" `<- `. 
+
+- It's typed with a less-than sign `<` followed by a hyphen `-`. 
+- It's more officially known as the _assignment operator_. 
 
 
 ### Let's make a droid! {-}
@@ -65,7 +67,7 @@ Without quotes, R looks for an object called Chewbacca, and then lets you know t
 
 <div class="column2" style="margin-right: 0; width: 49%;">
 
-![](../images/colors_decoded.png){style="margin-top: 10px;"}
+![](../images/colors_decoded.png){style="margin-top: -30px;"}
 
 </div>
 
@@ -122,6 +124,7 @@ rm(wookie)
 rm(wookie2)
 ```
 
+<br>
 
 <div class="tip">
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
@@ -260,7 +263,7 @@ starwars_df
 ### <i class="fa fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore! {-}
 
 ```{r exer-tabs, results='asis', echo=F}
-source("../insert_tabs.R")
+source("../../insert_tabs.R")
 
 tabs <- c("Add a column", "Show hint", "Show code")
 

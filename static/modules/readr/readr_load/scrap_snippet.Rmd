@@ -25,6 +25,9 @@ scrap
 <div class="yoda">
 ###  Yoda says {-}
 
+<img src="../images/yoda_baby_sq.png" class="yoda-img">
+
+
 Notice the row of `<chr>` letter abbreviations under the column names? These describe the data type of each column.
 
 - `<chr>` stands for __character__ vector or a string of characters. Examples: _"apple"_, _"apple5"_, _"5 red apples"_  

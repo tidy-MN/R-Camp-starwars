@@ -71,7 +71,7 @@ cat(readLines("porg_tabs.txt"))
 
 # New mission! 
 <hr>
-```{r endor-all, child='../../static/modules/lubridate_examples/endor.Rmd'}
+```{r endor-all, child='../../static/modules/lubridate_examples/wumpa.Rmd'}
 ```
 
 

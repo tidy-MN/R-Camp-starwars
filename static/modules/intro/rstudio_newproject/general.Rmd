@@ -15,7 +15,9 @@ __Step 1:__ Start a new project
 - Select _Browse..._ and choose a folder where you normally perform your work. 
 - Click _Create Project_
 
-__Step 2:__ Open a new script 
+<br>
+
+__Step 2:__ Create a new R script 
 
 - __File > New File > R Script__
 - Click the _floppy disk_ save icon

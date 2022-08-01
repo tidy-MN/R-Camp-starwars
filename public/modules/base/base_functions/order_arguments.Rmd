@@ -7,25 +7,27 @@
 <div class="note" style="margin-top: -14px;">
 <p>
 
-Let's say you had a function called **`feed_porgs()`**, which has 3 arguments:
+#### It depends. {-}
 
-- `feed_porgs(breakfast = "fish", lunch = "veggies", dinner = "clams")`.
+Let's say you had a function called **`feed_porgs()`** that takes 3 arguments: breakfast, lunch, and dinner.
+
+- `feed_porgs(breakfast = "donut", lunch = "veggies", dinner = "clams")`.
 
 A shorthand to write this would be:
 
-- `feed_porgs("fish", "veggies", "clams")`. 
+- `feed_porgs("donut", "veggies", "clams")`. 
 
-This works out just fine because all of the arguments were entered in the default order, the same as above.
+This shortcut works out just fine because all of the arguments were entered in the default order, the same as above.
 
 <br>
 
-#### What happens if we write: {-}
+#### But what happens if we write: {-}
 
-- `feed_porgs("veggies", "clams", "fish")`
+- `feed_porgs("veggies", "clams", "donut")`
 
-Now the function sends _veggies_ to the porgs for breakfast because that is the first argument. 
+Now the function sends _veggies_ to the porgs for breakfast because that is the first argument. Yuk!
 
-Unfortunately, that's no good for the porgs. So if we really want to write _"veggies"_ first, we'll need to tell R which food item belongs to which meal. 
+Unfortunately, that's no good for the porgs. If we really want to write _"veggies"_ first, we'll need to tell R which food item belongs to which meal. 
 
 #### Like this: {-}
 
@@ -35,13 +37,18 @@ Unfortunately, that's no good for the porgs. So if we really want to write _"veg
 
 #### What about `read_csv()`? {-}
 
-For `read_csv` we wrote:
+When we ran *read_csv* we wrote:
 
-- `read_csv(scrap_file, column_names, skip = 1)`
+- `read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv")
 
-R assumes that the first argument (the data file) is `scrap_file` and that the 2nd argument "col_names" should be set to `column_names`. Next, the `skip =` argument is included explicitly because _skip_ is the __10th__ argument in `read_csv()`. 
 
-If we don't include `skip=`, R will assume the value `1` is meant for the function's __3rd__ argument. 
+R assumes that the first argument you supplied is meant to be the path to the data file. That's because _file_ is the __1st__ argument in `read_csv()`.
+
+Howerver, if we wanted to tell the function to skip the first row in the file, we would need to add `skip = 1`, because skip by default is the 10th argument in the function. 
+
+So we would add skip like this:
+
+- `read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv", skip = 1)`
 
 </p></div></details>
 

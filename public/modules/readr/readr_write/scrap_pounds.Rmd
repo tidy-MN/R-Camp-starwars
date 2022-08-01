@@ -14,7 +14,7 @@ write_csv(scrap_pounds, "scrap_in_pounds.csv")
 
 <br>
 
-Let's create a new `results/` folder to keep our processed data separate from any raw data we receive. Now we can add `results/` to our file path when we save the file.
+Let's create a new `results/` folder to keep our processed data separate from any raw data we receive. Now we can add `results/` to our file path in `write_csv()` to tell R to put the file in that folder.
 
 ```{r write-csv2, eval=F}
 # Save data as a CSV file to results folder

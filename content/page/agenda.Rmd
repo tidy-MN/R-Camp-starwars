@@ -41,8 +41,8 @@ enableEmoji: true
 ## R Camp
 
 MPCA    
-LaFayette something///??  
-St Paul, MN 55720  
+520 LaFayette RD      
+St Paul, MN 55155   
 
 </div>
 
@@ -63,7 +63,7 @@ library(icons, knitr)
 <div class = "row">
 <div class = "col-md-6">
 
-**Morning** | _9-12pm_  
+**Morning** | _9AM-Noon_  
 
 > Blast off!   
 > &nbsp;
@@ -89,7 +89,7 @@ Packages: `readr`, `ggplot2`
 </div>
 <div class = "col-md-6">
 
-**Afternoon** | _1:15-4:00pm_  
+**Afternoon** | _1PM-4:00pm_  
 
 > Explore the data, answer data questions
    
@@ -119,7 +119,7 @@ Packages: `dplyr`, `lubridate`
 <div class = "row">
 <div class = "col-md-6">
 
-**Morning** | _9-12pm_   
+**Morning** | _9AM-Noon_   
 
 > Questions and Review
 
@@ -142,7 +142,7 @@ Packages: `openair`
 </div>
 
 <div class = "col-md-6">
-**Afternoon** | _1:15-5:00pm_  
+**Afternoon** | _1PM-4:00pm_  
 
 > _Star Wars - Guess Who_   
 
@@ -174,38 +174,37 @@ Packages: `openair`
 <div class = "row">
 <div class = "col-md-6">
 
-**Morning** | _8:30-11:45am_  
+**Morning** | _9AM-Noon_  
 
-> Questions and Review
-
+1. Questions and Review
 1. Join GitHub
 1. Share your data, code, and plots
 1. Rmarkdown demo
-    - Generate Web, Word and PDF reports
+    - Generate dynamic Web, Word and PDF reports and presentations
 
 Packages: `tidycensus`, `tigris`, `sf`, `leaflet`
 
 </div>
 
 <div class = "col-md-6">
-**Afternoon** | _1:15-5:00pm_   
+**Afternoon** | _1PM-4:00pm_   
 
 1. Choose your own adventure!
     - Select your own or Star Wars data
 1. Build a report
     - Clean the data 
-    - Create a summary table
-    - Compare years or sites
+    - Create summary tables
+    - Compare years and sites
     - Chart & map the data 
 1. Put script and results in __Rmarkdown__  
-1. __BONUS Material__
+1. __BONUS__
     - Messy data 
         - Gather a wide table with hundreds of columns into 1 column
-        - Read an entire folder of files and combine into 1 table
+        - Read an entire folder of files into 1 table
     - More maps and shapefiles
         - Read and save shapefiles
         - Convert coordinate projections (ex. `Lat/Long` to `UTM`)
-        - Load reference maps (Tribal boundaries, States, Counties)
+        - Load reference maps (States, Counties)
         - Build interactive maps    
 
 ### 🐈🐈 Concatulations!! 🐱🐱

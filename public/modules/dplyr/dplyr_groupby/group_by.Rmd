@@ -1,7 +1,7 @@
 
 ## Bargain hunters {-}
 
-Who's selling goods for cheap? Use `group_by` with the column _Origin_, and then use`summarize` to find the `mean(price_per_pound)` at each Origin City.
+Who's selling goods for cheap? Use `group_by` with the column _Origin_ to find the `mean(price_per_pound)` at each Origin City.
 
 ```{r mean_price-by-origin, eval = F}
 scrap_summary <- group_by(scrap, origin) %>%
@@ -19,11 +19,12 @@ scrap_summary <- group_by(scrap, origin) %>%
 You can round the prices to a certain number of digits using the `round()` function. We can finish by adding the `arrange()` function to sort the table by our new column.
 
 ```{r mean_price-by-Origin-round, eval = F}
-scrap_means <- group_by(scrap, origin) %>%
-                 summarize(mean_price       =  mean(price_per_pound, na.rm = T),
-                           mean_price_round = round(mean_price, digits = 2)) %>%
-                 arrange(mean_price_round) %>%
-                 ungroup()
+scrap_means <- scrap %>%
+               group_by(origin) %>%
+               summarize(mean_price       =  mean(price_per_pound, na.rm = T),
+                         mean_price_round = round(mean_price, digits = 2)) %>%
+               arrange(mean_price_round) %>%
+               ungroup()
 ```
 
 <br>
@@ -31,7 +32,7 @@ scrap_means <- group_by(scrap, origin) %>%
 
 ### Note {-}
 
-The `round()` function in R does not automatically round values ending in 5 up. Instead it uses scientific rounding, which rounds values ending in 5 to the nearest even number. So 2.5 rounded to the nearest whole number rounds down to 2, and 3.5 rounded to the nearest whole number rounds up 4.
+The `round()` function in R does not automatically round values ending in 5 upwards. Instead it uses *scientific rounding*, which rounds values ending in 5 to the nearest **even** number. So 2.5 rounded to the nearest even number rounds down to **2**, and 3.5 rounded to the nearest even number rounds up **4**.
 
 </p>
 </div>
@@ -39,11 +40,13 @@ The `round()` function in R does not automatically round values ending in 5 up. 
 
 
 <br>
+## Busiest scrap city
 
-Who's making lots of transactions? Try using `group_by` with the column _origin_ and then `summarize` to count the number of scrap records at each city.
+So who's making lots of transactions? Try using `group_by` with the column _origin_ to count the number of scrap records at each city.
 
 ```{r grp-by-origin, eval = FALSE}
-scrap_counts <- group_by(scrap, origin) %>%
+scrap_counts <- scrap %>%
+                group_by(origin) %>%
                 summarize(origin_count  =  n()) %>%
                 ungroup()
 ```
@@ -61,7 +64,7 @@ Ending with `ungroup()` is good practice. This prevents your data from staying g
 # Save files
 <hr>
 
-Let's save the mean price summary table we created to a _CSV_. That way we can transfer it to a _droid courier_ for delivery to Rey. To save a data frame we can use the `write_csv()` function from our favorite `readr` package. 
+Let's save the mean price table we created to a _CSV_. That way we can send it to Rey. To save a table we can use the `write_csv()` function from our favorite **readr** package. 
 
 <br>
 
@@ -72,9 +75,9 @@ write_csv(scrap_means, "results/prices_by_origin.csv")
 
 
 <div class="red-note">
-<h3 style="margin-top: 12px; color: white; margin-top: -6px; font-size: 22px;"><i class="fas fa-exclamation-triangle"></i> __Warning!__ </h3>
+<h3 style="margin-top: 12px; color: white; margin-top: -6px; font-size: 22px;"><i class="fas fa-exclamation-triangle"></i> Note</h3>
 
-By default, when saving R will overwrite a file if the file already exists in the same folder. It will not ask for confirmation. To be safe, save processed data to a new folder called `results/` and not to your raw `data/` folder.
+By default, R will overwrite a file if the file already exists in the same folder. To be safe, save processed data to a new folder called `results/` and not to your raw `data/` folder.
 
 </div>
 
@@ -84,15 +87,16 @@ By default, when saving R will overwrite a file if the file already exists in th
 
 We can bring back `mutate` to add a column based on the grouped values in a data set. For example, you may want to add a column showing the mean price by origin to the whole table, but still keep all of the records. This is a good way to add values to the table to serve as a reference point. 
 
-> How does the price of Item X compare to the average price?  
+> How does the price of "Item X" compare to the average price?  
 
 When you combine `group_by` and `mutate` the new column will be calculated based on the values within each group. Let's group by `origin` to find the `mean()` price per pound at each origin. 
 
 
 ```{r mutate-price, eval=F}
-scrap <- group_by(scrap, origin) %>% 
-            mutate(origin_mean_price = mean(price_per_pound, na.rm = T)) %>% 
-            ungroup()
+scrap <- scrap %>%
+         group_by( _______ ) %>% 
+         mutate(origin_mean_price = mean(price_per_pound, na.rm = T)) %>% 
+         ungroup()
 ```
 
 <br>

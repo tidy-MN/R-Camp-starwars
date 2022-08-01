@@ -10,14 +10,14 @@ Here's a table of their names.
 </div>
 
 >
-> __Hey now!__ Who's who? Let's join their names to the rest of the data.
+> __Who's who?__ Let's join their names to the rest of the data.
 >
 
 ![](../images/porgs/leftjoin_porgs.png){style="width: 90%; max-width: 85%;"}
 
 <br>
 
-### __The joined result:__ {-}
+### __The joined table__ {-}
 
 <div class="well">
 ![](../images/porgs/porgs_and_names.png){style="width: 85%; max-width: 85%;"}

@@ -36,9 +36,9 @@ select(scrap, item, amount, price_per_pound)
 ```
 
 
-## `everything()` else the same {-}
+## Select `everything()` else {-}
 
-`select()` also works to change the order of columns. 
+Select also works to change the order of columns. 
 The code below puts the `item` column first and then moves the `units` and `amount` columns directly after `item`. 
 
 We then keep `evertyhing()` else the same. 

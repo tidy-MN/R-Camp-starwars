@@ -1,13 +1,13 @@
 
 
-![](../images/summarize_diagram.png){width="490"}
+![](../images/summarize_diagram.png){width="590"}
 
-`summarize()` allows you to apply a summary function like `median()` to a column and collapse the data down to a single row. To dig into `summarize` you'll want to learn some more summary functions like `sum()`, `mean()`, `min()`, and `max()`.
+`summarize()` uses summary functions `mean()` or `sum()` to collapse the data down to a single summary row. To get started we'll need some summary functions like `sum()`, `mean()`, `min()`, and `max()`.
 
 
 ## `sum()` {-}
 
-Use `summarize()` and `sum()` to find the total credits from all the scrap.
+Use `summarize()` and `sum()` to find the total credits of all the scrap combined.
 
 ```{r, eval = F}
 summarize(scrap, total_credits = sum(credits))
@@ -73,7 +73,7 @@ __Hint:__ Add `na.rm = T` to `quantile()`.
 
 `n()` stands for _count_.
 
-Use summarize and `n()` to count the number of reported scrap records. 
+Use summarize and `n()` to count the number of scrap records. 
 
 ```{r, eval=F}
 summarize(scrap, scrap_records = n())
@@ -85,7 +85,7 @@ summarize(scrap, scrap_records = n())
 <div class="tip">
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
 
-Create a summary of the scrap data that includes 3 of the summary functions above. The following is one example.
+1. Create a summary of the scrap data that includes 3 of the summary functions above. The following is one example.
 
 ```{r, eval = F}
 summary <- summarize(scrap, 
@@ -97,12 +97,10 @@ summary <- summarize(scrap,
 
 <br>
 
-</div>
+<br>
 
-<div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
 
-Use summarize and `n()` to count the number of reported scrap records going to `Niima outpost`. 
+2. Use summarize and `n()` to count the number of reported scrap records going to `Niima outpost`. 
 
 __Hint:__ Use `filter()` first.
 
@@ -114,16 +112,14 @@ niima_scrap <- summarize(niima_scrap, scrap_records = n())
 ```
 
 
-__What if we wanted to count the number for each destination?__
-
 </div>
 
 <br>
 
-> <h3 style="margin-top: 12px;"> __Too much__ </h3>
+> <h3 style="margin-top: 12px;"> __How about a count of the records for every city?__ </h3>
 >
 > That sounds like a whole lot of summarizing. 
 >
-> It'd be nice if we could easily find the mean for every city. Then we could summarize once and move on.
+> It'd sure be nice if we could easily find the mean for every city.
 >
 

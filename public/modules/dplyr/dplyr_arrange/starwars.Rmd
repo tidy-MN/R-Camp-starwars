@@ -17,11 +17,13 @@ head(scrap)
 >
 
 
-## Big things first: `desc()`  {-}
+## Put Big things first  {-}
 
-To arrange a column in descending order with the biggest numbers on top, we use: `desc(price_per_pound)`
 
-```{r desc-arrange, warning = F}
+
+To arrange a column in descending order with the biggest numbers on top, we use `desc(...)` around the column name.
+
+```{r desc-arrange, warning=F}
 # Put most expensive items on top
 scrap <- arrange(scrap, desc(price_per_pound))
 
@@ -29,8 +31,18 @@ scrap <- arrange(scrap, desc(price_per_pound))
 head(scrap, 8)
 ```
 
-
 <br>
+
+<div class="yoda">
+###  Yoda says {-}
+
+<img src="../images/yoda_baby_sq.png" class="yoda-img">
+
+When you save an arranged data table it maintains its order. This is perfect for sending people a quick __` Top 10 `__ list of pollutants or sites.
+
+</div>
+
+<br><br>
 
 <div class="tip">
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
@@ -41,10 +53,5 @@ __Hint:__ You can view the entire table by clicking on it in the upper-right _En
 </div>
 
 
-<div class="yoda">
-###  Yoda says {-}
 
-When you save an arranged data table it maintains its order. This is perfect for sending people a quick __` Top 10 `__ list of pollutants or sites.
-
-</div>
 

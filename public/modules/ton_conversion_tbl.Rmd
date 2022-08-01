@@ -1,4 +1,17 @@
 
+<br>
+
+# Jakku re-visited
+<hr>
+
+Okay, so we're back on this ol' dust bucket planet. Let's try not to forget anyone this time. Data droid, let me know if anyone goes missing. 
+
+## A scrappy ransom {-}
+
+Mr. Baddy Plutt is demanding __10,000 items__ of scrap for Finn. Sounds expensive, but lucky for us he didn't clarify the exact items. Let's find the scrap that weighs the least per shipment and try to make this transaction as light as possible. 
+
+<br>
+
 <div class="tip"> 
 <h3 style="margin-top: 13px;"> Update from BB8! </h3>
 
@@ -13,17 +26,9 @@ scrap <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv
 ```
 </div>
 
+<br>
 
-# Jakku re-visited
-<hr>
-
-Okay, so we're back on this ol' dust bucket. Let's try not to forget anyone this time. We're quickly running out of friends on this planet.
-
-## A scrappy ransom {-}
-
-Mr. Baddy Plutt is demanding __10,000 items__ of scrap for Finn. Sounds expensive, but lucky for us he didn't clarify the exact items. Let's find the scrap that weighs the least per shipment and try to make this transaction as light as possible. 
-
-Take a look at our __NEW__ scrap data and see if we have the weight of all the items.
+Take a look at the __NEW__ scrap data and see if we have the weight of all the items.
 
 ```{r fullscrap-units, eval=T}
 # What unit types are in the data?
@@ -74,10 +79,10 @@ head(convert, 3)
 
 <br>
 
-Stars! A cubic yard of `Hull Panel` weighs __641 lbs__. That's what I thought!
+Oh my stars! A cubic yard of `Hull Panel` weighs __641 lbs__. I knew it!
 
-Let's join this new conversion table to the scrap data to make our calculations easier. To do that we need to make a new friend.
+Let's join this new conversion table to the scrap data to make our calculations easier. To do that we need to meet a new function.
 
-__Say Hello to `left_join()`!__  
+__Say Hello to our friend `left_join()`!__  
 
 <br>

@@ -25,7 +25,7 @@
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mn-r.netlify.app/page/agenda.html</guid>
-      <description>R Camp || Day 1 Morning: 9:00am-12:00 (3 hrs) || Planets visited: Jakku || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and&amp;hellip;</description>
+      <description>R Camp || Day 1 Morning: 9:00am-12:00 || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and&amp;hellip;</description>
     </item>
     
     <item>
@@ -88,7 +88,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mn-r.netlify.app/page/day3_am.html</guid>
-      <description>div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.</description>
+      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.</description>
     </item>
     
     <item>
@@ -97,7 +97,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mn-r.netlify.app/page/day3_pm.html</guid>
-      <description>Your turn Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data.</description>
+      <description>R markdown reports  Demo…
+
+ Your turn Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data.</description>
     </item>
     
     <item>

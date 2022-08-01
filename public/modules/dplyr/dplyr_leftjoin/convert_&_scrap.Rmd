@@ -48,8 +48,8 @@ head(scrap, 4)
 
 
 <div class="quiz">
-### __Help!__ {-}
+#### __Help!__ {-}
 
-For more details, you can type `?left_join` to see all the arguments and options.
+For more details on the **_join** family of functions, you can type `?left_join` to see all the arguments and options.
 <br>
 </div>

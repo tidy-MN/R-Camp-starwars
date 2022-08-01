@@ -29,7 +29,7 @@ ggplot(scrap, aes(x = origin, y = amount))
 ```
 
 
-## 3. The layers or _geometries_  {-}
+## 3. The layers or geometries  {-}
 ```{r, eval = T}
 ggplot(scrap, aes(x = origin, y = amount)) + geom_col()
 ```
@@ -40,19 +40,32 @@ ggplot(scrap, aes(x = origin, y = amount)) + geom_col()
 <hr class="hrlvl2">
 
 Now let's change the fill color to match the origin.
-```{r, eval = T}
+```{r, eval=T}
 ggplot(scrap, aes(x = origin, y = amount, fill = origin)) +
   geom_col() 
 ```
 
+<br>
+
+## Sorting {-}
+<hr class="hrlvl2">
+
+Let's order things from lowest to highest.
+```{r, eval=T}
+ggplot(scrap, aes(x = reorder(origin, amount, sum), y = amount, fill = origin)) +
+  geom_col() 
+```
+
+
+<br>
 
 <div class="tip">
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
 
 Try making a column plot showing the total amount of scrap for each `destination` or for each `item`.
 
-```{r, eval = F, echo = T}
-ggplot(scrap, aes(x = destination, y = amount )) + geom_col()
+```{r, eval=F, echo=T}
+ggplot(scrap, aes(x = ___________, y = amount )) + geom_col()
 ```
 </div>
 

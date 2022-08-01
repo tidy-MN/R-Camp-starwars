@@ -2,7 +2,7 @@
 
 ![](../images/star-wars-bingo-image.jpg){width="350" align="center" style="margin: auto; margin-top: 10px; margin-bottom: 12px;"}
 
-> __We don't have free spaces.__ Sorry, we are very mean people.
+> __There are no free spaces.__ Sorry, the REPUPBLIC is mean like that.
 
 1. We're going to call-out the bingo words using an R function. 
 

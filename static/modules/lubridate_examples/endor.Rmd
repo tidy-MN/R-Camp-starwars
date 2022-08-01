@@ -140,7 +140,17 @@ We can find how much time has elapsed, add or subtract days, and find seasonal a
 
 <br>
 
-### Convert text to a DATE {-}
+
+### Install `lubridate` {-}
+
+**Run:** 
+```{r, eval=F}  
+install.packages("lubridate")
+```
+
+<br>
+
+### Convert text to a `DATE` {-}
 
 | Function    |  Order of date elements                                 |
 |----|:-----------------------------------------------------------------|
@@ -171,10 +181,6 @@ We can find how much time has elapsed, add or subtract days, and find seasonal a
 <br>
 
 
-## Install `lubridate` {-}
-
-Run: `  install.packages("lubridate")`
-
 
 <div class="note">
 ### <i class="fa fa-broom" aria-hidden="true"></i> Clean the dates {-}
@@ -203,7 +209,7 @@ __European dates__
 
 <br>
 
-__AQS formatted dates__
+__All number dates__
 
 | Format |  Function to use         |   
 |--------|:-------------------------| 
@@ -216,18 +222,17 @@ __AQS formatted dates__
 ## Small problem {-}
 <hr class="hrlvl2">
 
-
 ![](../images/access_denied.jpg){style="width: 40%; float: left; margin-top: 4px; margin-right: 28px;"}
 
 __Oh no!__ BB8 got locked out of the system! You need the passcode before you can unlock the data. 
 
-There's a cryptic note on the pad next to you... _"Marty's birthday"._ Could that be the hint to the passcode???
+There's a cryptic note on the pad next to you... _"Moonie's birthday"._ Could that be the hint to the passcode?
 
-We need to determine when Marty's birthday is...time to get out our detective hats.
+We need to determine when Moonie's birthday is...time to get out our detective hats.
 
 You ask the lead engineer: 
 
-__So when is Marty's birthday?__
+__So when is Moonie's birthday?__
 
 > _"I think it's on a Tuesday this year"_
 

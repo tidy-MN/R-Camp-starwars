@@ -47,30 +47,11 @@ __NOTE:__ The slash used for file paths in R is a forward leaning slash (`/`), a
 
 ### Example 2
 
-If a file is completely outside of your project, you'll want to include the entire file path. An entire file apth usually begins with the letter of the computer drive, such as `C:/` or `X:/`. Loading a file from your Desktop called `secret_data.csv`, would look something like this:
+If a file is completely outside of your project, you'll want to include the entire file path. An entire file path usually begins with the letter of the computer drive, such as `C:/` or `X:/`. Loading a file called `secret_data.csv` directly from your Desktop would look something like this:
 
-```{r, eval = F}
+```{r, eval=F}
 
 df <- read_csv("C:/Users/me/Desktop/secret_data.csv")
 ```
 
-### CHALLENGE
 
-Let's get back Jakku. BB8 is detecting an incoming message, but he needs your help tracking down where it is coming from. If you can find the planet it's being sent from, BB8 should be able to decode it for Rey. Use the message logs to work your way backwards through the relay stations and pinpoint the message's origin planet.
-
-Use this file to start your search.
-```{r, eval = F}
-
-# Download the current relay station logs
-source("messages/relays.R")
-
-tibble(id = "44A-P2", origin = "relays-endor-station2", message = paste0(sample(0:9, 44, replace = T), collapse = "-"))
-
-# Open the received message information
-df <- read_csv("messages/received_44A-P2.csv")
-```
-
-
-
-
-##

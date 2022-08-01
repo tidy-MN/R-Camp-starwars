@@ -1,7 +1,7 @@
 
-When you close R for the first time you'll see some options about saving your workspace, history, and other files. In general, we advise against saving these files. This will help RStudio open a fresh and clean environment every time you start it. And it's easy enough to re-run your script next time you open your project.
+When you close R for the first time you'll see some options about saving your workspace, history, and other files. In general, we advise against saving these files. This will help RStudio open a fresh and clean environment every time you start it. It's easy enough to re-run your script next time you open your project.
 
-Follow these steps to set these options permanently, and not have to see the pop-up windows when you close R.
+Follow these steps to set these options permanently, and not see the pop-up windows when you close R.
 
 __Turn off *Save Workspace* __
 

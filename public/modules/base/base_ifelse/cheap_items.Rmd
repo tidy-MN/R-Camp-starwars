@@ -29,13 +29,38 @@ scrap <- scrap %>%
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
 
 Use your new column and `filter()` to create a new `cheap_scrap` table.
+
+```{r afford, eval=F}
+# Cheap scrap table
+cheap_scrap <- scrap %>% 
+               filter( _________ )
+```
+
+
+<br>
+
+**How many items are cheap?** 
+```{r, eval=F}
+n_distinct(cheap_scrap$item)
+```
+
+<br>
+
+**What are the cheap items?**
+Try the `unique()` function on `cheap_scrap$item`.
+
+<br>
+
 </div>
 
+
+<br>
+<br>
 
 <div class="quiz">
 ### Pop Quiz! {-}
 
-__What is the cheapest item?__
+__Use `arrange()` to find the cheapest item. What is it?__
 
 <input type="radio" name="cheap"> _Black box_         <br> 
 <input type="radio" name="cheap"> _Electrotelescope_  <br> 

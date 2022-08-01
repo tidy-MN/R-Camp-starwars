@@ -89,21 +89,31 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 ```
 
 
-# Save our data
+# Saving data
 <hr>
 ```{r save, child='../../static/modules/readr/readr_write/scrap_pounds.Rmd'}
 ```
 
 
+# Where am I?
+<hr>
+```{r save, child='where_am_i.Rmd'}
+```
+
+
+
 # Plots with _ggplot2_
 <hr>
 
+<br>
 #### _Plot the data, Plot the data, Plot the data_ {-}
 
 <br>
 
 ![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
 
+
+This is going to be a long flight. 
 ```{r child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
 ```
 
@@ -115,10 +125,6 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 ```
 
 
-# <i class="fas fa-globe-americas" style="color: #0077be;"></i> New data -> New project! {-}
-<hr class="hr2">
-```{r earth-data, child='../../static/modules/_yourdata/ozone_start.Rmd'}
-```
 
 ![](../images/scaryR.jpg){style="margin-left: 11%; width: 78%;"}
 

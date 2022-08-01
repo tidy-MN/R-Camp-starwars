@@ -8,15 +8,14 @@
 
 <br>
 
->
-> | Function      | Job                                                 |  
-> |:--------------|:----------------------------------------------------|  
-> | `select()`    | Select individual columns to drop or keep           |  
-> | `arrange()`   | Sort a table top-to-bottom based on the values of a column |  
-> | `filter()`    | Keep only a subset of rows depending on the values of a column      | 
-> | `mutate()`    | Add new columns or update existing columns          | 
-> | `summarize()` | Calculate a single summary for an entire table     |   
-> | `group_by()`  | Sort data into groups based on the values of a column  |  
->
+| Function      | Job                                                 |  
+|:--------------|:----------------------------------------------------|  
+| `select()`    | Select individual columns to drop or keep           |  
+| `arrange()`   | Sort a table top-to-bottom based on the values of a column |  
+| `filter()`    | Keep only a subset of rows depending on the values of a column      | 
+| `mutate()`    | Add new columns or update existing columns          | 
+| `summarize()` | Calculate a single summary for an entire table     |   
+| `group_by()`  | Sort data into groups based on the values of a column  |  
+
 
 </div>

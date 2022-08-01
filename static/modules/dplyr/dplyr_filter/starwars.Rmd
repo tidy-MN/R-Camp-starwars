@@ -9,11 +9,11 @@ filter(scrap, origin == "All")
 <br>
 
 <div class="note">
-### <i class="fas fa-hand-spock"></i> Spock-tip! {-}
+### Note {-}
 
 We use a `==` (double equals sign) for comparing values. A `==` makes the comparison "is it equal to?" and returns a True or False answer. So the code above will returns only the rows where the condition `origin == "All"` is TRUE.
 
-A single equals sign `=` is used within functions to set options, for example `read_csv(file = "starwars_scrap_jakku.csv")`. It's not a big deal if you mix them up the first time. R is often helpful and will let you know which one is needed.
+A single equals sign `=` is used within functions to set options, for example `read_csv(file = "scrap.csv")`. It's not a big deal if you mix them up the first time. R is often helpful and will let you know which one is needed.
 </div>
 
 
@@ -27,21 +27,24 @@ We use a variety of comparisons when processing data. Sometimes we only want con
 
 We use the __Menu__ of comparisons below to find the data we want.
 
-> <h3 style="margin-top: 8px; margin-bottom: -4px;"> Menu of comparisons </h3>
->
-> | Symbol | Comparison               |
-> |:-------|:-------------------------|
-> | `>`    | greater than             |
-> | `>=`   | greater than or equal to |
-> | `<`    | less than                |
-> | `<=`   | less than or equal to    |
-> | `==`   | equal to                 |
-> | `!=`   | NOT equal to             |
-> | `%in%` | value is in a list: `X %in% c(1,3,7)` |
-> | `is.na(...)`  | is the value missing? |
-> | `str_detect(col_name, "word")`  | "word" appears in text? |
->
+<div class="pinkcode">
 
+<h3 style="margin-top: 8px; margin-bottom: -4px;"> Menu of comparisons </h3>
+
+| Symbol | Comparison               |
+|:-------|:-------------------------|
+| `>`    | greater than             |
+| `>=`   | greater than or equal to |
+| `<`    | less than                |
+| `<=`   | less than or equal to    |
+| `==`   | equal to                 |
+| `!=`   | NOT equal to             |
+| `%in%` | value is in a list: `X %in% c(1,3,7)` |
+| `is.na(...)`  | is the value missing? |
+| `str_detect(col_name, "word")`  | "word" appears in text? |
+
+
+</div>
 <br>
 
 <div class="tip">
@@ -72,7 +75,7 @@ Try comparing some things in the console to see if you get what you'd expect. R 
 ## Dropping rows 
 <hr class="hrlvl2">
 
-Let's look at the data without the _All_ category. Look in the comparison table above to find the `NOT` operator. We're going to filter our data to keep only the origins that are `NOT equal to` "All".
+Let's look at the data without the _All_ category. Look in the comparison table above to find the `NOT` operator. We're going to filter the data to keep only the origins that are `NOT equal` to "All".
 
 ```{r filter-all}
 scrap <- filter(scrap, origin != "All")
@@ -90,7 +93,7 @@ head(scrap)
 <br>
 
 <div class="well">
-Now let's take another look at that bar chart. Is there anything else that is less than perfect with our data?
+Now let's take another look at that bar chart. Is there anything else that is less than perfect with the data?
 
 ```{r ggplot-noAll}
 library(ggplot2)

@@ -1,5 +1,5 @@
 
-## Join 2 tables {-}
+## Joining 2 tables {-}
 
 ![](../images/leftjoin_scrap.png){style="width: 55%; margin-left: 18%; margin-bottom: 12px;"}
 

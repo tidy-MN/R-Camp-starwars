@@ -6,9 +6,11 @@
 
 <br>
 
-Guess what else comes with the `dplyr` package? A **Star Wars data set**.
+Guess what else comes with the `dplyr` package?
 
-#### Open the data set: {-}
+- A **Star Wars data set**.
+
+#### Open the data {-}
 
 1. Load the `dplyr` package from your `library()`
 1. Pull the Star Wars dataset into your environment.
@@ -77,9 +79,13 @@ The winner is the first to guess their neighbor's character.
 <br>
 
 <div class="note">
-### Want to rematch? {-}
+### Time for a rematch? {-}
 
-How about make it best of __3__ games? 
+Feel free to challenge someone new.
 </div>
+
+<br>
+
+> Team challenge
 
 <br>

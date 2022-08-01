@@ -42,6 +42,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
+
+# <i class="fas fa-globe-americas" style="color: #0077be;"></i> Review
+<hr class="hr2">
+
+## New data -> New project! {-}
+```{r earth-data, child='../../static/modules/_yourdata/ozone_start.Rmd'}
+```
+
 ## Porg review {-}
 <hr class="hrlvl2">
 
@@ -67,21 +75,22 @@ cat(readLines("porg_tabs.txt"))
 ```
 
 
-# Pipe it together: ` A %>% B `
+# Pipe things together: ` A %>% B `
 <hr>
 ```{r pipe-intro, child='../../static/modules/dplyr/dplyr_pipe/intro.Rmd'}
 ```
 
+
+<br>
+
 >
-> __So where were we?__ 
->
-> Right! We we're enjoying our time on beautiful lush Endor. But aren't we missing somebody...?
+> Wait.... __So where's Finn?__ 
 >
 
 
 # Finn needs us! {-}
 
-That's enough _scuttlebutting_ on Endor, Finn needs us back on Jakku. It turns out we forgot to pick-up Finn when we left. Now he's being held ransom by Junk Boss Plutt. We'll need to act fast to get to him before the Empire does. __Blast off!__ 
+That's enough _scuttlebutting_ around, Finn needs us back on Jakku. We're going to have to get better at our roll call procedure. Here we come Finn.  __Blast off!__ 
 
 <br>
 
@@ -93,7 +102,7 @@ That's enough _scuttlebutting_ on Endor, Finn needs us back on Jakku. It turns o
 ```
 
 
-# Join tables with `left_join()`
+# Join tables with `**left_join**
 <hr>
 ```{r intro-join, child='../../static/modules/dplyr/dplyr_leftjoin/intro_scrap.Rmd'}
 ```
@@ -115,7 +124,7 @@ That's enough _scuttlebutting_ on Endor, Finn needs us back on Jakku. It turns o
 
 
 <div class="note" style="line-height: 1.6;">
-### Note {-}
+### Teaser {-}
 
 Analysts often get asked questions:
 

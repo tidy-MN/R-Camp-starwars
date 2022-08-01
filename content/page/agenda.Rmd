@@ -40,15 +40,9 @@ enableEmoji: true
 
 ## R Camp
 
-<div style="margin-top: 12px;">
+![](../images/Rstudio_ex.png){style="max-width: 46%; margin-top: 0; margin-left: 0; margin-right: 32px; margin-bottom: 20px; float: left;"}
+<div style="clear: both;"> </div>
 
-![](../images/Rstudio_ex.png){style="max-width: 40%; margin-top: 0px; margin-left: 0; margin-right: 32px; float: left;"}
-
-MPCA    
-520 LaFayette RD      
-St Paul, MN 55155   
-
-</div>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -57,7 +51,6 @@ library(icons, knitr)
 ```
 
 
-<div style="clear: both;"> </div>
 
 # Day 1
 

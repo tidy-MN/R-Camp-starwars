@@ -40,6 +40,10 @@ enableEmoji: true
 
 ## R Camp
 
+<div style="margin-top: 12px;">
+
+![](../images/Rstudio_ex.png){style="max-width: 40%; margin-top: 0px; margin-left: 0; margin-right: 32px; float: left;"}
+
 MPCA    
 520 LaFayette RD      
 St Paul, MN 55155   
@@ -52,11 +56,8 @@ knitr::opts_chunk$set(echo = FALSE)
 library(icons, knitr)
 ```
 
-<div style="margin-top: 12px;">
 
-![](../images/Rstudio_ex.png){style="max-width: 30%; margin-top: 0px; margin-left: 0; margin-right: 0;"}
-
-</div>
+<div style="clear: both;"> </div>
 
 # Day 1
 
@@ -209,7 +210,7 @@ Packages: `tidycensus`, `tigris`, `sf`, `leaflet`
 
 ### 🐈🐈 Concatulations!! 🐱🐱
 
-6. Receive your well deserved accolades, prizes and certificates
+Receive your well deserved accolades, prizes and certificates
 
 </div>
 </div>

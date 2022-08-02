@@ -63,7 +63,7 @@
   "headline": "Day 1 - AM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  5286 ,
+  "wordCount":  5287 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -623,6 +623,7 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 <p>Imagine we just received 3 years worth of ozone monitoring data to summarize. <strong>Fun!</strong></p>
 <p>Below is an example workflow we might follow in R.</p>
 <ol style="list-style-type: decimal">
+<li>Create a new project</li>
 <li>Read the data</li>
 <li>Simplify columns</li>
 <li>Plot the data</li>
@@ -654,33 +655,33 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 <tbody>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2018-09-22</td>
-<td align="right">9</td>
-<td align="right">69.8</td>
+<td align="left">2017-04-10</td>
+<td align="right">4</td>
+<td align="right">51.8</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7554</td>
-<td align="left">2016-06-16</td>
-<td align="right">8</td>
-<td align="right">76.4</td>
+<td align="left">2017-10-01</td>
+<td align="right">9</td>
+<td align="right">50.0</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2017-04-05</td>
-<td align="right">20</td>
-<td align="right">43.4</td>
+<td align="left">2016-07-29</td>
+<td align="right">11</td>
+<td align="right">75.2</td>
 </tr>
 <tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2018-04-19</td>
-<td align="right">18</td>
-<td align="right">48.2</td>
+<td align="left">27-137-7554</td>
+<td align="left">2018-05-27</td>
+<td align="right">14</td>
+<td align="right">64.4</td>
 </tr>
 <tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="left">2016-04-29</td>
-<td align="right">10</td>
-<td align="right">37.4</td>
+<td align="left">27-137-7554</td>
+<td align="left">2017-06-30</td>
+<td align="right">7</td>
+<td align="right">80.6</td>
 </tr>
 </tbody>
 </table>
@@ -781,11 +782,11 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 </div>
 <div id="save-the-results" class="section level3 unnumbered">
 <h3>7. Save the results</h3>
-<p><strong>Save the final data table</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>air_data <span class="sc">%&gt;%</span> <span class="fu">write_csv</span>(<span class="st">&quot;results/2015-17_ozone_summary.csv&quot;</span>)</span></code></pre></div>
+<p><strong>Save the data table</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>air_data <span class="sc">%&gt;%</span> <span class="fu">write_csv</span>(<span class="st">&quot;results/2015_2017_ozone_summary.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <p><strong>Save the site plot to PDF</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;results/2015-2017 - Ozone vs Temp.pdf&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;results/2015_2017-Ozone vs Temp.pdf&quot;</span>)</span></code></pre></div>
 </div>
 <div id="share-with-friends" class="section level3 unnumbered">
 <h3>8. Share with friends</h3>
@@ -955,19 +956,21 @@ Instructions
 <p>Without quotes, R looks for an object called Chewbacca, and then lets you know that it couldn’t find one. Let’s try again but add quotation marks around <code>"Chewbacca"</code>.</p>
 </div>
 <p><br></p>
-<div style="border: 2px solid #d9e1e5; background: aliceblue; border-radius: 15px; padding-left: 18px; height: 378px;">
+<div style="border: 2px solid #d9e1e5; background: aliceblue; border-radius: 15px; padding-left: 18px;">
 <h3>
 <i class="fas fa-circle" style="color: blue; opacity: 0.60; margin-right: 2px;"></i><i class="fas fa-circle" style="color: black; opacity: 0.65; margin-right: 2px;"></i><i class="fas fa-circle" style="color: rgb(197, 6, 11); opacity: 0.75; margin-right: 2px;"></i> Colors decoded
 </h3>
-<div class="column2" style="margin-right: 3%; width: 46%; margin-top: 24px;">
-<p><span style="color: blue;"> Blue shows the exact code you ran. </span></p>
-<p><span style="color: black; opacity: 0.85;"> Black is the result of the code. A <code>[1]</code> in front means there is one item in that object, and its value is <code>bb8</code>. </span></p>
-<p><span style="color: rgb(197, 6, 11);"> Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean something went so wrong it prevented your code from runnings. Warnings on the other hand are usually ok. They tend to inform you that the result may not be exactly what you expected. Such as a value not being added to a plot because it was <em>NA</em>. </span></p>
+<p><img src="../images/colors_decoded.png" style="float: right; width: 47%; margin: 20px;" /></p>
+<p style="color: blue;">
+Blue shows the exact code you ran.
+</p>
+<p style="color: black; opacity: 0.85;">
+Black is the result of the code. A <code>[1]</code> in front means there is one item in that object, and its value is <code>bb8</code>.
+</p>
+<p style="color: rgb(197, 6, 11);">
+Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean something went so wrong it prevented your code from running. Warnings on the other hand are usually ok. They tend to inform you that the result may not be exactly what you expected. Such as a value not being added to a plot because it was <em>NA</em>.
+</p>
 <p><br></p>
-</div>
-<div class="column2" style="margin-right: 0; width: 49%;">
-<p><img src="../images/colors_decoded.png" style="margin-top: -20px;" /></p>
-</div>
 </div>
 <div style="clear: both;">
 

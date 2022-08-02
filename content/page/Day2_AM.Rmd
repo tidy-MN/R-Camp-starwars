@@ -42,12 +42,10 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
+# <i class="fa-solid fa-lightbulb" style="color: #0077be;"></i> Review - New project
+<hr>
 
-# <i class="fas fa-globe-americas" style="color: #0077be;"></i> Review
-<hr class="hr2">
-
-## New data -> New project! {-}
-```{r earth-data, child='../../static/modules/_yourdata/ozone_start.Rmd'}
+```{r rev-proj, child='../../static/modules/_example_7steps/ozone_review.Rmd'}
 ```
 
 ## Porg review {-}

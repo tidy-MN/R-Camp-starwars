@@ -10,6 +10,7 @@ Imagine we just received 3 years worth of ozone monitoring data to summarize. __
 
 Below is an example workflow we might follow in R.
 
+1. Create a new project
 1. Read the data
 1. Simplify columns
 1. Plot the data
@@ -142,16 +143,16 @@ air_data %>% kable()
 
 ###  7. Save the results {-}
 
-__Save the final data table__
+__Save the data table__
 ```{r save-csv, eval=F}
-air_data %>% write_csv("results/2015-17_ozone_summary.csv")
+air_data %>% write_csv("results/2015_2017_ozone_summary.csv")
 ```
 
 <br>
 
 __Save the site plot to PDF__
 ```{r save-pdf, eval=F}
-ggsave("results/2015-2017 - Ozone vs Temp.pdf")
+ggsave("results/2015_2017-Ozone vs Temp.pdf")
 ```
 
 

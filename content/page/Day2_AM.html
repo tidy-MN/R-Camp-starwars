@@ -82,7 +82,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#review"><span class="toc-section-number">1</span> <i class="fas fa-globe-americas" style="color: #0077be;"></i> Review</a></li>
+<li><a href="#review---new-project"><span class="toc-section-number">1</span> <i class="fa-solid fa-lightbulb" style="color: #0077be;"></i> Review - New project</a></li>
 <li><a href="#new-mission"><span class="toc-section-number">2</span> New mission!</a></li>
 <li><a href="#dates"><span class="toc-section-number">3</span> <i class="fa fa-calendar" aria-hidden="true"></i> Dates</a></li>
 <li><a href="#pipe-things-together-a-b"><span class="toc-section-number">4</span> Pipe things together: <code>A %&gt;% B</code></a></li>
@@ -113,15 +113,28 @@ hr {background: #62BE2C;}
 - Save data</code></pre>
 <p><br></p>
 </div>
-<div id="review" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> <i class="fas fa-globe-americas" style="color: #0077be;"></i> Review</h1>
-<hr class="hr2">
+<div id="review---new-project" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> <i class="fa-solid fa-lightbulb" style="color: #0077be;"></i> Review - New project</h1>
+<hr>
 <div id="new-data---new-project" class="section level2 unnumbered">
 <h2>New data -&gt; New project!</h2>
-<p>It’s time for some Earth data. Use your new R skills to explore some data from closer to home.</p>
-</div>
-<div id="set-up-your-project" class="section level2 unnumbered">
-<h2>Set up your project</h2>
+<p>Below is an example workflow for an R project:</p>
+<ol style="list-style-type: decimal">
+<li>Create a new project</li>
+<li>Read the data</li>
+<li>Clean column names</li>
+<li>Explore data
+<ul>
+<li>Plot the data</li>
+</ul></li>
+<li>Clean the data</li>
+<li>View the data closer</li>
+<li>Summarize the data</li>
+<li>Save the results</li>
+<li><strong>Share</strong> with friends</li>
+</ol>
+<div id="start-a-new-project" class="section level3 unnumbered">
+<h3>0. Start a new project</h3>
 <ul>
 <li>Open a new project</li>
 <li>Open a new R script</li>
@@ -129,55 +142,194 @@ hr {background: #62BE2C;}
 <li>Copy your data to that folder</li>
 </ul>
 </div>
-<div id="begin-your-analysis" class="section level2 unnumbered">
-<h2>Begin your analysis</h2>
-</div>
-<div id="read-data-into-r" class="section level2 unnumbered">
-<h2>1. Read data into R</h2>
+<div id="read-the-data" class="section level3 unnumbered">
+<h3>1. Read the data</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read a CSV file</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/My-data.csv&quot;</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Have an EXCEL file?</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="do">## You can use read_excel() from the readxl package</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(readxl)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Read an EXCEL file</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/My-data.xlsx&quot;</span>)</span></code></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file from your data folder</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">##air_data &lt;- read_csv(&quot;data/OZONE_samples_demo.csv&quot;)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file from online</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/OZONE_samples_demo.csv&quot;</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">SITE</th>
+<th align="left">Date</th>
+<th align="right">OZONE</th>
+<th align="right">TEMP_F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2016-06-15</td>
+<td align="right">5</td>
+<td align="right">57.8</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="left">2018-07-20</td>
+<td align="right">12</td>
+<td align="right">75.2</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2017-06-04</td>
+<td align="right">12</td>
+<td align="right">72.2</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7554</td>
+<td align="left">2018-07-12</td>
+<td align="right">10</td>
+<td align="right">72.8</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2016-09-15</td>
+<td align="right">12</td>
+<td align="right">57.2</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="clean-the-column-names" class="section level2 unnumbered">
-<h2>2. Clean the column names</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_data)</span></code></pre></div>
+<div id="clean-column-names" class="section level3 unnumbered">
+<h3>2. Clean column names</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Capital letters and spaces make things more difficult</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s clean them out</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_data)</span></code></pre></div>
 </div>
-<div id="get-to-know-your-data" class="section level2 unnumbered">
-<h2>3. Get to know your data</h2>
+</div>
+<div id="explore-the-data" class="section level2 unnumbered">
+<h2>3.1 Explore the data</h2>
 <blockquote>
 <p>Hint: <code>summary()</code>, <code>glimpse()</code>, <code>nrow()</code>, <code>names()</code></p>
 </blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># glimpse shows the firstfew records of every column</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(air_data)</span></code></pre></div>
+<pre><code>## Rows: 1,237
+## Columns: 16
+## $ site        &lt;chr&gt; &quot;27-137-7001&quot;, &quot;27-137-7001&quot;, &quot;27-137-7001&quot;, &quot;27-137-7001&quot;…
+## $ date        &lt;date&gt; 2016-04-01, 2016-04-02, 2016-04-03, 2016-04-04, 2016-04-0…
+## $ hour        &lt;dbl&gt; 6, 3, 3, 2, 1, 2, 0, 1, 3, 0, 1, 2, 1, 2, 4, 0, 1, 0, 4, 4…
+## $ ozone       &lt;dbl&gt; 10.000, 14.000, 12.000, 13.000, 16.000, 0.018, 20.000, 14.…
+## $ temp_f      &lt;dbl&gt; 24.2, 35.6, 28.4, 37.4, 42.8, 49.4, 44.0, 44.6, 53.0, 51.8…
+## $ state_code  &lt;dbl&gt; 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27…
+## $ county_code &lt;dbl&gt; 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137…
+## $ site_num    &lt;dbl&gt; 7001, 7001, 7001, 7001, 7001, 7001, 7001, 7001, 7001, 7001…
+## $ latitude    &lt;dbl&gt; 47.52336, 47.52336, 47.52336, 47.52336, 47.52336, 47.52336…
+## $ longitude   &lt;dbl&gt; -92.5363, -92.5363, -92.5363, -92.5363, -92.5363, -92.5363…
+## $ time        &lt;dttm&gt; 1899-12-31 06:00:00, 1899-12-31 03:00:00, 1899-12-31 03:0…
+## $ parameter   &lt;dbl&gt; 88101, 88101, 88101, 88101, 88101, 88101, 88101, 88101, 88…
+## $ year        &lt;dbl&gt; 2016, 2016, 2016, 2016, 2016, 2016, 2016, 2016, 2016, 2016…
+## $ month       &lt;dbl&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4…
+## $ day         &lt;chr&gt; &quot;01&quot;, &quot;02&quot;, &quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;, &quot;07&quot;, &quot;08&quot;, &quot;09&quot;, &quot;10&quot;…
+## $ units       &lt;chr&gt; &quot;PPB&quot;, &quot;PPB&quot;, &quot;PPB&quot;, &quot;PPB&quot;, &quot;PPB&quot;, &quot;PPM&quot;, &quot;PPB&quot;, &quot;PPB&quot;, &quot;P…</code></pre>
+<div id="plot-the-data" class="section level3 unnumbered">
+<h3>3.2 Plot the data</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> site), <span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<p><img src="/page/Day2_AM_files/figure-html/view-1.png" width="1152" /></p>
 </div>
-<div id="plot-the-data" class="section level2 unnumbered">
-<h2>4. Plot the data</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Remember the ggplot sandwich!</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> TEMP_F, <span class="at">y =</span> OZONE)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> site_name))</span></code></pre></div>
+<div id="clean-the-data" class="section level3 unnumbered">
+<h3>4. Clean the data</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop values out of range</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ozone <span class="sc">&gt;</span> <span class="dv">0</span>, temp_f <span class="sc">&lt;</span> <span class="dv">120</span>) </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert all samples to PPB</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">mutate</span>(<span class="at">OZONE =</span> <span class="fu">ifelse</span>(units <span class="sc">==</span> <span class="st">&quot;PPM&quot;</span>, ozone <span class="sc">*</span> <span class="dv">1000</span>, </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                                  ozone)) </span></code></pre></div>
+</div>
+<div id="view-the-data-closer" class="section level3 unnumbered">
+<h3>5. View the data <strong>closer</strong></h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>site) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ozone tends to increase with temperature&quot;</span>, </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;Observations for 2015-2017&quot;</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Source: MPCA air monitoring network&quot;</span>)</span></code></pre></div>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-3-1.png" width="1152" /></p>
 <blockquote>
 <p>Keep exploring…</p>
 </blockquote>
+</div>
+<div id="summarize-the-data" class="section level3 unnumbered">
+<h3>6. Summarize the data</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">group_by</span>(site, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">summarize</span>(<span class="at">avg_ozone =</span> <span class="fu">mean</span>(ozone) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">avg_temp  =</span> <span class="fu">mean</span>(temp_f) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">site</th>
+<th align="right">year</th>
+<th align="right">avg_ozone</th>
+<th align="right">avg_temp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="right">2016</td>
+<td align="right">11.01</td>
+<td align="right">60.74</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="right">2017</td>
+<td align="right">11.26</td>
+<td align="right">60.66</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="right">2018</td>
+<td align="right">11.54</td>
+<td align="right">60.59</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7554</td>
+<td align="right">2016</td>
+<td align="right">12.23</td>
+<td align="right">61.23</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="right">2017</td>
+<td align="right">11.81</td>
+<td align="right">60.98</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7554</td>
+<td align="right">2018</td>
+<td align="right">12.87</td>
+<td align="right">61.02</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="save-the-results" class="section level3 unnumbered">
+<h3>7. Save the results</h3>
+<p><strong>Save the data table</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(air_data, <span class="st">&quot;results/2015_2017_ozone_summary.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
+</div>
 </div>
 <div id="porg-review" class="section level2 unnumbered">
 <h2>Porg review</h2>
 <hr class="hrlvl2">
 <p>The <em>poggle</em> of porgs has returned to help review the <code>dplyr</code> functions. Follow along by downloading the <strong>porg</strong> data from the URL below.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/porg_data.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/porg_data.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
@@ -250,18 +402,18 @@ hr {background: #62BE2C;}
 </ol>
 <p><br></p>
 <p>Now we can read in the data from the data folder with our favorite <code>read_csv</code> function.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>air_endor <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/air_endor.csv&quot;</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(air_endor)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the column names</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>air_endor <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_endor)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(air_endor)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>air_endor <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/air_endor.csv&quot;</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(air_endor)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the column names</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>air_endor <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_endor)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(air_endor)</span></code></pre></div>
 <pre><code>## [1] &quot;analyte&quot;        &quot;lab_code&quot;       &quot;units&quot;          &quot;start_run_date&quot;
 ## [5] &quot;site_name&quot;      &quot;long_site_name&quot; &quot;planet&quot;         &quot;result&quot;</code></pre>
 </div>
@@ -281,7 +433,7 @@ hr {background: #62BE2C;}
 <p>Remember the ways?</p>
 <p><strong>Hint:</strong> <code>summary()</code>, <code>glimpse()</code>, <code>nrow()</code>, <code>distinct()</code></p>
 <p><br></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(air_endor)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(air_endor)</span></code></pre></div>
 <pre><code>## Rows: 1,190
 ## Columns: 8
 ## $ analyte        &lt;chr&gt; &quot;1-Methylnaphthalene&quot;, &quot;1-Methylnaphthalene&quot;, &quot;1-Methyl…
@@ -293,7 +445,7 @@ hr {background: #62BE2C;}
 ## $ planet         &lt;chr&gt; &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;Endor&quot;, &quot;…
 ## $ result         &lt;dbl&gt; 0.00291, 0.00000, 0.00000, 0.00608, 0.00000, 0.00000, 0…</code></pre>
 <p><br></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(air_endor, analyte)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(air_endor, analyte)</span></code></pre></div>
 <pre><code>## # A tibble: 27 × 1
 ##    analyte             
 ##    &lt;chr&gt;               
@@ -312,7 +464,7 @@ hr {background: #62BE2C;}
 <p><strong>Woah! That’s definitely more analytes than we need.</strong></p>
 <p>We only want to know about <code>magnetic_field</code> data. Let’s filter down to that analyte.</p>
 <p><br></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(air_endor, analyte <span class="sc">==</span> <span class="st">&quot;magnetic_field&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(air_endor, analyte <span class="sc">==</span> <span class="st">&quot;magnetic_field&quot;</span>)</span></code></pre></div>
 <p><strong>Boom!</strong> How many rows are left now?</p>
 <p><br></p>
 <blockquote>
@@ -344,7 +496,7 @@ So let’s filter the data down to only dates for that year.</p>
 <div id="install-lubridate" class="section level3 unnumbered">
 <h3>Install <code>lubridate</code></h3>
 <p><strong>Run:</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;lubridate&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;lubridate&quot;</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="convert-text-to-a-date" class="section level3 unnumbered">
@@ -540,13 +692,13 @@ So let’s filter the data down to only dates for that year.</p>
 <div id="explore" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <p>After some more interviews you now have a list of dates that could be Marty’s birthday. Find the date that occurred on the Tuesday of the 22nd week of the year.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>date1 <span class="ot">&lt;-</span> <span class="st">&quot;7/2/2019&quot;</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>date2 <span class="ot">&lt;-</span> <span class="st">&quot;28/05/2019&quot;</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>date3 <span class="ot">&lt;-</span> <span class="st">&quot;June 4th, 2019&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>date1 <span class="ot">&lt;-</span> <span class="st">&quot;7/2/2019&quot;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>date2 <span class="ot">&lt;-</span> <span class="st">&quot;28/05/2019&quot;</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>date3 <span class="ot">&lt;-</span> <span class="st">&quot;June 4th, 2019&quot;</span></span></code></pre></div>
 <p><strong>Step 1:</strong> Use <code>mdy(date)</code> or <code>dmy(date)</code> to convert the dates to the universal date format.</p>
 <p><br></p>
 <p><em>Are you sure you want to click this button? There’s no going back.</em></p>
@@ -556,16 +708,16 @@ So let’s filter the data down to only dates for that year.</p>
 </summary>
 <div class="card" style="margin-top: -13px;">
 <p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use mdy() or dmy() to format dates</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#1</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>date1 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;7/2/2019&quot;</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#2</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>date2 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;28/05/2019&quot;</span>)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#3</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>date3 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;June 4th, 2019&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use mdy() or dmy() to format dates</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#1</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>date1 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;7/2/2019&quot;</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">#2</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>date2 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;28/05/2019&quot;</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co">#3</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>date3 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;June 4th, 2019&quot;</span>)</span></code></pre></div>
 </p>
 </div>
 </details>
@@ -576,22 +728,22 @@ So let’s filter the data down to only dates for that year.</p>
 </summary>
 <div class="card" style="margin-top: -13px;">
 <p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use wday() and week() to get date info</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#1</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>date1 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;7/2/2019&quot;</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(date1, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">week</span>(date1)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">#2</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>date2 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;28/05/2019&quot;</span>)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(date2, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">week</span>(date2)</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co">#3</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>date3 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;June 4th, 2019&quot;</span>)</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(date3, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="fu">week</span>(date3)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use wday() and week() to get date info</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">#1</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>date1 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;7/2/2019&quot;</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(date1, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">week</span>(date1)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">#2</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>date2 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;28/05/2019&quot;</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(date2, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="fu">week</span>(date2)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co">#3</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>date3 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">&quot;June 4th, 2019&quot;</span>)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(date3, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="fu">week</span>(date3)</span></code></pre></div>
 </p>
 </div>
 </details>
@@ -616,25 +768,25 @@ So let’s filter the data down to only dates for that year.</p>
 <h2>Back on Endor!</h2>
 <hr class="hrlvl2">
 <p>Let’s use the <code>mdy()</code> function to turn the <code>start_run_date</code> column into a nicely formatted date.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mag_endor, <span class="at">date =</span> <span class="fu">mdy</span>(start_run_date),</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                               <span class="at">year =</span> <span class="fu">year</span>(date))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mag_endor, <span class="at">date =</span> <span class="fu">mdy</span>(start_run_date),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                               <span class="at">year =</span> <span class="fu">year</span>(date))</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>Ok, back to work.</p>
 <p>Let’s filter to only the rows where the <strong><code>year</code></strong> equals <strong><code>2017</code></strong>.</p>
 </blockquote>
 <p><br></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(mag_endor, year <span class="sc">==</span> <span class="dv">2017</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(mag_endor, year <span class="sc">==</span> <span class="dv">2017</span>)</span></code></pre></div>
 </div>
 <div id="time-series" class="section level2 unnumbered">
 <h2>Time series</h2>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mag_endor, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> result)) <span class="sc">+</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">&quot;tomato&quot;</span>) <span class="sc">+</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)  <span class="co"># alpha changes transparency</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mag_endor, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> result)) <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">&quot;tomato&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)  <span class="co"># alpha changes transparency</span></span></code></pre></div>
 <p><img src="/page/Day2_AM_files/figure-html/endor-time-1.png" width="960" /></p>
 <p>Looks like the measurements definitely picked up a signal towards the end of the year.</p>
 <p><br></p>
@@ -666,37 +818,37 @@ So let’s filter the data down to only dates for that year.</p>
 <h3><span class="header-section-number">4.0.1</span> <strong><code>#1:</code></strong> <em>Eliminate nested parentheses</em></h3>
 <p>Let’s say you have 3 numbers. You want to take the sum of them, take the log of that result, and then round the final outcome.</p>
 <p>This is one way to write that:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>))))</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>))))</span></code></pre></div>
 <p>The code above is dense and we need to read it backwards from right to left to understand the order of operations. The pipe on the other hand allows us to read the code from left to right, and resembles how we would describe the process verbally.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>) <span class="sc">%&gt;%</span> <span class="fu">sum</span>() <span class="sc">%&gt;%</span> <span class="fu">log</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>) <span class="sc">%&gt;%</span> <span class="fu">sum</span>() <span class="sc">%&gt;%</span> <span class="fu">log</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>()</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="combine-processing-steps-into-one-cohesive-chunk" class="section level3" number="4.0.2">
 <h3><span class="header-section-number">4.0.2</span> <strong><code>#2:</code></strong> <em>Combine processing steps into one cohesive chunk</em></h3>
 <p>Here are some of the functions we’ve applied to the scrap data so far:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, <span class="fu">desc</span>(price_per_pound))</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, </span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, <span class="fu">desc</span>(price_per_pound))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, </span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
 <p>We can use the <code>%&gt;%</code> operator to pipe or chain them together.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">arrange</span>(<span class="fu">desc</span>(price_per_pound)) <span class="sc">%&gt;%</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">filter</span>(origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">arrange</span>(<span class="fu">desc</span>(price_per_pound)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">filter</span>(origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="explore-1" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <p>Similar to above, use the <code>%&gt;%</code> to combine the two analysis lines below.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter to only magnetic_field measurements</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(air_endor, analyte <span class="sc">==</span> <span class="st">&quot;magnetic_field&quot;</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a date column to the filtered data</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mag_endor, <span class="at">date =</span> <span class="fu">mdy</span>(start_run_date))</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter to only magnetic_field measurements</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(air_endor, analyte <span class="sc">==</span> <span class="st">&quot;magnetic_field&quot;</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a date column to the filtered data</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mag_endor, <span class="at">date =</span> <span class="fu">mdy</span>(start_run_date))</span></code></pre></div>
 </div>
 <p><br></p>
 <p><br></p>
@@ -726,20 +878,20 @@ So let’s filter the data down to only dates for that year.</p>
 Update from BB8!
 </h3>
 <p>BB8 was busy on our flight back to Jakku, and recovered a <strong>full</strong> set of scrap records from the notorious Unkar Plutt. Let’s take a look.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the full scrap database</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the full scrap database</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)</span></code></pre></div>
 </div>
 <p><br></p>
 <p>Take a look at the <strong>NEW</strong> scrap data and see if we have the weight of all the items.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What unit types are in the data?</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(scrap<span class="sc">$</span>units)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What unit types are in the data?</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(scrap<span class="sc">$</span>units)</span></code></pre></div>
 <pre><code>## [1] &quot;Cubic Yards&quot; &quot;Items&quot;       &quot;Tons&quot;</code></pre>
 <p><br></p>
 <p><strong>Or return results as a data frame</strong></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 1
 ##   units      
 ##   &lt;chr&gt;      
@@ -762,13 +914,13 @@ Update from BB8!
 <p>It took a while, but with a few droid bribes BB8 was able to track down a <em>Weight conversion table</em> from his droid buddies. Our current data shows the total cubic yards for some scrap shipments, but not how much the shipment weighs.</p>
 <div id="read-the-weight-conversion-table" class="section level3 unnumbered">
 <h3>Read the weight conversion table</h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The data&#39;s URL</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>convert_url <span class="ot">&lt;-</span> <span class="st">&quot;https://rtrain.netlify.com/data/conversion_table.csv&quot;</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the conversion data</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>convert <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(convert_url)</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(convert, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The data&#39;s URL</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>convert_url <span class="ot">&lt;-</span> <span class="st">&quot;https://rtrain.netlify.com/data/conversion_table.csv&quot;</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the conversion data</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>convert <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(convert_url)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(convert, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
 ##   item               units       pounds_per_unit
 ##   &lt;chr&gt;              &lt;chr&gt;                 &lt;dbl&gt;
@@ -899,22 +1051,22 @@ Update from BB8!
 <p><br></p>
 <p><strong>Uh oh!</strong> There’s no “Ayla Secura” in the height table and there’s no “Greedo” in the homeworld table. Can we still join the tables? Run the code below to see what happens.</p>
 <p><br></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">246</span>))      </span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by starwars_name</span></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Tell left_join which columns to use as the key with:  </span></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="do">##     by = c(&quot;key_left&quot; = &quot;key_right&quot;)</span></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds, </span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;starwars_name&quot;</span> <span class="ot">=</span> <span class="st">&quot;starwars_name&quot;</span>))</span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">246</span>))      </span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by starwars_name</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Tell left_join which columns to use as the key with:  </span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="do">##     by = c(&quot;key_left&quot; = &quot;key_right&quot;)</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds, </span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;starwars_name&quot;</span> <span class="ot">=</span> <span class="st">&quot;starwars_name&quot;</span>))</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
 <p><br></p>
 <table>
 <thead>
@@ -1045,21 +1197,21 @@ Update from BB8!
 </div>
 <p><br></p>
 <p>When you run the code below you’ll see that <strong>left_join</strong> is very thorough and adds each additional homeworld it finds for <em>C-3PO</em> as a new row in the joined table.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height  =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">173</span>))</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tantive IV&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by Star Wars character name</span></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds)</span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Check number of rows</span></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(height_and_homeworld)</span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height  =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">173</span>))</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tantive IV&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by Star Wars character name</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Check number of rows</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(height_and_homeworld)</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
 <p><br></p>
 <table>
 <thead>
@@ -1123,14 +1275,14 @@ Update from BB8!
 <hr class="hrlvl2">
 <p>Let’s apply our new <code>left_join()</code> skills to the scrap data.</p>
 <p>First, let’s re-read the full scrap data.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the larger scrap database</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># what units types are in the data? </span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the larger scrap database</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># what units types are in the data? </span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 1
 ##   units      
 ##   &lt;chr&gt;      
@@ -1140,20 +1292,20 @@ Update from BB8!
 <div id="join-the-conversion-table-to-scrap" class="section level3 unnumbered">
 <h3>Join the conversion table to scrap</h3>
 <p>Look at the tables. What columns in both tables do we want to join <strong>by</strong>?</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(scrap)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(scrap)</span></code></pre></div>
 <p>Let’s join by <code>item</code> and <code>units</code>.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the scrap to the conversion table</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert, </span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;item&quot;</span>  <span class="ot">=</span> <span class="st">&quot;item&quot;</span>, </span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;units&quot;</span> <span class="ot">=</span> <span class="st">&quot;units&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the scrap to the conversion table</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert, </span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;item&quot;</span>  <span class="ot">=</span> <span class="st">&quot;item&quot;</span>, </span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;units&quot;</span> <span class="ot">=</span> <span class="st">&quot;units&quot;</span>))</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p><strong>Want to save on typing?</strong></p>
 </blockquote>
 <p><code>left_join()</code> will automatically search for matching columns if you don’t use the <code>by=</code> argument. So if you know 2 tables share a column name you don’t have to specify how to join them. The code below does the same as above.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap, <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap, <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 8
 ##   receipt_date item              origin destination amount units price_per_pound
 ##   &lt;chr&gt;        &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
@@ -1175,16 +1327,16 @@ Update from BB8!
 <p>Let’s <code>mutate()</code>!</p>
 <p>Now that we have pounds per unit we can use <code>mutate</code> to calculate the total pounds for each shipment.</p>
 <p><strong>Fill in the blank</strong></p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span>  _____________ )</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span>  _____________ )</span></code></pre></div>
 <details>
 <summary class="btn_code">
 <em>Show code</em>
 </summary>
 <p>
 <div class="quiz" style="margin-top: -6px;">
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span> pounds_per_unit)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span> pounds_per_unit)</span></code></pre></div>
 </div>
 </p>
 </details>
@@ -1251,9 +1403,9 @@ scrap <- scrap %>%
 <div id="price-per-item" class="section level2 unnumbered">
 <h2>Price per item $</h2>
 <p><strong>Great!</strong> Let’s add one last column. We can divide the shipment’s <em>credits</em> by the <em>amount</em> of items to get the <code>price_per_unit</code>.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the price per unit</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">price_per_unit =</span> credits <span class="sc">/</span> amount)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the price per unit</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">price_per_unit =</span> credits <span class="sc">/</span> amount)</span></code></pre></div>
 <p><br></p>
 <div id="teaser" class="section level3 unnumbered note" style="line-height: 1.6;">
 <h3>Teaser</h3>

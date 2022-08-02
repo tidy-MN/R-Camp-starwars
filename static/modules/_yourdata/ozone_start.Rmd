@@ -2,7 +2,7 @@
 It's time for some Earth data. Use your new R skills to explore some data from closer to home.
 
 
-## Set up your project {-}
+## 0. Set up your project {-}
 
 - Open a new project
 - Open a new R script

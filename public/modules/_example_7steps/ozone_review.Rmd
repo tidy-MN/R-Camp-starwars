@@ -1,0 +1,127 @@
+
+## New data -> New project! {-}
+
+Below is an example workflow for an R project:
+
+1. Create a new project
+1. Read the data
+1. Clean column names
+1. Explore data
+    - Plot the data
+1. Clean the data
+1. View the data closer
+1. Summarize the data
+1. Save the results
+1. __Share__ with friends
+
+
+### 0. Start a new project {-}
+
+- Open a new project
+- Open a new R script
+- Create a `data` folder in your project directory 
+- Copy your data to that folder
+
+
+### 1. Read the data {-}
+```{r data, message=F, warning=F}
+library(readr)
+
+# Read the file from your data folder
+##air_data <- read_csv("data/OZONE_samples_demo.csv")
+
+# Read the file from online
+air_data <- read_csv("https://itep-r.netlify.com/data/OZONE_samples_demo.csv")
+```
+
+
+```{r tbl, echo=F}
+library(knitr)
+library(dplyr)
+
+air_data %>% sample_n(5) %>% select(SITE, Date, OZONE, TEMP_F) %>% kable()
+```
+
+
+### 2. Clean column names {-}
+```{r clean-names, message=F, fig.width=12, fig.height=4}
+library(janitor)
+
+# Capital letters and spaces make things more difficult
+# Let's clean them out
+air_data <- clean_names(air_data)
+```
+
+
+## 3.1 Explore the data {-}
+
+> Hint: `summary()`, `glimpse()`, `nrow()`, `names()`
+>
+
+```{r glimpse, message=F}
+# glimpse shows the firstfew records of every column
+glimpse(air_data)
+```
+
+
+
+### 3.2 Plot the data {-}
+```{r view, message=F, fig.width=12, fig.height=4}
+library(ggplot2)
+
+ggplot(air_data, aes(x = temp_f, y = ozone)) + 
+  geom_point(aes(color = site), alpha = 0.4, size = 5)
+```
+
+
+### 4. Clean the data {-}
+```{r clean, eval=T}
+library(dplyr)
+
+# Drop values out of range
+air_data <- air_data %>% filter(ozone > 0, temp_f < 120) 
+
+# Convert all samples to PPB
+air_data <- air_data %>% 
+            mutate(OZONE = ifelse(units == "PPM", ozone * 1000, 
+                                  ozone)) 
+```
+
+
+### 5. View the data __closer__ {-}
+```{r, fig.width=12, fig.height=4}
+ggplot(air_data, aes(x = temp_f, y = ozone)) + 
+    geom_point(alpha = 0.2, size = 3) +
+    geom_smooth(method = "lm") + 
+    facet_wrap(~site) +
+    labs(title = "Ozone tends to increase with temperature", 
+         subtitle = "Observations for 2015-2017",
+         caption = "Source: MPCA air monitoring network")
+```
+
+
+> Keep exploring... 
+
+### 6. Summarize the data {-}
+```{r summary}
+air_data <- air_data %>% 
+            group_by(site, year) %>% 
+            summarize(avg_ozone = mean(ozone) %>% round(2),
+                      avg_temp  = mean(temp_f) %>% round(2))
+```
+
+
+```{r, echo=F}
+air_data %>% kable()
+```
+
+
+###  7. Save the results {-}
+
+__Save the data table__
+```{r save-csv, eval=F}
+write_csv(air_data, "results/2015_2017_ozone_summary.csv")
+```
+
+
+<br>

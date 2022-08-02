@@ -5,19 +5,10 @@
     <link>https://mn-r.netlify.app/page.html</link>
     <description>Recent content in Pages on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 11 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mn-r.netlify.app/page/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Folder paths</title>
-      <link>https://mn-r.netlify.app/page/where_am_i.html</link>
-      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://mn-r.netlify.app/page/where_am_i.html</guid>
-      <description>Power on your droid young Jedi, it’s time to get started. Junk Boss Plutt is up to no-good once again and we’ve got scrap to find&amp;hellip;</description>
-    </item>
     
     <item>
       <title>Agenda</title>
@@ -26,6 +17,15 @@
       
       <guid>https://mn-r.netlify.app/page/agenda.html</guid>
       <description>R Camp || Day 1 Morning: 9:00am-12:00 || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mn-r.netlify.app/page/where_am_i.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/where_am_i.html</guid>
+      <description>When you open a new R project in RStudio your working directory is your project folder. Your project folder is like your home planet, and is the default location R will look for data files.</description>
     </item>
     
     <item>

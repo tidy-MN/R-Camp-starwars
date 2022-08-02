@@ -1,11 +1,14 @@
 
+Let's launch ourselves into the unknown and make a __candy plot__. With a little copy-pasting we can make an informative chart of everyone's favorite candy. Since you obviously have the best taste, let's make your favorite candy the <span style="font-size: 26px;"> __BEST__ </span>.
+
+
+
+<br>
+
+
 <div style="padding: 22px; background-color: #93bf6636;  border-radius: 14px;">
 
 ![](../images/candy_ratings_blk.png){style="width: 98%; margin-top: 12px; margin-bottom: 22px;"}
-
-Let's launch ourselves into the unknown and make a __candy plot__. With a little copy-pasting we can make an informative chart of everyone's favorite candy. 
-
-Since you have the best taste, let's make your candy <span style="font-size: 26px;"> __BIG__ </span>.
 
 <hr class="hr2" style="margin-top: 4px;">
 

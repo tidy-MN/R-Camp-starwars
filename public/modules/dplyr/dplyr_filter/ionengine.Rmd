@@ -5,7 +5,7 @@
 
 __Step 1:__
 
-- __filter__ the data to only `Ion engine`
+- __filter__ the data to only the rows where the item's name is `"Ion engine"`
 
 <br>
 
@@ -26,7 +26,7 @@ Next _arrange_ the data in descending order of pounds so Rey knows where the hig
 
 __Step 2:__
 
-- __arrange__ in descending order by `amount_lbs`
+- __arrange__ the table in descending order by `amount_lbs`
 
 <br>
 
@@ -72,6 +72,7 @@ _Yes!! You receive the ship parts to repair Rey's Millennium Falcon. Onward!_
 
 
 ## First mission complete! {-}
+
 __Nice work!__ Rey got a great deal on her engines and even traded in some scrap for spending cash. _Woop! You've got the music in you, oh, oh, oh... Sorry._
 
 <br>

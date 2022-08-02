@@ -799,13 +799,17 @@ Menu of comparisons
 <p>Similarly, to access files outside of your home directory you will need to tell R to go look in another folder.</p>
 <div id="example-1" class="section level3 unnumbered">
 <h3>Example 1</h3>
-<p>Say you have a folder <code>Endor</code> placed in your project folder, and inside it there’s a file called <code>Ewok_data.csv</code>. To read it into R, you would write:</p>
+<p>Say you have a folder <code>Endor</code> sitting in your project folder, and inside it there’s a file called <code>Ewok_data.csv</code>. To read the file into R you would write:</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Endor/Ewok_data.csv&quot;</span>)</span></code></pre></div>
+<p><br></p>
+<blockquote>
 <p><strong>NOTE:</strong> The slash used for file paths in R is a forward leaning slash (<code>/</code>), and is the opposite of the slash commonly seen in folder locations on <em>Windows</em> computers. If you get an <strong>*ERROR*</strong>, remember to check your slash.</p>
+</blockquote>
+<p><br></p>
 </div>
 <div id="example-2" class="section level3 unnumbered">
 <h3>Example 2</h3>
-<p>If a file is completely outside of your project, you’ll want to include the entire file path for you computer. An entire file path usually begins with the letter of the computer drive, such as <code>C:/</code> or <code>X:/</code>. Loading a file called <code>secret_data.csv</code> directly from your Desktop would look something like this:</p>
+<p>If a file is completely outside of your project, you’ll want to include the file’s entire file path on your computer. This is also known as an <em>absolute path</em>. An absolute path usually begins with the letter of the computer drive, such as <code>C:/</code> or <code>X:/</code>. Loading a file called <code>secret_data.csv</code> directly from your Desktop would look something like this:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;C:/Users/me/Desktop/secret_data.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="yoda-says-1" class="section level3 unnumbered yoda">

@@ -41,8 +41,6 @@ wookie <- Chewbacca
 ```
 
 
-- Create an error or warning no one has reported yet.
-
 <div class="red-note" style="width: 93%;">
 ### Error! {-}
 
@@ -61,13 +59,15 @@ Without quotes, R looks for an object called Chewbacca, and then lets you know t
 
 <span style="color: black; opacity: 0.85;"> Black is the result of the code. A `[1]` in front means there is one item in that object, and its value is `bb8`. </span>
 
-<span style="color: rgb(197, 6, 11);"> Red shows __Errors__ & __Warnings__. Warnings are ok, they inform you that the result may not be exactly what you expect. </span>
+<span style="color: rgb(197, 6, 11);"> Red shows __Errors__ & __Warnings__. Errors mean something went so wrong it prevented your code from runnings. Warnings on the other hand are usually ok. They tend to inform you that the result may not be exactly what you expected. Such as a value not being added to a plot because it was *NA*. </span>
+
+<br>
 
 </div>
 
 <div class="column2" style="margin-right: 0; width: 49%;">
 
-![](../images/colors_decoded.png){style="margin-top: -30px;"}
+![](../images/colors_decoded.png){style="margin-top: -20px;"}
 
 </div>
 

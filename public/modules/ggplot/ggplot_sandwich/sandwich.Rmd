@@ -25,13 +25,13 @@ ggplot(scrap)
 The _aesthetics_ assign the columns from the data that you want to use in the chart. This is where you set the `X`-`Y` variables that determine the dimensions of the plot.
 
 ```{r, eval = T}
-ggplot(scrap, aes(x = origin, y = amount)) 
+ggplot(scrap, aes(x = destination, y = amount)) 
 ```
 
 
 ## 3. The layers or geometries  {-}
 ```{r, eval = T}
-ggplot(scrap, aes(x = origin, y = amount)) + geom_col()
+ggplot(scrap, aes(x = destination, y = amount)) + geom_col()
 ```
 
 <br>
@@ -39,9 +39,9 @@ ggplot(scrap, aes(x = origin, y = amount)) + geom_col()
 ## Colors {-}
 <hr class="hrlvl2">
 
-Now let's change the fill color to match the origin.
+Now let's change the fill color to match the destination.
 ```{r, eval=T}
-ggplot(scrap, aes(x = origin, y = amount, fill = origin)) +
+ggplot(scrap, aes(x = destination, y = amount, fill = destination)) +
   geom_col() 
 ```
 
@@ -52,8 +52,10 @@ ggplot(scrap, aes(x = origin, y = amount, fill = origin)) +
 
 Let's order things from lowest to highest.
 ```{r, eval=T}
-ggplot(scrap, aes(x = reorder(origin, amount, sum), y = amount, fill = origin)) +
-  geom_col() 
+ggplot(scrap, aes(x = reorder(destination, amount, FUN = sum), y = amount, fill = destination)) +
+  geom_col() +
+  labs(x = "Destination",
+       title = "The most scrap was sent to from Tuanul")
 ```
 
 

@@ -99,7 +99,7 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 ## Where am I? {-}
 <hr class="hrlvl2">
 
-```{r save, child='where_am_i.Rmd'}
+```{r paths, child='where_am_i.Rmd'}
 ```
 
 

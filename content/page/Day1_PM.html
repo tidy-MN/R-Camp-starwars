@@ -398,9 +398,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="select-everything-else" class="section level2 unnumbered">
 <h2>Select <code>everything()</code> else</h2>
-<p>Select also works to change the order of columns.
-The code below puts the <code>item</code> column first and then moves the <code>units</code> and <code>amount</code> columns directly after <code>item</code>.</p>
-<p>We then keep <code>evertyhing()</code> else the same.</p>
+<p>Select also works to change the order of columns.</p>
+<p>The code below puts the <code>item</code> column first, and then the <code>units</code> and <code>amount</code> columns directly after <code>item</code>. We then add <code>evertyhing()</code> to keep evertyhing else the same.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the `item`, `units`, and `amount` columns the first three columns</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Leave `everything()` else in the same order</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(scrap, item, units, amount, <span class="fu">everything</span>())</span></code></pre></div>
@@ -442,8 +441,8 @@ The code below puts the <code>item</code> column first and then moves the <code>
 <blockquote>
 <p>What, only <code>145 credits</code>!? That’s not much at all. Oh wait…that’s the smallest one on top.</p>
 </blockquote>
-<div id="put-big-things-first" class="section level2 unnumbered">
-<h2>Put Big things first</h2>
+<div id="put-the-big-things-first" class="section level2 unnumbered">
+<h2>Put the BIG things first</h2>
 <p>To arrange a column in descending order with the biggest numbers on top, we use <code>desc(...)</code> around the column name.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Put most expensive items on top</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, <span class="fu">desc</span>(price_per_pound))</span>
@@ -462,17 +461,19 @@ The code below puts the <code>item</code> column first and then moves the <code>
 ## 7 6/14/2013    Sublight engine Blowbac… Raiders     8.58e3 Tons            7211.
 ## 8 8/6/2013     Sublight engine Cratert… Raiders     1.77e3 Tons            7211.</code></pre>
 <p><br></p>
-<div id="yoda-says" class="section level3 unnumbered yoda">
-<h3>Yoda says</h3>
-<p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
-<p>When you save an arranged data table it maintains its order. This is perfect for sending people a quick <strong><code>Top 10</code></strong> list of pollutants or sites.</p>
-</div>
-<p><br><br></p>
 <div id="explore-1" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <p>Try arranging by more than one column, such as <code>price_per_pound</code> and <code>amount</code>. What happens?</p>
 <p><strong>Hint:</strong> You can view the entire table by clicking on it in the upper-right <em>Environment</em> tab.</p>
 </div>
+<p><br>
+<br></p>
+<div id="yoda-says" class="section level3 unnumbered yoda">
+<h3>Yoda says</h3>
+<p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
+<p>When you save an arranged data table it maintains its order. This is perfect for sending people a quick <strong><code>Top 10</code></strong> list of pollutants or sites.</p>
+</div>
+<p><br></p>
 </div>
 </div>
 <div id="r-bingo" class="section level1 unnumbered">
@@ -480,10 +481,11 @@ The code below puts the <code>item</code> column first and then moves the <code>
 <hr class="hr2">
 <p><img src="../images/star-wars-bingo-image.jpg" align="center" style="margin: auto; margin-top: 10px; margin-bottom: 12px;" width="350" /></p>
 <blockquote>
-<p><strong>There are no free spaces.</strong> Sorry, the REPUPBLIC is mean like that.</p>
+<p><strong>There are no free spaces. The REPUPBLIC is mean like that.</strong></p>
 </blockquote>
+<p><br></p>
 <ol style="list-style-type: decimal">
-<li>We’re going to call-out the bingo words using an R function.</li>
+<li>We’re going to call-out the bingo words using an R function we just wrote. It’s lovingly named <code>play_bingo()</code>.</li>
 </ol>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get pretty colors</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;viridis&quot;</span>)</span>
@@ -493,34 +495,45 @@ The code below puts the <code>item</code> column first and then moves the <code>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># List of all the words</span></span>
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>bingo_words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;median()&quot;</span>, <span class="st">&quot;nrow()&quot;</span>, <span class="st">&quot;glimpse()&quot;</span>, <span class="st">&quot;sum()&quot;</span>, <span class="st">&quot;head()&quot;</span>, <span class="st">&quot;tail()&quot;</span>, <span class="st">&quot;arrange()&quot;</span>, <span class="st">&quot;write_csv()&quot;</span>, <span class="st">&quot;geom_col()&quot;</span>, <span class="st">&quot;filter()&quot;</span>, <span class="st">&quot;ncol()&quot;</span>, <span class="st">&quot;sd()&quot;</span>, <span class="st">&quot;summarise()&quot;</span>, <span class="st">&quot;quantile()&quot;</span>, <span class="st">&quot;install.packages()&quot;</span>, <span class="st">&quot;geom_point()&quot;</span>, <span class="st">&quot;unique()&quot;</span>, <span class="st">&quot;select()&quot;</span>, <span class="st">&quot;mean()&quot;</span>, <span class="st">&quot;min()&quot;</span>, <span class="st">&quot;left_join()&quot;</span>, <span class="st">&quot;read_csv()&quot;</span>, <span class="st">&quot;nth()&quot;</span>, <span class="st">&quot;ggplot()&quot;</span>, <span class="st">&quot;library()&quot;</span>, <span class="st">&quot;n()&quot;</span>)</span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Shuffle the words randomly</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Shuffle the words </span></span>
 <span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>bingo_words <span class="ot">&lt;-</span> <span class="fu">sample</span>(bingo_words)</span>
 <span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the draw number</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the draw number in case we need to backtrack</span></span>
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop thru each word</span></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(bingo_words)) {</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(n)</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot the word</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  call_fun <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>), <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="fu">sample</span>(<span class="fu">viridis_pal</span>()(<span class="dv">30</span>), <span class="dv">1</span>), <span class="at">size =</span> <span class="dv">177</span>) <span class="sc">+</span> </span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_label</span>(<span class="at">label =</span> bingo_words[n], <span class="at">size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_void</span>()</span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(call_fun)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>play_bingo <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">words =</span> bingo_words, <span class="at">n =</span> <span class="dv">1</span>) {</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(words)) {</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;</span><span class="sc">\n\t\t</span><span class="st">&quot;</span>, words[n], <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>))</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot the word</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  call_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>), <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="fu">sample</span>(<span class="fu">viridis_pal</span>()(<span class="dv">30</span>), <span class="dv">1</span>), <span class="at">size =</span> <span class="dv">177</span>) <span class="sc">+</span> </span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_label</span>(<span class="at">label =</span> words[n], <span class="at">size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_void</span>()</span>
 <span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">readline</span>(<span class="at">prompt=</span><span class="st">&quot;Press Enter...&quot;</span>)</span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(call_plot)</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(n <span class="sc">&lt;</span> <span class="fu">length</span>(words)) { </span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">readline</span>(<span class="at">prompt=</span><span class="st">&quot;&gt; Press [Enter]&quot;</span>) </span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">&quot;Goodbye!&quot;</span>)</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a><span class="fu">play_bingo</span>()</span></code></pre></div>
+<p><br></p>
 </div>
 <div id="filter" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> <code>filter()</code></h1>
 <hr>
-<p>The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.
-Let’s take a look at the records with the origin <code>"All"</code>.</p>
+<p>Back to the toolbox.</p>
+<p>The next one is the best yet.The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.
+Let’s use it to take a look at the records in the data that had an origin of <code>"All"</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(scrap, origin <span class="sc">==</span> <span class="st">&quot;All&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 7
 ##   receipt_date item  origin destination  amount units price_per_pound
@@ -539,7 +552,7 @@ Let’s take a look at the records with the origin <code>"All"</code>.</p>
 <p>We use a variety of comparisons when processing data. Sometimes we only want concentrations above a certain level, or days below a given temperature, or sites that have missing observations.</p>
 <p>We use the <strong>Menu</strong> of comparisons below to find the data we want.</p>
 <div class="pinkcode">
-<h3 style="margin-top: 8px; margin-bottom: -4px;">
+<h3 style="margin-top: 18px; margin-bottom: -4px;">
 Menu of comparisons
 </h3>
 <table>
@@ -652,7 +665,7 @@ Menu of comparisons
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                             destination   <span class="sc">==</span> <span class="st">&quot;Niima Outpost&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <div class="well">
-<p>Let’s calculate some new columns to help focus Rey’s scavenging work.</p>
+<p>Now, let’s calculate some new columns to help focus Rey’s scavenging work.</p>
 </div>
 </div>
 </div>

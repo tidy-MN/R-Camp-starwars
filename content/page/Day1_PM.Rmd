@@ -60,10 +60,10 @@ cat(readLines("porg_tabs.txt"))
 ```{r arrange, child='../../static/modules/dplyr/dplyr_arrange/starwars.Rmd'}
 ```
 
+<br>
 
 # R BINGO! {-}
 <hr class="hr2">
-
 ```{r arrange, child='../../static/modules/games_bingo/general.Rmd'}
 ```
 
@@ -74,7 +74,7 @@ cat(readLines("porg_tabs.txt"))
 ```
 
 <div class="well">
-Let's calculate some new columns to help focus Rey's scavenging work.
+Now, let's calculate some new columns to help focus Rey's scavenging work.
 </div>
 
 

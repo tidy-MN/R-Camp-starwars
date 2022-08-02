@@ -17,8 +17,7 @@ head(scrap)
 >
 
 
-## Put Big things first  {-}
-
+## Put the BIG things first  {-}
 
 
 To arrange a column in descending order with the biggest numbers on top, we use `desc(...)` around the column name.
@@ -33,6 +32,17 @@ head(scrap, 8)
 
 <br>
 
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+Try arranging by more than one column, such as `price_per_pound` and `amount`. What happens?
+
+__Hint:__ You can view the entire table by clicking on it in the upper-right _Environment_ tab.
+</div>
+
+<br>
+<br>
+
 <div class="yoda">
 ###  Yoda says {-}
 
@@ -42,15 +52,6 @@ When you save an arranged data table it maintains its order. This is perfect for
 
 </div>
 
-<br><br>
-
-<div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
-
-Try arranging by more than one column, such as `price_per_pound` and `amount`. What happens?
-
-__Hint:__ You can view the entire table by clicking on it in the upper-right _Environment_ tab.
-</div>
 
 
 

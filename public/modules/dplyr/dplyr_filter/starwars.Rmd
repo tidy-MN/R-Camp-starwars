@@ -1,6 +1,9 @@
 
-The `filter()` function creates a subset of the data based on the value of one or more columns. 
-Let's take a look at the records with the origin `"All"`.
+
+Back to the toolbox.
+
+The next one is the best yet.The `filter()` function creates a subset of the data based on the value of one or more columns. 
+Let's use it to take a look at the records in the data that had an origin of `"All"`.
 
 ```{r filter12, eval=T}
 filter(scrap, origin == "All")
@@ -29,7 +32,7 @@ We use the __Menu__ of comparisons below to find the data we want.
 
 <div class="pinkcode">
 
-<h3 style="margin-top: 8px; margin-bottom: -4px;"> Menu of comparisons </h3>
+<h3 style="margin-top: 18px; margin-bottom: -4px;"> Menu of comparisons </h3>
 
 | Symbol | Comparison               |
 |:-------|:-------------------------|

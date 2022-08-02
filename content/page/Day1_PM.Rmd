@@ -98,10 +98,8 @@ Let's calculate some new columns to help focus Rey's scavenging work.
 
 ## Where am I? {-}
 <hr class="hrlvl2">
-
 ```{r paths, child='where_am_i.Rmd'}
 ```
-
 
 
 # Plots with _ggplot2_

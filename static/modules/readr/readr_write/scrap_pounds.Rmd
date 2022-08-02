@@ -20,5 +20,3 @@ Let's create a new `results/` folder to keep our processed data separate from an
 # Save data as a CSV file to results folder
 write_csv(scrap_pounds, "results/scrap_in_pounds.csv")
 ```
-
-<br>

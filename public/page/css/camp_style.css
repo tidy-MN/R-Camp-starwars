@@ -214,17 +214,10 @@ blockquote
     padding: 14px;
     padding-top: 0;
     margin-top: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 22px;
     border-left: solid 57px #f5f5f3;
 }
 
-div.yoda {
-  background-image: url('../images/yoda_baby_sq.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: left 28% top 54%;
-  background-size: 48px;
-}
 
 .yoda-img {
     width: 45px;

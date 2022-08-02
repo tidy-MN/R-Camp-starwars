@@ -29,9 +29,10 @@ ggplot(scrap, aes(x = destination, y = amount))
 ```
 
 
-## 3. The layers or geometries  {-}
+## 3. The layers AKA geometries  {-}
 ```{r, eval = T}
-ggplot(scrap, aes(x = destination, y = amount)) + geom_col()
+ggplot(scrap, aes(x = destination, y = amount)) + 
+  geom_col()
 ```
 
 <br>
@@ -50,12 +51,12 @@ ggplot(scrap, aes(x = destination, y = amount, fill = destination)) +
 ## Sorting {-}
 <hr class="hrlvl2">
 
-Let's order things from lowest to highest.
+Finally, let's order things from lowest to highest.
 ```{r, eval=T}
 ggplot(scrap, aes(x = reorder(destination, amount, FUN = sum), y = amount, fill = destination)) +
   geom_col() +
   labs(x = "Destination",
-       title = "The most scrap was sent to from Tuanul")
+       title = "The most scrap was sent to the Trade Caravan")
 ```
 
 
@@ -64,10 +65,12 @@ ggplot(scrap, aes(x = reorder(destination, amount, FUN = sum), y = amount, fill 
 <div class="tip">
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
 
-Try making a column plot showing the total amount of scrap for each `destination` or for each `item`.
+Try making a column plot showing the total amount of scrap for each for each `item`.
+
+Then set the fill to be equal to the `destination` column.
 
 ```{r, eval=F, echo=T}
-ggplot(scrap, aes(x = ___________, y = amount )) + geom_col()
+ggplot(scrap, aes(x = ___________, y = amount)) + geom_col()
 ```
 </div>
 

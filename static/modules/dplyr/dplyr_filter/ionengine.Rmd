@@ -50,7 +50,7 @@ ggplot(scrap_pounds, aes(x = origin, y = amount_lbs)) +
 <div class="quiz">
 ### Complete the mission! {-}
 
-__For the item `Ion engine`, which origin has the most `amount_lbs`?__
+__For `Ion engine`'s, which origin has the most `amount_lbs`?__
 
 <input type="radio" name="ion"> _Tuanul_              <br> 
 <input type="radio" name="ion"> _Cratertown_          <br> 

@@ -74,7 +74,7 @@ cat(readLines("porg_tabs.txt"))
 ```
 
 <div class="well">
-Now, let's calculate some new columns to help focus Rey's scavenging work.
+Now, let's calculate some new columns to help focus Rey's scrap finding.
 </div>
 
 

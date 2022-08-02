@@ -63,7 +63,7 @@
   "headline": "Day 1 - PM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  3910 ,
+  "wordCount":  3925 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -803,18 +803,24 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">6</span> <code>filter()</code></h1>
 <hr>
 <p>Back to the toolbox.</p>
-<p>The next one is the best yet.The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.
-Let’s use it to take a look at the records in the data that had an origin of <code>"All"</code>.</p>
+<p>The next one is the best yet. The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.</p>
+<p>Let’s use it to take a look at the records in the data that had an origin of <code>"All"</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(scrap, origin <span class="sc">==</span> <span class="st">&quot;All&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 7
 ##   receipt_date item  origin destination  amount units price_per_pound
 ##   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
 ## 1 12/31/2016   Total All    All         2971601 Tons          579215.</code></pre>
 <p><br></p>
-<div id="note" class="section level3 unnumbered note">
+<div class="note">
+<div id="note" class="section level3 unnumbered">
 <h3>Note</h3>
-<p>We use a <code>==</code> (double equals sign) for comparing values. A <code>==</code> makes the comparison “is it equal to?” and returns a True or False answer. So the code above will returns only the rows where the condition <code>origin == "All"</code> is TRUE.</p>
-<p>A single equals sign <code>=</code> is used within functions to set options, for example <code>read_csv(file = "scrap.csv")</code>. It’s not a big deal if you mix them up the first time. R is often helpful and will let you know which one is needed.</p>
+</div>
+<div id="vs." class="section level3 unnumbered">
+<h3><code>==</code> vs. <code>=</code></h3>
+<p>We use a <code>==</code> (double equals sign) for comparing values. A <code>==</code> makes the comparison “is it equal to?” and returns a True or False answer. So the code above returns only the rows where the condition <code>origin == "All"</code> is TRUE.</p>
+<p>A single equals sign <code>=</code> is used within functions to set options, for example <code>read_csv(file = "scrap.csv")</code>.</p>
+<p>It’s not a big deal if you mix them up the first time. R is often helpful and will let you know which one is needed.</p>
+</div>
 </div>
 <div id="comparing-values" class="section level2 unnumbered">
 <h2>Comparing values</h2>
@@ -894,8 +900,8 @@ Menu of comparisons
 <span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">==</span> <span class="cn">NA</span></span></code></pre></div>
 </div>
 </div>
-<div id="dropping-rows" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Dropping rows</h2>
+<div id="dropping-rows" class="section level2 unnumbered">
+<h2>Dropping rows</h2>
 <hr class="hrlvl2">
 <p>Let’s look at the data without the <em>All</em> category. Look in the comparison table above to find the <code>NOT</code> operator. We’re going to filter the data to keep only the origins that are <code>NOT equal</code> to “All”.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>)</span></code></pre></div>
@@ -920,7 +926,6 @@ Menu of comparisons
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> amount)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
 <p><img src="/page/Day1_PM_files/figure-html/ggplot-noAll-1.png" width="672" /></p>
-<p><br></p>
 <div id="great-work" class="section level3 unnumbered">
 <h3>Great work!</h3>
 </div>
@@ -936,7 +941,7 @@ Menu of comparisons
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                             destination   <span class="sc">==</span> <span class="st">&quot;Niima Outpost&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <div class="well">
-<p>Now, let’s calculate some new columns to help focus Rey’s scavenging work.</p>
+<p>Now, let’s calculate some new columns to help focus Rey’s scrap finding.</p>
 </div>
 </div>
 </div>
@@ -1076,11 +1081,10 @@ Menu of comparisons
 <hr class="hrlvl2">
 <p>You are in your <strong>working directory</strong> (folder).</p>
 <p>When you open a new R project in RStudio your starting working directory is your project folder. Your project folder is like your <strong>home</strong> folder, and is the default location R will look for data files unless told otherwise.</p>
-<p><br></p>
 <p>To load a file called <code>new_data.csv</code> stored directly in your project folder, you only need to enter its name as the file path:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;new_data.csv&quot;</span>)</span></code></pre></div>
 <p><strong>But what if the data is located in a different folder?</strong></p>
-<p>Have you ever tried to call a different country? Your phone automatically assumes the default or home Country Code is the one you’re standing in when you dial a number. But when you want to call another country, like Canada, you have to add the Country Code to the front of the number you’re dialing.</p>
+<p>Have you ever tried to call a different country? When you dial a number, your phone will generally assume the default Country Code is the country that you’re standing in when you dial a number. But when you want to call another country, like Canada, you have to add the Country Code to the front of the number you’re dialing.</p>
 <p>Similarly, to access files outside of your home directory you will need to tell R to go look in another folder.</p>
 <div id="example-1" class="section level3 unnumbered">
 <h3>Example 1</h3>
@@ -1088,7 +1092,7 @@ Menu of comparisons
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Endor/Ewok_data.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <blockquote>
-<p><strong>NOTE:</strong> The slash used for file paths in R is a forward leaning slash (<code>/</code>), and is the opposite of the slash commonly seen in folder locations on <em>Windows</em> computers. If you get an <strong>*ERROR*</strong>, remember to check your slash.</p>
+<p><strong>NOTE:</strong> The slash used for file paths in R is a forward leaning slash (<code>/</code>), and is the opposite of the slash commonly seen in folder locations on <em>Windows</em> computers. If you get an <strong>*ERROR*</strong> when trying to load a file, remember to check your slashes.</p>
 </blockquote>
 <p><br></p>
 </div>
@@ -1101,7 +1105,7 @@ Menu of comparisons
 <div id="yoda-says-1" class="section level3 unnumbered yoda">
 <h3>Yoda says</h3>
 <p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
-<p>File paths with your user name in them don’t share well with others and they also run the risk of breaking if the data is ever moved. It’s best to store data in your project as much as possible to avoid using full file paths.</p>
+<p>File paths with your user name in them don’t share well with others and they also run the risk of breaking if the data is moved. It’s best to store data in your project folder as much as possible to avoid using absolute paths.</p>
 </div>
 </div>
 </div>
@@ -1129,7 +1133,7 @@ A <code>ggplot</code> has 3 ingredients.
 <p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p><br></p>
 <blockquote>
-<p>we load version 2 of the package <code>library(ggplot2)</code>, but the function to make the plot is only <code>ggplot()</code>. No <code>2</code>. <em>Sorry.</em></p>
+<p>We load version 2 of the package <code>library(ggplot2)</code>, but the function to make the plot is plain <code>ggplot()</code>. <em>Sorry, ggplot is fun that like that.</em></p>
 </blockquote>
 </div>
 <div id="the-the-x-y-aesthetics" class="section level2 unnumbered">
@@ -1167,8 +1171,10 @@ A <code>ggplot</code> has 3 ingredients.
 <div id="explore-3" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <p>Try making a column plot showing the total amount of scrap for each for each <code>item</code>.</p>
-<p>Then set the fill to be equal to the <code>destination</code> column.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> ___________, <span class="at">y =</span> amount)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> ___________, <span class="at">y =</span> amount)) <span class="sc">+</span> </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><br></p>
+<p>Now, try setting the fill argument to the <code>destination</code> column.</p>
 </div>
 <p><br></p>
 </div>

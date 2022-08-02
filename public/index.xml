@@ -61,7 +61,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mn-r.netlify.app/page/where_am_i.html</guid>
-      <description>When you open a new R project in RStudio your working directory is your project folder. Your project folder is like your home planet, and is the default location R will look for data files.</description>
+      <description>You are in your working directory (folder).
+When you open a new R project in RStudio your starting working directory is your project folder.</description>
     </item>
     
     <item>

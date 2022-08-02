@@ -2,7 +2,8 @@
 
 Back to the toolbox.
 
-The next one is the best yet.The `filter()` function creates a subset of the data based on the value of one or more columns. 
+The next one is the best yet. The `filter()` function creates a subset of the data based on the value of one or more columns.
+
 Let's use it to take a look at the records in the data that had an origin of `"All"`.
 
 ```{r filter12, eval=T}
@@ -14,9 +15,13 @@ filter(scrap, origin == "All")
 <div class="note">
 ### Note {-}
 
-We use a `==` (double equals sign) for comparing values. A `==` makes the comparison "is it equal to?" and returns a True or False answer. So the code above will returns only the rows where the condition `origin == "All"` is TRUE.
+### `==` vs. `=` {-}
 
-A single equals sign `=` is used within functions to set options, for example `read_csv(file = "scrap.csv")`. It's not a big deal if you mix them up the first time. R is often helpful and will let you know which one is needed.
+We use a `==` (double equals sign) for comparing values. A `==` makes the comparison "is it equal to?" and returns a True or False answer. So the code above returns only the rows where the condition `origin == "All"` is TRUE.
+
+A single equals sign `=` is used within functions to set options, for example `read_csv(file = "scrap.csv")`. 
+
+It's not a big deal if you mix them up the first time. R is often helpful and will let you know which one is needed.
 </div>
 
 
@@ -75,7 +80,7 @@ Try comparing some things in the console to see if you get what you'd expect. R 
 </div>
 
 
-## Dropping rows 
+## Dropping rows {-}
 <hr class="hrlvl2">
 
 Let's look at the data without the _All_ category. Look in the comparison table above to find the `NOT` operator. We're going to filter the data to keep only the origins that are `NOT equal` to "All".
@@ -104,7 +109,6 @@ library(ggplot2)
 ggplot(scrap, aes(x = origin, y = amount)) + geom_col()
 ``` 
 
-<br>
 
 ### Great work! {-}
 

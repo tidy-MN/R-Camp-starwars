@@ -17,7 +17,7 @@ ggplot(scrap)
 
 <br>
 
-> we load version 2 of the package `library(ggplot2)`, but the function to make the plot is only `ggplot()`. No `2`. _Sorry._ 
+> We load version 2 of the package `library(ggplot2)`, but the function to make the plot is plain `ggplot()`. _Sorry, ggplot is fun that like that._ 
 
 
 ## 2. The the X, Y _aesthetics_  {-}
@@ -67,11 +67,15 @@ ggplot(scrap, aes(x = reorder(destination, amount, FUN = sum), y = amount, fill 
 
 Try making a column plot showing the total amount of scrap for each for each `item`.
 
-Then set the fill to be equal to the `destination` column.
-
 ```{r, eval=F, echo=T}
-ggplot(scrap, aes(x = ___________, y = amount)) + geom_col()
+ggplot(scrap, aes(x = ___________, y = amount)) + 
+  geom_col()
 ```
+
+<br>
+
+Now, try setting the fill argument to the `destination` column.
+
 </div>
 
 <br>

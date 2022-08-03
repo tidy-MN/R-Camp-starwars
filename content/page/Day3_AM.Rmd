@@ -85,7 +85,7 @@ cat(readLines("porg_tabs.txt"))
 
 ## The `ggplot()` sandwich {-}
 
-![](../images/auto_plot.gif){style="margin-top: -22px; max-width: 108%; margin-bottom: -16px;"}
+![](../images/auto_plot.gif){style="margin-top: -22px; max-width: 108%; margin-bottom: -6px;"}
 
 
 
@@ -194,7 +194,7 @@ ggplot(star_df, aes(x = mass, y = height)) +
 ## Create a GitHub account {-}
 <hr class="hrlvl2">
 
-It's time to share with the world. [Join GitHub](https://github.com/)
+It's time to share with your R friends. [Join GitHub](https://github.com/)
 
 [![](../images/join_github.png)](https://github.com/)
 

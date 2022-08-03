@@ -25,10 +25,12 @@
 The YAML ("Yet Another Markup Language") is the document settings stored atop the R Markdown document, bounded on each end by `---`. When you first create a new `.Rmd` the YAML will look something like this:
 
 
-> title: "Document title"  
-> author: "Author"  
-> date: "MM/DD/YYYY"  
-> output: html_document  
+    ---
+    title: "Document title"
+    author: "Author"
+    date: "MM/DD/YYYY"
+    output: html_document
+    ---
 
 
 <h2> 4. Demo time </h2>
@@ -89,16 +91,18 @@ To add options to the YAML, add them as "children" under the `html_document:` se
 **Beware of spacing here**. You will add 2 spaces of indentation for each new sub-level in the YAML hierarchy.
 
 
-> title: "Level up in R Markdown"  
-> subtitle: "UCSB QMSS seminar series (February 2021)"  
-> author: "Allison Horst"  
-> output:   
->   html_document:  
->     toc: true  
->     toc_float: true  
->     number_sections: true  
->     theme: flatly  
->     code_folding: hide  
+    ---
+    title: "Level up in R Markdown"
+    subtitle: "UCSB QMSS seminar series (February 2021)"
+    author: "Allison Horst"
+    output: 
+      html_document:
+        toc: true
+        toc_float: true
+        number_sections: true
+        theme: flatly
+        code_folding: hide
+    --- 
 
 
 <h4> For more bootstrap themes visit: <https://bootswatch.com/3/> </h4>

@@ -218,7 +218,7 @@ ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
        subtitle = "Planet Jakku",
        x        = "Origin", 
        y        = "Total sales") +
-  geom_hline(yintercept = 5E+10, color = "darkgray", size = 2)
+  geom_hline(yintercept = 5E+10, color = "black", size = 1)
 ```
 
 

@@ -38,7 +38,7 @@ xaringanExtra::use_clipboard()
 <br>
 
 
-# Connect to databases <i class="fa-solid fa-database"></i>
+# Connect to databases <i class="fas fa-database"></i>
 <hr>
 
 > Top-secret demo....

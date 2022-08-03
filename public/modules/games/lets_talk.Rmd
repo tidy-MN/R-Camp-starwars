@@ -32,8 +32,9 @@ _Find a partner. One of you will be **Bert** and one of you is **Ernie**._
 <br>
 
 <details>
-<summary class="btn_code"> Example </summary>
-  
+<summary class="btn_code"> Example code to read aloud </summary>
+
+
 Say aloud what this code does or tries to accomplish.  
 
 ```{r, eval=F}
@@ -56,7 +57,7 @@ red_veggies <- filter(fillings, food_type == "vegetable", color = "red")
 <br>
 <br>
 
-> #### ⚠️ Wait to click below until you decide who's Bert. {-} 
+> ⚠️ **Wait to click below until you decide who's Bert.**
 
 
 ## 1. Bert's turn to read: `BIG fish` <i class="fas fa-fish"></i> {-}
@@ -66,7 +67,7 @@ red_veggies <- filter(fillings, food_type == "vegetable", color = "red")
 We'll start by turning some fishy code into plain language.
 
 <details>
-<summary class="btn_code"> **Bert's <i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye"></i> only!**  *(No peeking Ernie)* </summary>
+<summary class="btn_code_blue"> **Bert's <i class="fas fa-eye"></i><i class="fas fa-eye"></i>'s only!**  *(No peeking Ernie)* </summary>
     
 ```{r, eval=F}
 library(readr)
@@ -92,7 +93,7 @@ nrow(big_fishes)
 ## 2. Ernie's turn to read: `Sleepy sheep` 🐑🐑🐑 <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i> {-}
 
 <details>
-<summary class="btn_code"> **Ernie's <i class="fas fa-eye"></i><i class="fas fa-eye"></i> only** </summary>
+<summary class="btn_code_blue"> **Ernie's <i class="fas fa-eye"></i><i class="fas fa-eye"></i>'s only!** </summary>
     
 ```{r, eval=F}
 

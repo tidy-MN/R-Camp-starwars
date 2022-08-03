@@ -66,22 +66,9 @@ outposts <- select(outposts, ID, x_utm, y_utm, everything())
 
 
 ## Reading coordinates {-}
+
 To read coordinates stored in a spreadsheet or CSV, we can read them into R with our usual friends `read_csv()` and `read_excel()`.
 
-**Like this:**
-```{r, eval=F} 
-library(readr)
-
-outposts <- read_csv("endor_outposts.csv")
-
-# or
-library(readxl)
-
-outposts <- read_excel("endor_outposts.xlsx")
-```
-
-
-<br>
 
 ### However {-}
 
@@ -316,9 +303,9 @@ leaflet(outposts) %>%
 </div>
 
 
-**Wow!** 
+## Wow! {-} 
 
-You're on fire data droid. Let's sit here a minute and cool down...  
+You're on 🔥fire🔥 data droid. Let's just sit here a minute and cool down...  
 
-Ok, now let's get down on that planet before we get stuck with permanent space legs up here.
+Ok, now let's go land on that planet before we get stuck up here with permanent space legs.
 

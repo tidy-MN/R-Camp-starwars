@@ -523,12 +523,23 @@ ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
   geom_line()                #<<
 ```
 
+<details>
+<summary  class = "btn_code">Show code</summary>
+  
+```{r, eval=T, echo=T}
+ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
+  geom_point(size = 5) +
+  facet_wrap(~ site) +
+  geom_line()
+```
+
+</details>
+
 
 <br>
 
-<hr>
 
-## <i class="fas fa-party-horn" aria-hidden="true"></i> Great work {-}
+## <i class="fas fa-hands-clapping" aria-hidden="true"></i> Great work {-}
 
 The Ewoks were deeply thankful. They'll be in touch for *Porg Survey 2024*.
 

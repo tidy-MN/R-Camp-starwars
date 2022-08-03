@@ -72,6 +72,7 @@ cat(readLines("porg_tabs.txt"))
 ```{r porg-survey, child='../../static/modules/lubridate_examples/porg_survey.Rmd'}
 ```
 
+<br>
 
 # Pipe things together: ` A %>% B `
 <hr>

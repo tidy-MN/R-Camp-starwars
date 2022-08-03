@@ -1,13 +1,15 @@
 
-The Ewoks need our help. There's porgs **EVERYWHERE!** 
+### The Ewoks need our help. There's porgs **EVERYWHERE!** {-}
 
 <img src="../images/porgs_bb8_2.jpg" style="margin-top: 0px;">
 
 
-They have been spreading across the galaxy, hitching rides on unsuspecting ships. They're so cute people hate to admit it, but they are starting to become a nuisance. To get a grasp on the problem the Ewoks are doing the first ever porg survey. And they need your help scheduling the **survey dates**.
+Porgs have been spreading across the galaxy, likely hitching rides on unsuspecting ships. They're so cute people hate to say it, but they are starting to become a nuisance in some place. 
+
+To get a grasp on the problem the Ewoks are doing the first ever porg survey. And they need your help planning the **survey**.
 
 
-# <i class="fa fa-calendar" aria-hidden="true"></i> Dates and times with `lubridate` 
+# <i class="fa fa-calendar" aria-hidden="true"></i> Dates with `lubridate` 
 <hr>
 
 ### The `lubridate` package. {-}
@@ -71,7 +73,7 @@ It's a great reference when you need to manipulate dates or timezones in your da
 <div class="note">
 ### <i class="fa fa-broom" aria-hidden="true"></i> Clean the dates {-}
 
-### Real world examples {-}
+#### Real world examples {-}
 
 Does your date column look like one of these? 
 
@@ -112,20 +114,18 @@ __Simple number dates__
 
 <div class="well">
 
-- The Ewoks have asked you help organize their Porg survey for the season from May to October.
-- In 2023, the Ewoks would like to perform a porg count once a week from May to October.
-- They have enough volunteers to run the survey at two locations across their forest
-    - Sites: `c("Bright Tree", "Fern Gully")`
+- The Ewoks have asked you help organize their Porg survey.
+- In 2023, they would like to perform a porg count once a week from May to October.
+- They have enough volunteers to run the survey at two locations
+    - `Bright Tree` and `Fern Gully`
+    
 </div>
 
 <br>
 
 Let's generate the full list of dates during this time span using the sequence date function: ` seq.Date()`
 
-<br>
-
-Run the code below to create a date for every possible day of the survey.
-
+#### Run the code below to create a date for every possible day of the survey. {-}
 ```{r}
 library(dplyr)
 library(readr)
@@ -155,20 +155,21 @@ survey_dates <- seq.Date(from = start_date,
 
 <br>
 
-### Put the dates in a dataframe {-}
-
-<br>
+### Let's put the dates in a dataframe {-}
 
 > Remember how to make a dataframe?
 
 
-#### Here's a reminder: {-}
+### Here's a reminder {-}
 ```{r}
 survey <- data.frame(count_date = survey_dates)
+
+head(survey)
 ```
 
 
-### Great! {-}
+### Yes! {-}
+
 
 ## 1. Scheduling weekdays {-}
 

@@ -63,7 +63,7 @@
   "headline": "Day 2 - AM",
   "description" : "pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.",
   "inLanguage" : "en",
-  "wordCount":  5334 ,
+  "wordCount":  5349 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -364,7 +364,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="#review---new-project"><span class="toc-section-number">1</span> Review - New project</a></li>
 <li><a href="#maps-with-sf"><span class="toc-section-number">2</span> <i class="fas fa-globe-africa"></i> Maps with <code>sf</code></a></li>
-<li><a href="#porg-survey-2022"><span class="toc-section-number">3</span> Porg Survey 2022</a></li>
+<li><a href="#invasive-porg-survey---2023"><span class="toc-section-number">3</span> Invasive Porg Survey - 2023</a></li>
 <li><a href="#dates-and-times-with-lubridate"><span class="toc-section-number">4</span> <i class="fa fa-calendar" aria-hidden="true"></i> Dates and times with <code>lubridate</code></a></li>
 <li><a href="#pipe-things-together-a-b"><span class="toc-section-number">5</span> Pipe things together: <code>A %&gt;% B</code></a></li>
 <li><a href="#finn-needs-us">Finn needs us!</a></li>
@@ -435,33 +435,33 @@ hr {background: #62BE2C;}
 <tbody>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2017-08-13</td>
-<td align="right">10</td>
-<td align="right">71.6</td>
+<td align="left">2017-05-22</td>
+<td align="right">8</td>
+<td align="right">66.2</td>
 </tr>
 <tr class="even">
+<td align="left">27-137-7554</td>
+<td align="left">2016-09-05</td>
+<td align="right">11</td>
+<td align="right">64.4</td>
+</tr>
+<tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2016-09-17</td>
+<td align="left">2017-07-28</td>
 <td align="right">9</td>
-<td align="right">53.6</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2018-06-21</td>
-<td align="right">12</td>
-<td align="right">66.8</td>
+<td align="right">73.4</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7554</td>
-<td align="left">2018-05-31</td>
-<td align="right">16</td>
-<td align="right">69.2</td>
+<td align="left">2018-08-11</td>
+<td align="right">12</td>
+<td align="right">67.4</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2016-08-19</td>
-<td align="right">6</td>
-<td align="right">71.0</td>
+<td align="left">2017-06-04</td>
+<td align="right">10</td>
+<td align="right">73.4</td>
 </tr>
 </tbody>
 </table>
@@ -599,7 +599,7 @@ hr {background: #62BE2C;}
 <div id="porg-review" class="section level2 unnumbered">
 <h2>Porg review</h2>
 <hr class="hrlvl2">
-<p>The <em>poggle</em> of porgs has returned to help review the <code>dplyr</code> functions. Follow along by downloading the <strong>porg</strong> data from the URL below.</p>
+<p>The <em>poggle</em> of porgs has returned to help review the <code>dplyr</code> functions. Follow along by reading the <strong>porg</strong> data from the URL below.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/porg_data.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
@@ -760,6 +760,11 @@ hr {background: #62BE2C;}
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>) </span></code></pre></div>
 <p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-10-1.png" width="960" /></p>
 <p><br></p>
+<p><strong>Try running the function <code>st_distance()</code> on your outposts.</strong></p>
+<blockquote>
+<p>What do you get?</p>
+</blockquote>
+<p><br></p>
 </div>
 </div>
 <div id="wheres-the-center-point" class="section level2 unnumbered">
@@ -789,10 +794,10 @@ hr {background: #62BE2C;}
 </div>
 <div id="we-found-it" class="section level3 unnumbered">
 <h3>We found it!</h3>
-<p>That’s fantastic.
-But there’s one more piece of bad news. Endor uses a differnt Coordinate Reference System (CRS) than our ship.</p>
-<p>Endor uses an outdated UTM coordinate system, but our ship requires coordinates in <strong>WGS84 Lat/Lng</strong>. These coordinates generally look like this <code>(45.6, -93.12)</code>. See <a href="https://epsg.io/4326" class="uri">https://epsg.io/4326</a> for more details.</p>
-<p>The <strong>SF</strong> package will help you with coordinate conversions as well. Try using <code>st_transform()</code> and set the crs argument to: <code>crs = 4326</code>.</p>
+<p>That’s fantastic.</p>
+<p>But there’s one more piece of bad news… These coordintes are in a different Coordinate Reference System (CRS) than our ship needs. CRS is a real thing!</p>
+<p>The Endor outposts are currently in the UTM coordinate system, but our ship requires coordinates in <strong>WGS84 Lat/Lng</strong>. These coordinates generally look like this <code>(45.6, -93.12)</code>. See <a href="https://epsg.io/4326" class="uri">https://epsg.io/4326</a> for more details.</p>
+<p>The <strong>SF</strong> package will help with coordinate conversions as well. Try using <code>st_transform()</code> and set the crs argument to: <code>crs = 4326</code>.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform outposts</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>outposts <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(outposts, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -906,11 +911,11 @@ But there’s one more piece of bad news. Endor uses a differnt Coordinate Refer
 <p>Ok, now let’s get down on that planet before we get stuck with permanent space legs up here.</p>
 </div>
 </div>
-<div id="porg-survey-2022" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Porg Survey 2022</h1>
+<div id="invasive-porg-survey---2023" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Invasive Porg Survey - 2023</h1>
 <hr>
 <p>The Ewoks need our help. There’s porgs <strong>EVERYWHERE!</strong></p>
-<p><img src="../images/porgs_bb8_2.jpg" style="margin-top: 0px;" /></p>
+<p>&lt; img src=“../images/porgs_bb8_2.jpg” style=“margin-top: 0px;” /&gt;</p>
 <p>They have been spreading across the galaxy, hitching rides on unsuspecting ships. They’re so cute people hate to admit it, but they are starting to become a nuisance. To get a grasp on the problem the Ewoks are doing the first ever porg survey. And they need your help scheduling the <strong>survey dates</strong>.</p>
 </div>
 <div id="dates-and-times-with-lubridate" class="section level1" number="4">
@@ -1138,11 +1143,11 @@ Let’s generate the full list of dates during this time span using the sequence
 <p><br></p>
 </div>
 </div>
-<div id="penguin-how-many-days-will-the-survey-run" class="section level2 unnumbered">
-<h2>:penguin: How many days will the survey run?</h2>
+<div id="how-many-days-will-the-survey-run" class="section level2 unnumbered">
+<h2>How many days will the survey run?</h2>
 <p><br></p>
 <details>
-<summary>
+<summary class="btn_code">
 Show answer
 </summary>
 <blockquote>
@@ -1163,45 +1168,49 @@ Show answer
 </div>
 <div id="scheduling-weekdays" class="section level2 unnumbered">
 <h2>1. Scheduling weekdays</h2>
-<p><img src="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" /></p>
-<p>Ewoks are very busy. Unfortunately, they only have one day per week when they can volunteer. Here is the weekday when volunteers are available at each location:</p>
+<p>&lt;img src=“<a href="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" class="uri">https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png</a>” align=right}</p>
+<p>Ewoks are very busy. Unfortunately, they only have one day per week when they can volunteer.</p>
+<p>Here is the weekday when volunteers are available at each location:</p>
 <ul>
 <li>Bright Tree: <code>Thursdays</code></li>
 <li>Fern Gully: <code>Fridays</code></li>
 </ul>
 <p><br></p>
-<p>Use the <code>seq.Date()</code> function and the option to step <code>by = "week"</code> to
-generate the survey dates for each site.</p>
-<p><br></p>
-<p>To get started, let’s find when the first Thursday in May of 2023 is. That will be the first survey date for the site Bright Tree.</p>
-<p>We can use the <code>wday()</code> - “weekday” - function to check what day of the week the first of May will be in 2023.</p>
+<p>We can use the <code>seq.Date()</code> function and the option to step <code>by = "week"</code> to
+generate the survey dates for each site. But we need to know which day to start from.</p>
+<blockquote>
+<p><strong>when is the first Thursday in May of 2023?</strong></p>
+</blockquote>
+<p>For that, we can use the <code>wday()</code>, the “weekday” function.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wday tells you the day of week (Sun, Mon, etc..) for a specific date</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(<span class="fu">ymd</span>(<span class="st">&#39;2023-05-01&#39;</span>), <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] Monday
 ## 7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday</code></pre>
 <p><br></p>
-<p>So the <code>1st</code> will be Monday. That means…. <strong>May the 4th</strong> will be the first Thursday. Perfect.</p>
-<div id="new-column" class="section level3 unnumbered">
-<h3>New column</h3>
-<p>We don’t want to check every date one by one do we? After all, R is supposed to make our lives easier.</p>
-<p>Let’s check ALL the dates ALL at once by adding a day of week column to the survey table. To add a new column we call our friend <code>mutate()</code>.</p>
+<p>So the <code>1st</code> of May will be a Monday. That means…. <strong>May the 4th</strong> will be a Thursday. Perfect!</p>
+<div id="mutate-to-the-rescue" class="section level3 unnumbered">
+<h3>Mutate to the rescue</h3>
+<p>We really don’t want to check every date one by one do we?</p>
+<p>Let’s add a new <code>week_day</code> column to our survey table that checks ALL the dates ALL at once. To add a new column we call our friend <code>mutate()</code>.</p>
 <p>Complete the code below to add a <code>week_day</code> column.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">week_day =</span> <span class="fu">wday</span>( ________ , <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
+<p><br></p>
 </div>
 <div id="filter-week-days" class="section level3 unnumbered">
 <h3><code>filter()</code> week days</h3>
-<p>Split the schedule in two by filtering the survey to only the day needed for each site:</p>
+<p>Filter allows us to pick out only the days of the week we want.</p>
+<p>Split the schedule in two by filtering the survey to only the week day needed for each site:</p>
 <ul>
 <li><code>Thursday</code> for Bright Tree</li>
 <li><code>Friday</code> for Fern Gully</li>
 </ul>
+<p><br></p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  ________ )</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>fern_dates   <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  ________ )</span></code></pre></div>
-<p><br></p>
 <details>
-<summary>
+<summary class="btn_code">
 Show code
 </summary>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Thursday&quot;</span> )</span>
@@ -1215,7 +1224,7 @@ Show code
 </blockquote>
 <p><br></p>
 <details>
-<summary>
+<summary class="btn_code">
 Show answer
 </summary>
 <blockquote>
@@ -1229,24 +1238,24 @@ Show answer
 <h2>2. Particular date formats</h2>
 <p><img align="left" src="../images/dwight.png" style="margin-right: 14px;"></p>
 <p><br></p>
-<p>Oh no, each survey site has a very-very particular Assistant to the Regional Manager that is demanding a very specific date format for their work schedules.</p>
+<p>Oh no, each survey site has a very-very particular <strong>Assistant to the Regional Manager</strong>. And they are demanding a very <strong>specific</strong> date format for their work schedules.</p>
 <p>Before you send off the survey dates, you’ll need to adjust the dates to match the requested formats below.</p>
-<p><br></p>
-<p>The sites have the following preferred date formats:</p>
+<p><strong>Preferred date formats</strong></p>
 <ul>
 <li>Bright Tree: <code>5-11-2023</code></li>
 <li>Fern Gully: <code>May 12, 2023</code></li>
 </ul>
 <p><br></p>
-<p>Use <code>format(date, ...)</code> and the format expressions below to format the schedule for each region accordingly.</p>
+<p>Use <code>format(count_date, ...)</code> and the date expressions below to format the schedule for each region accordingly.</p>
 <blockquote>
-<p>For example: <code>format(count_date, "%b, %Y")</code> would print the date as <code>Aug, 2023</code>.</p>
+<p>For example: <code>format(count_date, "%b, %Y")</code> prints the date as <code>Aug, 2023</code>.</p>
 <ul>
 <li><code>%b</code> stands for 3-letter month abbreviation</li>
 <li><code>%Y%</code> stands for the full 4 digit year</li>
 </ul>
 </blockquote>
-<p><strong>Date</strong></p>
+<div id="date-parts" class="section level3 unnumbered">
+<h3>Date parts</h3>
 <table>
 <thead>
 <tr class="header">
@@ -1288,7 +1297,9 @@ Show answer
 </tr>
 </tbody>
 </table>
-<p><strong>Time</strong></p>
+</div>
+<div id="time-parts" class="section level3 unnumbered">
+<h3>Time parts</h3>
 <table>
 <thead>
 <tr class="header">
@@ -1324,7 +1335,7 @@ Show answer
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to May 12, 2023</span></span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, _______ ))</span></code></pre></div>
 <details>
-<summary>
+<summary class="btn_code">
 Show code
 </summary>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to 5-11-2023</span></span>
@@ -1333,8 +1344,9 @@ Show code
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to May 12, 2023</span></span>
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%b %d, %Y&quot;</span>))</span></code></pre></div>
 </details>
-<div id="howd-we-do" class="section level3" number="4.0.1">
-<h3><span class="header-section-number">4.0.1</span> How’d we do?</h3>
+</div>
+<div id="howd-we-do" class="section level3 unnumbered">
+<h3>How’d we do?</h3>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bright Tree schedule</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bright_dates, <span class="dv">3</span>)</span></code></pre></div>
 <table>
@@ -1393,8 +1405,8 @@ Show code
 <div id="results" class="section level2 unnumbered">
 <h2>3. Results</h2>
 <p><img src="../images/porgs_lifecycle.jpg" style="width:80.0%" /></p>
-<p><br></p>
-<p><strong>Load the porg survey result.</strong></p>
+<div id="load-the-porg-survey-result." class="section level3 unnumbered">
+<h3>Load the porg survey result.</h3>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/2022_porg_survey_results.csv&quot;</span>)   </span></code></pre></div>
 <p><br></p>
 <p><em>Explore a bit.</em></p>
@@ -1402,6 +1414,7 @@ Show code
 <p>Are there missing values?</p>
 </blockquote>
 <p><br></p>
+</div>
 <div id="a-missing-site" class="section level3 unnumbered">
 <h3>A missing site</h3>
 <p>It looks like we have a slight missing data problem.</p>
@@ -1429,16 +1442,16 @@ location. We do know the date however.</p>
 <blockquote>
 <h3 id="what-is-the-best-month-to-see-porgs" class="unnumbered">What is the best month to see porgs?</h3>
 </blockquote>
-<p>:penguin: <strong>First, add a <code>month</code> column to the data with the function <code>month()</code> and the column <code>count_date</code>.</strong></p>
+<p><strong>First, add a <code>month</code> column to the data with the function <code>month()</code> and the column <code>count_date</code>.</strong></p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> porgs <span class="sc">%&gt;%</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
 <p><br></p>
-<p>:penguin: <strong>Next, use <code>ggplot()</code> and <code>geom_col()</code> to plot the porg sightings by month.</strong></p>
+<p><strong>Next, use <code>ggplot()</code> and <code>geom_col()</code> to plot the porg sightings by month.</strong></p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> ______ , <span class="at">fill =</span> site)) <span class="sc">+</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
 <p><br></p>
 <details>
-<summary>
+<summary class="btn_code">
 Show code
 </summary>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> porg_count, <span class="at">fill =</span> site)) <span class="sc">+</span></span>
@@ -1459,7 +1472,7 @@ Show code
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
 <p><br></p>
 <details>
-<summary>
+<summary class="btn_code">
 Show code
 </summary>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> porg_count, <span class="at">color =</span> site)) <span class="sc">+</span></span>
@@ -1481,8 +1494,8 @@ What happens?</p>
 <p><br></p>
 <hr>
 </div>
-<div id="tada-great-work" class="section level2 unnumbered">
-<h2>:tada: Great work</h2>
+<div id="great-work" class="section level2 unnumbered">
+<h2><i class="fas fa-party-horn" aria-hidden="true"></i> Great work</h2>
 <p>The Ewoks were impressed and deeply thankful. They will be in touch for <em>Porg Survey 2024</em>.</p>
 <p><img src="../images/porgs_4.jpg" style="width:35.0%" /></p>
 </div>
@@ -1502,14 +1515,10 @@ What happens?</p>
 
 </div>
 </div>
-<div id="let-the-guide-you." class="section level2 unnumbered">
-<h2>Let the <code>%&gt;%</code> guide you.</h2>
-<p><br></p>
-</div>
-<div id="ways-the-helps" class="section level2 unnumbered">
-<h2>2 ways the <code>%&gt;%</code> helps:</h2>
-<div id="eliminates-nested-parentheses" class="section level3 unnumbered">
-<h3><strong><code>#1:</code></strong> <em>Eliminates nested parentheses</em></h3>
+<div id="the-helps" class="section level2 unnumbered">
+<h2>The <code>%&gt;%</code> helps:</h2>
+<div id="eliminate-nested-parentheses" class="section level3 unnumbered">
+<h3><strong><code>#1:</code></strong> <em>Eliminate nested parentheses</em></h3>
 <p>Let’s say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome.</p>
 </div>
 <div id="without-the-pipe" class="section level3 unnumbered">
@@ -1555,6 +1564,9 @@ What happens?</p>
 <span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mag_endor, <span class="at">date =</span> <span class="fu">mdy</span>(start_run_date))</span></code></pre></div>
 </div>
 <p><br></p>
+</div>
+<div id="let-the-guide-you." class="section level2 unnumbered">
+<h2>Let the <code>%&gt;%</code> guide you.</h2>
 <p><br></p>
 <blockquote>
 <p>Wait…. <strong>So where’s Finn?</strong></p>

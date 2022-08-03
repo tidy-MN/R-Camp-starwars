@@ -15,14 +15,10 @@ Use the `%>%` to chain functions together and make our scripts more streamlined.
 <div style="clear: both;"></div>
 
 
-## Let the `%>%` guide you. {-}
 
-<br>
+## The `%>%` helps: {-}
 
-
-## 2 ways the `%>%` helps: {-}
-
-### __`#1:`__ *Eliminates nested parentheses* {-}
+### __`#1:`__ *Eliminate nested parentheses* {-}
 
 Let's say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome. 
 
@@ -89,3 +85,7 @@ mag_endor <- mutate(mag_endor, date = mdy(start_run_date))
 </div>
 
 <br>
+
+## Let the `%>%` guide you. {-}
+
+

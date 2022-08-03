@@ -46,7 +46,7 @@ scrap <- read_csv("scrap_day2pm.csv")
 ```
 
 
-<div style="border: 2px solid; border-color: hotpink;">
+<div style="border: 2px solid; border-color: hotpink; padding: 22px; border-radius: 25px; padding-top: 0;">
 # Guess Who? {-}
 <h2 style="margin-top: -24px;"> _Star Wars edition_ </h2>
 ```{r guesswho, child='../../static/modules/games_guesswho/starwars.Rmd'}

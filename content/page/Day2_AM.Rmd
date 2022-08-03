@@ -41,7 +41,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ## Porg review {-}
 <hr class="hrlvl2">
 
-The _poggle_ of porgs has returned to help review the `dplyr` functions. Follow along by downloading the __porg__ data from the URL below.
+The _poggle_ of porgs has returned to help review the `dplyr` functions. Follow along by reading the __porg__ data from the URL below.
 
 ```{r, eval = F}
 library(readr)
@@ -67,7 +67,7 @@ cat(readLines("porg_tabs.txt"))
 ```
 
 
-# Porg Survey 2022 
+# Invasive Porg Survey - 2023 
 <hr>
 ```{r porg-survey, child='../../static/modules/lubridate_examples/porg_survey.Rmd'}
 ```

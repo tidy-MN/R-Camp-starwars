@@ -136,6 +136,13 @@ ggplot(outposts) +
 
 <br>
 
+**Try running the function `st_distance()` on your outposts.** 
+
+> What do you get?
+
+<br>
+
+
 ## Where's the center point? {-}
 
 
@@ -164,12 +171,13 @@ kable(land_pad)
 ### We found it! {-}
 
 That's fantastic. 
-But there's one more piece of bad news. Endor uses a differnt Coordinate Reference System (CRS) than our ship.
 
-Endor uses an outdated UTM coordinate system, but our ship requires coordinates in **WGS84 Lat/Lng**. These coordinates generally look like this `(45.6, -93.12)`. See https://epsg.io/4326 for more details.
+But there's one more piece of bad news... These coordintes are in a different Coordinate Reference System (CRS) than our ship needs. CRS is a real thing!
+
+The Endor outposts are currently in the UTM coordinate system, but our ship requires coordinates in **WGS84 Lat/Lng**. These coordinates generally look like this `(45.6, -93.12)`. See https://epsg.io/4326 for more details.
 
 
-The **SF** package will help you with coordinate conversions as well. Try using `st_transform()` and set the crs argument to: `crs = 4326`. 
+The **SF** package will help with coordinate conversions as well. Try using `st_transform()` and set the crs argument to: `crs = 4326`. 
 
 
 ```{r, eval=T}

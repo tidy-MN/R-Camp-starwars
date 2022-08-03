@@ -1,7 +1,7 @@
 
 The Ewoks need our help. There's porgs **EVERYWHERE!** 
 
-![](../images/porgs_bb8_2.jpg){style="margin-top: 0px;"}
+< img src="../images/porgs_bb8_2.jpg" style="margin-top: 0px;" />
 
 
 They have been spreading across the galaxy, hitching rides on unsuspecting ships. They're so cute people hate to admit it, but they are starting to become a nuisance. To get a grasp on the problem the Ewoks are doing the first ever porg survey. And they need your help scheduling the **survey dates**.
@@ -143,12 +143,12 @@ survey_dates <- seq.Date(from = start_date,
 
 <br>
 
-## :penguin: How many days will the survey run? {-}
+## How many days will the survey run? {-}
 
 <br>
 
 <details>
-<summary>Show answer</summary>
+<summary class = "btn_code">Show answer</summary>
   
 > *184 days*
 
@@ -172,23 +172,24 @@ Great!
 
 ## 1. Scheduling weekdays {-}
 
-![](https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png)
+<img src="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" align=right}
 
-Ewoks are very busy. Unfortunately, they only have one day per week when they can volunteer. Here is the weekday when volunteers are available at each location:
+Ewoks are very busy. Unfortunately, they only have one day per week when they can volunteer. 
+
+Here is the weekday when volunteers are available at each location:
 
 - Bright Tree: ` Thursdays`
 - Fern Gully: ` Fridays`
 
 <br>
 
-Use the `seq.Date()` function and the option to step `by = "week"` to
-generate the survey dates for each site. 
+We can use the `seq.Date()` function and the option to step `by = "week"` to
+generate the survey dates for each site. But we need to know which day to start from.
 
-<br>
 
-To get started, let's find when the first Thursday in May of 2023 is. That will be the first survey date for the site Bright Tree.
+> **when is the first Thursday in May of 2023?** 
 
-We can use the `wday()` - "weekday" - function to check what day of the week the first of May will be in 2023.
+For that, we can use the `wday()`, the "weekday" function.
 
 ```{r, eval=T}
 # wday tells you the day of week (Sun, Mon, etc..) for a specific date
@@ -197,14 +198,14 @@ wday(ymd('2023-05-01'), label = TRUE, abbr = FALSE)
 
 <br>
 
-So the `1st` will be Monday. That means.... **May the 4th** will be the first Thursday. Perfect.
+So the `1st` of May will be a Monday. That means.... **May the 4th** will be a Thursday. Perfect!
 
 
-### New column {-}
+### Mutate to the rescue {-}
 
-We don't want to check every date one by one do we? After all, R is supposed to make our lives easier. 
+We really don't want to check every date one by one do we? 
 
-Let's check ALL the dates ALL at once by adding a day of week column to the survey table. To add a new column we call our friend `mutate()`.
+Let's add a new `week_day` column to our survey table that checks ALL the dates ALL at once. To add a new column we call our friend `mutate()`.
 
 
 Complete the code below to add a `week_day` column.
@@ -222,14 +223,18 @@ survey <- mutate(survey,
                  week_day = wday(count_date, label = TRUE, abbr = FALSE))
 ```
 
+<br>
 
 ### `filter()` week days {-}
 
-Split the schedule in two by filtering the survey to only the day needed for each site: 
+Filter allows us to pick out only the days of the week we want. 
+
+Split the schedule in two by filtering the survey to only the week day needed for each site: 
 
 - ` Thursday` for Bright Tree
 - ` Friday` for Fern Gully
 
+<br>
 
 ```{r, eval=F}
 bright_dates <- filter(survey, week_day ==  ________ )
@@ -237,10 +242,8 @@ bright_dates <- filter(survey, week_day ==  ________ )
 fern_dates   <- filter(survey, week_day ==  ________ )
 ```
 
-<br>
-
 <details>
-<summary>Show code</summary>
+<summary  class = "btn_code">Show code</summary>
   
 ```{r, eval=T, echo=T}
 bright_dates <- filter(survey, week_day ==  "Thursday" )
@@ -261,7 +264,7 @@ fern_dates   <- filter(survey, week_day ==  "Friday" )
 <br>
 
 <details>
-<summary>Show answer</summary>
+<summary  class = "btn_code">Show answer</summary>
   
 > **26 survey days**
 
@@ -276,29 +279,27 @@ fern_dates   <- filter(survey, week_day ==  "Friday" )
 
 <br>
 
-Oh no, each survey site has a very-very particular Assistant to the Regional Manager that is demanding a very specific date format for their work schedules. 
+Oh no, each survey site has a very-very particular **Assistant to the Regional Manager**. And they are demanding a very **specific** date format for their work schedules. 
 
 
 Before you send off the survey dates, you'll need to adjust the dates to match the requested formats below. 
 
-<br>
-
-The sites have the following preferred date formats:
-
+**Preferred date formats**
 
 - Bright Tree: ` 5-11-2023`
 - Fern Gully: ` May 12, 2023`
 
 <br>
 
-Use `format(date, ...)` and the format expressions below to format the schedule for each region accordingly. 
+Use `format(count_date, ...)` and the date expressions below to format the schedule for each region accordingly. 
 
-> For example: `format(count_date, "%b, %Y")` would print the date as `Aug, 2023`.
+> For example: `format(count_date, "%b, %Y")` prints the date as `Aug, 2023`.
 > 
 > - `%b`  stands for 3-letter month abbreviation 
 > - `%Y%` stands for the full 4 digit year
 
-**Date**
+
+### Date parts {-}
 
 | Expression    | Description                       | Example  |
 | :------------ | :-------------------------------- | :------- |
@@ -310,7 +311,7 @@ Use `format(date, ...)` and the format expressions below to format the schedule 
 | `%d`          | Day of the month (decimal number) | 30       |
 
 
-**Time**
+### Time parts {-}
 
 | Expression    | Description                       | Example  |
 | :------------ | :-------------------------------- | :------- |
@@ -335,7 +336,7 @@ fern_dates <- mutate(fern_dates, count_date = format(count_date, _______ ))
 
 
 <details>
-<summary>Show code</summary>
+<summary  class = "btn_code">Show code</summary>
   
 ```{r, eval=T, echo=T}
 # Set date format to 5-11-2023
@@ -347,7 +348,7 @@ fern_dates <- mutate(fern_dates, count_date = format(count_date, "%b %d, %Y"))
 
 </details>
 
-### How'd we do?
+### How'd we do? {-}
 
 ```{r, eval=F, echo=T}
 # Bright Tree schedule
@@ -384,9 +385,7 @@ Now let’s jump ahead and take a look at the survey results.
 ![](../images/porgs_lifecycle.jpg){width=80%}
 
 
-<br>
-
-**Load the porg survey result.**
+### Load the porg survey result. {-}
 
 ```{r, eval=F}
 porgs <- read_csv("https://mn-r.netlify.app/data/2022_porg_survey_results.csv")   
@@ -448,7 +447,7 @@ porgs <- filter(porgs, !is.na(site))
 
 > ### What is the best month to see porgs? {-}
 
-:penguin: **First, add a `month` column to the data with the function `month()` and the column `count_date`.**
+**First, add a `month` column to the data with the function `month()` and the column `count_date`.**
 
 ```{r, eval=T}
 porgs <- porgs %>%
@@ -457,7 +456,7 @@ porgs <- porgs %>%
 
 <br>
 
-:penguin: **Next, use `ggplot()` and `geom_col()` to plot the porg sightings by month.**
+**Next, use `ggplot()` and `geom_col()` to plot the porg sightings by month.**
 
 ```{r, eval=F}
 ggplot(porgs, aes(x = month, y = ______ , fill = site)) +
@@ -467,7 +466,7 @@ ggplot(porgs, aes(x = month, y = ______ , fill = site)) +
 <br>
 
 <details>
-<summary>Show code</summary>
+<summary  class = "btn_code">Show code</summary>
   
 ```{r, eval=T, echo=T}
 ggplot(porgs, aes(x = month, y = porg_count, fill = site)) +
@@ -497,7 +496,7 @@ ggplot(porgs, aes(x = _______, y = ______ , color = _____ )) +
 <br>
 
 <details>
-<summary>Show code</summary>
+<summary  class = "btn_code">Show code</summary>
   
 ```{r, eval=T, echo=T}
 ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
@@ -534,7 +533,7 @@ ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
 
 <hr>
 
-## :tada: Great work {-}
+## <i class="fas fa-party-horn" aria-hidden="true"></i> Great work {-}
 
 The Ewoks were impressed and deeply thankful. They will be in touch for *Porg Survey 2024*.
 

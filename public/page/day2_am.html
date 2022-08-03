@@ -63,7 +63,7 @@
   "headline": "Day 2 - AM",
   "description" : "pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.",
   "inLanguage" : "en",
-  "wordCount":  5322 ,
+  "wordCount":  5323 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -434,34 +434,34 @@ hr {background: #62BE2C;}
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-07-18</td>
-<td align="right">13</td>
-<td align="right">74.0</td>
+<td align="left">27-137-7001</td>
+<td align="left">2018-09-30</td>
+<td align="right">3</td>
+<td align="right">48.2</td>
 </tr>
 <tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2017-06-02</td>
-<td align="right">10</td>
-<td align="right">74.6</td>
-</tr>
-<tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2018-10-28</td>
-<td align="right">11</td>
-<td align="right">42.8</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2016-05-19</td>
-<td align="right">16</td>
-<td align="right">52.4</td>
+<td align="left">2017-07-15</td>
+<td align="right">6</td>
+<td align="right">69.2</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2017-04-08</td>
+<td align="left">2017-09-07</td>
+<td align="right">7</td>
+<td align="right">73.4</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="left">2018-06-08</td>
 <td align="right">11</td>
-<td align="right">42.8</td>
+<td align="right">66.2</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2016-06-05</td>
+<td align="right">7</td>
+<td align="right">65.0</td>
 </tr>
 </tbody>
 </table>
@@ -769,8 +769,8 @@ hr {background: #62BE2C;}
 </div>
 <div id="wheres-the-center-point" class="section level2 unnumbered">
 <h2>Where’s the center point?</h2>
-<div id="the-st_centroid-function-will-find-it" class="section level3 unnumbered">
-<h3>The <code>st_centroid()</code> function will find it!</h3>
+<div id="the-st_centroid-function-can-find-it" class="section level3 unnumbered">
+<h3>The <code>st_centroid()</code> function can find it:</h3>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First- Combine all outposts into one object</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>outposts_combined <span class="ot">&lt;-</span> <span class="fu">st_combine</span>(outposts) </span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -795,8 +795,12 @@ hr {background: #62BE2C;}
 <div id="we-found-it" class="section level3 unnumbered">
 <h3>We found it!</h3>
 <p>That’s fantastic.</p>
-<p>But there’s one more piece of bad news… These coordintes are in a different Coordinate Reference System (CRS) than our ship needs. CRS is a real thing!</p>
-<p>The Endor outposts are currently in the UTM coordinate system, but our ship requires coordinates in <strong>WGS84 Lat/Lng</strong>. These coordinates generally look like this <code>(45.6, -93.12)</code>. See <a href="https://epsg.io/4326" class="uri">https://epsg.io/4326</a> for more details.</p>
+<p>But there’s one more piece of bad news… These coordintes are in a different Coordinate Reference System (CRS) than our ship needs. <strong>CRS</strong> is a real thing!</p>
+<p>The Endor outposts are currently in the UTM coordinate system, but our ship requires coordinates in <strong>WGS84 Lat/Lng</strong>.</p>
+<ul>
+<li>These coordinates generally look like this <code>(45.6, -93.12)</code>.</li>
+<li>See <a href="https://epsg.io/4326" class="uri">https://epsg.io/4326</a> for more details.</li>
+</ul>
 <p>The <strong>SF</strong> package will help with coordinate conversions as well. Try using <code>st_transform()</code> and set the crs argument to: <code>crs = 4326</code>.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform outposts</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>outposts <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(outposts, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
@@ -817,9 +821,11 @@ hr {background: #62BE2C;}
 <div class="well">
 <p>We’re going to need to be very precise to land perfectly in between these outposts. To make our captain really happy, let’s put this all in an interactive zoomable map. For interactive maps we use <strong>leaflet</strong>.</p>
 </div>
-##Leaflet maps
-<hr>
 </div>
+</div>
+<div id="leaflet-maps" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Leaflet maps</h2>
+<hr>
 <div id="the-leaflet-package." class="section level3 unnumbered">
 <h3>The <code>leaflet</code> package.</h3>
 <p><img src="../images/leaflet.png" style="width: 37%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" /></p>
@@ -900,7 +906,7 @@ hr {background: #62BE2C;}
 <p><br></p>
 </details>
 <blockquote>
-<p>Would our landing spot still be safe?</p>
+<p><strong>Will our landing spot still be safe?</strong></p>
 </blockquote>
 <p><br></p>
 </div>

@@ -72,9 +72,8 @@ To read coordinates stored in a spreadsheet or CSV, we can read them into R with
 
 ### However {-}
 
-Unfortunately, Endor still uses ancient data systems and their spatial data is in a format known as "shapefiles". But don't worry, we can do it all with `st_read()`. 
-
-It's a real gem. 
+Endor still uses ancient data systems and their spatial data is in a format known as **shapefiles**. 
+But don't worry, we can do it all with SF's `st_read()` function. 
 
 
 ### Get the shapefile {-}
@@ -305,7 +304,7 @@ leaflet(outposts) %>%
 
 ## Wow! {-} 
 
-You're on 🔥fire🔥 data droid. Let's just sit here a minute and cool down...  
+You're on 🔥 fire data droid. Let's sit here a minute to cool down...  
 
 Ok, now let's go land on that planet before we get stuck up here with permanent space legs.
 

@@ -63,7 +63,7 @@
   "headline": "Day 2 - AM",
   "description" : "pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.",
   "inLanguage" : "en",
-  "wordCount":  5322 ,
+  "wordCount":  5319 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -436,32 +436,32 @@ hr {background: #62BE2C;}
 <tbody>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2016-09-22</td>
-<td align="right">14</td>
-<td align="right">71.0</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2018-04-18</td>
-<td align="right">11</td>
-<td align="right">39.2</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="left">2017-08-09</td>
-<td align="right">19</td>
+<td align="left">2016-06-16</td>
+<td align="right">8</td>
 <td align="right">76.4</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7554</td>
-<td align="left">2017-06-06</td>
-<td align="right">19</td>
-<td align="right">78.8</td>
+<td align="left">2018-07-19</td>
+<td align="right">24</td>
+<td align="right">71.6</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="left">2016-09-19</td>
+<td align="right">13</td>
+<td align="right">62.6</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="left">2017-04-10</td>
+<td align="right">17</td>
+<td align="right">51.8</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2018-07-04</td>
-<td align="right">24</td>
+<td align="left">2016-07-04</td>
+<td align="right">32</td>
 <td align="right">75.2</td>
 </tr>
 </tbody>
@@ -1185,7 +1185,7 @@ Show answer
 <div id="scheduling-weekdays" class="section level2 unnumbered">
 <h2>1. Scheduling weekdays</h2>
 <p><img src="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" align=right /></p>
-<p>Ewoks are very busy. Unfortunately, they only have one day per week when they can volunteer.</p>
+<p>Ewoks are very busy. They only have one day per week when they can volunteer.</p>
 <p>Here is the weekday when volunteers are available at each location:</p>
 <ul>
 <li>Bright Tree: <code>Thursdays</code></li>
@@ -1194,19 +1194,21 @@ Show answer
 <p><br></p>
 <p>We can use the <code>seq.Date()</code> function and the option to step <code>by = "week"</code> to
 generate the survey dates for each site. But we need to know which day to start from.</p>
-<p><br></p>
 <blockquote>
-<h3 id="when-is-the-first-thursday-in-may-of-2023" class="unnumbered">when is the first Thursday in May of 2023?</h3>
+<h4 id="when-is-the-first-thursday-in-may-of-2023" class="unnumbered">When is the first Thursday in May of 2023?</h4>
 </blockquote>
+<p><br></p>
 <p>For that, we can use the <code>wday()</code>, the “weekday” function.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wday tells you the day of week (Sun, Mon, etc..) for a specific date</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(<span class="fu">ymd</span>(<span class="st">&#39;2023-05-01&#39;</span>), <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] Monday
 ## 7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday</code></pre>
 <p><br></p>
-<p>So the <code>1st</code> of May will be a Monday. That means…. <strong>May the 4th</strong> will be a Thursday. Perfect! That’s my favorite day.</p>
-<div id="mutate-to-the-rescue" class="section level3 unnumbered">
-<h3>Mutate to the rescue</h3>
+<p>So the <code>1st</code> of May will be a Monday.
+That means…. <strong>May the 4th</strong> will be a Thursday. Perfect! That’s my favorite day.</p>
+</div>
+<div id="mutate-to-the-rescue" class="section level2 unnumbered">
+<h2>Mutate to the rescue</h2>
 <p>We really don’t want to check every date one by one do we?</p>
 <p>Let’s add a new <code>week_day</code> column to our survey table that checks ALL the dates ALL at once. To add a new column we call our friend <code>mutate()</code>.</p>
 <p>Complete the code below to add a <code>week_day</code> column.</p>
@@ -1214,10 +1216,10 @@ generate the survey dates for each site. But we need to know which day to start 
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">week_day =</span> <span class="fu">wday</span>( ________ , <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
 <p><br></p>
 </div>
-<div id="filter-week-days" class="section level3 unnumbered">
-<h3><code>filter()</code> week days</h3>
-<p>Filter allows us to pick out only the days of the week we want.</p>
-<p>Split the schedule in two by filtering the survey to only the week day needed for each site:</p>
+<div id="filter-week-days" class="section level2 unnumbered">
+<h2><code>filter()</code> week days</h2>
+<p>With <strong>filter</strong> we can pick out only the days of the week that we want.</p>
+<p>Split the schedule in two by filtering the survey to only the week day needed at each site:</p>
 <ul>
 <li><code>Thursday</code> for Bright Tree</li>
 <li><code>Friday</code> for Fern Gully</li>
@@ -1248,7 +1250,6 @@ Show answer
 </blockquote>
 </details>
 <p><br></p>
-</div>
 </div>
 <div id="particular-date-formats" class="section level2 unnumbered">
 <h2>2. Particular date formats</h2>
@@ -1421,8 +1422,8 @@ Show code
 <div id="results" class="section level2 unnumbered">
 <h2>3. Results</h2>
 <p><img src="../images/porgs_lifecycle.jpg" style="width:80.0%" /></p>
-<div id="load-the-porg-survey-result." class="section level3 unnumbered">
-<h3>Load the porg survey result.</h3>
+<div id="load-the-porg-survey-results." class="section level3 unnumbered">
+<h3>Load the porg survey results.</h3>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/2022_porg_survey_results.csv&quot;</span>)   </span></code></pre></div>
 <p><br></p>
 <p><em>Explore a bit.</em></p>
@@ -1454,7 +1455,6 @@ location. We do know the date however.</p>
 </div>
 <div id="the-best-time-for-porgs" class="section level2 unnumbered">
 <h2>4. The best time for porgs</h2>
-<p><br></p>
 <blockquote>
 <h3 id="what-is-the-best-month-to-see-porgs" class="unnumbered">What is the best month to see porgs?</h3>
 </blockquote>
@@ -1478,7 +1478,6 @@ Show code
 <p>Why might June be the lowest month?</p>
 <p><em>Hint:</em> Fern Gully</p>
 </blockquote>
-<p><br></p>
 </div>
 <div id="time-series---all-the-data" class="section level2 unnumbered">
 <h2>5. Time series - All the data</h2>
@@ -1510,7 +1509,7 @@ What happens?</p>
 </div>
 <div id="great-work" class="section level2 unnumbered">
 <h2><i class="fas fa-party-horn" aria-hidden="true"></i> Great work</h2>
-<p>The Ewoks were impressed and deeply thankful. They will be in touch for <em>Porg Survey 2024</em>.</p>
+<p>The Ewoks were deeply thankful. They’ll be in touch for <em>Porg Survey 2024</em>.</p>
 <p><img src="../images/porgs_4.jpg" style="width:35.0%" /></p>
 </div>
 </div>

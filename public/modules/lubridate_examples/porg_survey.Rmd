@@ -175,7 +175,7 @@ head(survey)
 
 <img src="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" align=right />
 
-Ewoks are very busy. Unfortunately, they only have one day per week when they can volunteer. 
+Ewoks are very busy. They only have one day per week when they can volunteer. 
 
 Here is the weekday when volunteers are available at each location:
 
@@ -187,11 +187,11 @@ Here is the weekday when volunteers are available at each location:
 We can use the `seq.Date()` function and the option to step `by = "week"` to
 generate the survey dates for each site. But we need to know which day to start from.
 
+
+> #### When is the first Thursday in May of 2023? {-}
+
+
 <br>
-
-> ### when is the first Thursday in May of 2023? {-}
-
-
 
 For that, we can use the `wday()`, the "weekday" function.
 
@@ -202,10 +202,11 @@ wday(ymd('2023-05-01'), label = TRUE, abbr = FALSE)
 
 <br>
 
-So the `1st` of May will be a Monday. That means.... **May the 4th** will be a Thursday. Perfect! That's my favorite day.
+So the `1st` of May will be a Monday. 
+That means.... **May the 4th** will be a Thursday. Perfect! That's my favorite day.
 
 
-### Mutate to the rescue {-}
+## Mutate to the rescue {-}
 
 We really don't want to check every date one by one do we? 
 
@@ -229,11 +230,11 @@ survey <- mutate(survey,
 
 <br>
 
-### `filter()` week days {-}
+## `filter()` week days {-}
 
-Filter allows us to pick out only the days of the week we want. 
+With **filter** we can pick out only the days of the week that we want. 
 
-Split the schedule in two by filtering the survey to only the week day needed for each site: 
+Split the schedule in two by filtering the survey to only the week day needed at each site: 
 
 - ` Thursday` for Bright Tree
 - ` Friday` for Fern Gully
@@ -387,7 +388,7 @@ Now let’s jump ahead and take a look at the survey results.
 ![](../images/porgs_lifecycle.jpg){width=80%}
 
 
-### Load the porg survey result. {-}
+### Load the porg survey results. {-}
 
 ```{r, eval=F}
 porgs <- read_csv("https://mn-r.netlify.app/data/2022_porg_survey_results.csv")   
@@ -445,8 +446,6 @@ porgs <- filter(porgs, !is.na(site))
 
 ## 4. The best time for porgs {-}
 
-<br>
-
 > ### What is the best month to see porgs? {-}
 
 **First, add a `month` column to the data with the function `month()` and the column `count_date`.**
@@ -481,8 +480,6 @@ ggplot(porgs, aes(x = month, y = porg_count, fill = site)) +
 >
 > *Hint:* Fern Gully
 
-
-<br>
 
 ## 5. Time series - All the data {-}
 
@@ -533,7 +530,7 @@ ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
 
 ## <i class="fas fa-party-horn" aria-hidden="true"></i> Great work {-}
 
-The Ewoks were impressed and deeply thankful. They will be in touch for *Porg Survey 2024*.
+The Ewoks were deeply thankful. They'll be in touch for *Porg Survey 2024*.
 
 ![](../images/porgs_4.jpg){width=35%}
 

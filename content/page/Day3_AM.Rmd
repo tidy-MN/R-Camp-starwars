@@ -6,7 +6,7 @@ output:
     toc_depth: 1
     highlight: tango
     css: css/camp_style.css
-    number_sections: false
+    number_sections: true
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
@@ -16,11 +16,12 @@ output:
 knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
 knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+xaringanExtra::use_clipboard()
 ```
 
 
 # Day 1 review
-<hr class="hrlvl2">
+<hr>
 
 ## Get to know your __DATA__ {-}
 
@@ -91,7 +92,7 @@ cat(readLines("porg_tabs.txt"))
 <div class="tip">
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
 
-#### Who's the tallest of them all?
+#### Who's the tallest of them all? {-}
 
 ```{r, eval=F}
 # Install new packages
@@ -187,6 +188,8 @@ ggplot(star_df, aes(x = mass, y = height)) +
 
  
 # <i class="fa fa-group" style="color: steelblue;"></i> Share with friends
+<hr>
+
 
 ## Create a GitHub account {-}
 <hr class="hrlvl2">
@@ -196,7 +199,7 @@ It's time to share with the world. [Join GitHub](https://github.com/)
 [![](../images/join_github.png)](https://github.com/)
 
 
-## Add a new repository
+## Add a new repository {-}
 
 Now we can create a new `repository` to store some of our new R plots and scripts. Click the bright green `New` button to get started.
 
@@ -207,7 +210,7 @@ Now we can create a new `repository` to store some of our new R plots and script
 - [x] Check the box to initialize with a README 
 - Click `[ Create repository ]`
 
-## Add a plot
+## Add a plot {-}
 
 Click `Upload files` to add an image of an R plot or one of your scripts as an `.R` file.
 

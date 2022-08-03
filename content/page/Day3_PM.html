@@ -2,10 +2,11 @@
 title: "Day 3 - PM"
 output: 
   blogdown::html_page: 
-    toc: false
+    toc: true
+    toc_depth: 1
     highlight: tango
     css: css/camp_style.css
-    number_sections: false
+    number_sections: true
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
@@ -13,6 +14,10 @@ output:
 
 <link href="/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
@@ -79,70 +84,195 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </style>
   <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
 
+<div id="TOC">
+<ul>
+<li><a href="#psstwe-really-need-to-talk"><span class="toc-section-number">1</span> Psst…we really need to talk</a></li>
+<li><a href="#r-markdown-reports"><span class="toc-section-number">2</span> R Markdown reports</a></li>
+<li><a href="#connect-to-databases"><span class="toc-section-number">3</span> Connect to databases <i class="fa-solid fa-database"></i></a></li>
+<li><a href="#your-turn"><span class="toc-section-number">4</span> Your turn</a></li>
+<li><a href="#back-to-earth"><i class="fas fa-globe-americas"></i> Back to Earth</a></li>
+</ul>
+</div>
 
-<div id="r-markdown-reports" class="section level1">
-<h1>R markdown reports</h1>
-<hr class="hrlvl2">
+<div id="psstwe-really-need-to-talk" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Psst…we really need to talk</h1>
+<hr>
+<div id="reading-aloud" class="section level3 unnumbered">
+<h3><i class="fas fa-book"></i> Reading aloud</h3>
+<p><img src="../images/bert_ernie.jpg" width=248 align="right"></p>
+<blockquote>
+<p>“Read more to write better.”<br />
+<em>-someone famous</em></p>
+</blockquote>
+<div style="clear: both;">
+
+</div>
+<p>Let’s practice reading R scripts with a partner.</p>
+<p>They’ll listen to what you say and try to turn it into code.</p>
+<p>It’s like a game of <em>telephone</em>, but for R.</p>
+<p><br></p>
+</div>
+<div id="instructions" class="section level3 unnumbered">
+<h3>Instructions</h3>
+<p><em>Find a partner and decide who is <strong>Bert</strong> and who is <strong>Ernie</strong>.</em></p>
+<ol style="list-style-type: decimal">
+<li>Bert will look at the first code block and tell Ernie what it does.</li>
+<li>Ernie will then write some code that accomplishes what Bert said.</li>
+<li>Then Bert can offer more clues to help.
+<ul>
+<li>Try <strong>not</strong> to say the exact names of functions, like “use <code>filter</code>” or “use <code>write_csv</code>”</li>
+<li>Instead, say what you want to accomplish, like <code>"Drop the rows where..."</code> or <code>"Save the data as..."</code></li>
+</ul></li>
+</ol>
+<p><br></p>
+<details>
+<summary>
+<b>Example</b> <i>(Click here)</i>
+</summary>
+<p>Say aloud what this code does or tries to accomplish.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>slices_bread <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fillings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;fillings.csv&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fillings)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(fillings)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>red_veggies <span class="ot">&lt;-</span> <span class="fu">filter</span>(fillings, food_type <span class="sc">==</span> <span class="st">&quot;vegetable&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+</details>
+<p><br>
+<br></p>
+<blockquote>
+<h3 id="wait-to-click-below-until-you-decide-whos-bert." class="unnumbered"><i class="fas fa-triangle-exclamation"></i> Wait to click below until you decide who’s Bert.</h3>
+</blockquote>
+</div>
+<div id="berts-turn-to-read-big-fish" class="section level2 unnumbered">
+<h2>1. Bert’s turn to read: <code>BIG fish</code> <i class="fa-solid fa-fish"></i></h2>
+<blockquote>
+<p><strong>Don’t look Ernie!</strong></p>
+</blockquote>
+<p>We’ll start by turning some fishy code into plain language.</p>
+<details>
+<summary>
+<strong>Bert’s <i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye"></i> only!</strong> <em>(No peeking Ernie)</em>
+</summary>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fishes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;lake_superior_fish.csv&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(big_fishes)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fishes)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>big_fishes <span class="ot">&lt;-</span> <span class="fu">filter</span>(fishes, length <span class="sc">&gt;</span> <span class="dv">20</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(big_fishes)</span></code></pre></div>
+</details>
+<p><br><br></p>
+</div>
+<div id="ernies-turn-to-read-sleepy-sheep" class="section level2 unnumbered">
+<h2>2. Ernie’s turn to read: <code>Sleepy sheep</code> <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i></h2>
+<details>
+<summary>
+<strong>Ernie’s <i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye"></i> only</strong>
+</summary>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>asleep <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Shaun&quot;</span>, <span class="st">&quot;Lambchop&quot;</span>, <span class="st">&quot;Dolly&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sheep_ids <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>my_sheep <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sheep_name =</span> names, </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sheep_id   =</span> sheep_ids)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>counting <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(my_sheep, <span class="fu">aes</span>(<span class="at">x =</span> names, <span class="at">y =</span> sheep_id)) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">geom_point</span>()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>counting <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Counting sheep backwards makes me Zzzz...&quot;</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>asleep <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code></pre></div>
+</details>
+<div style="clear: both;">
+
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="r-markdown-reports" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> R Markdown reports</h1>
+<hr>
 <details>
 <summary class="btn_code">
-<strong>Demo time…</strong> <strong>&gt;</strong>
+<strong>R Markdown Demo &gt;</strong>
 </summary>
-<div id="what-is-it" class="section level2 unnumbered">
-<h2>1. What is it?</h2>
+<h2>
+R Markdown
+</h2>
 <blockquote>
 <p>R Markdown keeps your plots, output, and analysis all in one place. No more outdated charts and data floating around.</p>
-</blockquote>
-<blockquote>
 <p>You are currently reading the output of an R Markdown document. Markdown is a simple syntax for authoring HTML, PDF, and Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
 </blockquote>
-</div>
-<div id="a-scary-movie" class="section level2 unnumbered">
-<h2>2. A scary movie</h2>
+<h2>
+<ol start="2" style="list-style-type: decimal">
+<li>A motivational example
+</h2></li>
+</ol>
 <blockquote>
-<p><a href="https://youtu.be/s3JldKoA0zw">Changing data: A Reproducible workflow</a></p>
+<p><a href="https://youtu.be/s3JldKoA0zw">Scary changes: A Reproducible workflow</a></p>
 </blockquote>
-</div>
-<div id="but-why" class="section level2 unnumbered">
-<h2>3. But why?</h2>
-<ul>
-<li><a href="https://slides.djnavarro.net/starting-rmarkdown/#17" class="uri">https://slides.djnavarro.net/starting-rmarkdown/#17</a></li>
-</ul>
+<h2>
+<ol start="3" style="list-style-type: decimal">
+<li>Markdown basics
+</h2></li>
+</ol>
+<blockquote>
+<p><a href="https://slides.djnavarro.net/starting-rmarkdown/#17" class="uri">https://slides.djnavarro.net/starting-rmarkdown/#17</a></p>
+</blockquote>
 <p><br></p>
-<div id="yaml" class="section level3 unnumbered">
-<h3>YAML</h3>
-<p>The YAML (“YAML ain’t markup language” or “Yet another markup language”) is the document information stored atop the R Markdown document, bounded on each end by <code>---</code>. When you first create a new .Rmd, that will look something like this:</p>
-<pre><code>---
-title: &quot;Document title&quot;
-author: &quot;Author&quot;
-date: &quot;MM/DD/YYYY&quot;
-output: html_document
----</code></pre>
-</div>
-</div>
-<div id="demo-time" class="section level2 unnumbered">
-<h2>4. Demo time</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggweekly) <span class="co">#remotes::install_github(&quot;gadenbuie/ggweekly&quot;)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="st">&quot;2021-04-05&quot;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>end <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(start) <span class="sc">+</span> <span class="dv">8</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggweek_planner</span>(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">start_day =</span> start, </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">end_day =</span> end,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">highlight_days =</span> <span class="fu">tibble</span>(<span class="at">day =</span> <span class="st">&quot;2021-04-09&quot;</span>, </span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> <span class="st">&quot;HOTSPRINGS!!&quot;</span>, </span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> <span class="st">&quot;hotpink&quot;</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">fill  =</span> <span class="st">&quot;hotpink&quot;</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;My Yellowstone Trip&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day3_PM_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
+<h3>
+The YAML
+</h3>
+<p>The YAML (“Yet Another Markup Language”) is the document settings stored atop the R Markdown document, bounded on each end by <code>---</code>. When you first create a new <code>.Rmd</code> the YAML will look something like this:</p>
+<blockquote>
+<p>title: “Document title”<br />
+author: “Author”<br />
+date: “MM/DD/YYYY”<br />
+output: html_document</p>
+</blockquote>
+<h2>
+<ol start="4" style="list-style-type: decimal">
+<li>Demo time
+</h2></li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggweekly) <span class="co">#remotes::install_github(&quot;gadenbuie/ggweekly&quot;)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="st">&quot;2021-04-05&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>end <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(start) <span class="sc">+</span> <span class="dv">8</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggweek_planner</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">start_day =</span> start, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">end_day =</span> end,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">highlight_days =</span> <span class="fu">tibble</span>(<span class="at">day =</span> <span class="st">&quot;2021-04-09&quot;</span>, </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> <span class="st">&quot;HOTSPRINGS!!&quot;</span>, </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> <span class="st">&quot;hotpink&quot;</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">fill  =</span> <span class="st">&quot;hotpink&quot;</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;My Yellowstone Trip&quot;</span>)</span></code></pre></div>
+<p><img src="/page/Day3_PM_files/figure-html/unnamed-chunk-4-1.png" width="960" /></p>
+<blockquote>
 <p>My vacation will be starting on 2021-04-05. Better start packing on 2021-04-04 !</p>
-<div id="code-chunk-options" class="section level3 unnumbered">
-<h3>Code chunk options</h3>
-<p>Chunk options are options designated in the code chunk header that determine what appears or does not appear for each chunk upon knitting (and a lot more, but we’ll start there…). For more information on code chunk options in R Markdown, see Chapter 11 in the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html">R Markdown Cookbook</a>.</p>
-<p>Chunk hooks can be added to individual code chunk headers (within the <code>{r}</code> atop the chunk), or applied globally by adding options to the <code>{r setup}</code> code chunk at the top of the document.</p>
-<p>Here are some common hooks:</p>
+</blockquote>
+<h3>
+Code chunk options
+</h3>
+<p>Chunk options are options designated in the code chunk header that determine what appears or does not appear in the final document.</p>
+<p>For more information on code chunk options in R Markdown, see Chapter 11 in the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html">R Markdown Cookbook</a>.</p>
+<p>Here are some common chunk options:</p>
 <ul>
 <li><code>echo = FALSE</code>: do not show the code in the knitted document</li>
 <li><code>include = FALSE</code>: do not include code or any outputs in knitted document</li>
@@ -150,11 +280,11 @@ output: html_document
 <li><code>warning = FALSE</code>: suppress warnings when knit</li>
 <li><code>eval = FALSE</code>: do not evaluate this code</li>
 </ul>
-</div>
-</div>
-<div id="customization" class="section level2 unnumbered">
-<h2>Customization</h2>
-<p>For today, we’ll make changes to the YAML in our .Rmd to fancy our output document. Our customization will be related to our knitted HTML output, using the following:</p>
+<h3>
+Customization
+</h3>
+<p>Let’s make some changes to the YAML in our .Rmd to change the output document.</p>
+<p><strong>Let’s try the following:</strong></p>
 <ul>
 <li><code>toc: true</code>: add a table of contents based on header hierarchies</li>
 <li><code>toc_float: true</code>: make it a floating TOC</li>
@@ -162,20 +292,25 @@ output: html_document
 <li><code>theme: _____</code>: add a bootstrap theme</li>
 <li><code>code_folding: hide</code>: code is default hidden, but available if the reader clicks on the ‘Code’ button created</li>
 </ul>
-<p>For free bootstrap themes, visit: <a href="https://bootswatch.com/3/" class="uri">https://bootswatch.com/3/</a></p>
-<p>To add options to the YAML, add them as “children” in the <code>html_document</code> subsection. Beware of spacing here: generally add 2 spaces of indentation for each new sublevel in the YAML hierarchy.</p>
-<pre><code>---
-title: &quot;Level up in R Markdown&quot;
-subtitle: &quot;UCSB QMSS seminar series (February 2021)&quot;
-author: &quot;Allison Horst&quot;
-output: 
-  html_document:
-    theme: flatly
-    toc: true
-    toc_float: true
-    number_sections: true
-    code_folding: hide
----</code></pre>
+<p><br></p>
+<p>To add options to the YAML, add them as “children” under the <code>html_document:</code> section.</p>
+<p><strong>Beware of spacing here</strong>. You will add 2 spaces of indentation for each new sub-level in the YAML hierarchy.</p>
+<blockquote>
+<p>title: “Level up in R Markdown”<br />
+subtitle: “UCSB QMSS seminar series (February 2021)”<br />
+author: “Allison Horst”<br />
+output:<br />
+html_document:<br />
+toc: true<br />
+toc_float: true<br />
+number_sections: true<br />
+theme: flatly<br />
+code_folding: hide</p>
+</blockquote>
+<h4>
+For more bootstrap themes visit: <a href="https://bootswatch.com/3/" class="uri">https://bootswatch.com/3/</a>
+</h4>
+<p><br></p>
 <div class="yoda">
 <div id="yoda-says" class="section level3 unnumbered">
 <h3>Yoda says</h3>
@@ -189,26 +324,25 @@ output:
 <li><a href="https://rmarkdown.rstudio.com/">RStudio’s R Markdown site</a></li>
 <li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide</a></li>
 <li><a href="https://rmarkdown.rstudio.com/lesson-1.html">RStudio’s R Markdown lesson series</a></li>
-<li>Alison Hill’s workshop on <a href="https://alison.rbind.io/project/advanced-r-markdown/">Advanced R Markdown</a></li>
+<li><a href="https://alison.rbind.io/project/advanced-r-markdown/">Alison Hill’s Advanced R Markdown workshop</a></li>
 </ul>
 </div>
 </div>
 </details>
 <p><br></p>
 </div>
-</div>
-<div id="connect-to-databases" class="section level1">
-<h1>Connect to databases <i class="fas fa-database"></i></h1>
-<hr class="hrlvl2">
+<div id="connect-to-databases" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Connect to databases <i class="fa-solid fa-database"></i></h1>
+<hr>
 <blockquote>
-<p>Demo….</p>
+<p>Top-secret demo….</p>
 </blockquote>
 <p><br></p>
 </div>
-<div id="your-turn" class="section level1">
-<h1>Your turn</h1>
-<hr class="hrlvl2">
-<p>Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data. When you feel ready, jump to the <i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i>Grand Moff path and begin exploring and making a report for your <strong>own</strong> data.</p>
+<div id="your-turn" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Your turn</h1>
+<hr>
+<p>Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data. When you feel ready, jump to the <i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i> Grand Moff path and begin exploring and making a report for your <strong>own</strong> data.</p>
 <div class="row3" style="margin-top: 20px;">
 <div class="column3">
 <span style="margin-left: 2px;">
@@ -261,20 +395,36 @@ Planet: <code>Earth</code></p>
 </div>
 </div>
 <p><br></p>
-</div>
-<div id="concatulations" class="section level1">
-<h1>🐱 Concatulations!</h1>
+<div id="concatulations" class="section level2 unnumbered">
+<h2>🐱 Concatulations!</h2>
 <hr class="hrlvl2">
 <div id="you-make-an-excellent-data-droid-rey-and-bb8-couldnt-have-done-it-without-you." class="section level4 unnumbered">
 <h4>You make an excellent Data Droid! Rey and BB8 couldn’t have done it without you.</h4>
 <blockquote>
 <p>You deserve an award.</p>
 </blockquote>
+<pre><code>    Meowwwwww R Users! 
+      \
+       \
+        \
+            |\___/|
+          ==) ^Y^ (==
+            \  ^  /
+             )=*=(
+            /     \
+            |     |
+           /| | | |\
+           \| | |_|/\
+      jgs  //_// ___/
+               \_)</code></pre>
+<p><br></p>
+<p><br></p>
 </div>
 </div>
-<div id="back-to-earth" class="section level1">
+</div>
+<div id="back-to-earth" class="section level1 unnumbered">
 <h1><i class="fas fa-globe-americas"></i> Back to Earth</h1>
-<hr class="hrlvl2">
+<hr>
 <p>You’re free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let’s look at some Earth data.</p>
 <p><br></p>
 <p>Choose one of the data exercises below to begin.</p>
@@ -286,12 +436,12 @@ Planet: <code>Earth</code></p>
 </div>
 <div class="column3">
 <div align="center">
-<a href="explore_GIS_maps.html" style="margin-left: auto;"> <strong>Maps for humans</strong> </a>
+<p><a href="explore_GIS_maps.html" style="margin-left: auto;"> <strong>Maps for humans</strong> </a></p>
 </div>
 </div>
 <div class="column3">
 <div align="center">
-<a href="explore_messy_emissions.html" style="margin-left: auto;"> <strong>Tidy emissions</strong> </a>
+<p><a href="explore_messy_emissions.html" style="margin-left: auto;"> <strong>Tidy emissions</strong> </a></p>
 </div>
 </div>
 </div>

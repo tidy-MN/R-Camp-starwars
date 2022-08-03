@@ -21,6 +21,8 @@ hr {background: #62BE2C;}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=TRUE, warning=F, message=F)
 knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
+xaringanExtra::use_clipboard()
+
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 library(ggplot2)
 library(readr)
@@ -52,6 +54,8 @@ scrap <- read_csv("scrap_day2pm.csv")
 ```{r guesswho, child='../../static/modules/games_guesswho/starwars.Rmd'}
 ```
 </div>
+
+<br>
 
 # `ifelse()`
 <hr>

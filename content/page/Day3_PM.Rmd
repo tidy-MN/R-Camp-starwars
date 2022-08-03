@@ -2,24 +2,35 @@
 title: "Day 3 - PM"
 output: 
   blogdown::html_page: 
-    toc: false
+    toc: true
+    toc_depth: 1
     highlight: tango
     css: css/camp_style.css
-    number_sections: false
+    number_sections: true
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = F, message = F)
 knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+xaringanExtra::use_clipboard()
 ```
 
 
-# R markdown reports
-<hr class="hrlvl2">
+# Psst...we really need to talk
+<hr>
+
+```{r bert-ernie, child='../../static/modules/games/lets_talk.Rmd'}
+```
+
+<br>
+
+# R Markdown reports
+<hr>
 
 ```{r mark-demo, child='../../static/modules/markdown/demo.Rmd'}
 ```
@@ -27,17 +38,18 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-# Connect to databases <i class="fas fa-database"></i>
-<hr class="hrlvl2">
+# Connect to databases <i class="fa-solid fa-database"></i>
+<hr>
 
-> Demo....
+> Top-secret demo....
 
 <br>
 
-# Your turn
-<hr class="hrlvl2">
 
-Time to start putting what we've learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data. When you feel ready, jump to the <i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i>Grand Moff path and begin exploring and making a report for your __own__ data. 
+# Your turn
+<hr>
+
+Time to start putting what we've learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data. When you feel ready, jump to the <i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star fa-xs" aria-hidden="true" style="color: #fa970c;"></i> Grand Moff path and begin exploring and making a report for your __own__ data. 
 
 
 <div class="row3" style = "margin-top: 20px;">
@@ -103,17 +115,37 @@ Planet: `Earth`
  
 <br>
 
-# 🐱 Concatulations!
+## 🐱 Concatulations! {-}
 <hr class="hrlvl2">
 
 #### You make an excellent Data Droid! Rey and BB8 couldn't have done it without you.  {-}
 
 > You deserve an award.
 
+```
+    Meowwwwww R Users! 
+      \
+       \
+        \
+            |\___/|
+          ==) ^Y^ (==
+            \  ^  /
+             )=*=(
+            /     \
+            |     |
+           /| | | |\
+           \| | |_|/\
+      jgs  //_// ___/
+               \_)
+```
+
+<br>
 
 
-# <i class="fas fa-globe-americas"></i> Back to Earth
-<hr class="hrlvl2">
+<br>
+
+# <i class="fas fa-globe-americas"></i> Back to Earth {-}
+<hr>
 
 You're free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let's look at some Earth data. 
  
@@ -128,10 +160,12 @@ Choose one of the data exercises below to begin.
 </div></div> 
 
 <div class="column3"> <div align="center">
-<a href="explore_GIS_maps.html" style="margin-left: auto;"> __Maps for humans__ </a></div></div> 
+<a href="explore_GIS_maps.html" style="margin-left: auto;"> __Maps for humans__ </a>
+</div></div> 
 
 <div class="column3"> <div align="center">
-<a href="explore_messy_emissions.html" style="margin-left: auto;"> __Tidy emissions__ </a></div></div> 
+<a href="explore_messy_emissions.html" style="margin-left: auto;"> __Tidy emissions__ </a>
+</div></div> 
 
 
 </div>

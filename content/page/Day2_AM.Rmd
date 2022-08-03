@@ -20,6 +20,7 @@ hr {background: #62BE2C;}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
 knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
+xaringanExtra::use_clipboard()
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 

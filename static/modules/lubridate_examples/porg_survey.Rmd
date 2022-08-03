@@ -380,8 +380,6 @@ Your fine-tuned schedules worked perfectly.
 
 Now let’s jump ahead and take a look at the survey results.
 
-<br>
-
 
 ## 3. Results {-}
 

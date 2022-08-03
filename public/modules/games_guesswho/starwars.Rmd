@@ -84,8 +84,5 @@ The winner is the first to guess their neighbor's character.
 Feel free to challenge someone new.
 </div>
 
-<br>
-
-> Team challenge
 
 <br>

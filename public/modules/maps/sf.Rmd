@@ -1,10 +1,10 @@
 
 ## But wait... {-}
-<hr class="hr-lvl2">
+<hr class="hrlvl2">
 
-The Ewoks say it's unsafe to land. Booo... Sounds like the Empire is checking all ships for permits. 
+The Ewoks say it's unsafe to land. Booo... Sounds like the Empire is checking all ships for licenses. 
 
-Lucky for us there is some good news. They say for a small ship like ours, it is possible to land undetected. But we'll have to put down right-dab in the middle of the 3 northern outpost towers. To help, our comrades sent along the coordinates of the Empire's outposts.
+Lucky for us there is some good news. They say for a small ship like ours, it is possible to land undetected. But we'll have to put down right-dab in the middle of the 3 northern outposts. 
 
 <br>
 
@@ -12,7 +12,7 @@ Lucky for us there is some good news. They say for a small ship like ours, it is
 
 <br>
 
-Either way, let's make a map and see what we're up against. Guess what the first step is? That's right. It is time to add a new package. 
+Either way, let's make a map to see what we're up against. To help, our comrades sent along the coordinates of the Empire's outposts. Guess what the first step is? That's right. Time to add a new package. 
 
 
 # <i class="fas fa-globe-africa"></i> Maps with `sf`
@@ -25,19 +25,17 @@ Either way, let's make a map and see what we're up against. Guess what the first
 
 <br>
 
-SF makes maps and spatial analysis in R feel like you're working with regular table data. It's full of spatial functions for calculating distances and areas, adding buffers around points, and all of your new dplyr toolbox functions will work as well. It's great. Let's get it!
+SF makes maps and spatial analysis in R feel like you're working with regular table data. It's full of spatial functions for calculating distances and areas, adding buffers around points, and all the handy dplyr toolbox functions will work as well.
 
 
-<br>
+Let's get it!
+
 
 <div style="clear: both;"></div>
-
-<br>
 
 
 ### Install `sf` {-}
 
-**Run:** 
 ```{r, eval=F}  
 install.packages("sf")
 ```
@@ -69,8 +67,8 @@ outposts <- select(outposts, ID, x_utm, y_utm, everything())
 
 
 
-## Read coordinates {-}
-To read in coordinates stored in a spreadsheet or csv, we can read them the same with our usual friends read_csv and read_excel.
+## Reading coordinates {-}
+To read coordinates stored in a spreadsheet or CSV, we can read them into R with our usual friends `read_csv()` and `read_excel()`.
 
 **Like this:**
 ```{r, eval=F} 
@@ -87,31 +85,36 @@ outposts <- read_excel("endor_outposts.xlsx")
 
 <br>
 
-Unfortunately, Endor still uses ancient data systems and their spatial data is in a format once known as "shapefiles". But don't worry, we can do it all with `st_read()`. It's a real gem. 
+### However {-}
+
+Unfortunately, Endor still uses ancient data systems and their spatial data is in a format known as "shapefiles". But don't worry, we can do it all with `st_read()`. 
+
+It's a real gem. 
 
 
 ### Get the shapefile {-}
 
-1. Download the data
+1. Download the data.
     - <a href="https://github.com/MPCA-data/R-Camp/raw/main/public/data/endor_outposts.zip"><span class="btn_code_blue" style="margin-bottom: 10px; margin-top: 12px;"> __DOWNLOAD __  </span></a> -  Get the Endor outpost coordinates
-1. Create a new folder called `data` in your project folder
+1. Create a new folder called `data` in your project folder.
 1. Move the downloaded `endor_outposts.zip` file into the folder.
-1. Unzip it
-1. You're ready for `st_read()`
+1. Right click on the file > Select `Extract All...` >> Click `Extract`.
+1. You're ready for `st_read()`.
 
 
-### Give it a try {-}
+
+## Give it a try {-}
 ```{r, eval=F} 
 library(sf)
 library(dplyr)
 
-outposts <- st_read("data/endor_outposts.shp")
+outposts <- st_read("data/endor_outposts/endor_outposts.shp")
 ```
 
 
 <br>
 
-### Let's take a look {-}
+### Take a look {-}
 ```{r, eval=T} 
 outposts
 
@@ -123,79 +126,50 @@ st_coordinates(outposts)
 
 <br>
 
-To make a quick map, use ggplot and add `geom_sf()`. 
-```{r, eval=T, fig.width=8, fig.height=4} 
+To make a quick map, use ggplot and add `+ geom_sf()`. 
+```{r, eval=T, fig.width=10, fig.height=4} 
 library(ggplot2)
 
 ggplot(outposts) + 
-  geom_sf(size = 8) 
+  geom_sf(size = 8, color = "steelblue") 
 ```
 
 <br>
 
 ## Where's the center point? {-}
 
-Can you use the summary functions we learned yesterday to calculate the center?
 
-`Hint:` How would you find the center of 2 points?
-
-
-<br>
-
-Here's some code to get you started. 
-
-*To calculate a single summary from all the data, use `summarize()`.*
-
-```{r, eval=F}
-land_pad <- summarize(outposts,
-                      center_x = ___________,
-                      center_y = ___________)
-```
-
-
-<details>
-<summary class = "btn_code_green"> __Show code__ </summary>
-
-<div style="margin-top: -12px;">
-<p>
-```{r, eval=T}
-land_pad <- summarize(outposts,
-                      center_x = mean(x_utm),
-                      center_y = mean(y_utm),
-                      ID = "Land Here")
-```
-</p></div>
-</details>
-
-
-<br>
-
-
-## The `st_centroid()` function will also work {-}
+### The `st_centroid()` function will find it! {-}
 
 ```{r, eval=T}
-
-# First, combine all outposts into one object
+# First- Combine all outposts into one object
 outposts_combined <- st_combine(outposts) 
 
-# Then get the objects center              
+# Then - get the objects center              
 land_pad <- st_centroid(outposts_combined)
+```
 
+```{r, eval=F}
 # View center coordinates
 land_pad
 ```
 
+```{r, echo=F}
+kable(land_pad)
+```
+
 <br>
+
 
 ### We found it! {-}
 
-That's fantastic. But there's one more piece of bad news. Endor uses an outdated UTM coordinate system, and our ship will need coordinates in the **WGS84 Lat/Lng** format. These coordinates generally look like this `(45.6, -93.12)`. For more details see https://epsg.io/4326.
+That's fantastic. 
+But there's one more piece of bad news. Endor uses a differnt Coordinate Reference System (CRS) than our ship.
+
+Endor uses an outdated UTM coordinate system, but our ship requires coordinates in **WGS84 Lat/Lng**. These coordinates generally look like this `(45.6, -93.12)`. See https://epsg.io/4326 for more details.
 
 
-The **SF** package will help you with this too. Try using `st_transform()` and set the Coordinate Reference System (CRS) argument to: `crs = 4326`. 
-
-
-> `crs` = Coordinate Reference System
+The **SF** package will help you with coordinate conversions as well. Try using `st_transform()` and set the crs argument to: `crs = 4326`. 
 
 
 ```{r, eval=T}
@@ -206,18 +180,16 @@ outposts <- st_transform(outposts, crs = 4326)
 land_pad <- st_transform(land_pad, crs = 4326)
 ```
 
-<br>
 
 ### Wonderful!{-}
 
 <br>
 
 <div class="note">
-<h3> Minnesota <i class="fa fa-user-heart" aria-hidden="true" style="color: hotpink"></i></h3>
+<h3> <i class="fas fa-heart" aria-hidden="true" style="color: hotpink"></i>  Minnesota </h3>
 
-For Minnesota, you'll often receive coordinates with the CRS in UTM coordinates zone 15N. For transformations, this is CRS number `26915`. See https://epsg.io/26915.
+In Minnesota, you'll often receive coordinates with the CRS set to *UTM Zone 15N*. This is CRS number `26915`. See https://epsg.io/26915.
 
-<br>
 </div>
 
 
@@ -228,33 +200,29 @@ We're going to need to be very precise to land perfectly in between these outpos
 
 </div>
 
-## Leaflet maps {-}
-<hr class="hrlvl2">
+##Leaflet maps 
+<hr>
 
 ### The `leaflet` package. {-}
 
-![](../images/leaflet.png){style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;"}
+![](../images/leaflet.png){style="width: 37%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;"}
 
-
-<br>
 
 Leaflet makes interactive maps easy and you build them up in layers similar to a ggplot.
 
-<br><div style="clear: both;"></div>
 <br>
+<div style="clear: both;"></div>
 
 
 ### Install `leaflet` {-}
-
-**Run:** 
 ```{r, eval=F}  
 install.packages("leaflet")
 ```
 
-<br>
-
 
 ## Maps that zoom {-}
+
+Leaflet builds map with layers similar to ggplot, but instead of adding things with the `+`, leaflet adds new layers with the `%>%` ("the pipe").
 
 ### 1. Start with the outpost coordinates {-}
 ```{r, eval=T, fig.height=4, fig.width=9} 
@@ -304,13 +272,14 @@ leaflet(outposts) %>%
 
 ### <i class="fa fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore! {-}
 
-News just came in that the outposts will soon be upgrading their **radar** to detect ships up to `4200 meters` away. Will that be a problem? 
+News just came in that the outposts will soon be upgrading their **radar** to detect ships up to `4,200 meters` away. Will that be a problem? 
 
 **Steps**
 
-1. Use `st_buffer()` to add a 4000 meter ring around each outpost. 
+1. Use `st_buffer()` to add a 4,200 meter ring around each outpost. 
     - `outposts_new <- st_buffer(outposts, dist = 4200)` 
-1. Then add a layer to the leaflet map using `addPolygons()` with `data = outposts_new`. You can drop the `radius = 300` argument. 
+1. Then add a layer to the leaflet map using `addPolygons()` with `data = outposts_new`. 
+1. You can drop the `radius = 300` argument. 
 
 <details>
 <summary class = "btn_code">_Show code_</summary>
@@ -327,23 +296,20 @@ leaflet(outposts) %>%
   addPolygons(data = outposts_new,    #<<
               fillColor = "yellow")   #<<
 ```
-
-<br>
-
-> Will our landing site still be safe?
-
 <br>
 
 </details>
 
-
-</div>
+> Would our landing spot still be safe?
 
 <br>
 
+</div>
+
+
 **Wow!** 
 
-I'm in awe of your work data droid. Let's sit here a minute and soak it all in...  
+You're on fire data droid. Let's sit here a minute and cool down...  
 
-Ok, now let's get down on that planet before we're stuck up here with permanent space legs.
+Ok, now let's get down on that planet before we get stuck with permanent space legs up here.
 

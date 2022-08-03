@@ -1,14 +1,16 @@
 
-![](../images/porgs_bb8_2.jpg)
+The Ewoks need our help. There's porgs **EVERYWHERE!** 
+
+![](../images/porgs_bb8_2.jpg){style="margin-top: 0px;"}
 
 
-The Ewoks need our help. There's porgs **EVERYWHERE!** It seems they have been spreading across the galaxy, hitching rides on unsuspecting ships. People hate to admit it because they're so cute, but they are starting to be a nuisance. To get a grasp on the problem the Ewoks are doing the first ever porg survey in their forest.
+They have been spreading across the galaxy, hitching rides on unsuspecting ships. They're so cute people hate to admit it, but they are starting to become a nuisance. To get a grasp on the problem the Ewoks are doing the first ever porg survey. And they need your help scheduling the **survey dates**.
 
 
 # <i class="fa fa-calendar" aria-hidden="true"></i> Dates and times with `lubridate` 
 <hr>
 
-### Enter the `lubridate` package. {-}
+### The `lubridate` package. {-}
 
 ![](../images/lubridate.png){style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;"}
 
@@ -22,12 +24,7 @@ We can find how much time has elapsed, add or subtract days, and find seasonal a
 
 <div style="clear: both;"></div>
 
-<br>
-
-
 ### Install `lubridate` {-}
-
-**Run:** 
 ```{r, eval=F}  
 install.packages("lubridate")
 ```
@@ -36,8 +33,6 @@ install.packages("lubridate")
 **View the date cheatsheet [HERE](https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf)**. 
 
 It's a great reference when you need to manipulate dates or timezones in your data.
-
-<br>
 
 
 ## Menu of date functions {-}
@@ -55,7 +50,7 @@ It's a great reference when you need to manipulate dates or timezones in your da
 
 <br>
 
-#### Get date parts {-}
+#### Get specific date parts (eg. the year, month, day... ) {-}
 
 | Function   |  Date element                                            |
 |----|:-----------------------------------------------------------------|
@@ -114,14 +109,16 @@ __Simple number dates__
 
 ### Objective {-}
 
-> The Ewoks have asked you help organize their Porg survey for the season. 
-> 
-> Lucky for you, the calendar and time used here is very similar to your home planet.
->
-> In 2023, the Ewoks would like to perform a porg count once a week from May to October.
->
-> They have enough volunteers to run the survey at two sites across the forest
-> - Sites: `c("Bright Tree", "Fern Gully")`
+<div class="well">
+
+The Ewoks have asked you help organize their Porg survey for the season.
+
+Lucky for you, the calendar and time used here is very similar to your home planet.
+
+In 2023, the Ewoks would like to perform a porg count once a week from May to October.
+
+They have enough volunteers to run the survey at two locations across their forest
+- Sites: `c("Bright Tree", "Fern Gully")`
 
 <br>
 Let's generate the full list of dates during this time span using the sequence date function: ` seq.Date()`
@@ -512,13 +509,13 @@ ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
 
 <br>
 
-Oof! That's a busy plot. Try adding `+ facet_wrap(~ site)` to the end. 
+Oof! That's a busy plot. Try adding `+ facet_wrap("site")` to the end. 
 What happens?
 
 ```{r, eval=F}
 ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
   geom_point(size = 5) +
-  facet_wrap(~ site)   #<<
+  facet_wrap("site")   #<<
 ```
 
 <br>

@@ -40,7 +40,8 @@ The `round()` function in R does not automatically round values ending in 5 upwa
 
 
 <br>
-## Busiest scrap city
+
+## Busiest scrap city {-}
 
 So who's making lots of transactions? Try using `group_by` with the column _origin_ to count the number of scrap records at each city.
 
@@ -66,13 +67,12 @@ Ending with `ungroup()` is good practice. This prevents your data from staying g
 
 Let's save the mean price table we created to a _CSV_. That way we can send it to Rey. To save a table we can use the `write_csv()` function from our favorite **readr** package. 
 
-<br>
-
 ```{r, eval=F}
 # Write the file to your results folder
 write_csv(scrap_means, "results/prices_by_origin.csv")
 ```
 
+<br>
 
 <div class="red-note">
 <h3 style="margin-top: 12px; color: white; margin-top: -6px; font-size: 22px;"><i class="fas fa-exclamation-triangle"></i> Note</h3>

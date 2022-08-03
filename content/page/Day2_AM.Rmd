@@ -62,8 +62,6 @@ cat(readLines("porg_tabs.txt"))
 
 ![](https://mn-r.netlify.com/images/planet_endor.jpg){style="width: 75%; margin-top: -4px; margin-left: 11%;"}
 
-<br>
-
 
 ```{r sf, child='../../static/modules/maps/sf.Rmd'}
 ```

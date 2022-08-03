@@ -40,8 +40,6 @@ Let's get it!
 install.packages("sf")
 ```
 
-<br>
-
 ```{r, eval=T, echo=F}
 library(sf)
 library(dplyr)
@@ -211,7 +209,7 @@ We're going to need to be very precise to land perfectly in between these outpos
 
 </div>
 
-## Leaflet maps 
+# Leaflet maps 
 <hr>
 
 ### The `leaflet` package. {-}

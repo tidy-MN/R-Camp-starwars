@@ -26,6 +26,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
+
+# Connect to databases <i class="fas fa-database"></i>
+<hr class="hrlvl2">
+
+> Demo....
+
+<br>
+
 # Your turn
 <hr class="hrlvl2">
 

@@ -22,7 +22,7 @@ Use the `%>%` to chain functions together and make our scripts more streamlined.
 
 Let's say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome. 
 
-### Without the pipe {-}
+### Without the pipe <i class="fas fa-frown"></i> {-}
 ```{r maths, eval=F}
 round(log(sum(c(10, 20, 30, 50))))
 ```
@@ -31,7 +31,7 @@ round(log(sum(c(10, 20, 30, 50))))
 
 The code above is dense and we need to read it backwards from right to left to understand the order of operations. The pipe on the other hand allows us to read the code from left to right.
 
-### With the pipe {-}
+### With the pipe <i class="fas fa-smile"></i> {-}
 ```{r maths_better, eval = F}
 result <- c(10, 20, 30, 50) %>% sum() %>% log() %>% round()
 ```
@@ -84,7 +84,6 @@ mag_endor <- mutate(mag_endor, date = mdy(start_run_date))
 ```
 </div>
 
-<br>
 
 ## Let the `%>%` guide you. {-}
 

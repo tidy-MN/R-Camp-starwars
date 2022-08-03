@@ -248,7 +248,7 @@ leaflet(outposts) %>%
 
 *Fingers crossed it's in the middle....*
 
-```{r, eval=T, fig.height=4, fig.width=9}  
+```{r, eval=F, fig.height=4, fig.width=9}  
 leaflet(outposts) %>% 
   addCircles(radius = 300) %>% 
   addTiles() %>%

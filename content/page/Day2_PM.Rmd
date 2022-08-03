@@ -360,22 +360,24 @@ _Woop! Go get em! So long Jakku - see you never!_
 ![](../images/porg.png){style="float: right; margin-top: -10px;"}
 
 1. Load one of the data sets below into R
-    - Porg contamination on Ahch-To: "https://itep-r.netlify.com/data/porg_samples.csv"
-    - Planet Endor air samples: "https://itep-r.netlify.com/data/air_endor.csv"
+    - Porg contamination on Ahch-To: "https://mn-r.netlify.com/data/porg_samples.csv"
+    - Planet Endor air samples: "https://mn-r.netlify.com/data/air_endor.csv"
     - Or use data from a recent project of yours  
 
 <br>
   
 2. Create 2 plots using the data. 
-3. _Don't worry if it looks_ __really weird__. _Consider it art and try again._  
+3. _Don't worry if it looks_ __really wrong__. _Consider it art and try again._  
 
+
+<br>
 
 <div class="yoda">
 ###  Yoda says {-}
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
 
-When you add more layers using `+` remember to place it at the end of each line.
+When you add more layers to your plot using `+`, remember to place it at the end of each line.
 
 ```{r, eval = F, echo = T}
 # This will work

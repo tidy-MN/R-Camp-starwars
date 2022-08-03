@@ -19,10 +19,10 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 
 # R markdown reports
-<hr>
+<hr class="hrlvl2">
 
-
-Demo...
+```{r mark-demo, child='../../static/modules/markdown/demo.Rmd'}
+```
 
 <br>
 

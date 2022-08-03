@@ -1,17 +1,18 @@
 
-## We made it! But... {-}
+## But wait... {-}
 <hr class="hr-lvl2">
 
-It is not safe to land. Sounds like the Empire is checking all ships for permits. Darn.
+The Ewoks say it's unsafe to land. Booo... Sounds like the Empire is checking all ships for permits. 
 
-There is some good news however. Our rebel comrades also sent along the coordinates of the Empires outposts. And they say that for a small ship like ours, it is technically possible to land undetected.  But we have to be able to put down right-dab in the middle of their 3 northern outposts?
+Lucky for us there is some good news. They say for a small ship like ours, it is possible to land undetected. But we'll have to put down right-dab in the middle of the 3 northern outpost towers. To help, our comrades sent along the coordinates of the Empire's outposts.
+
+<br>
 
 > Are you up for a challenge data droid?
 
 <br>
 
-Either way, let's make a map and see what we're up against. Guess what the first step is? That's right. It is ime to add a new package. 
-
+Either way, let's make a map and see what we're up against. Guess what the first step is? That's right. It is time to add a new package. 
 
 
 # <i class="fas fa-globe-africa"></i> Maps with `sf`
@@ -43,19 +44,18 @@ install.packages("sf")
 
 <br>
 
-```{r, eval=F, echo=F}
+```{r, eval=T, echo=F}
 library(sf)
 library(dplyr)
 
 # Create coordinates
 outposts <- tibble(ID = c("1NO","1NL","3NB"),
                    lat = c(36.6552, 36.583748, 36.5979), 
-                   long = c(-118.8669, -118.8395, -118.92218))
+                   long = c(-118.8469, -118.8195, -118.90218))
 
 outposts <- st_as_sf(outposts, coords = c("long", "lat"), crs = 4326)
 
 outposts <- st_transform(outposts, 26915)
-
 
 outposts$y_utm <- st_coordinates(outposts)[,2]
 outposts$x_utm <- st_coordinates(outposts)[,1]
@@ -64,7 +64,7 @@ outposts$x_utm <- st_coordinates(outposts)[,1]
 
 outposts <- select(outposts, ID, x_utm, y_utm, everything())
 
-st_write(outposts, "../../../content/data/endor_outposts.shp")
+#st_write(outposts, "../../../content/data/endor_outposts.shp")
 ```
 
 
@@ -89,15 +89,27 @@ outposts <- read_excel("endor_outposts.xlsx")
 
 Unfortunately, Endor still uses ancient data systems and their spatial data is in a format once known as "shapefiles". But don't worry, we can do it all with `st_read()`. It's a real gem. 
 
-**Give it a try:**
-```{r, eval=T} 
+
+### Get the shapefile {-}
+
+1. Download the data
+    - <a href="https://github.com/MPCA-data/R-Camp/raw/main/public/data/endor_outposts.zip"><span class="btn_code_blue" style="margin-bottom: 10px; margin-top: 12px;"> __DOWNLOAD __  </span></a> -  Get the Endor outpost coordinates
+1. Create a new folder called `data` in your project folder
+1. Move the downloaded `endor_outposts.zip` file into the folder.
+1. Unzip it
+1. You're ready for `st_read()`
+
+
+### Give it a try {-}
+```{r, eval=F} 
 library(sf)
 library(dplyr)
 
-outposts <- st_read("../../../content/data/endor_outposts.shp", quiet = T)
+outposts <- st_read("data/endor_outposts.shp")
 ```
 
 
+<br>
 
 ### Let's take a look {-}
 ```{r, eval=T} 
@@ -115,31 +127,30 @@ To make a quick map, use ggplot and add `geom_sf()`.
 ```{r, eval=T, fig.width=8, fig.height=4} 
 library(ggplot2)
 
-ggplot(outposts) + geom_sf() 
+ggplot(outposts) + 
+  geom_sf(size = 8) 
 ```
 
 <br>
 
-## Where's the center? {-}
+## Where's the center point? {-}
 
-Do we need some trigonometry? Or can you use the functions we learned yesterday to calculate the center?
+Can you use the summary functions we learned yesterday to calculate the center?
 
-`Hint:` How do you find the center of 2 points?
+`Hint:` How would you find the center of 2 points?
 
 
 <br>
 
 Here's some code to get you started. 
 
-*To calculate a single summary from all the data, we use `summarize()`.*
+*To calculate a single summary from all the data, use `summarize()`.*
 
 ```{r, eval=F}
-land_pad <- outposts %>%
-            summarize(center_x = ___________,
+land_pad <- summarize(outposts,
+                      center_x = ___________,
                       center_y = ___________)
 ```
-
-
 
 
 <details>
@@ -148,8 +159,8 @@ land_pad <- outposts %>%
 <div style="margin-top: -12px;">
 <p>
 ```{r, eval=T}
-land_pad <- outposts %>%
-            summarize(center_x = mean(x_utm),
+land_pad <- summarize(outposts,
+                      center_x = mean(x_utm),
                       center_y = mean(y_utm),
                       ID = "Land Here")
 ```
@@ -160,26 +171,31 @@ land_pad <- outposts %>%
 <br>
 
 
-## The `st_centroid()` function {-}
+## The `st_centroid()` function will also work {-}
 
 ```{r, eval=T}
-land_pad <- outposts %>% 
-            st_combine %>% 
-            st_centroid()
+
+# First, combine all outposts into one object
+outposts_combined <- st_combine(outposts) 
+
+# Then get the objects center              
+land_pad <- st_centroid(outposts_combined)
+
+# View center coordinates
+land_pad
 ```
 
 <br>
 
 ### We found it! {-}
 
-That's fantastic. But one more piece of bad news. Endor still uses an outdated coordinate system, and our ship will need coordinates in the WGS84 Lat/Lng format. They generally look like this `(45.6, -93.12)`. For more details see https://epsg.io/4326.
-
-<br>
-
-**SF** can help you with this too. Try using `st_transform()` and set the new CRS by adding the argument: `crs = 4326`. 
+That's fantastic. But there's one more piece of bad news. Endor uses an outdated UTM coordinate system, and our ship will need coordinates in the **WGS84 Lat/Lng** format. These coordinates generally look like this `(45.6, -93.12)`. For more details see https://epsg.io/4326.
 
 
-> `crs` = Coordinate reference system
+The **SF** package will help you with this too. Try using `st_transform()` and set the Coordinate Reference System (CRS) argument to: `crs = 4326`. 
+
+
+> `crs` = Coordinate Reference System
 
 
 ```{r, eval=T}
@@ -190,15 +206,16 @@ outposts <- st_transform(outposts, crs = 4326)
 land_pad <- st_transform(land_pad, crs = 4326)
 ```
 
+<br>
 
-#### Wonderful!{-}
+### Wonderful!{-}
 
 <br>
 
 <div class="note">
-<h3> Note </h3>
+<h3> Minnesota <i class="fa fa-user-heart" aria-hidden="true" style="color: hotpink"></i></h3>
 
-The CRS for the UTM coordinates zone 15N used for Minnesota is `26915`. See https://epsg.io/26915.
+For Minnesota, you'll often receive coordinates with the CRS in UTM coordinates zone 15N. For transformations, this is CRS number `26915`. See https://epsg.io/26915.
 
 <br>
 </div>
@@ -206,8 +223,10 @@ The CRS for the UTM coordinates zone 15N used for Minnesota is `26915`. See http
 
 <br>
 
-We're going to need to be pretty precise to land perfectly. To make our captain really happy, let's put this all in an interactive map. That way the pilot can zoom and move around. For interactive maps we use **leaflet**.
+<div class="well">
+We're going to need to be very precise to land perfectly in between these outposts. To make our captain really happy, let's put this all in an interactive zoomable map. For interactive maps we use **leaflet**.
 
+</div>
 
 ## Leaflet maps {-}
 <hr class="hrlvl2">
@@ -221,11 +240,7 @@ We're going to need to be pretty precise to land perfectly. To make our captain 
 
 Leaflet makes interactive maps easy and you build them up in layers similar to a ggplot.
 
-
-<br>
-
-<div style="clear: both;"></div>
-
+<br><div style="clear: both;"></div>
 <br>
 
 
@@ -239,8 +254,7 @@ install.packages("leaflet")
 <br>
 
 
-## Maps that move {-}
-
+## Maps that zoom {-}
 
 ### 1. Start with the outpost coordinates {-}
 ```{r, eval=T, fig.height=4, fig.width=9} 
@@ -255,11 +269,13 @@ leaflet(outposts) %>%
 
 
 ### 2. Add the landing site {-}
+
+*Fingers crossed it's in the middle....*
+
 ```{r, eval=T, fig.height=4, fig.width=9}  
 leaflet(outposts) %>% 
-  addCircles(radius = 250) %>% 
+  addCircles(radius = 300) %>% 
   addTiles() %>%
-  
   addMarkers(data  = land_pad)  #<<
 ```
 
@@ -267,14 +283,15 @@ leaflet(outposts) %>%
 
 
 ### 3. Add labels {-}
+
+*Try hovering over one of the outposts to see its label.*
+
 ```{r, eval=T, fig.height=4, fig.width=9} 
 leaflet(outposts) %>% 
-  addCircles(radius = 250,
-             
+  addCircles(radius = 300,
              label = ~ID) %>%   #<<
   addTiles() %>%
   addMarkers(data  = land_pad,
-             
              label = "Land HERE!",  #<<
              labelOptions = labelOptions(noHide = T))  #<<
 ```
@@ -282,7 +299,51 @@ leaflet(outposts) %>%
 
 <br>
 
-**Wow.** I'm in awe of your work data droid. Let's just sit here a minute and soak it all in...  
 
-Ok, let's get down on that planet before we're stuck up here with permanent space legs.
+<div class="tip">
+
+### <i class="fa fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore! {-}
+
+News just came in that the outposts will soon be upgrading their **radar** to detect ships up to `4200 meters` away. Will that be a problem? 
+
+**Steps**
+
+1. Use `st_buffer()` to add a 4000 meter ring around each outpost. 
+    - `outposts_new <- st_buffer(outposts, dist = 4200)` 
+1. Then add a layer to the leaflet map using `addPolygons()` with `data = outposts_new`. You can drop the `radius = 300` argument. 
+
+<details>
+<summary class = "btn_code">_Show code_</summary>
+
+```{r, eval=F}
+outposts_new <- st_buffer(outposts, dist = 4200)
+
+leaflet(outposts) %>%
+  addCircles(label = ~ID) %>% 
+  addTiles() %>%
+  addMarkers(data  = land_pad,
+             label = "Land HERE???",  
+             labelOptions = labelOptions(noHide = T)) %>%
+  addPolygons(data = outposts_new,    #<<
+              fillColor = "yellow")   #<<
+```
+
+<br>
+
+> Will our landing site still be safe?
+
+<br>
+
+</details>
+
+
+</div>
+
+<br>
+
+**Wow!** 
+
+I'm in awe of your work data droid. Let's sit here a minute and soak it all in...  
+
+Ok, now let's get down on that planet before we're stuck up here with permanent space legs.
 

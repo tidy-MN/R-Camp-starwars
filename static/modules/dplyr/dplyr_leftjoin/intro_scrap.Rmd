@@ -3,10 +3,11 @@
 
 ![](../images/leftjoin_scrap.png){style="width: 55%; margin-left: 18%; margin-bottom: 12px;"}
 
-> ### `left_join(scrap, convert, by = c("columns to join by"))` {-}
->
+> #### `left_join(scrap, convert, by = c("columns to join by"))` {-}
 
-`left_join()` works like a zipper to combine 2 tables based on one or more variables. It's called "left"-join because the entire table on the left side is retained. 
+<br>
+
+Left join works like a zipper to combine 2 tables based on one or more variables. It's called "left"-join because the entire table on the left side is retained. 
 
 Anything that matches from the right table gets to join the party, but any rows that don't have a matching ID will be ignored.
 

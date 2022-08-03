@@ -28,21 +28,11 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ![](../images/day2_bb8_sq.png){width="260" style="float: left; margin-right: 60px; margin-top: -10px;"}
 
-## Schedule  {-}
 
-    - Review of Day 1
-    - Dates continued...
-    - Summarize your data
-    - Pipe together functions
-    - Join two tables by a shared column
-    - Calculate new columns
-    - Summarize for each group
-    - Save data
-
-<br>
+<div style="clear: both;"></div>
 
 
-# <i class="fa-solid fa-lightbulb" style="color: #0077be;"></i> Review - New project
+# Review - New project
 <hr>
 
 ```{r rev-proj, child='../../static/modules/_example_7steps/ozone_review.Rmd'}
@@ -55,7 +45,7 @@ The _poggle_ of porgs has returned to help review the `dplyr` functions. Follow 
 
 ```{r, eval = F}
 library(readr)
-porgs <- read_csv("https://itep-r.netlify.com/data/porg_data.csv")
+porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
 ```
 
 <br>
@@ -67,9 +57,21 @@ cat(readLines("porg_tabs.txt"))
 <br>
 
 
-# New mission! 
+## Welcome to Endor! {-}
+<hr class="hrlvl2">
+
+![](https://mn-r.netlify.com/images/planet_endor.jpg){style="width: 75%; margin-top: -4px; margin-left: 11%;"}
+
+<br>
+
+
+```{r sf, child='../../static/modules/maps/sf.Rmd'}
+```
+
+
+# Porg Survey 2022 
 <hr>
-```{r endor-all, child='../../static/modules/lubridate_examples/wumpa.Rmd'}
+```{r porg-survey, child='../../static/modules/lubridate_examples/porg_survey.Rmd'}
 ```
 
 
@@ -100,7 +102,7 @@ That's enough _scuttlebutting_ around, Finn needs us back on Jakku. We're going 
 ```
 
 
-# Join tables with `**left_join**
+# Join tables with **left_join**
 <hr>
 ```{r intro-join, child='../../static/modules/dplyr/dplyr_leftjoin/intro_scrap.Rmd'}
 ```

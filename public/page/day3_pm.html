@@ -10,15 +10,9 @@
   <title>Day 3 - PM - Learn R</title>
   <meta property="og:title" content="Day 3 - PM" />
   <meta name="twitter:title" content="Day 3 - PM" />
-  <meta name="description" content="R markdown reports  Demo…
-
- Your turn Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data.">
-  <meta property="og:description" content="R markdown reports  Demo…
-
- Your turn Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data.">
-  <meta name="twitter:description" content="R markdown reports  Demo…
-
- Your turn Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data.">
+  <meta name="description" content="pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.">
+  <meta property="og:description" content="pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.">
+  <meta name="twitter:description" content="pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.">
   <meta name="author" content="R2D2"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -67,9 +61,9 @@
     "name" : "R2D2"
   },
   "headline": "Day 3 - PM",
-  "description" : "R markdown reports  Demo…\n\n Your turn Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data.",
+  "description" : "pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  268 ,
+  "wordCount":  1221 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -89,17 +83,13 @@
 </script>
 
 <meta property="og:title" content="Day 3 - PM" />
-<meta property="og:description" content="R markdown reports  Demo…
-
- Your turn Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data.">
+<meta property="og:description" content="pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.">
 <meta property="og:image" content="https://mn-r.netlify.app/images/BB8_rnd_icon.png" />
 <meta property="og:url" content="https://mn-r.netlify.app/page/day3_pm.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Day 3 - PM" />
-  <meta name="twitter:description" content="R markdown reports  Demo…
-
- Your turn Time to start putting what we’ve learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data.">
+  <meta name="twitter:description" content="pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.">
   <meta name="twitter:image" content="https://mn-r.netlify.app/images/BB8_rnd_icon.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -295,14 +285,189 @@
         
 <link href="/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
   <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
 
 
 <div id="r-markdown-reports" class="section level1">
 <h1>R markdown reports</h1>
-<hr>
-<p>Demo…</p>
+<hr class="hrlvl2">
+<details>
+<summary class="btn_code">
+<strong>Demo time…</strong> <strong>&gt;</strong>
+</summary>
+<div id="what-is-it" class="section level2 unnumbered">
+<h2>1. What is it?</h2>
+<blockquote>
+<p>R Markdown keeps your plots, output, and analysis all in one place. No more outdated charts and data floating around.</p>
+</blockquote>
+<blockquote>
+<p>You are currently reading the output of an R Markdown document. Markdown is a simple syntax for authoring HTML, PDF, and Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+</blockquote>
+</div>
+<div id="a-scary-movie" class="section level2 unnumbered">
+<h2>2. A scary movie</h2>
+<blockquote>
+<p><a href="https://youtu.be/s3JldKoA0zw">Changing data: A Reproducible workflow</a></p>
+</blockquote>
+</div>
+<div id="but-why" class="section level2 unnumbered">
+<h2>3. But why?</h2>
+<ul>
+<li><a href="https://slides.djnavarro.net/starting-rmarkdown/#17" class="uri">https://slides.djnavarro.net/starting-rmarkdown/#17</a></li>
+</ul>
 <p><br></p>
+<div id="yaml" class="section level3 unnumbered">
+<h3>YAML</h3>
+<p>The YAML (“YAML ain’t markup language” or “Yet another markup language”) is the document information stored atop the R Markdown document, bounded on each end by <code>---</code>. When you first create a new .Rmd, that will look something like this:</p>
+<pre><code>---
+title: &quot;Document title&quot;
+author: &quot;Author&quot;
+date: &quot;MM/DD/YYYY&quot;
+output: html_document
+---</code></pre>
+</div>
+</div>
+<div id="demo-time" class="section level2 unnumbered">
+<h2>4. Demo time</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggweekly) <span class="co">#remotes::install_github(&quot;gadenbuie/ggweekly&quot;)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="st">&quot;2021-04-05&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>end <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(start) <span class="sc">+</span> <span class="dv">8</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggweek_planner</span>(</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">start_day =</span> start, </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">end_day =</span> end,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">highlight_days =</span> <span class="fu">tibble</span>(<span class="at">day =</span> <span class="st">&quot;2021-04-09&quot;</span>, </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> <span class="st">&quot;HOTSPRINGS!!&quot;</span>, </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> <span class="st">&quot;hotpink&quot;</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">fill  =</span> <span class="st">&quot;hotpink&quot;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;My Yellowstone Trip&quot;</span>)</span></code></pre></div>
+<p><img src="/page/Day3_PM_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
+<p>My vacation will be starting on 2021-04-05. Better start packing on 2021-04-04 !</p>
+<div id="code-chunk-options" class="section level3 unnumbered">
+<h3>Code chunk options</h3>
+<p>Chunk options are options designated in the code chunk header that determine what appears or does not appear for each chunk upon knitting (and a lot more, but we’ll start there…). For more information on code chunk options in R Markdown, see Chapter 11 in the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html">R Markdown Cookbook</a>.</p>
+<p>Chunk hooks can be added to individual code chunk headers (within the <code>{r}</code> atop the chunk), or applied globally by adding options to the <code>{r setup}</code> code chunk at the top of the document.</p>
+<p>Here are some common hooks:</p>
+<ul>
+<li><code>echo = FALSE</code>: do not show the code in the knitted document</li>
+<li><code>include = FALSE</code>: do not include code or any outputs in knitted document</li>
+<li><code>message = FALSE</code>: suppress messages when knit</li>
+<li><code>warning = FALSE</code>: suppress warnings when knit</li>
+<li><code>eval = FALSE</code>: do not evaluate this code</li>
+</ul>
+</div>
+</div>
+<div id="customization" class="section level2 unnumbered">
+<h2>Customization</h2>
+<p>For today, we’ll make changes to the YAML in our .Rmd to fancy our output document. Our customization will be related to our knitted HTML output, using the following:</p>
+<ul>
+<li><code>toc: true</code>: add a table of contents based on header hierarchies</li>
+<li><code>toc_float: true</code>: make it a floating TOC</li>
+<li><code>number_sections: true</code>: add numbered sections based on header hierarchy</li>
+<li><code>theme: _____</code>: add a bootstrap theme</li>
+<li><code>code_folding: hide</code>: code is default hidden, but available if the reader clicks on the ‘Code’ button created</li>
+</ul>
+<p>For free bootstrap themes, visit: <a href="https://bootswatch.com/3/" class="uri">https://bootswatch.com/3/</a></p>
+<p>To add options to the YAML, add them as “children” in the <code>html_document</code> subsection. Beware of spacing here: generally add 2 spaces of indentation for each new sublevel in the YAML hierarchy.</p>
+<pre><code>---
+title: &quot;Level up in R Markdown&quot;
+subtitle: &quot;UCSB QMSS seminar series (February 2021)&quot;
+author: &quot;Allison Horst&quot;
+output: 
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+    number_sections: true
+    code_folding: hide
+---</code></pre>
+<div class="yoda">
+<div id="yoda-says" class="section level3 unnumbered">
+<h3>Yoda says</h3>
+<p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
+</div>
+<div id="more-resources" class="section level3 unnumbered">
+<h3>More resources</h3>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/">The R Markdown Cookbook</a> by Yihui Xie, Christophe Dervieux, Emily Riederer</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: the Definitive Guide</a> by Yihui Xie, J. J. Allaire, Garrett Grolemund</li>
+<li><a href="https://rmarkdown.rstudio.com/">RStudio’s R Markdown site</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide</a></li>
+<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">RStudio’s R Markdown lesson series</a></li>
+<li>Alison Hill’s workshop on <a href="https://alison.rbind.io/project/advanced-r-markdown/">Advanced R Markdown</a></li>
+</ul>
+</div>
+</div>
+</details>
+<p><br></p>
+</div>
 </div>
 <div id="your-turn" class="section level1">
 <h1>Your turn</h1>

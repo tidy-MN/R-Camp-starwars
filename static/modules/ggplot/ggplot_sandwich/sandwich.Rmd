@@ -60,22 +60,3 @@ ggplot(scrap, aes(x = reorder(destination, amount, FUN = sum), y = amount, fill 
 ```
 
 
-<br>
-
-<div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
-
-Try making a column plot showing the total amount of scrap for each for each `item`.
-
-```{r, eval=F, echo=T}
-ggplot(scrap, aes(x = ___________, y = amount)) + 
-  geom_col()
-```
-
-<br>
-
-Now, try setting the fill argument to the `destination` column.
-
-</div>
-
-<br>

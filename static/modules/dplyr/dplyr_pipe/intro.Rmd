@@ -1,38 +1,41 @@
 
+<br>
 
 >
-> **I wish I could type the name of the data less often.**
+> **Wishing you could type the name of the data less often?**
 >
 
 ![](../images/pipe.png){style="margin-right: 20px; width: 136px; float: left; margin-top: 12px;"}
 
 
-__You can with the *pipe*!__ 
+### You can with the *pipe*! {-}
 
 Use the `%>%` to chain functions together and make our scripts more streamlined.
 
 <div style="clear: both;"></div>
 
-<br>
 
-__Let the `%>%` guide you.__
+## Let the `%>%` guide you. {-}
 
 <br>
 
 
 ## 2 ways the `%>%` helps: {-}
 
-### __`#1:`__ *Eliminate nested parentheses*
+### __`#1:`__ *Eliminates nested parentheses* {-}
 
-Let's say you have 3 numbers. You want to take the sum of them, take the log of that result, and then round the final outcome. 
+Let's say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome. 
 
-This is one way to write that:
+### Without the pipe {-}
 ```{r maths, eval=F}
-result <- round(log(sum(c(10, 20, 30, 50))))
+round(log(sum(c(10, 20, 30, 50))))
 ```
 
+<br>
 
-The code above is dense and we need to read it backwards from right to left to understand the order of operations. The pipe on the other hand allows us to read the code from left to right, and resembles how we would describe the process verbally.
+The code above is dense and we need to read it backwards from right to left to understand the order of operations. The pipe on the other hand allows us to read the code from left to right.
+
+### With the pipe {-}
 ```{r maths_better, eval = F}
 result <- c(10, 20, 30, 50) %>% sum() %>% log() %>% round()
 ```
@@ -41,11 +44,10 @@ result <- c(10, 20, 30, 50) %>% sum() %>% log() %>% round()
 <br>
 
 
-### __`#2:`__ *Combine processing steps into one cohesive chunk*
+### __`#2:`__ *Combine processing steps into one cohesive chunk* {-}
 
 
-Here are some of the functions we've applied to the scrap data so far:
-
+### Without the pipe {-}
 ```{r review, eval=F}
 scrap <- arrange(scrap, desc(price_per_pound))
 
@@ -57,8 +59,7 @@ scrap <- mutate(scrap,
 ```
 
 
-We can use the `%>%` operator to pipe or chain them together.
-
+### With the pipe {-}
 ```{r review-better, eval=F}
 
 scrap <- scrap %>%

@@ -49,7 +49,7 @@ Without quotes, R looks for an object called Chewbacca, and then lets you know t
 
 <br>
 
-<div style="border: 2px solid #d9e1e5; background: aliceblue; border-radius: 15px; padding-left: 18px;">
+<div style="border: 2px solid #d9e1e5; background: aliceblue; border-radius: 15px; padding: 20px;">
 
 <h3> <i class="fas fa-circle" style="color: blue; opacity: 0.60; margin-right: 2px;"></i><i class="fas fa-circle" style="color: black; opacity: 0.65; margin-right: 2px;"></i><i class="fas fa-circle" style="color: rgb(197, 6, 11); opacity: 0.75; margin-right: 2px;"></i> Colors decoded </h3>
 

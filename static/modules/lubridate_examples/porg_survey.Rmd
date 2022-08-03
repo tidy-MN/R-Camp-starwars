@@ -1,0 +1,546 @@
+
+![](../images/porgs_bb8_2.jpg)
+
+
+The Ewoks need our help. There's porgs **EVERYWHERE!** It seems they have been spreading across the galaxy, hitching rides on unsuspecting ships. People hate to admit it because they're so cute, but they are starting to be a nuisance. To get a grasp on the problem the Ewoks are doing the first ever porg survey in their forest.
+
+
+# <i class="fa fa-calendar" aria-hidden="true"></i> Dates and times with `lubridate` 
+<hr>
+
+### Enter the `lubridate` package. {-}
+
+![](../images/lubridate.png){style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;"}
+
+<br>
+
+It's about time! Lubridate makes working with dates much easier.
+
+We can find how much time has elapsed, add or subtract days, and find seasonal and day of the week averages.
+
+<br>
+
+<div style="clear: both;"></div>
+
+<br>
+
+
+### Install `lubridate` {-}
+
+**Run:** 
+```{r, eval=F}  
+install.packages("lubridate")
+```
+
+<br>
+**View the date cheatsheet [HERE](https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf)**. 
+
+It's a great reference when you need to manipulate dates or timezones in your data.
+
+<br>
+
+
+## Menu of date functions {-}
+<hr class="hrlvl2">
+
+#### Convert text to a `DATE` {-}
+
+| Function    |  Order of date elements                                 |
+|----|:-----------------------------------------------------------------|
+|`mdy()  `    | Month-Day-Year :: `05-18-2019` or `05/18/2019`                 |
+|`dmy()  `    | Day-Month-Year (Euro dates) :: `18-05-2019` or `18/05/2019`    |
+|`ymd()  `    | Year-Month-Day (science dates) :: `2019-05-18` or `2019/05/18` |
+|`ymd_hm() `  | Year-Month-Day Hour:Minutes ::  `2019-05-18 8:35 AM`          |
+|`ymd_hms() ` | Year-Month-Day Hour:Minutes:Seconds ::  `2019-05-18 8:35:22 AM`    |
+
+<br>
+
+#### Get date parts {-}
+
+| Function   |  Date element                                            |
+|----|:-----------------------------------------------------------------|
+|`year()  `  | Year          |
+|`month()`   | Month as _1,2,3_; For _Jan, Feb, Mar_ use `label=TRUE`  |
+|`week()`    | Week of the year  |
+|`day()`     | Day of the month  |
+|`wday()`    | Day of the week as _1,2,3_; For _Sun, Mon, Tue_ use `label=TRUE` |
+| _- Time -_   |            |
+|`hour() `   |  Hour of the day _(24hr)_ |
+|`minute() ` |  Minutes   |
+|`second() ` |  Seconds   |
+|`tz()  `    |  Time zone |
+
+
+<br>
+
+<div class="note">
+### <i class="fa fa-broom" aria-hidden="true"></i> Clean the dates {-}
+
+#### Real world examples {-}
+
+Does your date column look like one of these? 
+
+Here's the `lubridate` function to tell R that the column is a date.
+
+
+| Format |  Function to use         |   
+|--------|:-------------------------|  
+| "05/18/2019" | `mdy(date_column)  ` |  
+| "May 18, 2019" | `mdy(date_column)  `       |
+| "05/18/2019 8:00 CDT" | `mdy_hm(date_column, tz = "US/Central")  `|
+| "05/18/2019 11:05:32 PDT" | `mdy_hms(date_column, tz = "US/Pacific")  `|
+
+<br>
+
+__European dates__
+
+| Format |  Function to use         |   
+|--------|:-------------------------| 
+| "30.05.2019" | `dmy(date_column) `  |
+| "30-05-2019" | `dmy(date_column) `  |
+| "30/05/2019" | `dmy(date_column) `  |
+
+<br>
+
+__Simple number dates__
+
+| Format |  Function to use         |   
+|--------|:-------------------------| 
+| "20190518" | `ymd(sample_date) `  |
+
+</div>
+
+
+
+### Objective {-}
+
+> The Ewoks have asked you help organize their Porg survey for the season. 
+> 
+> Lucky for you, the calendar and time used here is very similar to your home planet.
+>
+> In 2023, the Ewoks would like to perform a porg count once a week from May to October.
+>
+> They have enough volunteers to run the survey at two sites across the forest
+> - Sites: `c("Bright Tree", "Fern Gully")`
+
+<br>
+Let's generate the full list of dates during this time span using the sequence date function: ` seq.Date()`
+
+<br>
+
+Run the code below to create a date for every possible day of the survey.
+
+```{r}
+library(dplyr)
+library(lubridate)
+
+start_date <- ymd("2023-05-01")
+
+end_date   <- ymd("2023-10-31")
+
+# Sequence from start to end, counting by 1 day intervals
+survey_dates <- seq.Date(from = start_date, 
+                         to = end_date, 
+                         by = "day")
+```
+
+<br>
+
+## :penguin: How many days will the survey run? {-}
+
+<br>
+
+<details>
+<summary>Show answer</summary>
+  
+> *184 days*
+
+</details>
+
+<br>
+
+### Put dates in a dataframe {-}
+
+> Remember how to make a dataframe?
+
+
+I just looked it up and here's a reminder.
+```{r}
+survey <- data.frame(count_date = survey_dates)
+```
+
+<br>
+
+Great!
+
+## 1. Scheduling weekdays {-}
+
+![](https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png)
+
+Ewoks are very busy. Unfortunately, they only have one day per week when they can volunteer. Here is the weekday when volunteers are available at each location:
+
+- Bright Tree: ` Thursdays`
+- Fern Gully: ` Fridays`
+
+<br>
+
+Use the `seq.Date()` function and the option to step `by = "week"` to
+generate the survey dates for each site. 
+
+<br>
+
+To get started, let's find when the first Thursday in May of 2023 is. That will be the first survey date for the site Bright Tree.
+
+We can use the `wday()` - "weekday" - function to check what day of the week the first of May will be in 2023.
+
+```{r, eval=T}
+# wday tells you the day of week (Sun, Mon, etc..) for a specific date
+wday(ymd('2023-05-01'), label = TRUE, abbr = FALSE)
+```
+
+<br>
+
+So the `1st` will be Monday. That means.... **May the 4th** will be the first Thursday. Perfect.
+
+
+### New column {-}
+
+We don't want to check every date one by one do we? After all, R is supposed to make our lives easier. 
+
+Let's check ALL the dates ALL at once by adding a day of week column to the survey table. To add a new column we call our friend `mutate()`.
+
+
+Complete the code below to add a `week_day` column.
+```{r, eval=F}
+
+survey <- mutate(survey, 
+                 week_day = wday( ________ , label = TRUE, abbr = FALSE))
+```
+
+
+```{r, eval=T, echo=F}
+library(knitr)
+
+survey <- mutate(survey, 
+                 week_day = wday(count_date, label = TRUE, abbr = FALSE))
+```
+
+
+### `filter()` week days {-}
+
+Split the schedule in two by filtering the survey to only the day needed for each site: 
+
+- ` Thursday` for Bright Tree
+- ` Friday` for Fern Gully
+
+
+```{r, eval=F}
+bright_dates <- filter(survey, week_day ==  ________ )
+
+fern_dates   <- filter(survey, week_day ==  ________ )
+```
+
+<br>
+
+<details>
+<summary>Show code</summary>
+  
+```{r, eval=T, echo=T}
+bright_dates <- filter(survey, week_day ==  "Thursday" )
+
+fern_dates   <- filter(survey, week_day ==  "Friday" )
+```
+
+</details>
+
+
+<br>
+
+
+**How many survey dates are at each site?**
+
+> *Hint: It's less than 50.*
+
+<br>
+
+<details>
+<summary>Show answer</summary>
+  
+> **26 survey days**
+
+</details>
+
+<br>
+
+
+## 2. Particular date formats {-}
+
+<img align="left" src="../images/dwight.png" style="margin-right: 14px;">
+
+<br>
+
+Oh no, each survey site has a very-very particular Assistant to the Regional Manager that is demanding a very specific date format for their work schedules. 
+
+
+Before you send off the survey dates, you'll need to adjust the dates to match the requested formats below. 
+
+<br>
+
+The sites have the following preferred date formats:
+
+
+- Bright Tree: ` 5-11-2023`
+- Fern Gully: ` May 12, 2023`
+
+<br>
+
+Use `format(date, ...)` and the format expressions below to format the schedule for each region accordingly. 
+
+> For example: `format(count_date, "%b, %Y")` would print the date as `Aug, 2023`.
+> 
+> - `%b`  stands for 3-letter month abbreviation 
+> - `%Y%` stands for the full 4 digit year
+
+**Date**
+
+| Expression    | Description                       | Example  |
+| :------------ | :-------------------------------- | :------- |
+| `%Y`          | Year (4 digit)                    | 2023     |
+| `%y`          | Year (2 digit)                    | 21       |
+| `%B`          | Month (full name)                 | December |
+| `%b`          | Month (abbreviated)               | Dec      |
+| `%m`          | Month (decimal number)            | 12       |
+| `%d`          | Day of the month (decimal number) | 30       |
+
+
+**Time**
+
+| Expression    | Description                       | Example  |
+| :------------ | :-------------------------------- | :------- |
+| `%H`          | Hour                              | 8        |
+| `%M`          | Minute                            | 13       |
+| `%S`          | Second                            | 35       |
+
+
+<br>
+
+Use `mutate()` to update the **week_day** column in both site schedules.
+
+**Here's a start**
+
+```{r, eval=F, echo=T}
+# Set date format to 5-11-2023
+bright_dates <- mutate(bright_dates, count_date = format(count_date, _______  ))
+
+# Set date format to May 12, 2023
+fern_dates <- mutate(fern_dates, count_date = format(count_date, _______ ))
+```
+
+
+<details>
+<summary>Show code</summary>
+  
+```{r, eval=T, echo=T}
+# Set date format to 5-11-2023
+bright_dates <- mutate(bright_dates, count_date = format(count_date, "%m-%d-%Y"))
+
+# Set date format to May 12, 2023
+fern_dates <- mutate(fern_dates, count_date = format(count_date, "%b %d, %Y"))
+```
+
+</details>
+
+### How'd we do?
+
+```{r, eval=F, echo=T}
+# Bright Tree schedule
+head(bright_dates, 3)
+```
+
+```{r, eval=T, echo=F}
+head(bright_dates, 3) %>% kable()
+```
+
+```{r, eval=F, echo=T}
+# Fern Gully schedule
+head(fern_dates, 3)
+```
+
+```{r, eval=T, echo=F}
+head(fern_dates, 3) %>% kable()
+```
+
+
+<br>
+
+**Congrats\!**
+
+Your fine-tuned schedules worked perfectly. 
+
+Now let’s jump ahead and take a look at the survey results.
+
+<br>
+
+
+## 3. Results {-}
+
+![](../images/porgs_lifecycle.jpg){width=80%}
+
+
+<br>
+
+**Load the porg survey result.**
+
+```{r, eval=F}
+porgs <- read_csv("https://mn-r.netlify.app/data/2022_porg_survey_results.csv")   
+```
+
+```{r, eval=T, echo=F}
+porgs <- read_csv("../../../content/data/2022_porg_survey_results.csv")   
+```
+
+
+<br>
+
+*Explore a bit.* 
+
+> Are there missing values?
+
+<br>
+
+### A missing site {-}
+
+It looks like we have a slight missing data problem.
+
+There’s a data point in the results that wasn’t labeled with the site
+location. We do know the date however. 
+
+On `2023-06-30` there were a whopping 7 porgs counted - but we just don’t know where.
+
+<br>
+
+**Can you determine the site based on the date of the porg count?**
+
+```{r}
+mystery_site_date <- "2023-06-30"
+```
+
+> *Hint: What weekday is this?*
+>
+> Try the `wday(date)` function.
+
+<br>
+
+
+**Good sleuthing data droid.**
+
+We'll learn how to update the site value later today, but right now we're in a hurry, so let's remove the row using filter.
+
+Use `filter()` to keep only the rows in the porgs data where `site` is **NOT** *NA* (missing).
+
+```{r, eval=T}
+porgs <- filter(porgs, !is.na(site))  
+```
+
+<br>
+
+
+## 4. The best time for porgs {-}
+
+<br>
+
+> ### What is the best month to see porgs? {-}
+
+:penguin: **First, add a `month` column to the data with the function `month()` and the column `count_date`.**
+
+```{r, eval=T}
+porgs <- porgs %>%
+         mutate(month = month(count_date))
+```
+
+<br>
+
+:penguin: **Next, use `ggplot()` and `geom_col()` to plot the porg sightings by month.**
+
+```{r, eval=F}
+ggplot(porgs, aes(x = month, y = ______ , fill = site)) +
+    geom_col()
+```
+
+<br>
+
+<details>
+<summary>Show code</summary>
+  
+```{r, eval=T, echo=T}
+ggplot(porgs, aes(x = month, y = porg_count, fill = site)) +
+    geom_col()
+```
+
+</details>
+
+<br>
+
+> Why might June be the lowest month?
+>
+> *Hint:* Fern Gully
+
+
+<br>
+
+## 5. Time series - All the data {-}
+
+Plot all the data with `geom_point()`. Put `count_date` on the x-axis, and the `porg_count` on the y-axis. Set the color to match the `site` column.
+
+```{r, eval=F}
+ggplot(porgs, aes(x = _______, y = ______ , color = _____ )) +
+    geom_point(size = 5)
+```
+
+<br>
+
+<details>
+<summary>Show code</summary>
+  
+```{r, eval=T, echo=T}
+ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
+    geom_point(size = 5) 
+```
+
+</details>
+
+
+<br>
+
+Oof! That's a busy plot. Try adding `+ facet_wrap(~ site)` to the end. 
+What happens?
+
+```{r, eval=F}
+ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
+  geom_point(size = 5) +
+  facet_wrap(~ site)   #<<
+```
+
+<br>
+
+Try adding `+ geom_line()`. 
+
+```{r, eval=F}
+ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
+  geom_point(size = 5) +
+  facet_wrap(~ site) +
+  geom_line()                #<<
+```
+
+
+<br>
+
+<hr>
+
+## :tada: Great work {-}
+
+The Ewoks were impressed and deeply thankful. They will be in touch for *Porg Survey 2024*.
+
+![](../images/porgs_4.jpg){width=35%}
+
+

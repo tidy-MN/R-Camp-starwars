@@ -1,7 +1,7 @@
 
 ### Adding porg names {-}
 
-Remember our porg friends? How rude of us not to share their names. __Wups!__
+Remember our porg friends? How rude of us not to share their names. 
 
 Here's a table of their names.
 
@@ -10,7 +10,7 @@ Here's a table of their names.
 </div>
 
 >
-> __Who's who?__ Let's join their names to the rest of the data.
+> __But who's who?__ Let's join their names to the rest of the data based on the `ID` column.
 >
 
 ![](../images/porgs/leftjoin_porgs.png){style="width: 90%; max-width: 85%;"}

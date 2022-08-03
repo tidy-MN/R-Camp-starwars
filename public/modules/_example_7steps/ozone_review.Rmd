@@ -66,7 +66,7 @@ glimpse(air_data)
 
 
 ### 3.2 Plot the data {-}
-```{r view, message=F, fig.width=12, fig.height=4}
+```{r view, message=F, fig.width=12, fig.height=5}
 library(ggplot2)
 
 ggplot(air_data, aes(x = temp_f, y = ozone)) + 
@@ -89,7 +89,7 @@ air_data <- air_data %>%
 
 
 ### 5. View the data __closer__ {-}
-```{r, fig.width=12, fig.height=4}
+```{r, fig.width=12, fig.height=5}
 ggplot(air_data, aes(x = temp_f, y = ozone)) + 
     geom_point(alpha = 0.2, size = 3) +
     geom_smooth(method = "lm") + 

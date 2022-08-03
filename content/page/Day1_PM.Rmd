@@ -119,7 +119,25 @@ This is going to be a long flight. Let's warm up our plotting machines so they a
 ```{r child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
 ```
 
+<br>
 
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+Try making a column plot showing the total amount of scrap for each for each `item`.
+
+```{r, eval=F, echo=T}
+ggplot(scrap, aes(x = ___________, y = amount)) + 
+  geom_col()
+```
+
+<br>
+
+Now, try setting the fill argument to the `destination` column.
+
+</div>
+
+<br>
 
 # Shutdown complete
 <hr>

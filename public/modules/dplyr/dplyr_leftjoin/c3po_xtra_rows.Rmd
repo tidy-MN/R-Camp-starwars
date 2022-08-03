@@ -8,7 +8,7 @@
 
 ### Star Wars characters {-}
 
-**left_join()** is used to add columns to your table by pulling them from another table. Imagine you have the 2 Star Wars tables below. One table includes character names and heights; the second has names and homeworlds. Since both tables share a common name column, we can join the tables together using the name columns as the joining key. 
+**left_join()** adds columns to your table by pulling them from another table. Imagine you have the 2 Star Wars tables below. One table includes character names and heights; the second has names and homeworlds. Since both tables share a common name column, we can join the tables together using the name columns as the joining key. 
 
 <style type="text/css"> 
 .table {width: 30%;} 
@@ -49,7 +49,7 @@ kable(starwars_homeworlds)
 
 <br>
 
-__Uh oh!__ There's no "Ayla Secura" in the height table and there's no "Greedo" in the homeworld table. Can we still join the tables? Run the code below to see what happens.
+__Uh oh.__ There's no "Ayla Secura" in the height table and there's no "Greedo" in the homeworld table. Can we still join the tables? Run the code below to see what happens.
 
 <br>
 
@@ -167,9 +167,9 @@ kable(height_and_homeworld)
 <div class="blockquote">
 This results in a table with one extra row than we started with in our heights table. So growing table sizes are a sign of duplicate records when using **left_join()**. 
 
-In practice, when you see this you'll want to investigate why one of your tables has duplicate entries, especially if the observation for the two rows is different, as it was for _C-3PO's_ homeword. 
+In practice, when you see this you'll want to investigate why one of your tables has duplicate entries, especially if the observations for the two rows are different -- as it was for _C-3PO's_ homeworld. 
 
-Are there really two different Star Wars characters named _C-3PO_, or maybe someone made two different guesses about the droid's homeworld, or maybe the data simply has a mistake. 
+Are there really two different Star Wars characters named _C-3PO_, or did someone make two different guesses about the droid's homeworld? Or maybe the data simply has a mistake? It happens. 
 
 </div>
 

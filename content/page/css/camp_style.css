@@ -97,9 +97,9 @@ blockquote
      background-color: #f0f7fb;
      border-radius: 7px;
      color: #525252;
-     font-size: 17px;
+     font-size: 19px;
      font-style: normal;
-     line-height: 19px;
+     line-height: 24px;
      overflow: hidden;
      padding: 22px;
      padding-top: 12px;
@@ -219,19 +219,16 @@ blockquote
     border-left: solid 57px #f5f5f3;
 }
 
-
 .yoda-img {
     width: 50px;
     float: left;
-    margin-top: -95px;
-    margin-left: -68px;
-    margin-bottom: -38px;
-    margin-right: 23px;
+    margin-top: -88px;
+    margin-left: -67px;
 }
 
-.yoda.h3 {
-  padding-left: 25px;
-  padding-top: 20px;
+.yoda h3 {
+  padding-left: 8px;
+  padding-top: 24px;
 }
 
 table {margin-top: 20px; margin-bottom: 18px;}

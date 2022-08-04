@@ -17,12 +17,12 @@ Mr. Baddy Plutt is demanding __10,000 items__ of scrap for Finn. Sounds expensiv
 
 BB8 was busy on our flight back to Jakku, and recovered a __full__ set of scrap records from the notorious Unkar Plutt. Let's take a look.
 
-```{r full-scrap, eval=T, echo=T}
+```{r full-scrap}
 library(readr)
 library(dplyr)
 
 # Read in the full scrap database
-scrap <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv")
+scrap <- read_csv("https://mn-r.netlify.app/data/starwars_scrap_jakku_full.csv")
 ```
 </div>
 
@@ -30,7 +30,7 @@ scrap <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv
 
 Take a look at the __NEW__ scrap data and see if we have the weight of all the items.
 
-```{r fullscrap-units, eval=T}
+```{r fullscrap-units}
 # What unit types are in the data?
 unique(scrap$units)
 ```
@@ -38,7 +38,7 @@ unique(scrap$units)
 <br>
 
 __Or return results as a data frame__
-```{r distinct-units, eval=T}
+```{r distinct-units}
 distinct(scrap, units)
 ```
 
@@ -67,9 +67,9 @@ It took a while, but with a few droid bribes BB8 was able to track down a _Weigh
 
 
 ### Read the weight conversion table {-}
-```{r read-convert, eval = T, message = F}
+```{r read-convert}
 # The data's URL
-convert_url <- "https://rtrain.netlify.com/data/conversion_table.csv"
+convert_url <- "https://mn-r.netlify.app/data/conversion_table.csv"
 
 # Read the conversion data
 convert <- read_csv(convert_url)

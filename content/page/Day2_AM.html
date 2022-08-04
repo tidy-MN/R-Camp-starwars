@@ -168,34 +168,34 @@ hr {background: #62BE2C;}
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2018-04-24</td>
-<td align="right">4</td>
-<td align="right">35.6</td>
-</tr>
-<tr class="even">
 <td align="left">27-137-7001</td>
-<td align="left">2018-04-10</td>
+<td align="left">2018-05-14</td>
 <td align="right">11</td>
 <td align="right">50.0</td>
 </tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="left">2018-07-08</td>
+<td align="right">10</td>
+<td align="right">66.2</td>
+</tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2017-06-06</td>
-<td align="right">32</td>
-<td align="right">79.4</td>
+<td align="left">2017-04-30</td>
+<td align="right">7</td>
+<td align="right">39.2</td>
 </tr>
 <tr class="even">
-<td align="left">27-137-7554</td>
-<td align="left">2018-05-08</td>
-<td align="right">14</td>
-<td align="right">45.2</td>
+<td align="left">27-137-7001</td>
+<td align="left">2016-10-18</td>
+<td align="right">6</td>
+<td align="right">47.0</td>
 </tr>
 <tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-04-28</td>
-<td align="right">2</td>
-<td align="right">38.0</td>
+<td align="left">27-137-7001</td>
+<td align="left">2016-06-18</td>
+<td align="right">14</td>
+<td align="right">65.6</td>
 </tr>
 </tbody>
 </table>
@@ -1352,7 +1352,7 @@ Update from BB8!
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the full scrap database</span></span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)</span></code></pre></div>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/starwars_scrap_jakku_full.csv&quot;</span>)</span></code></pre></div>
 </div>
 <p><br></p>
 <p>Take a look at the <strong>NEW</strong> scrap data and see if we have the weight of all the items.</p>
@@ -1385,18 +1385,18 @@ Update from BB8!
 <div id="read-the-weight-conversion-table" class="section level3 unnumbered">
 <h3>Read the weight conversion table</h3>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The data&#39;s URL</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>convert_url <span class="ot">&lt;-</span> <span class="st">&quot;https://rtrain.netlify.com/data/conversion_table.csv&quot;</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>convert_url <span class="ot">&lt;-</span> <span class="st">&quot;https://mn-r.netlify.app/data/conversion_table.csv&quot;</span></span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the conversion data</span></span>
 <span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>convert <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(convert_url)</span>
 <span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(convert, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
-##   item               units       pounds_per_unit
-##   &lt;chr&gt;              &lt;chr&gt;                 &lt;dbl&gt;
-## 1 Bulkhead           Cubic Yards             321
-## 2 Hull Panel         Cubic Yards             641
-## 3 Repulsorlift array Cubic Yards             467</code></pre>
+##   item               units       pounds
+##   &lt;chr&gt;              &lt;chr&gt;        &lt;dbl&gt;
+## 1 Bulkhead           Cubic Yards    321
+## 2 Hull Panel         Cubic Yards    641
+## 3 Repulsorlift array Cubic Yards    467</code></pre>
 <p><br></p>
 <p>Oh my stars! A cubic yard of <code>Hull Panel</code> weighs <strong>641 lbs</strong>. I knew it!</p>
 <p>Let’s join this new conversion table to the scrap data to make our calculations easier. To do that we need to meet a new function.</p>
@@ -1525,10 +1525,10 @@ Update from BB8!
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>   </span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
 <span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">246</span>))      </span>
 <span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
 <span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
 <span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by starwars_name</span></span>
@@ -1669,11 +1669,11 @@ Update from BB8!
 <p><br></p>
 <p>When you run the code below you’ll see that <strong>left_join</strong> is very thorough and adds each additional homeworld it finds for <em>C-3PO</em> as a new row in the joined table.</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height  =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">173</span>))</span>
 <span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
 <span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tantive IV&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
 <span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by Star Wars character name</span></span>
@@ -1778,14 +1778,13 @@ Update from BB8!
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap, <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 8
-##   receipt_date item                  origin desti…¹ amount units price…² pound…³
-##   &lt;chr&gt;        &lt;chr&gt;                 &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 4/1/2013     Bulkhead              Crate… Raiders   4017 Cubi…   1005.     321
-## 2 4/2/2013     Starship sensor array Outsk… Trade …   1249 Cubi…   1129.     637
-## 3 4/3/2013     Starship sensor array Outsk… Niima …   4434 Cubi…   1129.     637
-## 4 4/4/2013     Hull Panel            Crate… Raiders    286 Cubi…    843.     641
-## # … with abbreviated variable names ¹​destination, ²​price_per_pound,
-## #   ³​pounds_per_unit</code></pre>
+##   receipt_date item                  origin  desti…¹ amount units price…² pounds
+##   &lt;chr&gt;        &lt;chr&gt;                 &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+## 1 4/1/2013     Bulkhead              Crater… Raiders   4017 Cubi…   1005.    321
+## 2 4/2/2013     Starship sensor array Outski… Trade …   1249 Cubi…   1129.    637
+## 3 4/3/2013     Starship sensor array Outski… Niima …   4434 Cubi…   1129.    637
+## 4 4/4/2013     Hull Panel            Crater… Raiders    286 Cubi…    843.    641
+## # … with abbreviated variable names ¹​destination, ²​price_per_pound</code></pre>
 <div id="help" class="section level4 unnumbered quiz">
 <h4><strong>Help!</strong></h4>
 <p>For more details on the <strong>join</strong> family of functions, you can type <code>?left_join</code> to see all the arguments and options.

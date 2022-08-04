@@ -23,10 +23,10 @@
 library(dplyr)
 library(knitr)
 
-starwars_heights <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
+starwars_heights <- tibble(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
                                height = c(172, 167, 202, 150, 246))       
 
-starwars_homeworlds <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
+starwars_homeworlds <- tibble(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
                                   homeworld = c("Tatooine", "Tatooine", "Tatooine", "Alderaan", "Ryloth"))
 
 
@@ -57,10 +57,10 @@ __Uh oh.__ There's no "Ayla Secura" in the height table and there's no "Greedo" 
 library(dplyr)
    
 # Create new tables 
-starwars_heights <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
+starwars_heights <- tibble(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
                                height = c(172, 167, 202, 150, 246))      
 
-starwars_homeworlds <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
+starwars_homeworlds <- tibble(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
                                   homeworld = c("Tatooine", "Tatooine", "Tatooine", "Alderaan", "Ryloth"))
 
 # Join the tables together by starwars_name
@@ -111,7 +111,7 @@ What will happen when you join the two tables?
 library(knitr)
 
 # Create height table 
-starwars_heights <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
+starwars_heights <- tibble(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
                                height = c(172, 167, 202, 150, 246))
 kable(starwars_heights)
 
@@ -126,7 +126,7 @@ kable(starwars_heights)
 
 ```{r, echo =F, warning=F, message=F}
 
-kable(data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
+kable(tibble(starwars_name = c("Luke Skywalker", "C-3PO", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
                                     homeworld = c("Tatooine", "Tatooine", "Tantive IV", "Tatooine", "Alderaan", "Ryloth")))
 ```
 
@@ -140,11 +140,11 @@ When you run the code below you'll see that **left_join** is very thorough and a
 
 ```{r, warning=F, message=F, results='hide'}
 # Create new tables 
-starwars_heights <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
+starwars_heights <- tibble(starwars_name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
                                height  = c(172, 167, 202, 150, 173))
 
 
-starwars_homeworlds <- data_frame(starwars_name = c("Luke Skywalker", "C-3PO", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
+starwars_homeworlds <- tibble(starwars_name = c("Luke Skywalker", "C-3PO", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
                                   homeworld = c("Tatooine", "Tatooine", "Tantive IV", "Tatooine", "Alderaan", "Ryloth"))
 
 # Join the tables together by Star Wars character name

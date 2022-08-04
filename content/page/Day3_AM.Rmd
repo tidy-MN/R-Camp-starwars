@@ -182,7 +182,7 @@ We can add `facet_wrap` to make a chart for each species.
 ggplot(star_df, aes(x = mass, y = height)) +
   geom_point(aes(color = species), size = 3) +
   facet_wrap("species") +
-  guides(color = FALSE)
+  guides(color = "none")
 ```
 
 

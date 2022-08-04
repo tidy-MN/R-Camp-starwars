@@ -93,7 +93,7 @@ ggplot(survey,
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
 
-- Okay, it is! You don't need to memorize everything.
+- Okay it is! You don't need to memorize everything.
     - Absorb what's possible and look up the details when you need them.
 - You are free to break things. Create errors. Make the computer angry. Learn through mistakes. R will forgive you.
 - _Cheat_ if you're stuck.

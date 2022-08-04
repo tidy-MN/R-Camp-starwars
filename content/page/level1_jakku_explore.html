@@ -13,26 +13,28 @@ output:
 <link href="/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -41,9 +43,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  { background-color: #f8f8f8; }
+  {  background-color: #f8f8f8; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
@@ -74,7 +76,7 @@ code span.va { color: #000000; } /* Variable */
 code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-  <link rel="stylesheet" href="css\camp_style.css" type="text/css" />
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
 
 
 <p><img src="../images/jakku_capture.jpg" style="margin: 0; margin-top: 24px;" width="540" /></p>
@@ -84,11 +86,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 First we load the packages we will need.</p>
 </blockquote>
 <p><br></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Load packages</span>
-
-<span class="kw">library</span>(readr)
-<span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(ggplot2)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>Start by reading in the data.
@@ -100,18 +102,19 @@ It is a clean version of the scrap data we’ve been using.</p>
 <p><br></p>
 <div id="read-in-data" class="section level3 unnumbered">
 <h3>Read in data</h3>
-<pre class="sourceCode r"><code class="sourceCode r">clean_scrap &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_clean.csv&quot;</span>)
-
-<span class="kw">head</span>(clean_scrap)</code></pre>
-<pre><code>## # A tibble: 6 x 6
-##   items         origin    destination price_per_ton amount_tons total_price
-##   &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt;               &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
-## 1 electroteles~ outskirts trade cara~         850.         868.     737981.
-## 2 atmospheric ~ craterto~ niima outp~          56.2      33978.    1909912.
-## 3 bulkhead      craterto~ raiders            1005.         645.     647843.
-## 4 main drive    blowback~ trade cara~         598.        1961.    1172184.
-## 5 flight recor~ outskirts niima outp~         591.         887      524155.
-## 6 proximity se~ outskirts raiders            1229.        7081     8702761.</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clean_scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_clean.csv&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(clean_scrap)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 6
+##   items                 origin        destination   price_per_…¹ amoun…² total…³
+##   &lt;chr&gt;                 &lt;chr&gt;         &lt;chr&gt;                &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 electrotelescope      outskirts     trade caravan        850.     868.  7.38e5
+## 2 atmospheric thrusters cratertown    niima outpost         56.2  33978.  1.91e6
+## 3 bulkhead              cratertown    raiders             1005.     645.  6.48e5
+## 4 main drive            blowback town trade caravan        598.    1961.  1.17e6
+## 5 flight recorder       outskirts     niima outpost        591.     887   5.24e5
+## 6 proximity sensor      outskirts     raiders             1229.    7081   8.70e6
+## # … with abbreviated variable names ¹​price_per_ton, ²​amount_tons, ³​total_price</code></pre>
 <p><br></p>
 <blockquote>
 <p>Did it load successfully?
@@ -130,18 +133,20 @@ Do you remember some of the functions to do that?
 </blockquote>
 <p><br></p>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#View the data</span>
-<span class="kw">glimpse</span>(clean_scrap)</code></pre>
-<pre><code>## Observations: 573
-## Variables: 6
-## $ items         &lt;chr&gt; &quot;electrotelescope&quot;, &quot;atmospheric thrusters&quot;, &quot;bu...
-## $ origin        &lt;chr&gt; &quot;outskirts&quot;, &quot;cratertown&quot;, &quot;cratertown&quot;, &quot;blowba...
-## $ destination   &lt;chr&gt; &quot;trade caravan&quot;, &quot;niima outpost&quot;, &quot;raiders&quot;, &quot;tr...
-## $ price_per_ton &lt;dbl&gt; 849.79, 56.21, 1004.83, 597.85, 590.93, 1229.03,...
-## $ amount_tons   &lt;dbl&gt; 868.4280, 33978.1545, 644.7285, 1960.6650, 887.0...
-## $ total_price   &lt;dbl&gt; 737981.43, 1909912.06, 647842.54, 1172183.57, 52...</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#View the data</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(clean_scrap)</span></code></pre></div>
+<pre><code>## Rows: 573
+## Columns: 6
+## $ items         &lt;chr&gt; &quot;electrotelescope&quot;, &quot;atmospheric thrusters&quot;, &quot;bulkhead&quot;,…
+## $ origin        &lt;chr&gt; &quot;outskirts&quot;, &quot;cratertown&quot;, &quot;cratertown&quot;, &quot;blowback town&quot;…
+## $ destination   &lt;chr&gt; &quot;trade caravan&quot;, &quot;niima outpost&quot;, &quot;raiders&quot;, &quot;trade cara…
+## $ price_per_ton &lt;dbl&gt; 849.79, 56.21, 1004.83, 597.85, 590.93, 1229.03, 56.21, …
+## $ amount_tons   &lt;dbl&gt; 868.4280, 33978.1545, 644.7285, 1960.6650, 887.0000, 708…
+## $ total_price   &lt;dbl&gt; 737981.43, 1909912.06, 647842.54, 1172183.57, 524154.91,…</code></pre>
 </p>
 </details>
 <p><br></p>
@@ -150,37 +155,40 @@ Do you remember some of the functions to do that?
 </blockquote>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#View a summary of the data</span>
-<span class="kw">summary</span>(clean_scrap)</code></pre>
-<pre><code>##     items              origin          destination       
-##  Length:573         Length:573         Length:573        
-##  Class :character   Class :character   Class :character  
-##  Mode  :character   Mode  :character   Mode  :character  
-##                                                          
-##                                                          
-##                                                          
-##  price_per_ton      amount_tons        total_price      
-##  Min.   :  29.15   Min.   :    0.01   Min.   :       5  
-##  1st Qu.: 314.23   1st Qu.:  238.99   1st Qu.:  128921  
-##  Median : 629.28   Median : 1298.00   Median :  757656  
-##  Mean   :1010.85   Mean   : 3724.23   Mean   : 3483802  
-##  3rd Qu.:1329.05   3rd Qu.: 4678.44   3rd Qu.: 2631778  
-##  Max.   :7211.01   Max.   :60116.67   Max.   :83712615</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#View a summary of the data</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(clean_scrap)</span></code></pre></div>
+<pre><code>##     items              origin          destination        price_per_ton    
+##  Length:573         Length:573         Length:573         Min.   :  29.15  
+##  Class :character   Class :character   Class :character   1st Qu.: 314.23  
+##  Mode  :character   Mode  :character   Mode  :character   Median : 629.28  
+##                                                           Mean   :1010.85  
+##                                                           3rd Qu.:1329.05  
+##                                                           Max.   :7211.01  
+##   amount_tons        total_price      
+##  Min.   :    0.01   Min.   :       5  
+##  1st Qu.:  238.99   1st Qu.:  128921  
+##  Median : 1298.00   Median :  757656  
+##  Mean   : 3724.23   Mean   : 3483802  
+##  3rd Qu.: 4678.44   3rd Qu.: 2631778  
+##  Max.   :60116.67   Max.   :83712615</code></pre>
 </p>
 </details>
 <p><br></p>
-<p><img src="../images/Unkar_Plutt.png" style="margin: 0; margin-top: 24px;" width="520" /></p>
 <blockquote>
 <p>What if you only want to keep the items and amount_tons fields?
 Use <em>select()</em> to create a new data frame keeping only those columns and save it as an object called <code>select_scrap</code>.</p>
 </blockquote>
 <p><br></p>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">select_scrap &lt;-<span class="st"> </span><span class="kw">select</span>(clean_scrap, items, amount_tons)</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>select_scrap <span class="ot">&lt;-</span> <span class="fu">select</span>(clean_scrap, items, amount_tons)</span></code></pre></div>
 </p>
 </details>
 <p><br></p>
@@ -189,9 +197,11 @@ Use <em>select()</em> to create a new data frame keeping only those columns and 
 </blockquote>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">select_scrap &lt;-<span class="st"> </span><span class="kw">arrange</span>(select_scrap, <span class="kw">desc</span>(items))</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>select_scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(select_scrap, <span class="fu">desc</span>(items))</span></code></pre></div>
 </p>
 </details>
 <p><br></p>
@@ -200,9 +210,11 @@ Use <em>select()</em> to create a new data frame keeping only those columns and 
 </blockquote>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">filter_scrap &lt;-<span class="st"> </span><span class="kw">filter</span>(select_scrap, amount_tons <span class="op">&gt;</span><span class="st"> </span><span class="dv">1000</span>)</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>filter_scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(select_scrap, amount_tons <span class="sc">&gt;</span> <span class="dv">1000</span>)</span></code></pre></div>
 </p>
 </details>
 <p><br></p>
@@ -211,7 +223,9 @@ Use <em>select()</em> to create a new data frame keeping only those columns and 
 </blockquote>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
 <p>You will need <code>%in%</code>, <code>c()</code> and <code>filter</code>.</p>
 </p>
@@ -219,10 +233,12 @@ Use <em>select()</em> to create a new data frame keeping only those columns and 
 <br>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">filter_scrap &lt;-<span class="st"> </span><span class="kw">filter</span>(select_scrap, amount_tons <span class="op">&gt;</span><span class="st"> </span><span class="dv">1000</span>,
-                       items <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;proximity sensor&quot;</span>, <span class="st">&quot;hyperdrive&quot;</span>))</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>filter_scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(select_scrap, amount_tons <span class="sc">&gt;</span> <span class="dv">1000</span>,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                       items <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;proximity sensor&quot;</span>, <span class="st">&quot;hyperdrive&quot;</span>))</span></code></pre></div>
 </p>
 </details>
 <p><br></p>
@@ -234,9 +250,11 @@ Use <em>select()</em> to create a new data frame keeping only those columns and 
 </p>
 </details>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">filter_scrap &lt;-<span class="st"> </span><span class="kw">mutate</span>(filter_scrap, <span class="dt">my_favorite_character =</span> <span class="st">&quot;Admiral Ackbar&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>filter_scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(filter_scrap, <span class="at">my_favorite_character =</span> <span class="st">&quot;Admiral Ackbar&quot;</span>)</span></code></pre></div>
 </p>
 </details>
 <p><br></p>
@@ -247,9 +265,11 @@ Use <em>mutate()</em> to calculate the number of pounds in your filtered dataset
 <br>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">filter_scrap &lt;-<span class="st"> </span><span class="kw">mutate</span>(filter_scrap, <span class="dt">amount_pounds =</span> amount_tons <span class="op">*</span><span class="st"> </span><span class="dv">2000</span>)</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>filter_scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(filter_scrap, <span class="at">amount_pounds =</span> amount_tons <span class="sc">*</span> <span class="dv">2000</span>)</span></code></pre></div>
 </p>
 </details>
 <p><br></p>
@@ -261,15 +281,19 @@ Use <em>mutate()</em> to make a column that reports “buy” if the item is a <
 <br>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">filter_scrap &lt;-<span class="st"> </span><span class="kw">mutate</span>(filter_scrap, <span class="dt">do_this =</span> <span class="kw">ifelse</span>(items <span class="op">==</span><span class="st"> &quot;hyperdrive&quot;</span>, <span class="st">&quot;buy&quot;</span>, <span class="st">&quot;ignore&quot;</span>))</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>filter_scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(filter_scrap, <span class="at">do_this =</span> <span class="fu">ifelse</span>(items <span class="sc">==</span> <span class="st">&quot;hyperdrive&quot;</span>, <span class="st">&quot;buy&quot;</span>, <span class="st">&quot;ignore&quot;</span>))</span></code></pre></div>
 </p>
 </details>
 <p><br></p>
 <p><img src="../images/Junk_Droid.jpg" style="margin: 0; margin-top: 24px;" width="440" />
-<br>
-&gt; Let’s take a closer look at our full dataset now (clean_scrap). We want to give the Junk Boss a summary of all of this data. He doesn’t have the patience to really look at a lot of data. He hates numbers! He likes money. He wants to know the following things:</p>
+<br></p>
+<blockquote>
+<p>Let’s take a closer look at our full dataset now (clean_scrap). We want to give the Junk Boss a summary of all of this data. He doesn’t have the patience to really look at a lot of data. He hates numbers! He likes money. He wants to know the following things:</p>
+</blockquote>
 <blockquote>
 <ol style="list-style-type: decimal">
 <li>The sum of all the money potentially earned by item.</li>
@@ -282,7 +306,9 @@ Use <em>mutate()</em> to make a column that reports “buy” if the item is a <
 <br>
 <br>
 <details>
-<summary class = "btn_code_green"> <strong>Hint: </strong> </summary>
+<summary class="btn_code_green">
+<strong>Hint: </strong>
+</summary>
 <p>
 <p>You will need the pipe <code>%&gt;%</code>, <code>group_by()</code>, <code>summarise()</code>, <code>sum()</code>, <code>max()</code>, <code>quantile()</code>, and <code>n()</code>.</p>
 </p>
@@ -291,38 +317,46 @@ Use <em>mutate()</em> to make a column that reports “buy” if the item is a <
 <p><br>
 <br></p>
 <details>
-<summary class = "btn_code_green"> <strong>Hint # 2! </strong> </summary>
+<summary class="btn_code_green">
+<strong>Hint # 2! </strong>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">summary_scrap &lt;-<span class="st"> </span>clean_scrap <span class="op">%&gt;%</span>
-<span class="st">                </span><span class="kw">group_by</span>() <span class="op">%&gt;%</span>
-<span class="st">                </span><span class="kw">summarise</span>()</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>summary_scrap <span class="ot">&lt;-</span> clean_scrap <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">group_by</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">summarise</span>()</span></code></pre></div>
 </p>
 </details>
 <p><br></p>
 <br>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">summary_scrap &lt;-<span class="st"> </span>clean_scrap <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">group_by</span>(items) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">sum_price =</span> <span class="kw">sum</span>(total_price),
-            <span class="dt">max_price =</span> <span class="kw">max</span>(total_price),
-            <span class="dt">count_price =</span> <span class="kw">n</span>(),
-            <span class="dt">price_35th =</span> <span class="kw">quantile</span>(total_price, <span class="fl">0.35</span>))</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>summary_scrap <span class="ot">&lt;-</span> clean_scrap <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(items) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sum_price =</span> <span class="fu">sum</span>(total_price),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_price =</span> <span class="fu">max</span>(total_price),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">count_price =</span> <span class="fu">n</span>(),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">price_35th =</span> <span class="fu">quantile</span>(total_price, <span class="fl">0.35</span>))</span></code></pre></div>
 </p>
 </details>
 <p><br></p>
 <blockquote>
-<p>Oh boy, old Unkar just learned about plots. What will he want next? He wants a plot of the maximum total prices by item. We must create this plot or perish. Try both geom_col() and geom_point(0) to see which make a more simple look at the price maxima.</p>
+<p>Oh boy, Unkar just learned about plots. What will he want next?</p>
+<p>Now he wants a plot of the maximum total prices by item.</p>
+<p>Try both <code>geom_col()</code> and <code>geom_point()</code> to see which makes a simpler plot to understand.</p>
 </blockquote>
 <br>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> summary_scrap, <span class="kw">aes</span>(items, max_price)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_col</span>()</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> summary_scrap, <span class="fu">aes</span>(items, max_price)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
 <img src="/page/level1_jakku_explore_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 </p>
 </details>
@@ -330,48 +364,55 @@ Use <em>mutate()</em> to make a column that reports “buy” if the item is a <
 <br>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> summary_scrap, <span class="kw">aes</span>(items, max_price)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>()</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> summary_scrap, <span class="fu">aes</span>(items, max_price)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="/page/level1_jakku_explore_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </p>
 </details>
 <p><br></p>
 <blockquote>
-<p>Try <em><code>coord_flip()</code></em> to make the plot more readable. If you’re interested in learning more about <em><code>coord_flip()</code></em>, ask R for help! <em><code>?coord_flip</code></em></p>
+<p>Try <em><code>coord_flip()</code></em> to make the plot more readable.</p>
+<p>If you’re interested in learning more about <em><code>coord_flip()</code></em>, ask R for help! <em><code>?coord_flip</code></em></p>
 </blockquote>
 <br>
 <br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> summary_scrap, <span class="kw">aes</span>(items, max_price)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> summary_scrap, <span class="fu">aes</span>(items, max_price)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <img src="/page/level1_jakku_explore_files/figure-html/unnamed-chunk-16-1.png" width="672" />
 </p>
 </details>
 <p><br></p>
 <blockquote>
-<p>This plot might look a lot better if the maximum data were sorted. Try <em>reorder()</em> to make this chart way more readable. <em>Type “?reorder” to learn more about that function.</em></p>
+<p>This plot might look better if the columns were sorted by their values.</p>
+<p>Try <em>reorder()</em> to make this chart way more readable. <em>Type “?reorder” to learn more about that function.</em></p>
 </blockquote>
 <br>
-<br>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> summary_scrap, <span class="kw">aes</span>(<span class="kw">reorder</span>(items, max_price), max_price)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> summary_scrap, <span class="fu">aes</span>(<span class="fu">reorder</span>(items, max_price), max_price)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <img src="/page/level1_jakku_explore_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 </p>
 </details>
 <p><br></p>
 <blockquote>
 <p>Nice work!!
-You may now move on to the Commodore level analysis.
-<img src="../images/congrats.jpg" width="300" /></p>
+You may now move on to the Commodore level analysis.</p>
 </blockquote>
+<p><img src="../images/congrats.jpg" width="300" /></p>
 <p><br></p>
 </div>

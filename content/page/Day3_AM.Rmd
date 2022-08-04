@@ -85,7 +85,7 @@ cat(readLines("porg_tabs.txt"))
 
 ## The `ggplot()` sandwich {-}
 
-![](../images/auto_plot.gif){style="margin-top: -22px; max-width: 108%; margin-bottom: -6px;"}
+![](../images/auto_plot.gif){style="margin-top: -10px; max-width: 108%; margin-bottom: -6px;"}
 
 
 

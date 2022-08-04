@@ -256,7 +256,7 @@ leaflet(outposts) %>%
   addTiles() %>%
   addMarkers(data  = land_pad,
              label = "Land HERE!",  #<<
-             labelOptions = labelOptions(noHide = T))  #<<
+             labelOptions = labelOptions(noHide = TRUE))  #<<
 ```
 
 
@@ -287,7 +287,7 @@ leaflet(outposts) %>%
   addTiles() %>%
   addMarkers(data  = land_pad,
              label = "Land HERE???",  
-             labelOptions = labelOptions(noHide = T)) %>%
+             labelOptions = labelOptions(noHide = TRUE)) %>%
   addPolygons(data = outposts_new,    #<<
               fillColor = "yellow")   #<<
 ```

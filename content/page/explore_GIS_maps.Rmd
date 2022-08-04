@@ -27,7 +27,7 @@ dt_options <- list(scrollX = T, autoWidth = T, searching = F, ordering = F, leng
 
 # The `sf` package
 
-The `sf` _(simple features)_ package can read and save shapefiles, and it plays nicely with the _dpylr_ functions you've been learning. Let's install it.
+The `sf` _(simple features)_ package can read and save shapefiles, and it plays nicely with the _dpylr_ functions you've been learning. 
 
 ```{r, eval=F}
 install.packages("sf")
@@ -58,7 +58,7 @@ census <- st_read("data/Census2010_med_household_income.shp", stringsAsFactors =
 library(dplyr)
 library(sf)
 
-census <- st_read("../data/census_shapefile/Census2010_med_household_income.shp", stringsAsFactors = F)
+census <- st_read("../data/Census_shapefile/Census2010_med_household_income.shp", stringsAsFactors = F)
 ```
 <br>
 
@@ -97,13 +97,8 @@ census %>% select(HHold_MedI) %>% plot(graticule = T, axes = T)
 
 ## Plot with _ggplot2_ and _viridis_ colors.
 
-Run the code below to get the latest development version of _ggplot2_ and the _viridis_ color palette.
+Run the code below to get the wonderful _viridis_ color palette.
 ```{r, eval=F}
-
-install.packages("devtools")
-  
-devtools::install_github("tidyverse/ggplot2")
-  
 install.packages("viridis")
 
 ```
@@ -111,7 +106,6 @@ install.packages("viridis")
 <br>
 
 Now you're ready to make some _ggplot_ maps.
-
 ```{r}
 # Load updated ggplot2 and colors
 library(ggplot2)
@@ -161,7 +155,6 @@ The EPSG code for __UTM zone 15N__ is ` 26915 `.
 
 ## Create a new map in _UTM_ coordinates
 ```{r}
-
 # Transform coordinates
 census_utm <- census %>% st_transform(26915)
 
@@ -170,12 +163,11 @@ census_utm <- census %>% st_transform(26915)
 census_utm %>% select(HHold_MedI) %>% plot()
 ```
 
-> Wow! Can you see the difference?
+> Hmmm... that's a subtle difference.
 
 
 # Centroids
 ```{r}
-
 # Calculate Census tract centroids
 tract_centers <- census_utm %>% st_centroid()
 
@@ -193,8 +185,8 @@ center_coords <- st_coordinates(tract_centers) %>% as_data_frame()
 
 # Add centroid coordinates as columns to polygon data
 census_utm <- census_utm %>%  
-                    mutate(utm_x = center_coords$X,
-                           utm_y = center_coords$Y)
+              mutate(utm_x = center_coords$X,
+                     utm_y = center_coords$Y)
 
 # Check if it worked
 names(census_utm)
@@ -221,11 +213,11 @@ census_utm %>%
 big_tracts <- filter(census_utm, rank(area) > 433)
 
 
-# Convert to a normal plain data_frame
-big_tracts <- as_data_frame(big_tracts)
+# Convert to a plain data-frame
+big_tracts <- st_set_geometry(big_tracts, NULL)
 
 
-# Put a big dots to the 3 largest Census tracts
+# Put big points to the 3 largest Census tracts
 ggplot(census_utm) + 
   geom_sf(aes(fill = HHold_MedI)) + 
   geom_point(data = big_tracts, aes(x = utm_x, y = utm_y), size = 7) +
@@ -423,7 +415,7 @@ _Reference:_ [UseR 2017, Reading and writing spatial data](https://edzer.github.
 
 <br>
 
-### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Day 3-AM](day3_am.html) {-}
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Day 3-PM](day3_pm.html) {-}
 
 <br>
 

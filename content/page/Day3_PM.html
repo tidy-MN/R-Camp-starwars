@@ -97,10 +97,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="psstwe-really-need-to-talk" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Psst…we really need to talk</h1>
 <hr>
-<p><img src="../images/bert_ernie.jpg" width=248 align="right"></p>
-<div id="reading-aloud" class="section level3 unnumbered">
-<h3><i class="fas fa-book"></i> Reading aloud</h3>
-<p><br></p>
+<p><img src="../images/bert_ernie.jpg" style="float: left; width: 33%; margin-right: 20px;"></p>
+<p><br><br></p>
 <blockquote>
 <p>“Read more to write better.”<br />
 <em>-someone famous</em></p>
@@ -108,6 +106,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div style="clear: both;">
 
 </div>
+<div id="reading-aloud" class="section level3 unnumbered">
+<h3><i class="fas fa-book"></i> Reading aloud</h3>
 <p>Let’s practice reading R scripts with a partner.</p>
 <p>They’ll listen to what you say and turn it into R code.</p>
 <p>It’s like a game of <em>telephone</em>, but for R.</p>
@@ -115,8 +115,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="instructions" class="section level3 unnumbered">
 <h3>Instructions</h3>
-<p><em>Find a partner. One of you will be <strong>Bert</strong> and one of you is <strong>Ernie</strong>.</em></p>
 <ol style="list-style-type: decimal">
+<li>Find a partner.
+<ul>
+<li>One of you gets to be <strong>Bert</strong> and one of you is <strong>Ernie</strong>.</li>
+</ul></li>
 <li>Bert will look at the first code block and tell Ernie what it does.</li>
 <li>Ernie will then write some code that accomplishes what Bert said.</li>
 <li>Then Bert can offer more clues to help.
@@ -127,7 +130,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p><br></p>
 <details>
-<summary class="btn_code">
+<summary class="btn_code_blue">
 Example code to read aloud
 </summary>
 <p>Say aloud what this code does or tries to accomplish.</p>
@@ -145,19 +148,19 @@ Example code to read aloud
 </details>
 <p><br>
 <br></p>
-<blockquote>
-<p>⚠️ <strong>Wait to click below until you decide who’s Bert.</strong></p>
+<blockquote style="background-color: #f3ed8c;">
+⚠️ <strong>Wait to click below until you decide who’s Bert.</strong>
 </blockquote>
 </div>
-<div id="berts-turn-to-read-big-fish" class="section level2 unnumbered">
-<h2>1. Bert’s turn to read: <code>BIG fish</code> <i class="fas fa-fish"></i></h2>
+<div id="berts-turn-to-read-big-fish" class="section level3 unnumbered">
+<h3>1. <strong>Bert’s</strong> turn to read: <code>BIG fish</code> <i class="fas fa-fish"></i></h3>
 <blockquote>
-<p><strong>Don’t look Ernie!</strong></p>
+<p><strong>No peaking Ernie!</strong></p>
 </blockquote>
 <p>We’ll start by turning some fishy code into plain language.</p>
 <details>
 <summary class="btn_code_blue">
-<strong>Bert’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>’s only!</strong> <em>(No peeking Ernie)</em>
+<strong>Bert’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>’s only!</strong>
 </summary>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -173,8 +176,8 @@ Example code to read aloud
 </details>
 <p><br><br></p>
 </div>
-<div id="ernies-turn-to-read-sleepy-sheep" class="section level2 unnumbered">
-<h2>2. Ernie’s turn to read: <code>Sleepy sheep</code> 🐑🐑🐑 <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i></h2>
+<div id="ernies-turn-to-read-sleepy-sheep" class="section level3 unnumbered">
+<h3>2. <strong>Ernie’s</strong> turn to read: <code>Sleepy sheep</code> 🐑🐑🐑 <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i></h3>
 <details>
 <summary class="btn_code_blue">
 <strong>Ernie’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>’s only!</strong>
@@ -190,12 +193,11 @@ Example code to read aloud
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>my_sheep <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sheep_name =</span> names, </span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sheep_id   =</span> sheep_ids)</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>counting <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(my_sheep, <span class="fu">aes</span>(<span class="at">x =</span> names, <span class="at">y =</span> sheep_id)) <span class="sc">+</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">geom_point</span>()</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>counting <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Counting sheep backwards makes me Zzzz...&quot;</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>asleep <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code></pre></div>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(my_sheep, <span class="fu">aes</span>(<span class="at">x =</span> names, <span class="at">y =</span> sheep_id)) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Counting sheep backwards makes me Zzzz...&quot;</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>asleep <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code></pre></div>
 </details>
 <div style="clear: both;">
 
@@ -428,65 +430,28 @@ Planet: <code>Earth</code></p>
 <hr>
 <p>You’re free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let’s look at some Earth data.</p>
 <p><br></p>
-<p>Choose one of the data exercises below to begin.</p>
 <div class="row3" style="margin-top: 20px;">
-<div class="column3">
-<div align="center" style="margin-left: -18px;">
-<p><a href="explore_wind_rose.html"> <strong>Air and Wind</strong> </a></p>
-</div>
-</div>
 <div class="column3">
 <div align="center">
 <p><a href="explore_GIS_maps.html" style="margin-left: auto;"> <strong>Maps for humans</strong> </a></p>
 </div>
 </div>
-<div class="column3">
-<div align="center">
-<p><a href="explore_messy_emissions.html" style="margin-left: auto;"> <strong>Tidy emissions</strong> </a></p>
-</div>
-</div>
 </div>
 <div class="row3">
-<div class="column3" style="height: 160px; max-height: 160px;">
-<div style="border: 0px solid grey;">
-<p><a href="explore_wind_rose.html">
-<img src="../images/wind_freq.png" style="width: 290px; margin-top: 14px;" />
-</a></p>
-</div>
-</div>
 <div class="column3" style="height: 160px; max-height: 160px;">
 <div style="border: 1px solid grey; max-height: 160px; overflow: hidden;">
 <p><a href="explore_GIS_maps.html"><img src="../images/map_Hennepin.png" style="width: 290px;"></a></p>
 </div>
 </div>
-<div class="column3" style="height: 160px; max-height: 160px;">
-<div style="border: 1px solid grey; max-height: 160px; overflow: hidden;">
-<p><a href="explore_messy_emissions.html"><img src="../images/messy_lab.png" style="width: 290px;"></a></p>
-</div>
-</div>
 </div>
 <div class="row3">
 <div class="column3">
-<p>Explore the connection between wind direction, wind speed, and pollution concentrations near Fond du Lac. Make a wind rose and then a <code>pollution rose</code>, two of my favorite flowers.</p>
-</div>
-<div class="column3">
 <p>Study the housing habits of Earthlings. Create interactive maps showing the spatial clustering of different social characteristics of the human species.</p>
-</div>
-<div class="column3">
-<p>Start with messy wide data and transform into a tidy table ready for easy plotting, summarizing, and comparing. For the grand finale, read an entire folder of files into 1 table.</p>
 </div>
 </div>
 <div class="row3" style="margin-top: 2px;">
 <div class="column3">
-<p>Media: <code>air</code><br />
-Planet: <code>Earth</code></p>
-</div>
-<div class="column3">
 <p>Media: <code>social-human</code><br />
-Planet: <code>Earth</code></p>
-</div>
-<div class="column3">
-<p>Media: <code>air</code><br />
 Planet: <code>Earth</code></p>
 </div>
 </div>

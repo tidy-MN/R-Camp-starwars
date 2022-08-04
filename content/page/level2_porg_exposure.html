@@ -11,26 +11,28 @@ output:
 ---
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -39,9 +41,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  { background-color: #f8f8f8; }
+  {  background-color: #f8f8f8; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
@@ -72,30 +74,32 @@ code span.va { color: #000000; } /* Variable */
 code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-  <link rel="stylesheet" href="css\camp_style.css" type="text/css" />
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
 
 
 <p><img src="../images/fly_porgs_cut.PNG" style="margin: 0; margin-top: 24px;" width="520" /></p>
 <p><br></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load packages</span>
-<span class="kw">library</span>(readr)
-<span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(ggplot2)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>Start by reading in the Porg data.</p>
 </blockquote>
-<pre class="sourceCode r"><code class="sourceCode r">porg_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/Porg_samples.csv&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>porg_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/Porg_samples.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>Take a couple of minutes to get an overview of the data. Do you remember some of the functions to do that?</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">view</span>(porg_data)
-<span class="kw">glimpse</span>(porg_data)
-<span class="kw">summary</span>(porg_data)</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(porg_data)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(porg_data)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(porg_data)</span></code></pre></div>
 </p>
 </details>
 <p><br><br></p>
@@ -107,10 +111,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Now create a scatterplot showing the relationship between conncetration and rxn_time.</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> porg_data, <span class="kw">aes</span>(<span class="dt">x =</span> Concentration, <span class="dt">y =</span> rxn_time)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>()</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> porg_data, <span class="fu">aes</span>(<span class="at">x =</span> Concentration, <span class="at">y =</span> rxn_time)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="/page/level2_porg_exposure_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </p>
 </details>
@@ -119,10 +125,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>What type of cleaning does this data set need? Let’s take a look at the lowest and highest concentration levels and see if anything looks odd.</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">porg_data &lt;-<span class="st"> </span><span class="kw">arrange</span>(porg_data, Concentration)
-porg_data &lt;-<span class="st"> </span><span class="kw">arrange</span>(porg_data, <span class="kw">desc</span>(Concentration))</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>porg_data <span class="ot">&lt;-</span> <span class="fu">arrange</span>(porg_data, Concentration)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>porg_data <span class="ot">&lt;-</span> <span class="fu">arrange</span>(porg_data, <span class="fu">desc</span>(Concentration))</span></code></pre></div>
 </p>
 </details>
 <p><br><br></p>
@@ -130,9 +138,11 @@ porg_data &lt;-<span class="st"> </span><span class="kw">arrange</span>(porg_dat
 <p>Hmmm. Looks like there’s some negative numbers. Is that possible for Corundum measurements? We ask our team of Bot measurement analysts and they say NO! So, let’s filter out the negative concentration values.</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">porg_data &lt;-<span class="st"> </span><span class="kw">filter</span>(porg_data, Concentration <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>porg_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(porg_data, Concentration <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div>
 </p>
 </details>
 <p><br><br></p>
@@ -140,9 +150,11 @@ porg_data &lt;-<span class="st"> </span><span class="kw">arrange</span>(porg_dat
 <p>Let’s look at the data set again. I see a units column. Are all the units the same? Looks like the Concentration units are in both ppb and ppm. Let’s add a column with consistent concentration units, and convert the ppm concentrations into ppb.</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">porg_data &lt;-<span class="st"> </span><span class="kw">mutate</span>(porg_data, <span class="dt">conc_ppb =</span> <span class="kw">ifelse</span>(Conc_units <span class="op">==</span><span class="st"> &quot;ppm&quot;</span>, Concentration <span class="op">*</span><span class="st"> </span><span class="dv">1000</span>, Concentration))</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>porg_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(porg_data, <span class="at">conc_ppb =</span> <span class="fu">ifelse</span>(Conc_units <span class="sc">==</span> <span class="st">&quot;ppm&quot;</span>, Concentration <span class="sc">*</span> <span class="dv">1000</span>, Concentration))</span></code></pre></div>
 </p>
 </details>
 <p><br><br></p>
@@ -153,10 +165,12 @@ porg_data &lt;-<span class="st"> </span><span class="kw">arrange</span>(porg_dat
 <p>So, let’s re-plot the data</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> porg_data, <span class="kw">aes</span>(<span class="dt">x =</span> conc_ppb, <span class="dt">y =</span> rxn_time)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>()</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> porg_data, <span class="fu">aes</span>(<span class="at">x =</span> conc_ppb, <span class="at">y =</span> rxn_time)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="/page/level2_porg_exposure_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </p>
 </details>
@@ -165,10 +179,12 @@ porg_data &lt;-<span class="st"> </span><span class="kw">arrange</span>(porg_dat
 <p>Let’s calculate the mean concentration by island to determine if there might be Corundum concentration differences by island. Do you remeber which function to use here?</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r">porg_island_summary &lt;-<span class="st"> </span><span class="kw">group_by</span>(porg_data, Island) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_corundum =</span> <span class="kw">mean</span>(conc_ppb))</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>porg_island_summary <span class="ot">&lt;-</span> <span class="fu">group_by</span>(porg_data, Island) <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_corundum =</span> <span class="fu">mean</span>(conc_ppb))</span></code></pre></div>
 </p>
 </details>
 <p><br><br></p>
@@ -176,10 +192,12 @@ porg_data &lt;-<span class="st"> </span><span class="kw">arrange</span>(porg_dat
 <p>Maybe making a box plot would help answer this question more clearly?</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> porg_data, <span class="kw">aes</span>(<span class="dt">x =</span> Island, <span class="dt">y =</span>  conc_ppb)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_boxplot</span>()</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> porg_data, <span class="fu">aes</span>(<span class="at">x =</span> Island, <span class="at">y =</span>  conc_ppb)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="/page/level2_porg_exposure_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </p>
 </details>
@@ -188,25 +206,28 @@ porg_data &lt;-<span class="st"> </span><span class="kw">arrange</span>(porg_dat
 <p>Let’s fill the boxplot with a different color for each island to make it look better.</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> porg_data, <span class="kw">aes</span>(<span class="dt">x =</span> Island, <span class="dt">y =</span>  conc_ppb, <span class="dt">fill =</span> Island)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_boxplot</span>()</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> porg_data, <span class="fu">aes</span>(<span class="at">x =</span> Island, <span class="at">y =</span> conc_ppb, <span class="at">fill =</span> Island)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="/page/level2_porg_exposure_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </p>
 </details>
-<p><br><br></p>
-<p><img src="../images/porgs_4.jpg" style="margin: 0; margin-top: 24px;" width="520" /></p>
 <p><br></p>
 <blockquote>
-<p>Let’s make an individual scatterplot for each island. Remember which function to use?</p>
+<p>Let’s make an individual scatterplot for each island by splitting the Islands into multiple “facets”.</p>
+<p>Remember which function to use?</p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> porg_data, <span class="kw">aes</span>(<span class="dt">x =</span> conc_ppb, <span class="dt">y =</span>  rxn_time)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="st">&quot;Island&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> porg_data, <span class="fu">aes</span>(<span class="at">x =</span> conc_ppb, <span class="at">y =</span>  rxn_time)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;Island&quot;</span>)</span></code></pre></div>
 <p><img src="/page/level2_porg_exposure_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </p>
 </details>
@@ -215,12 +236,15 @@ porg_data &lt;-<span class="st"> </span><span class="kw">arrange</span>(porg_dat
 <p>Try an x-y scatter plot of conc_ppb and rxn_time and experiment with <code>geom_smooth(method = "loess")</code></p>
 </blockquote>
 <details>
-<summary class = "btn_code_blue"><em>Show solution</em></summary>
+<summary class="btn_code_blue">
+<em>Show solution</em>
+</summary>
 <p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> porg_data, <span class="kw">aes</span>(<span class="dt">x =</span> conc_ppb, <span class="dt">y =</span>  rxn_time)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Island)</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> porg_data, <span class="fu">aes</span>(<span class="at">x =</span> conc_ppb, <span class="at">y =</span> rxn_time)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;loess&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Island)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="/page/level2_porg_exposure_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </p>
 </details>

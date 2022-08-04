@@ -92,8 +92,6 @@ summary(clean_scrap)
 </p></details>
 <br>
 
-![](../images/Unkar_Plutt.png){width="520" style="margin: 0; margin-top: 24px;"}
-
 > What if you only want to keep the items and amount_tons fields? 
 > Use _select()_ to create a new data frame keeping only those columns and save it as an object called `select_scrap`.
 
@@ -212,6 +210,7 @@ filter_scrap <- mutate(filter_scrap, do_this = ifelse(items == "hyperdrive", "bu
 
 ![](../images/Junk_Droid.jpg){width="440" style="margin: 0; margin-top: 24px;"}
 <br>
+
 > Let's take a closer look at our full dataset now (clean_scrap). We want to give the Junk Boss a summary of all of this data. He doesn't have the patience to really look at a lot of data. He hates numbers! He likes money. He wants to know the following things: 
 
 > 1. The sum of all the money potentially earned by item.
@@ -241,8 +240,8 @@ You will need the pipe `%>%`, `group_by()`, `summarise()`, `sum()`, `max()`, `qu
 <p>
 ```{r, eval=F}
 summary_scrap <- clean_scrap %>%
-                group_by() %>%
-                summarise()
+                 group_by() %>%
+                 summarise()
 ```
 
 </p></details>
@@ -265,7 +264,11 @@ summary_scrap <- clean_scrap %>%
 </p></details>
 <br>
 
-> Oh boy, old Unkar just learned about plots. What will he want next? He wants a plot of the maximum total prices by item. We must create this plot or perish. Try both geom_col() and geom_point(0) to see which make a more simple look at the price maxima.
+> Oh boy, Unkar just learned about plots. What will he want next? 
+>
+> Now he wants a plot of the maximum total prices by item. 
+> 
+> Try both `geom_col()` and `geom_point()` to see which makes a simpler plot to understand.
 
 <br>
 <br>
@@ -290,13 +293,13 @@ ggplot(data = summary_scrap, aes(items, max_price)) +
   geom_point()
 ```
 
-
-  
 </p></details>
 <br>
 
 
-> Try _`coord_flip()`_ to make the plot more readable. If you're interested in learning more about _`coord_flip()`_, ask R for help! _`?coord_flip`_
+> Try _`coord_flip()`_ to make the plot more readable. 
+> 
+> If you're interested in learning more about _`coord_flip()`_, ask R for help! _`?coord_flip`_
 
 
 <br>
@@ -313,9 +316,10 @@ ggplot(data = summary_scrap, aes(items, max_price)) +
 <br>
 
 
-> This plot might look a lot better if the maximum data were sorted. Try _reorder()_ to make this chart way more readable. _Type "?reorder" to learn more about that function._
+> This plot might look better if the columns were sorted by their values. 
+> 
+> Try _reorder()_ to make this chart way more readable. _Type "?reorder" to learn more about that function._
 
-<br>
 <br>
 <details>
 <summary class = "btn_code_blue">_Show solution_</summary>
@@ -330,6 +334,7 @@ ggplot(data = summary_scrap, aes(reorder(items, max_price), max_price)) +
 
 > Nice work!!
 > You may now move on to the Commodore level analysis.
+
 ![](../images/congrats.jpg){width="300"}
 
 

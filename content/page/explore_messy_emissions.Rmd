@@ -225,11 +225,11 @@ list.files("../")
 ```
 
 
-```{r, echo=F, eval=T}
+```{r, echo=F, eval=F}
 # Type in the folder where you downloaded the messy data folder
 # R will look for your data there
 
-folder_path <- "X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/ITEP/Web/learnR/content/data/messy_data"
+folder_path <- "data/messy_data"
 
 folder_emissions <- list.files(folder_path)
 
@@ -298,7 +298,7 @@ glimpse(data_emissions)
 
 <br>
 
-### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Day3 AM](../page/day3_am.html) {-}
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Day3 PM](../page/day3_pm.html) {-}
 
 
 <br>

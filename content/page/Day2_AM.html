@@ -12,6 +12,10 @@ output:
     monofont: Source Code Pro
 ---
 
+<script src="/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
 <link href="/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
@@ -165,33 +169,33 @@ hr {background: #62BE2C;}
 <tbody>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2016-06-09</td>
-<td align="right">17</td>
-<td align="right">71.6</td>
+<td align="left">2018-04-24</td>
+<td align="right">4</td>
+<td align="right">35.6</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7001</td>
-<td align="left">2017-08-07</td>
-<td align="right">16</td>
-<td align="right">74.6</td>
+<td align="left">2018-04-10</td>
+<td align="right">11</td>
+<td align="right">50.0</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2017-08-16</td>
-<td align="right">13</td>
-<td align="right">71.6</td>
+<td align="left">2017-06-06</td>
+<td align="right">32</td>
+<td align="right">79.4</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7554</td>
-<td align="left">2017-07-09</td>
-<td align="right">5</td>
-<td align="right">71.6</td>
+<td align="left">2018-05-08</td>
+<td align="right">14</td>
+<td align="right">45.2</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2017-06-17</td>
-<td align="right">19</td>
-<td align="right">80.0</td>
+<td align="left">2017-04-28</td>
+<td align="right">2</td>
+<td align="right">38.0</td>
 </tr>
 </tbody>
 </table>
@@ -591,7 +595,7 @@ But don’t worry, we can do it all with SF’s <code>st_read()</code> function.
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">data  =</span> land_pad,</span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="st">&quot;Land HERE!&quot;</span>,  <span class="co">#&lt;&lt;</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">noHide =</span> T))  <span class="co">#&lt;&lt;</span></span></code></pre></div>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">noHide =</span> <span class="cn">TRUE</span>))  <span class="co">#&lt;&lt;</span></span></code></pre></div>
 <div id="htmlwidget-2" style="width:864px;height:384px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addCircles","args":[[36.6552,36.583748,36.5979],[-118.8469,-118.8195,-118.90218],300,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,["1NO","1NL","3NB"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]},{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[36.612287517514,-118.856192682743,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Land HERE!",{"interactive":false,"permanent":true,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[36.583748,36.6552],"lng":[-118.90218,-118.8195]}},"evals":[],"jsHooks":[]}</script>
 <p><br></p>
@@ -619,7 +623,7 @@ But don’t worry, we can do it all with SF’s <code>st_read()</code> function.
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">data  =</span> land_pad,</span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="st">&quot;Land HERE???&quot;</span>,  </span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">noHide =</span> T)) <span class="sc">%&gt;%</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">noHide =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">data =</span> outposts_new,    <span class="co">#&lt;&lt;</span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillColor =</span> <span class="st">&quot;yellow&quot;</span>)   <span class="co">#&lt;&lt;</span></span></code></pre></div>
 <p><br></p>

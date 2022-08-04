@@ -160,18 +160,18 @@ ggplot(data = porg_data, aes(x = Island, y =  conc_ppb)) +
 <p>
 
 ```{r}
-ggplot(data = porg_data, aes(x = Island, y =  conc_ppb, fill = Island)) +
+ggplot(data = porg_data, aes(x = Island, y = conc_ppb, fill = Island)) +
   geom_boxplot()
 ```
 
 </p></details>
-<br><br>
-
-![](../images/porgs_4.jpg){width="520" style="margin: 0; margin-top: 24px;"}
 
 <br>
 
-> Let's make an individual scatterplot for each island. Remember which function to use?
+
+> Let's make an individual scatterplot for each island by splitting the Islands into multiple "facets". 
+>
+> Remember which function to use?
 
 <details>
 <summary class = "btn_code_blue">_Show solution_</summary>
@@ -195,7 +195,7 @@ ggplot(data = porg_data, aes(x = conc_ppb, y =  rxn_time)) +
 <p>
 
 ```{r, warning = FALSE}
-ggplot(data = porg_data, aes(x = conc_ppb, y =  rxn_time)) +
+ggplot(data = porg_data, aes(x = conc_ppb, y = rxn_time)) +
   geom_point() +
   geom_smooth(method = "loess") +
   facet_wrap(~Island)

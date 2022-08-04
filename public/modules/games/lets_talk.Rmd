@@ -4,8 +4,8 @@
 
 <br><br>
 
-> "Read more to write better."  
-> *-someone famous*
+> "The secret to writing better is reading more."  
+> *-someone*
 
 <div style="clear: both;"></div>
 
@@ -68,7 +68,7 @@ red_veggies <- filter(fillings, food_type == "vegetable", color = "red")
 We'll start by turning some fishy code into plain language.
 
 <details>
-<summary class="btn_code_blue"> **Bert's <i class="fas fa-eye"></i><i class="fas fa-eye"></i>'s only!**   </summary>
+<summary class="btn_code_blue"> **Bert's <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!**   </summary>
     
 ```{r, eval=F}
 library(readr)
@@ -94,7 +94,7 @@ nrow(big_fishes)
 ### 2. **Ernie's** turn to read: `Sleepy sheep` 🐑🐑🐑 <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i> {-}
 
 <details>
-<summary class="btn_code_blue"> **Ernie's <i class="fas fa-eye"></i><i class="fas fa-eye"></i>'s only!** </summary>
+<summary class="btn_code_blue"> **Ernie's <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!** </summary>
     
 ```{r, eval=F}
 
@@ -114,6 +114,33 @@ ggplot(my_sheep, aes(x = names, y = sheep_id)) +
     labs(title = "Counting sheep backwards makes me Zzzz...")
 
 asleep <- TRUE
+```   
+
+</details>
+
+
+<br><br>\
+
+### 3. **Charades!** Act it out {-}
+
+Instead of saying what the code does out load, act out what the code does without speaking at ALL.
+
+Ask Barbara very nicely to go first.
+
+<details>
+<summary class="btn_code_blue"> **Barbara's <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!** </summary>
+    
+```{r, eval=F}
+
+cats_df <- read_excel("lost_cats.xlsx")
+
+kittens <- filter(cats_df, age < 1)
+
+catfood <- "SPAM"
+
+hungry_kitties <- filter(kittens, hungry == TRUE)
+
+fed_cats <- TRUE
 ```   
 
 </details>

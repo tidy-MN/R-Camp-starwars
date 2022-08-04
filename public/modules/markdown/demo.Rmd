@@ -111,11 +111,9 @@ To add options to the YAML, add them as "children" under the `html_document:` se
 <br>
 
 <div class="yoda">
-###  Yoda says {-}
+### More Markdown resources {-}
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
-
-### More resources {-}
 
 -   [The R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) by Yihui Xie, Christophe Dervieux, Emily Riederer
 -   [R Markdown: the Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J. J. Allaire, Garrett Grolemund

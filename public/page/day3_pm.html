@@ -63,7 +63,7 @@
   "headline": "Day 3 - PM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  1398 ,
+  "wordCount":  1454 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -359,7 +359,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="#psstwe-really-need-to-talk"><span class="toc-section-number">1</span> Psst…we really need to talk</a></li>
 <li><a href="#r-markdown-reports"><span class="toc-section-number">2</span> R Markdown reports</a></li>
-<li><a href="#connect-to-databases"><span class="toc-section-number">3</span> Connect to databases <i class="fas fa-database"></i></a></li>
+<li><a href="#connect-to-databases"><span class="toc-section-number">3</span> <i class="fas fa-database"></i> Connect to databases</a></li>
 <li><a href="#your-turn"><span class="toc-section-number">4</span> Your turn</a></li>
 <li><a href="#back-to-earth"><i class="fas fa-globe-americas"></i> Back to Earth</a></li>
 </ul>
@@ -371,8 +371,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="../images/bert_ernie.jpg" style="float: left; width: 33%; margin-right: 20px;"></p>
 <p><br><br></p>
 <blockquote>
-<p>“Read more to write better.”<br />
-<em>-someone famous</em></p>
+<p>“The secret to writing better is reading more.”<br />
+<em>-someone</em></p>
 </blockquote>
 <div style="clear: both;">
 
@@ -431,7 +431,7 @@ Example code to read aloud
 <p>We’ll start by turning some fishy code into plain language.</p>
 <details>
 <summary class="btn_code_blue">
-<strong>Bert’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>’s only!</strong>
+<strong>Bert’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!</strong>
 </summary>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -451,7 +451,7 @@ Example code to read aloud
 <h3>2. <strong>Ernie’s</strong> turn to read: <code>Sleepy sheep</code> 🐑🐑🐑 <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i></h3>
 <details>
 <summary class="btn_code_blue">
-<strong>Ernie’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>’s only!</strong>
+<strong>Ernie’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!</strong>
 </summary>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -469,6 +469,27 @@ Example code to read aloud
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Counting sheep backwards makes me Zzzz...&quot;</span>)</span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>asleep <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code></pre></div>
+</details>
+<p><br><br><br />
+</p>
+</div>
+<div id="charades-act-it-out" class="section level3 unnumbered">
+<h3>3. <strong>Charades!</strong> Act it out</h3>
+<p>Instead of saying what the code does out load, act out what the code does without speaking at ALL.</p>
+<p>Ask Barbara very nicely to go first.</p>
+<details>
+<summary class="btn_code_blue">
+<strong>Barbara’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!</strong>
+</summary>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cats_df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;lost_cats.xlsx&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>kittens <span class="ot">&lt;-</span> <span class="fu">filter</span>(cats_df, age <span class="sc">&lt;</span> <span class="dv">1</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>catfood <span class="ot">&lt;-</span> <span class="st">&quot;SPAM&quot;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>hungry_kitties <span class="ot">&lt;-</span> <span class="fu">filter</span>(kittens, hungry <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>fed_cats <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code></pre></div>
 </details>
 <div style="clear: both;">
 
@@ -522,22 +543,22 @@ output: html_document
 <li>Demo time
 </h2></li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggweekly) <span class="co">#remotes::install_github(&quot;gadenbuie/ggweekly&quot;)</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="st">&quot;2021-04-05&quot;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>end <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(start) <span class="sc">+</span> <span class="dv">8</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggweek_planner</span>(</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">start_day =</span> start, </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">end_day =</span> end,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">highlight_days =</span> <span class="fu">tibble</span>(<span class="at">day =</span> <span class="st">&quot;2021-04-09&quot;</span>, </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> <span class="st">&quot;HOTSPRINGS!!&quot;</span>, </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> <span class="st">&quot;hotpink&quot;</span>,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">fill  =</span> <span class="st">&quot;hotpink&quot;</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;My Yellowstone Trip&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day3_PM_files/figure-html/unnamed-chunk-4-1.png" width="960" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggweekly) <span class="co">#remotes::install_github(&quot;gadenbuie/ggweekly&quot;)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="st">&quot;2021-04-05&quot;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>end <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(start) <span class="sc">+</span> <span class="dv">8</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggweek_planner</span>(</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">start_day =</span> start, </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">end_day =</span> end,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">highlight_days =</span> <span class="fu">tibble</span>(<span class="at">day =</span> <span class="st">&quot;2021-04-09&quot;</span>, </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> <span class="st">&quot;HOTSPRINGS!!&quot;</span>, </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> <span class="st">&quot;hotpink&quot;</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">fill  =</span> <span class="st">&quot;hotpink&quot;</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;My Yellowstone Trip&quot;</span>)</span></code></pre></div>
+<p><img src="/page/Day3_PM_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
 <blockquote>
 <p>My vacation will be starting on 2021-04-05. Better start packing on 2021-04-04 !</p>
 </blockquote>
@@ -585,13 +606,9 @@ output:
 For more bootstrap themes visit: <a href="https://bootswatch.com/3/" class="uri">https://bootswatch.com/3/</a>
 </h4>
 <p><br></p>
-<div class="yoda">
-<div id="yoda-says" class="section level3 unnumbered">
-<h3>Yoda says</h3>
+<div id="more-markdown-resources" class="section level3 unnumbered yoda">
+<h3>More Markdown resources</h3>
 <p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
-</div>
-<div id="more-resources" class="section level3 unnumbered">
-<h3>More resources</h3>
 <ul>
 <li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/">The R Markdown Cookbook</a> by Yihui Xie, Christophe Dervieux, Emily Riederer</li>
 <li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: the Definitive Guide</a> by Yihui Xie, J. J. Allaire, Garrett Grolemund</li>
@@ -601,12 +618,11 @@ For more bootstrap themes visit: <a href="https://bootswatch.com/3/" class="uri"
 <li><a href="https://alison.rbind.io/project/advanced-r-markdown/">Alison Hill’s Advanced R Markdown workshop</a></li>
 </ul>
 </div>
-</div>
 </details>
 <p><br></p>
 </div>
 <div id="connect-to-databases" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Connect to databases <i class="fas fa-database"></i></h1>
+<h1><span class="header-section-number">3</span> <i class="fas fa-database"></i> Connect to databases</h1>
 <hr>
 <blockquote>
 <p>Top-secret demo….</p>
@@ -672,8 +688,9 @@ Planet: <code>Earth</code></p>
 <div id="concatulations" class="section level2 unnumbered">
 <h2>🐱 Concatulations!</h2>
 <hr class="hrlvl2">
-<div id="you-make-an-excellent-data-droid-rey-and-bb8-couldnt-have-done-it-without-you." class="section level4 unnumbered">
-<h4>You make an excellent Data Droid! Rey and BB8 couldn’t have done it without you.</h4>
+<div id="you-were-an-excellent-data-droid" class="section level4 unnumbered">
+<h4>You were an excellent Data Droid!</h4>
+<p><strong>Rey and BB8 couldn’t have done it without you.</strong></p>
 <blockquote>
 <p>You deserve an award.</p>
 </blockquote>

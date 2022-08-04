@@ -119,7 +119,7 @@ asleep <- TRUE
 </details>
 
 
-<br>
+<br><br>
 
 ### 3. Charades! **Act it out** {-}
 

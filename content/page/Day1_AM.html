@@ -196,7 +196,7 @@ Instructions
 <li>Try increasing the number next to the new candy.</li>
 </ol>
 <blockquote>
-<p><i class="fa fa-user-astronaut" style="color:#f6cd00; margin-right: 12px;"></i><strong><strong>Explore!</strong></strong></p>
+<p><i class="fa fa-user-astronaut" style="margin-right: 12px;"></i><strong><strong>Explore!</strong></strong></p>
 <ul>
 <li>Add another candy and rating to the data.</li>
 <li>Add your name to the subtitle.</li>
@@ -216,9 +216,9 @@ Instructions
 <h3>Yoda says</h3>
 <p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
 <ul>
-<li>It’s okay! You don’t need to memorize everything.
+<li>Okay, it is! You don’t need to memorize everything.
 <ul>
-<li>Absorb what’s possible. You can look up the details later.</li>
+<li>Absorb what’s possible and look up the details when you need them.</li>
 </ul></li>
 <li>You are free to break things. Create errors. Make the computer angry. Learn through mistakes. R will forgive you.</li>
 <li><em>Cheat</em> if you’re stuck.
@@ -383,34 +383,34 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-04-10</td>
-<td align="right">4</td>
-<td align="right">51.8</td>
+<td align="left">27-137-7001</td>
+<td align="left">2016-07-22</td>
+<td align="right">18</td>
+<td align="right">77.6</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7554</td>
-<td align="left">2017-10-01</td>
-<td align="right">9</td>
-<td align="right">50.0</td>
+<td align="left">2017-06-29</td>
+<td align="right">12</td>
+<td align="right">79.4</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2016-07-29</td>
-<td align="right">11</td>
-<td align="right">75.2</td>
+<td align="left">2018-05-23</td>
+<td align="right">14</td>
+<td align="right">74.6</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7554</td>
-<td align="left">2018-05-27</td>
-<td align="right">14</td>
-<td align="right">64.4</td>
+<td align="left">2016-05-14</td>
+<td align="right">5</td>
+<td align="right">49.4</td>
 </tr>
 <tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-06-30</td>
-<td align="right">7</td>
-<td align="right">80.6</td>
+<td align="left">27-137-7001</td>
+<td align="left">2018-09-23</td>
+<td align="right">10</td>
+<td align="right">71.6</td>
 </tr>
 </tbody>
 </table>
@@ -685,7 +685,7 @@ Instructions
 <p>Without quotes, R looks for an object called Chewbacca, and then lets you know that it couldn’t find one. Let’s try again but add quotation marks around <code>"Chewbacca"</code>.</p>
 </div>
 <p><br></p>
-<div style="border: 2px solid #d9e1e5; background: aliceblue; border-radius: 15px; padding-left: 18px;">
+<div style="border: 2px solid #d9e1e5; background: aliceblue; border-radius: 15px; padding: 20px;">
 <h3>
 <i class="fas fa-circle" style="color: blue; opacity: 0.60; margin-right: 2px;"></i><i class="fas fa-circle" style="color: black; opacity: 0.65; margin-right: 2px;"></i><i class="fas fa-circle" style="color: rgb(197, 6, 11); opacity: 0.75; margin-right: 2px;"></i> Colors decoded
 </h3>
@@ -1085,19 +1085,21 @@ Note
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1,132 × 7
-##    receipt_date item             origin destination amount units price_per_pound
-##    &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
-##  1 4/1/2013     Flight recorder  Outsk… Niima Outp…    887 Tons             591.
-##  2 4/2/2013     Proximity sensor Outsk… Raiders       7081 Tons            1229.
-##  3 4/3/2013     Vitus-Series At… Reest… Raiders       4901 Tons             226.
-##  4 4/4/2013     Aural sensor     Tuanul Raiders        707 Tons             145.
-##  5 4/5/2013     Electromagnetic… Tuanul Niima Outp…    107 Tons             188.
-##  6 4/6/2013     Proximity sensor Tuanul Trade cara…  32109 Tons            1229.
-##  7 4/7/2013     Hyperdrive moti… Tuanul Trade cara…    862 Tons            1485.
-##  8 4/8/2013     Landing jet      Reest… Niima Outp…  13944 Tons            1497.
-##  9 4/9/2013     Electromagnetic… Crate… Raiders       7788 Tons             188.
-## 10 4/10/2013    Sublight engine  Outsk… Niima Outp…  10642 Tons            7211.
-## # … with 1,122 more rows</code></pre>
+##    receipt_date item                         origin desti…¹ amount units price…²
+##    &lt;chr&gt;        &lt;chr&gt;                        &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+##  1 4/1/2013     Flight recorder              Outsk… Niima …    887 Tons     591.
+##  2 4/2/2013     Proximity sensor             Outsk… Raiders   7081 Tons    1229.
+##  3 4/3/2013     Vitus-Series Attitude Thrus… Reest… Raiders   4901 Tons     226.
+##  4 4/4/2013     Aural sensor                 Tuanul Raiders    707 Tons     145.
+##  5 4/5/2013     Electromagnetic discharge f… Tuanul Niima …    107 Tons     188.
+##  6 4/6/2013     Proximity sensor             Tuanul Trade …  32109 Tons    1229.
+##  7 4/7/2013     Hyperdrive motivator         Tuanul Trade …    862 Tons    1485.
+##  8 4/8/2013     Landing jet                  Reest… Niima …  13944 Tons    1497.
+##  9 4/9/2013     Electromagnetic discharge f… Crate… Raiders   7788 Tons     188.
+## 10 4/10/2013    Sublight engine              Outsk… Niima …  10642 Tons    7211.
+## # … with 1,122 more rows, and abbreviated variable names ¹​destination,
+## #   ²​price_per_pound
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div id="name-the-data" class="section level2 unnumbered">
 <h2>Name the data</h2>
@@ -1108,19 +1110,21 @@ Note
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Type the name of the table to view it in the console</span></span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>scrap</span></code></pre></div>
 <pre><code>## # A tibble: 1,132 × 7
-##    receipt_date item             origin destination amount units price_per_pound
-##    &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
-##  1 4/1/2013     Flight recorder  Outsk… Niima Outp…    887 Tons             591.
-##  2 4/2/2013     Proximity sensor Outsk… Raiders       7081 Tons            1229.
-##  3 4/3/2013     Vitus-Series At… Reest… Raiders       4901 Tons             226.
-##  4 4/4/2013     Aural sensor     Tuanul Raiders        707 Tons             145.
-##  5 4/5/2013     Electromagnetic… Tuanul Niima Outp…    107 Tons             188.
-##  6 4/6/2013     Proximity sensor Tuanul Trade cara…  32109 Tons            1229.
-##  7 4/7/2013     Hyperdrive moti… Tuanul Trade cara…    862 Tons            1485.
-##  8 4/8/2013     Landing jet      Reest… Niima Outp…  13944 Tons            1497.
-##  9 4/9/2013     Electromagnetic… Crate… Raiders       7788 Tons             188.
-## 10 4/10/2013    Sublight engine  Outsk… Niima Outp…  10642 Tons            7211.
-## # … with 1,122 more rows</code></pre>
+##    receipt_date item                         origin desti…¹ amount units price…²
+##    &lt;chr&gt;        &lt;chr&gt;                        &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+##  1 4/1/2013     Flight recorder              Outsk… Niima …    887 Tons     591.
+##  2 4/2/2013     Proximity sensor             Outsk… Raiders   7081 Tons    1229.
+##  3 4/3/2013     Vitus-Series Attitude Thrus… Reest… Raiders   4901 Tons     226.
+##  4 4/4/2013     Aural sensor                 Tuanul Raiders    707 Tons     145.
+##  5 4/5/2013     Electromagnetic discharge f… Tuanul Niima …    107 Tons     188.
+##  6 4/6/2013     Proximity sensor             Tuanul Trade …  32109 Tons    1229.
+##  7 4/7/2013     Hyperdrive motivator         Tuanul Trade …    862 Tons    1485.
+##  8 4/8/2013     Landing jet                  Reest… Niima …  13944 Tons    1497.
+##  9 4/9/2013     Electromagnetic discharge f… Crate… Raiders   7788 Tons     188.
+## 10 4/10/2013    Sublight engine              Outsk… Niima …  10642 Tons    7211.
+## # … with 1,122 more rows, and abbreviated variable names ¹​destination,
+## #   ²​price_per_pound
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 <p><br></p>
 <div id="yoda-says-2" class="section level3 unnumbered yoda">
 <h3>Yoda says</h3>

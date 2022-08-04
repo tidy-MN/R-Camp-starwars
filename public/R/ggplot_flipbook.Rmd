@@ -1,0 +1,163 @@
+---
+title: ''
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, hygge, ninjutsu]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.dim=c(4.8, 4.5), fig.retina=2, out.width="100%")
+```
+
+```{css, eval = TRUE, echo = FALSE}
+.remark-code{line-height: 2; font-size: 120%}
+
+@media print {
+  .has-continuation {
+    display: block;
+  }
+}
+
+code.r.hljs.remark-code{
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+code.r.hljs.remark-code:hover{
+  overflow-x:visible;
+  width: 600px;
+  border-style: solid;
+}
+
+.remark-slide-number {
+  font-size: 10pt;
+  margin-bottom: -11.6px;
+  margin-right: 10px;
+  color: #FFFFFF; /* white */
+  opacity: 0; /* default: 0.5 */
+}
+
+.remark-slide {
+    width: 110%;
+    margin-left: -5%;
+}
+
+.pull-left {margin-right: 0; width: 49%}
+.pull-right {margin-right: 0; padding: 0; width: 50%}
+```
+
+```{r, echo=F, warning=F, message=F}
+library(readr)
+library(ggplot2)
+library(flipbookr)
+
+air_data <- read_csv("https://itep-r.netlify.com/data/OZONE_samples_demo.csv")
+
+#pagedown::chrome_print(input = "ggplot_flipbook.html")
+
+#magick::image_read_pdf(path = "ggplot_flipbook.pdf", density = 170) %>% magick::image_write_gif(path = "ggplot_flipbook.gif", delay = 1.3) 
+```
+
+---
+
+.pull-left[
+```{r plot-label, eval=FALSE}
+ggplot(air_data) #<<
+```
+]
+
+.pull-right[
+```{r plot-label-out, ref.label="plot-label", echo=FALSE}
+```
+]
+
+
+---
+
+.pull-left[
+```{r plot-label2, eval=FALSE}
+ggplot(air_data, 
+       aes(x = TEMP_F)) #<<
+```
+]
+
+.pull-right[
+```{r plot-label-out2, ref.label="plot-label2", echo=FALSE}
+```
+]
+
+---
+
+.pull-left[
+```{r plot-label22, eval=FALSE}
+ggplot(air_data, 
+       aes(x = TEMP_F, 
+           y = OZONE)) #<<
+```
+]
+
+.pull-right[
+```{r plot-label-out22, ref.label="plot-label22", echo=FALSE}
+```
+]
+
+---
+
+.pull-left[
+```{r plot-label3, eval=FALSE}
+ggplot(air_data, 
+       aes(x = TEMP_F, 
+           y = OZONE)) + 
+  geom_point() #<<
+```
+]
+
+.pull-right[
+```{r plot-label-out3, ref.label="plot-label3", echo=FALSE}
+```
+]
+
+
+---
+
+.pull-left[
+```{r plot-label4, eval=FALSE}
+ggplot(air_data, 
+       aes(x = TEMP_F, 
+           y = OZONE)) + 
+  geom_point(aes(color = SITE)) #<<
+```
+]
+
+.pull-right[
+```{r plot-label-out4, ref.label="plot-label4", echo=FALSE}
+```
+]
+
+
+---
+
+
+.pull-left[
+```{r plot-label5, eval=FALSE}
+ggplot(air_data, 
+       aes(x = TEMP_F, 
+           y = OZONE)) + 
+  geom_point(aes(color = SITE)) + 
+  labs(title = "Ozone vs Temp F") #<<
+  
+```
+]
+
+.pull-right[
+```{r plot-label-out5, ref.label="plot-label5", echo=FALSE}
+```
+]
+

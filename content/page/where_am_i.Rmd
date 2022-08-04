@@ -47,7 +47,8 @@ df <- read_csv("C:/Users/me/Desktop/secret_data.csv")
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
 
-File paths with your user name in them don't share well with others and they also run the risk of breaking if the data is moved. It's best to store data in your project folder as much as possible to avoid using absolute paths.
+Better, simple file paths are. 
+File paths with your user name in them don't share well with others and may break if the data is moved. It's best to store data in your project folder as much as possible to help avoid using absolute paths.
 
 </div>
 

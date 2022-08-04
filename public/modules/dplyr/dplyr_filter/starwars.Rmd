@@ -2,7 +2,7 @@
 
 Back to the toolbox.
 
-The next one is the best yet. The `filter()` function creates a subset of the data based on the value of one or more columns.
+The next tool is the best yet. The `filter()` function creates a subset of the data based on the value of one or more columns.
 
 Let's use it to take a look at the records in the data that had an origin of `"All"`.
 
@@ -15,7 +15,7 @@ filter(scrap, origin == "All")
 <div class="note">
 ### Note {-}
 
-### `==` vs. `=` {-}
+#### `==` vs. `=` {-}
 
 We use a `==` (double equals sign) for comparing values. A `==` makes the comparison "is it equal to?" and returns a True or False answer. So the code above returns only the rows where the condition `origin == "All"` is TRUE.
 

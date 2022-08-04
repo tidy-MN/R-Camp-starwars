@@ -196,11 +196,15 @@ blockquote
      font-size: 17px;
      line-height: 19px;
      overflow: hidden;
-     padding: 18px;
-     padding-top: 2px;
+     padding: 26px;
+     padding-top: 0;
      padding-bottom: 14px;
      margin-top: 10px;
      margin-bottom: 26px;
+}
+
+.tip h3 {
+  margin-top: 24px;
 }
 
 .yoda

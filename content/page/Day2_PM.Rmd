@@ -151,7 +151,7 @@ ggplot(scrap, aes(x = origin, y = credits, color = destination)) +
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
 
-One easy way to experiment with colors is to add layers like `scale_fill_brewer` or `scale_colour_brewer` to your plot which will link to RcolorBrewer palettes to give you accessible color schemes.
+An easy way to experiment with colors is to add layers like `scale_fill_brewer` or `scale_colour_brewer` to your plot. These link to **colorBrewer** palettes to give you accessible color themes.
 </div>
 
 

@@ -12,6 +12,11 @@ output:
     monofont: Source Code Pro
 ---
 
+<style>
+h1 .header-section-number {background: #c75a16;}
+hr {background: #c75a16;}
+</style>
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = F, message = F)

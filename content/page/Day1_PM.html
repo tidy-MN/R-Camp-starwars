@@ -539,7 +539,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">6</span> <code>filter()</code></h1>
 <hr>
 <p>Back to the toolbox.</p>
-<p>The next one is the best yet. The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.</p>
+<p>The next tool is the best yet. The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.</p>
 <p>Let’s use it to take a look at the records in the data that had an origin of <code>"All"</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(scrap, origin <span class="sc">==</span> <span class="st">&quot;All&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 7
@@ -547,12 +547,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ##   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
 ## 1 12/31/2016   Total All    All         2971601 Tons          579215.</code></pre>
 <p><br></p>
-<div class="note">
-<div id="note" class="section level3 unnumbered">
+<div id="note" class="section level3 unnumbered note">
 <h3>Note</h3>
-</div>
-<div id="vs." class="section level3 unnumbered">
-<h3><code>==</code> vs. <code>=</code></h3>
+<div id="vs." class="section level4 unnumbered">
+<h4><code>==</code> vs. <code>=</code></h4>
 <p>We use a <code>==</code> (double equals sign) for comparing values. A <code>==</code> makes the comparison “is it equal to?” and returns a True or False answer. So the code above returns only the rows where the condition <code>origin == "All"</code> is TRUE.</p>
 <p>A single equals sign <code>=</code> is used within functions to set options, for example <code>read_csv(file = "scrap.csv")</code>.</p>
 <p>It’s not a big deal if you mix them up the first time. R is often helpful and will let you know which one is needed.</p>
@@ -842,7 +840,8 @@ Menu of comparisons
 <div id="yoda-says-1" class="section level3 unnumbered yoda">
 <h3>Yoda says</h3>
 <p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
-<p>File paths with your user name in them don’t share well with others and they also run the risk of breaking if the data is moved. It’s best to store data in your project folder as much as possible to avoid using absolute paths.</p>
+<p>Better, simple file paths are.
+File paths with your user name in them don’t share well with others and may break if the data is moved. It’s best to store data in your project folder as much as possible to help avoid using absolute paths.</p>
 </div>
 </div>
 </div>

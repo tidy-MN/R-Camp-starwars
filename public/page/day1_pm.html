@@ -63,7 +63,7 @@
   "headline": "Day 1 - PM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  3925 ,
+  "wordCount":  4013 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -614,19 +614,20 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the destination column</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(scrap, <span class="sc">-</span>destination)</span></code></pre></div>
 <pre><code>## # A tibble: 1,132 × 6
-##    receipt_date item                         origin amount units price_per_pound
-##    &lt;chr&gt;        &lt;chr&gt;                        &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
-##  1 4/1/2013     Flight recorder              Outsk…    887 Tons             591.
-##  2 4/2/2013     Proximity sensor             Outsk…   7081 Tons            1229.
-##  3 4/3/2013     Vitus-Series Attitude Thrus… Reest…   4901 Tons             226.
-##  4 4/4/2013     Aural sensor                 Tuanul    707 Tons             145.
-##  5 4/5/2013     Electromagnetic discharge f… Tuanul    107 Tons             188.
-##  6 4/6/2013     Proximity sensor             Tuanul  32109 Tons            1229.
-##  7 4/7/2013     Hyperdrive motivator         Tuanul    862 Tons            1485.
-##  8 4/8/2013     Landing jet                  Reest…  13944 Tons            1497.
-##  9 4/9/2013     Electromagnetic discharge f… Crate…   7788 Tons             188.
-## 10 4/10/2013    Sublight engine              Outsk…  10642 Tons            7211.
-## # … with 1,122 more rows</code></pre>
+##    receipt_date item                             origin     amount units price…¹
+##    &lt;chr&gt;        &lt;chr&gt;                            &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+##  1 4/1/2013     Flight recorder                  Outskirts     887 Tons     591.
+##  2 4/2/2013     Proximity sensor                 Outskirts    7081 Tons    1229.
+##  3 4/3/2013     Vitus-Series Attitude Thrusters  Reestki      4901 Tons     226.
+##  4 4/4/2013     Aural sensor                     Tuanul        707 Tons     145.
+##  5 4/5/2013     Electromagnetic discharge filter Tuanul        107 Tons     188.
+##  6 4/6/2013     Proximity sensor                 Tuanul      32109 Tons    1229.
+##  7 4/7/2013     Hyperdrive motivator             Tuanul        862 Tons    1485.
+##  8 4/8/2013     Landing jet                      Reestki     13944 Tons    1497.
+##  9 4/9/2013     Electromagnetic discharge filter Cratertown   7788 Tons     188.
+## 10 4/10/2013    Sublight engine                  Outskirts   10642 Tons    7211.
+## # … with 1,122 more rows, and abbreviated variable name ¹​price_per_pound
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div id="drop-multiple-columns" class="section level2 unnumbered">
 <h2>Drop multiple columns</h2>
@@ -646,7 +647,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ##  8 4/8/2013     Landing jet                      Reestki              1497.
 ##  9 4/9/2013     Electromagnetic discharge filter Cratertown            188.
 ## 10 4/10/2013    Sublight engine                  Outskirts            7211.
-## # … with 1,122 more rows</code></pre>
+## # … with 1,122 more rows
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div id="keep-only-3-columns" class="section level2 unnumbered">
 <h2>Keep only 3 columns</h2>
@@ -665,7 +667,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ##  8 Landing jet                       13944           1497.
 ##  9 Electromagnetic discharge filter   7788            188.
 ## 10 Sublight engine                   10642           7211.
-## # … with 1,122 more rows</code></pre>
+## # … with 1,122 more rows
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div id="select-everything-else" class="section level2 unnumbered">
 <h2>Select <code>everything()</code> else</h2>
@@ -675,19 +678,21 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Leave `everything()` else in the same order</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(scrap, item, units, amount, <span class="fu">everything</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1,132 × 7
-##    item             units amount receipt_date origin destination price_per_pound
-##    &lt;chr&gt;            &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;                 &lt;dbl&gt;
-##  1 Flight recorder  Tons     887 4/1/2013     Outsk… Niima Outp…            591.
-##  2 Proximity sensor Tons    7081 4/2/2013     Outsk… Raiders               1229.
-##  3 Vitus-Series At… Tons    4901 4/3/2013     Reest… Raiders                226.
-##  4 Aural sensor     Tons     707 4/4/2013     Tuanul Raiders                145.
-##  5 Electromagnetic… Tons     107 4/5/2013     Tuanul Niima Outp…            188.
-##  6 Proximity sensor Tons   32109 4/6/2013     Tuanul Trade cara…           1229.
-##  7 Hyperdrive moti… Tons     862 4/7/2013     Tuanul Trade cara…           1485.
-##  8 Landing jet      Tons   13944 4/8/2013     Reest… Niima Outp…           1497.
-##  9 Electromagnetic… Tons    7788 4/9/2013     Crate… Raiders                188.
-## 10 Sublight engine  Tons   10642 4/10/2013    Outsk… Niima Outp…           7211.
-## # … with 1,122 more rows</code></pre>
+##    item                             units amount receip…¹ origin desti…² price…³
+##    &lt;chr&gt;                            &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;
+##  1 Flight recorder                  Tons     887 4/1/2013 Outsk… Niima …    591.
+##  2 Proximity sensor                 Tons    7081 4/2/2013 Outsk… Raiders   1229.
+##  3 Vitus-Series Attitude Thrusters  Tons    4901 4/3/2013 Reest… Raiders    226.
+##  4 Aural sensor                     Tons     707 4/4/2013 Tuanul Raiders    145.
+##  5 Electromagnetic discharge filter Tons     107 4/5/2013 Tuanul Niima …    188.
+##  6 Proximity sensor                 Tons   32109 4/6/2013 Tuanul Trade …   1229.
+##  7 Hyperdrive motivator             Tons     862 4/7/2013 Tuanul Trade …   1485.
+##  8 Landing jet                      Tons   13944 4/8/2013 Reest… Niima …   1497.
+##  9 Electromagnetic discharge filter Tons    7788 4/9/2013 Crate… Raiders    188.
+## 10 Sublight engine                  Tons   10642 4/10/20… Outsk… Niima …   7211.
+## # … with 1,122 more rows, and abbreviated variable names ¹​receipt_date,
+## #   ²​destination, ³​price_per_pound
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 <div id="sort-with-arrange" class="section level1" number="5">
@@ -700,14 +705,15 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View the top 6 rows</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 7
-##   receipt_date item         origin      destination amount units price_per_pound
-##   &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
-## 1 4/4/2013     Aural sensor Tuanul      Raiders        707 Tons             145.
-## 2 5/22/2013    Aural sensor Outskirts   Niima Outp…   3005 Tons             145.
-## 3 5/23/2013    Aural sensor Tuanul      Raiders       6204 Tons             145.
-## 4 6/4/2013     Aural sensor Tuanul      Raiders       3120 Tons             145.
-## 5 6/10/2013    Aural sensor Blowback T… Niima Outp…   2312 Tons             145.
-## 6 6/20/2013    Aural sensor Outskirts   Trade cara…   6272 Tons             145.</code></pre>
+##   receipt_date item         origin        destination   amount units price_per…¹
+##   &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;         &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;
+## 1 4/4/2013     Aural sensor Tuanul        Raiders          707 Tons         145.
+## 2 5/22/2013    Aural sensor Outskirts     Niima Outpost   3005 Tons         145.
+## 3 5/23/2013    Aural sensor Tuanul        Raiders         6204 Tons         145.
+## 4 6/4/2013     Aural sensor Tuanul        Raiders         3120 Tons         145.
+## 5 6/10/2013    Aural sensor Blowback Town Niima Outpost   2312 Tons         145.
+## 6 6/20/2013    Aural sensor Outskirts     Trade caravan   6272 Tons         145.
+## # … with abbreviated variable name ¹​price_per_pound</code></pre>
 <p><br></p>
 <blockquote>
 <p>What, only <code>145 credits</code>!? That’s not much at all. Oh wait…that’s the smallest one on top.</p>
@@ -721,16 +727,17 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View the top 8 rows</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap, <span class="dv">8</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 8 × 7
-##   receipt_date item            origin   destination amount units price_per_pound
-##   &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
-## 1 12/31/2016   Total           All      All         2.97e6 Tons          579215.
-## 2 4/10/2013    Sublight engine Outskir… Niima Outp… 1.06e4 Tons            7211.
-## 3 4/14/2013    Sublight engine Outskir… Raiders     2.38e3 Tons            7211.
-## 4 4/15/2013    Sublight engine Cratert… Raiders     6.31e3 Tons            7211.
-## 5 4/16/2013    Sublight engine Tuanul   Trade cara… 3.98e3 Tons            7211.
-## 6 5/14/2013    Sublight engine Cratert… Raiders     2.99e2 Tons            7211.
-## 7 6/14/2013    Sublight engine Blowbac… Raiders     8.58e3 Tons            7211.
-## 8 8/6/2013     Sublight engine Cratert… Raiders     1.77e3 Tons            7211.</code></pre>
+##   receipt_date item            origin        destination    amount units price…¹
+##   &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;         &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+## 1 12/31/2016   Total           All           All           2971601 Tons  579215.
+## 2 4/10/2013    Sublight engine Outskirts     Niima Outpost   10642 Tons    7211.
+## 3 4/14/2013    Sublight engine Outskirts     Raiders          2377 Tons    7211.
+## 4 4/15/2013    Sublight engine Cratertown    Raiders          6310 Tons    7211.
+## 5 4/16/2013    Sublight engine Tuanul        Trade caravan    3984 Tons    7211.
+## 6 5/14/2013    Sublight engine Cratertown    Raiders           299 Tons    7211.
+## 7 6/14/2013    Sublight engine Blowback Town Raiders          8582 Tons    7211.
+## 8 8/6/2013     Sublight engine Cratertown    Raiders          1768 Tons    7211.
+## # … with abbreviated variable name ¹​price_per_pound</code></pre>
 <p><br></p>
 <div id="explore-1" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
@@ -911,14 +918,15 @@ Menu of comparisons
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 7
-##   receipt_date item         origin      destination amount units price_per_pound
-##   &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
-## 1 4/4/2013     Aural sensor Tuanul      Raiders        707 Tons             145.
-## 2 5/22/2013    Aural sensor Outskirts   Niima Outp…   3005 Tons             145.
-## 3 5/23/2013    Aural sensor Tuanul      Raiders       6204 Tons             145.
-## 4 6/4/2013     Aural sensor Tuanul      Raiders       3120 Tons             145.
-## 5 6/10/2013    Aural sensor Blowback T… Niima Outp…   2312 Tons             145.
-## 6 6/20/2013    Aural sensor Outskirts   Trade cara…   6272 Tons             145.</code></pre>
+##   receipt_date item         origin        destination   amount units price_per…¹
+##   &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;         &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;
+## 1 4/4/2013     Aural sensor Tuanul        Raiders          707 Tons         145.
+## 2 5/22/2013    Aural sensor Outskirts     Niima Outpost   3005 Tons         145.
+## 3 5/23/2013    Aural sensor Tuanul        Raiders         6204 Tons         145.
+## 4 6/4/2013     Aural sensor Tuanul        Raiders         3120 Tons         145.
+## 5 6/10/2013    Aural sensor Blowback Town Niima Outpost   2312 Tons         145.
+## 6 6/20/2013    Aural sensor Outskirts     Trade caravan   6272 Tons         145.
+## # … with abbreviated variable name ¹​price_per_pound</code></pre>
 <p><br></p>
 <div class="well">
 <p>Now let’s take another look at that bar chart.</p>
@@ -1130,7 +1138,7 @@ A <code>ggplot</code> has 3 ingredients.
 <h2>1. The base plot</h2>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap)</span></code></pre></div>
-<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p><br></p>
 <blockquote>
 <p>We load version 2 of the package <code>library(ggplot2)</code>, but the function to make the plot is plain <code>ggplot()</code>. <em>Sorry, ggplot is fun that like that.</em></p>
@@ -1140,13 +1148,13 @@ A <code>ggplot</code> has 3 ingredients.
 <h2>2. The the X, Y <em>aesthetics</em></h2>
 <p>The <em>aesthetics</em> assign the columns from the data that you want to use in the chart. This is where you set the <code>X</code>-<code>Y</code> variables that determine the dimensions of the plot.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount)) </span></code></pre></div>
-<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="the-layers-aka-geometries" class="section level2 unnumbered">
 <h2>3. The layers AKA geometries</h2>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount)) <span class="sc">+</span> </span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="colors" class="section level2 unnumbered">
@@ -1155,7 +1163,7 @@ A <code>ggplot</code> has 3 ingredients.
 <p>Now let’s change the fill color to match the destination.</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() </span></code></pre></div>
-<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="sorting" class="section level2 unnumbered">
@@ -1166,7 +1174,7 @@ A <code>ggplot</code> has 3 ingredients.
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Destination&quot;</span>,</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;The most scrap was sent to the Trade Caravan&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="/page/Day1_PM_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p><br></p>
 <div id="explore-3" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>

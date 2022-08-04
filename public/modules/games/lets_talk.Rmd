@@ -61,7 +61,7 @@ red_veggies <- filter(fillings, food_type == "vegetable", color = "red")
 ⚠️ **Wait to click below until you decide who's Bert.**
 </blockquote> 
 
-### 1. **Bert's** turn to read: `BIG fish` <i class="fas fa-fish"></i> {-}
+### 1. Bert's **turn to read:** `BIG fish` <i class="fas fa-fish"></i> {-}
 
 > **No peaking Ernie!**
 
@@ -91,7 +91,7 @@ nrow(big_fishes)
 <br><br>
 
 
-### 2. **Ernie's** turn to read: `Sleepy sheep` 🐑🐑🐑 <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i> {-}
+### 2. Ernie's **turn to read:** `Sleepy sheep` 🐑🐑🐑 <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i> {-}
 
 <details>
 <summary class="btn_code_blue"> **Ernie's <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!** </summary>
@@ -119,26 +119,26 @@ asleep <- TRUE
 </details>
 
 
-<br><br>\
+<br>
 
-### 3. **Charades!** Act it out {-}
+### 3. Charades! **Act it out** {-}
 
-Instead of saying what the code does out load, act out what the code does without speaking at ALL.
+Instead of saying what the code does aloud, act out what the code does without speaking at ALL.
 
-Ask Barbara very nicely to go first.
+Ask **Barbara** very nicely to go first.
 
 <details>
 <summary class="btn_code_blue"> **Barbara's <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!** </summary>
     
 ```{r, eval=F}
 
-cats_df <- read_excel("lost_cats.xlsx")
+cat_df <- read_excel("lost_cats.xlsx")
 
-kittens <- filter(cats_df, age < 1)
+kittens <- filter(cat_df, age < 1)
 
 catfood <- "SPAM"
 
-hungry_kitties <- filter(kittens, hungry == TRUE)
+hungry_kittens <- filter(kittens, hungry == TRUE)
 
 fed_cats <- TRUE
 ```   

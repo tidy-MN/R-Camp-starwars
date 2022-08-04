@@ -63,7 +63,7 @@
   "headline": "Day 3 - PM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  1454 ,
+  "wordCount":  1455 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -361,7 +361,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#r-markdown-reports"><span class="toc-section-number">2</span> R Markdown reports</a></li>
 <li><a href="#connect-to-databases"><span class="toc-section-number">3</span> <i class="fas fa-database"></i> Connect to databases</a></li>
 <li><a href="#your-turn"><span class="toc-section-number">4</span> Your turn</a></li>
-<li><a href="#back-to-earth"><i class="fas fa-globe-americas"></i> Back to Earth</a></li>
+<li><a href="#back-to-earth"><span class="toc-section-number">5</span> <i class="fas fa-globe-americas"></i> Back to Earth</a></li>
 </ul>
 </div>
 
@@ -424,7 +424,7 @@ Example code to read aloud
 </blockquote>
 </div>
 <div id="berts-turn-to-read-big-fish" class="section level3 unnumbered">
-<h3>1. <strong>Bert’s</strong> turn to read: <code>BIG fish</code> <i class="fas fa-fish"></i></h3>
+<h3>1. Bert’s <strong>turn to read:</strong> <code>BIG fish</code> <i class="fas fa-fish"></i></h3>
 <blockquote>
 <p><strong>No peaking Ernie!</strong></p>
 </blockquote>
@@ -448,7 +448,7 @@ Example code to read aloud
 <p><br><br></p>
 </div>
 <div id="ernies-turn-to-read-sleepy-sheep" class="section level3 unnumbered">
-<h3>2. <strong>Ernie’s</strong> turn to read: <code>Sleepy sheep</code> 🐑🐑🐑 <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i></h3>
+<h3>2. Ernie’s <strong>turn to read:</strong> <code>Sleepy sheep</code> 🐑🐑🐑 <i class="fas fa-sheep"></i><i class="fas fa-sheep"></i><i class="fas fa-sheep"></i></h3>
 <details>
 <summary class="btn_code_blue">
 <strong>Ernie’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!</strong>
@@ -470,24 +470,23 @@ Example code to read aloud
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>asleep <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code></pre></div>
 </details>
-<p><br><br><br />
-</p>
+<p><br></p>
 </div>
 <div id="charades-act-it-out" class="section level3 unnumbered">
-<h3>3. <strong>Charades!</strong> Act it out</h3>
-<p>Instead of saying what the code does out load, act out what the code does without speaking at ALL.</p>
-<p>Ask Barbara very nicely to go first.</p>
+<h3>3. Charades! <strong>Act it out</strong></h3>
+<p>Instead of saying what the code does aloud, act out what the code does without speaking at ALL.</p>
+<p>Ask <strong>Barbara</strong> very nicely to go first.</p>
 <details>
 <summary class="btn_code_blue">
 <strong>Barbara’s <i class="fas fa-eye"></i><i class="fas fa-eye"></i>s only!</strong>
 </summary>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cats_df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;lost_cats.xlsx&quot;</span>)</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cat_df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;lost_cats.xlsx&quot;</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>kittens <span class="ot">&lt;-</span> <span class="fu">filter</span>(cats_df, age <span class="sc">&lt;</span> <span class="dv">1</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>kittens <span class="ot">&lt;-</span> <span class="fu">filter</span>(cat_df, age <span class="sc">&lt;</span> <span class="dv">1</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>catfood <span class="ot">&lt;-</span> <span class="st">&quot;SPAM&quot;</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>hungry_kitties <span class="ot">&lt;-</span> <span class="fu">filter</span>(kittens, hungry <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>hungry_kittens <span class="ot">&lt;-</span> <span class="fu">filter</span>(kittens, hungry <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>fed_cats <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code></pre></div>
 </details>
@@ -708,13 +707,13 @@ Planet: <code>Earth</code></p>
            \| | |_|/\
       jgs  //_// ___/
                \_)</code></pre>
-<p><br></p>
-<p><br></p>
+<p><br>
+<br></p>
 </div>
 </div>
 </div>
-<div id="back-to-earth" class="section level1 unnumbered">
-<h1><i class="fas fa-globe-americas"></i> Back to Earth</h1>
+<div id="back-to-earth" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> <i class="fas fa-globe-americas"></i> Back to Earth</h1>
 <hr>
 <p>You’re free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let’s look at some Earth data.</p>
 <p><br></p>

@@ -142,11 +142,9 @@ Planet: `Earth`
 ```
 
 <br>
-
-
 <br>
 
-# <i class="fas fa-globe-americas"></i> Back to Earth {-}
+# <i class="fas fa-globe-americas"></i> Back to Earth 
 <hr>
 
 You're free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let's look at some Earth data. 

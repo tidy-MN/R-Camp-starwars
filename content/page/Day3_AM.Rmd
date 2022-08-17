@@ -27,19 +27,20 @@ xaringanExtra::use_clipboard()
 ```
 
 
-# Scrap data {-}
+
+
+# Day 1 review
 <hr>
+
 
 **Where we left off**
 ```{r}
 library(readr)
 
-scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2_pm.csv")
+scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
 ```
 
 
-# Day 1 review
-<hr>
 
 ## Get to know your __DATA__ {-}
 

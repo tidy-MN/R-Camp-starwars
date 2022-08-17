@@ -18,15 +18,6 @@ output:
 <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
 <link href="/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
-<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
-<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/proj4/proj4.min.js"></script>
-<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
-<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
@@ -95,15 +86,16 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#review---new-project"><span class="toc-section-number">1</span> Review - New project</a></li>
-<li><a href="#maps-with-sf"><span class="toc-section-number">2</span> <i class="fas fa-globe-africa"></i> Maps with <code>sf</code></a></li>
-<li><a href="#leaflet-maps"><span class="toc-section-number">3</span> Leaflet maps</a></li>
-<li><a href="#invasive-porg-survey---2023"><span class="toc-section-number">4</span> Invasive Porg Survey - 2023</a></li>
-<li><a href="#dates-with-lubridate"><span class="toc-section-number">5</span> <i class="fa fa-calendar" aria-hidden="true"></i> Dates with <code>lubridate</code></a></li>
-<li><a href="#pipe-things-together-a-b"><span class="toc-section-number">6</span> Pipe things together: <code>A %&gt;% B</code></a></li>
-<li><a href="#finn-needs-us">Finn needs us!</a></li>
-<li><a href="#jakku-re-visited"><span class="toc-section-number">7</span> Jakku re-visited</a></li>
-<li><a href="#join-tables-with-left_join"><span class="toc-section-number">8</span> Join tables with <strong>left_join</strong></a></li>
+<li><a href="#review---new-project" id="toc-review---new-project"><span class="toc-section-number">1</span> Review - New project</a></li>
+<li><a href="#finn-needs-us" id="toc-finn-needs-us">Finn needs us!</a></li>
+<li><a href="#jakku-re-visited" id="toc-jakku-re-visited"><span class="toc-section-number">2</span> Jakku re-visited</a></li>
+<li><a href="#join-tables-with-left_join" id="toc-join-tables-with-left_join"><span class="toc-section-number">3</span> Join tables with <strong>left_join</strong></a></li>
+<li><a href="#summarize-this" id="toc-summarize-this"><span class="toc-section-number">4</span> <code>summarize()</code> this</a></li>
+<li><a href="#group_by-category" id="toc-group_by-category"><span class="toc-section-number">5</span> <code>group_by()</code> category</a></li>
+<li><a href="#save-files" id="toc-save-files"><span class="toc-section-number">6</span> Save files</a></li>
+<li><a href="#grouped-mutate" id="toc-grouped-mutate"><span class="toc-section-number">7</span> Grouped <code>mutate()</code></a></li>
+<li><a href="#ifelse" id="toc-ifelse"><span class="toc-section-number">8</span> <code>ifelse()</code></a></li>
+<li><a href="#plots-with-ggplot2" id="toc-plots-with-ggplot2"><span class="toc-section-number">9</span> Plots with <em>ggplot2</em></a></li>
 </ul>
 </div>
 
@@ -168,22 +160,22 @@ hr {background: #62BE2C;}
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="left">2018-05-14</td>
-<td align="right">11</td>
-<td align="right">50.0</td>
+<td align="left">27-137-7554</td>
+<td align="left">2016-05-14</td>
+<td align="right">5</td>
+<td align="right">49.4</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7001</td>
-<td align="left">2018-07-08</td>
-<td align="right">10</td>
-<td align="right">66.2</td>
+<td align="left">2017-04-22</td>
+<td align="right">9</td>
+<td align="right">53.6</td>
 </tr>
 <tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="left">2017-04-30</td>
-<td align="right">7</td>
-<td align="right">39.2</td>
+<td align="left">27-137-7554</td>
+<td align="left">2018-08-03</td>
+<td align="right">28</td>
+<td align="right">74.6</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7001</td>
@@ -193,9 +185,9 @@ hr {background: #62BE2C;}
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2016-06-18</td>
-<td align="right">14</td>
-<td align="right">65.6</td>
+<td align="left">2018-08-16</td>
+<td align="right">15</td>
+<td align="right">71.6</td>
 </tr>
 </tbody>
 </table>
@@ -263,7 +255,7 @@ hr {background: #62BE2C;}
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ozone tends to increase with temperature&quot;</span>, </span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;Observations for 2015-2017&quot;</span>,</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Source: MPCA air monitoring network&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-3-1.png" width="1152" /></p>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-10-1.png" width="1152" /></p>
 <blockquote>
 <p>Keep exploring…</p>
 </blockquote>
@@ -384,959 +376,20 @@ hr {background: #62BE2C;}
 </div>
 </div>
 <p><br></p>
-</div>
-<div id="welcome-to-endor" class="section level2 unnumbered">
-<h2>Welcome to Endor!</h2>
-<hr class="hrlvl2">
-<p><img src="https://mn-r.netlify.com/images/planet_endor.jpg" style="width: 75%; margin-top: -4px; margin-left: 11%;" /></p>
-</div>
-<div id="but-wait" class="section level2 unnumbered">
-<h2>But wait…</h2>
-<hr class="hrlvl2">
-<p>The Ewoks say it’s unsafe to land. Booo… Sounds like the Empire is checking all ships for licenses.</p>
-<p>Lucky for us there is some good news. They say for a small ship like ours, it is possible to land undetected. But we’ll have to put down right-dab in the middle of the 3 northern outposts.</p>
-<p><br></p>
 <blockquote>
-<p>Are you up for a challenge data droid?</p>
-</blockquote>
-<p><br></p>
-<p>Either way, let’s make a map to see what we’re up against. To help, our comrades sent along the coordinates of the Empire’s outposts. Guess what the first step is? That’s right. Time to add a new package.</p>
-</div>
-</div>
-<div id="maps-with-sf" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> <i class="fas fa-globe-africa"></i> Maps with <code>sf</code></h1>
-<hr>
-<div id="the-sf-package." class="section level3 unnumbered">
-<h3>The <code>sf</code> package.</h3>
-<p><img src="../images/sf.gif" style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" /></p>
-<p><br></p>
-<p>SF makes maps and spatial analysis in R feel like you’re working with regular table data. It’s full of spatial functions for calculating distances and areas, adding buffers around points, and all the handy dplyr toolbox functions will work as well.</p>
-<p>Let’s get it!</p>
-<div style="clear: both;">
-
-</div>
-</div>
-<div id="install-sf" class="section level3 unnumbered">
-<h3>Install <code>sf</code></h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>)</span></code></pre></div>
-</div>
-<div id="reading-coordinates" class="section level2 unnumbered">
-<h2>Reading coordinates</h2>
-<p>To read coordinates stored in a spreadsheet or CSV, we can read them into R with our usual friends <code>read_csv()</code> and <code>read_excel()</code>.</p>
-<div id="however" class="section level3 unnumbered">
-<h3>However</h3>
-<p>Endor still uses ancient data systems and their spatial data is in a format known as <strong>shapefiles</strong>.
-But don’t worry, we can do it all with SF’s <code>st_read()</code> function.</p>
-</div>
-<div id="get-the-shapefile" class="section level3 unnumbered">
-<h3>Get the shapefile</h3>
-<ol style="list-style-type: decimal">
-<li>Download the data.
-<ul>
-<li><a href="https://github.com/MPCA-data/R-Camp/raw/main/public/data/endor_outposts.zip"><span class="btn_code_blue" style="margin-bottom: 10px; margin-top: 12px;"> <strong>DOWNLOAD </strong> </span></a> - Get the Endor outpost coordinates</li>
-</ul></li>
-<li>Create a new folder called <code>data</code> in your project folder.</li>
-<li>Move the downloaded <code>endor_outposts.zip</code> file into the folder.</li>
-<li>Right click on the file &gt; Select <code>Extract All...</code> &gt;&gt; Click <code>Extract</code>.</li>
-<li>You’re ready for <code>st_read()</code>.</li>
-</ol>
-</div>
-</div>
-<div id="give-it-a-try" class="section level2 unnumbered">
-<h2>Give it a try</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>outposts <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/endor_outposts/endor_outposts.shp&quot;</span>)</span></code></pre></div>
-<p><br></p>
-<div id="take-a-look" class="section level3 unnumbered">
-<h3>Take a look</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>outposts</span></code></pre></div>
-<pre><code>## Simple feature collection with 3 features and 3 fields
-## Geometry type: POINT
-## Dimension:     XY
-## Bounding box:  xmin: -1838045 ymin: 4374497 xmax: -1830923 ymax: 4383353
-## Projected CRS: NAD83 / UTM zone 15N
-## # A tibble: 3 × 4
-##   ID        x_utm    y_utm           geometry
-##   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;        &lt;POINT [m]&gt;
-## 1 1NO   -1831087. 4383353. (-1831087 4383353)
-## 2 1NL   -1830923. 4374497. (-1830923 4374497)
-## 3 3NB   -1838045. 4378301. (-1838045 4378301)</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(outposts)</span></code></pre></div>
-<pre><code>## Rows: 3
-## Columns: 4
-## $ ID       &lt;chr&gt; &quot;1NO&quot;, &quot;1NL&quot;, &quot;3NB&quot;
-## $ x_utm    &lt;dbl&gt; -1831087, -1830923, -1838045
-## $ y_utm    &lt;dbl&gt; 4383353, 4374497, 4378301
-## $ geometry &lt;POINT [m]&gt; POINT (-1831087 4383353), POINT (-1830923 4374497), POINT (-1…</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">st_coordinates</span>(outposts)</span></code></pre></div>
-<pre><code>##          X       Y
-## 1 -1831087 4383353
-## 2 -1830923 4374497
-## 3 -1838045 4378301</code></pre>
-<p><br></p>
-<p>To make a quick map, use ggplot and add <code>+ geom_sf()</code>.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outposts) <span class="sc">+</span> </span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>) </span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-9-1.png" width="960" /></p>
-<p><br></p>
-<p><strong>Try running the function <code>st_distance()</code> on your outposts.</strong></p>
-<blockquote>
-<p>What do you get?</p>
-</blockquote>
-<p><br></p>
-</div>
-</div>
-<div id="wheres-the-center-point" class="section level2 unnumbered">
-<h2>Where’s the center point?</h2>
-<div id="the-st_centroid-function-can-find-it" class="section level3 unnumbered">
-<h3>The <code>st_centroid()</code> function can find it:</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First- Combine all outposts into one object</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>outposts_combined <span class="ot">&lt;-</span> <span class="fu">st_combine</span>(outposts) </span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then - get the objects center              </span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>land_pad <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(outposts_combined)</span></code></pre></div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View center coordinates</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>land_pad</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">geometry</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">POINT (-1833352 4378717)</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-</div>
-<div id="we-found-it" class="section level3 unnumbered">
-<h3>We found it!</h3>
-<p>That’s fantastic.</p>
-<p>But there’s one more piece of bad news… These coordintes are in a different Coordinate Reference System (CRS) than our ship needs. <strong>CRS</strong> is a real thing!</p>
-<p>The Endor outposts are currently in the UTM coordinate system, but our ship requires coordinates in <strong>WGS84 Lat/Lng</strong>.</p>
-<ul>
-<li>These coordinates generally look like this <code>(45.6, -93.12)</code>.</li>
-<li>See <a href="https://epsg.io/4326" class="uri">https://epsg.io/4326</a> for more details.</li>
-</ul>
-<p>The <strong>SF</strong> package will help with coordinate conversions as well. Try using <code>st_transform()</code> and set the crs argument to: <code>crs = 4326</code>.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform outposts</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>outposts <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(outposts, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform landing pad</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>land_pad <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(land_pad, <span class="at">crs =</span> <span class="dv">4326</span>)</span></code></pre></div>
-</div>
-<div id="wonderful" class="section level3 unnumbered">
-<h3>Wonderful!</h3>
-<p><br></p>
-<div class="note">
-<h3>
-<i class="fas fa-heart" aria-hidden="true" style="color: hotpink"></i> Minnesota
-</h3>
-<p>In Minnesota, you’ll often receive coordinates with the CRS set to <em>UTM Zone 15N</em>. This is CRS number <code>26915</code>. See <a href="https://epsg.io/26915" class="uri">https://epsg.io/26915</a>.</p>
-</div>
-<p><br></p>
-<div class="well">
-<p>We’re going to need to be very precise to land perfectly in between these outposts. To make our captain really happy, let’s put this all in an interactive zoomable map. For interactive maps we use <strong>leaflet</strong>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="leaflet-maps" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Leaflet maps</h1>
-<hr>
-<div id="the-leaflet-package." class="section level3 unnumbered">
-<h3>The <code>leaflet</code> package.</h3>
-<p><img src="../images/leaflet.png" style="width: 37%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" /></p>
-<p>Leaflet makes interactive maps easy and you build them up in layers similar to a ggplot.</p>
-<br>
-<div style="clear: both;">
-
-</div>
-</div>
-<div id="install-leaflet" class="section level3 unnumbered">
-<h3>Install <code>leaflet</code></h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;leaflet&quot;</span>)</span></code></pre></div>
-</div>
-<div id="maps-that-zoom" class="section level2 unnumbered">
-<h2>Maps that zoom</h2>
-<p>Leaflet builds map with layers similar to ggplot, but instead of adding things with the <code>+</code>, leaflet adds new layers with the <code>%&gt;%</code> (“the pipe”).</p>
-<div id="start-with-the-outpost-coordinates" class="section level3 unnumbered">
-<h3>1. Start with the outpost coordinates</h3>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">radius =</span> <span class="dv">250</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>()</span></code></pre></div>
-<div id="htmlwidget-1" style="width:864px;height:384px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addCircles","args":[[36.6552,36.583748,36.5979],[-118.8469,-118.8195,-118.90218],250,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]},{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"limits":{"lat":[36.583748,36.6552],"lng":[-118.90218,-118.8195]}},"evals":[],"jsHooks":[]}</script>
-<p><br></p>
-</div>
-<div id="add-the-landing-site" class="section level3 unnumbered">
-<h3>2. Add the landing site</h3>
-<p><em>Fingers crossed it’s in the middle….</em></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">radius =</span> <span class="dv">300</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">data  =</span> land_pad)  <span class="co">#&lt;&lt;</span></span></code></pre></div>
-<p><br></p>
-</div>
-<div id="add-labels" class="section level3 unnumbered">
-<h3>3. Add labels</h3>
-<p><em>Try hovering over one of the outposts to see its label.</em></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">radius =</span> <span class="dv">300</span>,</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="sc">~</span>ID) <span class="sc">%&gt;%</span>   <span class="co">#&lt;&lt;</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">data  =</span> land_pad,</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="st">&quot;Land HERE!&quot;</span>,  <span class="co">#&lt;&lt;</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">noHide =</span> <span class="cn">TRUE</span>))  <span class="co">#&lt;&lt;</span></span></code></pre></div>
-<div id="htmlwidget-2" style="width:864px;height:384px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addCircles","args":[[36.6552,36.583748,36.5979],[-118.8469,-118.8195,-118.90218],300,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,["1NO","1NL","3NB"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]},{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[36.612287517514,-118.856192682743,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Land HERE!",{"interactive":false,"permanent":true,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[36.583748,36.6552],"lng":[-118.90218,-118.8195]}},"evals":[],"jsHooks":[]}</script>
-<p><br></p>
-</div>
-<div id="explore" class="section level3 unnumbered tip">
-<h3><i class="fa fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore!</h3>
-<p>News just came in that the outposts will soon be upgrading their <strong>radar</strong> to detect ships up to <code>4,200 meters</code> away. Will that be a problem?</p>
-<p><strong>Steps</strong></p>
-<ol style="list-style-type: decimal">
-<li>Use <code>st_buffer()</code> to add a 4,200 meter ring around each outpost.
-<ul>
-<li><code>outposts_new &lt;- st_buffer(outposts, dist = 4200)</code></li>
-</ul></li>
-<li>Then add a layer to the leaflet map using <code>addPolygons()</code> with <code>data = outposts_new</code>.</li>
-<li>You can drop the <code>radius = 300</code> argument.</li>
-</ol>
-<details>
-<summary class="btn_code">
-<em>Show code</em>
-</summary>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>outposts_new <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(outposts, <span class="at">dist =</span> <span class="dv">4200</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">label =</span> <span class="sc">~</span>ID) <span class="sc">%&gt;%</span> </span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">data  =</span> land_pad,</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="st">&quot;Land HERE???&quot;</span>,  </span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">noHide =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">data =</span> outposts_new,    <span class="co">#&lt;&lt;</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillColor =</span> <span class="st">&quot;yellow&quot;</span>)   <span class="co">#&lt;&lt;</span></span></code></pre></div>
-<p><br></p>
-</details>
-<blockquote>
-<p><strong>Will our landing spot still be safe?</strong></p>
-</blockquote>
-<p><br></p>
-</div>
-</div>
-<div id="wow" class="section level2 unnumbered">
-<h2>Wow!</h2>
-<p>You’re on 🔥 fire data droid. Let’s sit here a minute to cool down…</p>
-<p>Ok, now let’s go land on that planet before we get stuck up here with permanent space legs.</p>
-</div>
-</div>
-<div id="invasive-porg-survey---2023" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Invasive Porg Survey - 2023</h1>
-<hr>
-<div id="the-ewoks-need-our-help.-theres-porgs-everywhere" class="section level3 unnumbered">
-<h3>The Ewoks need our help. There’s porgs <strong>EVERYWHERE!</strong></h3>
-<p><img src="../images/porgs_bb8_2.jpg" style="margin-top: 0px;"></p>
-<p>Porgs have been spreading across the galaxy, likely hitching rides on unsuspecting ships. They’re so cute people hate to say it, but they are starting to become a nuisance in some place.</p>
-<p>To get a grasp on the problem the Ewoks are doing the first ever porg survey. And they need your help planning the <strong>survey</strong>.</p>
-</div>
-</div>
-<div id="dates-with-lubridate" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> <i class="fa fa-calendar" aria-hidden="true"></i> Dates with <code>lubridate</code></h1>
-<hr>
-<div id="the-lubridate-package." class="section level3 unnumbered">
-<h3>The <code>lubridate</code> package.</h3>
-<p><img src="../images/lubridate.png" style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" /></p>
-<p><br></p>
-<p>It’s about time! Lubridate makes working with dates much easier.</p>
-<p>We can find how much time has elapsed, add or subtract days, and find seasonal and day of the week averages.</p>
-<p><br></p>
-<div style="clear: both;">
-
-</div>
-</div>
-<div id="install-lubridate" class="section level3 unnumbered">
-<h3>Install <code>lubridate</code></h3>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;lubridate&quot;</span>)</span></code></pre></div>
-<p><br>
-<strong>View the date cheatsheet <a href="https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf">HERE</a></strong>.</p>
-<p>It’s a great reference when you need to manipulate dates or timezones in your data.</p>
-</div>
-<div id="menu-of-date-functions" class="section level2 unnumbered">
-<h2>Menu of date functions</h2>
-<hr class="hrlvl2">
-<div id="convert-text-to-a-date" class="section level4 unnumbered">
-<h4>Convert text to a <code>DATE</code></h4>
-<table>
-<colgroup>
-<col width="5%" />
-<col width="94%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Function</th>
-<th align="left">Order of date elements</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>mdy()</code></td>
-<td align="left">Month-Day-Year :: <code>05-18-2019</code> or <code>05/18/2019</code></td>
-</tr>
-<tr class="even">
-<td><code>dmy()</code></td>
-<td align="left">Day-Month-Year (Euro dates) :: <code>18-05-2019</code> or <code>18/05/2019</code></td>
-</tr>
-<tr class="odd">
-<td><code>ymd()</code></td>
-<td align="left">Year-Month-Day (science dates) :: <code>2019-05-18</code> or <code>2019/05/18</code></td>
-</tr>
-<tr class="even">
-<td><code>ymd_hm()</code></td>
-<td align="left">Year-Month-Day Hour:Minutes :: <code>2019-05-18 8:35 AM</code></td>
-</tr>
-<tr class="odd">
-<td><code>ymd_hms()</code></td>
-<td align="left">Year-Month-Day Hour:Minutes:Seconds :: <code>2019-05-18 8:35:22 AM</code></td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-</div>
-<div id="get-specific-date-parts-eg.-the-year-month-day" class="section level4 unnumbered">
-<h4>Get specific date parts (eg. the year, month, day… )</h4>
-<table>
-<colgroup>
-<col width="5%" />
-<col width="94%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Function</th>
-<th align="left">Date element</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>year()</code></td>
-<td align="left">Year</td>
-</tr>
-<tr class="even">
-<td><code>month()</code></td>
-<td align="left">Month as <em>1,2,3</em>; For <em>Jan, Feb, Mar</em> use <code>label=TRUE</code></td>
-</tr>
-<tr class="odd">
-<td><code>week()</code></td>
-<td align="left">Week of the year</td>
-</tr>
-<tr class="even">
-<td><code>day()</code></td>
-<td align="left">Day of the month</td>
-</tr>
-<tr class="odd">
-<td><code>wday()</code></td>
-<td align="left">Day of the week as <em>1,2,3</em>; For <em>Sun, Mon, Tue</em> use <code>label=TRUE</code></td>
-</tr>
-<tr class="even">
-<td><em>- Time -</em></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td><code>hour()</code></td>
-<td align="left">Hour of the day <em>(24hr)</em></td>
-</tr>
-<tr class="even">
-<td><code>minute()</code></td>
-<td align="left">Minutes</td>
-</tr>
-<tr class="odd">
-<td><code>second()</code></td>
-<td align="left">Seconds</td>
-</tr>
-<tr class="even">
-<td><code>tz()</code></td>
-<td align="left">Time zone</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-</div>
-<div id="clean-the-dates" class="section level3 unnumbered note">
-<h3><i class="fa fa-broom" aria-hidden="true"></i> Clean the dates</h3>
-<div id="real-world-examples" class="section level4 unnumbered">
-<h4>Real world examples</h4>
-<p>Does your date column look like one of these?</p>
-<p>Here’s the <code>lubridate</code> function to convert the column to a date.</p>
-<table>
-<colgroup>
-<col width="23%" />
-<col width="76%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Format</th>
-<th align="left">Function to use</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>“05/18/2019”</td>
-<td align="left"><code>mdy(date_column)</code></td>
-</tr>
-<tr class="even">
-<td>“May 18, 2019”</td>
-<td align="left"><code>mdy(date_column)</code></td>
-</tr>
-<tr class="odd">
-<td>“05/18/2019 8:00 CDT”</td>
-<td align="left"><code>mdy_hm(date_column, tz = "US/Central")</code></td>
-</tr>
-<tr class="even">
-<td>“05/18/2019 11:05:32 PDT”</td>
-<td align="left"><code>mdy_hms(date_column, tz = "US/Pacific")</code></td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<p><strong>European dates</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th>Format</th>
-<th align="left">Function to use</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>“30.05.2019”</td>
-<td align="left"><code>dmy(date_column)</code></td>
-</tr>
-<tr class="even">
-<td>“30-05-2019”</td>
-<td align="left"><code>dmy(date_column)</code></td>
-</tr>
-<tr class="odd">
-<td>“30/05/2019”</td>
-<td align="left"><code>dmy(date_column)</code></td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<p><strong>Simple number dates</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th>Format</th>
-<th align="left">Function to use</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>“20190518”</td>
-<td align="left"><code>ymd(sample_date)</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><br></p>
-<div id="survey-objective" class="section level3 unnumbered">
-<h3>Survey objective</h3>
-<div class="well">
-<ul>
-<li>The Ewoks have asked you help organize their Porg survey.</li>
-<li>In 2023, they would like to perform a porg count once a week from May to October.</li>
-<li>They have enough volunteers to run the survey at two locations
-<ul>
-<li><code>Bright Tree</code> and <code>Fern Gully</code></li>
-</ul></li>
-</ul>
-</div>
-<p><br></p>
-<p>Let’s generate the full list of dates during this time span using the sequence date function: <code>seq.Date()</code></p>
-<div id="run-the-code-below-to-create-a-date-for-every-possible-day-of-the-survey." class="section level4 unnumbered">
-<h4>Run the code below to create a date for every possible day of the survey.</h4>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2023-05-01&quot;</span>)</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>end_date   <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2023-10-31&quot;</span>)</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sequence from start to end, counting by 1 day intervals</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">seq.Date</span>(<span class="at">from =</span> start_date, </span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>                         <span class="at">to =</span> end_date, </span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>                         <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
-<p><br></p>
-</div>
-</div>
-<div id="how-many-days-will-the-survey-run" class="section level3 unnumbered">
-<h3>How many days will the survey run?</h3>
-<details>
-<summary class="btn_code">
-Show answer
-</summary>
-<blockquote>
-<p><em>184 days</em></p>
-</blockquote>
-</details>
-<p><br></p>
-</div>
-<div id="lets-put-the-dates-in-a-dataframe" class="section level3 unnumbered">
-<h3>Let’s put the dates in a dataframe</h3>
-<blockquote>
-<p>Remember how to make a dataframe?</p>
-</blockquote>
-</div>
-<div id="heres-a-reminder" class="section level3 unnumbered">
-<h3>Here’s a reminder</h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">count_date =</span> survey_dates)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(survey)</span></code></pre></div>
-<pre><code>##   count_date
-## 1 2023-05-01
-## 2 2023-05-02
-## 3 2023-05-03
-## 4 2023-05-04
-## 5 2023-05-05
-## 6 2023-05-06</code></pre>
-</div>
-<div id="yes" class="section level3 unnumbered">
-<h3>Yes!</h3>
-</div>
-</div>
-<div id="scheduling-weekdays" class="section level2 unnumbered">
-<h2>1. Scheduling weekdays</h2>
-<p><img src="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" align=right /></p>
-<p>Ewoks are very busy. They only have one day per week when they can volunteer.</p>
-<p>Here is the weekday when volunteers are available at each location:</p>
-<ul>
-<li>Bright Tree: <code>Thursdays</code></li>
-<li>Fern Gully: <code>Fridays</code></li>
-</ul>
-<p><br></p>
-<p>We can use the <code>seq.Date()</code> function and the option to step <code>by = "week"</code> to
-generate the survey dates for each site. But we need to know which day to start from.</p>
-<blockquote>
-<h4 id="when-is-the-first-thursday-in-may-of-2023" class="unnumbered">When is the first Thursday in May of 2023?</h4>
-</blockquote>
-<p><br></p>
-<p>For that, we can use the <code>wday()</code>, the “weekday” function.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wday tells you the day of week (Sun, Mon, etc..) for a specific date</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(<span class="fu">ymd</span>(<span class="st">&#39;2023-05-01&#39;</span>), <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>## [1] Monday
-## 7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday</code></pre>
-<p><br></p>
-<p>So the <code>1st</code> of May will be a Monday.
-That means…. <strong>May the 4th</strong> will be a Thursday. Perfect! That’s my favorite day.</p>
-</div>
-<div id="mutate-to-the-rescue" class="section level2 unnumbered">
-<h2>Mutate to the rescue</h2>
-<p>We really don’t want to check every date one by one do we?</p>
-<p>Let’s add a new <code>week_day</code> column to our survey table that checks ALL the dates ALL at once. To add a new column we call our friend <code>mutate()</code>.</p>
-<p>Complete the code below to add a <code>week_day</code> column.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">week_day =</span> <span class="fu">wday</span>( ________ , <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
-<p><br></p>
-</div>
-<div id="filter-week-days" class="section level2 unnumbered">
-<h2><code>filter()</code> week days</h2>
-<p>With <strong>filter</strong> we can pick out only the days of the week that we want.</p>
-<p>Split the schedule in two by filtering the survey to only the week day needed at each site:</p>
-<ul>
-<li><code>Thursday</code> for Bright Tree</li>
-<li><code>Friday</code> for Fern Gully</li>
-</ul>
-<p><br></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  ________ )</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>fern_dates   <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  ________ )</span></code></pre></div>
-<details>
-<summary class="btn_code">
-Show code
-</summary>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Thursday&quot;</span> )</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>fern_dates   <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Friday&quot;</span> )</span></code></pre></div>
-</details>
-<p><br></p>
-<p><strong>How many survey dates are at each site?</strong></p>
-<blockquote>
-<p><em>Hint: It’s less than 50.</em></p>
-</blockquote>
-<details>
-<summary class="btn_code">
-Show answer
-</summary>
-<blockquote>
-<p><strong>26 survey days</strong></p>
-</blockquote>
-</details>
-<p><br></p>
-</div>
-<div id="particular-date-formats" class="section level2 unnumbered">
-<h2>2. Particular date formats</h2>
-<p><img align="left" src="../images/dwight.png" style="margin-right: 14px;"></p>
-<p>Oh no! Each survey site has a very-very particular <strong>Assistant to the Regional Manager</strong>. And they are demanding a very <strong>specific</strong> date format for their work schedules.</p>
-<p><br></p>
-<p>Before you send off the survey dates, you’ll need to adjust the dates to match the requested formats below.</p>
-<p><strong>Preferred date formats</strong></p>
-<ul>
-<li>Bright Tree: <code>5-11-2023</code></li>
-<li>Fern Gully: <code>May 12, 2023</code></li>
-</ul>
-<p><br></p>
-<p>Use <code>format(count_date, ...)</code> and the date expressions below to format the schedule for each region accordingly.</p>
-<blockquote>
-<p>For example: <code>format(count_date, "%b, %Y")</code> prints the date as <code>Aug, 2023</code>.</p>
-<ul>
-<li><code>%b</code> stands for 3-letter month abbreviation</li>
-<li><code>%Y%</code> stands for the full 4 digit year</li>
-</ul>
-</blockquote>
-<div id="date-parts" class="section level3 unnumbered">
-<h3>Date parts</h3>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Expression</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>%Y</code></td>
-<td align="left">Year (4 digit)</td>
-<td align="left">2023</td>
-</tr>
-<tr class="even">
-<td align="left"><code>%y</code></td>
-<td align="left">Year (2 digit)</td>
-<td align="left">21</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>%B</code></td>
-<td align="left">Month (full name)</td>
-<td align="left">December</td>
-</tr>
-<tr class="even">
-<td align="left"><code>%b</code></td>
-<td align="left">Month (abbreviated)</td>
-<td align="left">Dec</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>%m</code></td>
-<td align="left">Month (decimal number)</td>
-<td align="left">12</td>
-</tr>
-<tr class="even">
-<td align="left"><code>%d</code></td>
-<td align="left">Day of the month (decimal number)</td>
-<td align="left">30</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="time-parts" class="section level3 unnumbered">
-<h3>Time parts</h3>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Expression</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>%H</code></td>
-<td align="left">Hour</td>
-<td align="left">8</td>
-</tr>
-<tr class="even">
-<td align="left"><code>%M</code></td>
-<td align="left">Minute</td>
-<td align="left">13</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>%S</code></td>
-<td align="left">Second</td>
-<td align="left">35</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<p>Use <code>mutate()</code> to update the <strong>week_day</strong> column in both site schedules.</p>
-<p><strong>Here’s a start</strong></p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to 5-11-2023</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(bright_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, _______  ))</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to May 12, 2023</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, _______ ))</span></code></pre></div>
-<details>
-<summary class="btn_code">
-Show code
-</summary>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to 5-11-2023</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(bright_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%m-%d-%Y&quot;</span>))</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to May 12, 2023</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%b %d, %Y&quot;</span>))</span></code></pre></div>
-</details>
-</div>
-<div id="howd-we-do" class="section level3 unnumbered">
-<h3>How’d we do?</h3>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bright Tree schedule</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bright_dates, <span class="dv">3</span>)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">count_date</th>
-<th align="left">week_day</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">05-04-2023</td>
-<td align="left">Thursday</td>
-</tr>
-<tr class="even">
-<td align="left">05-11-2023</td>
-<td align="left">Thursday</td>
-</tr>
-<tr class="odd">
-<td align="left">05-18-2023</td>
-<td align="left">Thursday</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fern Gully schedule</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(fern_dates, <span class="dv">3</span>)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">count_date</th>
-<th align="left">week_day</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">May 05, 2023</td>
-<td align="left">Friday</td>
-</tr>
-<tr class="even">
-<td align="left">May 12, 2023</td>
-<td align="left">Friday</td>
-</tr>
-<tr class="odd">
-<td align="left">May 19, 2023</td>
-<td align="left">Friday</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<p><strong>Congrats!</strong></p>
-<p>Your fine-tuned schedules worked perfectly.</p>
-<p>Now let’s jump ahead and take a look at the survey results.</p>
-</div>
-</div>
-<div id="results" class="section level2 unnumbered">
-<h2>3. Results</h2>
-<p><img src="../images/porgs_lifecycle.jpg" style="width:80.0%" /></p>
-<div id="load-the-porg-survey-results." class="section level3 unnumbered">
-<h3>Load the porg survey results.</h3>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/2022_porg_survey_results.csv&quot;</span>)   </span></code></pre></div>
-<p><br></p>
-<p><em>Explore a bit.</em></p>
-<blockquote>
-<p>Are there missing values?</p>
-</blockquote>
-<p><br></p>
-</div>
-<div id="a-missing-site" class="section level3 unnumbered">
-<h3>A missing site</h3>
-<p>It looks like we have a slight missing data problem.</p>
-<p>There’s a data point in the results that wasn’t labeled with the site
-location. We do know the date however.</p>
-<p>On <code>2023-06-30</code> there were a whopping 7 porgs counted - but we just don’t know where.</p>
-<p><br></p>
-<p><strong>Can you determine the site based on the date of the porg count?</strong></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>mystery_site_date <span class="ot">&lt;-</span> <span class="st">&quot;2023-06-30&quot;</span></span></code></pre></div>
-<blockquote>
-<p><em>Hint: What weekday is this?</em></p>
-<p>Try the <code>wday(date)</code> function.</p>
-</blockquote>
-<p><br></p>
-<p><strong>Good sleuthing data droid.</strong></p>
-<p>We’ll learn how to update the site value later today, but right now we’re in a hurry, so let’s remove the row using filter.</p>
-<p>Use <code>filter()</code> to keep only the rows in the porgs data where <code>site</code> is <strong>NOT</strong> <em>NA</em> (missing).</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">filter</span>(porgs, <span class="sc">!</span><span class="fu">is.na</span>(site))  </span></code></pre></div>
-<p><br></p>
-</div>
-</div>
-<div id="the-best-time-for-porgs" class="section level2 unnumbered">
-<h2>4. The best time for porgs</h2>
-<blockquote>
-<h3 id="what-is-the-best-month-to-see-porgs" class="unnumbered">What is the best month to see porgs?</h3>
-</blockquote>
-<p><strong>First, add a <code>month</code> column to the data with the function <code>month()</code> and the column <code>count_date</code>.</strong></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> porgs <span class="sc">%&gt;%</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
-<p><br></p>
-<p><strong>Next, use <code>ggplot()</code> and <code>geom_col()</code> to plot the porg sightings by month.</strong></p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> ______ , <span class="at">fill =</span> site)) <span class="sc">+</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
-<details>
-<summary class="btn_code">
-Show code
-</summary>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> porg_count, <span class="at">fill =</span> site)) <span class="sc">+</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-39-1.png" width="960" /></p>
-</details>
-<p><br></p>
-<blockquote>
-<p>Why might June be the lowest month?</p>
-<p><em>Hint:</em> Fern Gully</p>
-</blockquote>
-</div>
-<div id="time-series---all-the-data" class="section level2 unnumbered">
-<h2>5. Time series - All the data</h2>
-<p>Plot all the data with <code>geom_point()</code>. Put <code>count_date</code> on the x-axis, and the <code>porg_count</code> on the y-axis. Set the color to match the <code>site</code> column.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> ______ , <span class="at">color =</span> _____ )) <span class="sc">+</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
-<details>
-<summary class="btn_code">
-Show code
-</summary>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> porg_count, <span class="at">color =</span> site)) <span class="sc">+</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) </span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-41-1.png" width="960" /></p>
-</details>
-<p><br></p>
-<p>Oof! That’s a busy plot. Try adding <code>+ facet_wrap("site")</code> to the end.
-What happens?</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> porg_count, <span class="at">color =</span> site)) <span class="sc">+</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;site&quot;</span>)   <span class="co">#&lt;&lt;</span></span></code></pre></div>
-<p><br></p>
-<p>Try adding <code>+ geom_line()</code>.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> porg_count, <span class="at">color =</span> site)) <span class="sc">+</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> site) <span class="sc">+</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()                <span class="co">#&lt;&lt;</span></span></code></pre></div>
-<details>
-<summary class="btn_code">
-Show code
-</summary>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> porg_count, <span class="at">color =</span> site)) <span class="sc">+</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> site) <span class="sc">+</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-44-1.png" width="960" /></p>
-</details>
-<p><br></p>
-</div>
-<div id="great-work" class="section level2 unnumbered">
-<h2><i class="fas fa-hands-clapping" aria-hidden="true"></i> Great work</h2>
-<p>The Ewoks were deeply thankful. They’ll be in touch for <em>Porg Survey 2024</em>.</p>
-<p><img src="../images/porgs_4.jpg" style="width:35.0%" /></p>
-<p><br></p>
-</div>
-</div>
-<div id="pipe-things-together-a-b" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Pipe things together: <code>A %&gt;% B</code></h1>
-<hr>
-<p><br></p>
-<blockquote>
-<p><strong>Wishing you could type the name of the data less often?</strong></p>
-</blockquote>
-<p><img src="../images/pipe.png" style="margin-right: 20px; width: 136px; float: left; margin-top: 12px;" /></p>
-<div id="you-can-with-the-pipe" class="section level3 unnumbered">
-<h3>You can with the <em>pipe</em>!</h3>
-<p>Use the <code>%&gt;%</code> to chain functions together and make our scripts more streamlined.</p>
-<div style="clear: both;">
-
-</div>
-</div>
-<div id="the-helps" class="section level2 unnumbered">
-<h2>The <code>%&gt;%</code> helps:</h2>
-<div id="eliminate-nested-parentheses" class="section level3 unnumbered">
-<h3><strong><code>#1:</code></strong> <em>Eliminate nested parentheses</em></h3>
-<p>Let’s say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome.</p>
-</div>
-<div id="without-the-pipe" class="section level3 unnumbered">
-<h3>Without the pipe <i class="fas fa-frown"></i></h3>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>))))</span></code></pre></div>
-<p><br></p>
-<p>The code above is dense and we need to read it backwards from right to left to understand the order of operations. The pipe on the other hand allows us to read the code from left to right.</p>
-</div>
-<div id="with-the-pipe" class="section level3 unnumbered">
-<h3>With the pipe <i class="fas fa-smile"></i></h3>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>) <span class="sc">%&gt;%</span> <span class="fu">sum</span>() <span class="sc">%&gt;%</span> <span class="fu">log</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>()</span></code></pre></div>
-<p><br></p>
-</div>
-<div id="combine-processing-steps-into-one-cohesive-chunk" class="section level3 unnumbered">
-<h3><strong><code>#2:</code></strong> <em>Combine processing steps into one cohesive chunk</em></h3>
-</div>
-<div id="without-the-pipe-1" class="section level3 unnumbered">
-<h3>Without the pipe</h3>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, <span class="fu">desc</span>(price_per_pound))</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>)</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, </span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
-</div>
-<div id="with-the-pipe-1" class="section level3 unnumbered">
-<h3>With the pipe</h3>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">arrange</span>(<span class="fu">desc</span>(price_per_pound)) <span class="sc">%&gt;%</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">filter</span>(origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
-<p><br></p>
-</div>
-<div id="explore-1" class="section level3 unnumbered tip">
-<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
-<p>Similar to above, use the <code>%&gt;%</code> to combine the two analysis lines below.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter to only magnetic_field measurements</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">filter</span>(air_endor, analyte <span class="sc">==</span> <span class="st">&quot;magnetic_field&quot;</span>)</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a date column to the filtered data</span></span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>mag_endor <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mag_endor, <span class="at">date =</span> <span class="fu">mdy</span>(start_run_date))</span></code></pre></div>
-</div>
-</div>
-<div id="let-the-guide-you." class="section level2 unnumbered">
-<h2>Let the <code>%&gt;%</code> guide you.</h2>
-<p><br></p>
-<blockquote>
-<h2 id="wait.-so-wheres-finn" class="unnumbered">Wait…. <strong>So where’s Finn?</strong></h2>
+<h3 id="wait.-so-wheres-finn" class="unnumbered">Wait…. <strong>So where’s Finn?</strong></h3>
 </blockquote>
 </div>
 </div>
 <div id="finn-needs-us" class="section level1 unnumbered">
 <h1>Finn needs us!</h1>
-<p>That’s enough <em>scuttlebutting</em> around, Finn needs us back on Jakku. We’re going to have to get better at our roll call procedure. Here we come Finn. <strong>Blast off!</strong></p>
+<p>Turn this ship around BB8, Finn needs us back on Jakku. We’re going to have to get better at our roll call procedure. Here we come Finn. <strong>Blast off!</strong></p>
 <p><br></p>
 <p><img src="../images/finn_run.gif" style="margin-left: 18%; width: 60%; margin-top: 6px;" /></p>
 <p><br></p>
-<p><br></p>
 </div>
-<div id="jakku-re-visited" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Jakku re-visited</h1>
+<div id="jakku-re-visited" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Jakku re-visited</h1>
 <hr>
 <p>Okay, so we’re back on this ol’ dust bucket planet. Let’s try not to forget anyone this time. Data droid, let me know if anyone goes missing.</p>
 <div id="a-scrappy-ransom" class="section level2 unnumbered">
@@ -1348,20 +401,20 @@ Show code
 Update from BB8!
 </h3>
 <p>BB8 was busy on our flight back to Jakku, and recovered a <strong>full</strong> set of scrap records from the notorious Unkar Plutt. Let’s take a look.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the full scrap database</span></span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/starwars_scrap_jakku_full.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the full scrap database</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/starwars_scrap_jakku_full.csv&quot;</span>)</span></code></pre></div>
 </div>
 <p><br></p>
 <p>Take a look at the <strong>NEW</strong> scrap data and see if we have the weight of all the items.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What unit types are in the data?</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(scrap<span class="sc">$</span>units)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What unit types are in the data?</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(scrap<span class="sc">$</span>units)</span></code></pre></div>
 <pre><code>## [1] &quot;Cubic Yards&quot; &quot;Items&quot;       &quot;Tons&quot;</code></pre>
 <p><br></p>
 <p><strong>Or return results as a data frame</strong></p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 1
 ##   units      
 ##   &lt;chr&gt;      
@@ -1384,19 +437,19 @@ Update from BB8!
 <p>It took a while, but with a few droid bribes BB8 was able to track down a <em>Weight conversion table</em> from his droid buddies. Our current data shows the total cubic yards for some scrap shipments, but not how much the shipment weighs.</p>
 <div id="read-the-weight-conversion-table" class="section level3 unnumbered">
 <h3>Read the weight conversion table</h3>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The data&#39;s URL</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>convert_url <span class="ot">&lt;-</span> <span class="st">&quot;https://mn-r.netlify.app/data/conversion_table.csv&quot;</span></span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the conversion data</span></span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>convert <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(convert_url)</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(convert, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The data&#39;s URL</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>convert_url <span class="ot">&lt;-</span> <span class="st">&quot;https://mn-r.netlify.app/data/conversion_table.csv&quot;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the conversion data</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>convert <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(convert_url)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(convert, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
-##   item               units       pounds
-##   &lt;chr&gt;              &lt;chr&gt;        &lt;dbl&gt;
-## 1 Bulkhead           Cubic Yards    321
-## 2 Hull Panel         Cubic Yards    641
-## 3 Repulsorlift array Cubic Yards    467</code></pre>
+##   item               units       pounds_per_unit
+##   &lt;chr&gt;              &lt;chr&gt;                 &lt;dbl&gt;
+## 1 Bulkhead           Cubic Yards             321
+## 2 Hull Panel         Cubic Yards             641
+## 3 Repulsorlift array Cubic Yards             467</code></pre>
 <p><br></p>
 <p>Oh my stars! A cubic yard of <code>Hull Panel</code> weighs <strong>641 lbs</strong>. I knew it!</p>
 <p>Let’s join this new conversion table to the scrap data to make our calculations easier. To do that we need to meet a new function.</p>
@@ -1405,8 +458,8 @@ Update from BB8!
 </div>
 </div>
 </div>
-<div id="join-tables-with-left_join" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Join tables with <strong>left_join</strong></h1>
+<div id="join-tables-with-left_join" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Join tables with <strong>left_join</strong></h1>
 <hr>
 <div id="joining-2-tables" class="section level2 unnumbered">
 <h2>Joining 2 tables</h2>
@@ -1522,22 +575,22 @@ Update from BB8!
 <p><br></p>
 <p><strong>Uh oh.</strong> There’s no “Ayla Secura” in the height table and there’s no “Greedo” in the homeworld table. Can we still join the tables? Run the code below to see what happens.</p>
 <p><br></p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">246</span>))      </span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
-<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
-<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by starwars_name</span></span>
-<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Tell left_join which columns to use as the key with:  </span></span>
-<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="do">##     by = c(&quot;key_left&quot; = &quot;key_right&quot;)</span></span>
-<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds, </span>
-<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;starwars_name&quot;</span> <span class="ot">=</span> <span class="st">&quot;starwars_name&quot;</span>))</span>
-<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">246</span>))      </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by starwars_name</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Tell left_join which columns to use as the key with:  </span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="do">##     by = c(&quot;key_left&quot; = &quot;key_right&quot;)</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds, </span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;starwars_name&quot;</span> <span class="ot">=</span> <span class="st">&quot;starwars_name&quot;</span>))</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
 <p><br></p>
 <table>
 <thead>
@@ -1668,21 +721,21 @@ Update from BB8!
 </div>
 <p><br></p>
 <p>When you run the code below you’ll see that <strong>left_join</strong> is very thorough and adds each additional homeworld it finds for <em>C-3PO</em> as a new row in the joined table.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height  =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">173</span>))</span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
-<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tantive IV&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
-<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by Star Wars character name</span></span>
-<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds)</span>
-<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Check number of rows</span></span>
-<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(height_and_homeworld)</span>
-<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height  =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">173</span>))</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tantive IV&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by Star Wars character name</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Check number of rows</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(height_and_homeworld)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
 <p><br></p>
 <table>
 <thead>
@@ -1746,14 +799,14 @@ Update from BB8!
 <hr class="hrlvl2">
 <p>Let’s apply our new <code>left_join()</code> skills to the scrap data.</p>
 <p>First, let’s re-read the full scrap data.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the larger scrap database</span></span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_full.csv&quot;</span>)</span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="co"># what units types are in the data? </span></span>
-<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the larger scrap database</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/starwars_scrap_jakku_full.csv&quot;</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># what units types are in the data? </span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(scrap, units)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 1
 ##   units      
 ##   &lt;chr&gt;      
@@ -1763,33 +816,35 @@ Update from BB8!
 <div id="join-the-conversion-table-to-scrap" class="section level3 unnumbered">
 <h3>Join the conversion table to scrap</h3>
 <p>Look at the tables. What columns in both tables do we want to join <strong>by</strong>?</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(scrap)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(scrap)</span></code></pre></div>
 <p>Let’s join by <code>item</code> and <code>units</code>.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the scrap to the conversion table</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert, </span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;item&quot;</span>  <span class="ot">=</span> <span class="st">&quot;item&quot;</span>, </span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;units&quot;</span> <span class="ot">=</span> <span class="st">&quot;units&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the scrap to the conversion table</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert, </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;item&quot;</span>  <span class="ot">=</span> <span class="st">&quot;item&quot;</span>, </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;units&quot;</span> <span class="ot">=</span> <span class="st">&quot;units&quot;</span>))</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p><strong>Want to save on typing?</strong></p>
 </blockquote>
 <p><code>left_join()</code> will automatically search for matching columns if you don’t use the <code>by=</code> argument. So if you know 2 tables share a column name you don’t have to specify how to join them. The code below does the same as above.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert)</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap, <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scrap, <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 8
-##   receipt_date item                  origin  desti…¹ amount units price…² pounds
-##   &lt;chr&gt;        &lt;chr&gt;                 &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;
-## 1 4/1/2013     Bulkhead              Crater… Raiders   4017 Cubi…   1005.    321
-## 2 4/2/2013     Starship sensor array Outski… Trade …   1249 Cubi…   1129.    637
-## 3 4/3/2013     Starship sensor array Outski… Niima …   4434 Cubi…   1129.    637
-## 4 4/4/2013     Hull Panel            Crater… Raiders    286 Cubi…    843.    641
-## # … with abbreviated variable names ¹​destination, ²​price_per_pound</code></pre>
-<div id="help" class="section level4 unnumbered quiz">
-<h4><strong>Help!</strong></h4>
+##   receipt_date item                  origin desti…¹ amount units price…² pound…³
+##   &lt;chr&gt;        &lt;chr&gt;                 &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 4/1/2013     Bulkhead              Crate… Raiders   4017 Cubi…   1005.     321
+## 2 4/2/2013     Starship sensor array Outsk… Trade …   1249 Cubi…   1129.     637
+## 3 4/3/2013     Starship sensor array Outsk… Niima …   4434 Cubi…   1129.     637
+## 4 4/4/2013     Hull Panel            Crate… Raiders    286 Cubi…    843.     641
+## # … with abbreviated variable names ¹​destination, ²​price_per_pound,
+## #   ³​pounds_per_unit</code></pre>
+<p><br></p>
+</div>
+<div id="help" class="section level3 unnumbered quiz">
+<h3><strong>Help!</strong></h3>
 <p>For more details on the <strong>join</strong> family of functions, you can type <code>?left_join</code> to see all the arguments and options.
 <br></p>
-</div>
 </div>
 </div>
 <div id="total-pounds-per-shipment" class="section level2 unnumbered">
@@ -1798,23 +853,23 @@ Update from BB8!
 <p>Let’s <code>mutate()</code>!</p>
 <p>Now that we have pounds per unit we can use <code>mutate</code> to calculate the total pounds for each shipment.</p>
 <p><strong>Fill in the blank</strong></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span>  _____________ )</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span>  _____________ )</span></code></pre></div>
 <details>
 <summary class="btn_code">
 <em>Show code</em>
 </summary>
 <p>
 <div class="quiz" style="margin-top: -6px;">
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span> pounds_per_unit)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span> pounds_per_unit)</span></code></pre></div>
 </div>
 </p>
 </details>
 </div>
 <div id="total-price-per-shipment" class="section level2 unnumbered">
 <h2>Total price per shipment</h2>
-<div id="explore-2" class="section level3 unnumbered tip">
+<div id="explore" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
@@ -1874,19 +929,402 @@ scrap <- scrap %>%
 <div id="price-per-item" class="section level2 unnumbered">
 <h2>Price per item $</h2>
 <p><strong>Great!</strong> Let’s add one last column. We can divide the shipment’s <em>credits</em> by the <em>amount</em> of items to get the <code>price_per_unit</code>.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the price per unit</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">price_per_unit =</span> credits <span class="sc">/</span> amount)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the price per unit</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">price_per_unit =</span> credits <span class="sc">/</span> amount)</span></code></pre></div>
 <p><br></p>
-<div id="teaser" class="section level3 unnumbered note" style="line-height: 1.6;">
-<h3>Teaser</h3>
-<p>Analysts often get asked questions:</p>
+</div>
+</div>
+<div id="summarize-this" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> <code>summarize()</code> this</h1>
+<hr>
+<p><img src="../images/summarize_diagram.png" width="590" /></p>
+<p><code>summarize()</code> uses summary functions <code>mean()</code> or <code>sum()</code> to collapse the data down to a single summary row. To get started we’ll need some summary functions like <code>sum()</code>, <code>mean()</code>, <code>min()</code>, and <code>max()</code>.</p>
+<div id="sum" class="section level2 unnumbered">
+<h2><code>sum()</code></h2>
+<p>Use <code>summarize()</code> and <code>sum()</code> to find the total credits of all the scrap combined.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(scrap, <span class="at">total_credits =</span> <span class="fu">sum</span>(credits))</span></code></pre></div>
+</div>
+<div id="mean" class="section level2 unnumbered">
+<h2><code>mean()</code></h2>
+<p>Use <code>summarize()</code> and <code>mean()</code> to calculate the <em>mean</em> <code>price_per_pound</code> in the scrap report.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(scrap, <span class="at">mean_price =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T))</span></code></pre></div>
+<p><br></p>
+<div id="note" class="section level3 unnumbered note">
+<h3>Note</h3>
+<p><strong>What’s the average of missing data?</strong> I don’t know.</p>
+<p>Did you see the <code>na.rm = TRUE</code> inside the <code>mean()</code> function. This tells R to ignore empty cells or missing values that show up in R as <code>NA</code>. If you leave <code>na.rm</code> out, the <em>mean</em> function will return ‘NA’ if it finds a missing value anywhere in the data.</p>
+</div>
+</div>
+<div id="median" class="section level2 unnumbered">
+<h2><code>median()</code></h2>
+<p>Use summarize to calculate the <em>median</em> price_per_pound in the scrap report.</p>
+<p><code>summarize(scrap, median_price = median(price_per_pound, na.rm = T))</code></p>
+</div>
+<div id="max" class="section level2 unnumbered">
+<h2><code>max()</code></h2>
+<p>Use summarize to calculate the <em>maximum</em> price per pound any scrapper got for their scrap.</p>
+<p><code>summarize(scrap, max_price = max(price_per_pound, na.rm = T))</code></p>
+</div>
+<div id="min" class="section level2 unnumbered">
+<h2><code>min()</code></h2>
+<p>Use summarize to calculate the <em>minimum</em> price per pound any scrapper got for their scrap.</p>
+<p><code>summarize(scrap, min_price = min(price_per_pound, na.rm = T))</code></p>
+</div>
+<div id="sd" class="section level2 unnumbered">
+<h2><code>sd()</code></h2>
+<p>What is the <em>standard deviation</em> of the credits?</p>
+<p><code>summarize(scrap, stdev_credits = sd(credits))</code></p>
+</div>
+<div id="quantile" class="section level2 unnumbered">
+<h2><code>quantile()</code></h2>
+<p><em>Quantiles</em> are useful for finding the upper or lower range of a column. Use the <code>quantile()</code> function to find the the 5th and 95th quantile of the prices.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(scrap, </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">price_5th_pctile  =</span> <span class="fu">quantile</span>(price_per_pound, <span class="fl">0.05</span>, <span class="at">na.rm =</span> T),</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">price_95th_pctile =</span> <span class="fu">quantile</span>(price_per_pound, <span class="fl">0.95</span>))</span></code></pre></div>
+<p><strong>Hint:</strong> Add <code>na.rm = T</code> to <code>quantile()</code>.</p>
+</div>
+<div id="n" class="section level2 unnumbered">
+<h2><code>n()</code></h2>
+<p><code>n()</code> stands for <em>count</em>.</p>
+<p>Use summarize and <code>n()</code> to count the number of scrap records.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(scrap, <span class="at">scrap_records =</span> <span class="fu">n</span>())</span></code></pre></div>
+<p><br></p>
+<div id="explore-1" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
+<ol style="list-style-type: decimal">
+<li>Create a summary of the scrap data that includes 3 of the summary functions above. The following is one example.</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>scrap_summary <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap, </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">max_credits      =</span> __________,</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">weight_90th_pct  =</span> <span class="fu">quantile</span>(Weight, <span class="fl">0.90</span>),</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">count_records    =</span> __________,</span></code></pre></div>
+<p><br></p>
+<p><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Use summarize and <code>n()</code> to count the number of reported scrap records going to <code>Niima outpost</code>.</li>
+</ol>
+<p><strong>Hint:</strong> Use <code>filter()</code> first.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>niima_scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, destination <span class="sc">==</span> <span class="st">&quot;Niima Outpost&quot;</span>) </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>niima_scrap <span class="ot">&lt;-</span> <span class="fu">summarize</span>(niima_scrap, <span class="at">scrap_records =</span> <span class="fu">n</span>())</span></code></pre></div>
+</div>
+<p><br></p>
+<blockquote>
+<h3 style="margin-top: 12px;">
+<strong>How about a count of the records for every city?</strong>
+</h3>
+<p>That sounds like a whole lot of summarizing.</p>
+<p>It’d sure be nice if we could easily count the records for every city.</p>
+</blockquote>
+</div>
+</div>
+<div id="group_by-category" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> <code>group_by()</code> category</h1>
+<hr>
+<p><code>group_by()</code> gives us the power to calculate separate results for each category in the data. This could be the average concentration at each of your monitoring sites, or the total emissions of a pollutant from each facility or stack.</p>
+<div id="bargain-hunters" class="section level2 unnumbered">
+<h2>Bargain hunters</h2>
+<p>Who’s selling goods for cheap? Use <code>group_by</code> with the column <em>Origin</em> to find the <code>mean(price_per_pound)</code> at each Origin City.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scrap, origin) </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap_means,</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price =</span>  <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T))</span></code></pre></div>
+<p><br></p>
+<details>
+<summary class="btn_code_blue">
+Rounding digits
+</summary>
+<div class="note" style="margin-top: -7px;">
+<p>
+<div id="rounding" class="section level3 unnumbered">
+<h3>Rounding</h3>
+<p>You can round the prices to a certain number of digits using the <code>round()</code> function. We can finish by adding the <code>arrange()</code> function to sort the table by our new column.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap,</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price       =</span>  <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T),</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price_round =</span> <span class="fu">round</span>(mean_price, <span class="at">digits =</span> <span class="dv">2</span>))</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap_means, mean_price_round)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">ungroup</span>(scrap_means)</span></code></pre></div>
+<p><br></p>
+</div>
+<div id="note-1" class="section level3 unnumbered">
+<h3>Note</h3>
+<p>The <code>round()</code> function in R does not automatically round values ending in 5 upwards. It uses <em>scientific rounding</em>, which rounds values ending in 5 to the nearest <strong>even</strong> number. So 2.5 rounded to the nearest even number rounds down to <strong>2</strong>, and 3.5 rounded to the nearest even number rounds up <strong>4</strong>.</p>
+</p>
+</div>
+</div>
+</details>
+<p><br></p>
+</div>
+<div id="busiest-scrap-city" class="section level2 unnumbered">
+<h2>Busiest scrap city</h2>
+<p>So who’s making the most transactions? Try using <code>group_by</code> with the column <em>origin</em> to count the number of scrap records at each city. We can use the tiny-tiny function <code>n()</code> to count the number of rows.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>scrap_counts <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scrap, origin)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>scrap_counts <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap, </span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">origin_count =</span> <span class="fu">n</span>())</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>scrap_counts <span class="ot">&lt;-</span> <span class="fu">ungroup</span>(scrap_counts)</span></code></pre></div>
+<p><br></p>
+<div id="spock-tip" class="section level3 unnumbered note">
+<h3><i class="fas fa-hand-spock"></i> Spock-tip!</h3>
+<p>Ending with <code>ungroup()</code> is good practice. This prevents your data from staying grouped after the summarizing has been completed.</p>
+</div>
+</div>
+</div>
+<div id="save-files" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Save files</h1>
+<hr>
+<p>Let’s save the mean price table we created to a <em>CSV</em>. That way we can send it to Rey. To save a table we can use the <code>write_csv()</code> function from our favorite <strong>readr</strong> package.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the file to your results folder</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap_means, <span class="st">&quot;results/prices_by_origin.csv&quot;</span>)</span></code></pre></div>
+<p><br></p>
+<div class="red-note">
+<h3 style="margin-top: 12px; color: white; margin-top: -6px; font-size: 22px;">
+<i class="fas fa-exclamation-triangle"></i> Note
+</h3>
+<p>By default, R will overwrite a file if the file already exists in the same folder. To be safe, save processed data to a new folder called <code>results/</code> and not to your raw <code>data/</code> folder.</p>
+</div>
+</div>
+<div id="grouped-mutate" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Grouped <code>mutate()</code></h1>
+<hr>
+<p>We can bring back <code>mutate</code> to add a column based on the grouped values in a data set. For example, you may want to add a column showing the mean price by origin to the whole table, but still keep all of the records. This is a good way to add values to the table to serve as a reference point.</p>
+<blockquote>
+<p>How does the price of <strong>X</strong> compare to the average price?</p>
+</blockquote>
+<p>When you combine <code>group_by</code> and <code>mutate</code> the new column will be calculated based on the values within each group. Let’s group by <code>origin</code> to find the <code>mean()</code> price per pound at each origin.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scrap,  ________ ) </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">origin_mean_price =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T))</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">ungroup</span>(scrap)</span></code></pre></div>
+<p><br></p>
+<blockquote>
+<p>Add <code>round()</code> to your script to round the value of <em>origin_mean_price</em> to 1 digit.</p>
+</blockquote>
+<p><br></p>
+<p><br></p>
+</div>
+<div id="ifelse" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> <code>ifelse()</code></h1>
+<hr>
+<div id="if-this-is-true-do-this-otherwise-do-this" class="section level3 unnumbered">
+<h3><code>[If this is true]</code>, <code>"Do this"</code>, <code>"Otherwise do this"</code></h3>
+<p><img src="../images/yoda_lightsaber.jpg" style="width: 47%; margin-left: 26%; margin-top: 12px; margin-bottom: 28px;" /></p>
+<p>Here’s a handy <code>ifelse</code> statement to help you identify lightsabers.</p>
+<div class="well" style="margin-top: 10px:">
+<p><code>ifelse(</code><strong>Lightsaber</strong> <span style="color: green;">is <strong>GREEN</strong>?</span>, <strong>Yes!</strong> <code>Then Yoda's it is,</code> <strong>No!</strong> <code>Then not Yoda's)</code></p>
+</div>
+<p><br></p>
+<p>Or say we want to label all the porgs over <em>60 cm</em> as <code>tall</code>, and everyone else as <code>short</code>. Whenever we want to add a column where the value depends on the value found in another column. We can use <code>ifelse()</code>.</p>
+<blockquote>
+<p>Or maybe we’re trying to save some money and want to flag all the items that cost less than 500 credits.
+How?</p>
+</blockquote>
+</div>
+<div id="mutate-ifelse-is-powerful" class="section level2 unnumbered">
+<h2><code>mutate()</code> + <code>ifelse()</code> is powerful!</h2>
+<p><img src="../images/yoda_rise_sm.png" style="width: 74%; margin-left: 12%" /></p>
+<p><br></p>
+<div id="on-the-cheap" class="section level3 unnumbered">
+<h3>On the cheap</h3>
+<p>Let’s use <code>mutate()</code> and <code>ifelse()</code> to add a column named <code>affordable</code> to our scrap data.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add an affordable column</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap,</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">affordable =</span> <span class="fu">ifelse</span>(price_per_unit <span class="sc">&lt;</span> <span class="dv">500</span>, </span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Cheap&quot;</span>, </span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Expensive&quot;</span>))</span></code></pre></div>
+</div>
+<div id="explore-2" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
+<p>Use your new column and <code>filter()</code> to create a new <code>cheap_scrap</code> table.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cheap scrap table</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>cheap_scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap,  _________ )</span></code></pre></div>
+<p><br></p>
+<p><strong>How many items are cheap?</strong></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(cheap_scrap<span class="sc">$</span>item)</span></code></pre></div>
+<p><br></p>
+<p><strong>What are the cheap items?</strong></p>
+<pre><code>
+Try the unique() function on cheap_scrap$item.
+</code></pre>
+<p><br></p>
+</div>
+<p><br>
+<br></p>
+<div id="pop-quiz" class="section level3 unnumbered quiz">
+<h3>Pop Quiz!</h3>
+<p><strong>Use <code>arrange()</code> to find the cheapest item.</strong></p>
+<p><strong>What is it?</strong></p>
+<p><input type="radio" name="cheap"> <em>Black box</em> <br>
+<input type="radio" name="cheap"> <em>Electrotelescope</em> <br>
+<input type="radio" name="cheap"> <em>Atomic drive</em> <br>
+<input type="radio" name="cheap"> <em>Enviro filter</em> <br>
+<input type="radio" name="cheap"> <em>Main drive</em> <br>
+<br></p>
+<details>
+<summary class="btn_code">
+<em>Show solution</em>
+</summary>
+<p>
+<p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>Black box</code></p>
+<p><em>You win! </em></p>
+</p>
+</details>
+</div>
+<p><br></p>
+<blockquote>
+<p><strong>CONGRATULATIONS</strong> of galactic proportions to you.</p>
+<p>We now have a clean and tidy data set. If BB8 ever receives new data again, we can re-run this script and in seconds we’ll have it all cleaned up.</p>
+</blockquote>
+</div>
+<div id="save-results" class="section level2 unnumbered">
+<h2>Save results</h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap, <span class="st">&quot;results/scrap_day2.csv&quot;</span>)</span></code></pre></div>
+<div style="clear: both;">
+
+</div>
+</div>
+</div>
+<div id="plots-with-ggplot2" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Plots with <em>ggplot2</em></h1>
+<hr>
+<div id="plot-the-data-plot-the-data-plot-the-data" class="section level4 unnumbered">
+<h4><em>Plot the data, Plot the data, Plot the data</em></h4>
+<p><br></p>
+<p><img src="../images/ggplot2_hex.png" align="right" style="margin-right: 70px; margin-top: -124px;" width="180" /></p>
+</div>
+<div id="the-ggplot-sandwich" class="section level2 unnumbered">
+<h2>The <code>ggplot()</code> sandwich</h2>
+<p><img src="../images/auto_plot.gif" style="margin-top: -22px; margin-left: -40px; max-width: 110%;" /></p>
+<h5 style="font-size: 28px; font-weight: bold; margin-top: -42px;">
+A <code>ggplot</code> has 3 ingredients.
+</h5>
+</div>
+<div id="the-base-plot" class="section level2 unnumbered">
+<h2>1. The base plot</h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap)</span></code></pre></div>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-35-1.png" width="960" /></p>
+<p><br></p>
+<blockquote>
+<p>We load version 2 of the package <code>library(ggplot2)</code>, but the function to make the plot is plain <code>ggplot()</code>. <em>Sorry, ggplot is fun that like that.</em></p>
+</blockquote>
+</div>
+<div id="the-the-x-y-aesthetics" class="section level2 unnumbered">
+<h2>2. The the X, Y <em>aesthetics</em></h2>
+<p>The <em>aesthetics</em> assign the columns from the data that you want to use in the chart. This is where you set the <code>X</code>-<code>Y</code> variables that determine the dimensions of the plot.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount)) </span></code></pre></div>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-36-1.png" width="960" /></p>
+</div>
+<div id="the-layers-aka-geometries" class="section level2 unnumbered">
+<h2>3. The layers AKA geometries</h2>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount)) <span class="sc">+</span> </span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-37-1.png" width="960" /></p>
+<p><br></p>
+</div>
+<div id="colors" class="section level2 unnumbered">
+<h2>Colors</h2>
+<hr class="hrlvl2">
+<p>Now let’s change the fill color to match the destination.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() </span></code></pre></div>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-38-1.png" width="960" /></p>
+<p><br></p>
+</div>
+<div id="sorting" class="section level2 unnumbered">
+<h2>Sorting</h2>
+<hr class="hrlvl2">
+<p>Finally, let’s order things from lowest to highest.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(destination, amount, <span class="at">FUN =</span> sum), <span class="at">y =</span> amount, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Destination&quot;</span>,</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;The most scrap was sent to the Trade Caravan&quot;</span>)</span></code></pre></div>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-39-1.png" width="960" /></p>
+<p><br></p>
+<div id="a-short-detour" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" style="color: green;"></i> A short detour</h3>
+<div id="whos-the-tallest-of-them-all" class="section level4 unnumbered">
+<h4>Who’s the tallest of them all?</h4>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install new packages</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggrepel&quot;</span>)</span></code></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Get starwars character data</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>star_df <span class="ot">&lt;-</span> starwars</span></code></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What is this?</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(star_df)</span></code></pre></div>
+<pre><code>## Rows: 87
+## Columns: 14
+## $ name       &lt;chr&gt; &quot;Luke Skywalker&quot;, &quot;C-3PO&quot;, &quot;R2-D2&quot;, &quot;Darth Vader&quot;, &quot;Leia Or…
+## $ height     &lt;int&gt; 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…
+## $ mass       &lt;dbl&gt; 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…
+## $ hair_color &lt;chr&gt; &quot;blond&quot;, NA, NA, &quot;none&quot;, &quot;brown&quot;, &quot;brown, grey&quot;, &quot;brown&quot;, N…
+## $ skin_color &lt;chr&gt; &quot;fair&quot;, &quot;gold&quot;, &quot;white, blue&quot;, &quot;white&quot;, &quot;light&quot;, &quot;light&quot;, &quot;…
+## $ eye_color  &lt;chr&gt; &quot;blue&quot;, &quot;yellow&quot;, &quot;red&quot;, &quot;yellow&quot;, &quot;brown&quot;, &quot;blue&quot;, &quot;blue&quot;,…
+## $ birth_year &lt;dbl&gt; 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …
+## $ sex        &lt;chr&gt; &quot;male&quot;, &quot;none&quot;, &quot;none&quot;, &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;,…
+## $ gender     &lt;chr&gt; &quot;masculine&quot;, &quot;masculine&quot;, &quot;masculine&quot;, &quot;masculine&quot;, &quot;femini…
+## $ homeworld  &lt;chr&gt; &quot;Tatooine&quot;, &quot;Tatooine&quot;, &quot;Naboo&quot;, &quot;Tatooine&quot;, &quot;Alderaan&quot;, &quot;T…
+## $ species    &lt;chr&gt; &quot;Human&quot;, &quot;Droid&quot;, &quot;Droid&quot;, &quot;Human&quot;, &quot;Human&quot;, &quot;Human&quot;, &quot;Huma…
+## $ films      &lt;list&gt; &lt;&quot;The Empire Strikes Back&quot;, &quot;Revenge of the Sith&quot;, &quot;Return…
+## $ vehicles   &lt;list&gt; &lt;&quot;Snowspeeder&quot;, &quot;Imperial Speeder Bike&quot;&gt;, &lt;&gt;, &lt;&gt;, &lt;&gt;, &quot;Imp…
+## $ starships  &lt;list&gt; &lt;&quot;X-wing&quot;, &quot;Imperial shuttle&quot;&gt;, &lt;&gt;, &lt;&gt;, &quot;TIE Advanced x1&quot;,…</code></pre>
+<p><br></p>
+<p>Plot a histogram of the character heights.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Height distribution</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">x =</span> height)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;hotpink&quot;</span>)</span></code></pre></div>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
+<p><br></p>
+<div class="note">
 <ul>
-<li>What’s the highest number?</li>
-<li>What’s the lowest number?</li>
-<li>What was the average tons of scrap from Cratertown last year?</li>
-<li>Which town’s scrap was worth the most credits?</li>
+<li><p>Try changing the fill color to <strong>“<span style="color: #FD6A02;">darkorange</span>”</strong>.</p></li>
+<li><p>Try making a histogram of the column <code>mass</code>.</p></li>
 </ul>
+</div>
+<p><br></p>
+<p>Plot comparisons between height and mass with <code>geom_point(...)</code>.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Height vs. Mass scatterplot</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<p><br></p>
+<p>Who’s who? Let’s add some labels to the points.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name))</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a log scale for Mass on the y-axis</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name)) <span class="sc">+</span></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>()</span></code></pre></div>
+<p><br></p>
+<p>Let’s drop the “Hutt” species before plotting.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Without the Hutt</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">filter</span>(star_df, species <span class="sc">!=</span> <span class="st">&quot;Hutt&quot;</span>), <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name, <span class="at">color =</span> species))</span></code></pre></div>
+<p><br></p>
+<p>We can add <code>facet_wrap</code> to make a chart for each species.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split out by species</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">x =</span> mass, <span class="at">y =</span> height)) <span class="sc">+</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;species&quot;</span>) <span class="sc">+</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-9-1.png" width="960" /></p>
+</div>
 </div>
 <p><br></p>
 <div id="return-to-homebase" class="section level3 unnumbered">

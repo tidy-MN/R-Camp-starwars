@@ -76,11 +76,11 @@ scrap <- scrap %>%
 Similar to above, use the `%>%` to combine the two analysis lines below.
 
 ```{r better_endor, eval=F}
-# Filter to only magnetic_field measurements
-mag_endor <- filter(air_endor, analyte == "magnetic_field")
+# Filter to ozone concentrations above 80
+ozone <- filter(ozone, ppb > 80)
 
-# Add a date column to the filtered data
-mag_endor <- mutate(mag_endor, date = mdy(start_run_date))
+# Add a units column to the filtered data
+ozone <- mutate(ozone, units = "ppb")
 ```
 </div>
 

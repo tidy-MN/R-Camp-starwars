@@ -1,11 +1,16 @@
 
 In data analysis you'll want to look at your data early and often. For that we use a new package called  __ggplot2__! 
-<br><br>
 
-Install it by running `install.packages("ggplot2")` in your _Console_.
+<br><br><br>
+
+Install the package by running 
+
+```{r, eval=F}
+install.packages("ggplot2")
+```
 
 
-<br><br>
+<br>
 
 <div class="note">
 ### Note {-}

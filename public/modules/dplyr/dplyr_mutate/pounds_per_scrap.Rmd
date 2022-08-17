@@ -8,15 +8,12 @@ Let's `mutate()`!
 Now that we have pounds per unit we can use `mutate` to calculate the total pounds for each shipment.
 
 
-```{r, echo=F, eval=F}
+```{r, echo=F}
 library(dplyr)
-scrap <- scrap %>% 
-         mutate(total_pounds = amount * pounds_per_unit)
 ```
 
 __Fill in the blank__
 ```{r, eval=F}
-
 scrap <- scrap %>% 
          mutate(total_pounds = amount *  _____________ )
 ```
@@ -24,7 +21,7 @@ scrap <- scrap %>%
 <details>
 <summary class = "btn_code">_Show code_</summary>
 <p><div class="quiz" style="margin-top: -6px;">
-```{r, eval=F}
+```{r, eval=T}
 scrap <- scrap %>% 
          mutate(total_pounds = amount * pounds_per_unit)
 ```
@@ -88,7 +85,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-```{r, echo=F, eval=F}
+```{r, echo=F}
 # Calculate the total price for each shipment
 scrap <- scrap %>% 
          mutate(credits = total_pounds * price_per_pound)
@@ -99,7 +96,7 @@ scrap <- scrap %>%
 
 __Great!__ Let's add one last column. We can divide the shipment's _credits_ by the _amount_ of items to get the `price_per_unit`.
 
-```{r, eval=F}
+```{r}
 # Calculate the price per unit
 scrap <- scrap %>% 
          mutate(price_per_unit = credits / amount)

@@ -29,24 +29,11 @@ library(readr)
 library(dplyr)
 
 # Read in the full scrap data
-scrap <- read_csv("scrap_day2pm.csv")
+#scrap <- read_csv("scrap_day2.csv")
 ```
 
 
-# `summarize()` this
-<hr>
-```{r summarize, child='../../static/modules/dplyr/dplyr_summarize/summarize.Rmd'}
-```
-
-
-# `group_by()` category
-<hr>
-
-`group_by()` gives us the power to calculate separate results for each category in the data. This could be the average concentration at each of your monitoring sites, or the total emissions of a pollutant from each facility or stack.
-
-```{r group-by, child='../../static/modules/dplyr/dplyr_groupby/group_by.Rmd'}
-```
-
+<br>
 
 <div style="border: 2px solid; border-color: hotpink; padding: 22px; border-radius: 25px; padding-top: 0;">
 # Guess Who? {-}
@@ -57,47 +44,47 @@ scrap <- read_csv("scrap_day2pm.csv")
 
 <br>
 
-# `ifelse()`
-<hr>
-```{r if-yoda, child='../../static/modules/base/base_ifelse/yoda.Rmd'}
-```
 
-```{r if-cheap, child='../../static/modules/base/base_ifelse/cheap_items.Rmd'}
-```
+<div class="note" style="line-height: 1.6;">
+### Teaser {-}
 
+Analysts often get asked questions:
 
-> __CONGRATULATIONS__ of galactic proportions to you. 
->
-> We now have a clean and tidy data set. If BB8 ever receives new data again, we can re-run this script and in seconds we'll have it all cleaned up.
->
+- What's the highest number? 
+- What's the lowest number? 
+- What was the average tons of scrap from Cratertown last year? 
+- Which town's scrap was worth the most credits?
 
-<div style="clear: both;"></div>
+</div>
 
-
-# Plots with _ggplot2_
-<hr>
-
-#### _Plot the data, Plot the data, Plot the data_ {-}
 
 <br>
 
-![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
 
-```{r gg-sand, child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
+## Plots of garbage {-}
+<hr class="hrlvl2">
+
+
+**Load your saved scrap data**
+```{r, eval=T}
+# You saved data
+scrap <- read_csv("results/scrap_day2.csv")
+
+# For those just joining us
+#scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
 ```
 
+<br>
 
-<div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
-
-Try making a scatterplot of any two columns.
+Try making a scatterplot of any two columns with `geom_point()`.
 
 _Hint: Numeric variables will be more informative._
 
 ```{r, eval=F, echo=T}
-ggplot(scrap, aes(x = __column1__, y = __column2__)) + geom_point()
+ggplot(scrap, aes(x = __column1__, y = __column2__)) + 
+    geom_point()
 ```
-</div>
+
 
 
 ## Colors {-}
@@ -341,23 +328,37 @@ _Woop! Go get em! So long Jakku - see you never!_
 <br>
 
 
-## <i class="fa fa-star" style="color: gold"></i>😻CONCATULATIONS!😻 <i class="fa fa-star" style="color: gold"></i> {-}
+## <i class="fa fa-star" style="color: gold"></i> PORGTASTIC <i class="fa fa-star" style="color: gold"></i> {-}
 <hr class="hrlvl2">
 
+![](../images/porg_dog.gif){style="margin-left: 8%; width: 25%;"}
+
+
 >
-> __Woop!__ 
+> ### Woop! {-} 
 >
-> Serious kudos to you.  
+> We found enough Black Boxes to trade Plutt and get the whole crew back together. Serious kudos to you.  
 >
+> Let's sit back, relax, and read some ggplot glossaries.
+
+
+<br>
+
+
+**Finally...**
+
+![](../images/blast_off_ship_jakku.gif){style="margin-left: 12%; width: 75%;"}
 
 <br><br>
 
 
-# Plot Glossary {-}
+# Plot glossary {-}
 <hr class="hr2">
 ```{r glossary, child='../../static/modules/ggplot/ggplot_glossary/glossary.Rmd'}
 ```
 
+
+<br><br>
 
 # Homeworld training {-}
 <hr class="hr2">

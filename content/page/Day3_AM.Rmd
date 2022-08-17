@@ -27,10 +27,22 @@ xaringanExtra::use_clipboard()
 ```
 
 
+# Scrap data {-}
+<hr>
+
+**Where we left off**
+```{r}
+library(readr)
+
+scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2_pm.csv")
+```
+
+
 # Day 1 review
 <hr>
 
 ## Get to know your __DATA__ {-}
+
 
 <div class="tip">
 
@@ -88,110 +100,41 @@ cat(readLines("porg_tabs.txt"))
 # Day 2 review
 <hr>
 
-![](../images/ggplot2_hex.png){align="right" width="145" style="margin-right: 70px; margin-top: -28px;"}
+- SF & Leaflet maps
+- Dates with **lubridate**
+- Join tables with `left_join()`
+- `summarize()`
+- Group by category with `group_by()`
+- `ifelse()`: if THIS IS TRUE do a thing, otherwise do a different thing
 
-## The `ggplot()` sandwich {-}
-
-![](../images/auto_plot.gif){style="margin-top: -10px; max-width: 108%; margin-bottom: -6px;"}
 
 
 
-<div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+## Welcome to Endor! {-}
+<hr class="hrlvl2">
 
-#### Who's the tallest of them all? {-}
+![](https://mn-r.netlify.com/images/planet_endor.jpg){style="width: 75%; margin-top: -4px; margin-left: 11%;"}
 
-```{r, eval=F}
-# Install new packages
-install.packages("ggrepel")
+
+```{r sf, child='../../static/modules/maps/leaflet.Rmd'}
 ```
+
+
+# Invasive Porg Survey - 2023 
+<hr>
+```{r porg-survey, child='../../static/modules/dates/porg_survey.Rmd'}
+```
+
 
 <br>
 
-```{r, message=F, warning=F}
-# Load packages
-library(dplyr)
-library(ggplot2)
-library(ggrepel)
-
-# Get starwars character data
-star_df <- starwars
+# Pipe things together: ` A %>% B `
+<hr>
+```{r pipe-intro, child='../../static/modules/dplyr/dplyr_pipe/intro.Rmd'}
 ```
 
-<br>
-
-```{r, warning=F}
-# What is this?
-glimpse(star_df)
-```
 
 <br>
-
-Plot a histogram of the character heights.
-
-```{r, message=F, warning=F}
-# Height distribution
-ggplot(star_df, aes(x = height)) + geom_histogram(fill = "hotpink")
-```
-
-<br>
-
-<div class="note">
-
-- Try changing the fill color to __"<span style="color: #FD6A02;">darkorange</span>"__.
-
-- Try making a histogram of the column `mass`.
-
-</div>
-
-<br>
-
-Plot comparisons between height and mass with `geom_point(...)`.
-```{r, eval=F, message=F, warning=F}
-# Height vs. Mass scatterplot
-ggplot(star_df, aes(y = mass, x = height)) +
-   geom_point(aes(color = species), size = 5)
-```
-<br>
-
-Who's who? Let's add some labels to the points.
-```{r, eval=F, message=F, warning=F}
-# Add labels
-ggplot(star_df, aes(y = mass, x = height)) +
-  geom_point(aes(color = species), size = 5) +
-  geom_text_repel(aes(label = name))
-
-
-# Use a log scale for Mass on the y-axis
-ggplot(star_df, aes(y = mass, x = height)) +
-  geom_point(aes(color = species), size = 5) +
-  geom_text_repel(aes(label = name)) +
-  scale_y_log10()
-
-```
-
-<br>
-
-Let's drop the "Hutt" species before plotting.
-```{r, eval=F, message=F, warning=F}
-# Without the Hutt
-ggplot(filter(star_df, species != "Hutt"), aes(y = mass, x = height)) +
-  geom_point(aes(color = species), size = 5) +
-  geom_text_repel(aes(label = name, color = species))
-
-```
-
-<br>
-
-We can add `facet_wrap` to make a chart for each species.
-```{r, eval=T, message=F, warning=F}
-# Split out by species
-ggplot(star_df, aes(x = mass, y = height)) +
-  geom_point(aes(color = species), size = 3) +
-  facet_wrap("species") +
-  guides(color = "none")
-```
-
 
  
 # <i class="fa fa-group" style="color: steelblue;"></i> Share with friends

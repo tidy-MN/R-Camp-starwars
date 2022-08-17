@@ -3,7 +3,7 @@
 #install.packages("readr")
 library(readr)
 
-read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv")
+read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku.csv")
 ```
 
 
@@ -13,7 +13,7 @@ Where did the data go after you read it into R? When we want to work with the da
 
 ```{r starwars_csv_name, eval=T, message=F}
 # Read in scrap data and set name to "scrap"
-scrap <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv")
+scrap <- read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku.csv")
 
 # Type the name of the table to view it in the console
 scrap

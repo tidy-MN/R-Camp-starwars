@@ -1,0 +1,318 @@
+
+## But wait... {-}
+<hr class="hrlvl2">
+
+The Ewoks say it's unsafe to land. Booo... Sounds like the Empire is checking all ships for licenses. 
+
+Lucky for us there is some good news. They say for a small ship like ours, it is possible to land undetected. But we'll have to put down right-dab in the middle of the 3 northern outposts. 
+
+<br>
+
+> Are you up for a challenge data droid?
+
+<br>
+
+Either way, let's make a map to see what we're up against. To help, our comrades sent along the coordinates of the Empire's outposts. Guess what the first step is? That's right. Time to add a new package. 
+
+
+```{r, eval=T, echo=F}
+#library(sf)
+library(dplyr)
+
+# Create coordinates
+outposts <- tibble(ID = c("1NO","1NL","3NB"),
+                   lat = c(36.6552, 36.583748, 36.5979), 
+                   long = c(-118.8469, -118.8195, -118.90218))
+
+
+if (FALSE) {
+outposts <- st_as_sf(outposts, coords = c("long", "lat"), crs = 4326)
+
+outposts <- st_transform(outposts, 26915)
+
+outposts$y_utm <- st_coordinates(outposts)[,2]
+outposts$x_utm <- st_coordinates(outposts)[,1]
+
+#outposts$crs <- "UTM Zone 15N; EPSG: 26915"
+
+outposts <- select(outposts, ID, x_utm, y_utm, everything())
+
+}
+
+#write_csv(outposts, "../../content/data/endor_outposts.csv")
+
+#st_write(outposts, "../../../content/data/endor_outposts.shp")
+```
+
+
+
+# <i class="fas fa-globe-africa"></i> Reading coordinates 
+<hr>
+
+
+To read coordinates stored in a CSV or Excel spreadsheet, we can read them into R with our usual friends:
+
+- **readr**'s `read_csv()` for CSV files
+- **readxl**'s `read_excel()` for Excel files
+
+
+## Give it a try {-}
+```{r, eval=F} 
+outposts <- read_csv("data/endor_outposts.csv")
+```
+
+
+<br>
+
+### Take a look {-}
+```{r, eval=T} 
+outposts
+
+glimpse(outposts)
+```
+
+
+<br>
+
+To make a quick map, use ggplot and add `+ geom_point()`. 
+```{r, eval=T, fig.width=11, fig.height=4} 
+library(ggplot2)
+
+ggplot(outposts, aes(x = long, y = lat)) + 
+  geom_point(size = 8, color = "steelblue") 
+```
+
+<br>
+
+
+## Where's the center point? {-}
+
+How can we find the center of these points?
+
+<br>
+
+> **Hint:** How do you find the halfway point between two points?
+
+<br>
+
+Let's use `mutate()` from the dplyr toolbox to update our location columns. Set the new `lat` column to the center of all the `lat`'s, and  the new `lat` column to the center of all the `long`'s. 
+
+These will be the coordinates for our landing pad.
+
+
+
+### `mutate` the center {-}
+
+**Complete the code**
+```{r, eval=F}
+# Update lat/long to the center point (the average of ALL the lat/long)             
+land_pad <- summarize(outposts, 
+                      lat  = mean( ______ ),
+                      long = _____________ ,
+                      ID   = "Land here!")
+```
+
+
+<details>
+<summary  class = "btn_code">Show code</summary>
+  
+```{r}
+land_pad <- summarize(outposts, 
+                      lat  = mean( lat ),
+                      long = mean( long ),
+                      ID   = "Land here!")
+```
+</details>
+
+
+### Where should we land? {-}
+```{r, eval=F}
+# View center coordinates
+land_pad
+```
+
+```{r, echo=F}
+knitr::kable(land_pad)
+```
+
+<br>
+
+
+### We found it! {-}
+
+That's fantastic. 
+
+**Let's add it to our map.**
+
+```{r, eval=T, fig.width=11, fig.height=4} 
+library(ggplot2)
+
+ggplot(outposts, aes(x = long, y = lat)) + 
+  geom_point(size = 8, color = "steelblue") +
+  geom_point(data = land_pad, 
+             aes(x = long, y = lat), 
+             size = 12,
+             color = "green")
+```
+
+
+<br>
+
+<div class="well">
+**That's looking good, but...**
+
+We're going to need to be very precise to land perfectly in between these outposts. To make our captain really happy, let's put this all in an interactive zoomable map. For interactive maps we use **leaflet**.
+
+</div>
+
+# Leaflet maps 
+<hr>
+
+### The `leaflet` package. {-}
+
+![](../images/leaflet.png){style="width: 37%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;"}
+
+
+Leaflet makes interactive maps easy and you build them up in layers similar to a ggplot.
+
+<br>
+<div style="clear: both;"></div>
+
+
+### Install `leaflet` {-}
+```{r, eval=F}  
+install.packages("leaflet")
+```
+
+
+> Explore the [Full Leaflet Guide!](https://rstudio.github.io/leaflet/)
+
+<br>
+
+## Maps that zoom {-}
+
+Leaflet builds map with layers similar to ggplot, but instead of adding things with the `+`, leaflet adds new layers with the `%>%` ("the pipe").
+
+### 1. Start with the outpost coordinates {-}
+```{r, eval=T, fig.height=4, fig.width=9} 
+library(leaflet)
+
+leaflet(outposts) %>% 
+  addCircles(radius = 250) %>%  
+  addTiles()
+```
+
+<br>
+
+
+### 2. Add the landing site {-}
+
+*Fingers crossed it's in the middle....*
+
+```{r, eval=F, fig.height=4, fig.width=9}  
+leaflet(outposts) %>% 
+  addCircles(radius = 300) %>% 
+  addTiles() %>%
+  addMarkers(data = land_pad)  #<<
+```
+
+<br>
+
+
+### 3. Add labels {-}
+
+*Try hovering over one of the outposts to see its label.*
+
+```{r, eval=T, fig.height=4, fig.width=9} 
+leaflet(outposts) %>% 
+  addCircles(radius = 300,
+             label = ~ID) %>%   #<<
+  addTiles() %>%
+  addMarkers(data  = land_pad,
+             label = "Land HERE!",  #<<
+             labelOptions = labelOptions(noHide = TRUE))  #<<
+```
+
+
+<br>
+
+
+<div class="tip">
+
+### <i class="fa fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore! {-}
+
+News just came in that the outposts will soon be upgrading their **radar** to detect ships up to `4,200 meters` away. Will that be a problem? 
+
+**Steps**
+
+1. Update the radius argument in `addCircles(...)` to be equal to `4200`.
+1. Add the argument `, fillColor = "yellow"` inside `addCircles(..)`
+
+<details>
+<summary class = "btn_code">_Show code_</summary>
+
+```{r, eval=F}
+leaflet(outposts) %>%
+  addCircles(radius = 4200, #<<
+             label = ~ID,
+             fillColor = "yellow") %>% 
+  addTiles() %>%
+  addMarkers(data  = land_pad,
+             label = "Land HERE!",  
+             labelOptions = labelOptions(noHide = TRUE))
+```
+<br>
+
+</details>
+
+> **Will our landing spot still be safe?**
+
+<br>
+
+</div>
+
+
+## Woah! That's a close one. {-} 
+
+You're on 🔥 fire data droid. Let's sit here a minute to cool down...  
+
+Ok, now let's go land on that planet before we get stuck up here with permanent space legs.
+
+
+<br>
+
+
+<div class="yoda">
+###  Yoda says {-}
+
+<img src="../images/yoda_baby_sq.png" class="yoda-img">
+
+**BASEMAPS.** There are lots of options for basemaps in leaflet. One of my favorites is `CartoDB.Positron` because its greyness doesn't distract from the data.
+
+Add it to your map by swapping out `addTiles()` for `addProviderTiles(providers$CartoDB.Positron)`
+
+<details>
+<summary class = "btn_code">_Show code_</summary>
+
+```{r, eval=F}
+leaflet(outposts) %>%
+  addCircles(radius = 4200, 
+             label = ~ID,
+             fillColor = "yellow") %>% 
+   addProviderTiles(providers$CartoDB.Positron) %>%  #<<
+   addMarkers(data  = land_pad,
+              label = "Land HERE!",  
+              labelOptions = labelOptions(noHide = TRUE))
+```
+<br>
+
+</details>
+
+
+See MORE examples of basemaps here: https://rstudio.github.io/leaflet/basemaps.html
+
+And explore the [Full Leaflet Guide!](https://rstudio.github.io/leaflet/)
+
+</div>
+
+

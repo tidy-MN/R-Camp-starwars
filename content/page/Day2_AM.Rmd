@@ -58,45 +58,25 @@ cat(readLines("porg_tabs.txt"))
 <br>
 
 
-## Welcome to Endor! {-}
-<hr class="hrlvl2">
-
-![](https://mn-r.netlify.com/images/planet_endor.jpg){style="width: 75%; margin-top: -4px; margin-left: 11%;"}
-
-
-```{r sf, child='../../static/modules/maps/sf.Rmd'}
-```
-
-
-# Invasive Porg Survey - 2023 
-<hr>
-```{r porg-survey, child='../../static/modules/lubridate_examples/porg_survey.Rmd'}
-```
-
-<br>
-
-# Pipe things together: ` A %>% B `
-<hr>
-```{r pipe-intro, child='../../static/modules/dplyr/dplyr_pipe/intro.Rmd'}
-```
-
-
-<br>
-
->
-> ## Wait.... __So where's Finn?__ {-}
+> ### Wait.... __So where's Finn?__ {-}
 >
 
 
 # Finn needs us! {-}
 
-That's enough _scuttlebutting_ around, Finn needs us back on Jakku. We're going to have to get better at our roll call procedure. Here we come Finn.  __Blast off!__ 
+Turn this ship around BB8, Finn needs us back on Jakku. We're going to have to get better at our roll call procedure. Here we come Finn.  __Blast off!__ 
 
 <br>
 
 ![](../images/finn_run.gif){style="margin-left: 18%; width: 60%; margin-top: 6px;"}
 
 <br>
+
+
+# Jakku re-visited
+<hr>
+
+Okay, so we're back on this ol' dust bucket planet. Let's try not to forget anyone this time. Data droid, let me know if anyone goes missing. 
 
 ```{r convert-tbl, child='../../static/modules/ton_conversion_tbl.Rmd'}
 ```
@@ -123,24 +103,166 @@ That's enough _scuttlebutting_ around, Finn needs us back on Jakku. We're going 
 ```
 
 
-<div class="note" style="line-height: 1.6;">
-### Teaser {-}
 
-Analysts often get asked questions:
+# `summarize()` this
+<hr>
+```{r summarize, child='../../static/modules/dplyr/dplyr_summarize/summarize.Rmd'}
+```
 
-- What's the highest number? 
-- What's the lowest number? 
-- What was the average tons of scrap from Cratertown last year? 
-- Which town's scrap was worth the most credits?
 
-</div>
+# `group_by()` category
+<hr>
 
-```{r, include=F}
-# Save scrap data for Day 2 PM
-write_csv(scrap, "scrap_day2_pm.csv")
+`group_by()` gives us the power to calculate separate results for each category in the data. This could be the average concentration at each of your monitoring sites, or the total emissions of a pollutant from each facility or stack.
+
+```{r group-by, child='../../static/modules/dplyr/dplyr_groupby/group_by_nopipe.Rmd'}
+```
+
+
+<br>
+
+# `ifelse()`
+<hr>
+```{r if-yoda, child='../../static/modules/base/base_ifelse/yoda.Rmd'}
+```
+
+```{r if-cheap, child='../../static/modules/base/base_ifelse/cheap_items.Rmd'}
+```
+
+
+> __CONGRATULATIONS__ of galactic proportions to you. 
+>
+> We now have a clean and tidy data set. If BB8 ever receives new data again, we can re-run this script and in seconds we'll have it all cleaned up.
+>
+
+
+## Save results {-}
+```{r save2pm}
+write_csv(scrap, "results/scrap_day2.csv")
+
+```
+ 
+
+<div style="clear: both;"></div>
+
+
+
+# Plots with _ggplot2_
+<hr>
+
+#### _Plot the data, Plot the data, Plot the data_ {-}
+
+<br>
+
+![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
+
+```{r gg-sand, child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
+```
+
+
+<br>
+
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> A short detour {-}
+
+#### Who's the tallest of them all? {-}
+
+```{r, eval=F}
+# Install new packages
+install.packages("ggrepel")
 ```
 
 <br>
+
+```{r, message=F, warning=F}
+# Load packages
+library(dplyr)
+library(ggplot2)
+library(ggrepel)
+
+# Get starwars character data
+star_df <- starwars
+```
+
+<br>
+
+```{r, warning=F}
+# What is this?
+glimpse(star_df)
+```
+
+<br>
+
+Plot a histogram of the character heights.
+
+```{r, message=F, warning=F}
+# Height distribution
+ggplot(star_df, aes(x = height)) + geom_histogram(fill = "hotpink")
+```
+
+<br>
+
+<div class="note">
+
+- Try changing the fill color to __"<span style="color: #FD6A02;">darkorange</span>"__.
+
+- Try making a histogram of the column `mass`.
+
+</div>
+
+<br>
+
+Plot comparisons between height and mass with `geom_point(...)`.
+```{r, eval=F, message=F, warning=F}
+# Height vs. Mass scatterplot
+ggplot(star_df, aes(y = mass, x = height)) +
+   geom_point(aes(color = species), size = 5)
+```
+<br>
+
+Who's who? Let's add some labels to the points.
+```{r, eval=F, message=F, warning=F}
+# Add labels
+ggplot(star_df, aes(y = mass, x = height)) +
+  geom_point(aes(color = species), size = 5) +
+  geom_text_repel(aes(label = name))
+
+
+# Use a log scale for Mass on the y-axis
+ggplot(star_df, aes(y = mass, x = height)) +
+  geom_point(aes(color = species), size = 5) +
+  geom_text_repel(aes(label = name)) +
+  scale_y_log10()
+
+```
+
+<br>
+
+Let's drop the "Hutt" species before plotting.
+```{r, eval=F, message=F, warning=F}
+# Without the Hutt
+ggplot(filter(star_df, species != "Hutt"), aes(y = mass, x = height)) +
+  geom_point(aes(color = species), size = 5) +
+  geom_text_repel(aes(label = name, color = species))
+
+```
+
+<br>
+
+We can add `facet_wrap` to make a chart for each species.
+```{r, eval=T, message=F, warning=F}
+# Split out by species
+ggplot(star_df, aes(x = mass, y = height)) +
+  geom_point(aes(color = species), size = 3) +
+  facet_wrap("species") +
+  guides(color = "none")
+```
+</div>
+
+
+<br>
+
 
 ### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-2.html) {-}
 

@@ -1,7 +1,10 @@
 
-You can't break your original dataset if you name your edited data something new. Let's use the `readr` package to save our new CSV with the tons converted to pounds.
+You can also save data with the **`readr`** package. Let's use the `readr` function `write_csv()` to save our new table with the tons converted to pounds.
 
-```{r write-csv1, eval=F}
+
+```{r write-csv1, eval=T}
+library(readr)
+
 # Save data as a CSV file 
 write_csv(scrap_pounds, "scrap_in_pounds.csv")
 ```

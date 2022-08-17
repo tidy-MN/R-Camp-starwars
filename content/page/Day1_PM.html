@@ -86,18 +86,18 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#dplyr"><span class="toc-section-number">1</span> dplyr</a></li>
-<li><a href="#glimpse-summary"><span class="toc-section-number">2</span> <code>glimpse()</code> &amp; <code>summary()</code></a></li>
-<li><a href="#your-analysis-toolbox"><i class="fa fa-toolbox"></i> Your analysis toolbox</a></li>
-<li><a href="#porg-tables"><span class="toc-section-number">3</span> Porg tables</a></li>
-<li><a href="#select"><span class="toc-section-number">4</span> <code>select()</code></a></li>
-<li><a href="#sort-with-arrange"><span class="toc-section-number">5</span> Sort with <code>arrange()</code></a></li>
-<li><a href="#r-bingo">R BINGO!</a></li>
-<li><a href="#filter"><span class="toc-section-number">6</span> <code>filter()</code></a></li>
-<li><a href="#mutate"><span class="toc-section-number">7</span> <code>mutate()</code></a></li>
-<li><a href="#saving-data"><span class="toc-section-number">8</span> Saving data</a></li>
-<li><a href="#plots-with-ggplot2"><span class="toc-section-number">9</span> Plots with <em>ggplot2</em></a></li>
-<li><a href="#shutdown-complete"><span class="toc-section-number">10</span> Shutdown complete</a></li>
+<li><a href="#dplyr" id="toc-dplyr"><span class="toc-section-number">1</span> dplyr</a></li>
+<li><a href="#glimpse-summary" id="toc-glimpse-summary"><span class="toc-section-number">2</span> <code>glimpse()</code> &amp; <code>summary()</code></a></li>
+<li><a href="#your-analysis-toolbox" id="toc-your-analysis-toolbox"><i class="fa fa-toolbox"></i> Your analysis toolbox</a></li>
+<li><a href="#porg-tables" id="toc-porg-tables"><span class="toc-section-number">3</span> Porg tables</a></li>
+<li><a href="#select" id="toc-select"><span class="toc-section-number">4</span> <code>select()</code></a></li>
+<li><a href="#sort-with-arrange" id="toc-sort-with-arrange"><span class="toc-section-number">5</span> Sort with <code>arrange()</code></a></li>
+<li><a href="#r-bingo" id="toc-r-bingo">R BINGO!</a></li>
+<li><a href="#filter" id="toc-filter"><span class="toc-section-number">6</span> <code>filter()</code></a></li>
+<li><a href="#mutate" id="toc-mutate"><span class="toc-section-number">7</span> <code>mutate()</code></a></li>
+<li><a href="#saving-data" id="toc-saving-data"><span class="toc-section-number">8</span> Saving data</a></li>
+<li><a href="#plots-with-ggplot2" id="toc-plots-with-ggplot2"><span class="toc-section-number">9</span> Plots with <em>ggplot2</em></a></li>
+<li><a href="#shutdown-complete" id="toc-shutdown-complete"><span class="toc-section-number">10</span> Shutdown complete</a></li>
 </ul>
 </div>
 
@@ -338,7 +338,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/starwars_scrap_jakku.csv&quot;</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the destination column</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(scrap, <span class="sc">-</span>destination)</span></code></pre></div>
@@ -800,9 +800,11 @@ Menu of comparisons
 <div id="saving-data" class="section level1" number="8">
 <h1><span class="header-section-number">8</span> Saving data</h1>
 <hr>
-<p>You can’t break your original dataset if you name your edited data something new. Let’s use the <code>readr</code> package to save our new CSV with the tons converted to pounds.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data as a CSV file </span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap_pounds, <span class="st">&quot;scrap_in_pounds.csv&quot;</span>)</span></code></pre></div>
+<p>You can also save data with the <strong><code>readr</code></strong> package. Let’s use the <code>readr</code> function <code>write_csv()</code> to save our new table with the tons converted to pounds.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data as a CSV file </span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap_pounds, <span class="st">&quot;scrap_in_pounds.csv&quot;</span>)</span></code></pre></div>
 <blockquote>
 <p>Where did R save the file?</p>
 <p><em>Hint:</em> You can look in the lower right <code>[Files]</code> tab.</p>

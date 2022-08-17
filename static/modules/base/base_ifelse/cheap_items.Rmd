@@ -18,8 +18,8 @@ Let's use `mutate()` and `ifelse()` to add a column named `affordable` to our sc
 
 ```{r ifelse, message=F, warning=F}
 # Add an affordable column
-scrap <- scrap %>% 
-         mutate(affordable = ifelse(price_per_unit < 500, 
+scrap <- mutate(scrap,
+                affordable = ifelse(price_per_unit < 500, 
                                     "Cheap", 
                                     "Expensive"))
 ```
@@ -32,8 +32,7 @@ Use your new column and `filter()` to create a new `cheap_scrap` table.
 
 ```{r afford, eval=F}
 # Cheap scrap table
-cheap_scrap <- scrap %>% 
-               filter( _________ )
+cheap_scrap <- filter(scrap,  _________ )
 ```
 
 
@@ -46,8 +45,13 @@ n_distinct(cheap_scrap$item)
 
 <br>
 
-**What are the cheap items?**
-Try the `unique()` function on `cheap_scrap$item`.
+**What are the cheap items?**  
+
+```
+
+Try the unique() function on cheap_scrap$item.
+
+```
 
 <br>
 
@@ -60,7 +64,9 @@ Try the `unique()` function on `cheap_scrap$item`.
 <div class="quiz">
 ### Pop Quiz! {-}
 
-__Use `arrange()` to find the cheapest item. What is it?__
+__Use `arrange()` to find the cheapest item.__ 
+
+__What is it?__
 
 <input type="radio" name="cheap"> _Black box_         <br> 
 <input type="radio" name="cheap"> _Electrotelescope_  <br> 

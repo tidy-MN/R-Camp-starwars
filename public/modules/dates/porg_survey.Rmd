@@ -389,11 +389,11 @@ Now let’s jump ahead and take a look at the survey results.
 ### Load the porg survey results. {-}
 
 ```{r, eval=F}
-porgs <- read_csv("https://mn-r.netlify.app/data/2022_porg_survey_results.csv")   
+porgs <- read_csv("https://mn-r.netlify.app/data/2023_porg_survey_results.csv")   
 ```
 
 ```{r, eval=T, echo=F}
-porgs <- read_csv("../../../content/data/2022_porg_survey_results.csv")   
+porgs <- read_csv("../../../content/data/2023_porg_survey_results.csv")   
 ```
 
 

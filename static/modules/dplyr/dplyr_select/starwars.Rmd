@@ -11,7 +11,7 @@ Use the `select()` function to:
 library(dplyr)
 library(readr)
 
-scrap <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv")
+scrap <- read_csv("https://mn-r.netlify.app/data/starwars_scrap_jakku.csv")
 
 # Drop the destination column
 select(scrap, -destination)

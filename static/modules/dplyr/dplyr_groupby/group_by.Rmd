@@ -4,8 +4,8 @@
 Who's selling goods for cheap? Use `group_by` with the column _Origin_ to find the `mean(price_per_pound)` at each Origin City.
 
 ```{r mean_price-by-origin, eval = F}
-scrap_summary <- group_by(scrap, origin) %>%
-                 summarize(mean_price =  mean(price_per_pound, na.rm = T))
+scrap_means <- group_by(scrap, origin) %>%
+                  summarize(mean_price =  mean(price_per_pound, na.rm = T))
 ```
 
 <br>
@@ -43,12 +43,12 @@ The `round()` function in R does not automatically round values ending in 5 upwa
 
 ## Busiest scrap city {-}
 
-So who's making lots of transactions? Try using `group_by` with the column _origin_ to count the number of scrap records at each city.
+So who's making the most transactions? Try using `group_by` with the column _origin_ to count the number of scrap records at each city. We can use the tiny-tiny function `n()` to count the number of rows.
 
 ```{r grp-by-origin, eval = FALSE}
 scrap_counts <- scrap %>%
                 group_by(origin) %>%
-                summarize(origin_count  =  n()) %>%
+                summarize(origin_count = n()) %>%
                 ungroup()
 ```
 
@@ -87,7 +87,7 @@ By default, R will overwrite a file if the file already exists in the same folde
 
 We can bring back `mutate` to add a column based on the grouped values in a data set. For example, you may want to add a column showing the mean price by origin to the whole table, but still keep all of the records. This is a good way to add values to the table to serve as a reference point. 
 
-> How does the price of "Item X" compare to the average price?  
+> How does the price of **X** compare to the average price?   
 
 When you combine `group_by` and `mutate` the new column will be calculated based on the values within each group. Let's group by `origin` to find the `mean()` price per pound at each origin. 
 

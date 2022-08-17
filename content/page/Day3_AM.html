@@ -18,6 +18,15 @@ output:
 <link href="/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
 <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/proj4/proj4.min.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
@@ -86,10 +95,16 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#day-1-review"><span class="toc-section-number">1</span> Day 1 review</a></li>
-<li><a href="#your-analysis-toolbox"><i class="fa fa-toolbox"></i> Your analysis toolbox</a></li>
-<li><a href="#day-2-review"><span class="toc-section-number">2</span> Day 2 review</a></li>
-<li><a href="#share-with-friends"><span class="toc-section-number">3</span> <i class="fa fa-group" style="color: steelblue;"></i> Share with friends</a></li>
+<li><a href="#scrap-data" id="toc-scrap-data">Scrap data</a></li>
+<li><a href="#day-1-review" id="toc-day-1-review"><span class="toc-section-number">1</span> Day 1 review</a></li>
+<li><a href="#your-analysis-toolbox" id="toc-your-analysis-toolbox"><i class="fa fa-toolbox"></i> Your analysis toolbox</a></li>
+<li><a href="#day-2-review" id="toc-day-2-review"><span class="toc-section-number">2</span> Day 2 review</a></li>
+<li><a href="#reading-coordinates" id="toc-reading-coordinates"><span class="toc-section-number">3</span> <i class="fas fa-globe-africa"></i> Reading coordinates</a></li>
+<li><a href="#leaflet-maps" id="toc-leaflet-maps"><span class="toc-section-number">4</span> Leaflet maps</a></li>
+<li><a href="#invasive-porg-survey---2023" id="toc-invasive-porg-survey---2023"><span class="toc-section-number">5</span> Invasive Porg Survey - 2023</a></li>
+<li><a href="#dates-with-lubridate" id="toc-dates-with-lubridate"><span class="toc-section-number">6</span> <i class="fa fa-calendar" aria-hidden="true"></i> Dates with <code>lubridate</code></a></li>
+<li><a href="#pipe-things-together-a-b" id="toc-pipe-things-together-a-b"><span class="toc-section-number">7</span> Pipe things together: <code>A %&gt;% B</code></a></li>
+<li><a href="#share-with-friends" id="toc-share-with-friends"><span class="toc-section-number">8</span> <i class="fa fa-group" style="color: steelblue;"></i> Share with friends</a></li>
 </ul>
 </div>
 
@@ -97,6 +112,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 h1 .header-section-number {background: #c75a16;}
 hr {background: #c75a16;}
 </style>
+<div id="scrap-data" class="section level1 unnumbered">
+<h1>Scrap data</h1>
+<hr>
+<p><strong>Where we left off</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/scrap_day2_pm.csv&quot;</span>)</span></code></pre></div>
+</div>
 <div id="day-1-review" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Day 1 review</h1>
 <hr>
@@ -298,94 +321,940 @@ Menu of comparisons
 <div id="day-2-review" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Day 2 review</h1>
 <hr>
-<p><img src="../images/ggplot2_hex.png" align="right" style="margin-right: 70px; margin-top: -28px;" width="145" /></p>
-<div id="the-ggplot-sandwich" class="section level2 unnumbered">
-<h2>The <code>ggplot()</code> sandwich</h2>
-<p><img src="../images/auto_plot.gif" style="margin-top: -10px; max-width: 108%; margin-bottom: -6px;" /></p>
-<div class="tip">
-<div id="explore" class="section level3 unnumbered">
-<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
-<div id="whos-the-tallest-of-them-all" class="section level4 unnumbered">
-<h4>Who’s the tallest of them all?</h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install new packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggrepel&quot;</span>)</span></code></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Get starwars character data</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>star_df <span class="ot">&lt;-</span> starwars</span></code></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What is this?</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(star_df)</span></code></pre></div>
-<pre><code>## Rows: 87
-## Columns: 14
-## $ name       &lt;chr&gt; &quot;Luke Skywalker&quot;, &quot;C-3PO&quot;, &quot;R2-D2&quot;, &quot;Darth Vader&quot;, &quot;Leia Or…
-## $ height     &lt;int&gt; 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…
-## $ mass       &lt;dbl&gt; 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…
-## $ hair_color &lt;chr&gt; &quot;blond&quot;, NA, NA, &quot;none&quot;, &quot;brown&quot;, &quot;brown, grey&quot;, &quot;brown&quot;, N…
-## $ skin_color &lt;chr&gt; &quot;fair&quot;, &quot;gold&quot;, &quot;white, blue&quot;, &quot;white&quot;, &quot;light&quot;, &quot;light&quot;, &quot;…
-## $ eye_color  &lt;chr&gt; &quot;blue&quot;, &quot;yellow&quot;, &quot;red&quot;, &quot;yellow&quot;, &quot;brown&quot;, &quot;blue&quot;, &quot;blue&quot;,…
-## $ birth_year &lt;dbl&gt; 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …
-## $ sex        &lt;chr&gt; &quot;male&quot;, &quot;none&quot;, &quot;none&quot;, &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;,…
-## $ gender     &lt;chr&gt; &quot;masculine&quot;, &quot;masculine&quot;, &quot;masculine&quot;, &quot;masculine&quot;, &quot;femini…
-## $ homeworld  &lt;chr&gt; &quot;Tatooine&quot;, &quot;Tatooine&quot;, &quot;Naboo&quot;, &quot;Tatooine&quot;, &quot;Alderaan&quot;, &quot;T…
-## $ species    &lt;chr&gt; &quot;Human&quot;, &quot;Droid&quot;, &quot;Droid&quot;, &quot;Human&quot;, &quot;Human&quot;, &quot;Human&quot;, &quot;Huma…
-## $ films      &lt;list&gt; &lt;&quot;The Empire Strikes Back&quot;, &quot;Revenge of the Sith&quot;, &quot;Return…
-## $ vehicles   &lt;list&gt; &lt;&quot;Snowspeeder&quot;, &quot;Imperial Speeder Bike&quot;&gt;, &lt;&gt;, &lt;&gt;, &lt;&gt;, &quot;Imp…
-## $ starships  &lt;list&gt; &lt;&quot;X-wing&quot;, &quot;Imperial shuttle&quot;&gt;, &lt;&gt;, &lt;&gt;, &quot;TIE Advanced x1&quot;,…</code></pre>
-<p><br></p>
-<p>Plot a histogram of the character heights.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Height distribution</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">x =</span> height)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;hotpink&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day3_AM_files/figure-html/unnamed-chunk-4-1.png" width="960" /></p>
-<p><br></p>
-<div class="note">
 <ul>
-<li><p>Try changing the fill color to <strong>“<span style="color: #FD6A02;">darkorange</span>”</strong>.</p></li>
-<li><p>Try making a histogram of the column <code>mass</code>.</p></li>
+<li>SF &amp; Leaflet maps</li>
+<li>Dates with <strong>lubridate</strong></li>
+<li>Join tables with <code>left_join()</code></li>
+<li><code>summarize()</code></li>
+<li>Group by category with <code>group_by()</code></li>
+<li><code>ifelse()</code>: if THIS IS TRUE do a thing, otherwise do a different thing</li>
+</ul>
+<div id="welcome-to-endor" class="section level2 unnumbered">
+<h2>Welcome to Endor!</h2>
+<hr class="hrlvl2">
+<p><img src="https://mn-r.netlify.com/images/planet_endor.jpg" style="width: 75%; margin-top: -4px; margin-left: 11%;" /></p>
+</div>
+<div id="but-wait" class="section level2 unnumbered">
+<h2>But wait…</h2>
+<hr class="hrlvl2">
+<p>The Ewoks say it’s unsafe to land. Booo… Sounds like the Empire is checking all ships for licenses.</p>
+<p>Lucky for us there is some good news. They say for a small ship like ours, it is possible to land undetected. But we’ll have to put down right-dab in the middle of the 3 northern outposts.</p>
+<p><br></p>
+<blockquote>
+<p>Are you up for a challenge data droid?</p>
+</blockquote>
+<p><br></p>
+<p>Either way, let’s make a map to see what we’re up against. To help, our comrades sent along the coordinates of the Empire’s outposts. Guess what the first step is? That’s right. Time to add a new package.</p>
+</div>
+</div>
+<div id="reading-coordinates" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> <i class="fas fa-globe-africa"></i> Reading coordinates</h1>
+<hr>
+<p>To read coordinates stored in a CSV or Excel spreadsheet, we can read them into R with our usual friends:</p>
+<ul>
+<li><strong>readr</strong>’s <code>read_csv()</code> for CSV files</li>
+<li><strong>readxl</strong>’s <code>read_excel()</code> for Excel files</li>
+</ul>
+<div id="give-it-a-try" class="section level2 unnumbered">
+<h2>Give it a try</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>outposts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/endor_outposts.csv&quot;</span>)</span></code></pre></div>
+<p><br></p>
+<div id="take-a-look" class="section level3 unnumbered">
+<h3>Take a look</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>outposts</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 3
+##   ID      lat  long
+##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 1NO    36.7 -119.
+## 2 1NL    36.6 -119.
+## 3 3NB    36.6 -119.</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(outposts)</span></code></pre></div>
+<pre><code>## Rows: 3
+## Columns: 3
+## $ ID   &lt;chr&gt; &quot;1NO&quot;, &quot;1NL&quot;, &quot;3NB&quot;
+## $ lat  &lt;dbl&gt; 36.65520, 36.58375, 36.59790
+## $ long &lt;dbl&gt; -118.8469, -118.8195, -118.9022</code></pre>
+<p><br></p>
+<p>To make a quick map, use ggplot and add <code>+ geom_point()</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outposts, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat)) <span class="sc">+</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>) </span></code></pre></div>
+<p><img src="/page/Day3_AM_files/figure-html/unnamed-chunk-5-1.png" width="1056" /></p>
+<p><br></p>
+</div>
+</div>
+<div id="wheres-the-center-point" class="section level2 unnumbered">
+<h2>Where’s the center point?</h2>
+<p>How can we find the center of these points?</p>
+<p><br></p>
+<blockquote>
+<p><strong>Hint:</strong> How do you find the halfway point between two points?</p>
+</blockquote>
+<p><br></p>
+<p>Let’s use <code>mutate()</code> from the dplyr toolbox to update our location columns. Set the new <code>lat</code> column to the center of all the <code>lat</code>’s, and the new <code>lat</code> column to the center of all the <code>long</code>’s.</p>
+<p>These will be the coordinates for our landing pad.</p>
+<div id="mutate-the-center" class="section level3 unnumbered">
+<h3><code>mutate</code> the center</h3>
+<p><strong>Complete the code</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update lat/long to the center point (the average of ALL the lat/long)             </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>land_pad <span class="ot">&lt;-</span> <span class="fu">summarize</span>(outposts, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">lat  =</span> <span class="fu">mean</span>( ______ ),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">long =</span> _____________ ,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ID   =</span> <span class="st">&quot;Land here!&quot;</span>)</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>land_pad <span class="ot">&lt;-</span> <span class="fu">summarize</span>(outposts, </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">lat  =</span> <span class="fu">mean</span>( lat ),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">long =</span> <span class="fu">mean</span>( long ),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ID   =</span> <span class="st">&quot;Land here!&quot;</span>)</span></code></pre></div>
+</details>
+</div>
+<div id="where-should-we-land" class="section level3 unnumbered">
+<h3>Where should we land?</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View center coordinates</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>land_pad</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">lat</th>
+<th align="right">long</th>
+<th align="left">ID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">36.61228</td>
+<td align="right">-118.8562</td>
+<td align="left">Land here!</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="we-found-it" class="section level3 unnumbered">
+<h3>We found it!</h3>
+<p>That’s fantastic.</p>
+<p><strong>Let’s add it to our map.</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outposts, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat)) <span class="sc">+</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> land_pad, </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat), </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<p><img src="/page/Day3_AM_files/figure-html/unnamed-chunk-10-1.png" width="1056" /></p>
+<p><br></p>
+<div class="well">
+<p><strong>That’s looking good, but…</strong></p>
+<p>We’re going to need to be very precise to land perfectly in between these outposts. To make our captain really happy, let’s put this all in an interactive zoomable map. For interactive maps we use <strong>leaflet</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="leaflet-maps" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Leaflet maps</h1>
+<hr>
+<div id="the-leaflet-package." class="section level3 unnumbered">
+<h3>The <code>leaflet</code> package.</h3>
+<p><img src="../images/leaflet.png" style="width: 37%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" /></p>
+<p>Leaflet makes interactive maps easy and you build them up in layers similar to a ggplot.</p>
+<br>
+<div style="clear: both;">
+
+</div>
+</div>
+<div id="install-leaflet" class="section level3 unnumbered">
+<h3>Install <code>leaflet</code></h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;leaflet&quot;</span>)</span></code></pre></div>
+<blockquote>
+<p>Explore the <a href="https://rstudio.github.io/leaflet/">Full Leaflet Guide!</a></p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="maps-that-zoom" class="section level2 unnumbered">
+<h2>Maps that zoom</h2>
+<p>Leaflet builds map with layers similar to ggplot, but instead of adding things with the <code>+</code>, leaflet adds new layers with the <code>%&gt;%</code> (“the pipe”).</p>
+<div id="start-with-the-outpost-coordinates" class="section level3 unnumbered">
+<h3>1. Start with the outpost coordinates</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">radius =</span> <span class="dv">250</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>()</span></code></pre></div>
+<div id="htmlwidget-1" style="width:864px;height:384px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addCircles","args":[[36.6552,36.583748,36.5979],[-118.8469,-118.8195,-118.90218],250,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]},{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"limits":{"lat":[36.583748,36.6552],"lng":[-118.90218,-118.8195]}},"evals":[],"jsHooks":[]}</script>
+<p><br></p>
+</div>
+<div id="add-the-landing-site" class="section level3 unnumbered">
+<h3>2. Add the landing site</h3>
+<p><em>Fingers crossed it’s in the middle….</em></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">radius =</span> <span class="dv">300</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">data =</span> land_pad)  <span class="co">#&lt;&lt;</span></span></code></pre></div>
+<p><br></p>
+</div>
+<div id="add-labels" class="section level3 unnumbered">
+<h3>3. Add labels</h3>
+<p><em>Try hovering over one of the outposts to see its label.</em></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">radius =</span> <span class="dv">300</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="sc">~</span>ID) <span class="sc">%&gt;%</span>   <span class="co">#&lt;&lt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">data  =</span> land_pad,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="st">&quot;Land HERE!&quot;</span>,  <span class="co">#&lt;&lt;</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">noHide =</span> <span class="cn">TRUE</span>))  <span class="co">#&lt;&lt;</span></span></code></pre></div>
+<div id="htmlwidget-2" style="width:864px;height:384px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addCircles","args":[[36.6552,36.583748,36.5979],[-118.8469,-118.8195,-118.90218],300,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,["1NO","1NL","3NB"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]},{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[36.6122826666667,-118.856193333333,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Land HERE!",{"interactive":false,"permanent":true,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[36.583748,36.6552],"lng":[-118.90218,-118.8195]}},"evals":[],"jsHooks":[]}</script>
+<p><br></p>
+</div>
+<div id="explore" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore!</h3>
+<p>News just came in that the outposts will soon be upgrading their <strong>radar</strong> to detect ships up to <code>4,200 meters</code> away. Will that be a problem?</p>
+<p><strong>Steps</strong></p>
+<ol style="list-style-type: decimal">
+<li>Update the radius argument in <code>addCircles(...)</code> to be equal to <code>4200</code>.</li>
+<li>Add the argument <code>, fillColor = "yellow"</code> inside <code>addCircles(..)</code></li>
+</ol>
+<details>
+<summary class="btn_code">
+<em>Show code</em>
+</summary>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">radius =</span> <span class="dv">4200</span>, <span class="co">#&lt;&lt;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="sc">~</span>ID,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">fillColor =</span> <span class="st">&quot;yellow&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">data  =</span> land_pad,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="st">&quot;Land HERE!&quot;</span>,  </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">noHide =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<p><br></p>
+</details>
+<blockquote>
+<p><strong>Will our landing spot still be safe?</strong></p>
+</blockquote>
+<p><br></p>
+</div>
+</div>
+<div id="woah-thats-a-close-one." class="section level2 unnumbered">
+<h2>Woah! That’s a close one.</h2>
+<p>You’re on 🔥 fire data droid. Let’s sit here a minute to cool down…</p>
+<p>Ok, now let’s go land on that planet before we get stuck up here with permanent space legs.</p>
+<p><br></p>
+<div id="yoda-says" class="section level3 unnumbered yoda">
+<h3>Yoda says</h3>
+<p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
+<p><strong>BASEMAPS.</strong> There are lots of options for basemaps in leaflet. One of my favorites is <code>CartoDB.Positron</code> because its greyness doesn’t distract from the data.</p>
+<p>Add it to your map by swapping out <code>addTiles()</code> for <code>addProviderTiles(providers$CartoDB.Positron)</code></p>
+<details>
+<summary class="btn_code">
+<em>Show code</em>
+</summary>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">radius =</span> <span class="dv">4200</span>, </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="sc">~</span>ID,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">fillColor =</span> <span class="st">&quot;yellow&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span>  <span class="co">#&lt;&lt;</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">addMarkers</span>(<span class="at">data  =</span> land_pad,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">label =</span> <span class="st">&quot;Land HERE!&quot;</span>,  </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">noHide =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<p><br></p>
+</details>
+<p>See MORE examples of basemaps here: <a href="https://rstudio.github.io/leaflet/basemaps.html" class="uri">https://rstudio.github.io/leaflet/basemaps.html</a></p>
+<p>And explore the <a href="https://rstudio.github.io/leaflet/">Full Leaflet Guide!</a></p>
+</div>
+</div>
+</div>
+<div id="invasive-porg-survey---2023" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Invasive Porg Survey - 2023</h1>
+<hr>
+<div id="the-ewoks-need-our-help.-theres-porgs-everywhere" class="section level3 unnumbered">
+<h3>The Ewoks need our help. There’s porgs <strong>EVERYWHERE!</strong></h3>
+<p><img src="../images/porgs_bb8_2.jpg" style="margin-top: 0px;"></p>
+<p>Porgs have been spreading across the galaxy, likely hitching rides on unsuspecting ships. They’re so cute people hate to say it, but they are starting to become a nuisance in some place.</p>
+<p>To get a grasp on the problem the Ewoks are doing the first ever porg survey. And they need your help planning the <strong>survey</strong>.</p>
+</div>
+</div>
+<div id="dates-with-lubridate" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> <i class="fa fa-calendar" aria-hidden="true"></i> Dates with <code>lubridate</code></h1>
+<hr>
+<div id="the-lubridate-package." class="section level3 unnumbered">
+<h3>The <code>lubridate</code> package.</h3>
+<p><img src="../images/lubridate.png" style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" /></p>
+<p><br></p>
+<p>It’s about time! Lubridate makes working with dates much easier.</p>
+<p>We can find how much time has elapsed, add or subtract days, and find seasonal and day of the week averages.</p>
+<p><br></p>
+<div style="clear: both;">
+
+</div>
+</div>
+<div id="install-lubridate" class="section level3 unnumbered">
+<h3>Install <code>lubridate</code></h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;lubridate&quot;</span>)</span></code></pre></div>
+<p><br>
+<strong>View the date cheatsheet <a href="https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf">HERE</a></strong>.</p>
+<p>It’s a great reference when you need to manipulate dates or timezones in your data.</p>
+</div>
+<div id="menu-of-date-functions" class="section level2 unnumbered">
+<h2>Menu of date functions</h2>
+<hr class="hrlvl2">
+<div id="convert-text-to-a-date" class="section level4 unnumbered">
+<h4>Convert text to a <code>DATE</code></h4>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="94%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th align="left">Order of date elements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdy()</code></td>
+<td align="left">Month-Day-Year :: <code>05-18-2019</code> or <code>05/18/2019</code></td>
+</tr>
+<tr class="even">
+<td><code>dmy()</code></td>
+<td align="left">Day-Month-Year (Euro dates) :: <code>18-05-2019</code> or <code>18/05/2019</code></td>
+</tr>
+<tr class="odd">
+<td><code>ymd()</code></td>
+<td align="left">Year-Month-Day (science dates) :: <code>2019-05-18</code> or <code>2019/05/18</code></td>
+</tr>
+<tr class="even">
+<td><code>ymd_hm()</code></td>
+<td align="left">Year-Month-Day Hour:Minutes :: <code>2019-05-18 8:35 AM</code></td>
+</tr>
+<tr class="odd">
+<td><code>ymd_hms()</code></td>
+<td align="left">Year-Month-Day Hour:Minutes:Seconds :: <code>2019-05-18 8:35:22 AM</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="get-specific-date-parts-eg.-the-year-month-day" class="section level4 unnumbered">
+<h4>Get specific date parts (eg. the year, month, day… )</h4>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="94%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th align="left">Date element</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>year()</code></td>
+<td align="left">Year</td>
+</tr>
+<tr class="even">
+<td><code>month()</code></td>
+<td align="left">Month as <em>1,2,3</em>; For <em>Jan, Feb, Mar</em> use <code>label=TRUE</code></td>
+</tr>
+<tr class="odd">
+<td><code>week()</code></td>
+<td align="left">Week of the year</td>
+</tr>
+<tr class="even">
+<td><code>day()</code></td>
+<td align="left">Day of the month</td>
+</tr>
+<tr class="odd">
+<td><code>wday()</code></td>
+<td align="left">Day of the week as <em>1,2,3</em>; For <em>Sun, Mon, Tue</em> use <code>label=TRUE</code></td>
+</tr>
+<tr class="even">
+<td><em>- Time -</em></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td><code>hour()</code></td>
+<td align="left">Hour of the day <em>(24hr)</em></td>
+</tr>
+<tr class="even">
+<td><code>minute()</code></td>
+<td align="left">Minutes</td>
+</tr>
+<tr class="odd">
+<td><code>second()</code></td>
+<td align="left">Seconds</td>
+</tr>
+<tr class="even">
+<td><code>tz()</code></td>
+<td align="left">Time zone</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="clean-the-dates" class="section level3 unnumbered note">
+<h3><i class="fa fa-broom" aria-hidden="true"></i> Clean the dates</h3>
+<div id="real-world-examples" class="section level4 unnumbered">
+<h4>Real world examples</h4>
+<p>Does your date column look like one of these?</p>
+<p>Here’s the <code>lubridate</code> function to convert the column to a date.</p>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th align="left">Function to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“05/18/2019”</td>
+<td align="left"><code>mdy(date_column)</code></td>
+</tr>
+<tr class="even">
+<td>“May 18, 2019”</td>
+<td align="left"><code>mdy(date_column)</code></td>
+</tr>
+<tr class="odd">
+<td>“05/18/2019 8:00 CDT”</td>
+<td align="left"><code>mdy_hm(date_column, tz = "US/Central")</code></td>
+</tr>
+<tr class="even">
+<td>“05/18/2019 11:05:32 PDT”</td>
+<td align="left"><code>mdy_hms(date_column, tz = "US/Pacific")</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>European dates</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th align="left">Function to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“30.05.2019”</td>
+<td align="left"><code>dmy(date_column)</code></td>
+</tr>
+<tr class="even">
+<td>“30-05-2019”</td>
+<td align="left"><code>dmy(date_column)</code></td>
+</tr>
+<tr class="odd">
+<td>“30/05/2019”</td>
+<td align="left"><code>dmy(date_column)</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>Simple number dates</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th align="left">Function to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“20190518”</td>
+<td align="left"><code>ymd(sample_date)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+<div id="survey-objective" class="section level3 unnumbered">
+<h3>Survey objective</h3>
+<div class="well">
+<ul>
+<li>The Ewoks have asked you help organize their Porg survey.</li>
+<li>In 2023, they would like to perform a porg count once a week from May to October.</li>
+<li>They have enough volunteers to run the survey at two locations
+<ul>
+<li><code>Bright Tree</code> and <code>Fern Gully</code></li>
+</ul></li>
 </ul>
 </div>
 <p><br></p>
-<p>Plot comparisons between height and mass with <code>geom_point(...)</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Height vs. Mass scatterplot</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<p>Let’s generate the full list of dates during this time span using the sequence date function: <code>seq.Date()</code></p>
+<div id="run-the-code-below-to-create-a-date-for-every-possible-day-of-the-survey." class="section level4 unnumbered">
+<h4>Run the code below to create a date for every possible day of the survey.</h4>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2023-05-01&quot;</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>end_date   <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2023-10-31&quot;</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sequence from start to end, counting by 1 day intervals</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">seq.Date</span>(<span class="at">from =</span> start_date, </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>                         <span class="at">to =</span> end_date, </span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>                         <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
 <p><br></p>
-<p>Who’s who? Let’s add some labels to the points.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name))</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a log scale for Mass on the y-axis</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name)) <span class="sc">+</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>()</span></code></pre></div>
+</div>
+</div>
+<div id="how-many-days-will-the-survey-run" class="section level3 unnumbered">
+<h3>How many days will the survey run?</h3>
+<details>
+<summary class="btn_code">
+Show answer
+</summary>
+<blockquote>
+<p><em>184 days</em></p>
+</blockquote>
+</details>
 <p><br></p>
-<p>Let’s drop the “Hutt” species before plotting.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Without the Hutt</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">filter</span>(star_df, species <span class="sc">!=</span> <span class="st">&quot;Hutt&quot;</span>), <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name, <span class="at">color =</span> species))</span></code></pre></div>
+</div>
+<div id="lets-put-the-dates-in-a-dataframe" class="section level3 unnumbered">
+<h3>Let’s put the dates in a dataframe</h3>
+<blockquote>
+<p>Remember how to make a dataframe?</p>
+</blockquote>
+</div>
+<div id="heres-a-reminder" class="section level3 unnumbered">
+<h3>Here’s a reminder</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">count_date =</span> survey_dates)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(survey)</span></code></pre></div>
+<pre><code>##   count_date
+## 1 2023-05-01
+## 2 2023-05-02
+## 3 2023-05-03
+## 4 2023-05-04
+## 5 2023-05-05
+## 6 2023-05-06</code></pre>
+</div>
+<div id="yes" class="section level3 unnumbered">
+<h3>Yes!</h3>
+</div>
+</div>
+<div id="scheduling-weekdays" class="section level2 unnumbered">
+<h2>1. Scheduling weekdays</h2>
+<p><img src="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" align=right /></p>
+<p>Ewoks are very busy. They only have one day per week when they can volunteer.</p>
+<p>Here is the weekday when volunteers are available at each location:</p>
+<ul>
+<li>Bright Tree: <code>Thursdays</code></li>
+<li>Fern Gully: <code>Fridays</code></li>
+</ul>
 <p><br></p>
-<p>We can add <code>facet_wrap</code> to make a chart for each species.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split out by species</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">x =</span> mass, <span class="at">y =</span> height)) <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;species&quot;</span>) <span class="sc">+</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day3_AM_files/figure-html/unnamed-chunk-8-1.png" width="960" /></p>
+<p>We can use the <code>seq.Date()</code> function and the option to step <code>by = "week"</code> to
+generate the survey dates for each site. But we need to know which day to start from.</p>
+<blockquote>
+<h4 id="when-is-the-first-thursday-in-may-of-2023" class="unnumbered">When is the first Thursday in May of 2023?</h4>
+</blockquote>
+<p><br></p>
+<p>For that, we can use the <code>wday()</code>, the “weekday” function.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wday tells you the day of week (Sun, Mon, etc..) for a specific date</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(<span class="fu">ymd</span>(<span class="st">&#39;2023-05-01&#39;</span>), <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] Monday
+## 7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday</code></pre>
+<p><br></p>
+<p>So the <code>1st</code> of May will be a Monday.
+That means…. <strong>May the 4th</strong> will be a Thursday. Perfect! That’s my favorite day.</p>
+</div>
+<div id="mutate-to-the-rescue" class="section level2 unnumbered">
+<h2>Mutate to the rescue</h2>
+<p>We really don’t want to check every date one by one do we?</p>
+<p>Let’s add a new <code>week_day</code> column to our survey table that checks ALL the dates ALL at once. To add a new column we call our friend <code>mutate()</code>.</p>
+<p>Complete the code below to add a <code>week_day</code> column.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">week_day =</span> <span class="fu">wday</span>( ________ , <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
+<p><br></p>
+</div>
+<div id="filter-week-days" class="section level2 unnumbered">
+<h2><code>filter()</code> week days</h2>
+<p>With <strong>filter</strong> we can pick out only the days of the week that we want.</p>
+<p>Split the schedule in two by filtering the survey to only the week day needed at each site:</p>
+<ul>
+<li><code>Thursday</code> for Bright Tree</li>
+<li><code>Friday</code> for Fern Gully</li>
+</ul>
+<p><br></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  ________ )</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>fern_dates   <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  ________ )</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Thursday&quot;</span> )</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>fern_dates   <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Friday&quot;</span> )</span></code></pre></div>
+</details>
+<p><br></p>
+<p><strong>How many survey dates are at each site?</strong></p>
+<blockquote>
+<p><em>Hint: It’s less than 50.</em></p>
+</blockquote>
+<details>
+<summary class="btn_code">
+Show answer
+</summary>
+<blockquote>
+<p><strong>26 survey days</strong></p>
+</blockquote>
+</details>
+<p><br></p>
+</div>
+<div id="particular-date-formats" class="section level2 unnumbered">
+<h2>2. Particular date formats</h2>
+<p><img align="left" src="../images/dwight.png" style="margin-right: 14px;"></p>
+<p>Oh no! Each survey site has a very-very particular <strong>Assistant to the Regional Manager</strong>. And they are demanding a very <strong>specific</strong> date format for their work schedules.</p>
+<p><br></p>
+<p>Before you send off the survey dates, you’ll need to adjust the dates to match the requested formats below.</p>
+<p><strong>Preferred date formats</strong></p>
+<ul>
+<li>Bright Tree: <code>5-11-2023</code></li>
+<li>Fern Gully: <code>May 12, 2023</code></li>
+</ul>
+<p><br></p>
+<p>Use <code>format(count_date, ...)</code> and the date expressions below to format the schedule for each region accordingly.</p>
+<blockquote>
+<p>For example: <code>format(count_date, "%b, %Y")</code> prints the date as <code>Aug, 2023</code>.</p>
+<ul>
+<li><code>%b</code> stands for 3-letter month abbreviation</li>
+<li><code>%Y%</code> stands for the full 4 digit year</li>
+</ul>
+</blockquote>
+<div id="date-parts" class="section level3 unnumbered">
+<h3>Date parts</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Expression</th>
+<th align="left">Description</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>%Y</code></td>
+<td align="left">Year (4 digit)</td>
+<td align="left">2023</td>
+</tr>
+<tr class="even">
+<td align="left"><code>%y</code></td>
+<td align="left">Year (2 digit)</td>
+<td align="left">21</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>%B</code></td>
+<td align="left">Month (full name)</td>
+<td align="left">December</td>
+</tr>
+<tr class="even">
+<td align="left"><code>%b</code></td>
+<td align="left">Month (abbreviated)</td>
+<td align="left">Dec</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>%m</code></td>
+<td align="left">Month (decimal number)</td>
+<td align="left">12</td>
+</tr>
+<tr class="even">
+<td align="left"><code>%d</code></td>
+<td align="left">Day of the month (decimal number)</td>
+<td align="left">30</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="time-parts" class="section level3 unnumbered">
+<h3>Time parts</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Expression</th>
+<th align="left">Description</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>%H</code></td>
+<td align="left">Hour</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="left"><code>%M</code></td>
+<td align="left">Minute</td>
+<td align="left">13</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>%S</code></td>
+<td align="left">Second</td>
+<td align="left">35</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Use <code>mutate()</code> to update the <strong>week_day</strong> column in both site schedules.</p>
+<p><strong>Here’s a start</strong></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to 5-11-2023</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(bright_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, _______  ))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to May 12, 2023</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, _______ ))</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to 5-11-2023</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(bright_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%m-%d-%Y&quot;</span>))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to May 12, 2023</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%b %d, %Y&quot;</span>))</span></code></pre></div>
+</details>
+</div>
+<div id="howd-we-do" class="section level3 unnumbered">
+<h3>How’d we do?</h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bright Tree schedule</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bright_dates, <span class="dv">3</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">count_date</th>
+<th align="left">week_day</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">05-04-2023</td>
+<td align="left">Thursday</td>
+</tr>
+<tr class="even">
+<td align="left">05-11-2023</td>
+<td align="left">Thursday</td>
+</tr>
+<tr class="odd">
+<td align="left">05-18-2023</td>
+<td align="left">Thursday</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fern Gully schedule</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(fern_dates, <span class="dv">3</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">count_date</th>
+<th align="left">week_day</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">May 05, 2023</td>
+<td align="left">Friday</td>
+</tr>
+<tr class="even">
+<td align="left">May 12, 2023</td>
+<td align="left">Friday</td>
+</tr>
+<tr class="odd">
+<td align="left">May 19, 2023</td>
+<td align="left">Friday</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>Congrats!</strong></p>
+<p>Your fine-tuned schedules worked perfectly.</p>
+<p>Now let’s jump ahead and take a look at the survey results.</p>
 </div>
 </div>
+<div id="results" class="section level2 unnumbered">
+<h2>3. Results</h2>
+<p><img src="../images/porgs_lifecycle.jpg" style="width:80.0%" /></p>
+<div id="load-the-porg-survey-results." class="section level3 unnumbered">
+<h3>Load the porg survey results.</h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/2023_porg_survey_results.csv&quot;</span>)   </span></code></pre></div>
+<p><br></p>
+<p><em>Explore a bit.</em></p>
+<blockquote>
+<p>Are there missing values?</p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="a-missing-site" class="section level3 unnumbered">
+<h3>A missing site</h3>
+<p>It looks like we have a slight missing data problem.</p>
+<p>There’s a data point in the results that wasn’t labeled with the site
+location. We do know the date however.</p>
+<p>On <code>2023-06-30</code> there were a whopping 7 porgs counted - but we just don’t know where.</p>
+<p><br></p>
+<p><strong>Can you determine the site based on the date of the porg count?</strong></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>mystery_site_date <span class="ot">&lt;-</span> <span class="st">&quot;2023-06-30&quot;</span></span></code></pre></div>
+<blockquote>
+<p><em>Hint: What weekday is this?</em></p>
+<p>Try the <code>wday(date)</code> function.</p>
+</blockquote>
+<p><br></p>
+<p><strong>Good sleuthing data droid.</strong></p>
+<p>We’ll learn how to update the site value later today, but right now we’re in a hurry, so let’s remove the row using filter.</p>
+<p>Use <code>filter()</code> to keep only the rows in the porgs data where <code>site</code> is <strong>NOT</strong> <em>NA</em> (missing).</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">filter</span>(porgs, <span class="sc">!</span><span class="fu">is.na</span>(site))  </span></code></pre></div>
+<p><br></p>
 </div>
 </div>
-<div id="share-with-friends" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> <i class="fa fa-group" style="color: steelblue;"></i> Share with friends</h1>
+<div id="the-best-time-for-porgs" class="section level2 unnumbered">
+<h2>4. The best time for porgs</h2>
+<blockquote>
+<h3 id="what-is-the-best-month-to-see-porgs" class="unnumbered">What is the best month to see porgs?</h3>
+</blockquote>
+<p><strong>First, add a <code>month</code> column to the data with the function <code>month()</code> and the column <code>count_date</code>.</strong></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> porgs <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
+<p><br></p>
+<p><strong>Next, use <code>ggplot()</code> and <code>geom_col()</code> to plot the porg sightings by month.</strong></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> ______ , <span class="at">fill =</span> site)) <span class="sc">+</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> porg_count, <span class="at">fill =</span> site)) <span class="sc">+</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="/page/Day3_AM_files/figure-html/unnamed-chunk-37-1.png" width="960" /></p>
+</details>
+<p><br></p>
+<blockquote>
+<p>Why might June be the lowest month?</p>
+<p><em>Hint:</em> Fern Gully</p>
+</blockquote>
+</div>
+<div id="time-series---all-the-data" class="section level2 unnumbered">
+<h2>5. Time series - All the data</h2>
+<p>Plot all the data with <code>geom_point()</code>. Put <code>count_date</code> on the x-axis, and the <code>porg_count</code> on the y-axis. Set the color to match the <code>site</code> column.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> ______ , <span class="at">color =</span> _____ )) <span class="sc">+</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> porg_count, <span class="at">color =</span> site)) <span class="sc">+</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) </span></code></pre></div>
+<p><img src="/page/Day3_AM_files/figure-html/unnamed-chunk-39-1.png" width="960" /></p>
+</details>
+<p><br></p>
+<p>Oof! That’s a busy plot. Try adding <code>+ facet_wrap("site")</code> to the end.
+What happens?</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> porg_count, <span class="at">color =</span> site)) <span class="sc">+</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;site&quot;</span>)   <span class="co">#&lt;&lt;</span></span></code></pre></div>
+<p><br></p>
+<p>Try adding <code>+ geom_line()</code>.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> porg_count, <span class="at">color =</span> site)) <span class="sc">+</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> site) <span class="sc">+</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()                <span class="co">#&lt;&lt;</span></span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> porg_count, <span class="at">color =</span> site)) <span class="sc">+</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> site) <span class="sc">+</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="/page/Day3_AM_files/figure-html/unnamed-chunk-42-1.png" width="960" /></p>
+</details>
+<p><br></p>
+</div>
+<div id="great-work" class="section level2 unnumbered">
+<h2><i class="fas fa-hands-clapping" aria-hidden="true"></i> Great work</h2>
+<p>The Ewoks were deeply thankful. They’ll be in touch for <em>Porg Survey 2024</em>.</p>
+<p><img src="../images/porgs_4.jpg" style="width:35.0%" /></p>
+<p><br></p>
+</div>
+</div>
+<div id="pipe-things-together-a-b" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Pipe things together: <code>A %&gt;% B</code></h1>
+<hr>
+<p><br></p>
+<blockquote>
+<p><strong>Wishing you could type the name of the data less often?</strong></p>
+</blockquote>
+<p><img src="../images/pipe.png" style="margin-right: 20px; width: 136px; float: left; margin-top: 12px;" /></p>
+<div id="you-can-with-the-pipe" class="section level3 unnumbered">
+<h3>You can with the <em>pipe</em>!</h3>
+<p>Use the <code>%&gt;%</code> to chain functions together and make our scripts more streamlined.</p>
+<div style="clear: both;">
+
+</div>
+</div>
+<div id="the-helps" class="section level2 unnumbered">
+<h2>The <code>%&gt;%</code> helps:</h2>
+<div id="eliminate-nested-parentheses" class="section level3 unnumbered">
+<h3><strong><code>#1:</code></strong> <em>Eliminate nested parentheses</em></h3>
+<p>Let’s say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome.</p>
+</div>
+<div id="without-the-pipe" class="section level3 unnumbered">
+<h3>Without the pipe <i class="fas fa-frown"></i></h3>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>))))</span></code></pre></div>
+<p><br></p>
+<p>The code above is dense and we need to read it backwards from right to left to understand the order of operations. The pipe on the other hand allows us to read the code from left to right.</p>
+</div>
+<div id="with-the-pipe" class="section level3 unnumbered">
+<h3>With the pipe <i class="fas fa-smile"></i></h3>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>) <span class="sc">%&gt;%</span> <span class="fu">sum</span>() <span class="sc">%&gt;%</span> <span class="fu">log</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>()</span></code></pre></div>
+<p><br></p>
+</div>
+<div id="combine-processing-steps-into-one-cohesive-chunk" class="section level3 unnumbered">
+<h3><strong><code>#2:</code></strong> <em>Combine processing steps into one cohesive chunk</em></h3>
+</div>
+<div id="without-the-pipe-1" class="section level3 unnumbered">
+<h3>Without the pipe</h3>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, <span class="fu">desc</span>(price_per_pound))</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, </span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
+</div>
+<div id="with-the-pipe-1" class="section level3 unnumbered">
+<h3>With the pipe</h3>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">arrange</span>(<span class="fu">desc</span>(price_per_pound)) <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">filter</span>(origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
+<p><br></p>
+</div>
+<div id="explore-1" class="section level3 unnumbered tip">
+<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
+<p>Similar to above, use the <code>%&gt;%</code> to combine the two analysis lines below.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter to ozone concentrations above 80</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>ozone <span class="ot">&lt;-</span> <span class="fu">filter</span>(ozone, ppb <span class="sc">&gt;</span> <span class="dv">80</span>)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a units column to the filtered data</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>ozone <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ozone, <span class="at">units =</span> <span class="st">&quot;ppb&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="let-the-guide-you." class="section level2 unnumbered">
+<h2>Let the <code>%&gt;%</code> guide you.</h2>
+<p><br></p>
+</div>
+</div>
+<div id="share-with-friends" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> <i class="fa fa-group" style="color: steelblue;"></i> Share with friends</h1>
 <hr>
 <div id="create-a-github-account" class="section level2 unnumbered">
 <h2>Create a GitHub account</h2>

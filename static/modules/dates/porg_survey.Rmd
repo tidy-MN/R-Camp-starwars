@@ -1,12 +1,12 @@
 
 ### The Ewoks need our help. There's porgs **EVERYWHERE!** {-}
 
-<img src="../images/porgs_bb8_2.jpg" style="margin-top: 0px;">
+<img src="../images/porgs_bb8_2.jpg" style="margin-top: -12px; width: 70%;">
 
 
-Porgs have been spreading across the galaxy, likely hitching rides on unsuspecting ships. They're so cute people hate to say it, but they are starting to become a nuisance in some place. 
+Porgs have been spreading across the galaxy; likely by hitching rides on unsuspecting ships. They're so cute people hate to say it, but they are starting to become a nuisance. 
 
-To get a grasp on the problem the Ewoks are doing the first ever porg survey. And they need your help planning the **survey**.
+To get a grasp on the population explosion the Ewoks are launching a porg survey. And they need your **help**.
 
 
 # <i class="fa fa-calendar" aria-hidden="true"></i> Dates with `lubridate` 
@@ -479,7 +479,7 @@ ggplot(porgs, aes(x = month, y = porg_count, fill = site)) +
 > *Hint:* Fern Gully
 
 
-## 5. Time series - All the data {-}
+## 5. Time series: All the data {-}
 
 Plot all the data with `geom_point()`. Put `count_date` on the x-axis, and the `porg_count` on the y-axis. Set the color to match the `site` column.
 
@@ -539,7 +539,7 @@ ggplot(porgs, aes(x = count_date, y = porg_count, color = site)) +
 
 ## <i class="fas fa-hands-clapping" aria-hidden="true"></i> Great work {-}
 
-The Ewoks were deeply thankful. They'll be in touch for *Porg Survey 2024*.
+The Ewoks are deeply thankful. They'll be in touch for *Porg Survey 2024*.
 
 ![](../images/porgs_4.jpg){width=35%}
 

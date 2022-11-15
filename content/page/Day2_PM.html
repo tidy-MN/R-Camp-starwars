@@ -104,7 +104,7 @@ hr {background: #62BE2C;}
 <h2 style="margin-top: -24px;">
 <em>Star Wars edition</em>
 </h2>
-<p><img src="../images/sw_guesswho.jpg" align="right" style="margin-top: -65px; margin-left: 24px; margin-right: 8px;" width="280" /></p>
+<p><img src="../images/sw_guesswho.jpg" style="margin-top: -65px; margin-left: 24px; margin-right: 8px;" align="right" width="280" /></p>
 <blockquote>
 <p>Are you the best Jedi detective out there? Let’s play a game to find out.</p>
 </blockquote>
@@ -314,11 +314,12 @@ hr {background: #62BE2C;}
 </div>
 <div id="themes" class="section level2 unnumbered">
 <h2>Themes</h2>
-<p>You may not like the appearance of these plots. <code>ggplot2</code> uses <code>theme</code> functions to change the appearance of a plot. Try some.</p>
+<p>You may not like the appearance of these plots. <code>ggplot2</code> uses <code>theme</code> functions to change the appearance of a plot. View the list of themes <a href="#themes">here</a>.</p>
+<p>Try some.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> credits, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;destination&quot;</span>) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dark</span>()</span></code></pre></div>
 <p><img src="/page/Day2_PM_files/figure-html/unnamed-chunk-13-1.png" width="960" /></p>
 <div id="explore-1" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
@@ -397,7 +398,6 @@ hr {background: #62BE2C;}
 <div id="porgtastic" class="section level2 unnumbered">
 <h2><i class="fa fa-star" style="color: gold"></i> PORGTASTIC <i class="fa fa-star" style="color: gold"></i></h2>
 <hr class="hrlvl2">
-<p><img src="../images/porg_dog.gif" style="margin-left: 8%; width: 25%;" /></p>
 <blockquote>
 <h3 id="woop" class="unnumbered">Woop!</h3>
 <p>We found enough Black Boxes to trade Plutt and get the whole crew back together. Serious kudos to you.</p>
@@ -444,11 +444,14 @@ hr {background: #62BE2C;}
 </tbody>
 </table>
 <p><br></p>
-<p><strong>Table of <code>geoms</code></strong></p>
+<div id="table-of-geoms" class="section level3 unnumbered">
+<h3>Table of <code>geoms</code></h3>
 <p><img src="../images/geoms_1var.png" /></p>
 <p><img src="../images/geoms_diagram.png" /></p>
 <p><br></p>
-<p><strong>Table of <code>themes</code></strong></p>
+</div>
+<div id="themes" class="section level3" number="1.0.1">
+<h3><span class="header-section-number">1.0.1</span> Table of <code>themes</code> {-}</h3>
 <p>You can customize the look of your plot by adding a <code>theme()</code> function.</p>
 <p><img src="../images/ggplot_themes.png" /></p>
 <details>
@@ -501,6 +504,7 @@ hr {background: #62BE2C;}
 </details>
 <p><br></p>
 <p><br><br></p>
+</div>
 </div>
 <div id="homeworld-training" class="section level1 unnumbered">
 <h1>Homeworld training</h1>

@@ -1,0 +1,7 @@
+# Help Wanted!
+<hr>
+
+```{r droid-app, child='../../static/modules/intro/droid_app/droid_application.Rmd', eval=TRUE}
+```
+
+<br>

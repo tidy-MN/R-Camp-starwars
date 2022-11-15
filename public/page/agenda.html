@@ -63,7 +63,7 @@
   "headline": "Agenda",
   "description" : "R Camp || Day 1 Morning: 9:00am-12:00 || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and\x26hellip;",
   "inLanguage" : "en",
-  "wordCount":  428 ,
+  "wordCount":  347 ,
   "datePublished" : "2018-12-08T00:00:00",
   "dateModified" : "2018-12-08T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -333,12 +333,12 @@
 <li>Create an R script</li>
 </ul></li>
 <li>Tour <strong>RStudio</strong></li>
-<li>Create data, change, and remove things</li>
-<li>Make a data tables / <strong>dataframe</strong><br />
+<li>Create, copy, change, and remove data</li>
+<li>Make a data tables / <strong>data frames</strong><br />
 </li>
 <li>Add new R packages<br />
 </li>
-<li>Read in data
+<li>Read data
 <ul>
 <li><code>readr</code> for text files</li>
 <li><code>readxl</code> for Excel files</li>
@@ -346,10 +346,10 @@
 <li>Get visual with <code>ggplot2</code>
 <ul>
 <li>Plot the data!</li>
-<li>Look for errors and outliers</li>
+<li>Check for outliers</li>
 </ul></li>
 </ol>
-<p>Packages: <code>readr</code>, <code>ggplot2</code></p>
+<p>Packages: <code>readr</code>, <code>readxl</code>, <code>ggplot2</code></p>
 </div>
 <div class="col-md-6">
 <p><strong>Afternoon</strong> | <em>1PM-4:00pm</em></p>
@@ -366,21 +366,16 @@
 <li>Your data toolbox: <code>dplyr</code>
 <ul>
 <li>Arrange, sort, and <strong>filter</strong> data</li>
+<li>Comparing data: <code>&gt;</code>, <code>==</code>, <code>%in%</code></li>
 </ul></li>
-<li>Summarize data
+<li>Adding and calculating new columns
 <ul>
-<li>Find the most profitable scrap<br />
-</li>
+<li>Unit conversions</li>
 </ul></li>
-<li>Summarize for each <strong>group</strong>, site or category
-<ul>
-<li>Summarize by location<br />
-</li>
-</ul></li>
-<li>Introduction to dates</li>
-<li>Plot time series</li>
+<li>Save files</li>
+<li>Make ggplot sandwiches</li>
 </ol>
-<p>Packages: <code>dplyr</code>, <code>lubridate</code></p>
+<p>Packages: <code>dplyr</code></p>
 </div>
 </div>
 </div>
@@ -393,20 +388,19 @@
 <p>Questions and Review</p>
 </blockquote>
 <ol style="list-style-type: decimal">
-<li>Calendar Plots 📅
+<li>Join tables</li>
+<li>Summarize data
 <ul>
-<li>Plot data by day of the week</li>
+<li>Summary functions: mean, median, max, min, quantile</li>
 </ul></li>
-<li>Intermediate data manipulation
+<li>Summarize by <strong>group</strong> or category
 <ul>
-<li>Join tables together</li>
-<li>Adding and calculating new columns</li>
-<li>Unit conversions</li>
-<li>Add new columns based on a condition</li>
+<li>By location: city, county, ZIP</li>
 </ul></li>
-<li>Learn summary functions: mean, median, max, min, nth</li>
-<li>Use the with pipe <code>%&gt;%</code> to string your functions together for less typing</li>
-<li>Save files</li>
+<li>Add new column based on <code>if</code> condition
+<ul>
+<li>e.g. If <code>age &gt; 10</code> then set to “Eligible”</li>
+</ul></li>
 <li>Working with difficult <strong>data</strong>
 <ul>
 <li>Replacing NULL values, -999</li>
@@ -427,24 +421,10 @@
 <li>Add titles, colors, and labels</li>
 <li>Histograms</li>
 <li>Reference lines</li>
-<li>Add trend lines 📈</li>
+<li>Themes</li>
 </ul></li>
 <li>Save charts to different formats</li>
-<li>Plot <code>pollution</code> vs. <code>meteorology</code>
-<ul>
-<li>Scatter plots
-<ul>
-<li>Conc vs. Temp</li>
-<li>Conc vs. Hour of day</li>
-<li>Temp vs. Hour of day</li>
-</ul></li>
-</ul></li>
-<li>More <strong>plots</strong>
-<ul>
-<li>Log transform</li>
-<li>Reference lines</li>
-</ul></li>
-<li>Time series plots with regression line and detection limits</li>
+<li>Your turn - Practice what you’ve learned</li>
 </ol>
 </div>
 </div>
@@ -456,45 +436,43 @@
 <p><strong>Morning</strong> | <em>9AM-Noon</em></p>
 <ol style="list-style-type: decimal">
 <li>Questions and Review</li>
-<li>Join GitHub</li>
-<li>Share your data, code, and plots</li>
-<li>Rmarkdown demo
+<li>Intro to Maps
 <ul>
-<li>Generate dynamic Web, Word and PDF reports and presentations</li>
+<li>Coordinates</li>
+<li>Interactive maps</li>
+</ul></li>
+<li>Working with Dates
+<ul>
+<li>Time zones</li>
+</ul></li>
+<li>Time series plots</li>
+<li>Use the pipe <code>%&gt;%</code> to chain functions together for less typing</li>
+<li>Join GitHub
+<ul>
+<li>Share your data, code, and plots</li>
 </ul></li>
 </ol>
-<p>Packages: <code>tidycensus</code>, <code>tigris</code>, <code>sf</code>, <code>leaflet</code></p>
+<p>Packages: <code>sf</code>, <code>leaflet</code>, <code>lubridate</code></p>
 </div>
 <div class="col-md-6">
 <p><strong>Afternoon</strong> | <em>1PM-4:00pm</em></p>
 <ol style="list-style-type: decimal">
-<li>Choose your own adventure!
+<li>Reading code aloud</li>
+<li>R Markdown demo
 <ul>
-<li>Select your own or Star Wars data</li>
+<li>Generate dynamic Web, Word and PDF reports and presentations</li>
 </ul></li>
-<li>Build a report
+<li>Connect to databases
+<ul>
+<li>ODBC</li>
+<li><code>keyring</code>: Keeping your passwords secret</li>
+</ul></li>
+<li>Choose your own adventure!
 <ul>
 <li>Clean the data</li>
 <li>Create summary tables</li>
 <li>Compare years and sites</li>
-<li>Chart &amp; map the data</li>
-</ul></li>
-<li>Put script and results in <strong>Rmarkdown</strong><br />
-</li>
-<li><strong>BONUS</strong>
-<ul>
-<li>Messy data
-<ul>
-<li>Gather a wide table with hundreds of columns into 1 column</li>
-<li>Read an entire folder of files into 1 table</li>
-</ul></li>
-<li>More maps and shapefiles
-<ul>
-<li>Read and save shapefiles</li>
-<li>Convert coordinate projections (ex. <code>Lat/Long</code> to <code>UTM</code>)</li>
-<li>Load reference maps (States, Counties)</li>
-<li>Build interactive maps</li>
-</ul></li>
+<li>Charts &amp; maps</li>
 </ul></li>
 </ol>
 <div id="concatulations" class="section level3">

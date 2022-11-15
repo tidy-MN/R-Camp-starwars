@@ -62,9 +62,7 @@ outposts <- read_csv("data/endor_outposts.csv")
 ```
 
 
-<br>
-
-### Take a look {-}
+### Take a look inside {-}
 ```{r, eval=T} 
 outposts
 
@@ -87,15 +85,16 @@ ggplot(outposts, aes(x = long, y = lat)) +
 
 ## Where's the center point? {-}
 
-How can we find the center of these points?
+<br>
+
+> **Hint:** How would you find the halfway point between two points?
 
 <br>
 
-> **Hint:** How do you find the halfway point between two points?
+Let's use `mutate()` from the dplyr toolbox to update our location columns. 
 
-<br>
-
-Let's use `mutate()` from the dplyr toolbox to update our location columns. Set the new `lat` column to the center of all the `lat`'s, and  the new `lat` column to the center of all the `long`'s. 
+- Set the new `lat` column to the center of all the `lat`'s
+- Set the new `long` column to the center of all the `long`'s. 
 
 These will be the coordinates for our landing pad.
 
@@ -139,8 +138,6 @@ knitr::kable(land_pad)
 
 
 ### We found it! {-}
-
-That's fantastic. 
 
 **Let's add it to our map.**
 
@@ -274,9 +271,9 @@ leaflet(outposts) %>%
 
 ## Woah! That's a close one. {-} 
 
-You're on 🔥 fire data droid. Let's sit here a minute to cool down...  
+Great work data droid. Let's take a minute to cool down...  
 
-Ok, now let's go land on that planet before we get stuck up here with permanent space legs.
+Ok, now let's land on that planet before we get stuck up here with permanent space legs.
 
 
 <br>

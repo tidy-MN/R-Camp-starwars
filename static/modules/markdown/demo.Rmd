@@ -54,10 +54,6 @@ ggweek_planner(
 ```
 
 
-> My vacation will be starting on `r as.character(start)`. Better start packing on `r as.character(as.Date(start) - 1)` !
-
-
-
 <h3> Code chunk options </h3>
 
 Chunk options are options designated in the code chunk header that determine what appears or does not appear in the final document. 
@@ -88,7 +84,7 @@ Let's make some changes to the YAML in our .Rmd to change the output document.
 
 To add options to the YAML, add them as "children" under the `html_document:` section. 
 
-**Beware of spacing here**. You will add 2 spaces of indentation for each new sub-level in the YAML hierarchy.
+**Beware of spacing here**. You add 2 spaces of indentation for each new sub-level in the YAML hierarchy.
 
 
     ---

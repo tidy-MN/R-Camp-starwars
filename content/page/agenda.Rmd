@@ -68,17 +68,17 @@ library(icons, knitr)
 1. Start a new R project
     - Create an R script
 1. Tour __RStudio__
-1. Create data, change, and remove things
-1. Make a data tables / __dataframe__  
+1. Create, copy, change, and remove data
+1. Make a data tables / __data frames__  
 1. Add new R packages    
-1. Read in data
+1. Read data
     - `readr` for text files
     - `readxl` for Excel files
 1. Get visual with `ggplot2`
     - Plot the data!
-    - Look for errors and outliers
+    - Check for outliers
     
-Packages: `readr`, `ggplot2`
+Packages: `readr`, `readxl`, `ggplot2`
 
 </div>
 <div class = "col-md-6">
@@ -92,16 +92,15 @@ Packages: `readr`, `ggplot2`
     - Missing values
     - Mean, max, min, quantile 
 1. Your data toolbox: `dplyr`
-    - Arrange, sort, and __filter__ data 
-1. Summarize data
-    - Find the most profitable scrap  
-1. Summarize for each __group__, site or category
-    - Summarize by location  
-1. Introduction to dates
-1. Plot time series   
+    - Arrange, sort, and __filter__ data
+    - Comparing data: `>`, `==`, `%in%`
+1. Adding and calculating new columns 
+    - Unit conversions
+1. Save files
+1. Make ggplot sandwiches  
 
 
-Packages: `dplyr`, `lubridate`    
+Packages: `dplyr`    
 
 </div>
 </div>
@@ -117,16 +116,13 @@ Packages: `dplyr`, `lubridate`
 
 > Questions and Review
 
-1. Calendar Plots 📅
-    - Plot data by day of the week
-1. Intermediate data manipulation
-    - Join tables together
-    - Adding and calculating new columns
-    - Unit conversions
-    - Add new columns based on a condition
-1. Learn summary functions: mean, median, max, min, nth
-1. Use the  with pipe `%>%` to string your functions together for less typing
-1. Save files
+1. Join tables 
+1. Summarize data
+    - Summary functions: mean, median, max, min, quantile
+1. Summarize by __group__ or category
+    - By location: city, county, ZIP 
+1. Add new column based on `if` condition
+    - e.g. If `age > 10` then set to "Eligible"
 1. Working with difficult __data__
     - Replacing NULL values, -999 
     - Missing values `NA`
@@ -145,17 +141,9 @@ Packages: `openair`
     - Add titles, colors, and labels 
     - Histograms 
     - Reference lines 
-    - Add trend lines 📈
+    - Themes
 1. Save charts to different formats 
-1. Plot `pollution` vs. `meteorology`
-    - Scatter plots
-        - Conc vs. Temp
-        - Conc vs. Hour of day
-        - Temp vs. Hour of day
-1. More __plots__
-    - Log transform
-    - Reference lines
-1. Time series plots with regression line and detection limits
+1. Your turn - Practice what you've learned
 
 
 </div>
@@ -171,35 +159,34 @@ Packages: `openair`
 **Morning** | _9AM-Noon_  
 
 1. Questions and Review
+1. Intro to Maps
+    - Coordinates
+    - Interactive maps
+1. Working with Dates
+    - Time zones
+1. Time series plots
+1. Use the pipe `%>%` to chain functions together for less typing
 1. Join GitHub
-1. Share your data, code, and plots
-1. Rmarkdown demo
-    - Generate dynamic Web, Word and PDF reports and presentations
+    - Share your data, code, and plots
 
-Packages: `tidycensus`, `tigris`, `sf`, `leaflet`
+Packages: `sf`, `leaflet`, `lubridate`
 
 </div>
 
 <div class = "col-md-6">
 **Afternoon** | _1PM-4:00pm_   
 
+1. Reading code aloud
+1. R Markdown demo
+    - Generate dynamic Web, Word and PDF reports and presentations
+1. Connect to databases
+    - ODBC
+    - `keyring`: Keeping your passwords secret
 1. Choose your own adventure!
-    - Select your own or Star Wars data
-1. Build a report
     - Clean the data 
     - Create summary tables
     - Compare years and sites
-    - Chart & map the data 
-1. Put script and results in __Rmarkdown__  
-1. __BONUS__
-    - Messy data 
-        - Gather a wide table with hundreds of columns into 1 column
-        - Read an entire folder of files into 1 table
-    - More maps and shapefiles
-        - Read and save shapefiles
-        - Convert coordinate projections (ex. `Lat/Long` to `UTM`)
-        - Load reference maps (States, Counties)
-        - Build interactive maps    
+    - Charts & maps 
 
 ### 🐈🐈 Concatulations!! 🐱🐱
 

@@ -239,13 +239,15 @@ Let's say we don't like printing so many zeros and want the labels to be in __Mi
 
 ## Themes {-}
 
-You may not like the appearance of these plots. `ggplot2` uses `theme` functions to change the appearance of a plot. Try some.
+You may not like the appearance of these plots. `ggplot2` uses `theme` functions to change the appearance of a plot. View the list of themes [here](#themes).
+
+Try some.
 
 ```{r, eval=T, echo=T}
 ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
   geom_col(position = "dodge") +
   facet_wrap("destination") +
-  theme_bw()
+  theme_dark()
 ```
 
 
@@ -330,9 +332,6 @@ _Woop! Go get em! So long Jakku - see you never!_
 
 ## <i class="fa fa-star" style="color: gold"></i> PORGTASTIC <i class="fa fa-star" style="color: gold"></i> {-}
 <hr class="hrlvl2">
-
-![](../images/porg_dog.gif){style="margin-left: 8%; width: 25%;"}
-
 
 >
 > ### Woop! {-} 

@@ -89,15 +89,6 @@ We make lots of mistakes. Mistakes are how we learn. They are also funny. Laugh 
 
 
 
-# Help Wanted!
-<hr>
-
-```{r droid-app, child='../../static/modules/intro/droid_app/droid_application.Rmd', eval=TRUE}
-```
-
-<br>
-
-
 ## You're on the TEAM!  {-}
 
 **Let's go! Data awaits us...**
@@ -177,7 +168,7 @@ Let's load the _readr_ package to use the `read_csv() ` function.
 ```
 
 
-# <i class="far fa-question-circle" aria-hidden="true" style="font-size: 48px;"></i> Got questions? {-}
+# Got questions <i class="far fa-question-circle" aria-hidden="true" style="font-size: 122%;"></i> {-}
 <hr class="hr2">
 
 Lost in an ERROR message? Is something behaving strangely and want to know why? Want ideas for a new chart?   

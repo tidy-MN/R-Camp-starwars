@@ -13,7 +13,7 @@ __Table of `aesthetics`__
 
 <br>
 
-__Table of `geoms`__
+### Table of `geoms` {-}
 
 ![](../images/geoms_1var.png)
 
@@ -21,7 +21,7 @@ __Table of `geoms`__
 
 <br>
 
-__Table of `themes`__
+### Table of `themes` {-}{#themes}
 
 You can customize the look of your plot by adding a `theme()` function.
 

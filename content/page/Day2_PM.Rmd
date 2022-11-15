@@ -492,6 +492,7 @@ _Woop! Go get em! So long Jakku - see you never!_
 
 # Plot glossary {-}
 <hr class="hr2">
+
 ```{r glossary, child='../../static/modules/ggplot/ggplot_glossary/glossary.Rmd'}
 ```
 

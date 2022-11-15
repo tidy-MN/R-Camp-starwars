@@ -530,7 +530,7 @@ A <code>ggplot</code> has 3 ingredients.
 </div>
 <div id="themes" class="section level2 unnumbered">
 <h2>Themes</h2>
-<p>You may not like the appearance of these plots. <code>ggplot2</code> uses <code>theme</code> functions to change the appearance of a plot. View the list of themes <a href="#Theme-tbl">here</a>.</p>
+<p>You may not like the appearance of these plots. <code>ggplot2</code> uses <code>theme</code> functions to change the appearance of a plot. View the list of themes <a href="#theme-tbl">here</a>.</p>
 <p>Try some.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> origin, <span class="at">y =</span> credits, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
@@ -665,7 +665,7 @@ A <code>ggplot</code> has 3 ingredients.
 <p><img src="../images/geoms_1var.png" /></p>
 <p><img src="../images/geoms_diagram.png" /></p>
 <p><br></p>
-<p>Table of themes {- #Theme-tbl}</p>
+<p>Table of themes {.unnumbered #theme-tbl}</p>
 <p>You can customize the look of your plot by adding a <code>theme()</code> function.</p>
 <p><img src="../images/ggplot_themes.png" /></p>
 <details>

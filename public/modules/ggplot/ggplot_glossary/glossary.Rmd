@@ -21,7 +21,7 @@ __Table of `aesthetics`__
 
 <br>
 
-Table of themes {- #Theme-tbl}
+Table of themes {.unnumbered #theme-tbl}
 
 You can customize the look of your plot by adding a `theme()` function.
 

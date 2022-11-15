@@ -117,13 +117,14 @@ Packages: `dplyr`
 > Questions and Review
 
 1. Join tables 
+    - `left_join`
 1. Summarize data
     - Summary functions: mean, median, max, min, quantile
 1. Summarize by __group__ or category
     - By location: city, county, ZIP 
 `
 
-Packages: `openair`
+Packages: `dplyr`
 
 </div>
 
@@ -137,7 +138,6 @@ Packages: `openair`
 1. Plot like a Jedi!
     - Scatter plots and boxplots 
     - Add titles, colors, and labels 
-    - Histograms 
     - Reference lines 
     - Themes
 1. Save charts to different formats 

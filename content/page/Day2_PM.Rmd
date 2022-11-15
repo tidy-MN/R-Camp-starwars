@@ -378,7 +378,7 @@ Let's say we don't like printing so many zeros and want the labels to be in __Mi
 
 ## Themes {-}
 
-You may not like the appearance of these plots. `ggplot2` uses `theme` functions to change the appearance of a plot. View the list of themes [here](#themes).
+You may not like the appearance of these plots. `ggplot2` uses `theme` functions to change the appearance of a plot. View the list of themes [here](#Theme-tbl).
 
 Try some.
 

@@ -94,8 +94,6 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#group_by-category" id="toc-group_by-category"><span class="toc-section-number">5</span> <code>group_by()</code> category</a></li>
 <li><a href="#save-files" id="toc-save-files"><span class="toc-section-number">6</span> Save files</a></li>
 <li><a href="#grouped-mutate" id="toc-grouped-mutate"><span class="toc-section-number">7</span> Grouped <code>mutate()</code></a></li>
-<li><a href="#ifelse" id="toc-ifelse"><span class="toc-section-number">8</span> <code>ifelse()</code></a></li>
-<li><a href="#plots-with-ggplot2" id="toc-plots-with-ggplot2"><span class="toc-section-number">9</span> Plots with <em>ggplot2</em></a></li>
 </ul>
 </div>
 
@@ -161,33 +159,33 @@ hr {background: #62BE2C;}
 <tbody>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2016-05-14</td>
-<td align="right">5</td>
-<td align="right">49.4</td>
+<td align="left">2016-09-29</td>
+<td align="right">15</td>
+<td align="right">51.8</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7001</td>
-<td align="left">2017-04-22</td>
-<td align="right">9</td>
-<td align="right">53.6</td>
+<td align="left">2018-08-21</td>
+<td align="right">4</td>
+<td align="right">64.4</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2018-08-03</td>
-<td align="right">28</td>
-<td align="right">74.6</td>
+<td align="left">2018-10-19</td>
+<td align="right">10</td>
+<td align="right">61.4</td>
 </tr>
 <tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2016-10-18</td>
-<td align="right">6</td>
-<td align="right">47.0</td>
+<td align="left">27-137-7554</td>
+<td align="left">2018-07-03</td>
+<td align="right">28</td>
+<td align="right">71.6</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2018-08-16</td>
-<td align="right">15</td>
-<td align="right">71.6</td>
+<td align="left">2018-08-08</td>
+<td align="right">13</td>
+<td align="right">68.6</td>
 </tr>
 </tbody>
 </table>
@@ -255,7 +253,7 @@ hr {background: #62BE2C;}
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ozone tends to increase with temperature&quot;</span>, </span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;Observations for 2015-2017&quot;</span>,</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Source: MPCA air monitoring network&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-10-1.png" width="1152" /></p>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-2-1.png" width="1152" /></p>
 <blockquote>
 <p>Keep exploring…</p>
 </blockquote>
@@ -433,7 +431,7 @@ Update from BB8!
 </div>
 <div id="weight-conversion" class="section level2 unnumbered">
 <h2>Weight conversion</h2>
-<p><img src="../images/rey_bb8.jpg" align="right" style="width: 35%; margin-top: 0px; margin-left: 15px; margin-right: 0px;" /></p>
+<p><img src="../images/rey_bb8.jpg" style="width: 35%; margin-top: 0px; margin-left: 15px; margin-right: 0px;" align="right" /></p>
 <p>It took a while, but with a few droid bribes BB8 was able to track down a <em>Weight conversion table</em> from his droid buddies. Our current data shows the total cubic yards for some scrap shipments, but not how much the shipment weighs.</p>
 <div id="read-the-weight-conversion-table" class="section level3 unnumbered">
 <h3>Read the weight conversion table</h3>
@@ -1108,228 +1106,8 @@ Rounding digits
 </blockquote>
 <p><br></p>
 <p><br></p>
-</div>
-<div id="ifelse" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> <code>ifelse()</code></h1>
-<hr>
-<div id="if-this-is-true-do-this-otherwise-do-this" class="section level3 unnumbered">
-<h3><code>[If this is true]</code>, <code>"Do this"</code>, <code>"Otherwise do this"</code></h3>
-<p><img src="../images/yoda_lightsaber.jpg" style="width: 47%; margin-left: 26%; margin-top: 12px; margin-bottom: 28px;" /></p>
-<p>Here’s a handy <code>ifelse</code> statement to help you identify lightsabers.</p>
-<div class="well" style="margin-top: 10px:">
-<p><code>ifelse(</code><strong>Lightsaber</strong> <span style="color: green;">is <strong>GREEN</strong>?</span>, <strong>Yes!</strong> <code>Then Yoda's it is,</code> <strong>No!</strong> <code>Then not Yoda's)</code></p>
-</div>
-<p><br></p>
-<p>Or say we want to label all the porgs over <em>60 cm</em> as <code>tall</code>, and everyone else as <code>short</code>. Whenever we want to add a column where the value depends on the value found in another column. We can use <code>ifelse()</code>.</p>
-<blockquote>
-<p>Or maybe we’re trying to save some money and want to flag all the items that cost less than 500 credits.
-How?</p>
-</blockquote>
-</div>
-<div id="mutate-ifelse-is-powerful" class="section level2 unnumbered">
-<h2><code>mutate()</code> + <code>ifelse()</code> is powerful!</h2>
-<p><img src="../images/yoda_rise_sm.png" style="width: 74%; margin-left: 12%" /></p>
-<p><br></p>
-<div id="on-the-cheap" class="section level3 unnumbered">
-<h3>On the cheap</h3>
-<p>Let’s use <code>mutate()</code> and <code>ifelse()</code> to add a column named <code>affordable</code> to our scrap data.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add an affordable column</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap,</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">affordable =</span> <span class="fu">ifelse</span>(price_per_unit <span class="sc">&lt;</span> <span class="dv">500</span>, </span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Cheap&quot;</span>, </span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Expensive&quot;</span>))</span></code></pre></div>
-</div>
-<div id="explore-2" class="section level3 unnumbered tip">
-<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
-<p>Use your new column and <code>filter()</code> to create a new <code>cheap_scrap</code> table.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cheap scrap table</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>cheap_scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap,  _________ )</span></code></pre></div>
-<p><br></p>
-<p><strong>How many items are cheap?</strong></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(cheap_scrap<span class="sc">$</span>item)</span></code></pre></div>
-<p><br></p>
-<p><strong>What are the cheap items?</strong></p>
-<pre><code>
-Try the unique() function on cheap_scrap$item.
-</code></pre>
-<p><br></p>
-</div>
-<p><br>
-<br></p>
-<div id="pop-quiz" class="section level3 unnumbered quiz">
-<h3>Pop Quiz!</h3>
-<p><strong>Use <code>arrange()</code> to find the cheapest item.</strong></p>
-<p><strong>What is it?</strong></p>
-<p><input type="radio" name="cheap"> <em>Black box</em> <br>
-<input type="radio" name="cheap"> <em>Electrotelescope</em> <br>
-<input type="radio" name="cheap"> <em>Atomic drive</em> <br>
-<input type="radio" name="cheap"> <em>Enviro filter</em> <br>
-<input type="radio" name="cheap"> <em>Main drive</em> <br>
-<br></p>
-<details>
-<summary class="btn_code">
-<em>Show solution</em>
-</summary>
-<p>
-<p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>Black box</code></p>
-<p><em>You win! </em></p>
-</p>
-</details>
-</div>
-<p><br></p>
-<blockquote>
-<p><strong>CONGRATULATIONS</strong> of galactic proportions to you.</p>
-<p>We now have a clean and tidy data set. If BB8 ever receives new data again, we can re-run this script and in seconds we’ll have it all cleaned up.</p>
-</blockquote>
-</div>
-<div id="save-results" class="section level2 unnumbered">
-<h2>Save results</h2>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap, <span class="st">&quot;results/scrap_day2.csv&quot;</span>)</span></code></pre></div>
-<div style="clear: both;">
-
-</div>
-</div>
-</div>
-<div id="plots-with-ggplot2" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> Plots with <em>ggplot2</em></h1>
-<hr>
-<div id="plot-the-data-plot-the-data-plot-the-data" class="section level4 unnumbered">
-<h4><em>Plot the data, Plot the data, Plot the data</em></h4>
-<p><br></p>
-<p><img src="../images/ggplot2_hex.png" align="right" style="margin-right: 70px; margin-top: -124px;" width="180" /></p>
-</div>
-<div id="the-ggplot-sandwich" class="section level2 unnumbered">
-<h2>The <code>ggplot()</code> sandwich</h2>
-<p><img src="../images/auto_plot.gif" style="margin-top: -22px; margin-left: -40px; max-width: 110%;" /></p>
-<h5 style="font-size: 28px; font-weight: bold; margin-top: -42px;">
-A <code>ggplot</code> has 3 ingredients.
-</h5>
-</div>
-<div id="the-base-plot" class="section level2 unnumbered">
-<h2>1. The base plot</h2>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap)</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-35-1.png" width="960" /></p>
-<p><br></p>
-<blockquote>
-<p>We load version 2 of the package <code>library(ggplot2)</code>, but the function to make the plot is plain <code>ggplot()</code>. <em>Sorry, ggplot is fun that like that.</em></p>
-</blockquote>
-</div>
-<div id="the-the-x-y-aesthetics" class="section level2 unnumbered">
-<h2>2. The the X, Y <em>aesthetics</em></h2>
-<p>The <em>aesthetics</em> assign the columns from the data that you want to use in the chart. This is where you set the <code>X</code>-<code>Y</code> variables that determine the dimensions of the plot.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount)) </span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-36-1.png" width="960" /></p>
-</div>
-<div id="the-layers-aka-geometries" class="section level2 unnumbered">
-<h2>3. The layers AKA geometries</h2>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount)) <span class="sc">+</span> </span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-37-1.png" width="960" /></p>
-<p><br></p>
-</div>
-<div id="colors" class="section level2 unnumbered">
-<h2>Colors</h2>
-<hr class="hrlvl2">
-<p>Now let’s change the fill color to match the destination.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() </span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-38-1.png" width="960" /></p>
-<p><br></p>
-</div>
-<div id="sorting" class="section level2 unnumbered">
-<h2>Sorting</h2>
-<hr class="hrlvl2">
-<p>Finally, let’s order things from lowest to highest.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(destination, amount, <span class="at">FUN =</span> sum), <span class="at">y =</span> amount, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Destination&quot;</span>,</span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;The most scrap was sent to the Trade Caravan&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-39-1.png" width="960" /></p>
-<p><br></p>
-<div id="a-short-detour" class="section level3 unnumbered tip">
-<h3><i class="fa fa-user-astronaut" style="color: green;"></i> A short detour</h3>
-<div id="whos-the-tallest-of-them-all" class="section level4 unnumbered">
-<h4>Who’s the tallest of them all?</h4>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install new packages</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggrepel&quot;</span>)</span></code></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Get starwars character data</span></span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>star_df <span class="ot">&lt;-</span> starwars</span></code></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What is this?</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(star_df)</span></code></pre></div>
-<pre><code>## Rows: 87
-## Columns: 14
-## $ name       &lt;chr&gt; &quot;Luke Skywalker&quot;, &quot;C-3PO&quot;, &quot;R2-D2&quot;, &quot;Darth Vader&quot;, &quot;Leia Or…
-## $ height     &lt;int&gt; 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…
-## $ mass       &lt;dbl&gt; 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…
-## $ hair_color &lt;chr&gt; &quot;blond&quot;, NA, NA, &quot;none&quot;, &quot;brown&quot;, &quot;brown, grey&quot;, &quot;brown&quot;, N…
-## $ skin_color &lt;chr&gt; &quot;fair&quot;, &quot;gold&quot;, &quot;white, blue&quot;, &quot;white&quot;, &quot;light&quot;, &quot;light&quot;, &quot;…
-## $ eye_color  &lt;chr&gt; &quot;blue&quot;, &quot;yellow&quot;, &quot;red&quot;, &quot;yellow&quot;, &quot;brown&quot;, &quot;blue&quot;, &quot;blue&quot;,…
-## $ birth_year &lt;dbl&gt; 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …
-## $ sex        &lt;chr&gt; &quot;male&quot;, &quot;none&quot;, &quot;none&quot;, &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;,…
-## $ gender     &lt;chr&gt; &quot;masculine&quot;, &quot;masculine&quot;, &quot;masculine&quot;, &quot;masculine&quot;, &quot;femini…
-## $ homeworld  &lt;chr&gt; &quot;Tatooine&quot;, &quot;Tatooine&quot;, &quot;Naboo&quot;, &quot;Tatooine&quot;, &quot;Alderaan&quot;, &quot;T…
-## $ species    &lt;chr&gt; &quot;Human&quot;, &quot;Droid&quot;, &quot;Droid&quot;, &quot;Human&quot;, &quot;Human&quot;, &quot;Human&quot;, &quot;Huma…
-## $ films      &lt;list&gt; &lt;&quot;The Empire Strikes Back&quot;, &quot;Revenge of the Sith&quot;, &quot;Return…
-## $ vehicles   &lt;list&gt; &lt;&quot;Snowspeeder&quot;, &quot;Imperial Speeder Bike&quot;&gt;, &lt;&gt;, &lt;&gt;, &lt;&gt;, &quot;Imp…
-## $ starships  &lt;list&gt; &lt;&quot;X-wing&quot;, &quot;Imperial shuttle&quot;&gt;, &lt;&gt;, &lt;&gt;, &quot;TIE Advanced x1&quot;,…</code></pre>
-<p><br></p>
-<p>Plot a histogram of the character heights.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Height distribution</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">x =</span> height)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;hotpink&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
-<p><br></p>
-<div class="note">
-<ul>
-<li><p>Try changing the fill color to <strong>“<span style="color: #FD6A02;">darkorange</span>”</strong>.</p></li>
-<li><p>Try making a histogram of the column <code>mass</code>.</p></li>
-</ul>
-</div>
-<p><br></p>
-<p>Plot comparisons between height and mass with <code>geom_point(...)</code>.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Height vs. Mass scatterplot</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
-<p><br></p>
-<p>Who’s who? Let’s add some labels to the points.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name))</span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a log scale for Mass on the y-axis</span></span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name)) <span class="sc">+</span></span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>()</span></code></pre></div>
-<p><br></p>
-<p>Let’s drop the “Hutt” species before plotting.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Without the Hutt</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">filter</span>(star_df, species <span class="sc">!=</span> <span class="st">&quot;Hutt&quot;</span>), <span class="fu">aes</span>(<span class="at">y =</span> mass, <span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name, <span class="at">color =</span> species))</span></code></pre></div>
-<p><br></p>
-<p>We can add <code>facet_wrap</code> to make a chart for each species.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split out by species</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(star_df, <span class="fu">aes</span>(<span class="at">x =</span> mass, <span class="at">y =</span> height)) <span class="sc">+</span></span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;species&quot;</span>) <span class="sc">+</span></span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-9-1.png" width="960" /></p>
-</div>
-</div>
-<p><br></p>
 <div id="return-to-homebase" class="section level3 unnumbered">
 <h3><i class="fa fa-rocket" aria-hidden="true"></i> Return to <a href="../post/day-2.html">Homebase</a></h3>
 <p><br></p>
-</div>
 </div>
 </div>

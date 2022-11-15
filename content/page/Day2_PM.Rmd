@@ -36,6 +36,7 @@ library(dplyr)
 <br>
 
 <div style="border: 2px solid; border-color: hotpink; padding: 22px; border-radius: 25px; padding-top: 0;">
+
 # Guess Who? {-}
 <h2 style="margin-top: -24px;"> _Star Wars edition_ </h2>
 ```{r guesswho, child='../../static/modules/games_guesswho/starwars.Rmd'}
@@ -44,6 +45,155 @@ library(dplyr)
 
 <br>
 
+
+
+**Load your saved scrap data**
+```{r, eval=T}
+# Your saved data
+scrap <- read_csv("results/scrap_day2.csv")
+
+# For those just joining us
+#scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
+```
+
+<br>
+
+
+# `ifelse()`
+<hr>
+```{r if-yoda, child='../../static/modules/base/base_ifelse/yoda.Rmd'}
+```
+
+```{r if-cheap, child='../../static/modules/base/base_ifelse/cheap_items.Rmd'}
+```
+
+
+> __CONGRATULATIONS__ of galactic proportions to you. 
+>
+> We now have a clean and tidy data set. If BB8 ever receives new data again, we can re-run this script and in seconds we'll have it all cleaned up.
+>
+
+
+
+<div style="clear: both;"></div>
+
+
+
+# Plots with _ggplot2_
+<hr>
+
+#### _Plot the data, Plot the data, Plot the data_ {-}
+
+<br>
+
+![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
+
+```{r gg-sand, child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
+```
+
+
+<br>
+
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> A short detour {-}
+
+#### Who's the tallest of them all? {-}
+
+```{r, eval=F}
+# Install new packages
+install.packages("ggrepel")
+```
+
+<br>
+
+```{r, message=F, warning=F}
+# Load packages
+library(dplyr)
+library(ggplot2)
+library(ggrepel)
+
+# Get starwars character data
+star_df <- starwars
+```
+
+<br>
+
+```{r, warning=F}
+# What is this?
+glimpse(star_df)
+```
+
+<br>
+
+Plot a histogram of the character heights.
+
+```{r, message=F, warning=F}
+# Height distribution
+ggplot(star_df, aes(x = height)) + geom_histogram(fill = "hotpink")
+```
+
+<br>
+
+<div class="note">
+
+- Try changing the fill color to __"<span style="color: #FD6A02;">darkorange</span>"__.
+
+- Try making a histogram of the column `mass`.
+
+</div>
+
+<br>
+
+Plot comparisons between height and mass with `geom_point(...)`.
+```{r, eval=F, message=F, warning=F}
+# Height vs. Mass scatterplot
+ggplot(star_df, aes(y = mass, x = height)) +
+   geom_point(aes(color = species), size = 5)
+```
+<br>
+
+Who's who? Let's add some labels to the points.
+```{r, eval=F, message=F, warning=F}
+# Add labels
+ggplot(star_df, aes(y = mass, x = height)) +
+  geom_point(aes(color = species), size = 5) +
+  geom_text_repel(aes(label = name))
+
+
+# Use a log scale for Mass on the y-axis
+ggplot(star_df, aes(y = mass, x = height)) +
+  geom_point(aes(color = species), size = 5) +
+  geom_text_repel(aes(label = name)) +
+  scale_y_log10()
+
+```
+
+<br>
+
+Let's drop the "Hutt" species before plotting.
+```{r, eval=F, message=F, warning=F}
+# Without the Hutt
+ggplot(filter(star_df, species != "Hutt"), aes(y = mass, x = height)) +
+  geom_point(aes(color = species), size = 5) +
+  geom_text_repel(aes(label = name, color = species))
+
+```
+
+<br>
+
+We can add `facet_wrap` to make a chart for each species.
+```{r, eval=T, message=F, warning=F}
+# Split out by species
+ggplot(star_df, aes(x = mass, y = height)) +
+  geom_point(aes(color = species), size = 3) +
+  facet_wrap("species") +
+  guides(color = "none")
+```
+</div>
+
+
+<br>
 
 <div class="note" style="line-height: 1.6;">
 ### Teaser {-}
@@ -64,17 +214,6 @@ Analysts often get asked questions:
 ## Plots of garbage {-}
 <hr class="hrlvl2">
 
-
-**Load your saved scrap data**
-```{r, eval=T}
-# You saved data
-scrap <- read_csv("results/scrap_day2.csv")
-
-# For those just joining us
-#scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
-```
-
-<br>
 
 Try making a scatterplot of any two columns with `geom_point()`.
 
@@ -138,13 +277,13 @@ ggplot(scrap, aes(x = origin, y = credits, color = destination)) +
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
 
-An easy way to experiment with colors is to add layers like `scale_fill_brewer` or `scale_colour_brewer` to your plot. These link to **colorBrewer** palettes to give you accessible color themes.
+An easy way to experiment with colors is to add layers like `+ scale_fill_brewer()` or `+ scale_color_brewer()` to your plot. These link to **colorBrewer** palettes to give you accessible color themes. See https://ggplot2.tidyverse.org/reference/scale_brewer.html.
 </div>
 
 
 ## Bar charts {-}
 
-This is way too much detail. Let's simplify and make a bar chart that adds up all the sales. Note that we use `fill=` inside `aes()` instead of `color=`. If we use color, we get a colorful outline and gray bars.
+This is way too much detail. Let's simplify by making a bar chart that shows the total sales. Note that we use `fill=` inside `aes()` instead of `color=`. If we use color, we get a colorful outline and gray bars.
 
 
 ```{r, eval = T, echo = T}

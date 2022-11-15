@@ -121,11 +121,7 @@ Packages: `dplyr`
     - Summary functions: mean, median, max, min, quantile
 1. Summarize by __group__ or category
     - By location: city, county, ZIP 
-1. Add new column based on `if` condition
-    - e.g. If `age > 10` then set to "Eligible"
-1. Working with difficult __data__
-    - Replacing NULL values, -999 
-    - Missing values `NA`
+`
 
 Packages: `openair`
 
@@ -136,6 +132,8 @@ Packages: `openair`
 
 > _Star Wars - Guess Who_   
 
+1. Calculate new columns based on `if` condition
+    - e.g. If `age > 10` then set to "Eligible"
 1. Plot like a Jedi!
     - Scatter plots and boxplots 
     - Add titles, colors, and labels 
@@ -188,12 +186,15 @@ Packages: `sf`, `leaflet`, `lubridate`
     - Compare years and sites
     - Charts & maps 
 
+Packages: `DBI`, `RODBC`, `keyring`
+
+</div>
+</div>
+
 ### 🐈🐈 Concatulations!! 🐱🐱
 
-Receive your well deserved accolades, prizes and certificates
+Celebrations, accolades and certificates
 
-</div>
-</div>
 
 
 </br>

@@ -48,9 +48,7 @@ n_distinct(cheap_scrap$item)
 **What are the cheap items?**  
 
 ```
-
 Try the unique() function on cheap_scrap$item.
-
 ```
 
 <br>

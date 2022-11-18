@@ -26,7 +26,7 @@ Lucky for us, R code doesn't have to be only math equations. R let's us do data 
 
 
 
-details>
+<details>
 <summary> **How R is different?** </summary>
 <div class="well" style="margin-top: -10px;">
 <p>

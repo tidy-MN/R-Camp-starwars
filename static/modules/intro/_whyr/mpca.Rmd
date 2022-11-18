@@ -22,14 +22,11 @@
 
 ![](../images/R_recipe.png){style="width: 54%; float: left; margin-right: 28px; margin-left: -16px; margin-top: 9px; margin-bottom: 12px;"}
 
-Lucky for us, R code doesn't have to be only math equations. R let's us do data analysis in a step-by-step fashion, much like creating a recipe for cookies. And just like a recipe, we can start at the top and read our way down to the bottom. 
+R let's us do data analysis in a step-by-step fashion, much like creating a recipe for cookies. And just like a recipe, we can start at the top and read our way down to the bottom. 
 
 
 
-<details>
-<summary> **How R is different?** </summary>
-<div class="well" style="margin-top: -10px;">
-<p>
+## How R is different? {-}
 
 **R vs. Excel**
 
@@ -63,10 +60,6 @@ Lucky for us, R code doesn't have to be only math equations. R let's us do data 
 
 - R is open-source, while SAS requires a license.
 - Anyone can create an R package (but packages on CRAN are vetted). New features for SAS are only available when the SAS team makes them available.
-
-<br>
-</p>
-</div></details>
 
 
 <div style="clear: both;"></div>

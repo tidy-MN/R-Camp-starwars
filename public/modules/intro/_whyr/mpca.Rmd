@@ -25,6 +25,7 @@
 R let's us do data analysis in a step-by-step fashion, much like creating a recipe for cookies. And just like a recipe, we can start at the top and read our way down to the bottom. 
 
 
+<br>
 
 ## How R is different? {-}
 

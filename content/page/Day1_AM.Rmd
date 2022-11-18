@@ -80,7 +80,7 @@ We make lots of mistakes. They will be funny. Laugh with us!
 ```
 
 
-## Example ozone analysis {-}
+## Example R project {-}
 ```{r ex-ozone2, child='../../static/modules/_example_7steps/ozone.Rmd'}
 ```
 
@@ -89,6 +89,8 @@ We make lots of mistakes. They will be funny. Laugh with us!
 
 
 ## You're on the TEAM!  {-}
+
+Rey needs help putting the finishing touches on her ship. 
 
 **Let's go! Data awaits us...**
 
@@ -188,6 +190,9 @@ Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning re
 # Learn more!
 
 - RStudio Primers: [R Programming Basics](https://posit.cloud/learn/primers/1.2)
+- [Intro to R](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html) - with cute Giraffes!
+
+<br>
 
 
 ### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}

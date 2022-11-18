@@ -152,6 +152,7 @@ Now, try setting the fill argument to the `destination` column.
 
 - RStudio Primers: [Data Visualization Basics](https://posit.cloud/learn/primers/1.1)
 
+<br>
 
 ### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}
 

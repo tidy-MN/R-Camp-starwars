@@ -1,5 +1,5 @@
 
-Here's an example air monitoring project from start to finish.
+Here's an example R analysis project from start to finish using Ozone monitoring data.
 
 <details>
 <summary class="btn_code"> __EXAMPLE__: Ozone data project  **>** </summary>

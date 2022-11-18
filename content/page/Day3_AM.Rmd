@@ -101,14 +101,11 @@ cat(readLines("porg_tabs.txt"))
 # Day 2 review
 <hr>
 
-- SF & Leaflet maps
-- Dates with **lubridate**
 - Join tables with `left_join()`
-- `summarize()`
+- `summarize()` functions
 - Group by category with `group_by()`
 - `ifelse()`: if THIS IS TRUE do a thing, otherwise do a different thing
-
-
+- Plots and charts with `ggplot`
 
 
 ## Welcome to Endor! {-}
@@ -129,13 +126,6 @@ cat(readLines("porg_tabs.txt"))
 
 <br>
 
-# Pipe things together: ` A %>% B `
-<hr>
-```{r pipe-intro, child='../../static/modules/dplyr/dplyr_pipe/intro.Rmd'}
-```
-
-
-<br>
 
  
 # <i class="fa fa-group" style="color: steelblue;"></i> Share with friends

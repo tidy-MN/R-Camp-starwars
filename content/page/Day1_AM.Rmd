@@ -50,7 +50,7 @@ We like __R__.
 
 We aren't computer scientists -- and that's okay! 
 
-We make lots of mistakes. Mistakes are how we learn. They are also funny. Laugh with us!
+We make lots of mistakes. They will be funny. Laugh with us!
 
 <br><br><hr class="hr2">
 
@@ -86,7 +86,6 @@ We make lots of mistakes. Mistakes are how we learn. They are also funny. Laugh 
 
 
 <br>
-
 
 
 ## You're on the TEAM!  {-}
@@ -184,6 +183,11 @@ Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning re
 # <i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms {-} 
 ```{r key-terms, child='../../static/modules/key_terms/day1.Rmd'}
 ```
+
+
+# Learn more!
+
+- RStudio Primers: [R Programming Basics](https://posit.cloud/learn/primers/1.2)
 
 
 ### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}

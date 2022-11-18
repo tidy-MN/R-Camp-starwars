@@ -30,9 +30,10 @@ __Online Communities__
 - [R for data science learning community](https://www.rfordatasci.com/)    
 - [ROpenSci](https://ropensci.org/)
     - [Packages & Data](https://ropensci.org/packages/)
-- Teams    
-    - [MPCA](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)    
+- MN Govt. Teams  
     - [MDH](https://teams.microsoft.com/l/channel/19%3aj8WkD4Kx77zVY1Hm7_IH0pDWyVXgVSh3_FS0UQ63Xl41%40thread.tacv2/General?groupId=6cd8293a-b134-455b-abce-b55adade3e64&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
+    - [MPCA](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)    
+
 
 <div style="margin-top: 4px; clear:both;"> </div>
 
@@ -47,7 +48,10 @@ __Online Communities__
 
 __Conferences__
 
-- useR Conferences
+- [R Conference for Govt. & Public Sector](https://twitter.com/rstatsai)
+    - 2022: Nov. 30th [DC and virtual](https://rstats.ai/gov/)
+
+- useR Conferences in July
     - 2022 [virtual](https://user2022.r-project.org/)
     - 2021 [online recordings](https://user2021.r-project.org/recordings/)
     - 2019 in [Toulouse, France](http://www.user2019.fr/)

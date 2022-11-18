@@ -3,15 +3,17 @@
 
 ## R Community {-}
 
-- Help requests and questions on Teams
-- [R Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
-- Finding R Help - See [Get Help!](help.html)
+- [Around the world](https://mn-r.netlify.app/page/community.html)
+- Help!
+    - Post questions and help requests on Teams
+    - [R Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+    - Troubleshooting - See [Get Help!](help.html)
 
 ## When we use R {-}
 
 - To connect to databases
 - To read data from websites
-- To document and share methods
+- To document our work and share methods
 - When data will have frequent updates
 - When we want to improve a process over time
 
@@ -21,6 +23,51 @@
 ![](../images/R_recipe.png){style="width: 54%; float: left; margin-right: 28px; margin-left: -16px; margin-top: 9px; margin-bottom: 12px;"}
 
 Lucky for us, R code doesn't have to be only math equations. R let's us do data analysis in a step-by-step fashion, much like creating a recipe for cookies. And just like a recipe, we can start at the top and read our way down to the bottom. 
+
+
+
+details>
+<summary> **How R is different?** </summary>
+<div class="well" style="margin-top: -10px;">
+<p>
+
+**R vs. Excel**
+
+- R can handle much larger data sets than Excel.
+- R is more flexible than Excel.
+- Data processing and analysis are more easily reproducible in R.
+- Excel is more widely used.
+
+**R vs. Tableau**
+
+- Tableau is primarily a data visualization software. Its data analysis capabilities are limited.
+- R Shiny is more flexible than Tableau.
+- Tableau's drag-and-drop interface makes it faster and easier for creating simple visualizations, but is not easily reproducible.
+- R is 100% text-based so you can track changes over time. `#VersionControl`
+
+**R vs. SQL**
+
+- SQL queries are sent to a database server and processed there before sending you the data. This may be needed for very large data sets that don't fit on your computer. 
+- R can use SQL queries to pull data from databases / data lakes.
+- R has the `dbplyr` package which converts R to an SQL query.
+- R can read data from almost anywhere (databases, flat files, web pages, etc.)
+
+**R vs. Python**
+
+- Python is a general-purpose programming language popular for doing internet things. R is more specifically focused on data and statistical analysis.  
+- R's Tidyverse is more intuitive and easier to use than `pandas`.
+- You can run Python code in R using the R `reticulate` package.
+- Historically Python has been used with GIS software like ArcGIS, but more recently doors have opened for R and spatial analysis with R has been growing.
+
+**R vs. SAS**
+
+- R is open-source, while SAS requires a license.
+- Anyone can create an R package (but packages on CRAN are vetted). New features for SAS are only available when the SAS team makes them available.
+
+<br>
+</p>
+</div></details>
+
 
 <div style="clear: both;"></div>
 

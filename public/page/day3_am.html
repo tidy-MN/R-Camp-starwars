@@ -63,7 +63,7 @@
   "headline": "Day 3 - AM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22})       pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  3318 ,
+  "wordCount":  3061 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -373,8 +373,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#leaflet-maps" id="toc-leaflet-maps"><span class="toc-section-number">4</span> Leaflet maps</a></li>
 <li><a href="#invasive-porg-survey---2023" id="toc-invasive-porg-survey---2023"><span class="toc-section-number">5</span> Invasive Porg Survey - 2023</a></li>
 <li><a href="#dates-with-lubridate" id="toc-dates-with-lubridate"><span class="toc-section-number">6</span> <i class="fa fa-calendar" aria-hidden="true"></i> Dates with <code>lubridate</code></a></li>
-<li><a href="#pipe-things-together-a-b" id="toc-pipe-things-together-a-b"><span class="toc-section-number">7</span> Pipe things together: <code>A %&gt;% B</code></a></li>
-<li><a href="#share-with-friends" id="toc-share-with-friends"><span class="toc-section-number">8</span> <i class="fa fa-group" style="color: steelblue;"></i> Share with friends</a></li>
+<li><a href="#share-with-friends" id="toc-share-with-friends"><span class="toc-section-number">7</span> <i class="fa fa-group" style="color: steelblue;"></i> Share with friends</a></li>
 </ul>
 </div>
 
@@ -588,12 +587,11 @@ Menu of comparisons
 <h1><span class="header-section-number">2</span> Day 2 review</h1>
 <hr>
 <ul>
-<li>SF &amp; Leaflet maps</li>
-<li>Dates with <strong>lubridate</strong></li>
 <li>Join tables with <code>left_join()</code></li>
-<li><code>summarize()</code></li>
+<li><code>summarize()</code> functions</li>
 <li>Group by category with <code>group_by()</code></li>
 <li><code>ifelse()</code>: if THIS IS TRUE do a thing, otherwise do a different thing</li>
+<li>Plots and charts with <code>ggplot</code></li>
 </ul>
 <div id="welcome-to-endor" class="section level2 unnumbered">
 <h2>Welcome to Endor!</h2>
@@ -624,9 +622,8 @@ Menu of comparisons
 <div id="give-it-a-try" class="section level2 unnumbered">
 <h2>Give it a try</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>outposts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/endor_outposts.csv&quot;</span>)</span></code></pre></div>
-<p><br></p>
-<div id="take-a-look" class="section level3 unnumbered">
-<h3>Take a look</h3>
+<div id="take-a-look-inside" class="section level3 unnumbered">
+<h3>Take a look inside</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>outposts</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
 ##   ID      lat  long
@@ -652,13 +649,16 @@ Menu of comparisons
 </div>
 <div id="wheres-the-center-point" class="section level2 unnumbered">
 <h2>Where’s the center point?</h2>
-<p>How can we find the center of these points?</p>
 <p><br></p>
 <blockquote>
-<p><strong>Hint:</strong> How do you find the halfway point between two points?</p>
+<p><strong>Hint:</strong> How would you find the halfway point between two points?</p>
 </blockquote>
 <p><br></p>
-<p>Let’s use <code>mutate()</code> from the dplyr toolbox to update our location columns. Set the new <code>lat</code> column to the center of all the <code>lat</code>’s, and the new <code>lat</code> column to the center of all the <code>long</code>’s.</p>
+<p>Let’s use <code>mutate()</code> from the dplyr toolbox to update our location columns.</p>
+<ul>
+<li>Set the new <code>lat</code> column to the center of all the <code>lat</code>’s</li>
+<li>Set the new <code>long</code> column to the center of all the <code>long</code>’s.</li>
+</ul>
 <p>These will be the coordinates for our landing pad.</p>
 <div id="mutate-the-center" class="section level3 unnumbered">
 <h3><code>mutate</code> the center</h3>
@@ -702,7 +702,6 @@ Show code
 </div>
 <div id="we-found-it" class="section level3 unnumbered">
 <h3>We found it!</h3>
-<p>That’s fantastic.</p>
 <p><strong>Let’s add it to our map.</strong></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -808,8 +807,8 @@ Show code
 </div>
 <div id="woah-thats-a-close-one." class="section level2 unnumbered">
 <h2>Woah! That’s a close one.</h2>
-<p>You’re on 🔥 fire data droid. Let’s sit here a minute to cool down…</p>
-<p>Ok, now let’s go land on that planet before we get stuck up here with permanent space legs.</p>
+<p>Great work data droid. Let’s take a minute to cool down…</p>
+<p>Ok, now let’s land on that planet before we get stuck up here with permanent space legs.</p>
 <p><br></p>
 <div id="yoda-says" class="section level3 unnumbered yoda">
 <h3>Yoda says</h3>
@@ -840,9 +839,9 @@ Show code
 <hr>
 <div id="the-ewoks-need-our-help.-theres-porgs-everywhere" class="section level3 unnumbered">
 <h3>The Ewoks need our help. There’s porgs <strong>EVERYWHERE!</strong></h3>
-<p><img src="../images/porgs_bb8_2.jpg" style="margin-top: 0px;"></p>
-<p>Porgs have been spreading across the galaxy, likely hitching rides on unsuspecting ships. They’re so cute people hate to say it, but they are starting to become a nuisance in some place.</p>
-<p>To get a grasp on the problem the Ewoks are doing the first ever porg survey. And they need your help planning the <strong>survey</strong>.</p>
+<p><img src="../images/porgs_bb8_2.jpg" style="margin-top: -12px; width: 70%;"></p>
+<p>Porgs have been spreading across the galaxy; likely by hitching rides on unsuspecting ships. They’re so cute people hate to say it, but they are starting to become a nuisance.</p>
+<p>To get a grasp on the population explosion the Ewoks are launching a porg survey. And they need your <strong>help</strong>.</p>
 </div>
 </div>
 <div id="dates-with-lubridate" class="section level1" number="6">
@@ -1406,8 +1405,8 @@ Show code
 <p><em>Hint:</em> Fern Gully</p>
 </blockquote>
 </div>
-<div id="time-series---all-the-data" class="section level2 unnumbered">
-<h2>5. Time series - All the data</h2>
+<div id="time-series-all-the-data" class="section level2 unnumbered">
+<h2>5. Time series: All the data</h2>
 <p>Plot all the data with <code>geom_point()</code>. Put <code>count_date</code> on the x-axis, and the <code>porg_count</code> on the y-axis. Set the color to match the <code>site</code> column.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> ______ , <span class="at">color =</span> _____ )) <span class="sc">+</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
@@ -1445,82 +1444,13 @@ Show code
 </div>
 <div id="great-work" class="section level2 unnumbered">
 <h2><i class="fas fa-hands-clapping" aria-hidden="true"></i> Great work</h2>
-<p>The Ewoks were deeply thankful. They’ll be in touch for <em>Porg Survey 2024</em>.</p>
+<p>The Ewoks are deeply thankful. They’ll be in touch for <em>Porg Survey 2024</em>.</p>
 <p><img src="../images/porgs_4.jpg" style="width:35.0%" /></p>
 <p><br></p>
 </div>
 </div>
-<div id="pipe-things-together-a-b" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Pipe things together: <code>A %&gt;% B</code></h1>
-<hr>
-<p><br></p>
-<blockquote>
-<p><strong>Wishing you could type the name of the data less often?</strong></p>
-</blockquote>
-<p><img src="../images/pipe.png" style="margin-right: 20px; width: 136px; float: left; margin-top: 12px;" /></p>
-<div id="you-can-with-the-pipe" class="section level3 unnumbered">
-<h3>You can with the <em>pipe</em>!</h3>
-<p>Use the <code>%&gt;%</code> to chain functions together and make our scripts more streamlined.</p>
-<div style="clear: both;">
-
-</div>
-</div>
-<div id="the-helps" class="section level2 unnumbered">
-<h2>The <code>%&gt;%</code> helps:</h2>
-<div id="eliminate-nested-parentheses" class="section level3 unnumbered">
-<h3><strong><code>#1:</code></strong> <em>Eliminate nested parentheses</em></h3>
-<p>Let’s say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome.</p>
-</div>
-<div id="without-the-pipe" class="section level3 unnumbered">
-<h3>Without the pipe <i class="fas fa-frown"></i></h3>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>))))</span></code></pre></div>
-<p><br></p>
-<p>The code above is dense and we need to read it backwards from right to left to understand the order of operations. The pipe on the other hand allows us to read the code from left to right.</p>
-</div>
-<div id="with-the-pipe" class="section level3 unnumbered">
-<h3>With the pipe <i class="fas fa-smile"></i></h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>) <span class="sc">%&gt;%</span> <span class="fu">sum</span>() <span class="sc">%&gt;%</span> <span class="fu">log</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>()</span></code></pre></div>
-<p><br></p>
-</div>
-<div id="combine-processing-steps-into-one-cohesive-chunk" class="section level3 unnumbered">
-<h3><strong><code>#2:</code></strong> <em>Combine processing steps into one cohesive chunk</em></h3>
-</div>
-<div id="without-the-pipe-1" class="section level3 unnumbered">
-<h3>Without the pipe</h3>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap, <span class="fu">desc</span>(price_per_pound))</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap, origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>)</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, </span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
-</div>
-<div id="with-the-pipe-1" class="section level3 unnumbered">
-<h3>With the pipe</h3>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">arrange</span>(<span class="fu">desc</span>(price_per_pound)) <span class="sc">%&gt;%</span></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">filter</span>(origin <span class="sc">!=</span> <span class="st">&quot;All&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">scrap_finder    =</span> <span class="st">&quot;BB8&quot;</span>,</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">measure_method  =</span> <span class="st">&quot;REM-24&quot;</span>)</span></code></pre></div>
-<p><br></p>
-</div>
-<div id="explore-1" class="section level3 unnumbered tip">
-<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
-<p>Similar to above, use the <code>%&gt;%</code> to combine the two analysis lines below.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter to ozone concentrations above 80</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>ozone <span class="ot">&lt;-</span> <span class="fu">filter</span>(ozone, ppb <span class="sc">&gt;</span> <span class="dv">80</span>)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a units column to the filtered data</span></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>ozone <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ozone, <span class="at">units =</span> <span class="st">&quot;ppb&quot;</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="let-the-guide-you." class="section level2 unnumbered">
-<h2>Let the <code>%&gt;%</code> guide you.</h2>
-<p><br></p>
-</div>
-</div>
-<div id="share-with-friends" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> <i class="fa fa-group" style="color: steelblue;"></i> Share with friends</h1>
+<div id="share-with-friends" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> <i class="fa fa-group" style="color: steelblue;"></i> Share with friends</h1>
 <hr>
 <div id="create-a-github-account" class="section level2 unnumbered">
 <h2>Create a GitHub account</h2>
@@ -1535,8 +1465,7 @@ Show code
 <ul>
 <li>Give it a short name like <code>Rplots</code></li>
 <li>Keep it public</li>
-<li><input type="checkbox" disabled="" checked="" />
-Check the box to initialize with a README</li>
+<li><input type="checkbox" disabled="" checked="" />Check the box to initialize with a README</li>
 <li>Click <code>[ Create repository ]</code></li>
 </ul>
 </div>

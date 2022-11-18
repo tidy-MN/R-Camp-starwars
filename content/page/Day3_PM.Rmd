@@ -34,6 +34,23 @@ xaringanExtra::use_clipboard()
 
 <br>
 
+
+# <i class="fas fa-database"></i> Connect to databases 
+<hr>
+
+> Top-secret demo....
+
+<br>
+
+
+# Pipe things together: ` A %>% B `
+<hr>
+```{r pipe-intro, child='../../static/modules/dplyr/dplyr_pipe/intro.Rmd'}
+```
+
+
+<br>
+
 # R Markdown reports
 <hr>
 
@@ -42,13 +59,6 @@ xaringanExtra::use_clipboard()
 
 <br>
 
-
-# <i class="fas fa-database"></i> Connect to databases 
-<hr>
-
-> Top-secret demo....
-
-<br>
 
 
 # Your turn

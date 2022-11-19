@@ -36,6 +36,11 @@ R let's us do data analysis in a step-by-step fashion, much like creating a reci
 - Data processing and analysis are more easily reproducible in R.
 - Excel is more widely used.
 
+<details>
+<summary class = "btn_code_gray"> **More comparisons >** </summary>
+<div class="note" style="margin-top: -4px;">
+<p>
+
 **R vs. Tableau**
 
 - Tableau is primarily a data visualization software. Its data analysis capabilities are limited.
@@ -45,6 +50,7 @@ R let's us do data analysis in a step-by-step fashion, much like creating a reci
 
 **R vs. SQL**
 
+- SQL is the language of databases.
 - SQL queries are sent to a database server and processed there before sending you the data. This may be needed for very large data sets that don't fit on your computer. 
 - R can use SQL queries to pull data from databases / data lakes.
 - R has the `dbplyr` package which converts R to an SQL query.
@@ -62,6 +68,7 @@ R let's us do data analysis in a step-by-step fashion, much like creating a reci
 - R is open-source, while SAS requires a license.
 - Anyone can create an R package (but packages on CRAN are vetted). New features for SAS are only available when the SAS team makes them available.
 
+</p></div></details>
 
 <div style="clear: both;"></div>
 

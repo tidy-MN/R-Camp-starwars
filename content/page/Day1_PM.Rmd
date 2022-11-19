@@ -151,6 +151,7 @@ Now, try setting the fill argument to the `destination` column.
 # Learn more!
 
 - RStudio Primers: [Data Visualization Basics](https://posit.cloud/learn/primers/1.1)
+- [R Basics](https://rstudio-education.github.io/hopr/basics.html)
 
 <br>
 

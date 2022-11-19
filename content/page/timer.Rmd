@@ -1,0 +1,54 @@
+---
+title: 'Timer'
+subtitle: ''
+date: '2018-12-08'
+summary: ''
+showDate: false
+showAuthor: false
+slug: 'timer'
+categories: [training]
+tags: [timer]
+type: ''
+image: '' 
+imageWidth: '27%'
+imageFloat: 'left'
+enableEmoji: true
+---
+
+
+
+<div style="margin-top: -30px;"></div>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=F, message=F)
+```
+
+
+```{r}
+
+library(countdown)
+
+# Get the solarized color palette
+#solarized <- xaringanthemer::style_solarized_light
+
+countdown(
+  minutes = 5, 
+  update_every = 15,
+  top = 0, bottom = 0,
+  left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  margin = "5%",
+  font_size = "8em",
+  # Set timer theme to match solarized colors
+  color_border              = "#0D9188FF",
+  color_text                = "#073642",
+  color_running_background  = "#2aa198",
+  color_running_text        = "#073642",
+  color_finished_background = "#e53256",
+  color_finished_text       = "white"
+)
+```
+
+
+</br>

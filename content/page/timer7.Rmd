@@ -1,5 +1,5 @@
 ---
-title: 'Timer'
+title: 'Back in a few...'
 subtitle: ''
 date: '2018-12-08'
 summary: ''
@@ -15,81 +15,31 @@ imageFloat: 'left'
 enableEmoji: true
 ---
 
+<div style="margin-top: -30px;"></div>
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning=F, message=F)
 ```
 
 
-<div style="margin-top: -30px;"></div>
-
 <style>
+.countdown {
+  position: relative;
+  width: 80%;
+}
 
 body {
   background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */
 }
 
-h3 {
-   text-align: center;
-   margin-top: 12px;
-   font-weight: bold;
-}
-
-h1.title {
-  font-family: 'Audiowide', 'Exo 2', sans-serif;
-  font-size: 109px;
-  color: #f9d71c;   /*#F8E81C; #220e0f; #CEB67E;*/
-  margin-top: 42px;
-}
-
-
-.card {
-  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); Dark shadow*/
-  box-shadow:  0 4px 8px 1px rgba(255,255,255,0.3), 0 4px 6px 2px rgba(248, 232, 28, 0.2);
-  background-color: white;
-  transition: 0.1s;
-  width: 400px;
-  margin-right: 12px;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
-}
-
-img {
-  border-radius: 6px 6px 0 0;
-  }
-
-.container {
-  border-left: solid 15px #303573;
-  padding: 2px 16px;
-  overflow: hidden;
-  width: 100%;
-}
 </style>
     
 <br>   
 
-<div style="width: 100%;"> 
-<div style="width: 50%; float: left;"> 
- 
-<div class="card">
-<div class="image-crop" style="height: 248px; overflow: hidden;">
-<img src="../images/r2d2_small.gif?raw=true" alt="R2D2" style="height:112%; margin-top: -20px;">
-</div>
 
-<div class="container" style="height: 106px;">
-<p id="score2" style="text-align: center; color: #303573; font-weight: bold; font-size: 74px;">
-R2D2
-</p>
-<h3>R2D2</h3> 
-</div></div>
+<div style="margin-left: auto; margin-right: auto;">
 
-</div>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/pT9_HJr-nso?&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allowfullscreen data-external='1'></iframe>
 
-
-<div style="width: 50%; float: left;">
 
 ```{r}
 library(countdown)
@@ -103,7 +53,7 @@ countdown(
   start_immediately = T,
   # Fanfare when it's over
   play_sound = TRUE,
-  top = "350px",
+  top = "12px",
   right = "auto",
   margin = "auto",
   font_size = "9em",
@@ -117,7 +67,6 @@ countdown(
 )
 ```
 
-</div>
 </div>
 
 </br>

@@ -1,5 +1,5 @@
 ---
-title: 'Timer'
+title: 'Back in a few...'
 subtitle: ''
 date: '2018-12-08'
 summary: ''
@@ -61,7 +61,7 @@ img {
   border-radius: 6px 6px 0 0;
   }
 
-.container {
+.container2 {
   border-left: solid 15px #303573;
   padding: 2px 16px;
   overflow: hidden;
@@ -76,10 +76,10 @@ img {
  
 <div class="card">
 <div class="image-crop" style="height: 248px; overflow: hidden;">
-<img src="../images/r2d2_small.gif?raw=true" alt="R2D2" style="height:112%; margin-top: -20px;">
+<img src="../images/r2d2_small.gif" alt="R2D2" style="height:112%; margin-top: -20px;">
 </div>
 
-<div class="container" style="height: 106px;">
+<div class="container2" style="height: 106px;">
 <p id="score2" style="text-align: center; color: #303573; font-weight: bold; font-size: 74px;">
 R2D2
 </p>

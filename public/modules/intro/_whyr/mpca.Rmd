@@ -37,7 +37,7 @@ R let's us do data analysis in a step-by-step fashion, much like creating a reci
 - Excel is more widely used.
 
 <details>
-<summary class = "btn_code_gray"> **More comparisons >** </summary>
+<summary class = "btn_code_blue .btn_gray"> **More comparisons >** </summary>
 <div class="note" style="margin-top: -4px;">
 <p>
 

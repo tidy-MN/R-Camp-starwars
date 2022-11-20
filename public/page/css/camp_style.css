@@ -294,6 +294,10 @@ pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-heig
   display: inline-block;
 }
 
+.btn_gray {
+    color: #2b2b2f;
+    background-color: #cbd0d4;  
+}
 
 .btn_code {
       display: inline-block;

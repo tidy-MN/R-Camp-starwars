@@ -2,7 +2,7 @@
 Here's an example R analysis project from start to finish using Ozone monitoring data.
 
 <details>
-<summary class="btn_code"> __EXAMPLE__: Ozone data project  **>** </summary>
+<summary class="btn_code_blue .btn_gray"> __EXAMPLE ANALYSIS__ **>** </summary>
 
 <div class="quiz" style="margin-top: 0; background-color: white;">
 

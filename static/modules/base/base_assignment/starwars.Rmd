@@ -134,12 +134,13 @@ _Hint: You are allowed to re-run your code. You can even highlight everything an
 
 
 <details>
-<summary class = "btn_code_blue"> **Deleting data is okay!** </summary>
+<summary class = "btn_code_blue"> **Deleting things is okay** **>** </summary>
 <div class="note" style="margin-top: 0;">
 <p>
-Don't worry about deleting data or objects in R. You can always recreate them! When R loads your data it copies the contents and then cuts off any connection to the original data. So your original data remain safe and won't suffer any accidental changes. That means if something disappears or goes wrong in R, it's okay. We can re-run the R script to get the data back. 
+Don't worry about deleting data or objects in R. You can always recreate them! When R loads your data it copies the contents and then cuts off any connection to the original data. So your original data remain safe and won't suffer any accidental changes. 
 
-It's common and good practice to frequently **re-run** your entire R script during your analysis.
+By saving your analysis in an R script you can always re-run the code to get any of your results back. It's common and good practice to **re-run** your entire R script during your analysis.
+
 <br>
 </p>
 </div></details>

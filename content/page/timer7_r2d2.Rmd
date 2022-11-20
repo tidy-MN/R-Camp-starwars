@@ -5,7 +5,7 @@ date: '2018-12-08'
 summary: ''
 showDate: false
 showAuthor: false
-slug: 'timer5'
+slug: 'timer7_r2d2'
 categories: [training]
 tags: 
 type: ''
@@ -76,7 +76,7 @@ img {
  
 <div class="card">
 <div class="image-crop" style="height: 248px; overflow: hidden;">
-<img src="r2d2_small.gif?raw=true" alt="R2D2" style="height:112%; margin-top: -20px;">
+<img src="../images/r2d2_small.gif?raw=true" alt="R2D2" style="height:112%; margin-top: -20px;">
 </div>
 
 <div class="container" style="height: 106px;">

@@ -5,7 +5,7 @@ date: '2018-12-08'
 summary: ''
 showDate: false
 showAuthor: false
-slug: 'timer5'
+slug: 'timer2'
 categories: [training]
 tags: 
 type: ''
@@ -76,7 +76,7 @@ img {
  
 <div class="card">
 <div class="image-crop" style="height: 248px; overflow: hidden; background-color: #47b6e0;">
-<img src="bb8_small.gif" alt="BB8" style="width: 60%; margin-top:-9px; margin-left: 21%;">
+<img src="../images/bb8_small.gif" alt="BB8" style="width: 60%; margin-top:-9px; margin-left: 21%;">
 </div>
 
 <div class="container" style="height: 106px; border-left: solid 15px #fe7e00;">

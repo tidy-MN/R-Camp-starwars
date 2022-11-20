@@ -34,13 +34,6 @@ h3 {
    font-weight: bold;
 }
 
-h1.title {
-  font-family: 'Audiowide', 'Exo 2', sans-serif;
-  font-size: 109px;
-  color: #f9d71c;   /*#F8E81C; #220e0f; #CEB67E;*/
-  margin-top: 42px;
-}
-
 
 .card {
   /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); Dark shadow*/
@@ -72,7 +65,7 @@ img {
 <br>   
 
 <div style="width: 100%;"> 
-<div style="width: 50%; float: left;"> 
+<div style="width: 60%; float: left;"> 
  
 <div class="card">
 <div class="image-crop" style="height: 248px; overflow: hidden;">
@@ -89,7 +82,7 @@ R2D2
 </div>
 
 
-<div style="width: 50%; float: left;">
+<div style="width: 40%; float: left;">
 
 ```{r}
 library(countdown)
@@ -103,7 +96,7 @@ countdown(
   start_immediately = T,
   # Fanfare when it's over
   play_sound = TRUE,
-  top = "350px",
+  top = "100px",
   right = "auto",
   margin = "auto",
   font_size = "9em",

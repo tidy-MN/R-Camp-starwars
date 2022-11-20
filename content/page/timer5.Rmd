@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=F, message=F)
 <style>
 .countdown {
   position: relative;
-  width: 80%;
+  width: 75%;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
 <br>   
 
 
-<div style="margin-left: auto; margin-right: auto;">
+<div style="margin-left: auto; margin-right: auto; margin-top: -10px;">
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/pT9_HJr-nso?&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allowfullscreen data-external='1'></iframe>
 
@@ -59,7 +59,7 @@ countdown(
   top = "12px",
   right = "auto",
   margin = "auto",
-  font_size = "9em",
+  font_size = "8em",
   # Set timer theme to match solarized colors
   color_border              = "#0D9188FF",
   color_text                = "#073642",

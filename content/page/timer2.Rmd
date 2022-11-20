@@ -65,7 +65,7 @@ img {
 <br>   
 
 <div style="width: 100%;"> 
-<div style="width: 50%; float: left;"> 
+<div style="width: 60%; float: left;"> 
  
 <div class="card">
 <div class="image-crop" style="height: 248px; overflow: hidden; background-color: #47b6e0;">
@@ -82,7 +82,7 @@ BB8
 </div>
 
 
-<div style="width: 50%; float: left;">
+<div style="width: 40%; float: left;">
 
 ```{r}
 library(countdown)
@@ -95,7 +95,7 @@ countdown(
   update_every = 5,
   # Fanfare when it's over
   play_sound = TRUE,
-  top = "350px",
+  top = "100px",
   right = "auto",
   margin = "auto",
   font_size = "9em",

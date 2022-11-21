@@ -68,7 +68,7 @@ img {
 <div style="width: 60%; float: left;"> 
  
 
-<img src="yoda_hover.gif" />
+<img src="../images/yoda_hover.gif" />
 
 </div>
 

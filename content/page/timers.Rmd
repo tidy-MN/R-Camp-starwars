@@ -36,7 +36,6 @@ knitr::opts_chunk$set(echo = FALSE, warning=F, message=F)
 
 ### 10
 
-- [Jelly fish](timer10.html)
 - [Ewok dance](timer10_ewok.html)
 - [Chewie dance](timer10_chewie.html)
 - [Waterfall](timer10_waterfall.html)

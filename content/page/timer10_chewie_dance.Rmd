@@ -68,7 +68,7 @@ img {
 <div style="width: 60%; float: left;"> 
  
 
-<img src="chewie_dance.gif" />
+<img src="../images/chewie_dance.gif" />
 
 
 </div>

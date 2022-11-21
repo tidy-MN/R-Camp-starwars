@@ -68,7 +68,7 @@ img {
 <div style="width: 60%; float: left;"> 
  
 
-<img src="baby-yoda-mandalorian.gif" />
+<img src="../images/baby-yoda-mandalorian.gif" />
 
 
 </div>

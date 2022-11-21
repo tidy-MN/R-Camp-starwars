@@ -74,7 +74,7 @@ img {
 </div>
 
 
-<div style="width: 40%; float: left;">
+<div style="width: 40%; float: left; padding-left: 20px;">
 
 ```{r}
 library(countdown)
@@ -91,7 +91,7 @@ countdown(
   top = "100px",
   right = "auto",
   margin = "auto",
-  font_size = "9em",
+  font_size = "8em",
   # Set timer theme to match solarized colors
   color_border              = "#0D9188FF",
   color_text                = "#073642",

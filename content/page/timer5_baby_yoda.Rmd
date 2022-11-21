@@ -65,10 +65,10 @@ img {
 <br>   
 
 <div style="width: 100%;"> 
-<div style="width: 60%; float: left;"> 
+<div style="width: 60%; float: left; margin-left: -120px;"> 
  
 
-<img src="../images/baby-yoda-mandalorian.gif" />
+<img src="../images/baby-yoda-mandalorian.gif" width="75%" />
 
 
 </div>

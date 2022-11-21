@@ -21,22 +21,21 @@ enableEmoji: true
 knitr::opts_chunk$set(echo = FALSE, warning=F, message=F)
 ```
 
-## Minutes
 
-### 2
+### 2'
 
 - [BB8](timer2.html)
 
-### 5
+### 5'
 
 - [Jelly fish](timer5.html)
 - [R2D2](timer5_r2d2.html)
 - [Baby Yoda](timer5_baby_yoda.html)
 - [Yoda](timer5_yoda.html)
 
-### 10
+### 10'
 
-- [Ewok dance](timer10_ewok.html)
-- [Chewie dance](timer10_chewie.html)
+- [Ewok dance](timer10_ewok_dance.html)
+- [Chewie dance](timer10_chewie_dance.html)
 - [Waterfall](timer10_waterfall.html)
 - [Jelly fish](timer10.html)

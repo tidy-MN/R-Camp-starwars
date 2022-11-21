@@ -1,7 +1,7 @@
 ---
 title: 'Back in a few...'
 subtitle: ''
-date: '2018-12-08'
+date: '2022-10-08'
 summary: ''
 showDate: false
 showAuthor: false
@@ -64,8 +64,8 @@ img {
     
 <br>   
 
-<div style="width: 100%;"> 
-<div style="width: 60%; float: left;"> 
+<div style="width: 100%; overflow: hidden; margin-left: -110px;"> 
+<div style="width: 70%; float: left; margin-top: -130px;"> 
  
 
 <img src="../images/chewie_dance.gif" />
@@ -74,7 +74,7 @@ img {
 </div>
 
 
-<div style="width: 40%; float: left;">
+<div style="width: 30%; float: left; padding-left: 40px;">
 
 ```{r}
 library(countdown)

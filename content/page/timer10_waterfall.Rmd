@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=F, message=F)
 ```
 
 
-<div style="margin-top: -30px;"></div>
+<div style="margin-top: -58px;"></div>
 
 <style>
 
@@ -65,10 +65,10 @@ img {
 <br>   
 
 <div style="width: 100%;"> 
-<div style="width: 60%; float: left;"> 
+<div style="width: 60%; float: left; margin-left: -110px;"> 
  
 
-<img src="../images/waterfall.gif" />
+<img src="../images/waterfall.gif" width="80%" />
 
 
 </div>
@@ -88,7 +88,7 @@ countdown(
   start_immediately = T,
   # Fanfare when it's over
   play_sound = TRUE,
-  top = "100px",
+  top = "280px",
   right = "auto",
   margin = "auto",
   font_size = "9em",

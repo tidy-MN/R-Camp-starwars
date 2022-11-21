@@ -20,8 +20,6 @@ knitr::opts_chunk$set(echo = FALSE, warning=F, message=F)
 ```
 
 
-<div style="margin-top: -30px;"></div>
-
 <style>
 
 body {
@@ -64,11 +62,11 @@ img {
     
 <br>   
 
-<div style="width: 100%;"> 
-<div style="width: 60%; float: left;"> 
+<div style="width: 100%; margin-top: -30px;"> 
+<div style="width: 60%; float: left; margin-left: -120px;">
  
 
-<img src="../images/yoda_hover.gif" />
+<img src="../images/yoda_hover.gif" width="75%" />
 
 </div>
 

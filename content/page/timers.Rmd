@@ -1,0 +1,43 @@
+---
+title: 'Timers'
+subtitle: ''
+date: '2018-12-08'
+summary: ''
+showDate: false
+showAuthor: false
+slug: 'timers'
+categories: [training]
+tags: 
+type: ''
+image: '' 
+imageWidth: '27%'
+imageFloat: 'left'
+enableEmoji: true
+---
+
+<div style="margin-top: -30px;"></div>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=F, message=F)
+```
+
+## Minutes
+
+### 2
+
+- [BB8](timer2.html)
+
+### 5
+
+- [Jelly fish](timer5.html)
+- [R2D2](timer5_r2d2.html)
+- [Baby Yoda](timer5_baby_yoda.html)
+- [Yoda](timer5_yoda.html)
+
+### 10
+
+- [Jelly fish](timer10.html)
+- [Ewok dance](timer10_ewok.html)
+- [Chewie dance](timer10_chewie.html)
+- [Waterfall](timer10_waterfall.html)
+- [Jelly fish](timer10.html)

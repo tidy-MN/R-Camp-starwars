@@ -30,6 +30,33 @@
     
     <item>
       <title>Back in a few...</title>
+      <link>https://mn-r.netlify.app/page/timer10_chewie_dance.html</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/timer10_chewie_dance.html</guid>
+      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+    </item>
+    
+    <item>
+      <title>Back in a few...</title>
+      <link>https://mn-r.netlify.app/page/timer10_ewok_dance.html</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/timer10_ewok_dance.html</guid>
+      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+    </item>
+    
+    <item>
+      <title>Back in a few...</title>
+      <link>https://mn-r.netlify.app/page/timer10_waterfall.html</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/timer10_waterfall.html</guid>
+      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+    </item>
+    
+    <item>
+      <title>Back in a few...</title>
       <link>https://mn-r.netlify.app/page/timer2.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -43,24 +70,33 @@
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mn-r.netlify.app/page/timer5.html</guid>
-      <description>.countdown { position: relative; width: 75%; } body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ }</description>
+      <description>div[role=main] { width: 100% !important; } .countdown { position: relative; width: 75%; } body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ }</description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer7.html</link>
+      <link>https://mn-r.netlify.app/page/timer5_baby_yoda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer7.html</guid>
-      <description>.countdown { position: relative; width: 75%; } body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ }</description>
+      <guid>https://mn-r.netlify.app/page/timer5_baby_yoda.html</guid>
+      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer7_r2d2.html</link>
+      <link>https://mn-r.netlify.app/page/timer5_r2d2.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer7_r2d2.html</guid>
+      <guid>https://mn-r.netlify.app/page/timer5_r2d2.html</guid>
+      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+    </item>
+    
+    <item>
+      <title>Back in a few...</title>
+      <link>https://mn-r.netlify.app/page/timer5_yoda.html</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mn-r.netlify.app/page/timer5_yoda.html</guid>
       <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
     </item>
     

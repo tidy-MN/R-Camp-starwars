@@ -1,0 +1,76 @@
+---
+title: 'Teach schedule'
+subtitle: ''
+date: '2022-08-08'
+summary: ''
+showDate: false
+showAuthor: false
+slug: 'teach'
+categories: [training]
+tags: 
+type: ''
+image: '' 
+imageWidth: '27%'
+imageFloat: 'left'
+enableEmoji: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=F, message=F)
+```
+
+
+### Day 1
+
+**AM**
+
+- **Welcome: The Grand G0rg** 
+
+-	1-2 (Barbara)
+    -	Breakout - Greetings!
+    -	Quiz 1
+-	3-4 (Dorian)
+-	5-7 (Derek)
+-	8 (Barbara)
+
+**PM**
+
+-	1-3 (Derek)
+-	4-5+Bingo (Dorian)
+-	6-7 (Derek)
+-	8-Shutdown (Barbara)
+
+### Day 2
+
+**AM**
+
+-	1-2 Review -> Weight conversion (Derek)
+-	3 Joins (Dorian)
+-	4-7 Summarize -> grouped mutate (Barbara)
+-	Read from Excel exercise + Maybe GuessWho - or start Homeworld exercise
+
+**PM**
+
+-	GuessWho (Barbara)
+-	1 If_else (Dorian)
+-	2 Plot intro and height exercise (Derek)
+-	3 Trash plots & glossary (Barbara)
+-	Homeworld (people on their own w/ 3-4 Breakouts, one for each of us to host?)
+
+### Day 3
+
+**AM**
+
+-	1-2 Review (Barbara)
+-	3-4 Maps (Dorian)
+-	5-6 Dates (Derek)
+-	Gitlab / Github Account (maybe? - Dorian)
+
+**PM**
+
+-	1 Databases and keyring (Derek)  
+-	2 Pipes %>% (Barbara)
+-	3 Markdown demo (maybe? - Dorian)
+-	Individual Project Work (All)
+-	*Graduation ceremony* (cowsay) - Certificates!

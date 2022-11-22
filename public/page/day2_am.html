@@ -429,34 +429,34 @@ hr {background: #62BE2C;}
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2017-08-23</td>
+<td align="right">14</td>
+<td align="right">65.0</td>
+</tr>
+<tr class="even">
 <td align="left">27-137-7001</td>
+<td align="left">2018-07-22</td>
+<td align="right">23</td>
+<td align="right">79.4</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
 <td align="left">2017-10-26</td>
-<td align="right">15</td>
+<td align="right">8</td>
 <td align="right">60.2</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7554</td>
-<td align="left">2017-09-29</td>
-<td align="right">16</td>
-<td align="right">50.0</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="left">2017-09-06</td>
+<td align="left">2016-06-05</td>
 <td align="right">7</td>
-<td align="right">69.8</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2016-06-20</td>
-<td align="right">14</td>
-<td align="right">51.8</td>
+<td align="right">65.0</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2018-05-10</td>
-<td align="right">12</td>
-<td align="right">59.0</td>
+<td align="left">2018-08-27</td>
+<td align="right">6</td>
+<td align="right">69.8</td>
 </tr>
 </tbody>
 </table>
@@ -1298,7 +1298,7 @@ scrap <- scrap %>%
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scrap, origin) </span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap_means,</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price =</span>  <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T))</span></code></pre></div>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T))</span></code></pre></div>
 <p><br></p>
 <details>
 <summary class="btn_code_blue">
@@ -1310,7 +1310,7 @@ Rounding digits
 <h3>Rounding</h3>
 <p>You can round the prices to a certain number of digits using the <code>round()</code> function. We can finish by adding the <code>arrange()</code> function to sort the table by our new column.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap,</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price       =</span>  <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T),</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price       =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T),</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price_round =</span> <span class="fu">round</span>(mean_price, <span class="at">digits =</span> <span class="dv">2</span>))</span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap_means, mean_price_round)</span>

@@ -48,7 +48,7 @@ knitr::opts_chunk$set(echo=FALSE, warning=F, message=F)
 -	1-2 Review -> Weight conversion (Derek)
 -	3 Joins (Dorian)
 -	4-7 Summarize -> grouped mutate (`Barbara`)
--	Exercise: Read - Join - Summarize from Excel (All on their own w/ 3-4 Breakouts, one for each of us to host?)
+-	Exercise: Read, Join, Summarize from Excel (On their own in 3-4 Breakouts, one for each of us to host?)
 - Extra time: GuessWho 
 
 **PM**
@@ -57,7 +57,7 @@ knitr::opts_chunk$set(echo=FALSE, warning=F, message=F)
 -	1 If_else (Dorian)
 -	2 Plot intro and height exercise (Derek)
 -	3 Trash plots & glossary (`Barbara`)
--	Exercise: Homeworld (On their own w/ 3-4 Breakouts, one for each of us)
+-	Exercise: Homeworld (On their own in 3-4 Breakouts, one for each of us)
 
 ## Day 3
 

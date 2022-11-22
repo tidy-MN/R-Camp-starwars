@@ -130,6 +130,18 @@ Planet: `Earth`
  
 <br>
 
+
+## What's next? {-}
+<hr class="hrlvl2">
+
+#### Join us! {-}
+
+- R groups: TidyTuesdays 
+
+#### Online courses {-}
+
+-
+
 ## 🐱 Concatulations! {-}
 <hr class="hrlvl2">
 

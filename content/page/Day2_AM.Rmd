@@ -121,14 +121,22 @@ Okay, so we're back on this ol' dust bucket planet. Let's try not to forget anyo
 
 <br>
 
-
-
 ## Save results {-}
 ```{r save2pm}
 write_csv(scrap, "results/scrap_day2.csv")
 
 ```
  
+ 
+## YOUR TURN! A sickness grows... {-}
+
+A sickness is spreading throughout the galaxy. Should we limit the our team's travel to some planets? Or is it too late?
+  
+Download the current disease records below and summarize the cases by planet. To do so, you will need to join the disease records to a `starwars` characters table listing the planets people live on. 
+
+> Good luck!
+
+
 
 ### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-2.html) {-}
 

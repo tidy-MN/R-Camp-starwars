@@ -4,7 +4,7 @@
 
 <br>
 
-1. Build your Bingo card
+### 1. Build your Bingo card {-}
 
 Create a **4x4** grid from the list of items below:
 
@@ -13,8 +13,8 @@ bingo_words <- c("install.packages()",
                  "library()",
                  "readr",
                  "read_csv()",
+                 "write_csv()",
                  "<-",
-                 "=",
                  "c()",
                  "rm()",
                  "nrow()", 
@@ -33,15 +33,17 @@ bingo_words <- c("install.packages()",
                  "max()",
                  "sum()",
                  "sd()",
-                 "quantile()")
+                 "quantile()",
+                 "=")
 ```
 
 
-2. I'm going to randomly call out the bingo items using an R function we just wrote. It's lovingly named `play_bingo()`.
+### 2. I'll call out the bingo items using an R function we just wrote. It's lovingly named `play_bingo()` {-}
 
+<br>
 
 <details>
-<summary>Show Bingo function</summary>
+<summary class="btn_code">Show Bingo function</summary>
 
 <br>
 
@@ -56,8 +58,8 @@ bingo_words <- c("install.packages()",
                  "library()",
                  "readr",
                  "read_csv()",
+                 "write_csv()",
                  "<-",
-                 "=",
                  "c()",
                  "rm()",
                  "nrow()", 
@@ -76,7 +78,8 @@ bingo_words <- c("install.packages()",
                  "max()",
                  "sum()",
                  "sd()",
-                 "quantile()")
+                 "quantile()",
+                 "=")
 
 # Shuffle the words 
 bingo_words <- sample(bingo_words)

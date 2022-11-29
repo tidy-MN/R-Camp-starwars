@@ -15,7 +15,31 @@ library(viridis)
 library(ggplot2)
 
 # List of all the words
-bingo_words <- c("median()", "nrow()", "glimpse()", "sum()", "head()", "tail()", "arrange()", "write_csv()", "geom_col()", "filter()", "ncol()", "sd()", "summarise()", "quantile()", "install.packages()", "geom_point()", "unique()", "select()", "mean()", "min()", "left_join()", "read_csv()", "nth()", "ggplot()", "library()", "n()")
+bingo_words <- c("install.packages()",
+                 "library()",
+                 "readr",
+                 "read_csv()",
+                 "<-",
+                 "=",
+                 "c()",
+                 "rm()",
+                 "nrow()", 
+                 "ncol()",
+                 "head()",
+                 "dplyr",
+                 "glimpse()",
+                 "arrange()", 
+                 "filter()",
+                 "select()",
+                 "ggplot2",
+                 "ggplot()",
+                 "geom_col()",
+                 "mean()", 
+                 "min()",
+                 "max()",
+                 "sum()",
+                 "sd()",
+                 "quantile()")
 
 # Shuffle the words 
 bingo_words <- sample(bingo_words)

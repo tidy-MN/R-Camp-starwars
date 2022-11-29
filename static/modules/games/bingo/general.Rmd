@@ -1,0 +1,78 @@
+
+
+![](../images/star-wars-bingo-image.jpg){width="350" align="center" style="margin: auto; margin-top: 10px; margin-bottom: 12px;"}
+
+> __There are no free spaces. The REPUPBLIC is mean like that.__
+
+<br>
+
+1. We're going to call-out the bingo words using an R function we just wrote. It's lovingly named `play_bingo()`.
+
+```{r bingo, eval=F}
+# Get pretty colors
+install.packages("viridis")
+library(viridis)
+library(ggplot2)
+
+# List of all the words
+bingo_words <- c("install.packages()",
+                 "library()",
+                 "readr",
+                 "read_csv()",
+                 "<-",
+                 "=",
+                 "c()",
+                 "rm()",
+                 "nrow()", 
+                 "ncol()",
+                 "head()",
+                 "dplyr",
+                 "glimpse()",
+                 "arrange()", 
+                 "filter()",
+                 "select()",
+                 "ggplot2",
+                 "ggplot()",
+                 "geom_col()",
+                 "mean()", 
+                 "min()",
+                 "max()",
+                 "sum()",
+                 "sd()",
+                 "quantile()")
+
+# Shuffle the words 
+bingo_words <- sample(bingo_words)
+
+# Set the draw number in case we need to backtrack
+n <- 1
+
+# Loop thru each word
+play_bingo <- function(words = bingo_words, n = 1) {
+  
+for (n in 1:length(words)) {
+
+  cat(paste0("\n\t\t", words[n], "\n\n"))
+  
+  # Plot the word
+  call_plot <- ggplot(data.frame(x = 1, y = 1), aes(x = 1, y = 1)) + 
+        geom_point(color = sample(viridis_pal()(30), 1), size = 177) + 
+        geom_label(label = words[n], size = 12) +
+        labs(x = NULL, y = NULL) +
+        theme_void()
+  
+  print(call_plot)
+  
+  if(n < length(words)) { 
+    readline(prompt="> Press [Enter]") 
+  } else {
+      cat("Goodbye!")
+    }
+}
+}
+
+play_bingo()
+
+```
+
+<br>

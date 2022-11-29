@@ -67,7 +67,7 @@ cat(readLines("porg_tabs.txt"))
 # R BINGO! {-}
 <hr class="hr2">
 
-```{r arrange, child='../../static/modules/games_bingo/general.Rmd'}
+```{r arrange, child='../../static/modules/games/bingo/general.Rmd'}
 ```
 
 
@@ -127,14 +127,15 @@ This is going to be a long flight. Let's warm up our plotting machines so they a
 <div class="tip">
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
 
-Make a column plot showing the total amount of scrap for each `item`.
+Fill in the code below to make a column plot showing the total amount of scrap for each `item`.
+
+<br>
 
 ```{r, eval=F, echo=T}
 ggplot(scrap, aes(x = ___________, y = amount)) + 
   geom_col()
 ```
 
-<br>
 
 Now, try setting the **fill** argument equal to the `destination` column.
 

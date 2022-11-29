@@ -1,0 +1,27 @@
+
+## New data -> New project! {-}
+
+Below is an example workflow for an R project:
+
+1. Create a new project
+1. Read the data
+1. Clean column names
+1. Explore data
+    - Plot the data
+1. Clean the data
+1. View the data closer
+1. Summarize the data
+1. Save the results
+1. __Share__ with friends
+
+
+### 0. Start a new project {-}
+
+- Open a new project
+- Open a new R script
+- Create a `data` folder in your project directory 
+- Copy your data to that folder
+
+
+
+<br>

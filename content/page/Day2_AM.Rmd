@@ -36,7 +36,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 # Review - New project
 <hr>
 
-```{r rev-proj, child='../../static/modules/_example_7steps/ozone_review.Rmd'}
+```{r rev-proj, child='../../static/modules/_example_7steps/ozone_review_simple.Rmd'}
 ```
 
 ## Porg review {-}
@@ -191,7 +191,7 @@ Go to `File` > `New Project...` > `New Directory` > `New Project`
 
 ### Get the disease data {-}
   
-<a href="data/disease_records.Xlsx"><button class="button-dl" download="disease_records.xlsx">
+<a href="https://mn-r.netlify.app/data/disease_records.xlsx"><button class="button-dl" download="disease_records.xlsx">
 Download (XLSX) &nbsp; <i class="fa fa-download"></i>
 </button></a>  
   

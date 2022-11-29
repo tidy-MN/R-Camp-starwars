@@ -56,11 +56,11 @@ summary(scrap)
 Try some more of the dataframe description functions.
 
 ```{r summary-try, eval=F}
-nrow( ____ )
+nrow( )
 
-ncol( ____ )
+ncol( )
 
-names( ____ )
+names( )
 ```
 
 </div>

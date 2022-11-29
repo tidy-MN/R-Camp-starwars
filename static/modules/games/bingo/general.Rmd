@@ -2,11 +2,48 @@
 
 ![](../images/star-wars-bingo-image.jpg){width="350" align="center" style="margin: auto; margin-top: 10px; margin-bottom: 12px;"}
 
-> __There are no free spaces. The REPUPBLIC is mean like that.__
-
 <br>
 
-1. We're going to call-out the bingo words using an R function we just wrote. It's lovingly named `play_bingo()`.
+1. Build your Bingo card
+
+Create a **4x4** grid from the list of items below:
+
+```{r, eval=F}
+bingo_words <- c("install.packages()",
+                 "library()",
+                 "readr",
+                 "read_csv()",
+                 "<-",
+                 "=",
+                 "c()",
+                 "rm()",
+                 "nrow()", 
+                 "ncol()",
+                 "head()",
+                 "dplyr",
+                 "glimpse()",
+                 "arrange()", 
+                 "filter()",
+                 "select()",
+                 "ggplot2",
+                 "ggplot()",
+                 "geom_col()",
+                 "mean()", 
+                 "min()",
+                 "max()",
+                 "sum()",
+                 "sd()",
+                 "quantile()")
+```
+
+
+2. I'm going to randomly call out the bingo items using an R function we just wrote. It's lovingly named `play_bingo()`.
+
+
+<details>
+<summary>Show Bingo function</summary>
+
+<br>
 
 ```{r bingo, eval=F}
 # Get pretty colors
@@ -74,5 +111,7 @@ for (n in 1:length(words)) {
 play_bingo()
 
 ```
+
+</details>
 
 <br>

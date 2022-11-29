@@ -123,7 +123,6 @@ Okay, so we're back on this ol' dust bucket planet. Let's try not to forget anyo
 ## Save results {-}
 ```{r save2pm}
 write_csv(scrap, "results/scrap_day2.csv")
-
 ```
  
  

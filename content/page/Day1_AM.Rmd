@@ -187,14 +187,12 @@ Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning re
 ```
 
 
-<div class="btn_gray">
 
 # Learn more!
 
 - RStudio Primers: [R Programming Basics](https://posit.cloud/learn/primers/1.2)
 - [Intro to R](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html) - with cute Giraffes!
 
-</div>
 
 <br>
 

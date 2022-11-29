@@ -45,8 +45,6 @@ bingo_words <- c("install.packages()",
 <details>
 <summary class="btn_code">Show Bingo function</summary>
 
-<br>
-
 ```{r bingo, eval=F}
 # Get pretty colors
 install.packages("viridis")

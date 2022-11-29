@@ -63,7 +63,7 @@
   "headline": "Day 2 - AM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  3620 ,
+  "wordCount":  3602 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -401,16 +401,7 @@ hr {background: #62BE2C;}
 <li>Save the results</li>
 <li><strong>Share</strong> with friends</li>
 </ol>
-<div id="start-a-new-project" class="section level3 unnumbered">
-<h3>0. Start a new project</h3>
-<ul>
-<li>Open a new project</li>
-<li>Open a new R script</li>
-<li>Create a <code>data</code> folder in your project directory</li>
-<li>Copy your data to that folder</li>
-</ul>
 <p><br></p>
-</div>
 </div>
 <div id="porg-review" class="section level2 unnumbered">
 <h2>Porg review</h2>
@@ -1255,6 +1246,14 @@ Download (XLSX)   <i class="fa fa-download"></i>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>records <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;______&quot;</span>)</span></code></pre></div>
+<details>
+<summary class="btn_code">
+<strong>Plan B:</strong> Read data from CSV
+</summary>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>records <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/disease_records.csv&quot;</span>)</span></code></pre></div>
+</details>
 <div id="explore-2" class="section level4 unnumbered">
 <h4>Explore</h4>
 <p>Use <code>glimpse()</code> to view a summary of the data columns.</p>
@@ -1264,22 +1263,22 @@ Download (XLSX)   <i class="fa fa-download"></i>
 <h3>Planet data</h3>
 <p>To find the planets these records are associated with, we will need to join the records data to the <code>starwars</code> data set in the package <code>dplyr</code>.</p>
 <p>To load the planet data, add the following to your R script:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> starwars</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> starwars</span></code></pre></div>
 <div id="explore-3" class="section level4 unnumbered">
 <h4>Explore</h4>
 <p>What is the number of distinct values in the <code>homeworld</code> column of the <em>people</em> data set?</p>
 <ul>
 <li>Use <code>n_distinct()</code> to count the number of ‘homeworld’ planets.</li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(people, <span class="at">n_homeworlds =</span> <span class="fu">n_distinct</span>( _______ ))</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(people, <span class="at">n_homeworlds =</span> <span class="fu">n_distinct</span>( _______ ))</span></code></pre></div>
 <p><br></p>
 <p>What are they? Print the unique values of the <code>homeworld</code> column in the <em>people</em> data set:</p>
 <ul>
 <li>Use <code>distinct()</code> to show the unique values of <code>homeworld</code> column.</li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(people, ________)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(people, ________)</span></code></pre></div>
 <blockquote>
 <p>Is one of the homeworlds <code>NA</code>? What does the ‘NA’ mean?</p>
 </blockquote>
@@ -1292,15 +1291,15 @@ Download (XLSX)   <i class="fa fa-download"></i>
 <blockquote>
 <p>You can run <code>names(records)</code> to view the column names in a dataframe.</p>
 </blockquote>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(records, _______, <span class="at">by =</span> <span class="st">&quot;______&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(records, _______, <span class="at">by =</span> <span class="st">&quot;______&quot;</span>)</span></code></pre></div>
 </div>
 <div id="summarize-the-records-by-homeworld" class="section level3 unnumbered">
 <h3>Summarize the records by homeworld</h3>
 <p>Use <code>group_by()</code> to group the records by <code>homeworld</code> planet.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>joined <span class="ot">&lt;-</span> <span class="fu">group_by</span>(joined, homeworld) </span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>joined <span class="ot">&lt;-</span> <span class="fu">group_by</span>(joined, homeworld) </span></code></pre></div>
 <p><br></p>
 <p>Now you can use the <code>n()</code> function to find the sum total of records by <code>homeworld</code>.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>planet_totals <span class="ot">&lt;-</span> <span class="fu">summarize</span>(joined, <span class="at">cases =</span> _______ )</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>planet_totals <span class="ot">&lt;-</span> <span class="fu">summarize</span>(joined, <span class="at">cases =</span> _______ )</span></code></pre></div>
 </div>
 <div id="restricted-travel" class="section level3 unnumbered">
 <h3>Restricted travel?</h3>

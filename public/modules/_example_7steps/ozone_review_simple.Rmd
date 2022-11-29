@@ -15,13 +15,5 @@ Below is an example workflow for an R project:
 1. __Share__ with friends
 
 
-### 0. Start a new project {-}
-
-- Open a new project
-- Open a new R script
-- Create a `data` folder in your project directory 
-- Copy your data to that folder
-
-
 
 <br>

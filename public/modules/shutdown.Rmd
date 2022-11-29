@@ -7,8 +7,11 @@ __Turn off *Save Workspace* __
 
 1. Go to ` Tools > Global Options.... `  on the top RStudio navigation bar
 1. On the first screen:
-    - [ ] Uncheck Restore .Rdata into workspace at startup
-    - Set _Save workspace to .RData on exit_ to [Never].
-    - [ ] Under **History**, uncheck Always save history
+    - Under **Workspace**
+        - [ ] &nbsp; Uncheck _Restore .Rdata into workspace at startup_
+        - Set _Save workspace to .RData on exit_ to **[Never]**
+    - Under **History**
+        - [ ] &nbsp; Uncheck _Always save history_
+1. Click `OK` at the bottom
 
 <br>

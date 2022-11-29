@@ -94,6 +94,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#group_by-category" id="toc-group_by-category"><span class="toc-section-number">5</span> <code>group_by()</code> category</a></li>
 <li><a href="#save-files" id="toc-save-files"><span class="toc-section-number">6</span> Save files</a></li>
 <li><a href="#grouped-mutate" id="toc-grouped-mutate"><span class="toc-section-number">7</span> Grouped <code>mutate()</code></a></li>
+<li><a href="#your-turn-a-sickness-grows" id="toc-your-turn-a-sickness-grows"><span class="toc-section-number">8</span> YOUR TURN! A sickness grows…</a></li>
 </ul>
 </div>
 
@@ -158,34 +159,34 @@ hr {background: #62BE2C;}
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-08-23</td>
-<td align="right">14</td>
-<td align="right">65.0</td>
-</tr>
-<tr class="even">
 <td align="left">27-137-7001</td>
-<td align="left">2018-07-22</td>
-<td align="right">23</td>
-<td align="right">79.4</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-10-26</td>
+<td align="left">2017-04-26</td>
 <td align="right">8</td>
-<td align="right">60.2</td>
+<td align="right">39.2</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7554</td>
-<td align="left">2016-06-05</td>
-<td align="right">7</td>
-<td align="right">65.0</td>
+<td align="left">2018-08-04</td>
+<td align="right">12</td>
+<td align="right">71.0</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2018-08-27</td>
-<td align="right">6</td>
-<td align="right">69.8</td>
+<td align="left">2016-09-27</td>
+<td align="right">17</td>
+<td align="right">75.8</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="left">2017-07-26</td>
+<td align="right">14</td>
+<td align="right">84.2</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2018-07-07</td>
+<td align="right">9</td>
+<td align="right">80.6</td>
 </tr>
 </tbody>
 </table>
@@ -253,7 +254,7 @@ hr {background: #62BE2C;}
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ozone tends to increase with temperature&quot;</span>, </span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;Observations for 2015-2017&quot;</span>,</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Source: MPCA air monitoring network&quot;</span>)</span></code></pre></div>
-<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-2-1.png" width="1152" /></p>
+<p><img src="/page/Day2_AM_files/figure-html/unnamed-chunk-10-1.png" width="1152" /></p>
 <blockquote>
 <p>Keep exploring…</p>
 </blockquote>
@@ -1110,16 +1111,136 @@ Rounding digits
 <h2>Save results</h2>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap, <span class="st">&quot;results/scrap_day2.csv&quot;</span>)</span></code></pre></div>
 </div>
-<div id="your-turn-a-sickness-grows" class="section level2 unnumbered">
-<h2>YOUR TURN! A sickness grows…</h2>
-<p>A sickness is spreading throughout the galaxy. Should we limit the our team’s travel to some planets? Or is it too late?</p>
-<p>Download the current disease records below and summarize the cases by planet. To do so, you will need to join the disease records to a <code>starwars</code> characters table listing the planets people live on.</p>
+</div>
+<div id="your-turn-a-sickness-grows" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> YOUR TURN! A sickness grows…</h1>
 <blockquote>
-<p>Good luck!</p>
+<p>Practicing joining and summarizing</p>
 </blockquote>
+<style>
+
+.button-dl {
+    padding: 8px;
+    padding-right: 14px;
+    padding-left: 14px;
+    color: #254d67;
+    background-color: #e8e8e8;
+    margin-left: 12px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 99;
+    border-color: #a3b6c6;
+    border-width: 1px;
+    border-radius: 2px;
+}
+</style>
+<p>A sickness is spreading throughout the galaxy. To slow its spread should we restrict travel to some planets? Or is it too late?</p>
+<p><br></p>
+<p>Follow the steps below to collect the current disease records and summarize the cases by planet. To do so, you will need to join the disease records to a separate table containing the planet information.</p>
+<div id="create-a-new-project" class="section level3 unnumbered">
+<h3>Create a new project</h3>
+<p>Go to <code>File</code> &gt; <code>New Project...</code> &gt; <code>New Directory</code> &gt; <code>New Project</code></p>
+<ul>
+<li>Name the project “starsick”</li>
+</ul>
+</div>
+<div id="get-the-disease-data" class="section level3 unnumbered">
+<h3>Get the disease data</h3>
+<p><a href="data/disease_records.Xlsx"><button class="button-dl" download="disease_records.xlsx">
+Download (XLSX)   <i class="fa fa-download"></i>
+</button></a></p>
+<p>Click the button above to download the Excel file <em>disease_records.xlsx</em></p>
+<ul>
+<li>Save the file to your project folder</li>
+</ul>
+<p>If the file was automatically downloaded to your <em>Downloads</em> folder, move or copy the file to your project folder.</p>
+</div>
+<div id="load-the-data" class="section level3 unnumbered">
+<h3>Load the data</h3>
+<blockquote>
+<p>Create a new R script and save it as “disease_report.R”</p>
+</blockquote>
+<p>Use <code>read_xlsx()</code> from the <code>readxl</code> library to load the disease data into R. Add the code below to your R script and replace the blank with the file name to load the data.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>records <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;______&quot;</span>)</span></code></pre></div>
+<div id="explore-2" class="section level4 unnumbered">
+<h4>Explore</h4>
+<p>Use <code>glimpse()</code> to view a summary of the data columns.</p>
+</div>
+</div>
+<div id="planet-data" class="section level3 unnumbered">
+<h3>Planet data</h3>
+<p>To find the planets these records are associated with, we will need to join the records data to the <code>starwars</code> data set in the package <code>dplyr</code>.</p>
+<p>To load the planet data, add the following to your R script:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> starwars</span></code></pre></div>
+<div id="explore-3" class="section level4 unnumbered">
+<h4>Explore</h4>
+<p>What is the number of distinct values in the <code>homeworld</code> column of the <em>people</em> data set?</p>
+<ul>
+<li>Use <code>n_distinct()</code> to count the number of ‘homeworld’ planets.</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(people, <span class="at">n_homeworlds =</span> <span class="fu">n_distinct</span>( _______ ))</span></code></pre></div>
+<p><br></p>
+<p>What are they? Print the unique values of the <code>homeworld</code> column in the <em>people</em> data set:</p>
+<ul>
+<li>Use <code>distinct()</code> to show the unique values of <code>homeworld</code> column.</li>
+</ul>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(people, ________)</span></code></pre></div>
+<blockquote>
+<p>Is one of the homeworlds <code>NA</code>? What does the ‘NA’ mean?</p>
+</blockquote>
+</div>
+</div>
+<div id="join-the-homeworld-column-to-the-disease-records" class="section level3 unnumbered">
+<h3>Join the homeworld column to the disease records</h3>
+<p>Complete the script below to join the two data sets.</p>
+<p>Fill in the first blank with the name of the data you want to join to <code>records</code>. In the second blank, put the column name found in both data sets that you want to join <strong>by</strong>. This is the column that both tables have in common.</p>
+<blockquote>
+<p>You can run <code>names(records)</code> to view the column names in a dataframe.</p>
+</blockquote>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(records, _______, <span class="at">by =</span> <span class="st">&quot;______&quot;</span>)</span></code></pre></div>
+</div>
+<div id="summarize-the-records-by-homeworld" class="section level3 unnumbered">
+<h3>Summarize the records by homeworld</h3>
+<p>Use <code>group_by()</code> to group the records by <code>homeworld</code> planet.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>joined <span class="ot">&lt;-</span> <span class="fu">group_by</span>(joined, homeworld) </span></code></pre></div>
+<p><br></p>
+<p>Now you can use the <code>n()</code> function to find the sum total of records by <code>homeworld</code>.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>planet_totals <span class="ot">&lt;-</span> <span class="fu">summarize</span>(joined, <span class="at">cases =</span> _______ )</span></code></pre></div>
+</div>
+<div id="restricted-travel" class="section level3 unnumbered">
+<h3>Restricted travel?</h3>
+<p>Use <code>arrange()</code> to sort the results by the <code>cases</code> column.</p>
+<blockquote>
+<p>Which planet has the most?</p>
+</blockquote>
+<p><br></p>
+<p>The health liaison has recommended cutting off travel to any planet with more than 20 cases.</p>
+<p>Use <code>filter()</code> to keep only the planets in the data with more than 20 in the <code>cases</code> column.</p>
+<blockquote>
+<p>How many planets are off limits?</p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="save" class="section level3 unnumbered">
+<h3>Save</h3>
+<ol style="list-style-type: decimal">
+<li>Use <code>write_csv()</code> to save the list as <strong>“restricted_planets.csv”</strong>.<br />
+</li>
+<li>Save your R script.<br />
+</li>
+<li>Clap 3 times for your great work.<br />
+</li>
+<li>When you’re ready, return to your <code>jakku</code> project.</li>
+</ol>
+<p><br></p>
+</div>
 <div id="return-to-homebase" class="section level3 unnumbered">
 <h3><i class="fa fa-rocket" aria-hidden="true"></i> Return to <a href="../post/day-2.html">Homebase</a></h3>
 <p><br></p>
-</div>
 </div>
 </div>

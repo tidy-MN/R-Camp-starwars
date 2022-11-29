@@ -51,12 +51,14 @@ cat(readLines("porg_tabs.txt"))
 
 # `select()`
 <hr>
+
 ```{r select, child='../../static/modules/dplyr/dplyr_select/starwars.Rmd'}
 ```
 
 
 # Sort with `arrange()` 
 <hr>
+
 ```{r arrange, child='../../static/modules/dplyr/dplyr_arrange/starwars.Rmd'}
 ```
 
@@ -64,6 +66,7 @@ cat(readLines("porg_tabs.txt"))
 
 # R BINGO! {-}
 <hr class="hr2">
+
 ```{r arrange, child='../../static/modules/games_bingo/general.Rmd'}
 ```
 
@@ -124,7 +127,7 @@ This is going to be a long flight. Let's warm up our plotting machines so they a
 <div class="tip">
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
 
-Try making a column plot showing the total amount of scrap for each for each `item`.
+Make a column plot showing the total amount of scrap for each `item`.
 
 ```{r, eval=F, echo=T}
 ggplot(scrap, aes(x = ___________, y = amount)) + 
@@ -133,7 +136,7 @@ ggplot(scrap, aes(x = ___________, y = amount)) +
 
 <br>
 
-Now, try setting the fill argument to the `destination` column.
+Now, try setting the **fill** argument equal to the `destination` column.
 
 </div>
 
@@ -141,6 +144,7 @@ Now, try setting the fill argument to the `destination` column.
 
 # Shutdown complete
 <hr>
+
 ```{r shutdown, child='../../static/modules/shutdown.Rmd'}
 ```
 

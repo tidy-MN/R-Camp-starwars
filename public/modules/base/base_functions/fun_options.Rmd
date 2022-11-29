@@ -39,7 +39,7 @@ The `n_max` argument looks like it could be helpful. The default is `n_max = Inf
 
 ```{r, eval=F}
 # Read in 100 rows
-small_data <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv", 
+small_data <- read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku.csv", 
                        skip = 1, 
                        n_max = 100)
 

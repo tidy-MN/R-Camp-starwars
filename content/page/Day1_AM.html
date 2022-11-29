@@ -96,8 +96,6 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#read-data" id="toc-read-data"><span class="toc-section-number">5</span> Read data</a></li>
 <li><a href="#add-packages" id="toc-add-packages"><span class="toc-section-number">6</span> Add packages 📦</a></li>
 <li><a href="#ggplot2" id="toc-ggplot2"><span class="toc-section-number">7</span> ggplot2</a></li>
-<li><a href="#got-questions" id="toc-got-questions">Got questions <i class="far fa-question-circle" aria-hidden="true" style="font-size: 122%;"></i></a></li>
-<li><a href="#key-terms" id="toc-key-terms"><i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms</a></li>
 <li><a href="#learn-more" id="toc-learn-more"><span class="toc-section-number">8</span> Learn more!</a></li>
 </ul>
 </div>
@@ -435,34 +433,34 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="left">2018-06-29</td>
-<td align="right">12</td>
-<td align="right">79.4</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2016-04-26</td>
-<td align="right">9</td>
-<td align="right">41.0</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="left">2018-08-06</td>
-<td align="right">21</td>
-<td align="right">66.8</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2016-04-19</td>
-<td align="right">13</td>
-<td align="right">44.6</td>
-</tr>
-<tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2016-09-10</td>
-<td align="right">14</td>
-<td align="right">53.6</td>
+<td align="left">2018-10-29</td>
+<td align="right">4</td>
+<td align="right">40.4</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="left">2018-07-20</td>
+<td align="right">12</td>
+<td align="right">75.2</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="left">2018-06-06</td>
+<td align="right">12</td>
+<td align="right">78.8</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="left">2017-09-18</td>
+<td align="right">6</td>
+<td align="right">48.2</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="left">2017-09-27</td>
+<td align="right">15</td>
+<td align="right">79.4</td>
 </tr>
 </tbody>
 </table>
@@ -718,12 +716,12 @@ Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean s
 <p><br></p>
 <details>
 <summary class="btn_code_blue">
-<strong>Deleting data is okay!</strong>
+<strong>Deleting things is okay</strong> <strong>&gt;</strong>
 </summary>
 <div class="note" style="margin-top: 0;">
 <p>
-<p>Don’t worry about deleting data or objects in R. You can always recreate them! When R loads your data it copies the contents and then cuts off any connection to the original data. So your original data remain safe and won’t suffer any accidental changes. That means if something disappears or goes wrong in R, it’s okay. We can re-run the R script to get the data back.</p>
-It’s common and good practice to frequently <strong>re-run</strong> your entire R script during your analysis.
+<p>Don’t worry about deleting data or objects in R. You can always recreate them! When R loads your data it copies the contents and then cuts off any connection to the original data. So your original data remain safe and won’t suffer any accidental changes.</p>
+<p>By saving your analysis in an R script you can always re-run the code to get any of your results back. It’s common and good practice to <strong>re-run</strong> your entire R script during your analysis.</p>
 <br>
 </p>
 </div>
@@ -1190,7 +1188,7 @@ Limit the number of rows
 <p>Let’s look through the help window to find an argument that can help us. Type <code>?read_csv</code> and scroll down.</p>
 <p>The <code>n_max</code> argument looks like it could be helpful. The default is <code>n_max = Inf</code>, which means it will read every line, but we can limit the lines we read to only one hundred by using <code>n_max = 100</code>.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in 100 rows</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>small_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>small_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">skip =</span> <span class="dv">1</span>, </span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">n_max =</span> <span class="dv">100</span>)</span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
@@ -1324,9 +1322,8 @@ Pop Quiz!
 </div>
 </details>
 </div>
-</div>
-<div id="got-questions" class="section level1 unnumbered">
-<h1>Got questions <i class="far fa-question-circle" aria-hidden="true" style="font-size: 122%;"></i></h1>
+<div id="got-questions" class="section level2 unnumbered">
+<h2>Got questions <i class="far fa-question-circle" aria-hidden="true" style="font-size: 122%;"></i></h2>
 <hr class="hr2">
 <p>Lost in an ERROR message? Is something behaving strangely and want to know why? Want ideas for a new chart?</p>
 <p>Go to <a href="help.html">Help!</a> for troubleshooting, cheatsheets, and other learning resources.</p>
@@ -1341,8 +1338,8 @@ Pop Quiz!
 </ul>
 </blockquote>
 </div>
-<div id="key-terms" class="section level1 unnumbered">
-<h1><i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms</h1>
+<div id="key-terms" class="section level2 unnumbered">
+<h2><i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms</h2>
 <div class="pinkcode">
 <table>
 <colgroup>
@@ -1376,15 +1373,16 @@ Pop Quiz!
 </div>
 <p><br></p>
 </div>
-<div id="learn-more" class="section level1" number="8">
+</div>
+<div id="learn-more" class="section level1 btn_gray" number="8">
 <h1><span class="header-section-number">8</span> Learn more!</h1>
 <ul>
 <li>RStudio Primers: <a href="https://posit.cloud/learn/primers/1.2">R Programming Basics</a></li>
 <li><a href="https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html">Intro to R</a> - with cute Giraffes!</li>
 </ul>
+</div>
 <p><br></p>
 <div id="return-to-homebase" class="section level3 unnumbered">
 <h3><i class="fa fa-rocket" aria-hidden="true"></i> Return to <a href="../post/day-1.html">Homebase</a></h3>
 <p><br></p>
-</div>
 </div>

@@ -19,17 +19,22 @@ Use these functions to describe your data.
 # `glimpse()` & `summary()`
 <hr>
 
-`glimpse()` tells you what type of data and how much data you have.
 
 
 ### Let's read the scrap data into R and take a look. {-}
 
-```{r glimpse, warning=F, message=F}
+```{r read-glimpse, warning=F, message=F}
 library(readr)
 library(dplyr)
 
-scrap <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv")
+scrap <- read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku.csv")
+```
 
+<br>
+
+`glimpse()` shows you the type of data you have and gives you a sample of values from each column.
+
+```{r glimpse-sc, warning=F, message=F}
 # View your whole dataframe and the types of data it contains
 glimpse(scrap)
 ```
@@ -48,14 +53,15 @@ summary(scrap)
 <div class="tip">
 ### <i class="fas fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore! {-}
 
-Try some more of the dataframe / table description functions.
+Try some more of the dataframe description functions.
 
 ```{r summary-try, eval=F}
-nrow()
+nrow( ____ )
 
-ncol()
+ncol( ____ )
 
-names()
+names( ____ )
 ```
+
 </div>
 

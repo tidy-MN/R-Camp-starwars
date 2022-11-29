@@ -212,6 +212,17 @@ library(readxl)
 records <- read_xlsx("______")
 ```
 
+
+<details>
+<summary class="btn_code">**Plan B:** Read data from CSV</summary>
+```{r, eval=F}
+library(readr)
+
+records <- read_csv("https://mn-r.netlify.app/data/disease_records.csv")
+```
+</details>
+
+
 #### Explore {-}
 
 Use `glimpse()` to view a summary of the data columns.

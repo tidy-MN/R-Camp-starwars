@@ -44,7 +44,7 @@ knitr::opts_chunk$set(echo=FALSE, warning=F, message=F)
 
 **AM**
 
--	Review and finish 1PM -> () 
+-	Review + finish 1PM (`Barbara`) 
 - 2 Jakku Revisited (Derek)
 -	3 Joins (Dorian)
 -	4-7 Summarize -> grouped mutate (`Barbara`)

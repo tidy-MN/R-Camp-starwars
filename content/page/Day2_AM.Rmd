@@ -119,7 +119,6 @@ Okay, so we're back on this ol' dust bucket planet. Let's try not to forget anyo
 ```
 
 
-<br>
 
 ## Save results {-}
 ```{r save2pm}
@@ -196,7 +195,6 @@ Download (XLSX) &nbsp; <i class="fa fa-download"></i>
 </button></a>  
   
 Click the button above to download the Excel file *disease_records.xlsx*    
-
 
 - Save the file to your project folder 
 

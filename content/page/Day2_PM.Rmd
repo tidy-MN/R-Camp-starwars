@@ -77,6 +77,7 @@ scrap <- read_csv("results/scrap_day2.csv")
 
 <div style="clear: both;"></div>
 
+<br>
 
 
 # Plots with _ggplot2_
@@ -277,7 +278,7 @@ ggplot(scrap, aes(x = origin, y = credits, color = destination)) +
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
 
-An easy way to experiment with colors is to add layers like `+ scale_fill_brewer()` or `+ scale_color_brewer()` to your plot. These link to **colorBrewer** palettes to give you accessible color themes. See https://ggplot2.tidyverse.org/reference/scale_brewer.html.
+One way to experiment with colors is to add the layers `+ scale_fill_brewer()` or `+ scale_color_brewer()` to your plot. These link to [**colorBrewer**](https://ggplot2.tidyverse.org/reference/scale_brewer.html) palettes to give you accessible color themes.
 </div>
 
 
@@ -470,9 +471,7 @@ _Woop! Go get em! So long Jakku - see you never!_
 
 
 ## <i class="fa fa-star" style="color: gold"></i> PORGTASTIC <i class="fa fa-star" style="color: gold"></i> {-}
-<hr class="hrlvl2">
 
->
 > ### Woop! {-} 
 >
 > We found enough Black Boxes to trade Plutt and get the whole crew back together. Serious kudos to you.  
@@ -496,8 +495,7 @@ _Woop! Go get em! So long Jakku - see you never!_
 ```{r glossary, child='../../static/modules/ggplot/ggplot_glossary/glossary.Rmd'}
 ```
 
-
-<br><br>
+<br>
 
 # Homeworld training {-}
 <hr class="hr2">
@@ -511,8 +509,8 @@ _Woop! Go get em! So long Jakku - see you never!_
 
 <br>
   
-2. Create 2 plots using the data. 
-3. _Don't worry if it looks_ __really wrong__. _Consider it art and try again._  
+2. Create 3 plots using the data. 
+3. Don't worry if it looks __really wrong__. Consider it art and try again.  
 
 
 <br>

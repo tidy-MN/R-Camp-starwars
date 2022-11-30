@@ -66,11 +66,7 @@ cat(readLines("porg_tabs.txt"))
 
 Turn this ship around BB8, Finn needs us back on Jakku. We're going to have to get better at our roll call procedure. Here we come Finn.  __Blast off!__ 
 
-<br>
-
 ![](../images/finn_run.gif){style="margin-left: 18%; width: 60%; margin-top: 6px;"}
-
-<br>
 
 
 # Jakku re-visited
@@ -104,7 +100,7 @@ Okay, so we're back on this ol' dust bucket planet. Let's try not to forget anyo
 
 
 
-# `summarize()` this
+# `summarize()`
 <hr>
 ```{r summarize, child='../../static/modules/dplyr/dplyr_summarize/summarize.Rmd'}
 ```
@@ -126,22 +122,22 @@ write_csv(scrap, "results/scrap_day2.csv")
 ```
  
  
-# YOUR TURN! A sickness grows... 
+# A sickness grows... 
 
-> Practicing joining and summarizing
+> **Your turn!** Practicing joining and summarizing
 
 
 <style>
 
 .button-dl {
-    padding: 8px;
-    padding-right: 14px;
+    padding: 7px;
+    padding-right: 15px;
     padding-left: 14px;
     color: #254d67;
     background-color: #e8e8e8;
     margin-left: 12px;
-    margin-top: 18px;
-    margin-bottom: 8px;
+    margin-top: 16px;
+    margin-bottom: 6px;
     position: relative;
     z-index: 99;
     border-color: #a3b6c6;
@@ -152,10 +148,9 @@ write_csv(scrap, "results/scrap_day2.csv")
 
 
 A sickness is spreading throughout the galaxy. To slow its spread should we restrict travel to some planets? Or is it too late?
-  
-<br>  
-  
-Follow the steps below to collect the current disease records and summarize the cases by planet. To do so, you will need to join the disease records to a separate table containing the planet information. 
+   
+   
+Follow the steps below to collect the current disease records and summarize cases by planet. To do so, you'll need to join the disease records to a separate table with the planet information. 
   
 
 ```{r, echo=F, eval=F}
@@ -185,9 +180,10 @@ write_csv(records, "data/disease_records.csv")
 
 Go to `File` > `New Project...` > `New Directory` > `New Project`
 
-- Name the project "starsick"
+- Name the project `sickness`
 
-### Get the disease data {-}
+
+## Get the disease data {-}
   
 <a href="https://mn-r.netlify.app/data/disease_records.xlsx"><button class="button-dl" download="disease_records.xlsx">
 Download (XLSX) &nbsp; <i class="fa fa-download"></i>
@@ -202,33 +198,35 @@ If the file was automatically downloaded to your *Downloads* folder, move or cop
   
 ### Load the data {-}
 
-> Create a new R script and save it as "disease_report.R"
+> Create a new R script and save it as *disease_report.R*
 
-Use `read_xlsx()` from the `readxl` library to load the disease data into R. Add the code below to your R script and replace the blank with the file name to load the data.
+To load the data, use `read_xlsx()` from the `readxl` library to load the disease data into R. Add the code below to your R script and ensure the file name matches the file added to your project folder.
 
 ```{r, eval=F}
 library(readxl)
 
-records <- read_xlsx("______")
+records <- read_xlsx("disease_records.xlsx")
 ```
 
 
 <details>
-<summary class="btn_code">**Plan B:** Read data from CSV</summary>
+<summary class="btn_code_blue">**Plan B** - Read the data from CSV</summary>
+
 ```{r, eval=F}
 library(readr)
 
 records <- read_csv("https://mn-r.netlify.app/data/disease_records.csv")
 ```
+
 </details>
 
 
-#### Explore {-}
+### Explore {-}
 
 Use `glimpse()` to view a summary of the data columns.
 
 
-### Planet data {-}
+## Planet data {-}
 
 To find the planets these records are associated with, we will need to join the records data to the `starwars` data set in the package `dplyr`.  
 
@@ -241,48 +239,48 @@ people <- starwars
 ```
 
 
-#### Explore {-}
+### Explore {-}
 
-What is the number of distinct values in the `homeworld` column of the *people* data set?
+> What is the number of distinct values in the `homeworld` column of the *people* data set?
 
 - Use `n_distinct()` to count the number of 'homeworld' planets.
 
 ```{r, eval=F}
-summarize(people, n_homeworlds = n_distinct( _______ ))
+summarize(people, n_planets = n_distinct( _______ ))
 ```
 
-<br>
 
-What are they? Print the unique values of the `homeworld` column in the *people* data set:
+> What are they? Print the unique values of the `homeworld` column in the *people* data set:
 
 - Use `distinct()` to show the unique values of `homeworld` column.
 
 ```{r, eval=F}
-distinct(people, ________)
+distinct(people, ________ )
 ```
 
-> Is one of the homeworlds `NA`? What does the 'NA' mean?
+> Is one of the homeworlds `NA`? What does the 'NA' mean here?
 
+<br>
 
-### Join the homeworld column to the disease records {-}
+### Join the homeworld planets to disease records {-}
 
 Complete the script below to join the two data sets. 
 
-Fill in the first blank with the name of the data you want to join to `records`. In the second blank, put the column name found in both data sets that you want to join **by**. This is the column that both tables have in common.
+1. In the 1st blank, with the name of the data you want to join to `records`.  
+2. In the 2nd blank, put the column name found in both data sets that you want to join **by** in quotes `""`. This is the column that both tables have in common.  
 
-> You can run `names(records)` to view the column names in a dataframe.
+> You can run `names(records)` to view the column names in the dataframe.
 
 
 ```{r, eval=F}
-
-joined <- left_join(records, _______, by = "______")
-
+joined <- left_join(records, _______ , 
+                    by = "______" )
 ```
 
 
 ### Summarize the records by homeworld {-}
 
-Use `group_by()` to group the records by `homeworld` planet.
+Use `group_by()` to group the records by the planet column:`homeworld`
 
 ```{r, eval=F}
 joined <- group_by(joined, homeworld) 
@@ -290,7 +288,7 @@ joined <- group_by(joined, homeworld)
 
 <br>
 
-Now you can use the `n()` function to find the sum total of records by `homeworld`.
+Now you can use the `n()` function to find the number of records by `homeworld`.
 
 ```{r, eval=F}
 planet_totals <- summarize(joined, cases = _______ )
@@ -299,27 +297,34 @@ planet_totals <- summarize(joined, cases = _______ )
 
 ### Restricted travel? {-}
 
-Use `arrange()` to sort the results by the `cases` column. 
+> Which planet has the most cases?
 
-> Which planet has the most?
+Use `arrange()` and `desc()` to sort the results by the `cases` column. 
+
+```{r, eval=F}
+planet_totals <- arrang(planet_totals, ________ )
+```
 
 <br>
+
+> How many planets are off limits?
 
 The health liaison has recommended cutting off travel to any planet with more than 20 cases.
 
 Use `filter()` to keep only the planets in the data with more than 20 in the `cases` column.
 
-
-> How many planets are off limits?
+```{r, eval=F}
+off_limits <- filter(planet_totals, ________ )
+```
 
 <br>
 
 ### Save {-}
 
-1. Use `write_csv()` to save the list as **"restricted_planets.csv"**.  
+1. Use `write_csv()` to save the planet list as **"restricted_planets.csv"**.  
 1. Save your R script.  
 1. Clap 3 times for your great work.  
-1. When you're ready, return to your `jakku` project.  
+1. When ready, return to your `jakku` project.  
 
 
 <br>

@@ -19,7 +19,6 @@ head(scrap)
 
 ## Put the BIG things first  {-}
 
-
 To arrange a column in descending order with the biggest numbers on top, we use `desc(...)` around the column name.
 
 ```{r desc-arrange, warning=F}
@@ -41,7 +40,6 @@ __Hint:__ You can view the entire table by clicking on it in the upper-right _En
 </div>
 
 <br>
-<br>
 
 <div class="yoda">
 ###  Yoda says {-}
@@ -51,8 +49,3 @@ __Hint:__ You can view the entire table by clicking on it in the upper-right _En
 When you save an arranged data table it maintains its order. This is perfect for sending people a quick __` Top 10 `__ list of pollutants or sites.
 
 </div>
-
-
-
-
-

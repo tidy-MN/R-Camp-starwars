@@ -63,7 +63,7 @@
   "headline": "Day 2 - PM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  2898 ,
+  "wordCount":  2873 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -491,21 +491,24 @@ How?</p>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Cheap&quot;</span>, </span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Expensive&quot;</span>))</span></code></pre></div>
 </div>
-<div id="explore" class="section level3 unnumbered tip">
+<div class="tip">
+<div id="explore" class="section level3 unnumbered">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <p>Use your new column and <code>filter()</code> to create a new <code>cheap_scrap</code> table.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cheap scrap table</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cheap_scrap <span class="ot">&lt;-</span> <span class="fu">filter</span>(scrap,  _________ )</span></code></pre></div>
-<p><br></p>
-<p><strong>How many items are cheap?</strong></p>
+</div>
+<div id="how-many-items-are-cheap" class="section level3 unnumbered">
+<h3>How many items are cheap?</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(cheap_scrap<span class="sc">$</span>item)</span></code></pre></div>
-<p><br></p>
-<p><strong>What are the cheap items?</strong></p>
+</div>
+<div id="what-are-the-cheap-items" class="section level3 unnumbered">
+<h3>What are the cheap items?</h3>
 <pre><code>Try the unique() function on cheap_scrap$item.</code></pre>
 <p><br></p>
 </div>
-<p><br>
-<br></p>
+</div>
+<p><br></p>
 <div id="pop-quiz" class="section level3 unnumbered quiz">
 <h3>Pop Quiz!</h3>
 <p><strong>Use <code>arrange()</code> to find the cheapest item.</strong></p>
@@ -526,7 +529,6 @@ How?</p>
 </p>
 </details>
 </div>
-<p><br></p>
 <blockquote>
 <p><strong>CONGRATULATIONS</strong> of galactic proportions to you.</p>
 <p>We now have a clean and tidy data set. If BB8 ever receives new data again, we can re-run this script and in seconds we’ll have it all cleaned up.</p>
@@ -534,6 +536,7 @@ How?</p>
 <div style="clear: both;">
 
 </div>
+<p><br></p>
 </div>
 </div>
 <div id="plots-with-ggplot2" class="section level1" number="2">
@@ -572,7 +575,6 @@ A <code>ggplot</code> has 3 ingredients.
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> destination, <span class="at">y =</span> amount)) <span class="sc">+</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
 <p><img src="/page/Day2_PM_files/figure-html/unnamed-chunk-32-1.png" width="960" /></p>
-<p><br></p>
 </div>
 <div id="colors" class="section level2 unnumbered">
 <h2>Colors</h2>
@@ -726,7 +728,7 @@ A <code>ggplot</code> has 3 ingredients.
 <div id="yoda-says" class="section level3 unnumbered yoda">
 <h3>Yoda says</h3>
 <p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
-<p>An easy way to experiment with colors is to add layers like <code>+ scale_fill_brewer()</code> or <code>+ scale_color_brewer()</code> to your plot. These link to <strong>colorBrewer</strong> palettes to give you accessible color themes. See <a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html" class="uri">https://ggplot2.tidyverse.org/reference/scale_brewer.html</a>.</p>
+<p>One way to experiment with colors is to add the layers <code>+ scale_fill_brewer()</code> or <code>+ scale_color_brewer()</code> to your plot. These link to <a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html"><strong>colorBrewer</strong></a> palettes to give you accessible color themes.</p>
 </div>
 </div>
 <div id="bar-charts" class="section level2 unnumbered">
@@ -831,9 +833,8 @@ A <code>ggplot</code> has 3 ingredients.
 <span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>   .... <span class="sc">+</span></span>
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>   ....</span>
 <span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Then save your plot to a png file of your choosing</span></span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;results/plot_name.png&quot;</span>)</span></code></pre></div>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Then save your plot to a png file of your choosing</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;results/plot_name.png&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p><em>Learn more about saving plots at</em> <a href="http://stat545.com/block017_write-figure-to-file.html">http://stat545.com/</a></p>
@@ -884,7 +885,6 @@ A <code>ggplot</code> has 3 ingredients.
 <p><br></p>
 <div id="porgtastic" class="section level2 unnumbered">
 <h2><i class="fa fa-star" style="color: gold"></i> PORGTASTIC <i class="fa fa-star" style="color: gold"></i></h2>
-<hr class="hrlvl2">
 <blockquote>
 <h3 id="woop" class="unnumbered">Woop!</h3>
 <p>We found enough Black Boxes to trade Plutt and get the whole crew back together. Serious kudos to you.</p>
@@ -953,9 +953,8 @@ A <code>ggplot</code> has 3 ingredients.
 <ul>
 <li>How to modify the gridlines behind your chart?
 <ul>
-<li>Try the different themes at the end of this lesson: <code>theme_light()</code> or <code>theme_bw()</code></li>
-<li>Or modify the color and size with <code>theme(panel.grid.minor = element_line(colour = "white", size = 0.5))</code></li>
-<li>There’s even <code>theme_excel()</code></li>
+<li>Try the different themes at the end of this lesson: <code>+ theme_light()</code> or <code>+ theme_bw()</code></li>
+<li>Or modify the color and size with <code>+ theme(panel.grid.minor = element_line(colour = "white", size = 0.5))</code></li>
 </ul></li>
 <li>How do you set the x and y scale manually?
 <ul>
@@ -964,8 +963,8 @@ A <code>ggplot</code> has 3 ingredients.
 </ul></li>
 <li>How do you get rid of the legend if you don’t need it?
 <ul>
-<li><code>geom_point(aes(color = facility_name), show.legend = FALSE)</code></li>
-<li>The <a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">R Cookbook</a> shows a number of ways to get rid of legends.</li>
+<li><code>geom_point(aes(color = county), guide = FALSE)</code></li>
+<li>The <a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">R Cookbook</a> shows a number of ways to hide legends.</li>
 </ul></li>
 <li>I only like dashed lines. How do you change the linetype to a <em>dashed</em> line?
 <ul>
@@ -980,17 +979,11 @@ A <code>ggplot</code> has 3 ingredients.
 <li><code>library(viridis)</code> provides some great default color palettes for charts and maps.</li>
 <li>This <a href="http://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3">Color web tool</a> has palette ideas and color codes you can use in your plots</li>
 </ul></li>
-<li>Keyboard shortcuts for RStudio
-<ul>
-<li>There is a <a href="https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf">Shortcut cheatsheet</a></li>
-<li>In RStudio you can go to <em>Help</em> &gt; <em>Keyboard Shortcuts Help</em></li>
-</ul></li>
 </ul>
 </p>
 </div>
 </details>
 <p><br></p>
-<p><br><br></p>
 </div>
 </div>
 <div id="homeworld-training" class="section level1 unnumbered">
@@ -1007,8 +1000,8 @@ A <code>ggplot</code> has 3 ingredients.
 </ol>
 <p><br></p>
 <ol start="2" style="list-style-type: decimal">
-<li>Create 2 plots using the data.</li>
-<li><em>Don’t worry if it looks</em> <strong>really wrong</strong>. <em>Consider it art and try again.</em></li>
+<li>Create 3 plots using the data.</li>
+<li>Don’t worry if it looks <strong>really wrong</strong>. Consider it art and try again.</li>
 </ol>
 <p><br></p>
 <div id="yoda-says-1" class="section level3 unnumbered yoda">

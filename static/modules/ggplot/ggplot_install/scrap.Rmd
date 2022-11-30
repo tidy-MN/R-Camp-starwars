@@ -48,7 +48,7 @@ Well, well, well, it looks like there is an **All** category we should look into
 
 Try changing `theme_gray()` to `theme_dark()`. What changes on the chart? What stays the same?
 
-Try another theme: `theme_classic()` or `theme_void()` or delete the entire line and the `+` above to see what the default settings are.
+Try another theme: `theme_classic()` or `theme_minimal()` or delete the entire line and the `+` above to see what the default settings are.
 
 You can view all available theme options at [ggplot2 themes](https://ggplot2.tidyverse.org/reference/ggtheme.html).
 

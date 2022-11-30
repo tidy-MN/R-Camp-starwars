@@ -1,8 +1,7 @@
 
 
-Back to the toolbox.
 
-The next tool is the best yet. The `filter()` function creates a subset of the data based on the value of one or more columns.
+The `filter()` function creates a subset of the data based on the value of one or more columns.
 
 Let's use it to take a look at the records in the data that had an origin of `"All"`.
 

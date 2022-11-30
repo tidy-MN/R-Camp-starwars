@@ -150,7 +150,6 @@ Now, try setting the **fill** argument equal to the `destination` column.
 ```
 
 
-
 ![](../images/scaryR.jpg){style="margin-left: 11%; width: 78%;"}
 
 # Learn more!

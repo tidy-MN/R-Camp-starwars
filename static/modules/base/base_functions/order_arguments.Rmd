@@ -1,7 +1,7 @@
 
 <details>
 <summary class="btn_code_blue">
-<span style="color: #f6cd00;"><i class="fas fa-star"></i>__BONUS__<i class="fas fa-star"></i> </span> __Does the order of arguments matter?__ 
+<span style="color: #f6cd00;"><i class="fas fa-star"></i></span> __Does the order of arguments matter?__ 
 </summary>
 
 <div class="note" style="margin-top: -14px;">
@@ -39,7 +39,7 @@ Unfortunately, that's no good for the porgs. If we really want to write _"veggie
 
 When we ran *read_csv* we wrote:
 
-- `read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv")
+- `read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku.csv")`
 
 
 R assumes that the first argument you supplied is meant to be the path to the data file. That's because _file_ is the __1st__ argument in `read_csv()`.
@@ -48,7 +48,9 @@ Howerver, if we wanted to tell the function to skip the first row in the file, w
 
 So we would add skip like this:
 
-- `read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv", skip = 1)`
+```{r, eval=F}
+read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku.csv", skip = 1)
+```
 
 </p></div></details>
 

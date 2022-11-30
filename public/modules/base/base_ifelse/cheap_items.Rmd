@@ -36,16 +36,13 @@ cheap_scrap <- filter(scrap,  _________ )
 ```
 
 
-<br>
-
-**How many items are cheap?** 
+### How many items are cheap? {-}
 ```{r, eval=F}
 n_distinct(cheap_scrap$item)
 ```
 
-<br>
 
-**What are the cheap items?**  
+### What are the cheap items? {-}
 
 ```
 Try the unique() function on cheap_scrap$item.
@@ -56,7 +53,6 @@ Try the unique() function on cheap_scrap$item.
 </div>
 
 
-<br>
 <br>
 
 <div class="quiz">
@@ -81,7 +77,4 @@ __What is it?__
 _You win! _
 
 </p></details></div>
-
-<br>
-
 

@@ -1,5 +1,5 @@
 
-## Bargain hunters {-}
+### Bargain hunters {-}
 
 Who's selling goods for cheap? Use `group_by` with the column _Origin_ to find the `mean(price_per_pound)` at each Origin City.
 
@@ -16,6 +16,7 @@ scrap_means <- summarize(scrap_means,
 <summary class="btn_code_blue"> Rounding digits </summary>
 <div class="note" style="margin-top: -7px;">
 <p>
+
 ### Rounding {-}
 
 You can round the prices to a certain number of digits using the `round()` function. We can finish by adding the `arrange()` function to sort the table by our new column.
@@ -42,8 +43,6 @@ The `round()` function in R does not automatically round values ending in 5 upwa
 </details>
 
 
-<br>
-
 ## Busiest scrap city {-}
 
 So who's making the most transactions? Try using `group_by` with the column _origin_ to count the number of scrap records at each city. We can use the tiny-tiny function `n()` to count the number of rows.
@@ -57,7 +56,6 @@ scrap_counts <- summarize(scrap,
 scrap_counts <- ungroup(scrap_counts)
 ```
 
-<br>
 
 <div class="note">
 ### <i class="fas fa-hand-spock"></i> Spock-tip! {-}
@@ -109,5 +107,3 @@ scrap <- ungroup(scrap)
 <br>
 
 > Add `round()` to your script to round the value of *origin_mean_price* to 1 digit.
-
-<br>

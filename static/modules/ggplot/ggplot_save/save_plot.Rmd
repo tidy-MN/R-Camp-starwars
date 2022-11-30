@@ -15,7 +15,6 @@ ggplot(data, aes()) +
    .... +
    ....
 
-
 # Then save your plot to a png file of your choosing
 ggsave("results/plot_name.png")
 ```

@@ -63,7 +63,7 @@
   "headline": "Day 2 - AM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  3602 ,
+  "wordCount":  3575 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -361,11 +361,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#finn-needs-us" id="toc-finn-needs-us">Finn needs us!</a></li>
 <li><a href="#jakku-re-visited" id="toc-jakku-re-visited"><span class="toc-section-number">2</span> Jakku re-visited</a></li>
 <li><a href="#join-tables-with-left_join" id="toc-join-tables-with-left_join"><span class="toc-section-number">3</span> Join tables with <strong>left_join</strong></a></li>
-<li><a href="#summarize-this" id="toc-summarize-this"><span class="toc-section-number">4</span> <code>summarize()</code> this</a></li>
+<li><a href="#summarize" id="toc-summarize"><span class="toc-section-number">4</span> <code>summarize()</code></a></li>
 <li><a href="#group_by-category" id="toc-group_by-category"><span class="toc-section-number">5</span> <code>group_by()</code> category</a></li>
 <li><a href="#save-files" id="toc-save-files"><span class="toc-section-number">6</span> Save files</a></li>
 <li><a href="#grouped-mutate" id="toc-grouped-mutate"><span class="toc-section-number">7</span> Grouped <code>mutate()</code></a></li>
-<li><a href="#your-turn-a-sickness-grows" id="toc-your-turn-a-sickness-grows"><span class="toc-section-number">8</span> YOUR TURN! A sickness grows…</a></li>
+<li><a href="#a-sickness-grows" id="toc-a-sickness-grows"><span class="toc-section-number">8</span> A sickness grows…</a></li>
 </ul>
 </div>
 
@@ -465,9 +465,7 @@ hr {background: #62BE2C;}
 <div id="finn-needs-us" class="section level1 unnumbered">
 <h1>Finn needs us!</h1>
 <p>Turn this ship around BB8, Finn needs us back on Jakku. We’re going to have to get better at our roll call procedure. Here we come Finn. <strong>Blast off!</strong></p>
-<p><br></p>
 <p><img src="../images/finn_run.gif" style="margin-left: 18%; width: 60%; margin-top: 6px;" /></p>
-<p><br></p>
 </div>
 <div id="jakku-re-visited" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Jakku re-visited</h1>
@@ -476,19 +474,17 @@ hr {background: #62BE2C;}
 <div id="a-scrappy-ransom" class="section level2 unnumbered">
 <h2>A scrappy ransom</h2>
 <p>Mr. Baddy Plutt is demanding <strong>10,000 items</strong> of scrap for Finn. Sounds expensive, but lucky for us he didn’t clarify the exact items. Let’s find the scrap that weighs the least per shipment and try to make this transaction as light as possible.</p>
-<p><br></p>
-<div class="tip">
-<h3 style="margin-top: 13px;">
+<div class="tip" style="margin-top: 28px; margin-bottom: 28px;">
+<h3 style="margin-top: 8px;">
 Update from BB8!
 </h3>
 <p>BB8 was busy on our flight back to Jakku, and recovered a <strong>full</strong> set of scrap records from the notorious Unkar Plutt. Let’s take a look.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the full scrap database</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the full scrap data</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/starwars_scrap_jakku_full.csv&quot;</span>)</span></code></pre></div>
 </div>
-<p><br></p>
 <p>Take a look at the <strong>NEW</strong> scrap data and see if we have the weight of all the items.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What unit types are in the data?</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(scrap<span class="sc">$</span>units)</span></code></pre></div>
@@ -507,10 +503,6 @@ Update from BB8!
 <p><em>A lot? 32? Maybe…</em></p>
 <p>I think we’re going to need some more data.</p>
 <p><br></p>
-<div class="tip">
-<p><strong>“Hey BB8!”</strong></p>
-<p><strong>“Do your magic data finding thing.”</strong></p>
-</div>
 </div>
 <div id="weight-conversion" class="section level2 unnumbered">
 <h2>Weight conversion</h2>
@@ -573,23 +565,28 @@ Update from BB8!
 <p><br></p>
 <details>
 <summary class="btn_code_blue">
-<span style="color: #f6cd00;"><i class="fas fa-star"></i><strong>BONUS</strong><i class="fas fa-star"></i></span> <strong>More joining</strong>
+<span style="color: #f6cd00;"><i class="fas fa-star"></i></span> <strong>More joining</strong>
 </summary>
-<div class="note" style="margin-top: -10px;">
+<div class="note" style="margin-top: -2px;">
 <p>
 <div id="star-wars-characters" class="section level3 unnumbered">
 <h3>Star Wars characters</h3>
-<p><strong>left_join()</strong> adds columns to your table by pulling them from another table. Imagine you have the 2 Star Wars tables below. One table includes character names and heights; the second has names and homeworlds. Since both tables share a common name column, we can join the tables together using the name columns as the joining key.</p>
+<p><strong>left_join()</strong> adds columns to your table by pulling them from another table.</p>
+<p>Imagine you have the two tables below.</p>
+<ul>
+<li>The left table has character names and heights</li>
+<li>The right table has names and homeworlds.</li>
+</ul>
+<p>Since both tables share a common name column, we can join the tables together using the <code>name</code> column as the joining key.</p>
 <style type="text/css"> 
 .table {width: 30%;} 
 </style>
-<p><br></p>
 <div style="float: left;">
 <p><code>starwars_heights</code></p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">starwars_name</th>
+<th align="left">name</th>
 <th align="right">height</th>
 </tr>
 </thead>
@@ -622,7 +619,7 @@ Update from BB8!
 <table>
 <thead>
 <tr class="header">
-<th align="left">starwars_name</th>
+<th align="left">name</th>
 <th align="left">homeworld</th>
 </tr>
 </thead>
@@ -654,29 +651,28 @@ Update from BB8!
 
 </div>
 <p><br></p>
-<p><strong>Uh oh.</strong> There’s no “Ayla Secura” in the height table and there’s no “Greedo” in the homeworld table. Can we still join the tables? Run the code below to see what happens.</p>
-<p><br></p>
+<p><strong>Uh oh.</strong> There’s no “Ayla Secura” in the height table and there’s no “Greedo” in the homeworlds table. Can we still join the tables? Run the code below to see what happens.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>   </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">246</span>))      </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">246</span>))      </span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by starwars_name</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Tell left_join which columns to use as the key with:  </span></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="do">##     by = c(&quot;key_left&quot; = &quot;key_right&quot;)</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds, </span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;starwars_name&quot;</span> <span class="ot">=</span> <span class="st">&quot;starwars_name&quot;</span>))</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;name&quot;</span> <span class="ot">=</span> <span class="st">&quot;name&quot;</span>))</span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>height_and_homeworld</span></code></pre></div>
 <p><br></p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">starwars_name</th>
+<th align="left">name</th>
 <th align="right">height</th>
 <th align="left">homeworld</th>
 </tr>
@@ -710,11 +706,11 @@ Update from BB8!
 </tbody>
 </table>
 <p><br></p>
-<div id="did-it-work" class="section level4 unnumbered">
-<h4>Did it work?</h4>
-<p>When <strong>left_join</strong> adds the <code>homeworlds</code> column to the <em>starwars_heights</em> table it only adds a value for the characters when the tables have a matching character name. When R couldn’t find “Greedo” in the homeworld table, the Star Wars character’s homeworld was recorded as missing or <em><code>NA</code></em>.</p>
-<p><br></p>
 </div>
+<div id="did-it-work" class="section level3 unnumbered">
+<h3>Did it work?</h3>
+<p>When <strong>left_join</strong> adds the <code>homeworlds</code> column to the <em>starwars_heights</em> table it only adds a value for the characters when the tables have a matching character name. When R couldn’t find “Greedo” in the homeworld table, the homeworld for that row was recorded as missing or <em><code>NA</code></em>.</p>
+<p><br></p>
 </div>
 <div id="multiple-records" class="section level3 unnumbered">
 <h3>Multiple records</h3>
@@ -732,7 +728,7 @@ Update from BB8!
 <table>
 <thead>
 <tr class="header">
-<th align="left">starwars_name</th>
+<th align="left">name</th>
 <th align="right">height</th>
 </tr>
 </thead>
@@ -765,7 +761,7 @@ Update from BB8!
 <table>
 <thead>
 <tr class="header">
-<th align="left">starwars_name</th>
+<th align="left">name</th>
 <th align="left">homeworld</th>
 </tr>
 </thead>
@@ -800,15 +796,14 @@ Update from BB8!
 <div style="clear: both;">
 
 </div>
-<p><br></p>
 <p>When you run the code below you’ll see that <strong>left_join</strong> is very thorough and adds each additional homeworld it finds for <em>C-3PO</em> as a new row in the joined table.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new tables </span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">height  =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">173</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>starwars_heights <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Greedo&quot;</span>), </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">height  =</span> <span class="fu">c</span>(<span class="dv">172</span>, <span class="dv">167</span>, <span class="dv">202</span>, <span class="dv">150</span>, <span class="dv">173</span>))</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">starwars_name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tantive IV&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>starwars_homeworlds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Luke Skywalker&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;C-3PO&quot;</span>, <span class="st">&quot;Darth Vader&quot;</span>, <span class="st">&quot;Leia Organa&quot;</span>, <span class="st">&quot;Ayla Secura&quot;</span>), </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                              <span class="at">homeworld =</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Tantive IV&quot;</span>, <span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Alderaan&quot;</span>, <span class="st">&quot;Ryloth&quot;</span>))</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the tables together by Star Wars character name</span></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>height_and_homeworld <span class="ot">&lt;-</span> <span class="fu">left_join</span>(starwars_heights, starwars_homeworlds)</span>
@@ -821,7 +816,7 @@ Update from BB8!
 <table>
 <thead>
 <tr class="header">
-<th align="left">starwars_name</th>
+<th align="left">name</th>
 <th align="right">height</th>
 <th align="left">homeworld</th>
 </tr>
@@ -872,14 +867,13 @@ Update from BB8!
 <style type="text/css"> 
 .table {width: auto;} 
 </style>
-<p><br></p>
 </div>
 </div>
 <div id="back-to-the-scrap-yard" class="section level2 unnumbered">
 <h2>Back to the scrap yard</h2>
 <hr class="hrlvl2">
 <p>Let’s apply our new <code>left_join()</code> skills to the scrap data.</p>
-<p>First, let’s re-read the full scrap data.</p>
+<p>First, let’s load the full scrap data.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -897,7 +891,9 @@ Update from BB8!
 <div id="join-the-conversion-table-to-scrap" class="section level3 unnumbered">
 <h3>Join the conversion table to scrap</h3>
 <p>Look at the tables. What columns in both tables do we want to join <strong>by</strong>?</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(scrap)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(scrap)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(convert)</span></code></pre></div>
 <p>Let’s join by <code>item</code> and <code>units</code>.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the scrap to the conversion table</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">left_join</span>(scrap, convert, </span>
@@ -921,11 +917,11 @@ Update from BB8!
 ## # … with abbreviated variable names ¹​destination, ²​price_per_pound,
 ## #   ³​pounds_per_unit</code></pre>
 <p><br></p>
-</div>
-<div id="help" class="section level3 unnumbered quiz">
-<h3><strong>Help!</strong></h3>
+<div id="help" class="section level4 unnumbered quiz">
+<h4><strong>Help!</strong></h4>
 <p>For more details on the <strong>join</strong> family of functions, you can type <code>?left_join</code> to see all the arguments and options.
 <br></p>
+</div>
 </div>
 </div>
 <div id="total-pounds-per-shipment" class="section level2 unnumbered">
@@ -937,15 +933,11 @@ Update from BB8!
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span>  _____________ )</span></code></pre></div>
 <details>
-<summary class="btn_code">
+<summary class="btn_code_blue">
 <em>Show code</em>
 </summary>
-<p>
-<div class="quiz" style="margin-top: -6px;">
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span> pounds_per_unit)</span></code></pre></div>
-</div>
-</p>
 </details>
 </div>
 <div id="total-price-per-shipment" class="section level2 unnumbered">
@@ -968,12 +960,11 @@ Update from BB8!
 <h4>
 Total price
 </h4>
-<p>We need to do some serious multiplication. We now have the total amount shipped in pounds, and the price per pound, but we want to know the total price for each transaction.</p>
+<p>We need to do some serious multiplication. We have the total amount shipped in pounds, and the price per pound, but we want to know the total price for each shipment.</p>
 <p>How do we calculate that?</p>
 <pre class="sourceCode r">
 # Calculate the total price for each shipment
-scrap <- scrap %>% 
-         mutate(credits = ________ * ________ )
+scrap <- mutate(scrap, credits = ________ * ________ )
          
 </pre>
 </div>
@@ -985,8 +976,7 @@ Total price
 <p>How do we calculate that?</p>
 <pre class="sourceCode r">
 # Calculate the total price for each shipment
-scrap <- scrap %>% 
-         mutate(credits = total_pounds  * ________ )
+scrap <- mutate(scrap, credits = total_pounds  * ________ )
 
 </pre>
 </div>
@@ -998,26 +988,25 @@ Total price
 <p>How do we calculate that?</p>
 <pre class="sourceCode r">
 # Calculate the total price for each shipment
-scrap <- scrap %>% 
-         mutate(credits = total_pounds * price_per_pound)
+scrap <- mutate(scrap, credits = total_pounds * price_per_pound)
          
 </pre>
 </div>
 </div>
 </div>
 <p><br></p>
-</div>
-<div id="price-per-item" class="section level2 unnumbered">
-<h2>Price per item $</h2>
-<p><strong>Great!</strong> Let’s add one last column. We can divide the shipment’s <em>credits</em> by the <em>amount</em> of items to get the <code>price_per_unit</code>.</p>
+<div id="price-per-item" class="section level3 unnumbered">
+<h3>Price$ per item</h3>
+<p><strong>Great!</strong></p>
+<p>Let’s add one last column. We can divide the shipment’s <em>credits</em> by the <em>amount</em> of items to get the <code>price_per_unit</code>.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the price per unit</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">price_per_unit =</span> credits <span class="sc">/</span> amount)</span></code></pre></div>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, <span class="at">price_per_unit =</span> credits <span class="sc">/</span> amount)</span></code></pre></div>
 <p><br></p>
 </div>
 </div>
-<div id="summarize-this" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> <code>summarize()</code> this</h1>
+</div>
+<div id="summarize" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> <code>summarize()</code></h1>
 <hr>
 <p><img src="../images/summarize_diagram.png" width="590" /></p>
 <p><code>summarize()</code> uses summary functions <code>mean()</code> or <code>sum()</code> to collapse the data down to a single summary row. To get started we’ll need some summary functions like <code>sum()</code>, <code>mean()</code>, <code>min()</code>, and <code>max()</code>.</p>
@@ -1072,7 +1061,7 @@ scrap <- scrap %>%
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(scrap, <span class="at">scrap_records =</span> <span class="fu">n</span>())</span></code></pre></div>
 <p><br></p>
 <div id="explore-1" class="section level3 unnumbered tip">
-<h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
+<h3>Explore!</h3>
 <ol style="list-style-type: decimal">
 <li>Create a summary of the scrap data that includes 3 of the summary functions above. The following is one example.</li>
 </ol>
@@ -1092,10 +1081,9 @@ scrap <- scrap %>%
 </div>
 <p><br></p>
 <blockquote>
-<h3 style="margin-top: 12px;">
+<h4 style="margin-top: 12px;">
 <strong>How about a count of the records for every city?</strong>
-</h3>
-<p>That sounds like a whole lot of summarizing.</p>
+</h4>
 <p>It’d sure be nice if we could easily count the records for every city.</p>
 </blockquote>
 </div>
@@ -1104,8 +1092,8 @@ scrap <- scrap %>%
 <h1><span class="header-section-number">5</span> <code>group_by()</code> category</h1>
 <hr>
 <p><code>group_by()</code> gives us the power to calculate separate results for each category in the data. This could be the average concentration at each of your monitoring sites, or the total emissions of a pollutant from each facility or stack.</p>
-<div id="bargain-hunters" class="section level2 unnumbered">
-<h2>Bargain hunters</h2>
+<div id="bargain-hunters" class="section level3 unnumbered">
+<h3>Bargain hunters</h3>
 <p>Who’s selling goods for cheap? Use <code>group_by</code> with the column <em>Origin</em> to find the <code>mean(price_per_pound)</code> at each Origin City.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scrap, origin) </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1137,7 +1125,6 @@ Rounding digits
 </div>
 </div>
 </details>
-<p><br></p>
 </div>
 <div id="busiest-scrap-city" class="section level2 unnumbered">
 <h2>Busiest scrap city</h2>
@@ -1148,7 +1135,6 @@ Rounding digits
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">origin_count =</span> <span class="fu">n</span>())</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>scrap_counts <span class="ot">&lt;-</span> <span class="fu">ungroup</span>(scrap_counts)</span></code></pre></div>
-<p><br></p>
 <div id="spock-tip" class="section level3 unnumbered note">
 <h3><i class="fas fa-hand-spock"></i> Spock-tip!</h3>
 <p>Ending with <code>ungroup()</code> is good practice. This prevents your data from staying grouped after the summarizing has been completed.</p>
@@ -1187,28 +1173,27 @@ Rounding digits
 <blockquote>
 <p>Add <code>round()</code> to your script to round the value of <em>origin_mean_price</em> to 1 digit.</p>
 </blockquote>
-<p><br></p>
 <div id="save-results" class="section level2 unnumbered">
 <h2>Save results</h2>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(scrap, <span class="st">&quot;results/scrap_day2.csv&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="your-turn-a-sickness-grows" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> YOUR TURN! A sickness grows…</h1>
+<div id="a-sickness-grows" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> A sickness grows…</h1>
 <blockquote>
-<p>Practicing joining and summarizing</p>
+<p><strong>Your turn!</strong> Practicing joining and summarizing</p>
 </blockquote>
 <style>
 
 .button-dl {
-    padding: 8px;
-    padding-right: 14px;
+    padding: 7px;
+    padding-right: 15px;
     padding-left: 14px;
     color: #254d67;
     background-color: #e8e8e8;
     margin-left: 12px;
-    margin-top: 18px;
-    margin-bottom: 8px;
+    margin-top: 16px;
+    margin-bottom: 6px;
     position: relative;
     z-index: 99;
     border-color: #a3b6c6;
@@ -1217,17 +1202,16 @@ Rounding digits
 }
 </style>
 <p>A sickness is spreading throughout the galaxy. To slow its spread should we restrict travel to some planets? Or is it too late?</p>
-<p><br></p>
-<p>Follow the steps below to collect the current disease records and summarize the cases by planet. To do so, you will need to join the disease records to a separate table containing the planet information.</p>
+<p>Follow the steps below to collect the current disease records and summarize cases by planet. To do so, you’ll need to join the disease records to a separate table with the planet information.</p>
 <div id="create-a-new-project" class="section level3 unnumbered">
 <h3>Create a new project</h3>
 <p>Go to <code>File</code> &gt; <code>New Project...</code> &gt; <code>New Directory</code> &gt; <code>New Project</code></p>
 <ul>
-<li>Name the project “starsick”</li>
+<li>Name the project <code>sickness</code></li>
 </ul>
 </div>
-<div id="get-the-disease-data" class="section level3 unnumbered">
-<h3>Get the disease data</h3>
+<div id="get-the-disease-data" class="section level2 unnumbered">
+<h2>Get the disease data</h2>
 <p><a href="https://mn-r.netlify.app/data/disease_records.xlsx"><button class="button-dl" download="disease_records.xlsx">
 Download (XLSX)   <i class="fa fa-download"></i>
 </button></a></p>
@@ -1236,101 +1220,112 @@ Download (XLSX)   <i class="fa fa-download"></i>
 <li>Save the file to your project folder</li>
 </ul>
 <p>If the file was automatically downloaded to your <em>Downloads</em> folder, move or copy the file to your project folder.</p>
-</div>
 <div id="load-the-data" class="section level3 unnumbered">
 <h3>Load the data</h3>
 <blockquote>
-<p>Create a new R script and save it as “disease_report.R”</p>
+<p>Create a new R script and save it as <em>disease_report.R</em></p>
 </blockquote>
-<p>Use <code>read_xlsx()</code> from the <code>readxl</code> library to load the disease data into R. Add the code below to your R script and replace the blank with the file name to load the data.</p>
+<p>To load the data, use <code>read_xlsx()</code> from the <code>readxl</code> library to load the disease data into R. Add the code below to your R script and ensure the file name matches the file added to your project folder.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>records <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;______&quot;</span>)</span></code></pre></div>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>records <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;disease_records.xlsx&quot;</span>)</span></code></pre></div>
 <details>
-<summary class="btn_code">
-<strong>Plan B:</strong> Read data from CSV
+<summary class="btn_code_blue">
+<strong>Plan B</strong> - Read the data from CSV
 </summary>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>records <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/disease_records.csv&quot;</span>)</span></code></pre></div>
 </details>
-<div id="explore-2" class="section level4 unnumbered">
-<h4>Explore</h4>
+</div>
+<div id="explore-2" class="section level3 unnumbered">
+<h3>Explore</h3>
 <p>Use <code>glimpse()</code> to view a summary of the data columns.</p>
 </div>
 </div>
-<div id="planet-data" class="section level3 unnumbered">
-<h3>Planet data</h3>
+<div id="planet-data" class="section level2 unnumbered">
+<h2>Planet data</h2>
 <p>To find the planets these records are associated with, we will need to join the records data to the <code>starwars</code> data set in the package <code>dplyr</code>.</p>
 <p>To load the planet data, add the following to your R script:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> starwars</span></code></pre></div>
-<div id="explore-3" class="section level4 unnumbered">
-<h4>Explore</h4>
+<div id="explore-3" class="section level3 unnumbered">
+<h3>Explore</h3>
+<blockquote>
 <p>What is the number of distinct values in the <code>homeworld</code> column of the <em>people</em> data set?</p>
+</blockquote>
 <ul>
 <li>Use <code>n_distinct()</code> to count the number of ‘homeworld’ planets.</li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(people, <span class="at">n_homeworlds =</span> <span class="fu">n_distinct</span>( _______ ))</span></code></pre></div>
-<p><br></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(people, <span class="at">n_planets =</span> <span class="fu">n_distinct</span>( _______ ))</span></code></pre></div>
+<blockquote>
 <p>What are they? Print the unique values of the <code>homeworld</code> column in the <em>people</em> data set:</p>
+</blockquote>
 <ul>
 <li>Use <code>distinct()</code> to show the unique values of <code>homeworld</code> column.</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(people, ________)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(people, ________ )</span></code></pre></div>
 <blockquote>
-<p>Is one of the homeworlds <code>NA</code>? What does the ‘NA’ mean?</p>
+<p>Is one of the homeworlds <code>NA</code>? What does the ‘NA’ mean here?</p>
 </blockquote>
+<p><br></p>
 </div>
-</div>
-<div id="join-the-homeworld-column-to-the-disease-records" class="section level3 unnumbered">
-<h3>Join the homeworld column to the disease records</h3>
+<div id="join-the-homeworld-planets-to-disease-records" class="section level3 unnumbered">
+<h3>Join the homeworld planets to disease records</h3>
 <p>Complete the script below to join the two data sets.</p>
-<p>Fill in the first blank with the name of the data you want to join to <code>records</code>. In the second blank, put the column name found in both data sets that you want to join <strong>by</strong>. This is the column that both tables have in common.</p>
+<ol style="list-style-type: decimal">
+<li>In the 1st blank, with the name of the data you want to join to <code>records</code>.<br />
+</li>
+<li>In the 2nd blank, put the column name found in both data sets that you want to join <strong>by</strong> in quotes <code>""</code>. This is the column that both tables have in common.</li>
+</ol>
 <blockquote>
-<p>You can run <code>names(records)</code> to view the column names in a dataframe.</p>
+<p>You can run <code>names(records)</code> to view the column names in the dataframe.</p>
 </blockquote>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(records, _______, <span class="at">by =</span> <span class="st">&quot;______&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(records, _______ , </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">by =</span> <span class="st">&quot;______&quot;</span> )</span></code></pre></div>
 </div>
 <div id="summarize-the-records-by-homeworld" class="section level3 unnumbered">
 <h3>Summarize the records by homeworld</h3>
-<p>Use <code>group_by()</code> to group the records by <code>homeworld</code> planet.</p>
+<p>Use <code>group_by()</code> to group the records by the planet column:<code>homeworld</code></p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>joined <span class="ot">&lt;-</span> <span class="fu">group_by</span>(joined, homeworld) </span></code></pre></div>
 <p><br></p>
-<p>Now you can use the <code>n()</code> function to find the sum total of records by <code>homeworld</code>.</p>
+<p>Now you can use the <code>n()</code> function to find the number of records by <code>homeworld</code>.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>planet_totals <span class="ot">&lt;-</span> <span class="fu">summarize</span>(joined, <span class="at">cases =</span> _______ )</span></code></pre></div>
 </div>
 <div id="restricted-travel" class="section level3 unnumbered">
 <h3>Restricted travel?</h3>
-<p>Use <code>arrange()</code> to sort the results by the <code>cases</code> column.</p>
 <blockquote>
-<p>Which planet has the most?</p>
+<p>Which planet has the most cases?</p>
 </blockquote>
+<p>Use <code>arrange()</code> and <code>desc()</code> to sort the results by the <code>cases</code> column.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>planet_totals <span class="ot">&lt;-</span> <span class="fu">arrang</span>(planet_totals, ________ )</span></code></pre></div>
 <p><br></p>
-<p>The health liaison has recommended cutting off travel to any planet with more than 20 cases.</p>
-<p>Use <code>filter()</code> to keep only the planets in the data with more than 20 in the <code>cases</code> column.</p>
 <blockquote>
 <p>How many planets are off limits?</p>
 </blockquote>
+<p>The health liaison has recommended cutting off travel to any planet with more than 20 cases.</p>
+<p>Use <code>filter()</code> to keep only the planets in the data with more than 20 in the <code>cases</code> column.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>off_limits <span class="ot">&lt;-</span> <span class="fu">filter</span>(planet_totals, ________ )</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="save" class="section level3 unnumbered">
 <h3>Save</h3>
 <ol style="list-style-type: decimal">
-<li>Use <code>write_csv()</code> to save the list as <strong>“restricted_planets.csv”</strong>.<br />
+<li>Use <code>write_csv()</code> to save the planet list as <strong>“restricted_planets.csv”</strong>.<br />
 </li>
 <li>Save your R script.<br />
 </li>
 <li>Clap 3 times for your great work.<br />
 </li>
-<li>When you’re ready, return to your <code>jakku</code> project.</li>
+<li>When ready, return to your <code>jakku</code> project.</li>
 </ol>
 <p><br></p>
 </div>
 <div id="return-to-homebase" class="section level3 unnumbered">
 <h3><i class="fa fa-rocket" aria-hidden="true"></i> Return to <a href="../post/day-2.html">Homebase</a></h3>
 <p><br></p>
+</div>
 </div>
 </div>
 

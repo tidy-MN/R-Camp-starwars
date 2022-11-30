@@ -40,8 +40,6 @@ bingo_words <- c("install.packages()",
 
 ### 2. I'll call out the bingo items using an R function we just wrote. It's lovingly named `play_bingo()` {-}
 
-<br>
-
 <details>
 <summary class="btn_code">Show Bingo function</summary>
 

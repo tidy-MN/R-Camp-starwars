@@ -434,33 +434,33 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 <tbody>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2017-05-05</td>
-<td align="right">4</td>
-<td align="right">48.2</td>
+<td align="left">2016-04-06</td>
+<td align="right">9</td>
+<td align="right">49.4</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7001</td>
-<td align="left">2016-05-08</td>
-<td align="right">18</td>
-<td align="right">44.0</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-09-05</td>
-<td align="right">11</td>
-<td align="right">59.6</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7554</td>
-<td align="left">2018-08-31</td>
+<td align="left">2017-06-15</td>
 <td align="right">12</td>
-<td align="right">69.2</td>
+<td align="right">66.8</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7001</td>
-<td align="left">2018-06-04</td>
-<td align="right">13</td>
+<td align="left">2017-09-27</td>
+<td align="right">15</td>
+<td align="right">79.4</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="left">2016-08-25</td>
+<td align="right">12</td>
 <td align="right">73.4</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2018-06-13</td>
+<td align="right">11</td>
+<td align="right">71.0</td>
 </tr>
 </tbody>
 </table>
@@ -1218,8 +1218,7 @@ Pop Quiz!
 <p><input type="radio" name="func"> <em>fly(2 “ships”)</em> <br>
 <input type="radio" name="func"> <em>find, “lightsaber”, “Yoda”</em> <br>
 <input type="radio" name="func"> <em>build(1000, “droids”)</em> <br>
-<input type="radio" name="func"> <em>wait(until Empire leaves)</em> <br>
-<input type="radio" name="func"> <em>scrap(100-Datapads, “Hyperdrives”)</em> <br></p>
+<input type="radio" name="func"> <em>wait(until Empire leaves)</em> <br></p>
 <details>
 <summary class="btn_code">
 <em>Show solution</em>
@@ -1266,77 +1265,17 @@ Pop Quiz!
 <div id="explore-3" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" aria-hidden="true" style="color: green"></i> Explore!</h3>
 <p>Try changing <code>theme_gray()</code> to <code>theme_dark()</code>. What changes on the chart? What stays the same?</p>
-<p>Try another theme: <code>theme_classic()</code> or <code>theme_void()</code> or delete the entire line and the <code>+</code> above to see what the default settings are.</p>
+<p>Try another theme: <code>theme_classic()</code> or <code>theme_minimal()</code> or delete the entire line and the <code>+</code> above to see what the default settings are.</p>
 <p>You can view all available theme options at <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">ggplot2 themes</a>.</p>
 <br>
 </div>
 <p><br></p>
-<details>
-<summary class="btn_code_blue">
-<span style="color: #f6cd00;"><i class="fas fa-star"></i><strong>BONUS</strong><i class="fas fa-star"></i> </span> <strong>Does the order of arguments matter?</strong>
-</summary>
-<div class="note" style="margin-top: -14px;">
-<p>
-<div id="it-depends." class="section level4 unnumbered">
-<h4>It depends.</h4>
-<p>Let’s say you had a function called <strong><code>feed_porgs()</code></strong> that takes 3 arguments: breakfast, lunch, and dinner.</p>
-<ul>
-<li><code>feed_porgs(breakfast = "donut", lunch = "veggies", dinner = "clams")</code>.</li>
-</ul>
-<p>A shorthand to write this would be:</p>
-<ul>
-<li><code>feed_porgs("donut", "veggies", "clams")</code>.</li>
-</ul>
-<p>This shortcut works out just fine because all of the arguments were entered in the default order, the same as above.</p>
-<p><br></p>
-</div>
-<div id="but-what-happens-if-we-write" class="section level4 unnumbered">
-<h4>But what happens if we write:</h4>
-<ul>
-<li><code>feed_porgs("veggies", "clams", "donut")</code></li>
-</ul>
-<p>Now the function sends <em>veggies</em> to the porgs for breakfast because that is the first argument. Yuk!</p>
-<p>Unfortunately, that’s no good for the porgs. If we really want to write <em>“veggies”</em> first, we’ll need to tell R which food item belongs to which meal.</p>
-</div>
-<div id="like-this" class="section level4 unnumbered">
-<h4>Like this:</h4>
-<ul>
-<li><code>feed_porgs(lunch = "veggies", breakfast = "fish", dinner = "clams")</code>.</li>
-</ul>
-<p><br></p>
-</div>
-<div id="what-about-read_csv" class="section level4 unnumbered">
-<h4>What about <code>read_csv()</code>?</h4>
-<p>When we ran <em>read_csv</em> we wrote:</p>
-<ul>
-<li>`read_csv(“<a href="https://itep-r.netlify.com/data/starwars_scrap_jakku.csv" class="uri">https://itep-r.netlify.com/data/starwars_scrap_jakku.csv</a>”)</li>
-</ul>
-<p>R assumes that the first argument you supplied is meant to be the path to the data file. That’s because <em>file</em> is the <strong>1st</strong> argument in <code>read_csv()</code>.</p>
-<p>Howerver, if we wanted to tell the function to skip the first row in the file, we would need to add <code>skip = 1</code>, because skip by default is the 10th argument in the function.</p>
-<p>So we would add skip like this:</p>
-<ul>
-<li><code>read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku.csv", skip = 1)</code></li>
-</ul>
-</p>
-</div>
-</div>
-</details>
 </div>
 <div id="got-questions" class="section level2 unnumbered">
 <h2>Got questions <i class="far fa-question-circle" aria-hidden="true" style="font-size: 122%;"></i></h2>
-<hr class="hr2">
+<hr class="hrlvl2">
 <p>Lost in an ERROR message? Is something behaving strangely and want to know why? Want ideas for a new chart?</p>
 <p>Go to <a href="help.html">Help!</a> for troubleshooting, cheatsheets, and other learning resources.</p>
-<p><br></p>
-<blockquote>
-<h2 style="color: black; margin-top: 8px;">
-<i class="fas fa-robot" aria-hidden="true"></i> Robot recap
-</h2>
-<ul>
-<li><p>What packages have we added to our <code>library</code>?</p></li>
-<li><p>What new functions have we learned?</p></li>
-</ul>
-</blockquote>
 </div>
 <div id="key-terms" class="section level2 unnumbered">
 <h2><i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms</h2>
@@ -1371,7 +1310,6 @@ Pop Quiz!
 </tbody>
 </table>
 </div>
-<p><br></p>
 </div>
 </div>
 <div id="learn-more" class="section level1" number="8">

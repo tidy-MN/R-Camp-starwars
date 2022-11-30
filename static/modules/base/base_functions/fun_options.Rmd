@@ -70,7 +70,6 @@ __Which of these is a valid function call?__
 <input type="radio" name="func"> _find, "lightsaber", "Yoda"_       <br> 
 <input type="radio" name="func"> _build(1000, "droids")_         <br> 
 <input type="radio" name="func"> _wait(until   Empire    leaves)_     <br> 
-<input type="radio" name="func"> _scrap(100-Datapads, "Hyperdrives")_ <br>
 
 
 <details>

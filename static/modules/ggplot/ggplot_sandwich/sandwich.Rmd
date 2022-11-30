@@ -35,7 +35,6 @@ ggplot(scrap, aes(x = destination, y = amount)) +
   geom_col()
 ```
 
-<br>
 
 ## Colors {-}
 <hr class="hrlvl2">

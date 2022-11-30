@@ -9,5 +9,3 @@
 |`argument  `|  | Arguments are options or inputs that you pass to a function to change how it behaves. The argument `skip = 1` tells the `read_csv()` function to ignore the first row when reading in a data file. To see the default values for a function you can type `?read_csv` in the console.  |  
 
 </div>
-
-<br>

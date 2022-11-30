@@ -2,7 +2,7 @@
 
 Let's apply our new `left_join()` skills to the scrap data.
 
-First, let's re-read the full scrap data.
+First, let's load the full scrap data.
 ```{r join-convert, eval=T}
 library(readr)
 library(dplyr)
@@ -20,6 +20,8 @@ distinct(scrap, units)
 Look at the tables. What columns in both tables do we want to join __by__?
 ```{r, eval=F}
 names(scrap)
+
+names(convert)
 ```
 
 Let's join by `item` and `units`.
@@ -46,7 +48,7 @@ head(scrap, 4)
 
 
 <div class="quiz">
-### __Help!__ {-}
+#### __Help!__ {-}
 
 For more details on the **join** family of functions, you can type `?left_join` to see all the arguments and options.
 <br>

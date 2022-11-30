@@ -165,27 +165,17 @@ Let's load the _readr_ package to use the `read_csv() ` function.
 ```
 
 
-```{r order_arguments, child='../../static/modules/base/base_functions/order_arguments.Rmd'}
-```
-
-
 ## Got questions <i class="far fa-question-circle" aria-hidden="true" style="font-size: 122%;"></i> {-}
-<hr class="hr2">
+<hr class="hrlvl2">
 
 Lost in an ERROR message? Is something behaving strangely and want to know why? Want ideas for a new chart?   
 
 Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning resources. 
 
-<br>
-
-```{r recap, child='../../static/modules/recap/day1.Rmd'}
-```
-
 
 ## <i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms {-} 
 ```{r key-terms, child='../../static/modules/key_terms/day1.Rmd'}
 ```
-
 
 
 # Learn more!

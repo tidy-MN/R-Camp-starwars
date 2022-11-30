@@ -83,7 +83,7 @@ summarize(scrap, scrap_records = n())
 
 
 <div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+### Explore! {-}
 
 1. Create a summary of the scrap data that includes 3 of the summary functions above. The following is one example.
 
@@ -116,9 +116,7 @@ niima_scrap <- summarize(niima_scrap, scrap_records = n())
 
 <br>
 
-> <h3 style="margin-top: 12px;"> __How about a count of the records for every city?__ </h3>
->
-> That sounds like a whole lot of summarizing. 
+> <h4 style="margin-top: 12px;"> __How about a count of the records for every city?__ </h4>
 >
 > It'd sure be nice if we could easily count the records for every city.
 >

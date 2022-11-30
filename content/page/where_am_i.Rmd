@@ -11,7 +11,7 @@ df <- read_csv("new_data.csv")
 ```
 
 
-__But what if the data is located in a different folder?__ 
+__What if the data is in a different folder?__ 
 
 Have you ever tried to call a different country? When you dial a number, your phone will generally assume the default Country Code is the country that you're standing in when you dial a number. But when you want to call another country, like Canada, you have to add the Country Code to the front of the number you're dialing. 
 
@@ -22,13 +22,12 @@ Similarly, to access files outside of your home directory you will need to tell 
 Say you have a folder `Endor` sitting in your project folder, and inside it there's a file called `Ewok_data.csv`. To read the file into R you would write:
 
 ```{r, eval = F}
-
 df <- read_csv("Endor/Ewok_data.csv")
 ```
 
 <br>
 
-> __NOTE:__ The slash used for file paths in R is a forward leaning slash (`/`), and is the opposite of the slash commonly seen in folder locations on _Windows_ computers. If you get an __\*ERROR\*__ when trying to load a file, remember to check your slashes.
+> __NOTE:__ The slash used for file paths in R is a forward leaning slash (`/`), and is the opposite of the slash commonly seen in folder locations on _Windows_ computers. If you get an __ERROR__ when trying to load a file, remember to check your slashes.
 
 <br>
 
@@ -47,8 +46,9 @@ df <- read_csv("C:/Users/me/Desktop/secret_data.csv")
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
 
-Better, simple file paths are. 
-File paths with your user name in them don't share well with others and may break if the data is moved. It's best to store data in your project folder as much as possible to help avoid using absolute paths.
+Much better, simple file paths are. 
+
+File paths with your user name in them don't share well with others and may break if the data is moved. It's best to store data in your project folder as much as possible to avoid using absolute paths.
 
 </div>
 

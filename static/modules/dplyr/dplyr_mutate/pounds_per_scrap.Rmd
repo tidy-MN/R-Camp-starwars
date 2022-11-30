@@ -19,13 +19,14 @@ scrap <- scrap %>%
 ```
 
 <details>
-<summary class = "btn_code">_Show code_</summary>
-<p><div class="quiz" style="margin-top: -6px;">
+<summary class = "btn_code_blue">_Show code_</summary>
+
 ```{r, eval=T}
 scrap <- scrap %>% 
          mutate(total_pounds = amount * pounds_per_unit)
 ```
-</div></p></details>
+
+</details>
 
 
 ## Total price per shipment {-}
@@ -40,14 +41,13 @@ tabs <- c("Total price", "Show hint", "Show code")
 
 content <- c(Exercise = "<h4> Total price </h4>
 
-We need to do some serious multiplication. We now have the total amount shipped in pounds, and the price per pound, but we want to know the total price for each transaction. 
+We need to do some serious multiplication. We have the total amount shipped in pounds, and the price per pound, but we want to know the total price for each shipment. 
 
 How do we calculate that? 
 
 code_start
 # Calculate the total price for each shipment
-scrap <- scrap %>% 
-         mutate(credits = ________ * ________ )
+scrap <- mutate(scrap, credits = ________ * ________ )
          
 code_end",
 
@@ -59,8 +59,7 @@ How do we calculate that?
 
 code_start
 # Calculate the total price for each shipment
-scrap <- scrap %>% 
-         mutate(credits = total_pounds  * ________ )
+scrap <- mutate(scrap, credits = total_pounds  * ________ )
 
 code_end',
 
@@ -72,8 +71,7 @@ How do we calculate that?
 
 code_start
 # Calculate the total price for each shipment
-scrap <- scrap %>% 
-         mutate(credits = total_pounds * price_per_pound)
+scrap <- mutate(scrap, credits = total_pounds * price_per_pound)
          
 code_end')
 
@@ -87,19 +85,19 @@ cat(paste0(tab_html, collapse = "\n"))
 
 ```{r, echo=F}
 # Calculate the total price for each shipment
-scrap <- scrap %>% 
-         mutate(credits = total_pounds * price_per_pound)
+scrap <- mutate(scrap, credits = total_pounds * price_per_pound)
 ```
 
 
-## Price per item $ {-}
+### Price$ per item {-}
 
-__Great!__ Let's add one last column. We can divide the shipment's _credits_ by the _amount_ of items to get the `price_per_unit`.
+__Great!__ 
+
+Let's add one last column. We can divide the shipment's _credits_ by the _amount_ of items to get the `price_per_unit`.
 
 ```{r}
 # Calculate the price per unit
-scrap <- scrap %>% 
-         mutate(price_per_unit = credits / amount)
+scrap <- mutate(scrap, price_per_unit = credits / amount)
 ```
 
 <br>

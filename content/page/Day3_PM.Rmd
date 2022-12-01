@@ -274,8 +274,6 @@ Planet: `Earth`
 ## 🐱 Concatulations! {-}
 <hr class="hrlvl2">
 
-<br>
-
 **You were an excellent Data Droid!** **Rey and BB8 absolutely couldn't have done it without you.**  
 
 > You deserve an award.

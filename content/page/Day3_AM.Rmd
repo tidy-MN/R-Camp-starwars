@@ -41,7 +41,6 @@ scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
 
 ## Get to know your __DATA__ {-}
 
-
 <div class="tip">
 
 | Function | Information             |  
@@ -54,8 +53,6 @@ scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
 
 
 </div>
-<br>
-
 
 ## Filtering {-}
 
@@ -77,7 +74,6 @@ scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
 >
 
 </div>
-<br>
 
 ```{r tools, child='../../static/modules/dplyr/dplyr_toolbox/general.Rmd'}
 ```

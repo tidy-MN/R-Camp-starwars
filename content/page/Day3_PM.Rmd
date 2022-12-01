@@ -126,10 +126,12 @@ df <- collect(df)
 > Woah! That is a lot to keep track of. Luckily, there are helper packages to simplify connecting to various databases. Contact your Agency's R user group for more info.
 
 
-# Password - Is it secret, is it safe? 
+# Password: Is it secret, is it safe? 
 <hr>
 
-#### Using passwords in R {-}
+<br>
+
+### Using passwords in R {-}
 
 <br>
 
@@ -239,10 +241,10 @@ Planet: `Earth`
 #### Join us! {-}
 
 - R user groups: TidyTuesdays 
-- Teams in Teams
+- R Teams in Teams
 
 
-#### R heroes
+#### R heroes {-}
 
 - MN's Amelia McNamara
     - [Tweets](https://twitter.com/ameliamn?lang=en) and [YouTube](https://www.youtube.com/ameliamcnamara)  
@@ -272,9 +274,9 @@ Planet: `Earth`
 ## 🐱 Concatulations! {-}
 <hr class="hrlvl2">
 
-#### You were an excellent Data Droid! {-}
+<br>
 
-**Rey and BB8 couldn't have done it without you.**  
+**You were an excellent Data Droid!** **Rey and BB8 absolutely couldn't have done it without you.**  
 
 > You deserve an award.
 
@@ -296,9 +298,8 @@ Planet: `Earth`
 ```
 
 <br>
-<br>
 
-# Return to Earth 
+# Return to Earth {-}
 <hr>
 
 You're free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let's look at some Earth data. 

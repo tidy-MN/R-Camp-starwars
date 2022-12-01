@@ -63,7 +63,7 @@
   "headline": "Day 3 - PM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  3489 ,
+  "wordCount":  1863 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -357,12 +357,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#psstwe-really-need-to-talk" id="toc-psstwe-really-need-to-talk"><span class="toc-section-number">1</span> Psst…we really need to talk</a></li>
+<li><a href="#psstwe-need-to-talk" id="toc-psstwe-need-to-talk"><span class="toc-section-number">1</span> Psst…we need to talk</a></li>
 <li><a href="#pipe-things-together-a-b" id="toc-pipe-things-together-a-b"><span class="toc-section-number">2</span> Pipe things together: <code>A %&gt;% B</code></a></li>
 <li><a href="#connect-to-databases" id="toc-connect-to-databases"><span class="toc-section-number">3</span> <i class="fas fa-database"></i> Connect to databases</a></li>
-<li><a href="#my-password---is-it-secret-is-it-safe" id="toc-my-password---is-it-secret-is-it-safe"><span class="toc-section-number">4</span> <i class="fas fa-key"></i> My password - Is it secret, is it safe?</a></li>
+<li><a href="#password---is-it-secret-is-it-safe" id="toc-password---is-it-secret-is-it-safe"><span class="toc-section-number">4</span> Password - Is it secret, is it safe?</a></li>
 <li><a href="#your-turn" id="toc-your-turn"><span class="toc-section-number">5</span> Your turn</a></li>
-<li><a href="#back-to-earth" id="toc-back-to-earth"><span class="toc-section-number">6</span> <i class="fas fa-globe-americas"></i> Back to Earth</a></li>
+<li><a href="#return-to-earth" id="toc-return-to-earth"><span class="toc-section-number">6</span> Return to Earth</a></li>
 </ul>
 </div>
 
@@ -370,8 +370,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 h1 .header-section-number {background: #c75a16;}
 hr {background: #c75a16;}
 </style>
-<div id="psstwe-really-need-to-talk" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Psst…we really need to talk</h1>
+<div id="psstwe-need-to-talk" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Psst…we need to talk</h1>
 <hr>
 <p><img src="../images/bert_ernie.jpg" style="float: left; width: 33%; margin-right: 20px;"></p>
 <p><br><br></p>
@@ -531,9 +531,9 @@ Example code to read aloud
 <div id="with-the-pipe" class="section level3 unnumbered">
 <h3>With the pipe <i class="fas fa-smile"></i></h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>          <span class="fu">sum</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>          <span class="fu">log</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>          <span class="fu">round</span>()</span></code></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">log</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>()</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="combine-processing-steps-into-one-cohesive-chunk" class="section level3 unnumbered">
@@ -580,7 +580,7 @@ Example code to read aloud
 <h2>Databases and SQL</h2>
 <div id="prep" class="section level3 unnumbered">
 <h3>Prep</h3>
-<p>Let’s get our favorite data.</p>
+<p>Let’s get our favorite starwars data.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;RSQLite&quot;)</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;DBI&quot;)</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
@@ -588,295 +588,36 @@ Example code to read aloud
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> starwars</span></code></pre></div>
+<p><strong>Create a local db</strong></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a connection to a new database</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Check that the .db file pops up in your working directory</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># A .db file will appear in your project folder</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>conn <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">&quot;people.db&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the dataset into a table called &quot;people_tbl&quot;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">try</span>(<span class="fu">dbWriteTable</span>(conn, <span class="st">&quot;people_tbl&quot;</span>, people))</span></code></pre></div>
-<pre><code>## Error : Table people_tbl exists in database, and both overwrite and append are FALSE</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the list columns</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> <span class="fu">select</span>(people, <span class="sc">-</span>films, <span class="sc">-</span>vehicles, <span class="sc">-</span>starships)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Try again</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">try</span>(<span class="fu">dbWriteTable</span>(conn, <span class="st">&quot;people_tbl&quot;</span>, people))</span></code></pre></div>
-<pre><code>## Error : Table people_tbl exists in database, and both overwrite and append are FALSE</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all the tables available in the database</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(conn)</span></code></pre></div>
-<pre><code>## [1] &quot;people_tbl&quot;</code></pre>
+<div id="add-our-data" class="section level4 unnumbered">
+<h4>Add our data</h4>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the dataset to a table called &quot;people_tbl&quot;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ERROR! This will throw an error about our data</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">try</span>(<span class="fu">dbWriteTable</span>(conn, <span class="st">&quot;people_tbl&quot;</span>, people))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the list columns</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> <span class="fu">select</span>(people, <span class="sc">-</span>films, <span class="sc">-</span>vehicles, <span class="sc">-</span>starships)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Try again</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">try</span>(<span class="fu">dbWriteTable</span>(conn, <span class="st">&quot;people_tbl&quot;</span>, people))</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># List all the tables available in the database</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(conn)</span></code></pre></div>
+</div>
 </div>
 <div id="reading-data" class="section level3 unnumbered">
 <h3>Reading data</h3>
 <p><strong>SQL</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(conn, <span class="st">&quot;SELECT * FROM people_tbl&quot;</span>)</span></code></pre></div>
-<pre><code>##                     name height   mass    hair_color          skin_color
-## 1         Luke Skywalker    172   77.0         blond                fair
-## 2                  C-3PO    167   75.0          &lt;NA&gt;                gold
-## 3                  R2-D2     96   32.0          &lt;NA&gt;         white, blue
-## 4            Darth Vader    202  136.0          none               white
-## 5            Leia Organa    150   49.0         brown               light
-## 6              Owen Lars    178  120.0   brown, grey               light
-## 7     Beru Whitesun lars    165   75.0         brown               light
-## 8                  R5-D4     97   32.0          &lt;NA&gt;          white, red
-## 9      Biggs Darklighter    183   84.0         black               light
-## 10        Obi-Wan Kenobi    182   77.0 auburn, white                fair
-## 11      Anakin Skywalker    188   84.0         blond                fair
-## 12        Wilhuff Tarkin    180     NA  auburn, grey                fair
-## 13             Chewbacca    228  112.0         brown             unknown
-## 14              Han Solo    180   80.0         brown                fair
-## 15                Greedo    173   74.0          &lt;NA&gt;               green
-## 16 Jabba Desilijic Tiure    175 1358.0          &lt;NA&gt;    green-tan, brown
-## 17        Wedge Antilles    170   77.0         brown                fair
-## 18      Jek Tono Porkins    180  110.0         brown                fair
-## 19                  Yoda     66   17.0         white               green
-## 20             Palpatine    170   75.0          grey                pale
-## 21             Boba Fett    183   78.2         black                fair
-## 22                 IG-88    200  140.0          none               metal
-## 23                 Bossk    190  113.0          none               green
-## 24      Lando Calrissian    177   79.0         black                dark
-## 25                 Lobot    175   79.0          none               light
-## 26                Ackbar    180   83.0          none        brown mottle
-## 27            Mon Mothma    150     NA        auburn                fair
-## 28          Arvel Crynyd     NA     NA         brown                fair
-## 29 Wicket Systri Warrick     88   20.0         brown               brown
-## 30             Nien Nunb    160   68.0          none                grey
-## 31          Qui-Gon Jinn    193   89.0         brown                fair
-## 32           Nute Gunray    191   90.0          none       mottled green
-## 33         Finis Valorum    170     NA         blond                fair
-## 34         Jar Jar Binks    196   66.0          none              orange
-## 35          Roos Tarpals    224   82.0          none                grey
-## 36            Rugor Nass    206     NA          none               green
-## 37              Ric Olié    183     NA         brown                fair
-## 38                 Watto    137     NA         black          blue, grey
-## 39               Sebulba    112   40.0          none           grey, red
-## 40         Quarsh Panaka    183     NA         black                dark
-## 41        Shmi Skywalker    163     NA         black                fair
-## 42            Darth Maul    175   80.0          none                 red
-## 43           Bib Fortuna    180     NA          none                pale
-## 44           Ayla Secura    178   55.0          none                blue
-## 45              Dud Bolt     94   45.0          none          blue, grey
-## 46               Gasgano    122     NA          none         white, blue
-## 47        Ben Quadinaros    163   65.0          none grey, green, yellow
-## 48            Mace Windu    188   84.0          none                dark
-## 49          Ki-Adi-Mundi    198   82.0         white                pale
-## 50             Kit Fisto    196   87.0          none               green
-## 51             Eeth Koth    171     NA         black               brown
-## 52            Adi Gallia    184   50.0          none                dark
-## 53           Saesee Tiin    188     NA          none                pale
-## 54           Yarael Poof    264     NA          none               white
-## 55              Plo Koon    188   80.0          none              orange
-## 56            Mas Amedda    196     NA          none                blue
-## 57          Gregar Typho    185   85.0         black                dark
-## 58                 Cordé    157     NA         brown               light
-## 59           Cliegg Lars    183     NA         brown                fair
-## 60     Poggle the Lesser    183   80.0          none               green
-## 61       Luminara Unduli    170   56.2         black              yellow
-## 62         Barriss Offee    166   50.0         black              yellow
-## 63                 Dormé    165     NA         brown               light
-## 64                 Dooku    193   80.0         white                fair
-## 65   Bail Prestor Organa    191     NA         black                 tan
-## 66            Jango Fett    183   79.0         black                 tan
-## 67            Zam Wesell    168   55.0        blonde fair, green, yellow
-## 68       Dexter Jettster    198  102.0          none               brown
-## 69               Lama Su    229   88.0          none                grey
-## 70               Taun We    213     NA          none                grey
-## 71            Jocasta Nu    167     NA         white                fair
-## 72         Ratts Tyerell     79   15.0          none          grey, blue
-## 73                R4-P17     96     NA          none         silver, red
-## 74            Wat Tambor    193   48.0          none         green, grey
-## 75              San Hill    191     NA          none                grey
-## 76              Shaak Ti    178   57.0          none    red, blue, white
-## 77              Grievous    216  159.0          none        brown, white
-## 78               Tarfful    234  136.0         brown               brown
-## 79       Raymus Antilles    188   79.0         brown               light
-## 80             Sly Moore    178   48.0          none                pale
-## 81            Tion Medon    206   80.0          none                grey
-## 82                  Finn     NA     NA         black                dark
-## 83                   Rey     NA     NA         brown               light
-## 84           Poe Dameron     NA     NA         brown               light
-## 85                   BB8     NA     NA          none                none
-## 86        Captain Phasma     NA     NA       unknown             unknown
-## 87         Padmé Amidala    165   45.0         brown               light
-##        eye_color birth_year            sex    gender      homeworld
-## 1           blue       19.0           male masculine       Tatooine
-## 2         yellow      112.0           none masculine       Tatooine
-## 3            red       33.0           none masculine          Naboo
-## 4         yellow       41.9           male masculine       Tatooine
-## 5          brown       19.0         female  feminine       Alderaan
-## 6           blue       52.0           male masculine       Tatooine
-## 7           blue       47.0         female  feminine       Tatooine
-## 8            red         NA           none masculine       Tatooine
-## 9          brown       24.0           male masculine       Tatooine
-## 10     blue-gray       57.0           male masculine        Stewjon
-## 11          blue       41.9           male masculine       Tatooine
-## 12          blue       64.0           male masculine         Eriadu
-## 13          blue      200.0           male masculine       Kashyyyk
-## 14         brown       29.0           male masculine       Corellia
-## 15         black       44.0           male masculine          Rodia
-## 16        orange      600.0 hermaphroditic masculine      Nal Hutta
-## 17         hazel       21.0           male masculine       Corellia
-## 18          blue         NA           male masculine     Bestine IV
-## 19         brown      896.0           male masculine           &lt;NA&gt;
-## 20        yellow       82.0           male masculine          Naboo
-## 21         brown       31.5           male masculine         Kamino
-## 22           red       15.0           none masculine           &lt;NA&gt;
-## 23           red       53.0           male masculine      Trandosha
-## 24         brown       31.0           male masculine        Socorro
-## 25          blue       37.0           male masculine         Bespin
-## 26        orange       41.0           male masculine       Mon Cala
-## 27          blue       48.0         female  feminine      Chandrila
-## 28         brown         NA           male masculine           &lt;NA&gt;
-## 29         brown        8.0           male masculine          Endor
-## 30         black         NA           male masculine        Sullust
-## 31          blue       92.0           male masculine           &lt;NA&gt;
-## 32           red         NA           male masculine Cato Neimoidia
-## 33          blue       91.0           male masculine      Coruscant
-## 34        orange       52.0           male masculine          Naboo
-## 35        orange         NA           male masculine          Naboo
-## 36        orange         NA           male masculine          Naboo
-## 37          blue         NA           &lt;NA&gt;      &lt;NA&gt;          Naboo
-## 38        yellow         NA           male masculine       Toydaria
-## 39        orange         NA           male masculine      Malastare
-## 40         brown       62.0           &lt;NA&gt;      &lt;NA&gt;          Naboo
-## 41         brown       72.0         female  feminine       Tatooine
-## 42        yellow       54.0           male masculine       Dathomir
-## 43          pink         NA           male masculine         Ryloth
-## 44         hazel       48.0         female  feminine         Ryloth
-## 45        yellow         NA           male masculine        Vulpter
-## 46         black         NA           male masculine        Troiken
-## 47        orange         NA           male masculine           Tund
-## 48         brown       72.0           male masculine     Haruun Kal
-## 49        yellow       92.0           male masculine          Cerea
-## 50         black         NA           male masculine    Glee Anselm
-## 51         brown         NA           male masculine       Iridonia
-## 52          blue         NA         female  feminine      Coruscant
-## 53        orange         NA           male masculine        Iktotch
-## 54        yellow         NA           male masculine        Quermia
-## 55         black       22.0           male masculine          Dorin
-## 56          blue         NA           male masculine       Champala
-## 57         brown         NA           male masculine          Naboo
-## 58         brown         NA         female  feminine          Naboo
-## 59          blue       82.0           male masculine       Tatooine
-## 60        yellow         NA           male masculine       Geonosis
-## 61          blue       58.0         female  feminine         Mirial
-## 62          blue       40.0         female  feminine         Mirial
-## 63         brown         NA         female  feminine          Naboo
-## 64         brown      102.0           male masculine        Serenno
-## 65         brown       67.0           male masculine       Alderaan
-## 66         brown       66.0           male masculine   Concord Dawn
-## 67        yellow         NA         female  feminine          Zolan
-## 68        yellow         NA           male masculine           Ojom
-## 69         black         NA           male masculine         Kamino
-## 70         black         NA         female  feminine         Kamino
-## 71          blue         NA         female  feminine      Coruscant
-## 72       unknown         NA           male masculine    Aleen Minor
-## 73     red, blue         NA           none  feminine           &lt;NA&gt;
-## 74       unknown         NA           male masculine          Skako
-## 75          gold         NA           male masculine     Muunilinst
-## 76         black         NA         female  feminine          Shili
-## 77 green, yellow         NA           male masculine          Kalee
-## 78          blue         NA           male masculine       Kashyyyk
-## 79         brown         NA           male masculine       Alderaan
-## 80         white         NA           &lt;NA&gt;      &lt;NA&gt;         Umbara
-## 81         black         NA           male masculine         Utapau
-## 82          dark         NA           male masculine           &lt;NA&gt;
-## 83         hazel         NA         female  feminine           &lt;NA&gt;
-## 84         brown         NA           male masculine           &lt;NA&gt;
-## 85         black         NA           none masculine           &lt;NA&gt;
-## 86       unknown         NA           &lt;NA&gt;      &lt;NA&gt;           &lt;NA&gt;
-## 87         brown       46.0         female  feminine          Naboo
-##           species
-## 1           Human
-## 2           Droid
-## 3           Droid
-## 4           Human
-## 5           Human
-## 6           Human
-## 7           Human
-## 8           Droid
-## 9           Human
-## 10          Human
-## 11          Human
-## 12          Human
-## 13        Wookiee
-## 14          Human
-## 15         Rodian
-## 16           Hutt
-## 17          Human
-## 18          Human
-## 19 Yoda&#39;s species
-## 20          Human
-## 21          Human
-## 22          Droid
-## 23     Trandoshan
-## 24          Human
-## 25          Human
-## 26   Mon Calamari
-## 27          Human
-## 28          Human
-## 29           Ewok
-## 30      Sullustan
-## 31          Human
-## 32      Neimodian
-## 33          Human
-## 34         Gungan
-## 35         Gungan
-## 36         Gungan
-## 37           &lt;NA&gt;
-## 38      Toydarian
-## 39            Dug
-## 40           &lt;NA&gt;
-## 41          Human
-## 42         Zabrak
-## 43        Twi&#39;lek
-## 44        Twi&#39;lek
-## 45     Vulptereen
-## 46          Xexto
-## 47          Toong
-## 48          Human
-## 49         Cerean
-## 50       Nautolan
-## 51         Zabrak
-## 52     Tholothian
-## 53       Iktotchi
-## 54       Quermian
-## 55        Kel Dor
-## 56       Chagrian
-## 57          Human
-## 58          Human
-## 59          Human
-## 60      Geonosian
-## 61       Mirialan
-## 62       Mirialan
-## 63          Human
-## 64          Human
-## 65          Human
-## 66          Human
-## 67       Clawdite
-## 68       Besalisk
-## 69       Kaminoan
-## 70       Kaminoan
-## 71          Human
-## 72         Aleena
-## 73          Droid
-## 74        Skakoan
-## 75           Muun
-## 76        Togruta
-## 77        Kaleesh
-## 78        Wookiee
-## 79          Human
-## 80           &lt;NA&gt;
-## 81         Pau&#39;an
-## 82          Human
-## 83          Human
-## 84          Human
-## 85          Droid
-## 86           &lt;NA&gt;
-## 87          Human</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter rows you want</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(conn, <span class="st">&quot;SELECT * FROM people_tbl </span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="st">                        WHERE eye_color = &#39;brown&#39;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(conn, <span class="st">&quot;SELECT * FROM people_tbl&quot;</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the data</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(conn, <span class="st">&quot;SELECT * FROM people_tbl </span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">                        WHERE eye_color = &#39;brown&#39;&quot;</span>)</span></code></pre></div>
 <p><strong>dplyr</strong></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl</span>(conn, <span class="st">&quot;people_tbl&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl</span>(conn, <span class="st">&quot;people_tbl&quot;</span>)</span></code></pre></div>
 <pre><code>## # Source:   table&lt;people_tbl&gt; [?? x 11]
 ## # Database: sqlite 3.39.4 [/cloud/project/content/page/people.db]
 ##    name        height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ sex   gender homew…⁵
@@ -894,26 +635,26 @@ Example code to read aloud
 ## # … with more rows, 1 more variable: species &lt;chr&gt;, and abbreviated variable
 ## #   names ¹​hair_color, ²​skin_color, ³​eye_color, ⁴​birth_year, ⁵​homeworld
 ## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter rows you want</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tbl</span>(conn, <span class="st">&quot;people_tbl&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(eye_color <span class="sc">==</span> <span class="st">&quot;brown&quot;</span>) </span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the SQL that *will* run, if you tell it to</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">show_query</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the data</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tbl</span>(conn, <span class="st">&quot;people_tbl&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(eye_color <span class="sc">==</span> <span class="st">&quot;brown&quot;</span>) </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the SQL that *will* run, if you tell it to</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">show_query</span>(df)</span></code></pre></div>
 <pre><code>## &lt;SQL&gt;
 ## SELECT *
 ## FROM `people_tbl`
 ## WHERE (`eye_color` = &#39;brown&#39;)</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the SQL and return the data</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">collect</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the SQL and return the data</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">collect</span>(df)</span></code></pre></div>
 </div>
-<div id="database-parameters" class="section level3" number="3.0.1">
-<h3><span class="header-section-number">3.0.1</span> Database parameters</h3>
+<div id="database-parameters-for-the-real-world" class="section level3 unnumbered">
+<h3>Database parameters for the real world</h3>
 <ul>
 <li><code>driver</code> : Specific to the type of database: Oracle, PostgreSQL, Athena</li>
 <li><code>url</code> or <code>host</code> : The web or server location to connect to<br />
 </li>
-<li><code>port</code> : A 4 digit number identifies the port to use for communicating with the db<br />
+<li><code>port</code> : A 4 digit number of the port to use for communicating with the db<br />
 </li>
 <li><code>db</code> : The db name<br />
 </li>
@@ -921,41 +662,39 @@ Example code to read aloud
 </li>
 <li><code>password</code> : Your password for the db</li>
 </ul>
-<p><br></p>
-<p>Woah! That can be a lot to track down. Luckily, there are helper packages to simplify connecting to various databases. Contact your Agency’s R user group for more info.</p>
+<blockquote>
+<p>Woah! That is a lot to keep track of. Luckily, there are helper packages to simplify connecting to various databases. Contact your Agency’s R user group for more info.</p>
+</blockquote>
 </div>
 </div>
 </div>
-<div id="my-password---is-it-secret-is-it-safe" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> <i class="fas fa-key"></i> My password - Is it secret, is it safe?</h1>
+<div id="password---is-it-secret-is-it-safe" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Password - Is it secret, is it safe?</h1>
 <hr>
-<div id="passwords-in-r" class="section level3 unnumbered">
-<h3>Passwords in R</h3>
+<div id="using-passwords-in-r" class="section level4 unnumbered">
+<h4>Using passwords in R</h4>
+<p><br></p>
 <p><strong>Not secret, not safe</strong></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;RODBC&quot;)</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RODBC)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>user <span class="ot">&lt;-</span> <span class="st">&quot;Me&quot;</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>password <span class="ot">&lt;-</span> <span class="st">&quot;IloveR2D2!&quot;</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to db &quot;Area51&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>user <span class="ot">&lt;-</span> <span class="st">&quot;Me&quot;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>password <span class="ot">&lt;-</span> <span class="st">&quot;IloveR2D2!&quot;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to db &quot;Area51&quot;</span></span></code></pre></div>
 <p><strong>Yes secret, Yes safe</strong></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;keyring&quot;)</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keyring)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This opens a popup to enter and store your password for the db</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Only need to do once</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">key_set</span>(<span class="st">&quot;Area51&quot;</span>, <span class="st">&quot;Me&quot;</span>)</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Then use this to safely add your password to your script</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="fu">key_get</span>(<span class="st">&quot;Area51&quot;</span>, <span class="st">&quot;Me&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;keyring&quot;)</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keyring)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This opens a popup to enter and store your password for the db</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Only need to do once</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">key_set</span>(<span class="st">&quot;Area51&quot;</span>, <span class="st">&quot;Me&quot;</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Then use this to safely add your password to your script</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="fu">key_get</span>(<span class="st">&quot;Area51&quot;</span>, <span class="st">&quot;Me&quot;</span>)</span></code></pre></div>
 </div>
 <div id="connecting-to-agency-databases" class="section level3 unnumbered">
 <h3>Connecting to Agency databases</h3>
 <blockquote>
-<p>RDS databases at MDH. TEMPO at MPCA.</p>
-</blockquote>
 <p><em>A live demo will begin shortly…</em></p>
+</blockquote>
 <p><br></p>
 </div>
 </div>
@@ -1098,8 +837,8 @@ Planet: <code>Earth</code></p>
 </div>
 </div>
 </div>
-<div id="back-to-earth" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> <i class="fas fa-globe-americas"></i> Back to Earth</h1>
+<div id="return-to-earth" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Return to Earth</h1>
 <hr>
 <p>You’re free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let’s look at some Earth data.</p>
 <p><br></p>

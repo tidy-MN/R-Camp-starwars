@@ -311,11 +311,11 @@ leaflet(outposts) %>%
 
 </details>
 
+<br>
 
-See MORE examples of basemaps here: https://rstudio.github.io/leaflet/basemaps.html
-
-And explore the [Full Leaflet Guide!](https://rstudio.github.io/leaflet/)
+See more available basemaps at [rstudio.github.io/leaflet/basemaps](https://rstudio.github.io/leaflet/basemaps.html).
 
 </div>
 
 
+For more Leaflet examples, see the [Full Leaflet Guide!](https://rstudio.github.io/leaflet/)

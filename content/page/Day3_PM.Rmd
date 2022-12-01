@@ -26,7 +26,7 @@ xaringanExtra::use_clipboard()
 ```
 
 
-# Psst...we really need to talk
+# Psst...we need to talk
 <hr>
 
 ```{r bert-ernie, child='../../static/modules/games/lets_talk.Rmd'}
@@ -50,7 +50,7 @@ xaringanExtra::use_clipboard()
 
 ### Prep {-}
 
-Let's get our favorite data.
+Let's get our favorite starwars data.
 ```{r}
 #install.packages("RSQLite")
 #install.packages("DBI")
@@ -62,15 +62,18 @@ people <- starwars
 ```
 
 
+**Create a local db**
 ```{r}
 # Create a connection to a new database
-# Check that the .db file pops up in your working directory
+# A .db file will appear in your project folder
 conn <- dbConnect(RSQLite::SQLite(), "people.db")
 ```
 
 
-```{r}
-# Add the dataset into a table called "people_tbl"
+#### Add our data {-}
+```{r, eval=F}
+# Add the dataset to a table called "people_tbl"
+## ERROR! This will throw an error about our data
 try(dbWriteTable(conn, "people_tbl", people))
 
 # Drop the list columns
@@ -81,17 +84,16 @@ try(dbWriteTable(conn, "people_tbl", people))
 
 # List all the tables available in the database
 dbListTables(conn)
-
 ```
 
 
 ### Reading data {-}
 
 **SQL**
-```{r}
+```{r, eval=F}
 dbGetQuery(conn, "SELECT * FROM people_tbl")
 
-# Filter rows you want
+# Filter the data
 df <- dbGetQuery(conn, "SELECT * FROM people_tbl 
                         WHERE eye_color = 'brown'")
 ```
@@ -100,9 +102,9 @@ df <- dbGetQuery(conn, "SELECT * FROM people_tbl
 ```{r}
 tbl(conn, "people_tbl")
 
-# Filter rows you want
+# Filter the data
 df <- tbl(conn, "people_tbl") %>% 
-      filter(eye_color == "brown") 
+        filter(eye_color == "brown") 
 
 # Show the SQL that *will* run, if you tell it to
 show_query(df)
@@ -112,30 +114,27 @@ df <- collect(df)
 ```
 
 
-### Database parameters
+### Database parameters for the real world {-}
 
 - `driver` : Specific to the type of database: Oracle, PostgreSQL, Athena
 - `url` or `host` : The web or server location to connect to  
-- `port` : A 4 digit number identifies the port to use for communicating with the db  
+- `port` : A 4 digit number of the port to use for communicating with the db  
 - `db` : The db name  
 - `user` : Your username for the db  
 - `password` : Your password for the db  
 
-<br>
-
-Woah! That can be a lot to track down. Luckily, there are helper packages to simplify connecting to various databases. Contact your Agency's R user group for more info.
+> Woah! That is a lot to keep track of. Luckily, there are helper packages to simplify connecting to various databases. Contact your Agency's R user group for more info.
 
 
-# <i class="fas fa-key"></i> My password - Is it secret, is it safe? 
+# Password - Is it secret, is it safe? 
 <hr>
 
-### Passwords in R {-}
+#### Using passwords in R {-}
+
+<br>
 
 **Not secret, not safe**
 ```{r, eval=F}
-#install.packages("RODBC")
-library(RODBC)
-
 user <- "Me"
 password <- "IloveR2D2!"
 
@@ -159,10 +158,7 @@ key_get("Area51", "Me")
 
 ### Connecting to Agency databases {-} 
 
-> RDS databases at MDH. TEMPO at MPCA.
-
-*A live demo will begin shortly...*
-
+> *A live demo will begin shortly...*
 
 <br>
 
@@ -302,7 +298,7 @@ Planet: `Earth`
 <br>
 <br>
 
-# <i class="fas fa-globe-americas"></i> Back to Earth 
+# Return to Earth 
 <hr>
 
 You're free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let's look at some Earth data. 

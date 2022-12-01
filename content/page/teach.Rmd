@@ -70,13 +70,13 @@ knitr::opts_chunk$set(echo=FALSE, warning=F, message=F)
 
 **PM**
 
--	1 Pipes %>% (`Barbara`)
--	2 Database intro (Dorian)
-- 3 Keyring and db demo (Derek) 
+-	1-2 Pipes %>% (`Barbara`)
+-	3 Database intro (Dorian)
+- 4 Keyring and db demo (Derek) 
 -	Individual Project Work 
 
-- **What's next?**
+- **What's next?** (Dorian)
     - Join us: R groups and TidyTuesdays
-    - Online courses
+    - Online resources
     
--	*Graduation ceremony* (cowsay) - Certificates!
+-	*Graduation ceremony* - Certificates + Movie! (Barbara + All)

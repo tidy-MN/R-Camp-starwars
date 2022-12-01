@@ -128,7 +128,7 @@ cat(readLines("porg_tabs.txt"))
 
 It's time to share with your R friends. [Join GitHub](https://github.com/)
 
-[![](../images/join_github.png)](https://github.com/)
+[![](../images/github_signup.png)](https://github.com/)
 
 
 ## Add a new repository {-}
@@ -142,13 +142,11 @@ Now we can create a new `repository` to store some of our new R plots and script
 - [x] Check the box to initialize with a README 
 - Click `[ Create repository ]`
 
-## Add a plot {-}
+## Add an R script or plot {-}
 
-Click `Upload files` to add an image of an R plot or one of your scripts as an `.R` file.
+Click `Upload files` to add an image of an R plot or one of your `.R` scripts.
 
 ![](../images/upload_files.png)
-
-
 
 <br>
 

@@ -48,8 +48,8 @@ knitr::opts_chunk$set(echo=FALSE, warning=F, message=F)
 - 2 Jakku Revisited (Derek)
 -	3 Joins (Dorian)
 -	4-7 Summarize -> grouped mutate (`Barbara`)
--	Exercise: Read, Join, Summarize from Excel (On their own in 3-4 Breakouts, one for each of us to host?)
-- Extra time: GuessWho 
+-	Exercise: Read, Join, Summarize from Excel (3-4 Breakouts)
+
 
 **PM**
 
@@ -57,23 +57,23 @@ knitr::opts_chunk$set(echo=FALSE, warning=F, message=F)
 -	1 If_else (Dorian)
 -	2 Plot intro and height exercise (Derek)
 -	3 Trash plots & glossary (`Barbara`)
--	Exercise: Homeworld (On their own in 3-4 Breakouts, one for each of us)
+-	Exercise: Homeworld (3-4 Breakouts)
 
 ## Day 3
 
 **AM**
 
--	1-2 Review (`Barbara`)
--	3-4 Maps (Dorian)
+-	Review -> Excel exercise -> 2 Endor Welcome (`Barbara`)
+-	3-4 Endor maps (Dorian)
 -	5-6 Dates (Derek)
 -	Gitlab / Github Account (Dorian)
 
 **PM**
 
--	1 Databases and keyring (Derek)  
--	2 Pipes %>% (`Barbara`)
--	3 Markdown demo (maybe? - Dorian)
--	Individual Project Work (All)
+-	1 Pipes %>% (`Barbara`)
+-	2 Database intro (Dorian)
+- 3 Keyring and db demo (Derek) 
+-	Individual Project Work 
 
 - **What's next?**
     - Join us: R groups and TidyTuesdays

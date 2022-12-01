@@ -122,7 +122,7 @@ Packages: `dplyr`
     - Summary functions: mean, median, max, min, quantile
 1. Summarize by __group__ or category
     - By location: city, county, ZIP 
-`
+1. Exercise: Read data from Excel
 
 Packages: `dplyr`
 
@@ -134,7 +134,7 @@ Packages: `dplyr`
 > _Star Wars - Guess Who_   
 
 1. Calculate new columns based on `if` condition
-    - e.g. If `age > 10` then set to "Eligible"
+    - If `age > 17` then "Eligible to vote"
 1. Plot like a Jedi!
     - Scatter plots and boxplots 
     - Add titles, colors, and labels 
@@ -156,14 +156,14 @@ Packages: `dplyr`
 
 **Morning** | _9AM-Noon_  
 
-1. Questions and Review
+> Questions and Review
+
 1. Intro to Maps
     - Coordinates
     - Interactive maps
 1. Working with Dates
     - Time zones
-1. Time series plots
-1. Use the pipe `%>%` to chain functions together for less typing
+    - Time series plots
 1. Join GitHub
     - Share your data, code, and plots
 
@@ -174,9 +174,9 @@ Packages: `sf`, `leaflet`, `lubridate`
 <div class = "col-md-6">
 **Afternoon** | _1PM-4:00pm_   
 
-1. Reading code aloud
-1. R Markdown demo
-    - Generate dynamic Web, Word and PDF reports and presentations
+> Language learning: Reading code 
+
+1. Use the pipe `%>%` to chain functions together for less typing
 1. Connect to databases
     - ODBC
     - `keyring`: Keeping your passwords secret

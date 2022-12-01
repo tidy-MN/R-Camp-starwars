@@ -63,7 +63,7 @@
   "headline": "Day 3 - AM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22})       pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  3061 ,
+  "wordCount":  3078 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -601,8 +601,8 @@ Menu of comparisons
 <div id="but-wait" class="section level2 unnumbered">
 <h2>But wait…</h2>
 <hr class="hrlvl2">
-<p>The Ewoks say it’s unsafe to land. Booo… Sounds like the Empire is checking all ships for licenses.</p>
-<p>Lucky for us there is some good news. They say for a small ship like ours, it is possible to land undetected. But we’ll have to put down right-dab in the middle of the 3 northern outposts.</p>
+<p>The Ewoks say it’s unsafe to land. Not good. It sounds like the Empire is checking all incoming ships for licenses.</p>
+<p>Lucky for us, there is some good news. The Ewoks say for a small ship like ours, it <em>could be</em> possible to land undetected. But we’ll have to put down right-dab in the middle of the 3 northern outposts.</p>
 <p><br></p>
 <blockquote>
 <p>Are you up for a challenge data droid?</p>
@@ -619,9 +619,15 @@ Menu of comparisons
 <li><strong>readr</strong>’s <code>read_csv()</code> for CSV files</li>
 <li><strong>readxl</strong>’s <code>read_excel()</code> for Excel files</li>
 </ul>
-<div id="give-it-a-try" class="section level2 unnumbered">
-<h2>Give it a try</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>outposts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/endor_outposts.csv&quot;</span>)</span></code></pre></div>
+<p>For shapefiles, we use the <code>sf</code> package:</p>
+<ul>
+<li><strong>sf</strong>’s <code>st_read()</code> for SHP files</li>
+</ul>
+<div id="get-the-coordinates-from-csv" class="section level2 unnumbered">
+<h2>Get the coordinates from CSV</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>outposts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.app/data/endor_outposts.csv&quot;</span>)</span></code></pre></div>
 <div id="take-a-look-inside" class="section level3 unnumbered">
 <h3>Take a look inside</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>outposts</span></code></pre></div>
@@ -810,13 +816,13 @@ Show code
 <p>Great work data droid. Let’s take a minute to cool down…</p>
 <p>Ok, now let’s land on that planet before we get stuck up here with permanent space legs.</p>
 <p><br></p>
-<div id="yoda-says" class="section level3 unnumbered yoda">
-<h3>Yoda says</h3>
+<div id="basemaps" class="section level3 unnumbered yoda">
+<h3><strong>BASEMAPS</strong></h3>
 <p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
-<p><strong>BASEMAPS.</strong> There are lots of options for basemaps in leaflet. One of my favorites is <code>CartoDB.Positron</code> because its greyness doesn’t distract from the data.</p>
+<p>There are lots of options for basemaps in leaflet. One of my favorites is <code>CartoDB.Positron</code> because its greyness doesn’t distract from the data.</p>
 <p>Add it to your map by swapping out <code>addTiles()</code> for <code>addProviderTiles(providers$CartoDB.Positron)</code></p>
 <details>
-<summary class="btn_code">
+<summary class="btn_code_blue">
 <em>Show code</em>
 </summary>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(outposts) <span class="sc">%&gt;%</span></span>

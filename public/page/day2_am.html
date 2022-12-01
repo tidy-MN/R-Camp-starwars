@@ -63,7 +63,7 @@
   "headline": "Day 2 - AM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  3575 ,
+  "wordCount":  3573 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -930,14 +930,12 @@ Update from BB8!
 <p>Let’s <code>mutate()</code>!</p>
 <p>Now that we have pounds per unit we can use <code>mutate</code> to calculate the total pounds for each shipment.</p>
 <p><strong>Fill in the blank</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span>  _____________ )</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, <span class="at">total_pounds =</span> amount <span class="sc">*</span>  ___________ )</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 <em>Show code</em>
 </summary>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> scrap <span class="sc">%&gt;%</span> </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">total_pounds =</span> amount <span class="sc">*</span> pounds_per_unit)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap, <span class="at">total_pounds =</span> amount <span class="sc">*</span> pounds_per_unit)</span></code></pre></div>
 </details>
 </div>
 <div id="total-price-per-shipment" class="section level2 unnumbered">
@@ -1029,17 +1027,17 @@ scrap <- mutate(scrap, credits = total_pounds * price_per_pound)
 <div id="median" class="section level2 unnumbered">
 <h2><code>median()</code></h2>
 <p>Use summarize to calculate the <em>median</em> price_per_pound in the scrap report.</p>
-<p><code>summarize(scrap, median_price = median(price_per_pound, na.rm = T))</code></p>
+<p><code>summarize(scrap, median_price = median(price_per_pound, na.rm = TRUE))</code></p>
 </div>
 <div id="max" class="section level2 unnumbered">
 <h2><code>max()</code></h2>
 <p>Use summarize to calculate the <em>maximum</em> price per pound any scrapper got for their scrap.</p>
-<p><code>summarize(scrap, max_price = max(price_per_pound, na.rm = T))</code></p>
+<p><code>summarize(scrap, max_price = max(price_per_pound, na.rm = TRUE))</code></p>
 </div>
 <div id="min" class="section level2 unnumbered">
 <h2><code>min()</code></h2>
 <p>Use summarize to calculate the <em>minimum</em> price per pound any scrapper got for their scrap.</p>
-<p><code>summarize(scrap, min_price = min(price_per_pound, na.rm = T))</code></p>
+<p><code>summarize(scrap, min_price = min(price_per_pound, na.rm = TRUE))</code></p>
 </div>
 <div id="sd" class="section level2 unnumbered">
 <h2><code>sd()</code></h2>
@@ -1050,7 +1048,7 @@ scrap <- mutate(scrap, credits = total_pounds * price_per_pound)
 <h2><code>quantile()</code></h2>
 <p><em>Quantiles</em> are useful for finding the upper or lower range of a column. Use the <code>quantile()</code> function to find the the 5th and 95th quantile of the prices.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(scrap, </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">price_5th_pctile  =</span> <span class="fu">quantile</span>(price_per_pound, <span class="fl">0.05</span>, <span class="at">na.rm =</span> T),</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">price_5th_pctile  =</span> <span class="fu">quantile</span>(price_per_pound, <span class="fl">0.05</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">price_95th_pctile =</span> <span class="fu">quantile</span>(price_per_pound, <span class="fl">0.95</span>))</span></code></pre></div>
 <p><strong>Hint:</strong> Add <code>na.rm = T</code> to <code>quantile()</code>.</p>
 </div>
@@ -1067,9 +1065,8 @@ scrap <- mutate(scrap, credits = total_pounds * price_per_pound)
 </ol>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>scrap_summary <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap, </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">max_credits      =</span> __________,</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">weight_90th_pct  =</span> <span class="fu">quantile</span>(Weight, <span class="fl">0.90</span>),</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">weight_90th_pct  =</span> <span class="fu">quantile</span>(total_pounds, <span class="fl">0.90</span>),</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">count_records    =</span> __________,</span></code></pre></div>
-<p><br></p>
 <p><br></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Use summarize and <code>n()</code> to count the number of reported scrap records going to <code>Niima outpost</code>.</li>
@@ -1094,11 +1091,11 @@ scrap <- mutate(scrap, credits = total_pounds * price_per_pound)
 <p><code>group_by()</code> gives us the power to calculate separate results for each category in the data. This could be the average concentration at each of your monitoring sites, or the total emissions of a pollutant from each facility or stack.</p>
 <div id="bargain-hunters" class="section level3 unnumbered">
 <h3>Bargain hunters</h3>
-<p>Who’s selling goods for cheap? Use <code>group_by</code> with the column <em>Origin</em> to find the <code>mean(price_per_pound)</code> at each Origin City.</p>
+<p>Who’s selling goods for cheap? Use <code>group_by</code> with the column <em>origin</em> to find the <code>mean(price_per_pound)</code> at each Origin City.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scrap, origin) </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap_means,</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T))</span></code></pre></div>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 <p><br></p>
 <details>
 <summary class="btn_code_blue">
@@ -1110,7 +1107,7 @@ Rounding digits
 <h3>Rounding</h3>
 <p>You can round the prices to a certain number of digits using the <code>round()</code> function. We can finish by adding the <code>arrange()</code> function to sort the table by our new column.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap,</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price       =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T),</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price       =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mean_price_round =</span> <span class="fu">round</span>(mean_price, <span class="at">digits =</span> <span class="dv">2</span>))</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>scrap_means <span class="ot">&lt;-</span> <span class="fu">arrange</span>(scrap_means, mean_price_round)</span>
@@ -1166,7 +1163,7 @@ Rounding digits
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scrap,  ________ ) </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">mutate</span>(scrap,</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">origin_mean_price =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> T))</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">origin_mean_price =</span> <span class="fu">mean</span>(price_per_pound, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">ungroup</span>(scrap)</span></code></pre></div>
 <p><br></p>
@@ -1180,6 +1177,7 @@ Rounding digits
 </div>
 <div id="a-sickness-grows" class="section level1" number="8">
 <h1><span class="header-section-number">8</span> A sickness grows…</h1>
+<hr>
 <blockquote>
 <p><strong>Your turn!</strong> Practicing joining and summarizing</p>
 </blockquote>
@@ -1299,7 +1297,7 @@ Download (XLSX)   <i class="fa fa-download"></i>
 <p>Which planet has the most cases?</p>
 </blockquote>
 <p>Use <code>arrange()</code> and <code>desc()</code> to sort the results by the <code>cases</code> column.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>planet_totals <span class="ot">&lt;-</span> <span class="fu">arrang</span>(planet_totals, ________ )</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>planet_totals <span class="ot">&lt;-</span> <span class="fu">arrange</span>(planet_totals, ________ )</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>How many planets are off limits?</p>

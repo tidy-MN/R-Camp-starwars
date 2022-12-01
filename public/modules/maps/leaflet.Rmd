@@ -2,9 +2,9 @@
 ## But wait... {-}
 <hr class="hrlvl2">
 
-The Ewoks say it's unsafe to land. Booo... Sounds like the Empire is checking all ships for licenses. 
+The Ewoks say it's unsafe to land. Not good. It sounds like the Empire is checking all incoming ships for licenses. 
 
-Lucky for us there is some good news. They say for a small ship like ours, it is possible to land undetected. But we'll have to put down right-dab in the middle of the 3 northern outposts. 
+Lucky for us, there is some good news. The Ewoks say for a small ship like ours, it *could be* possible to land undetected. But we'll have to put down right-dab in the middle of the 3 northern outposts. 
 
 <br>
 
@@ -49,16 +49,22 @@ outposts <- select(outposts, ID, x_utm, y_utm, everything())
 # <i class="fas fa-globe-africa"></i> Reading coordinates 
 <hr>
 
-
 To read coordinates stored in a CSV or Excel spreadsheet, we can read them into R with our usual friends:
 
 - **readr**'s `read_csv()` for CSV files
 - **readxl**'s `read_excel()` for Excel files
 
 
-## Give it a try {-}
+For shapefiles, we use the `sf` package:
+
+- **sf**'s `st_read()` for SHP files 
+
+
+## Get the coordinates from CSV {-}
 ```{r, eval=F} 
-outposts <- read_csv("data/endor_outposts.csv")
+library(readr)
+
+outposts <- read_csv("https://mn-r.netlify.app/data/endor_outposts.csv")
 ```
 
 
@@ -280,16 +286,16 @@ Ok, now let's land on that planet before we get stuck up here with permanent spa
 
 
 <div class="yoda">
-###  Yoda says {-}
+###  **BASEMAPS**  {-}
 
 <img src="../images/yoda_baby_sq.png" class="yoda-img">
 
-**BASEMAPS.** There are lots of options for basemaps in leaflet. One of my favorites is `CartoDB.Positron` because its greyness doesn't distract from the data.
+There are lots of options for basemaps in leaflet. One of my favorites is `CartoDB.Positron` because its greyness doesn't distract from the data.
 
 Add it to your map by swapping out `addTiles()` for `addProviderTiles(providers$CartoDB.Positron)`
 
 <details>
-<summary class = "btn_code">_Show code_</summary>
+<summary class = "btn_code_blue">_Show code_</summary>
 
 ```{r, eval=F}
 leaflet(outposts) %>%

@@ -1,13 +1,13 @@
 
 ### Bargain hunters {-}
 
-Who's selling goods for cheap? Use `group_by` with the column _Origin_ to find the `mean(price_per_pound)` at each Origin City.
+Who's selling goods for cheap? Use `group_by` with the column _origin_ to find the `mean(price_per_pound)` at each Origin City.
 
 ```{r mean_price-by-origin, eval = F}
 scrap_means <- group_by(scrap, origin) 
 
 scrap_means <- summarize(scrap_means,
-                         mean_price = mean(price_per_pound, na.rm = T))
+                         mean_price = mean(price_per_pound, na.rm = TRUE))
 ```
 
 <br>
@@ -23,7 +23,7 @@ You can round the prices to a certain number of digits using the `round()` funct
 
 ```{r mean_price-by-Origin-round, eval = F}
 scrap_means <- summarize(scrap,
-                         mean_price       = mean(price_per_pound, na.rm = T),
+                         mean_price       = mean(price_per_pound, na.rm = TRUE),
                          mean_price_round = round(mean_price, digits = 2))
 
 scrap_means <- arrange(scrap_means, mean_price_round)
@@ -99,7 +99,7 @@ When you combine `group_by` and `mutate` the new column will be calculated based
 scrap <- group_by(scrap,  ________ ) 
 
 scrap <- mutate(scrap,
-                origin_mean_price = mean(price_per_pound, na.rm = T))
+                origin_mean_price = mean(price_per_pound, na.rm = TRUE))
 
 scrap <- ungroup(scrap)
 ```

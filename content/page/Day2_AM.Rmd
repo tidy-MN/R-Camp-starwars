@@ -123,6 +123,7 @@ write_csv(scrap, "results/scrap_day2.csv")
  
  
 # A sickness grows... 
+<hr>
 
 > **Your turn!** Practicing joining and summarizing
 
@@ -302,7 +303,7 @@ planet_totals <- summarize(joined, cases = _______ )
 Use `arrange()` and `desc()` to sort the results by the `cases` column. 
 
 ```{r, eval=F}
-planet_totals <- arrang(planet_totals, ________ )
+planet_totals <- arrange(planet_totals, ________ )
 ```
 
 <br>

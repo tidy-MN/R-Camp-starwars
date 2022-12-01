@@ -94,7 +94,7 @@ countdown(
   minutes = 2, 
   update_every = 5,
   # Fanfare when it's over
-  play_sound = TRUE,
+  play_sound = F,
   top = "100px",
   right = "auto",
   margin = "auto",

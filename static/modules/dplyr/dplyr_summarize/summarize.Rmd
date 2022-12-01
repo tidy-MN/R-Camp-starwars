@@ -9,7 +9,7 @@
 
 Use `summarize()` and `sum()` to find the total credits of all the scrap combined.
 
-```{r, eval = F}
+```{r, eval=F}
 summarize(scrap, total_credits = sum(credits))
 ```
 
@@ -17,7 +17,7 @@ summarize(scrap, total_credits = sum(credits))
 ## `mean()` {-}
 Use `summarize()` and `mean()` to calculate the _mean_ `price_per_pound` in the scrap report.
 
-```{r, eval = F}
+```{r, eval=F}
 
 summarize(scrap, mean_price = mean(price_per_pound, na.rm = T))
 
@@ -36,17 +36,17 @@ Did you see the `na.rm = TRUE` inside the `mean()` function. This tells R to ign
 ## `median()` {-}
 Use summarize to calculate the _median_ price_per_pound in the scrap report.
 
-`summarize(scrap, median_price = median(price_per_pound, na.rm = T))`
+`summarize(scrap, median_price = median(price_per_pound, na.rm = TRUE))`
 
 ## `max()` {-}
 Use summarize to calculate the _maximum_ price per pound any scrapper got for their scrap.
 
-`summarize(scrap, max_price = max(price_per_pound, na.rm = T))`
+`summarize(scrap, max_price = max(price_per_pound, na.rm = TRUE))`
 
 ## `min()` {-}
 Use summarize to calculate the _minimum_ price per pound any scrapper got for their scrap.
 
-`summarize(scrap, min_price = min(price_per_pound, na.rm = T))`
+`summarize(scrap, min_price = min(price_per_pound, na.rm = TRUE))`
 
 
 ## `sd()` {-}
@@ -61,7 +61,7 @@ _Quantiles_ are useful for finding the upper or lower range of a column. Use the
 
 ```{r quants, eval = FALSE}
 summarize(scrap, 
-          price_5th_pctile  = quantile(price_per_pound, 0.05, na.rm = T),
+          price_5th_pctile  = quantile(price_per_pound, 0.05, na.rm = TRUE),
           price_95th_pctile = quantile(price_per_pound, 0.95))
 ```
 
@@ -90,15 +90,12 @@ summarize(scrap, scrap_records = n())
 ```{r, eval = F}
 scrap_summary <- summarize(scrap, 
                            max_credits      = __________,
-                           weight_90th_pct  = quantile(Weight, 0.90),
+                           weight_90th_pct  = quantile(total_pounds, 0.90),
                            count_records    = __________,
                     
 ```
 
 <br>
-
-<br>
-
 
 2. Use summarize and `n()` to count the number of reported scrap records going to `Niima outpost`. 
 

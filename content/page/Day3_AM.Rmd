@@ -27,11 +27,8 @@ xaringanExtra::use_clipboard()
 ```
 
 
-
-
 # Day 1 review
 <hr>
-
 
 **Where we left off**
 ```{r}
@@ -97,7 +94,6 @@ cat(readLines("porg_tabs.txt"))
 ```
 
 
-
 # Day 2 review
 <hr>
 
@@ -127,7 +123,6 @@ cat(readLines("porg_tabs.txt"))
 <br>
 
 
- 
 # <i class="fa fa-group" style="color: steelblue;"></i> Share with friends
 <hr>
 

@@ -101,7 +101,7 @@ To add options to the YAML, add them as "children" under the `html_document:` se
     --- 
 
 
-<h4> For more bootstrap themes visit: <https://bootswatch.com/3/> </h4>
+<h4> For more markdown themes visit: <https://bootswatch.com/3/> </h4>
 
 
 <br>

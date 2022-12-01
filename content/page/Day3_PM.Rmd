@@ -35,30 +35,136 @@ xaringanExtra::use_clipboard()
 <br>
 
 
-# <i class="fas fa-database"></i> Connect to databases 
-<hr>
-
-> Top-secret demo....
-
-<br>
-
-
 # Pipe things together: ` A %>% B `
 <hr>
 ```{r pipe-intro, child='../../static/modules/dplyr/dplyr_pipe/intro.Rmd'}
 ```
 
-
 <br>
 
-# R Markdown reports
+# <i class="fas fa-database"></i> Connect to databases 
 <hr>
 
-```{r mark-demo, child='../../static/modules/markdown/demo.Rmd'}
+## Databases and SQL {-}
+
+
+### Prep {-}
+
+Let's get our favorite data.
+```{r}
+#install.packages("RSQLite")
+#install.packages("DBI")
+library(RSQLite)
+library(DBI)
+library(dplyr)
+
+people <- starwars
 ```
+
+
+```{r}
+# Create a connection to a new database
+# Check that the .db file pops up in your working directory
+conn <- dbConnect(RSQLite::SQLite(), "people.db")
+```
+
+
+```{r}
+# Add the dataset into a table called "people_tbl"
+try(dbWriteTable(conn, "people_tbl", people))
+
+# Drop the list columns
+people <- select(people, -films, -vehicles, -starships)
+
+# Try again
+try(dbWriteTable(conn, "people_tbl", people))
+
+# List all the tables available in the database
+dbListTables(conn)
+
+```
+
+
+### Reading data {-}
+
+**SQL**
+```{r}
+dbGetQuery(conn, "SELECT * FROM people_tbl")
+
+# Filter rows you want
+df <- dbGetQuery(conn, "SELECT * FROM people_tbl 
+                        WHERE eye_color = 'brown'")
+```
+
+**dplyr**
+```{r}
+tbl(conn, "people_tbl")
+
+# Filter rows you want
+df <- tbl(conn, "people_tbl") %>% 
+      filter(eye_color == "brown") 
+
+# Show the SQL that *will* run, if you tell it to
+show_query(df)
+
+# Run the SQL and return the data
+df <- collect(df)
+```
+
+
+### Database parameters
+
+- `driver` : Specific to the type of database: Oracle, PostgreSQL, Athena
+- `url` or `host` : The web or server location to connect to  
+- `port` : A 4 digit number identifies the port to use for communicating with the db  
+- `db` : The db name  
+- `user` : Your username for the db  
+- `password` : Your password for the db  
 
 <br>
 
+Woah! That can be a lot to track down. Luckily, there are helper packages to simplify connecting to various databases. Contact your Agency's R user group for more info.
+
+
+# <i class="fas fa-key"></i> My password - Is it secret, is it safe? 
+<hr>
+
+### Passwords in R {-}
+
+**Not secret, not safe**
+```{r, eval=F}
+#install.packages("RODBC")
+library(RODBC)
+
+user <- "Me"
+password <- "IloveR2D2!"
+
+# Connect to db "Area51"
+```
+
+
+**Yes secret, Yes safe**
+```{r, eval=F}
+#install.packages("keyring")
+library(keyring)
+
+# This opens a popup to enter and store your password for the db
+## Only need to do once
+key_set("Area51", "Me")
+
+# Then use this to safely add your password to your script
+key_get("Area51", "Me")
+```
+
+
+### Connecting to Agency databases {-} 
+
+> RDS databases at MDH. TEMPO at MPCA.
+
+*A live demo will begin shortly...*
+
+
+<br>
 
 
 # Your turn
@@ -136,11 +242,36 @@ Planet: `Earth`
 
 #### Join us! {-}
 
-- R groups: TidyTuesdays 
+- R user groups: TidyTuesdays 
+- Teams in Teams
+
+
+#### R heroes
+
+- MN's Amelia McNamara
+    - [Tweets](https://twitter.com/ameliamn?lang=en) and [YouTube](https://www.youtube.com/ameliamcnamara)  
+- David Robinson
+    - [Tweets](https://twitter.com/drob?lang=en) and [YouTube](https://www.youtube.com/@safe4democracy/videos) (Tidy Tuesday screencasts)  
+- Jenny Bryan
+    -  [Tweets](https://twitter.com/jennybryan?lang=en) and [Talks](https://jennybryan.org/talk/)  (See [Code smells](https://www.youtube.com/watch?v=7oyiPBjLAWY))
 
 #### Online courses {-}
 
--
+- John Hopkins' [Exploratory Data Analysis](https://www.coursera.org/learn/exploratory-data-analysis?specialization=data-science-foundations-r)
+
+#### Web trainings {-}
+
+- RStudio Primers 
+    - [Data Visualization Basics](https://posit.cloud/learn/primers/1.1)
+    - [R Programming Basics](https://posit.cloud/learn/primers/1.2)
+- [Intro to R](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html) - Cute giraffes!
+- [R boot camp](https://r-bootcamp.netlify.app/chapter1) - The Magic of ggplot2
+
+#### Online books {-}
+
+- [Hands on R](https://rstudio-education.github.io/hopr/basics.html)
+- [R for Data Science](https://r4ds.had.co.nz/)
+
 
 ## 🐱 Concatulations! {-}
 <hr class="hrlvl2">

@@ -87,7 +87,7 @@ countdown(
   update_every = 5,
   start_immediately = T,
   # Fanfare when it's over
-  play_sound = TRUE,
+  play_sound = F,
   top = "280px",
   right = "auto",
   margin = "auto",

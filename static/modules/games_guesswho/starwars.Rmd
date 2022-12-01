@@ -38,24 +38,24 @@ For example: Here's a `filter()` statement that filters the data to the characte
 mr_koon <- filter(people,
                   mass       < 100,
                   eye_color  != "blue",
-                  gender     == "male",
+                  sex        == "male",
                   homeworld  == "Dorin",
                   birth_year > 20)
 
 ```
 </div>
 
-Elusive answers are allowed. For example, if someone asks: _What is your character's mass?_ 
-
-- You can respond: 
-    - _My character's mass is equal to one less than their age._
-- Or if you're feeling generous you can respond:
-    - _My character's mass is definitely more than 100, but less than 140._
-
 
 ### My character has __NO__ hair! _(Missing values)_ {-}
 
 Sometimes a character will be missing a specific attribute. We learned earlier how R stores missing values as `NA`. If your character has a missing value for hair color, one of your filter statements would be ` is.na(hair_color) `. 
+
+What if you know the value is NOT `NA`? To add that to your filter you add an `!` (exclamation point) in front of `is.na()`. In R the `!` signifies NOT or the opposite of what comes after.
+
+So:
+
+- `!=` translates to "is NOT equal to"
+- `!is.na()` translates to "is NOT NA"
 
 <br>
 

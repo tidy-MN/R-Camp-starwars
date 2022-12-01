@@ -52,7 +52,7 @@ ggplot(scrap, aes(x = destination, y = amount, fill = destination)) +
 
 Finally, let's order things from lowest to highest.
 ```{r, eval=T}
-ggplot(scrap, aes(x = reorder(destination, amount, FUN = sum), y = amount, fill = destination)) +
+ggplot(scrap, aes(x = reorder(destination, amount, decreasing = TRUE), y = amount, fill = destination)) +
   geom_col() +
   labs(x = "Destination",
        title = "The most scrap was sent to the Trade Caravan")

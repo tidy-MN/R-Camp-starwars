@@ -14,16 +14,14 @@ library(dplyr)
 
 __Fill in the blank__
 ```{r, eval=F}
-scrap <- scrap %>% 
-         mutate(total_pounds = amount *  _____________ )
+scrap <- mutate(scrap, total_pounds = amount *  ___________ )
 ```
 
 <details>
 <summary class = "btn_code_blue">_Show code_</summary>
 
 ```{r, eval=T}
-scrap <- scrap %>% 
-         mutate(total_pounds = amount * pounds_per_unit)
+scrap <- mutate(scrap, total_pounds = amount * pounds_per_unit)
 ```
 
 </details>

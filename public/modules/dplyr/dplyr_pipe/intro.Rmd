@@ -33,7 +33,10 @@ The code above is dense and we need to read it backwards from right to left to u
 
 ### With the pipe <i class="fas fa-smile"></i> {-}
 ```{r maths_better, eval = F}
-result <- c(10, 20, 30, 50) %>% sum() %>% log() %>% round()
+result <- c(10, 20, 30, 50) %>%
+          sum() %>%
+          log() %>%
+          round()
 ```
 
 

@@ -252,6 +252,9 @@ Planet: `Earth`
     - [Tweets](https://twitter.com/drob?lang=en) and [YouTube](https://www.youtube.com/@safe4democracy/videos) (Tidy Tuesday screencasts)  
 - Jenny Bryan
     -  [Tweets](https://twitter.com/jennybryan?lang=en) and [Talks](https://jennybryan.org/talk/)  (See [Code smells](https://www.youtube.com/watch?v=7oyiPBjLAWY))
+- Allison Horst
+    -  [Github](https://github.com/allisonhorst) and [Art!](https://allisonhorst.com/r-packages-functions)  (See mutate & janitor)
+
 
 #### Online courses {-}
 

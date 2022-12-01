@@ -150,6 +150,19 @@ Click `Upload files` to add an image of an R plot or one of your `.R` scripts.
 
 <br>
 
+## Package questions {-}
+
+Search: `"package name" + github`
+
+For example, here's what we get for `lubridate + github`
+
+<img src="../images/github_lubridate.png" width="80%">
+
+## Secret work projects {-}
+
+- `MDH`: Internal Gitlab
+- `MPCA`: Coming soon...
+
 
 ### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-3.html) {-}
 

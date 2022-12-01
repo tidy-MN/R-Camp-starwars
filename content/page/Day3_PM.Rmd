@@ -301,7 +301,7 @@ Planet: `Earth`
 <br>
 
 # Return to Earth {-}
-<hr>
+<hr class="hrlvl2">
 
 You're free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let's look at some Earth data. 
  

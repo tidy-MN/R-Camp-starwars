@@ -235,7 +235,7 @@ Planet: `Earth`
 <br>
 
 
-## What's next? {-}
+# What's next? {-}
 <hr class="hrlvl2">
 
 #### Join us! {-}
@@ -274,7 +274,7 @@ Planet: `Earth`
 - [R for Data Science](https://r4ds.had.co.nz/)
 
 
-## 🐱 Concatulations! {-}
+# 🐱 Concatulations! {-}
 <hr class="hrlvl2">
 
 **You were an excellent Data Droid!** **Rey and BB8 absolutely couldn't have done it without you.**  

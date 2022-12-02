@@ -44,7 +44,7 @@ library(ggplot2)
 
 ### Read in data {-}
 ```{r, eval=T}
-clean_scrap <- read_csv("https://itep-r.netlify.com/data/starwars_scrap_jakku_clean.csv")
+clean_scrap <- read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku_clean.csv")
 
 head(clean_scrap)
 ```
@@ -73,7 +73,6 @@ head(clean_scrap)
 ```{r, eval=T}
 #View the data
 glimpse(clean_scrap)
-
 ```
 </p></details>
 <br>
@@ -107,7 +106,7 @@ select_scrap <- select(clean_scrap, items, amount_tons)
 </p></details>
 <br>
 
->  Order the data frame you just created by amount_tons from highest to lowest. Which item had the highest weight?
+>  Order the data frame you just created by `amount_tons` from highest to lowest. Which item had the highest weight?
 
 
 <br>
@@ -115,7 +114,7 @@ select_scrap <- select(clean_scrap, items, amount_tons)
 <summary class = "btn_code_blue">_Show solution_</summary>
 <p>
 ```{r, eval=T}
-select_scrap <- arrange(select_scrap, desc(items))
+select_scrap <- arrange(select_scrap, desc(amount_tons))
 ```
 
 </p></details>

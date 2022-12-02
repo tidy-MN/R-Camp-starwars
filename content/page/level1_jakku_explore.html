@@ -102,7 +102,7 @@ It is a clean version of the scrap data we’ve been using.</p>
 <p><br></p>
 <div id="read-in-data" class="section level3 unnumbered">
 <h3>Read in data</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clean_scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku_clean.csv&quot;</span>)</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clean_scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku_clean.csv&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(clean_scrap)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
@@ -193,7 +193,7 @@ Use <em>select()</em> to create a new data frame keeping only those columns and 
 </details>
 <p><br></p>
 <blockquote>
-<p>Order the data frame you just created by amount_tons from highest to lowest. Which item had the highest weight?</p>
+<p>Order the data frame you just created by <code>amount_tons</code> from highest to lowest. Which item had the highest weight?</p>
 </blockquote>
 <br>
 <details>
@@ -201,7 +201,7 @@ Use <em>select()</em> to create a new data frame keeping only those columns and 
 <em>Show solution</em>
 </summary>
 <p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>select_scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(select_scrap, <span class="fu">desc</span>(items))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>select_scrap <span class="ot">&lt;-</span> <span class="fu">arrange</span>(select_scrap, <span class="fu">desc</span>(amount_tons))</span></code></pre></div>
 </p>
 </details>
 <p><br></p>

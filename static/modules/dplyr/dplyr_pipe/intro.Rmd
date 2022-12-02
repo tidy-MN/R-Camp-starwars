@@ -76,18 +76,20 @@ scrap <- scrap %>%
 <div class="tip">
 ### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
 
-Similar to above, use the `%>%` to combine the two analysis lines below.
+Similar to above, use the `%>%` to combine the 3 analysis lines below.
 
-```{r better_endor, eval=F}
-# Filter to ozone concentrations above 80
-ozone <- filter(ozone, ppb > 80)
+```{r pipe-test, eval=F}
+# Group the scrap data by item
+scrap <- group_by(scrap, item)
 
-# Add a units column to the filtered data
-ozone <- mutate(ozone, units = "ppb")
+# Calculate each item's mean price 
+scrap <- summarize(scrap, mean_price = mean(price_per_unit))
+
+# Ungroup the data
+scrap <- ungroup(scrap)
 ```
 </div>
 
 
 ## Let the `%>%` guide you. {-}
-
 

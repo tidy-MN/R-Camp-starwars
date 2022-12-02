@@ -291,12 +291,15 @@ Example code to read aloud
 </div>
 <div id="explore" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
-<p>Similar to above, use the <code>%&gt;%</code> to combine the two analysis lines below.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter to ozone concentrations above 80</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ozone <span class="ot">&lt;-</span> <span class="fu">filter</span>(ozone, ppb <span class="sc">&gt;</span> <span class="dv">80</span>)</span>
+<p>Similar to above, use the <code>%&gt;%</code> to combine the 3 analysis lines below.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group the scrap data by item</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scrap, item)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a units column to the filtered data</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>ozone <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ozone, <span class="at">units =</span> <span class="st">&quot;ppb&quot;</span>)</span></code></pre></div>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate each item&#39;s mean price </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">summarize</span>(scrap, <span class="at">mean_price =</span> <span class="fu">mean</span>(price_per_unit))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ungroup the data</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">ungroup</span>(scrap)</span></code></pre></div>
 </div>
 </div>
 <div id="let-the-guide-you." class="section level2 unnumbered">

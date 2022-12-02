@@ -331,10 +331,10 @@ Use `mutate()` to update the **week_day** column in both site schedules.
 
 ```{r, eval=F, echo=T}
 # Set date format to 5-11-2023
-bright_dates <- mutate(bright_dates, count_date = format(count_date, _______  ))
+bright_dates <- mutate(bright_dates, pretty_date = format(count_date, _______  ))
 
 # Set date format to May 12, 2023
-fern_dates <- mutate(fern_dates, count_date = format(count_date, _______ ))
+fern_dates <- mutate(fern_dates, pretty_date = format(count_date, _______ ))
 ```
 
 
@@ -343,10 +343,10 @@ fern_dates <- mutate(fern_dates, count_date = format(count_date, _______ ))
   
 ```{r, eval=T, echo=T}
 # Set date format to 5-11-2023
-bright_dates <- mutate(bright_dates, count_date = format(count_date, "%m-%d-%Y"))
+bright_dates <- mutate(bright_dates, pretty_date = format(count_date, "%m-%d-%Y"))
 
 # Set date format to May 12, 2023
-fern_dates <- mutate(fern_dates, count_date = format(count_date, "%b %d, %Y"))
+fern_dates <- mutate(fern_dates, pretty_date = format(count_date, "%b %d, %Y"))
 ```
 
 </details>
@@ -449,8 +449,7 @@ porgs <- filter(porgs, !is.na(site))
 **First, add a `month` column to the data with the function `month()` and the column `count_date`.**
 
 ```{r, eval=T}
-porgs <- porgs %>%
-         mutate(month = month(count_date))
+porgs <- mutate(porgs, month = month(count_date))
 ```
 
 <br>

@@ -63,7 +63,7 @@
   "headline": "Day 3 - AM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22})       pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  3107 ,
+  "wordCount":  3114 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -1279,19 +1279,19 @@ Show answer
 <p>Use <code>mutate()</code> to update the <strong>week_day</strong> column in both site schedules.</p>
 <p><strong>Here’s a start</strong></p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to 5-11-2023</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(bright_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, _______  ))</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(bright_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, _______  ))</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to May 12, 2023</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, _______ ))</span></code></pre></div>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, _______ ))</span></code></pre></div>
 <details>
 <summary class="btn_code">
 Show code
 </summary>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to 5-11-2023</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(bright_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%m-%d-%Y&quot;</span>))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>bright_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(bright_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%m-%d-%Y&quot;</span>))</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date format to May 12, 2023</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">count_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%b %d, %Y&quot;</span>))</span></code></pre></div>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>fern_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fern_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%b %d, %Y&quot;</span>))</span></code></pre></div>
 </details>
 </div>
 <div id="howd-we-do" class="section level3 unnumbered">
@@ -1303,20 +1303,24 @@ Show code
 <tr class="header">
 <th align="left">count_date</th>
 <th align="left">week_day</th>
+<th align="left">pretty_date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">05-04-2023</td>
+<td align="left">2023-05-04</td>
 <td align="left">Thursday</td>
+<td align="left">05-04-2023</td>
 </tr>
 <tr class="even">
-<td align="left">05-11-2023</td>
+<td align="left">2023-05-11</td>
 <td align="left">Thursday</td>
+<td align="left">05-11-2023</td>
 </tr>
 <tr class="odd">
-<td align="left">05-18-2023</td>
+<td align="left">2023-05-18</td>
 <td align="left">Thursday</td>
+<td align="left">05-18-2023</td>
 </tr>
 </tbody>
 </table>
@@ -1327,20 +1331,24 @@ Show code
 <tr class="header">
 <th align="left">count_date</th>
 <th align="left">week_day</th>
+<th align="left">pretty_date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">May 05, 2023</td>
+<td align="left">2023-05-05</td>
 <td align="left">Friday</td>
+<td align="left">May 05, 2023</td>
 </tr>
 <tr class="even">
-<td align="left">May 12, 2023</td>
+<td align="left">2023-05-12</td>
 <td align="left">Friday</td>
+<td align="left">May 12, 2023</td>
 </tr>
 <tr class="odd">
-<td align="left">May 19, 2023</td>
+<td align="left">2023-05-19</td>
 <td align="left">Friday</td>
+<td align="left">May 19, 2023</td>
 </tr>
 </tbody>
 </table>
@@ -1390,8 +1398,7 @@ location. We do know the date however.</p>
 <h3 id="what-is-the-best-month-to-see-porgs" class="unnumbered">What is the best month to see porgs?</h3>
 </blockquote>
 <p><strong>First, add a <code>month</code> column to the data with the function <code>month()</code> and the column <code>count_date</code>.</strong></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> porgs <span class="sc">%&gt;%</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>porgs <span class="ot">&lt;-</span> <span class="fu">mutate</span>(porgs, <span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
 <p><br></p>
 <p><strong>Next, use <code>ggplot()</code> and <code>geom_col()</code> to plot the porg sightings by month.</strong></p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(porgs, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> ______ , <span class="at">fill =</span> site)) <span class="sc">+</span></span>

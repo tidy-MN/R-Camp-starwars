@@ -4,9 +4,7 @@ Let's launch ourselves into the unknown and make a __candy plot__. With a little
 Since we all know you have the best taste in candy, let's make sure your favorite candy wins the very official <span style="font-size: 26px;"> __BEST__ </span> candy award.
 
 
-
 <br>
-
 
 <div style="padding: 22px; background-color: #93bf6636;  border-radius: 14px;">
 
@@ -19,19 +17,20 @@ Since we all know you have the best taste in candy, let's make sure your favorit
 1. Copy all the code below. Highlight all of lines, **or** click the `Copy Code` button on the top-right of the grey box below.
 
 ```{r wordcloud, eval=F}
-#-----------  Install packages  ---------------#
-install.packages("ggplot2")
-install.packages("readr")
-install.packages("hrbrthemes")
+#------------  Install packages  ----------------#
+if(!require("hrbrthemes")) {
+  install.packages("ggplot2")
+  install.packages("readr")
+  install.packages("hrbrthemes")
+}
 
-
-#-------------  Load packages  ----------------#
+#--------------  Load packages  -----------------#
 library(ggplot2)
 library(readr)
 library(hrbrthemes)
 
 
-#---------------- Candy data ------------------# 
+#----------------- Candy data -------------------# 
 survey <- read_csv('candy,          rating
                    "Snickers",        14 
                    "Almond Joy",      40 
@@ -40,7 +39,7 @@ survey <- read_csv('candy,          rating
                    "Sour Patch Kids", 8')
 
 
-#-------- A column plot w/ dark theme ---------#
+#----- A bar plot w/ dark Halloween theme -------#
 ggplot(survey, 
        aes(x = candy, y = rating)) +
   geom_col(aes(fill = candy), show.legend = FALSE) +
@@ -48,7 +47,7 @@ ggplot(survey,
        subtitle = "Very official candy ratings",
        caption  = "Data from MN survey 2050") +
   coord_flip() +
-  #scale_fill_viridis_d()
+  #scale_fill_viridis_d() +
   theme_ft_rc(base_size = 18)  
  
 ```

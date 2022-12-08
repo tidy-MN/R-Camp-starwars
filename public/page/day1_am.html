@@ -63,7 +63,7 @@
   "headline": "Day 1 - AM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  5069 ,
+  "wordCount":  5057 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -705,34 +705,34 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="left">2017-10-13</td>
+<td align="right">17.000</td>
+<td align="right">50.0</td>
+</tr>
+<tr class="even">
 <td align="left">27-137-7554</td>
-<td align="left">2016-07-15</td>
-<td align="right">3</td>
-<td align="right">69.8</td>
+<td align="left">2018-06-20</td>
+<td align="right">11.000</td>
+<td align="right">54.2</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="left">2018-10-01</td>
+<td align="right">9.000</td>
+<td align="right">48.2</td>
 </tr>
 <tr class="even">
 <td align="left">27-137-7001</td>
-<td align="left">2018-05-22</td>
-<td align="right">10</td>
-<td align="right">66.2</td>
+<td align="left">2016-04-06</td>
+<td align="right">0.018</td>
+<td align="right">49.4</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2016-07-23</td>
-<td align="right">20</td>
-<td align="right">74.0</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7554</td>
-<td align="left">2017-06-11</td>
-<td align="right">14</td>
+<td align="left">2018-08-27</td>
+<td align="right">13.000</td>
 <td align="right">68.6</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-06-04</td>
-<td align="right">12</td>
-<td align="right">72.2</td>
 </tr>
 </tbody>
 </table>
@@ -1133,6 +1133,12 @@ starwars_df <- data.frame(characters  = starwars_characters,
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>starwars_df<span class="sc">$</span>ages</span></code></pre></div>
 <pre><code>## [1] 19 19 25</code></pre>
 </div>
+<div id="notes-and-comments" class="section level3 unnumbered">
+<h3>Notes and comments</h3>
+<p>The italic and orange lines in the scripts above are called comments. You can add notes to your scripts with the <code>#</code> to make it easier for others and yourself to understand what is happening and why.</p>
+<p>Every line that starts with a <code>#</code> is ignored and won’t be run as R code.
+You can also use comments to add warnings or instructions for others using your code.</p>
+</div>
 <div id="pop-quiz" class="section level3 unnumbered quiz">
 <h3>Pop Quiz!</h3>
 <p><strong>Which object name is valid?</strong> <em>(Hint: You can test them in R.)</em></p>
@@ -1154,14 +1160,6 @@ starwars_df <- data.frame(characters  = starwars_characters,
 <div style="clear: both;">
 
 </div>
-<p><br></p>
-</div>
-<div id="notes-and-comments" class="section level2 unnumbered">
-<h2>Notes and comments</h2>
-<p>You can add notes to your scripts with the <code>#</code> to make it easier for others and yourself to understand what is happening and why.
-The lines of code in the scripts that start with a <code>#</code> are called comments.
-Every line that starts with a <code>#</code> is ignored and won’t be run as R code.
-You can also use comments to add warnings or instructions for others using your code.</p>
 </div>
 </div>
 <div id="read-data" class="section level1" number="5">
@@ -1223,7 +1221,6 @@ You can also use comments to add warnings or instructions for others using your 
 <p><strong>BB8:</strong> <em>I intercepted a large scrapper data set from droid 4P-L of Junk Boss Plutt.</em></p>
 <p><br></p>
 <p>Receiving data now…</p>
-<p><br></p>
 <p><strong>scrap_records.csv</strong></p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>item,origin,destination,amount,units,price_per_pound  </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>Flight recorder,Outskirts,Niima Outpost,<span class="dv">887</span>,Tons,<span class="fl">590.93</span>  </span>
@@ -1241,36 +1238,6 @@ You can also use comments to add warnings or instructions for others using your 
 <h2>CSV to the rescue</h2>
 <p>The main data format used in R is the <strong>CSV</strong> <em>(comma-separated values)</em>. A <strong>CSV</strong> is a simple text file that can be opened in R and most other data tools, including Excel. It looks squished together as plain text, but that’s okay! When opened in R, the text becomes a familiar looking table with columns and rows.</p>
 <p>Before we launch ahead, let’s add a <em>package</em> to R that will help us read <strong>CSV</strong> files.</p>
-<p><br></p>
-<details>
-<summary class="btn_code_blue">
-Save a CSV from Excel
-</summary>
-<p>
-<div class="note">
-<p><strong>Step 1:</strong> Open your Excel file.</p>
-<p><strong>Step 2:</strong> Save as CSV</p>
-<ul>
-<li>Go to <em>File</em><br />
-</li>
-<li><em>Save As</em><br />
-</li>
-<li><em>Browse</em> to your project folder<br />
-</li>
-<li>Save as type: _CSV (Comma Delimited) (*.csv)_
-<ul>
-<li>Any of the <em>CSV</em> options will work<br />
-</li>
-</ul></li>
-<li>Click <strong>Yes</strong><br />
-</li>
-<li>Close Excel (Click “Don’t Save” as much as you need to. Seriously, we just saved it. Why won’t Excel just leave us alone?)</li>
-</ul>
-<p><strong>Step 3:</strong> Return to RStudio and open your project. Look at your <em>Files</em> tab in the lower right window. Click on the <em>CSV</em> file you saved and choose <strong>View File</strong>.</p>
-<p><strong>Success!</strong></p>
-</div>
-</p>
-</details>
 <p><br></p>
 </div>
 </div>
@@ -1436,7 +1403,7 @@ Pop Quiz!
 <h3 class="unnumbered"></h3>
 <details>
 <summary class="btn_code_blue">
-<span style="color: #f6cd00;"><i class="fas fa-star"></i><strong>BONUS</strong><i class="fas fa-star"></i></span> <strong>Function options</strong>
+<span style="color: #f6cd00;"><i class="fas fa-star"></i></span> <strong>Function options</strong>
 </summary>
 <div class="note" style="margin-top: -10px;">
 <p>
@@ -1501,6 +1468,32 @@ Pop Quiz!
 </p>
 </details>
 </div>
+<details>
+<summary class="btn_code_blue">
+Create a CSV from Excel
+</summary>
+<div class="note" style="margin-top: 0px;">
+<p><strong>Step 1:</strong> Open your Excel file.</p>
+<p><strong>Step 2:</strong> Save as CSV</p>
+<ul>
+<li>Go to <em>File</em><br />
+</li>
+<li><em>Save As</em><br />
+</li>
+<li><em>Browse</em> to your project folder<br />
+</li>
+<li>Save as type: <em>CSV</em> <em>(Comma Delimited)</em> _(*.csv)_<br />
+</li>
+<li>Any of the <em>CSV</em> options will work<br />
+</li>
+<li>Click <strong>Yes</strong><br />
+</li>
+<li>Close Excel (Click “Don’t Save” as much as you need to. Excel loves long goodbyes.)</li>
+</ul>
+<p><strong>Step 3:</strong> Return to RStudio and open your project. Look at your <em>Files</em> tab in the lower right window. Click on the <em>CSV</em> file you saved and choose <strong>View File</strong>.</p>
+<p><strong>Success!</strong></p>
+</div>
+</details>
 </div>
 </div>
 </div>
@@ -1586,6 +1579,7 @@ Pop Quiz!
 </div>
 <div id="learn-more" class="section level1" number="8">
 <h1><span class="header-section-number">8</span> Learn more!</h1>
+<hr>
 <ul>
 <li>RStudio Primers: <a href="https://posit.cloud/learn/primers/1.2">R Programming Basics</a></li>
 <li><a href="https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html">Intro to R</a> - Cute giraffes!</li>

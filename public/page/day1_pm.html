@@ -577,13 +577,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <img src="../images/porgs/porgs_tbl.png" style="width: 85%;" /> <br><br>
 </div>
 <div id="select" class="tab-pane fade" role="tabpanel" aria-labelledby="select-tab">
-<img src="../images/porgs/select_card.png" style="width: 90%;" /> <br><br> <img src="../images/porgs/select_drop.png" style="width: 65%;" /> <img src="../images/porgs/select_drop_tbl.png" style="width: 80%; margin-left: 5%; margin-top: 12px;" /> <br><br>
+<img src="../images/porgs/select_card.png" style="width: 90%;" /> <br><br> <img src="../images/porgs/select_drop_tbl.png" style="width: 80%; margin-left: 5%; margin-top: 12px;" /> <br><br>
 </div>
 <div id="arrange" class="tab-pane fade" role="tabpanel" aria-labelledby="arrange-tab">
-<img src="../images/porgs/arrange.png" style="width: 65%;" /> <img src="../images/porgs/arrange_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="../images/porgs/arrange_desc.png" style="width: 57%;" /> <img src="../images/porgs/arrange_tbl_desc.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
+<img src="../images/porgs/arrange_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="../images/porgs/arrange_tbl_desc.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
 </div>
 <div id="filter" class="tab-pane fade" role="tabpanel" aria-labelledby="filter-tab">
-<img src="../images/porgs/filter.png" style="width: 65%;" /> <img src="../images/porgs/filter_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="../images/porgs/filter2.png" style="width: 75%;" /> <img src="../images/porgs/filter2_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
+<img src="../images/porgs/filter_card.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="../images/porgs/filter2_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
 </div>
 <div id="mutate3" class="tab-pane fade" role="tabpanel" aria-labelledby="mutate3-tab">
 <img src="../images/porgs/mutate_card.png" style="width: 88%;" /> <br><br>
@@ -592,7 +592,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <img src="../images/porgs/summarize_card.png" style="width: 88%;" /> <br><br>
 </div>
 <div id="group_by" class="tab-pane fade" role="tabpanel" aria-labelledby="group_by-tab">
-<img src="../images/porgs/groupby_card.png" style="width: 92%;" /> <br><br>
+<img src="../images/porgs/groupby_tbl.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="../images/porgs/groupby_tbl2.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="../images/porgs/groupby_tbl3.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br> <img src="../images/porgs/groupby_tbl_final.png" style="width: 88%; margin-left: 10%; margin-top: 12px;" /> <br><br>
 </div>
 </div>
 </div>
@@ -1226,7 +1226,7 @@ A <code>ggplot</code> has 3 ingredients.
 <h2>Sorting</h2>
 <hr class="hrlvl2">
 <p>Finally, let’s order things from lowest to highest.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(destination, amount, <span class="at">FUN =</span> sum), <span class="at">y =</span> amount, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(destination, amount, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), <span class="at">y =</span> amount, <span class="at">fill =</span> destination)) <span class="sc">+</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Destination&quot;</span>,</span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;The most scrap was sent to the Trade Caravan&quot;</span>)</span></code></pre></div>
@@ -1270,6 +1270,7 @@ A <code>ggplot</code> has 3 ingredients.
 </div>
 <div id="learn-more" class="section level1" number="11">
 <h1><span class="header-section-number">11</span> Learn more!</h1>
+<hr>
 <ul>
 <li>RStudio Primers: <a href="https://posit.cloud/learn/primers/1.1">Data Visualization Basics</a></li>
 <li><a href="https://rstudio-education.github.io/hopr/basics.html">R Basics</a></li>

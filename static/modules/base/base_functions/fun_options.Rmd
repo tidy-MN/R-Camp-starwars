@@ -1,7 +1,7 @@
 
 <details>
 <summary class="btn_code_blue"> 
-<span style="color: #f6cd00;"><i class="fas fa-star"></i>__BONUS__<i class="fas fa-star"></i></span> __Function options__ </summary>
+<span style="color: #f6cd00;"><i class="fas fa-star"></i></span> __Function options__ </summary>
 
 <div class="note" style="margin-top: -10px;">
 <p>

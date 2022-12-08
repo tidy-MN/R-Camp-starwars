@@ -1,0 +1,24 @@
+
+<details>
+<summary class = "btn_code_blue"> Create a CSV from Excel </summary>
+    
+<div class="note" style="margin-top: 0px;">
+      
+__Step 1:__ Open your Excel file.
+    
+__Step 2:__  Save as CSV
+    
+- Go to _File_  
+- _Save As_  
+- _Browse_ to your project folder  
+- Save as type: _CSV_ _(Comma Delimited)_ _(*.csv)_  
+- Any of the _CSV_ options will work    
+- Click __Yes__      
+- Close Excel (Click "Don't Save" as much as you need to. Excel loves long goodbyes.)    
+
+__Step 3:__ Return to RStudio and open your project. Look at your _Files_ tab in the lower right window. Click on the _CSV_ file you saved and choose __View File__. 
+
+__Success!__
+
+</div>
+</details>

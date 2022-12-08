@@ -1,0 +1,99 @@
+
+```{r starwars_read, eval=T}
+#install.packages("readr")
+library(readr)
+
+read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku.csv")
+```
+
+
+## Name the data {-}
+
+Where did the data go after you read it into R? When we want to work with the data in R, we need to give it a name with the assignment operator: `<-`. 
+
+```{r starwars_csv_name, eval=T, message=F}
+# Read in scrap data and set name to "scrap"
+scrap <- read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku.csv")
+
+# Type the name of the table to view it in the console
+scrap
+```
+
+<br>
+
+
+<div class="yoda">
+###  Yoda says {-}
+
+<img src="../images/yoda_baby_sq.png" class="yoda-img">
+
+
+Notice the row of `<chr>` letter abbreviations under the column names? These describe the data type of each column.
+
+- `<chr>` stands for __character__ vector or a string of characters. Examples: _"apple"_, _"apple5"_, _"5 red apples"_  
+- `<int>` stands for __integer__. Examples: _5_, _34_, _1071_  
+- `<dbl>` stands for __double__. Examples: _5.000_, _3.4E-6_, _10.710_
+
+We'll see more data types later on, such as `dates` and `logical` (TRUE/FALSE).
+</div>
+
+
+<div class="quiz">
+
+<h2 style="margin-top: 28px; margin-bottom: 44px;"> Pop Quiz! </h2>
+
+__1. What data type is the `destination` column?__
+
+<input type="radio" name="type"> _letters_        <br> 
+<input type="radio" name="type"> _character_      <br> 
+<input type="radio" name="type"> _TRUE/FALSE_     <br> 
+<input type="radio" name="type"> _numbers_        <br> 
+
+<details style="margin-left: 14px;">
+<summary class = "btn_code">_Show solution_</summary>
+<p>
+<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `character`    
+_Woop! You got this._
+</p></details>
+
+<br>
+<hr style="margin-top: 8px;">
+
+__2. What package does `read_csv()` come from?__
+
+<input type="radio" name="pkg"> _dinosaur_     <br> 
+<input type="radio" name="pkg"> _get_data_     <br> 
+<input type="radio" name="pkg"> _readr_        <br> 
+<input type="radio" name="pkg"> _dplyr_        <br> 
+
+<details style="margin-left: 14px;">
+<summary class = "btn_code">_Show solution_ </summary>
+<p>
+
+<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `readr`  
+_Great job! You are Jedi worthy!_
+
+</p></details>
+
+<br>
+<hr style="margin-top: 8px;">
+
+__3. How would you load the package `junkfinder`?__
+
+<input type="radio" name="load"> _junkfinder()_             <br> 
+<input type="radio" name="load"> _library(junkfinder)_      <br> 
+<input type="radio" name="load"> _load(junkfinder)_         <br> 
+<input type="radio" name="load"> _gogo_gadget(junkfinder)_  <br> 
+
+<details style="margin-left: 14px;">
+<summary class = "btn_code">_Show solution_</summary>
+<p>
+
+<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `library("junkfinder")`  
+_Excellent! Keep the streak going._
+
+</p></details>
+
+</div>
+
+<br>

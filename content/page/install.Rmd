@@ -95,11 +95,12 @@ __Packages used in this training__
 
 >  Load data
 
-`readr`     Load data from text files: tab, comma, and other delimited files.  
-`readxl`    Load data from Excel.  
-`janitor`   Clean and simplify column names.  
-`DBI`       Load data from databases  
-`haven`     Load SAS, SPSS, and Stata files.    
+`readr`     Load data from text files: tab, comma, and other delimited files   
+`readxl`    Load data from Excel   
+`janitor`   Clean and simplify column names   
+`DBI`       Load data from databases    
+`haven`     Load SAS, SPSS, and Stata files    
+`sf`        Load data from GIS shapefiles     
 
 <br>
 
@@ -167,6 +168,15 @@ library(readr)
 
 __Additional recommended packages__
 
+> __Charts and visuals__
+
+`ggsave`  Export charts in various formats and sizes.  
+`hrbrthemes` , `ggpomological`, `ggthemes`   Chart themes for ggplot.  
+`viridis`, `wesanderson`, `ghibli`   Color palettes.  
+`rmarkdown`    Write summary reports and save as PDF, Word document, presentation, or website.  
+
+<br>
+
 > __Load data__
 
 `RODBC`     Load data from Access and Oracle databases.  
@@ -184,14 +194,6 @@ __Additional recommended packages__
 
 <br>
 
-> __Charts and visuals__
-
-`ggsave`  Export charts in various formats and sizes.  
-`hrbrthemes` , `ggpomological`, `ggthemes`   Chart themes for ggplot.  
-`viridis`, `wesanderson`, `ghibli`   Color palettes.  
-`rmarkdown`    Write summary reports and save as PDF, Word document, presentation, or website.  
-
-<br>
 
 > __Maps__
 

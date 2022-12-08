@@ -12,13 +12,13 @@ output:
 
 <div id="TOC">
 <ul>
-<li><a href="#install-r">Install <code>R</code></a></li>
-<li><a href="#install-rstudio">Install <code>RStudio</code></a></li>
-<li><a href="#install-r-packages">Install <code>R packages</code></a>
+<li><a href="#install-r" id="toc-install-r">Install <code>R</code></a></li>
+<li><a href="#install-rstudio" id="toc-install-rstudio">Install <code>RStudio</code></a></li>
+<li><a href="#install-r-packages" id="toc-install-r-packages">Install <code>R packages</code></a>
 <ul>
-<li><a href="#add-r-packages">Add R packages</a></li>
+<li><a href="#add-r-packages" id="toc-add-r-packages">Add R packages</a></li>
 </ul></li>
-<li><a href="#update-r-packages">Update <code>R packages</code></a></li>
+<li><a href="#update-r-packages" id="toc-update-r-packages">Update <code>R packages</code></a></li>
 </ul>
 </div>
 
@@ -86,11 +86,12 @@ blockquote { padding: 5px 10px; }
 <blockquote>
 <p>Load data</p>
 </blockquote>
-<p><code>readr</code> Load data from text files: tab, comma, and other delimited files.<br />
-<code>readxl</code> Load data from Excel.<br />
-<code>janitor</code> Clean and simplify column names.<br />
+<p><code>readr</code> Load data from text files: tab, comma, and other delimited files<br />
+<code>readxl</code> Load data from Excel<br />
+<code>janitor</code> Clean and simplify column names<br />
 <code>DBI</code> Load data from databases<br />
-<code>haven</code> Load SAS, SPSS, and Stata files.</p>
+<code>haven</code> Load SAS, SPSS, and Stata files<br />
+<code>sf</code> Load data from GIS shapefiles</p>
 <p><br></p>
 <blockquote>
 <p>Manipulate data</p>
@@ -134,6 +135,14 @@ install.packages(new_packages)</code></pre>
 <p><br></p>
 <p><strong>Additional recommended packages</strong></p>
 <blockquote>
+<p><strong>Charts and visuals</strong></p>
+</blockquote>
+<p><code>ggsave</code> Export charts in various formats and sizes.<br />
+<code>hrbrthemes</code> , <code>ggpomological</code>, <code>ggthemes</code> Chart themes for ggplot.<br />
+<code>viridis</code>, <code>wesanderson</code>, <code>ghibli</code> Color palettes.<br />
+<code>rmarkdown</code> Write summary reports and save as PDF, Word document, presentation, or website.</p>
+<p><br></p>
+<blockquote>
 <p><strong>Load data</strong></p>
 </blockquote>
 <p><code>RODBC</code> Load data from Access and Oracle databases.<br />
@@ -147,14 +156,6 @@ install.packages(new_packages)</code></pre>
 <p><strong>Manipulate data</strong></p>
 </blockquote>
 <p><code>stringr</code> Tools to edit and clean text and character strings.</p>
-<p><br></p>
-<blockquote>
-<p><strong>Charts and visuals</strong></p>
-</blockquote>
-<p><code>ggsave</code> Export charts in various formats and sizes.<br />
-<code>hrbrthemes</code> , <code>ggpomological</code>, <code>ggthemes</code> Chart themes for ggplot.<br />
-<code>viridis</code>, <code>wesanderson</code>, <code>ghibli</code> Color palettes.<br />
-<code>rmarkdown</code> Write summary reports and save as PDF, Word document, presentation, or website.</p>
 <p><br></p>
 <blockquote>
 <p><strong>Maps</strong></p>

@@ -1,5 +1,0 @@
-
-You can add notes to your scripts with the `#` to make it easier for others and yourself to understand what is happening and why.
-The lines of code in the scripts that start with a `#` are called comments. 
-Every line that starts with a `#` is ignored and won't be run as R code. 
-You can also use comments to add warnings or instructions for others using your code.

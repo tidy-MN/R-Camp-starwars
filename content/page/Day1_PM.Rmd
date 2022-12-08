@@ -153,6 +153,7 @@ Now, try setting the **fill** argument equal to the `destination` column.
 ![](../images/scaryR.jpg){style="margin-left: 11%; width: 78%;"}
 
 # Learn more!
+<hr>
 
 - RStudio Primers: [Data Visualization Basics](https://posit.cloud/learn/primers/1.1)
 - [R Basics](https://rstudio-education.github.io/hopr/basics.html)

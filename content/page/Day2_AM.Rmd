@@ -42,10 +42,11 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ## Porg review {-}
 <hr class="hrlvl2">
 
-The _poggle_ of porgs has returned to help review the `dplyr` functions. Follow along by reading the __porg__ data from the URL below.
+The _poggle_ of porgs has returned to help review the `dplyr` functions. Follow along by reading the __porgs__ data from the URL below.
 
 ```{r, eval = F}
-library(readr)
+library(tidyverse)
+
 porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
 ```
 
@@ -234,7 +235,7 @@ To find the planets these records are associated with, we will need to join the 
 To load the planet data, add the following to your R script:
   
 ```{r, eval=F}
-library(dplyr)
+library(tidyverse)
 
 people <- starwars
 ```

@@ -1,7 +1,7 @@
 
 <details>
 <summary class="btn_code_blue"> 
-<span style="color: #f6cd00;"><i class="fas fa-star"></i></span> __More joining__</summary>
+<span style="color: #f6cd00;"><i class="fas fa-star"></i></span> __More on joining tables__</summary>
 
 <div class="note" style="margin-top: -2px;">
 <p>
@@ -57,7 +57,7 @@ kable(starwars_homeworlds)
 __Uh oh.__ There's no "Ayla Secura" in the height table and there's no "Greedo" in the homeworlds table. Can we still join the tables? Run the code below to see what happens.
 
 ```{r, warning=F, message=F, results='hide', echo=T}
-library(dplyr)
+library(tidyverse)
    
 # Create new tables 
 starwars_heights <- tibble(name = c("Luke Skywalker", "C-3PO", "Darth Vader", "Leia Organa", "Greedo"), 
@@ -127,7 +127,6 @@ kable(starwars_heights)
 `starwars_homeworlds`
 
 ```{r, echo =F, warning=F, message=F}
-
 kable(tibble(name = c("Luke Skywalker", "C-3PO", "C-3PO", "Darth Vader", "Leia Organa", "Ayla Secura"), 
              homeworld = c("Tatooine", "Tatooine", "Tantive IV", "Tatooine", "Alderaan", "Ryloth")))
 ```

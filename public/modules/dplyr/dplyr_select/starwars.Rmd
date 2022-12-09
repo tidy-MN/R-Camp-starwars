@@ -9,8 +9,7 @@ Use the `select()` function to:
 ## Drop columns with a minus sign: `-col_name` {-}
 
 ```{r select, warning = F, message = F}
-library(dplyr)
-library(readr)
+library(tidyverse)
 
 scrap <- read_csv("https://mn-r.netlify.app/data/starwars_scrap_jakku.csv")
 

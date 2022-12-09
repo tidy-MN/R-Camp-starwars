@@ -10,15 +10,20 @@
 
 ### You can with the *pipe*! {-}
 
-Use the `%>%` to chain functions together and make our scripts more streamlined.
+Use the `%>%` to chain functions together and make our scripts more streamlined and easier to read. When reading code with the `%>%` you can read it as **and then**.
 
 <div style="clear: both;"></div>
 
+**For example**
+
+> puppy `%>%` runs_outside `%>%` rolls_in_mud `%>%` barks_joyfully(times = 3)
+
+> "A puppy ... runs outside `And then` rolls in the mud `And then` barks joyfully 3 times."
 
 
 ## The `%>%` helps: {-}
 
-### __`#1:`__ Eliminate nested parentheses {-}
+### __`1.`__ Eliminate nested parentheses {-}
 
 Let's say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome. 
 
@@ -43,7 +48,7 @@ result <- c(10, 20, 30, 50) %>%
 <br>
 
 
-### __`#2:`__ Combine processing steps into one cohesive chunk {-}
+### __`2.`__ Combine processing steps into one cohesive chunk {-}
 
 
 ### Without the pipe {-}
@@ -60,7 +65,6 @@ scrap <- mutate(scrap,
 
 ### With the pipe {-}
 ```{r review-better, eval=F}
-
 scrap <- scrap %>%
            arrange(desc(price_per_pound)) %>%
            filter(origin != "All") %>%

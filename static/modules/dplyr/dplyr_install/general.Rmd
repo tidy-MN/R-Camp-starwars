@@ -14,11 +14,32 @@ __You've unlocked a new package!__
 
 <b> _dplyr_ </b> is the go-to tool for exploring, re-arranging, and summarizing data.  
 
-Use `install.packages("dplyr")` to add _dplyr_ to your library.  
+We could install it the usual way, but there is GOOD NEWS! All of our favorite packages are bundled together into a super package called **`tidyverse`**. Installing and loading the *tidyverse* package will load the previous `readr` and `ggplot2` packages we introduced earlier, as well as `dplyr` and other great packages.
+
+Here is the complete list of packages in the `tidyverse`
+
+> - **`readr`**
+> - **`ggplot2`**
+> - **`dplyr`**
+> - `tidyr`
+> - `lubridate`
+> - `stringr`
+> - `forcats`
+> - `purrr`
+> - `tibble`
+
+<br>
+
+Use `install.packages("tidverse")` to add the _tidyverse_ to your library.  
 
 <div style="clear: both; margin-top: 22px;"></div>
 
 Then try loading the package from your library to test if it was installed.
 ```{r, eval=F}
-library(dplyr)
+library(tidyverse)
 ```
+
+<br>
+
+> We can now use **ALL** the functions included in any of the *tidyverse* packages, including `dplyr`.
+

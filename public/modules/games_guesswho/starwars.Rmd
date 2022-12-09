@@ -16,7 +16,7 @@ Guess what else comes with the `dplyr` package?
 1. Pull the Star Wars dataset into your environment.
     
 ```{r}
-library(dplyr)
+library(tidyverse)
 
 people <- starwars
 ```

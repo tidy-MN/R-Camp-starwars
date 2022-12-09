@@ -10,8 +10,7 @@ Mr. Baddy Plutt is demanding __10,000 items__ of scrap for Finn. Sounds expensiv
 BB8 was busy on our flight back to Jakku, and recovered a __full__ set of scrap records from the notorious Unkar Plutt. Let's take a look.
 
 ```{r full-scrap}
-library(readr)
-library(dplyr)
+library(tidyverse)
 
 # Read in the full scrap data
 scrap <- read_csv("https://mn-r.netlify.app/data/starwars_scrap_jakku_full.csv")

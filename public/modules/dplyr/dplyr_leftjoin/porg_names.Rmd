@@ -5,6 +5,15 @@ Remember our porg friends? How rude of us not to share their names.
 
 Here's a table of their names.
 
+```{r, eval = F}
+library(tidyverse)
+
+porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
+
+porg_names <- read_csv("https://mn-r.netlify.com/data/porg_names.csv")
+```
+
+
 <div style="margin-left: 30px; margin-top: 24px; width: 37%; max-width: 37%; margin-bottom: 22px;">
 ![](../images/porgs/porg_names_tbl.png)
 </div>
@@ -13,14 +22,18 @@ Here's a table of their names.
 > __But who's who?__ Let's join their names to the rest of the data based on the `ID` column.
 >
 
-![](../images/porgs/leftjoin_porgs.png){style="width: 90%; max-width: 85%;"}
+![](../images/porgs/leftjoin_porgs.png){style="width: 98%;"}
 
 <br>
 
 ### __The joined table__ {-}
 
+```{r, eval = F}
+named_porgs <- left_join(porgs, porg_names, by = "id")
+```
+
 <div class="well">
-![](../images/porgs/porgs_and_names.png){style="width: 85%; max-width: 85%;"}
+![](../images/porgs/named_porgs.png){style="width: 92%;"}
 </div>
 
 <br>

@@ -30,14 +30,6 @@ xaringanExtra::use_clipboard()
 # Day 1 review
 <hr>
 
-**Where we left off**
-```{r}
-library(readr)
-
-scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
-```
-
-
 
 ## Get to know your __DATA__ {-}
 
@@ -81,7 +73,13 @@ scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
 
 ## `dplyr` with Porgs {-}
 
-The _poggle_ of porgs has returned to help us review `dplyr` functions. 
+The _poggle_ of porgs are back to help us review `dplyr` functions. 
+
+```{r, eval = F}
+library(tidyverse)
+
+porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
+```
 
 <br>
 
@@ -98,6 +96,33 @@ cat(readLines("porg_tabs.txt"))
 - Group by category with `group_by()`
 - `ifelse()`: if THIS IS TRUE do a thing, otherwise do a different thing
 - Plots and charts with `ggplot`
+
+
+```{r, eval = F}
+library(tidyverse)
+
+porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
+
+porg_names <- read_csv("https://mn-r.netlify.com/data/porg_names.csv")
+```
+
+
+![](../images/porgs/leftjoin_porgs.png){style="width: 98%; margin-top: 12px;"}
+
+<br>
+
+### __The joined table__ {-}
+
+```{r, eval = F}
+named_porgs <- left_join(porgs, porg_names, by = "id")
+```
+
+<div class="well">
+![](../images/porgs/named_porgs.png){style="width: 92%;"}
+</div>
+
+<br>
+
 
 
 ## Welcome to Endor! {-}

@@ -20,18 +20,12 @@ To get a grasp on the population explosion the Ewoks are launching a porg survey
 
 It's about time! Lubridate makes working with dates much easier.
 
-We can find how much time has elapsed, add or subtract days, and find seasonal and day of the week averages.
+We can find how much time has elapsed, add or subtract days, and find seasonal and day of the week averages. The package is included in the `tidyverse` bundle of packages, so it's already installed!
 
 <br>
 
 <div style="clear: both;"></div>
 
-### Install `lubridate` {-}
-```{r, eval=F}  
-install.packages("lubridate")
-```
-
-<br>
 **View the date cheatsheet [HERE](https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf)**. 
 
 It's a great reference when you need to manipulate dates or timezones in your data.
@@ -127,8 +121,7 @@ Let's generate the full list of dates during this time span using the sequence d
 
 #### Run the code below to create a date for every possible day of the survey. {-}
 ```{r}
-library(dplyr)
-library(readr)
+library(tidyverse)
 library(lubridate)
 
 start_date <- ymd("2023-05-01")
@@ -157,12 +150,16 @@ survey_dates <- seq.Date(from = start_date,
 
 ### Let's put the dates in a dataframe {-}
 
-> Remember how to make a dataframe?
+> You can create a dataframe with the functions `data.frame()` or `tibble()`.
 
 
 ### Here's a reminder {-}
 ```{r}
 survey <- data.frame(count_date = survey_dates)
+
+# or
+
+survey <- tibble(count_date = survey_dates)
 
 head(survey)
 ```

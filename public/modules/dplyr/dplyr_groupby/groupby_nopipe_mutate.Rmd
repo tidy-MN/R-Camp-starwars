@@ -1,0 +1,23 @@
+
+# Grouped `mutate()` 
+<hr>
+  
+We can bring back `mutate` to add a column based on the grouped values in a data set. For example, you may want to add a column showing the mean price by origin to the whole table, but still keep all of the records. This is a good way to add values to the table to serve as a reference point. 
+
+> How does the price of **X** compare to the average price?  
+  
+When you combine `group_by` and `mutate` the new column will be calculated based on the values within each group. Let's group by `origin` to find the `mean()` price per pound at each origin. 
+
+
+```{r mutate-price-pound, eval=F}
+scrap <- group_by(scrap,  ________ ) 
+
+scrap <- mutate(scrap,
+                origin_mean_price = mean(price_per_pound, na.rm = TRUE))
+
+scrap <- ungroup(scrap)
+```
+
+<br>
+
+> Add `round()` to your script to round the value of *origin_mean_price* to 1 digit.

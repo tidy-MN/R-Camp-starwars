@@ -8,9 +8,10 @@
 
 Create a **4x4** grid from the list of items below:
 
-```{r, eval=F}
+```{r, eval=T}
 bingo_words <- c("install.packages()",
                  "library()",
+                 "tidyverse",
                  "readr",
                  "read_csv()",
                  "write_csv()",
@@ -32,7 +33,6 @@ bingo_words <- c("install.packages()",
                  "min()",
                  "max()",
                  "sum()",
-                 "sd()",
                  "quantile()",
                  "=")
 ```
@@ -47,37 +47,10 @@ bingo_words <- c("install.packages()",
 # Get pretty colors
 install.packages("viridis")
 library(viridis)
-library(ggplot2)
+library(tidyverse)
 
-# List of all the words
-bingo_words <- c("install.packages()",
-                 "library()",
-                 "readr",
-                 "read_csv()",
-                 "write_csv()",
-                 "<-",
-                 "c()",
-                 "rm()",
-                 "nrow()", 
-                 "ncol()",
-                 "head()",
-                 "dplyr",
-                 "glimpse()",
-                 "arrange()", 
-                 "filter()",
-                 "select()",
-                 "ggplot2",
-                 "ggplot()",
-                 "geom_col()",
-                 "mean()", 
-                 "min()",
-                 "max()",
-                 "sum()",
-                 "sd()",
-                 "quantile()",
-                 "=")
 
-# Shuffle the words 
+# Shuffle the Bingo words 
 bingo_words <- sample(bingo_words)
 
 # Set the draw number in case we need to backtrack
@@ -108,7 +81,6 @@ for (n in 1:length(words)) {
 }
 
 play_bingo()
-
 ```
 
 </details>

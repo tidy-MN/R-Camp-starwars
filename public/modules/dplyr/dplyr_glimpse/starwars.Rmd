@@ -24,8 +24,7 @@ Use these functions to describe your data.
 ### Let's read the scrap data into R and take a look. {-}
 
 ```{r read-glimpse, warning=F, message=F}
-library(readr)
-library(dplyr)
+library(tidyverse)
 
 scrap <- read_csv("https://mn-r.netlify.com/data/starwars_scrap_jakku.csv")
 ```

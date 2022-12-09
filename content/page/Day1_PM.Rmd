@@ -42,7 +42,14 @@ source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_m
 # Porg tables 
 <hr>
 
-A poggle of porgs volunteered to help us demo the `dplyr` functions. 
+A poggle of porgs volunteered to help us demo the `dplyr` functions.
+
+You can follow along by reading the __porgs__ data from the URL below. *(Sorry, the data doesn't include the images.)*
+
+```{r, eval=F}
+porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
+```
+
 
 ```{r porg-tabs, results='asis', echo=F}
 cat(readLines("porg_tabs.txt"))

@@ -46,7 +46,6 @@ library(dplyr)
 <br>
 
 
-
 **Load your saved scrap data**
 ```{r, eval=T}
 # Your saved data
@@ -72,7 +71,6 @@ scrap <- read_csv("results/scrap_day2.csv")
 >
 > We now have a clean and tidy data set. If BB8 ever receives new data again, we can re-run this script and in seconds we'll have it all cleaned up.
 >
-
 
 
 <div style="clear: both;"></div>
@@ -110,8 +108,7 @@ install.packages("ggrepel")
 
 ```{r, message=F, warning=F}
 # Load packages
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 library(ggrepel)
 
 # Get starwars character data

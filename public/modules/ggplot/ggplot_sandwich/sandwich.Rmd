@@ -8,7 +8,7 @@
 
 ## 1. The base plot {-}
 ```{r, echo = T, eval = T}
-library(ggplot2)
+library(tidyverse)
 ```
 
 ```{r, echo=T, eval=T}
@@ -25,13 +25,15 @@ ggplot(scrap)
 The _aesthetics_ assign the columns from the data that you want to use in the chart. This is where you set the `X`-`Y` variables that determine the dimensions of the plot.
 
 ```{r, eval = T}
-ggplot(scrap, aes(x = destination, y = amount)) 
+ggplot(scrap, aes(x = destination, 
+                  y = amount)) 
 ```
 
 
 ## 3. The layers AKA geometries  {-}
 ```{r, eval = T}
-ggplot(scrap, aes(x = destination, y = amount)) + 
+ggplot(scrap, aes(x = destination, 
+                  y = amount)) + 
   geom_col()
 ```
 
@@ -41,21 +43,27 @@ ggplot(scrap, aes(x = destination, y = amount)) +
 
 Now let's change the fill color to match the destination.
 ```{r, eval=T}
-ggplot(scrap, aes(x = destination, y = amount, fill = destination)) +
+ggplot(scrap, aes(x = destination, 
+                  y = amount, 
+                  fill = destination)) +
   geom_col() 
 ```
 
 <br>
 
-## Sorting {-}
+## Sorting and labels{-}
 <hr class="hrlvl2">
 
-Finally, let's order things from lowest to highest.
+Finally, let's order the amounts from highest to lowest *(decreasing)*.
 ```{r, eval=T}
-ggplot(scrap, aes(x = reorder(destination, amount, decreasing = TRUE), y = amount, fill = destination)) +
+ggplot(scrap, aes(x = reorder(destination, amount, decreasing = TRUE), 
+                  y = amount, 
+                  fill = destination)) +
   geom_col() +
-  labs(x = "Destination",
-       title = "The most scrap was sent to the Trade Caravan")
+  labs(title = "The Trade Caravan receives the most scrap",
+       subtitle = "Total scrap shipments on planet Jakku",
+       x = "destination",
+       caption = "Source: Data intercepted by BB8 in year 2023")
 ```
 
 

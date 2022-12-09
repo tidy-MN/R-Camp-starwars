@@ -4,8 +4,7 @@ Let's apply our new `left_join()` skills to the scrap data.
 
 First, let's load the full scrap data.
 ```{r join-convert, eval=T}
-library(readr)
-library(dplyr)
+library(tidyverse)
 
 # Read in the larger scrap database
 scrap <- read_csv("https://mn-r.netlify.app/data/starwars_scrap_jakku_full.csv")

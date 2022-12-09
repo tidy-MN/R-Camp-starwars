@@ -250,8 +250,9 @@ Example code to read aloud
 <blockquote>
 <p>puppy <code>%&gt;%</code> runs_outside <code>%&gt;%</code> rolls_in_mud <code>%&gt;%</code> barks_joyfully(times = 3)</p>
 </blockquote>
+<p><strong>Can be read as</strong></p>
 <blockquote>
-<p>“A puppy … runs outside <code>And then</code> rolls in the mud <code>And then</code> barks joyfully 3 times.”</p>
+<p>There is a puppy, it runs outside <code>And then</code> rolls in the mud <code>And then</code> barks joyfully 3 times.”</p>
 </blockquote>
 </div>
 <div id="the-helps" class="section level2 unnumbered">
@@ -261,10 +262,10 @@ Example code to read aloud
 <p>Let’s say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome.</p>
 </div>
 <div id="without-the-pipe" class="section level3 unnumbered">
-<h3>Without the pipe <i class="fas fa-frown"></i></h3>
+<h3>Without the pipe</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>))))</span></code></pre></div>
-<p><br></p>
 <p>The code above is dense and we need to read it backwards from right to left to understand the order of operations. The pipe on the other hand allows us to read the code from left to right.</p>
+<p><br></p>
 </div>
 <div id="with-the-pipe" class="section level3 unnumbered">
 <h3>With the pipe <i class="fas fa-smile"></i></h3>
@@ -274,8 +275,8 @@ Example code to read aloud
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>()</span></code></pre></div>
 <p><br></p>
 </div>
-<div id="combine-processing-steps-into-one-cohesive-chunk" class="section level3 unnumbered">
-<h3><strong><code>2.</code></strong> Combine processing steps into one cohesive chunk</h3>
+<div id="combine-processing-steps-into-a-cohesive-chunk" class="section level3 unnumbered">
+<h3><strong><code>2.</code></strong> Combine processing steps into a cohesive chunk</h3>
 </div>
 <div id="without-the-pipe-1" class="section level3 unnumbered">
 <h3>Without the pipe</h3>

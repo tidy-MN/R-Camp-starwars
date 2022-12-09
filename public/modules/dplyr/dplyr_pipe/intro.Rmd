@@ -18,7 +18,10 @@ Use the `%>%` to chain functions together and make our scripts more streamlined 
 
 > puppy `%>%` runs_outside `%>%` rolls_in_mud `%>%` barks_joyfully(times = 3)
 
-> "A puppy ... runs outside `And then` rolls in the mud `And then` barks joyfully 3 times."
+
+**Can be read as**
+
+> There is a puppy, it runs outside `And then` rolls in the mud `And then` barks joyfully 3 times."
 
 
 ## The `%>%` helps: {-}
@@ -27,14 +30,14 @@ Use the `%>%` to chain functions together and make our scripts more streamlined 
 
 Let's say you have 3 numbers. Your analysis requires that you take the sum of them, then take the log of that result, and then round the final outcome. 
 
-### Without the pipe <i class="fas fa-frown"></i> {-}
+### Without the pipe  {-}
 ```{r maths, eval=F}
 round(log(sum(c(10, 20, 30, 50))))
 ```
 
-<br>
-
 The code above is dense and we need to read it backwards from right to left to understand the order of operations. The pipe on the other hand allows us to read the code from left to right.
+
+<br>
 
 ### With the pipe <i class="fas fa-smile"></i> {-}
 ```{r maths_better, eval = F}
@@ -48,7 +51,7 @@ result <- c(10, 20, 30, 50) %>%
 <br>
 
 
-### __`2.`__ Combine processing steps into one cohesive chunk {-}
+### __`2.`__ Combine processing steps into a cohesive chunk {-}
 
 
 ### Without the pipe {-}

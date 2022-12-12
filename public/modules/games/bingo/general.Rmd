@@ -1,12 +1,14 @@
 
 
-![](../images/star-wars-bingo-image.jpg){width="350" align="center" style="margin: auto; margin-top: 10px; margin-bottom: 12px;"}
+![](../images/bingo_ggcard.jpg){width="60%" align="center" style="margin: auto; margin-top: 10px; margin-bottom: 12px;"}
 
 <br>
 
 ### 1. Build your Bingo card {-}
 
-Create a **4x4** grid from the list of items below:
+Use paper and pencil to create a **4x4** grid containing 16 of the items below. 
+
+**The choice is yours:**
 
 ```{r, eval=T}
 bingo_words <- c("install.packages()",
@@ -36,6 +38,70 @@ bingo_words <- c("install.packages()",
                  "quantile()",
                  "=")
 ```
+
+
+**R ALTERNATIVE**
+
+If you'd like to use R to make a random Bingo card for yourself, run the code below.
+
+
+<details>
+<summary class="btn_code">Make Bingo Card</summary>
+
+```{r, eval = F}
+library(tidyverse)
+#library(hrbrthemes)
+
+free_space <- FALSE
+
+bingo_words <- c("install.packages()",
+                 "library()",
+                 "tidyverse",
+                 "readr",
+                 "read_csv()",
+                 "write_csv()",
+                 "<-",
+                 "c()",
+                 "rm()",
+                 "nrow()",
+                 "ncol()",
+                 "head()",
+                 "dplyr",
+                 "glimpse()",
+                 "arrange()",
+                 "filter()",
+                 "select()",
+                 "ggplot2",
+                 "ggplot()",
+                 "geom_col()",
+                 "mean()",
+                 "min()",
+                 "max()",
+                 "sum()",
+                 "quantile()",
+                 "=")
+
+bingo_card <- tibble(item = sample(bingo_words, 16))
+
+bingo_card <- mutate(bingo_card,
+                     row = 0:(n()-1) %/% 4 + 1,
+                     col = 0:(n()-1) %% 4 + 1,
+                     item = ifelse(free_space & row == 2 & col == 2, "Free\nSpace", item),
+                     p = runif(16))
+
+ggplot(bingo_card, aes(x = col, y = row, label = item, color = item, fill = p)) +
+  geom_tile(aes(width=0.95, height=0.95), size = 1) +
+  geom_text(color = "gray") +
+  #theme_ft_rc(plot_title_size = 24) +
+  theme_void() +
+  theme(legend.position = "none") + 
+  labs(title = "STAR WARS BINGO",
+       x = "", y = "")
+
+```
+
+</details>
+
 
 
 ### 2. I'll call out the bingo items using an R function we just wrote. It's lovingly named `play_bingo()` {-}

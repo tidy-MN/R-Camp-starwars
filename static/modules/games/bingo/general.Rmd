@@ -6,7 +6,7 @@
 
 ### 1. Build your Bingo card {-}
 
-Use paper and pencil to create a **4x4** grid containing 16 of the items below. 
+Use paper and pencil to create a **4x4** grid and fill the boxes with 16 of the items below. 
 
 **The choice is yours:**
 
@@ -40,13 +40,15 @@ bingo_words <- c("install.packages()",
 ```
 
 
-**R ALTERNATIVE**
+<br>
 
-If you'd like to use R to make a random Bingo card for yourself, run the code below.
+**Or use R**
+
+To use R to make a random Bingo card for yourself, run the code below.
 
 
 <details>
-<summary class="btn_code">Make Bingo Card</summary>
+<summary class="btn_code_blue">Show Make Bingo Card ></summary>
 
 ```{r, eval = F}
 library(tidyverse)
@@ -104,10 +106,10 @@ ggplot(bingo_card, aes(x = col, y = row, label = item, color = item, fill = p)) 
 
 
 
-### 2. I'll call out the bingo items using an R function we just wrote. It's lovingly named `play_bingo()` {-}
+### 2. We'll call out the bingo items using an R function we just wrote. It's named `play_bingo()` {-}
 
 <details>
-<summary class="btn_code">Show Bingo function</summary>
+<summary class="btn_code">Show Bingo function ></summary>
 
 ```{r bingo, eval=F}
 # Get pretty colors

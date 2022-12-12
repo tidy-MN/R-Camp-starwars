@@ -1,6 +1,6 @@
 
 
-![](../images/bingo_ggcard.jpg){width="60%" align="center" style="margin: auto; margin-top: 10px; margin-bottom: 12px;"}
+![](../images/bingo_ggcard.png){align="center" style="width: 80%; margin: auto; margin-top: 10px; margin-bottom: 12px;"}
 
 <br>
 
@@ -95,7 +95,7 @@ ggplot(bingo_card, aes(x = col, y = row, label = item, color = item, fill = p)) 
   #theme_ft_rc(plot_title_size = 24) +
   theme_void() +
   theme(legend.position = "none") + 
-  labs(title = "STAR WARS BINGO",
+  labs(title = "R BINGO",
        x = "", y = "")
 
 ```

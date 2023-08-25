@@ -117,9 +117,9 @@ __Simple number dates__
 
 <br>
 
-Let's generate the full list of dates during this time span using the sequence date function: ` seq.Date()`
+Let's generate the full list of dates during this time span using the sequence function: ` seq()`
 
-#### Run the code below to create a date for every possible day of the survey. {-}
+#### Run the code below to create a list of dates for the survey. {-}
 ```{r}
 library(tidyverse)
 library(lubridate)
@@ -129,9 +129,9 @@ start_date <- ymd("2023-05-01")
 end_date   <- ymd("2023-10-31")
 
 # Sequence from start to end, counting by 1 day intervals
-survey_dates <- seq.Date(from = start_date, 
-                         to = end_date, 
-                         by = "day")
+survey_dates <- seq(from = start_date, 
+                    to = end_date, 
+                    by = "day")
 ```
 
 <br>

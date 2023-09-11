@@ -1,5 +1,5 @@
 ---
-title: "R First Mission"
+title: "R Mission"
 output: 
   blogdown::html_page: 
     highlight: tango
@@ -32,7 +32,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
-# First Mission
+# Your first mission
 
 >  New mission, New R project 
 

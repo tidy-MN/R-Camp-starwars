@@ -33,7 +33,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-# Why R? {-}
+# We R growing {-}
 <hr class="hr2">
 ```{r whyR, child='../../static/modules/intro/_whyr/mpca.Rmd'}
 ```

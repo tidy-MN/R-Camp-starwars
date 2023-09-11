@@ -33,51 +33,52 @@ source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_m
 
 <br>
 
+# Welcome to R!
 
-# New mission, New R project 
-<hr>
+>  New mission, New R project 
+
 
 Start a new project for your analysis.
 ```{r set-params, include=F}
 params <- list(name1 = 'jakku1.R', name2 = 'day1.R')
 ```
 
-```{r, child='../../../static/modules/intro/rstudio_newproject/general.Rmd'}
+```{r, child='../../static/modules/intro/rstudio_newproject/general.Rmd'}
 ```
 
 
 # Names and things
 <hr>
-```{r child = '../../../static/modules/base/base_assignment/starwars.Rmd'}
+```{r child = '../../static/modules/base/base_assignment/starwars.Rmd'}
 ```
 
 
 
 # Read data
 <hr>
-```{r read-csv, child='../../../static/modules/readr/readr_csv/starwars.Rmd'}
+```{r read-csv, child='../../static/modules/readr/readr_csv/starwars.Rmd'}
 ```
 
 
 # Add packages &#x1F4E6; 
 <hr>
-```{r new-pkg, child='../../../static/modules/_packages/readr.Rmd'}
+```{r new-pkg, child='../../static/modules/_packages/readr.Rmd'}
 ```
 
 
 ## Read the data {-}
 
 Let's load the _readr_ package to use the `read_csv() ` function.
-```{r read_snippet, child='../../../static/modules/readr/readr_csv/scrap_snippet.Rmd'}
+```{r read_snippet, child='../../static/modules/readr/readr_csv/scrap_snippet.Rmd'}
 ```
 
 
 ### {-}
-```{r fun-options, child='../../../static/modules/base/base_functions/fun_options.Rmd'}
+```{r fun-options, child='../../static/modules/base/base_functions/fun_options.Rmd'}
 ```
 
 
-```{r fun-options, child='../../../static/modules/readr/readr_csv/excel_csv.Rmd'}
+```{r fun-options, child='../../static/modules/readr/readr_csv/excel_csv.Rmd'}
 ```
 
 # ggplot2
@@ -89,7 +90,7 @@ Let's load the _readr_ package to use the `read_csv() ` function.
 
 <br>
 
-```{r ggplot25, child='../../../static/modules/ggplot/ggplot_install/scrap.Rmd'}
+```{r ggplot25, child='../../static/modules/ggplot/ggplot_install/scrap.Rmd'}
 ```
 
 
@@ -102,7 +103,7 @@ Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning re
 
 
 ## <i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms {-} 
-```{r key-terms, child='../../../static/modules/key_terms/day1.Rmd'}
+```{r key-terms, child='../../static/modules/key_terms/day1.Rmd'}
 ```
 
 

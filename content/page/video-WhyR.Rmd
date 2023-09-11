@@ -1,5 +1,5 @@
 ---
-title: "Welcome to R"
+title: "Why R?"
 output: 
   blogdown::html_page: 
     highlight: tango
@@ -33,35 +33,16 @@ source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_m
 
 <br>
 
-# RStudio Tour 
-<hr>
-```{r Rtour, child='../../../static/modules/intro/rstudio_tour/general.Rmd'}
+
+# Why R? {-}
+<hr class="hr2">
+```{r whyR, child='../../static/modules/intro/_whyr/mpca.Rmd'}
 ```
 
 
 ## Example R project {-}
-```{r ex-ozone2, child='../../../static/modules/_example_7steps/ozone.Rmd'}
+```{r ex-ozone2, child='../../static/modules/_example_7steps/ozone.Rmd'}
 ```
-
-
-<br>
-
-
-## You're on the TEAM!  {-}
-
-Rey needs help putting the finishing touches on her ship. 
-
-**Let's go! Data awaits us...**
-
-![](../images/rey_bb8_sand_dunes.gif){style="width: 70%; margin-left: 10%;"}
-
-<br>
-
-<div class="well">
-While BB8 tracks down data from his scrapyard friends, we'll prepare for some garbage data. 
-
-Let's get to know R and RStudio. 
-</div>
 
 
 <br>

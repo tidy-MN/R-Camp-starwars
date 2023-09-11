@@ -1,18 +1,17 @@
 ---
 title: "Why R?"
+self_contained: false
 output: 
   xaringan::moon_reader:
-    self_contained: true
+    self_contained: false
     lib_dir: libs
     chakra: libs/remark-latest.min.js
-    css: css/camp_style.css
+    #css: css/camp_style.css
     seal: false
-    toc: false
-    number_sections: true
-    fontsize: 18pt
-    monofont: Source Code Pro
-    includes: 
-      in_header: header.html
+    #fontsize: 18pt
+    #monofont: Source Code Pro
+    #includes: 
+    #  in_header: header.html
     nature:
       slideNumberFormat: ""
       highlightStyle: github

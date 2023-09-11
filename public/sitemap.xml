@@ -208,6 +208,18 @@
   </url>
   
   <url>
+    <loc>https://mn-r.netlify.app/page/videos/r-first-steps.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/videos/r-tour.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://mn-r.netlify.app/page/videos/whyr.html</loc>
+  </url>
+  
+  <url>
     <loc>https://mn-r.netlify.app/tags/help.html</loc>
     <priority>0</priority>
   </url>

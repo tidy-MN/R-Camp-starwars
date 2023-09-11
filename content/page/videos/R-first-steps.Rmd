@@ -1,0 +1,121 @@
+---
+title: "Welcome to R!"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
+---
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+library(knitr)
+library(magrittr)
+
+xaringanExtra::use_clipboard()
+
+opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
+#mod_url <- "https://raw.githubusercontent.com/MPCA-air/r-modules/master/modules/"
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_color.R")
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_mod.R")
+```
+
+![](../images/day1_bb8_sq.png){style="float: right; margin-right: 0; width: 260px; margin-top: -287px;"}
+
+<div style="clear: both;"></div>
+
+<br>
+
+
+# New mission, New R project 
+<hr>
+
+Start a new project for your analysis.
+```{r set-params, include=F}
+params <- list(name1 = 'jakku1.R', name2 = 'day1.R')
+```
+
+```{r, child='../../../static/modules/intro/rstudio_newproject/general.Rmd'}
+```
+
+
+# Names and things
+<hr>
+```{r child = '../../../static/modules/base/base_assignment/starwars.Rmd'}
+```
+
+
+
+# Read data
+<hr>
+```{r read-csv, child='../../../static/modules/readr/readr_csv/starwars.Rmd'}
+```
+
+
+# Add packages &#x1F4E6; 
+<hr>
+```{r new-pkg, child='../../../static/modules/_packages/readr.Rmd'}
+```
+
+
+## Read the data {-}
+
+Let's load the _readr_ package to use the `read_csv() ` function.
+```{r read_snippet, child='../../../static/modules/readr/readr_csv/scrap_snippet.Rmd'}
+```
+
+
+### {-}
+```{r fun-options, child='../../../static/modules/base/base_functions/fun_options.Rmd'}
+```
+
+
+```{r fun-options, child='../../../static/modules/readr/readr_csv/excel_csv.Rmd'}
+```
+
+# ggplot2
+<hr>
+
+### _Plot the data, Plot the data, Plot the data_ {-}
+
+![](../images/ggplot2_hex.png){width="164" style="float: left; margin-right: 26px; margin-top: 10px;  margin-left: 0;"}
+
+<br>
+
+```{r ggplot25, child='../../../static/modules/ggplot/ggplot_install/scrap.Rmd'}
+```
+
+
+## Got questions <i class="far fa-question-circle" aria-hidden="true" style="font-size: 122%;"></i> {-}
+<hr class="hrlvl2">
+
+Lost in an ERROR message? Is something behaving strangely and want to know why? Want ideas for a new chart?   
+
+Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning resources. 
+
+
+## <i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms {-} 
+```{r key-terms, child='../../../static/modules/key_terms/day1.Rmd'}
+```
+
+
+# Learn more!
+<hr>
+
+- RStudio Primers: [R Programming Basics](https://posit.cloud/learn/primers/1.2)
+- [Intro to R](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html) - Cute giraffes!
+
+
+<br>
+
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}
+
+<br>

@@ -1,0 +1,54 @@
+---
+title: "Why R?"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
+---
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+library(knitr)
+library(magrittr)
+
+xaringanExtra::use_clipboard()
+
+opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
+#mod_url <- "https://raw.githubusercontent.com/MPCA-air/r-modules/master/modules/"
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_color.R")
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_mod.R")
+```
+
+![](../images/day1_bb8_sq.png){style="float: right; margin-right: 0; width: 260px; margin-top: -287px;"}
+
+<div style="clear: both;"></div>
+
+<br>
+
+
+# What's R? 
+<hr>
+```{r candy, child='../../../static/modules/ggplot/ggplot_examples/candy.Rmd'}
+```
+
+
+# RStudio Tour 
+<hr>
+```{r Rtour, child='../../../static/modules/intro/rstudio_tour/general.Rmd'}
+```
+
+
+<br>
+
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}
+
+<br>

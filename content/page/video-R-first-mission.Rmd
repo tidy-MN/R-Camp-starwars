@@ -1,5 +1,5 @@
 ---
-title: "Welcome to R!"
+title: "R First Mission"
 output: 
   blogdown::html_page: 
     highlight: tango
@@ -23,22 +23,21 @@ opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 #mod_url <- "https://raw.githubusercontent.com/MPCA-air/r-modules/master/modules/"
-source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_color.R")
-source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_mod.R")
+#source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_color.R")
+#source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_mod.R")
 ```
 
-![](../images/day1_bb8_sq.png){style="float: right; margin-right: 0; width: 260px; margin-top: -287px;"}
 
 <div style="clear: both;"></div>
 
 <br>
 
-# Welcome to R!
+# First Mission
 
 >  New mission, New R project 
 
 
-Start a new project for your analysis.
+Start a new project for your mission.
 ```{r set-params, include=F}
 params <- list(name1 = 'jakku1.R', name2 = 'day1.R')
 ```

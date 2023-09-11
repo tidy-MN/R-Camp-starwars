@@ -108,7 +108,7 @@ Let's get to know R and RStudio.
 # New mission, New R project 
 <hr>
 
-Start a new project for your analysis.
+Start a new project for your mission.
 ```{r set-params, include=F}
 params <- list(name1 = 'jakku1.R', name2 = 'day1.R')
 ```

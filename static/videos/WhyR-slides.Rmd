@@ -1,17 +1,12 @@
 ---
 title: "Why R?"
-self_contained: false
+self_contained: true
 output: 
   xaringan::moon_reader:
-    self_contained: false
-    lib_dir: libs
+    self_contained: true
+    #lib_dir: libs
     chakra: libs/remark-latest.min.js
-    #css: css/camp_style.css
     seal: false
-    #fontsize: 18pt
-    #monofont: Source Code Pro
-    #includes: 
-    #  in_header: header.html
     nature:
       slideNumberFormat: ""
       highlightStyle: github
@@ -38,23 +33,22 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div style="clear: both;"></div>
 
-<br>
+# Hello
 
+---
 
-# We R growing {-}
+# We R growing 
+
 <hr class="hr2">
-```{r whyR, child='../../static/modules/intro/_whyr/mpca.Rmd'}
-```
+
+---
+
+## Example R project 
 
 
-## Example R project {-}
-```{r ex-ozone2, child='../../static/modules/_example_7steps/ozone.Rmd'}
-```
 
+---
 
-<br>
-
-
-### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html)
 
 <br>

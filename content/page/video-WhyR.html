@@ -1,0 +1,376 @@
+---
+title: "Why R?"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
+---
+
+<script src="/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+<link href="/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
+
+<div id="TOC">
+<ul>
+<li><a href="#why-r" id="toc-why-r">Why R?</a></li>
+</ul>
+</div>
+
+<p><img src="../images/day1_bb8_sq.png" style="float: right; margin-right: 0; width: 260px; margin-top: -287px;" /></p>
+<div style="clear: both;">
+
+</div>
+<p><br></p>
+<div id="why-r" class="section level1 unnumbered">
+<h1>Why R?</h1>
+<hr class="hr2">
+<p><img src="../images/rladies_map.gif" style="width: 97%;" /></p>
+<div id="r-community" class="section level2 unnumbered">
+<h2>R Community</h2>
+<ul>
+<li><a href="https://mn-r.netlify.app/page/community.html">Around the world</a></li>
+<li>Help!
+<ul>
+<li>Post questions and help requests on Teams</li>
+<li><a href="https://www.rstudio.com/resources/cheatsheets/">R Cheatsheets</a></li>
+<li>Troubleshooting - See <a href="help.html">Get Help!</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="when-we-use-r" class="section level2 unnumbered">
+<h2>When we use R</h2>
+<ul>
+<li>To connect to databases</li>
+<li>To read data from websites</li>
+<li>To document our work and share methods</li>
+<li>When data will have frequent updates</li>
+<li>When we want to improve a process over time</li>
+</ul>
+</div>
+<div id="r-is-for-reading" class="section level2 unnumbered">
+<h2>R is for reading</h2>
+<p><img src="../images/R_recipe.png" style="width: 54%; float: left; margin-right: 28px; margin-left: -16px; margin-top: 9px; margin-bottom: 12px;" /></p>
+<p>R let’s us do data analysis in a step-by-step fashion, much like creating a recipe for cookies. And just like a recipe, we can start at the top and read our way down to the bottom.</p>
+<p><br></p>
+</div>
+<div id="how-r-is-different" class="section level2 unnumbered">
+<h2>How R is different?</h2>
+<p><strong>R vs. Excel</strong></p>
+<ul>
+<li>R can handle much larger data sets than Excel.</li>
+<li>R is more flexible than Excel.</li>
+<li>Data processing and analysis are more easily reproducible in R.</li>
+<li>Excel is more widely used.</li>
+</ul>
+<details>
+<summary class="btn_code_blue .btn_gray">
+<strong>More comparisons &gt;</strong>
+</summary>
+<div class="note" style="margin-top: -4px;">
+<p>
+<p><strong>R vs. Tableau</strong></p>
+<ul>
+<li>Tableau is primarily a data visualization software. Its data analysis capabilities are limited.</li>
+<li>R Shiny is more flexible than Tableau.</li>
+<li>Tableau’s drag-and-drop interface makes it faster and easier for creating simple visualizations, but is not easily reproducible.</li>
+<li>R is 100% text-based so you can track changes over time. <code>#VersionControl</code></li>
+</ul>
+<p><strong>R vs. SQL</strong></p>
+<ul>
+<li>SQL is the language of databases.</li>
+<li>SQL queries are sent to a database server and processed there before sending you the data. This may be needed for very large data sets that don’t fit on your computer.</li>
+<li>R can use SQL queries to pull data from databases / data lakes.</li>
+<li>R has the <code>dbplyr</code> package which converts R to an SQL query.</li>
+<li>R can read data from almost anywhere (databases, flat files, web pages, etc.)</li>
+</ul>
+<p><strong>R vs. Python</strong></p>
+<ul>
+<li>Python is a general-purpose programming language popular for doing internet things. R is more specifically focused on data and statistical analysis.<br />
+</li>
+<li>R’s Tidyverse is more intuitive and easier to use than <code>pandas</code>.</li>
+<li>You can run Python code in R using the R <code>reticulate</code> package.</li>
+<li>Historically Python has been used with GIS software like ArcGIS, but more recently doors have opened for R and spatial analysis with R has been growing.</li>
+</ul>
+<p><strong>R vs. SAS</strong></p>
+<ul>
+<li>R is open-source, while SAS requires a license.</li>
+<li>Anyone can create an R package (but packages on CRAN are vetted). New features for SAS are only available when the SAS team makes them available.</li>
+</ul>
+</p>
+</div>
+</details>
+<div style="clear: both;">
+
+</div>
+<p><br></p>
+</div>
+<div id="example-r-project" class="section level2 unnumbered">
+<h2>Example R project</h2>
+<p>Here’s an example R analysis project from start to finish using Ozone monitoring data.</p>
+<details>
+<summary class="btn_code_blue .btn_gray">
+<strong>EXAMPLE ANALYSIS</strong> <strong>&gt;</strong>
+</summary>
+<div class="quiz" style="margin-top: 0; background-color: white;">
+<p>Imagine we just received 3 years worth of ozone monitoring data to summarize. <strong>Fun!</strong></p>
+<p>Below is an example workflow we might follow in R.</p>
+<ol style="list-style-type: decimal">
+<li>Create a new project</li>
+<li>Read the data</li>
+<li>Simplify columns</li>
+<li>Plot the data</li>
+<li>Clean the data</li>
+<li>View the data closer</li>
+<li>Summarize the data</li>
+<li>Save the results</li>
+<li><strong>Share</strong> with friends</li>
+</ol>
+<div id="start-a-new-project" class="section level3 unnumbered">
+<h3>0. Start a new project</h3>
+<p>We’ll name this project: <code>"2019_Ozone"</code></p>
+</div>
+<div id="read-the-data" class="section level3 unnumbered">
+<h3>1. Read the data</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co"># Read a file from the web</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/OZONE_samples_demo.csv&quot;</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">SITE</th>
+<th align="left">Date</th>
+<th align="right">OZONE</th>
+<th align="right">TEMP_F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="left">2018-04-15</td>
+<td align="right">7</td>
+<td align="right">30.2</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7554</td>
+<td align="left">2017-10-22</td>
+<td align="right">6</td>
+<td align="right">56.0</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2017-07-21</td>
+<td align="right">21</td>
+<td align="right">87.8</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7554</td>
+<td align="left">2018-04-21</td>
+<td align="right">11</td>
+<td align="right">60.2</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="left">2016-07-21</td>
+<td align="right">21</td>
+<td align="right">87.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="simplify-column-names" class="section level3 unnumbered">
+<h3>2. Simplify column names</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Capital letters and spaces make things more difficult</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Let&#39;s clean them out</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_data)</span></code></pre></div>
+</div>
+<div id="plot-the-data" class="section level3 unnumbered">
+<h3>3. Plot the data</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<p><img src="/page/video-WhyR_files/figure-html/view-1.png" width="1152" /></p>
+</div>
+<div id="clean-the-data" class="section level3 unnumbered">
+<h3>4. Clean the data</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co"># Drop values out of range</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ozone <span class="sc">&gt;</span> <span class="dv">0</span>, temp_f <span class="sc">&lt;</span> <span class="dv">199</span>) </span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># Convert all samples to PPB</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>            <span class="fu">mutate</span>(<span class="at">OZONE =</span> <span class="fu">ifelse</span>(units <span class="sc">==</span> <span class="st">&quot;PPM&quot;</span>, ozone <span class="sc">*</span> <span class="dv">1000</span>, </span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>                                  ozone)) </span></code></pre></div>
+</div>
+<div id="view-the-data-closer" class="section level3 unnumbered">
+<h3>5. View the data <strong>closer</strong></h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>site) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ozone increases with temperature&quot;</span>, </span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;Observations from 2015-2017&quot;</span>)</span></code></pre></div>
+<p><img src="/page/video-WhyR_files/figure-html/unnamed-chunk-1-1.png" width="1152" /></p>
+</div>
+<div id="summarize-the-data" class="section level3 unnumbered">
+<h3>6. Summarize the data</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>            <span class="fu">group_by</span>(site, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>            <span class="fu">summarize</span>(<span class="at">avg_ozone =</span> <span class="fu">mean</span>(ozone) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>                      <span class="at">avg_temp  =</span> <span class="fu">mean</span>(temp_f) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">site</th>
+<th align="right">year</th>
+<th align="right">avg_ozone</th>
+<th align="right">avg_temp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="right">2016</td>
+<td align="right">11.01</td>
+<td align="right">60.74</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="right">2017</td>
+<td align="right">11.26</td>
+<td align="right">60.66</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="right">2018</td>
+<td align="right">11.54</td>
+<td align="right">60.59</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7554</td>
+<td align="right">2016</td>
+<td align="right">12.23</td>
+<td align="right">61.23</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7554</td>
+<td align="right">2017</td>
+<td align="right">11.81</td>
+<td align="right">60.98</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7554</td>
+<td align="right">2018</td>
+<td align="right">12.87</td>
+<td align="right">61.02</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="save-the-results" class="section level3 unnumbered">
+<h3>7. Save the results</h3>
+<p><strong>Save the data table</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>air_data <span class="sc">%&gt;%</span> <span class="fu">write_csv</span>(<span class="st">&quot;results/2015_2017_ozone_summary.csv&quot;</span>)</span></code></pre></div>
+<p><br></p>
+<p><strong>Save the site plot to PDF</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;results/2015_2017-Ozone vs Temp.pdf&quot;</span>)</span></code></pre></div>
+</div>
+<div id="share-with-friends" class="section level3 unnumbered">
+<h3>8. Share with friends</h3>
+<p><a href = "https://github.com/dKvale/ex__OZONE__Project">
+<img src="../images/github_example_ozone.png" style="width: 95%;" />
+</a></p>
+<br>
+<div class="well">
+<p>Having an exact record of your analysis is great documentation for yourself and others. It’s also handy when you want to repeat the same analysis on new data. Then you only need to copy the script, update the read data line, and push run to get a whole new set of fancy charts.</p>
+</div>
+</div>
+</div>
+</details>
+<p><br></p>
+<p><br></p>
+<div id="return-to-homebase" class="section level3 unnumbered">
+<h3><i class="fa fa-rocket" aria-hidden="true"></i> Return to <a href="../post/day-1.html">Homebase</a></h3>
+<p><br></p>
+</div>
+</div>
+</div>

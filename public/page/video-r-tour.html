@@ -48,7 +48,7 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/mn-r.netlify.app\/page\/videos\/r-tour.html",
+          "@id": "https:\/\/mn-r.netlify.app\/page\/video-r-tour.html",
           "name": "Welcome to r"
         }
     }]
@@ -63,12 +63,12 @@
   "headline": "Welcome to R",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  1254 ,
+  "wordCount":  1243 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/mn-r.netlify.app\/page\/videos\/r-tour.html",
+  "mainEntityOfPage" : "https:\/\/mn-r.netlify.app\/page\/video-r-tour.html",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/mn-r.netlify.app\/",
@@ -85,7 +85,7 @@
 <meta property="og:title" content="Welcome to R" />
 <meta property="og:description" content="window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;Copy Code&#34;,&#34;success&#34;:&#34;Copied!&#34;,&#34;error&#34;:&#34;Press Ctrl&#43;C to Copy&#34;}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.">
 <meta property="og:image" content="https://mn-r.netlify.app/images/BB8_rnd_icon.png" />
-<meta property="og:url" content="https://mn-r.netlify.app/page/videos/r-tour.html" />
+<meta property="og:url" content="https://mn-r.netlify.app/page/video-r-tour.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Welcome to R" />
@@ -96,7 +96,7 @@
   <meta property="og:image" content="https://mn-r.netlify.app/images/BB8_rnd_icon.png" />
   <meta name="twitter:image" content="https://mn-r.netlify.app/images/BB8_rnd_icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://mn-r.netlify.app/page/videos/r-tour.html" />
+  <meta property="og:url" content="https://mn-r.netlify.app/page/video-r-tour.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Learn R" />
 
@@ -357,7 +357,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#rstudio-tour" id="toc-rstudio-tour"><span class="toc-section-number">1</span> RStudio Tour</a></li>
+<li><a href="#whats-r" id="toc-whats-r"><span class="toc-section-number">1</span> What’s R?</a></li>
+<li><a href="#rstudio-tour" id="toc-rstudio-tour"><span class="toc-section-number">2</span> RStudio Tour</a></li>
 </ul>
 </div>
 
@@ -366,8 +367,112 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 <p><br></p>
-<div id="rstudio-tour" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> RStudio Tour</h1>
+<div id="whats-r" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> What’s R?</h1>
+<hr>
+<p>Let’s launch ourselves into the unknown and make a <strong>candy plot</strong>. With a little copy-pasting we can make an informative chart of everyone’s favorite candy.</p>
+<p>Since we all know you have the best taste in candy, let’s make sure your favorite candy wins the very official <span style="font-size: 26px;"> <strong>BEST</strong> </span> candy award.</p>
+<p><br></p>
+<div style="padding: 22px; background-color: #93bf6636;  border-radius: 14px;">
+
+<p><img src="../images/candy_ratings_blk.png" style="width: 98%; margin-top: 12px; margin-bottom: 22px;" /></p>
+<hr class="hr2" style="margin-top: 4px;">
+<h3>
+Instructions
+</h3>
+<ol style="list-style-type: decimal">
+<li>Copy all the code below. Highlight all of lines, <strong>or</strong> click the <code>Copy Code</code> button on the top-right of the grey box below.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#------------  Install packages  ----------------#</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;hrbrthemes&quot;</span>)) {</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;readr&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;hrbrthemes&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co">#--------------  Load packages  -----------------#</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co">#----------------- Candy data -------------------# </span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;candy,          rating</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="st">                   &quot;Snickers&quot;,        14 </span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="st">                   &quot;Almond Joy&quot;,      40 </span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="st">                   &quot;Hersheys Kisses&quot;, 16 </span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="st">                   &quot;Nerds&quot;,           5 </span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="st">                   &quot;Sour Patch Kids&quot;, 8&#39;</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a><span class="co">#----- A bar plot w/ dark Halloween theme -------#</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="fu">ggplot</span>(survey, </span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> candy, <span class="at">y =</span> rating)) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> candy), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">&quot;Candy Champions&quot;</span>, </span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Very official candy ratings&quot;</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>       <span class="at">caption  =</span> <span class="st">&quot;Data from MN survey 2050&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>  <span class="co">#scale_fill_viridis_d() +</span></span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>(<span class="at">base_size =</span> <span class="dv">18</span>)  </span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Open R Studio
+<ul>
+<li>Select <strong>File &gt; New File &gt; R Script</strong>. You will see a code editor window open.</li>
+<li><em>Or click the paper icon with the green plus at the top left.</em></li>
+</ul></li>
+</ol>
+<p><img src="../images/new_script_file.png" style="width: 65%; margin-bottom: 18px;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Paste the copied code into the upper left hand window. This is your code editor.<br />
+</li>
+<li>Highlight all of the code and hit <kbd>CTRL</kbd> <code>+</code> <kbd>ENTER</kbd> on the keyboard.</li>
+</ol>
+<blockquote>
+<p>This chart should appear in the lower right of RStudio.</p>
+</blockquote>
+<p><img src="../images/candy_ratings_blk_viewer.png" style="width:60.0%" /></p>
+<p><br></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Change the name of a candy to something even better.</li>
+<li>Re-run the code again.</li>
+<li>Try increasing the number next to the new candy.</li>
+</ol>
+<blockquote>
+<p><i class="fa fa-user-astronaut" style="margin-right: 12px;"></i><strong><strong>Explore!</strong></strong></p>
+<ul>
+<li>Add another candy and rating to the data.</li>
+<li>Add your name to the subtitle.</li>
+<li>Delete the hashtag in front of the <code>scale_viridis...</code> line.
+<ul>
+<li>What happens when you re-run the code?</li>
+</ul></li>
+<li>Change the <code>show.legend =</code> value to <code>TRUE</code>
+<ul>
+<li>What happens?</li>
+</ul></li>
+</ul>
+</blockquote>
+</div>
+<p><br></p>
+<div id="yoda-says" class="section level3 unnumbered yoda">
+<h3>Yoda says</h3>
+<p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
+<ul>
+<li>Okay it is! You don’t need to memorize everything.
+<ul>
+<li>Absorb what’s possible and look up the details when you need them.</li>
+</ul></li>
+<li>You are free to break things. Create errors. Make the computer angry. Learn through mistakes. R will forgive you.</li>
+<li><em>Cheat</em> if you’re stuck.
+<ul>
+<li>There’s no test. Share with your neighbors. Copy others.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="rstudio-tour" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> RStudio Tour</h1>
 <hr>
 <p><img src="../images/rstudio.png" style="width: 85%;" /></p>
 <p><br></p>
@@ -410,196 +515,6 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ol>
 <p><img src="../images/font_change.png" style="width: 65%; margin-top: 14px; margin-left: 2%;"></p>
-</div>
-<div id="example-r-project" class="section level2 unnumbered">
-<h2>Example R project</h2>
-<p>Here’s an example R analysis project from start to finish using Ozone monitoring data.</p>
-<details>
-<summary class="btn_code_blue .btn_gray">
-<strong>EXAMPLE ANALYSIS</strong> <strong>&gt;</strong>
-</summary>
-<div class="quiz" style="margin-top: 0; background-color: white;">
-<p>Imagine we just received 3 years worth of ozone monitoring data to summarize. <strong>Fun!</strong></p>
-<p>Below is an example workflow we might follow in R.</p>
-<ol style="list-style-type: decimal">
-<li>Create a new project</li>
-<li>Read the data</li>
-<li>Simplify columns</li>
-<li>Plot the data</li>
-<li>Clean the data</li>
-<li>View the data closer</li>
-<li>Summarize the data</li>
-<li>Save the results</li>
-<li><strong>Share</strong> with friends</li>
-</ol>
-<div id="start-a-new-project" class="section level3 unnumbered">
-<h3>0. Start a new project</h3>
-<p>We’ll name this project: <code>"2019_Ozone"</code></p>
-</div>
-<div id="read-the-data" class="section level3 unnumbered">
-<h3>1. Read the data</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co"># Read a file from the web</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/OZONE_samples_demo.csv&quot;</span>)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">SITE</th>
-<th align="left">Date</th>
-<th align="right">OZONE</th>
-<th align="right">TEMP_F</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="left">2017-04-24</td>
-<td align="right">11</td>
-<td align="right">35.6</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2017-04-12</td>
-<td align="right">12</td>
-<td align="right">42.8</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="left">2016-06-21</td>
-<td align="right">11</td>
-<td align="right">72.2</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7001</td>
-<td align="left">2016-10-04</td>
-<td align="right">4</td>
-<td align="right">42.8</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-06-11</td>
-<td align="right">14</td>
-<td align="right">68.6</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="simplify-column-names" class="section level3 unnumbered">
-<h3>2. Simplify column names</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Capital letters and spaces make things more difficult</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Let&#39;s clean them out</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_data)</span></code></pre></div>
-</div>
-<div id="plot-the-data" class="section level3 unnumbered">
-<h3>3. Plot the data</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
-<p><img src="/page/videos/R-tour_files/figure-html/view-1.png" width="1152" /></p>
-</div>
-<div id="clean-the-data" class="section level3 unnumbered">
-<h3>4. Clean the data</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co"># Drop values out of range</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ozone <span class="sc">&gt;</span> <span class="dv">0</span>, temp_f <span class="sc">&lt;</span> <span class="dv">199</span>) </span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># Convert all samples to PPB</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>            <span class="fu">mutate</span>(<span class="at">OZONE =</span> <span class="fu">ifelse</span>(units <span class="sc">==</span> <span class="st">&quot;PPM&quot;</span>, ozone <span class="sc">*</span> <span class="dv">1000</span>, </span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>                                  ozone)) </span></code></pre></div>
-</div>
-<div id="view-the-data-closer" class="section level3 unnumbered">
-<h3>5. View the data <strong>closer</strong></h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>site) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ozone increases with temperature&quot;</span>, </span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;Observations from 2015-2017&quot;</span>)</span></code></pre></div>
-<p><img src="/page/videos/R-tour_files/figure-html/unnamed-chunk-1-1.png" width="1152" /></p>
-</div>
-<div id="summarize-the-data" class="section level3 unnumbered">
-<h3>6. Summarize the data</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>            <span class="fu">group_by</span>(site, year) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>            <span class="fu">summarize</span>(<span class="at">avg_ozone =</span> <span class="fu">mean</span>(ozone) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>),</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>                      <span class="at">avg_temp  =</span> <span class="fu">mean</span>(temp_f) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>))</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">site</th>
-<th align="right">year</th>
-<th align="right">avg_ozone</th>
-<th align="right">avg_temp</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="right">2016</td>
-<td align="right">11.01</td>
-<td align="right">60.74</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7001</td>
-<td align="right">2017</td>
-<td align="right">11.26</td>
-<td align="right">60.66</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7001</td>
-<td align="right">2018</td>
-<td align="right">11.54</td>
-<td align="right">60.59</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7554</td>
-<td align="right">2016</td>
-<td align="right">12.23</td>
-<td align="right">61.23</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="right">2017</td>
-<td align="right">11.81</td>
-<td align="right">60.98</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7554</td>
-<td align="right">2018</td>
-<td align="right">12.87</td>
-<td align="right">61.02</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="save-the-results" class="section level3 unnumbered">
-<h3>7. Save the results</h3>
-<p><strong>Save the data table</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>air_data <span class="sc">%&gt;%</span> <span class="fu">write_csv</span>(<span class="st">&quot;results/2015_2017_ozone_summary.csv&quot;</span>)</span></code></pre></div>
-<p><br></p>
-<p><strong>Save the site plot to PDF</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;results/2015_2017-Ozone vs Temp.pdf&quot;</span>)</span></code></pre></div>
-</div>
-<div id="share-with-friends" class="section level3 unnumbered">
-<h3>8. Share with friends</h3>
-<p><a href = "https://github.com/dKvale/ex__OZONE__Project">
-<img src="../images/github_example_ozone.png" style="width: 95%;" />
-</a></p>
-<br>
-<div class="well">
-<p>Having an exact record of your analysis is great documentation for yourself and others. It’s also handy when you want to repeat the same analysis on new data. Then you only need to copy the script, update the read data line, and push run to get a whole new set of fancy charts.</p>
-</div>
-</div>
-</div>
-</details>
-<p><br></p>
 <p><br></p>
 </div>
 <div id="youre-on-the-team" class="section level2 unnumbered">

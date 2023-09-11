@@ -8,7 +8,7 @@ output:
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
-    toc: false
+    toc: true
     toc_depth: 1
 ---
 

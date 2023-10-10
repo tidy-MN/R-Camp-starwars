@@ -63,7 +63,7 @@
   "headline": "Day 1 - AM",
   "description" : "window.xaringanExtraClipboard(null, {\x22button\x22:\x22Copy Code\x22,\x22success\x22:\x22Copied!\x22,\x22error\x22:\x22Press Ctrl\x2bC to Copy\x22}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.",
   "inLanguage" : "en",
-  "wordCount":  5057 ,
+  "wordCount":  5018 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/mn-r.netlify.app\/images\/BB8_rnd_icon.png",
@@ -326,11 +326,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
+code span.at { color: #204a87; } /* Attribute */
 code span.bn { color: #0000cf; } /* BaseN */
 code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
+code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #8f5902; font-style: italic; } /* Comment */
 code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
@@ -339,14 +339,14 @@ code span.dv { color: #0000cf; } /* DecVal */
 code span.er { color: #a40000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
 code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
 code span.ot { color: #8f5902; } /* Other */
 code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
 code span.ss { color: #4e9a06; } /* SpecialString */
 code span.st { color: #4e9a06; } /* String */
 code span.va { color: #000000; } /* Variable */
@@ -410,38 +410,38 @@ Instructions
 <ol style="list-style-type: decimal">
 <li>Copy all the code below. Highlight all of lines, <strong>or</strong> click the <code>Copy Code</code> button on the top-right of the grey box below.</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------  Install packages  ----------------#</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;hrbrthemes&quot;</span>)) {</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;readr&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;hrbrthemes&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------  Load packages  -----------------#</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------- Candy data -------------------# </span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;candy,          rating</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Snickers&quot;,        14 </span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Almond Joy&quot;,      40 </span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Hersheys Kisses&quot;, 16 </span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Nerds&quot;,           5 </span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st">                   &quot;Sour Patch Kids&quot;, 8&#39;</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#----- A bar plot w/ dark Halloween theme -------#</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(survey, </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> candy, <span class="at">y =</span> rating)) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> candy), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">&quot;Candy Champions&quot;</span>, </span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Very official candy ratings&quot;</span>,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption  =</span> <span class="st">&quot;Data from MN survey 2050&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_viridis_d() +</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>(<span class="at">base_size =</span> <span class="dv">18</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#------------  Install packages  ----------------#</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;hrbrthemes&quot;</span>)) {</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;readr&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;hrbrthemes&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co">#--------------  Load packages  -----------------#</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co">#----------------- Candy data -------------------# </span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;candy,          rating</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="st">                   &quot;Snickers&quot;,        14 </span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="st">                   &quot;Almond Joy&quot;,      40 </span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="st">                   &quot;Hersheys Kisses&quot;, 16 </span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="st">                   &quot;Nerds&quot;,           5 </span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="st">                   &quot;Sour Patch Kids&quot;, 8&#39;</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a><span class="co">#----- A bar plot w/ dark Halloween theme -------#</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="fu">ggplot</span>(survey, </span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> candy, <span class="at">y =</span> rating)) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> candy), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">&quot;Candy Champions&quot;</span>, </span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Very official candy ratings&quot;</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>       <span class="at">caption  =</span> <span class="st">&quot;Data from MN survey 2050&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>  <span class="co">#scale_fill_viridis_d() +</span></span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>(<span class="at">base_size =</span> <span class="dv">18</span>)  </span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Open R Studio
 <ul>
@@ -539,26 +539,26 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 <hr>
 <p><img src="../images/rstudio.png" style="width: 85%;" /></p>
 <p><br></p>
-<div id="code-editor" class="section level3 unnumbered red-note" style="float: left; width: 54%; height: 384px;">
-<h3><em>1.</em> Code Editor</h3>
-<p>This is where you write your scripts and document your work. Move your cursor to a line of code and then click <code>[Ctrl] + [Enter]</code> to run the code. The tabs at the top of the code editor show the scripts and data sets you have open. The script is your home and where we spend most of our time.</p>
+<div id="source-code-editor" class="section level3 unnumbered red-note" style="float: left; width: 54%; height: 384px;">
+<h3><em>1.</em> Source / Code Editor</h3>
+<p>Write your scripts and comments here. The is our home and where we spend most of our time. Move your cursor to a line of code and then click <kbd>[Ctrl]</kbd> + <kbd>[Enter]</kbd> to run the code. The tabs at the top show other scripts and data you have open.</p>
 </div>
-<div id="workspace" class="section level3 unnumbered red-note" style="float: left; width: 45%; height: 384px; margin-left: 1%;">
-<h3><em>3.</em> Workspace</h3>
-<p>This pane shows all of the objects and functions that you have created, as well as a history of the code you have run during your current session. The environment tab shows all of your objects and functions. The history tab shows the code you have run. Note the <em>broom</em> icon below the Connections tab. This cleans shop and allows you to clear all of the objects in your workspace.</p>
+<div id="environment-workspace" class="section level3 unnumbered red-note" style="float: left; width: 45%; height: 384px; margin-left: 1%;">
+<h3><em>3.</em> Environment / Workspace</h3>
+<p>This pane shows the data you have loaded, as well as the variables and objects you have created. The History tab contains the code you have run during your current session. Note the <strong>broom</strong> icon below the Connections tab. This cleans shop and clears all of the objects from your workspace.</p>
 </div>
 <div style="clear: both; margin-bottom: -4px;">
 
 </div>
 <div id="r-console" class="section level3 unnumbered red-note" style="float: left; width: 54%; height: 510px; margin-top: 0;">
 <h3><em>2.</em> R Console</h3>
-<p>This is where code is actually executed by the computer. It shows code that you have run and the messages returned by that code. You can input code directly into the console and run it, but it won’t be saved for later. That’s why we usually run our code directly from a script in the code editor.</p>
-<p>You may see some <em>scary</em> warnings and errors appear here after running code. <strong>Warnings</strong> are helpful messages that let you know the results may not be exactly what you expected. <strong>Errors</strong> on the other hand, mean the code was unable to run. Usually this means there was a typo, or we forgot to run an important step higher up in our script.</p>
+<p>This is where code is run by the computer. It shows the code that is running and the messages returned by that code. You can input code directly into the console and run it, but it won’t be saved for later. We encourage running code from a script in the code editor.</p>
+<p>You may see some <em>scary</em> warnings and errors appear here after running code. <strong>Warnings</strong> are helpful messages that let you know the results may not be exactly what you expected. <strong>Errors</strong> on the other hand, mean the code was unable to run. Usually this means there was a typo, or we forgot to run an important step earlier in our script.</p>
 </div>
 <div id="plots-and-files" class="section level3 unnumbered red-note" style="float: left; width: 45%; height: 510px; margin-left: 1%; margin-top: 0;">
 <h3><em>4.</em> Plots and files</h3>
 <p>These tabs allow you to view and open files in your current directory, view plots and other visual objects like maps, view your installed packages, and access the help window.</p>
-<p>The <code>Files</code> tab is especially handy for finding a file you want and clicking it to open it. You can also click the <code>More</code> option and select <em>“Show Folder in a New Window”</em> as a shortcut to open your project folder.</p>
+<p>The <strong>Files</strong> tab is especially handy for finding files you want and clicking them to open. You can also click the <strong>Gear</strong> and select <em>“Show Folder in a New Window”</em> to open your project folder.</p>
 </div>
 <div style="clear: both;">
 
@@ -566,15 +566,18 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 <div id="customize-r-studio" class="section level2 unnumbered">
 <h2>Customize R Studio</h2>
 <p>Let’s add a little style.</p>
-<p><strong>Here’s how to change the font and color theme</strong></p>
+<p><strong>Change fonts and colors</strong></p>
 <ol style="list-style-type: decimal">
-<li>Go to <strong>Tools</strong> on the top navigation bar.</li>
+<li>Go to <strong>Tools</strong> on the top navigation bar<br />
+</li>
 <li>Choose <code>Global Options...</code></li>
-<li>Choose <code>Appearance</code> with the paint bucket.</li>
+<li>Choose <code>Appearance</code> with the paint bucket</li>
+<li>Increase the overall <code>Zoom</code> to 125%<br />
+</li>
 <li>Increase the <code>Editor Font size</code></li>
-<li>Pick an Editor theme you like.
+<li>Pick an Editor theme you like
 <ul>
-<li>The default is <code>Textmate</code> if you want to go back</li>
+<li>The default is <code>Textmate</code></li>
 </ul></li>
 </ol>
 <p><img src="../images/font_change.png" style="width: 65%; margin-top: 14px; margin-left: 2%;"></p>
@@ -690,10 +693,10 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 </div>
 <div id="read-the-data" class="section level3 unnumbered">
 <h3>1. Read the data</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read a file from the web</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/OZONE_samples_demo.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Read a file from the web</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/OZONE_samples_demo.csv&quot;</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -706,82 +709,82 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 <tbody>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2018-08-08</td>
-<td align="right">22</td>
-<td align="right">76.4</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7554</td>
-<td align="left">2016-09-25</td>
-<td align="right">15</td>
-<td align="right">65.0</td>
-</tr>
-<tr class="odd">
-<td align="left">27-137-7554</td>
-<td align="left">2017-09-27</td>
-<td align="right">30</td>
-<td align="right">79.4</td>
-</tr>
-<tr class="even">
-<td align="left">27-137-7554</td>
-<td align="left">2016-10-07</td>
+<td align="left">2018-10-23</td>
 <td align="right">10</td>
-<td align="right">47.6</td>
+<td align="right">56.6</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7554</td>
+<td align="left">2018-08-27</td>
+<td align="right">13</td>
+<td align="right">68.6</td>
 </tr>
 <tr class="odd">
 <td align="left">27-137-7554</td>
-<td align="left">2017-05-09</td>
-<td align="right">7</td>
-<td align="right">45.2</td>
+<td align="left">2016-05-16</td>
+<td align="right">3</td>
+<td align="right">51.8</td>
+</tr>
+<tr class="even">
+<td align="left">27-137-7001</td>
+<td align="left">2017-09-11</td>
+<td align="right">4</td>
+<td align="right">50.6</td>
+</tr>
+<tr class="odd">
+<td align="left">27-137-7001</td>
+<td align="left">2016-05-29</td>
+<td align="right">13</td>
+<td align="right">80.0</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="simplify-column-names" class="section level3 unnumbered">
 <h3>2. Simplify column names</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Capital letters and spaces make things more difficult</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s clean them out</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_data)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># Capital letters and spaces make things more difficult</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Let&#39;s clean them out</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(air_data)</span></code></pre></div>
 </div>
 <div id="plot-the-data" class="section level3 unnumbered">
 <h3>3. Plot the data</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
 <p><img src="/page/Day1_AM_files/figure-html/view-1.png" width="1152" /></p>
 </div>
 <div id="clean-the-data" class="section level3 unnumbered">
 <h3>4. Clean the data</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop values out of range</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ozone <span class="sc">&gt;</span> <span class="dv">0</span>, temp_f <span class="sc">&lt;</span> <span class="dv">199</span>) </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert all samples to PPB</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">mutate</span>(<span class="at">OZONE =</span> <span class="fu">ifelse</span>(units <span class="sc">==</span> <span class="st">&quot;PPM&quot;</span>, ozone <span class="sc">*</span> <span class="dv">1000</span>, </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                                  ozone)) </span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co"># Drop values out of range</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ozone <span class="sc">&gt;</span> <span class="dv">0</span>, temp_f <span class="sc">&lt;</span> <span class="dv">199</span>) </span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co"># Convert all samples to PPB</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>            <span class="fu">mutate</span>(<span class="at">OZONE =</span> <span class="fu">ifelse</span>(units <span class="sc">==</span> <span class="st">&quot;PPM&quot;</span>, ozone <span class="sc">*</span> <span class="dv">1000</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>                                  ozone)) </span></code></pre></div>
 </div>
 <div id="view-the-data-closer" class="section level3 unnumbered">
 <h3>5. View the data <strong>closer</strong></h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>site) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ozone increases with temperature&quot;</span>, </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;Observations from 2015-2017&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">ggplot</span>(air_data, <span class="fu">aes</span>(<span class="at">x =</span> temp_f, <span class="at">y =</span> ozone)) <span class="sc">+</span> </span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>site) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ozone increases with temperature&quot;</span>, </span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;Observations from 2015-2017&quot;</span>)</span></code></pre></div>
 <p><img src="/page/Day1_AM_files/figure-html/unnamed-chunk-3-1.png" width="1152" /></p>
 </div>
 <div id="summarize-the-data" class="section level3 unnumbered">
 <h3>6. Summarize the data</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">group_by</span>(site, year) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">summarize</span>(<span class="at">avg_ozone =</span> <span class="fu">mean</span>(ozone) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">avg_temp  =</span> <span class="fu">mean</span>(temp_f) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>air_data <span class="ot">&lt;-</span> air_data <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>            <span class="fu">group_by</span>(site, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>            <span class="fu">summarize</span>(<span class="at">avg_ozone =</span> <span class="fu">mean</span>(ozone) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>                      <span class="at">avg_temp  =</span> <span class="fu">mean</span>(temp_f) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>))</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -834,10 +837,10 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 <div id="save-the-results" class="section level3 unnumbered">
 <h3>7. Save the results</h3>
 <p><strong>Save the data table</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>air_data <span class="sc">%&gt;%</span> <span class="fu">write_csv</span>(<span class="st">&quot;results/2015_2017_ozone_summary.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>air_data <span class="sc">%&gt;%</span> <span class="fu">write_csv</span>(<span class="st">&quot;results/2015_2017_ozone_summary.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <p><strong>Save the site plot to PDF</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;results/2015_2017-Ozone vs Temp.pdf&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;results/2015_2017-Ozone vs Temp.pdf&quot;</span>)</span></code></pre></div>
 </div>
 <div id="share-with-friends" class="section level3 unnumbered">
 <h3>8. Share with friends</h3>
@@ -869,7 +872,7 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 <div id="new-mission-new-r-project" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> New mission, New R project</h1>
 <hr>
-<p>Start a new project for your analysis.</p>
+<p>Start a new project for your mission.</p>
 <p><strong>Step 1:</strong> Start a new project</p>
 <ul>
 <li>In <em>Rstudio</em> select <em>File</em> from the top menu bar</li>
@@ -902,23 +905,23 @@ Use each other as a resource. Share ideas, share code, collaborate. Puns and bad
 </div>
 <div id="assignment-operator" class="section level3 unnumbered">
 <h3>Assignment operator</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new object</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>droid <span class="ot">&lt;-</span> <span class="st">&quot;bb7&quot;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>droid </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Give it a new value</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>droid <span class="ot">&lt;-</span> <span class="st">&quot;bb8&quot;</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>droid </span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Create a new object</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>droid <span class="ot">&lt;-</span> <span class="st">&quot;bb7&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>droid </span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># Give it a new value</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>droid <span class="ot">&lt;-</span> <span class="st">&quot;bb8&quot;</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>droid </span></code></pre></div>
 <p>To run a line of code in your script, click the cursor anywhere on that line and press <strong>CTRL+ENTER</strong>.</p>
 <p>The droid wants a friend. Let’s create a Wookie named <em>Chewbacca</em>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wookie <span class="ot">&lt;-</span> <span class="st">&quot;Chewbacca&quot;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>wookie</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>wookie <span class="ot">&lt;-</span> <span class="st">&quot;Chewbacca&quot;</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>wookie</span></code></pre></div>
 <p><strong>Break some things</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this:</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>wookie <span class="ot">&lt;-</span> Chewbacca</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Try this:</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>wookie <span class="ot">&lt;-</span> Chewbacca</span></code></pre></div>
 </div>
 <div id="error" class="section level3 unnumbered red-note" style="width: 93%;">
 <h3>Error!</h3>
@@ -946,39 +949,39 @@ Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean s
 </div>
 <p><br></p>
 <p><strong>Copy objects</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To copy an object, assign it to a new name</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>wookie2 <span class="ot">&lt;-</span> wookie</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Or overwrite an object with new &quot;text&quot;</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>wookie <span class="ot">&lt;-</span> <span class="st">&quot;Tarfful&quot;</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>wookie</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Wookie2 stays the same</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>wookie2  </span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># To copy an object, assign it to a new name</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>wookie2 <span class="ot">&lt;-</span> wookie</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co"># Or overwrite an object with new &quot;text&quot;</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>wookie <span class="ot">&lt;-</span> <span class="st">&quot;Tarfful&quot;</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>  </span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>wookie</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co"># Wookie2 stays the same</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a>wookie2  </span></code></pre></div>
 <p><strong>Numbers!</strong></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>wookie_salary <span class="ot">&lt;-</span> <span class="dv">500</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s give Chewbacca a big raise $$$</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>wookie_salary <span class="ot">&lt;-</span> <span class="dv">500</span> <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Print new salary </span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>wookie_salary</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># We can also use the object to multiply</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>wookie_salary <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># To save the change we assign it back to itself</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>wookie_salary <span class="ot">&lt;-</span> wookie_salary <span class="sc">*</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>wookie_salary <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="co"># Let&#39;s give Chewbacca a big raise $$$</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>wookie_salary <span class="ot">&lt;-</span> <span class="dv">500</span> <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co"># Print new salary </span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>wookie_salary</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="co"># We can also use the object to multiply</span></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>wookie_salary <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a><span class="co"># To save the change we assign it back to itself</span></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a>wookie_salary <span class="ot">&lt;-</span> wookie_salary <span class="sc">*</span> <span class="dv">2</span></span></code></pre></div>
 <div id="drop-and-remove-data" class="section level2 unnumbered">
 <h2>Drop and remove data</h2>
 <p>You can drop objects with the remove function <code>rm()</code>. Try it out on some of your wookies.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Delete objects to clean-up your Environment</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(wookie)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(wookie2)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Delete objects to clean-up your Environment</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="fu">rm</span>(wookie)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="fu">rm</span>(wookie2)</span></code></pre></div>
 <p><br></p>
 <div id="explore" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
@@ -1007,32 +1010,32 @@ Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean s
 <div id="explore-1" class="section level3 unnumbered tip">
 <h3><i class="fa fa-user-astronaut" style="color: green;"></i> Explore!</h3>
 <p>Try running some of these examples. Find new ways to create errors. The more broken the better! Half of learning R is finding what doesn’t work.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What happens when you add these to your R script?</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>n wookies <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>n<span class="sc">*</span>wookies <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>n_wookies <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>n.wookies <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>wookies<span class="sc">!</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="st">&quot;Everyone&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># What happens when you add these to your R script?</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>n wookies <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>n<span class="sc">*</span>wookies <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>n_wookies <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>n.wookies <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>wookies<span class="sc">!</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="st">&quot;Everyone&quot;</span></span></code></pre></div>
 <div id="names-with-numbers" class="section level4 unnumbered">
 <h4>Names with numbers</h4>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Names cannot begin with a number</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>1st_wookie <span class="ot">&lt;-</span> <span class="st">&quot;Chewbacca&quot;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>88b <span class="ot">&lt;-</span> <span class="st">&quot;droid&quot;</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># But they can contain numbers</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>wookie1 <span class="ot">&lt;-</span> <span class="st">&quot;Chewbacca&quot;</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>bb8 <span class="ot">&lt;-</span> <span class="st">&quot;droid&quot;</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co"># What if you have 10,000 wookies?</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>n_wookies <span class="ot">&lt;-</span> <span class="dv">10</span>,<span class="dv">000</span>  <span class="co"># Error</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>n_wookies <span class="ot">&lt;-</span> <span class="dv">10000</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># Names cannot begin with a number</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>1st_wookie <span class="ot">&lt;-</span> <span class="st">&quot;Chewbacca&quot;</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>88b <span class="ot">&lt;-</span> <span class="st">&quot;droid&quot;</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a><span class="co"># But they can contain numbers</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>wookie1 <span class="ot">&lt;-</span> <span class="st">&quot;Chewbacca&quot;</span></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>bb8 <span class="ot">&lt;-</span> <span class="st">&quot;droid&quot;</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="co"># What if you have 10,000 wookies?</span></span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>n_wookies <span class="ot">&lt;-</span> <span class="dv">10</span>,<span class="dv">000</span>  <span class="co"># Error</span></span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a>n_wookies <span class="ot">&lt;-</span> <span class="dv">10000</span></span></code></pre></div>
 <p><br></p>
 <ul>
 <li>Try to create a <strong>new</strong> error or warning you haven’t seen yet.</li>
@@ -1044,17 +1047,17 @@ Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean s
 <h2>Collect multiple items</h2>
 <p>We can put multiple values inside <code>c()</code> to make a vector of items. It’s like a chain of items, where each additional item is connected by a comma. The <code>c</code> stands for <em>concatenate</em> or to <em>collect</em>.</p>
 <p>Let’s use <code>c()</code> to create a few vectors of names.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector and name it starwars_characters</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>starwars_characters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Luke&quot;</span>, <span class="st">&quot;Leia&quot;</span>, <span class="st">&quot;Han Solo&quot;</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print starwars_characters</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>starwars_characters</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Create a character vector and name it starwars_characters</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>starwars_characters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Luke&quot;</span>, <span class="st">&quot;Leia&quot;</span>, <span class="st">&quot;Han Solo&quot;</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="co"># Print starwars_characters</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>starwars_characters</span></code></pre></div>
 <pre><code>## [1] &quot;Luke&quot;     &quot;Leia&quot;     &quot;Han Solo&quot;</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a numeric vector and name it starwars_ages</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>starwars_ages  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">19</span>,<span class="dv">25</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the ages to the console</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>starwars_ages</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Create a numeric vector and name it starwars_ages</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>starwars_ages  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">19</span>,<span class="dv">25</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="co"># Print the ages to the console</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>starwars_ages</span></code></pre></div>
 <pre><code>## [1] 19 19 25</code></pre>
 <p><br></p>
 <div class="note">
@@ -1073,12 +1076,12 @@ Note
 <p><br></p>
 <p>A table in R is known as a <strong>data frame</strong>. We can think of it as a group of columns, where each column is made from a vector. Data frames in R have columns of data that are all the same length.</p>
 <p>Let’s make a data frame with two columns to hold the character names and their ages.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create table with 2 columns: characters &amp; ages</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>starwars_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">characters =</span> starwars_characters,</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ages       =</span> starwars_ages)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the starwars_df data frame to the console</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>starwars_df</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Create table with 2 columns: characters &amp; ages</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>starwars_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">characters =</span> starwars_characters,</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>                          <span class="at">ages       =</span> starwars_ages)</span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="co"># Print the starwars_df data frame to the console</span></span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a>starwars_df</span></code></pre></div>
 <pre><code>##   characters ages
 ## 1       Luke   19
 ## 2       Leia   19
@@ -1129,8 +1132,8 @@ starwars_df <- data.frame(characters  = starwars_characters,
 <div id="show-all-values-in-column_name" class="section level3 unnumbered">
 <h3>Show all values in <code>$column_name</code></h3>
 <p>Use the <code>$</code> sign after the name of your table to see the values in one of your columns.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the &quot;ages&quot; column in starwars_df</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>starwars_df<span class="sc">$</span>ages</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># View the &quot;ages&quot; column in starwars_df</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>starwars_df<span class="sc">$</span>ages</span></code></pre></div>
 <pre><code>## [1] 19 19 25</code></pre>
 </div>
 <div id="notes-and-comments" class="section level3 unnumbered">
@@ -1222,12 +1225,12 @@ You can also use comments to add warnings or instructions for others using your 
 <p><br></p>
 <p>Receiving data now…</p>
 <p><strong>scrap_records.csv</strong></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>item,origin,destination,amount,units,price_per_pound  </span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>Flight recorder,Outskirts,Niima Outpost,<span class="dv">887</span>,Tons,<span class="fl">590.93</span>  </span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>Proximity sensor,Outskirts,Raiders,<span class="dv">7081</span>,Tons,<span class="fl">1229.03</span>  </span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>Aural sensor,Tuanul,Raiders,<span class="dv">707</span>,Tons,<span class="fl">145.27</span>  </span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>Electromagnetic filter,Tuanul,Niima Outpost,<span class="dv">107</span>,Tons,<span class="fl">188.2</span>  </span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>...  </span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>item,origin,destination,amount,units,price_per_pound  </span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>Flight recorder,Outskirts,Niima Outpost,<span class="dv">887</span>,Tons,<span class="fl">590.93</span>  </span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>Proximity sensor,Outskirts,Raiders,<span class="dv">7081</span>,Tons,<span class="fl">1229.03</span>  </span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>Aural sensor,Tuanul,Raiders,<span class="dv">707</span>,Tons,<span class="fl">145.27</span>  </span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a>Electromagnetic filter,Tuanul,Niima Outpost,<span class="dv">107</span>,Tons,<span class="fl">188.2</span>  </span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a>...  </span></code></pre></div>
 <p><br></p>
 <p><strong>You:</strong> <em>Yikes! This looks like a dense mess! What can I do with this?</em></p>
 </div>
@@ -1287,10 +1290,10 @@ Note
 <div id="read-the-data-1" class="section level2 unnumbered">
 <h2>Read the data</h2>
 <p>Let’s load the <em>readr</em> package to use the <code>read_csv()</code> function.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;readr&quot;)</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="co">#install.packages(&quot;readr&quot;)</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1,132 × 7
 ##    receipt_date item                         origin desti…¹ amount units price…²
 ##    &lt;chr&gt;        &lt;chr&gt;                        &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
@@ -1311,11 +1314,11 @@ Note
 <div id="name-the-data" class="section level2 unnumbered">
 <h2>Name the data</h2>
 <p>Where did the data go after you read it into R? When we want to work with the data in R, we need to give it a name with the assignment operator: <code>&lt;-</code>.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in scrap data and set name to &quot;scrap&quot;</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Type the name of the table to view it in the console</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>scrap</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="co"># Read in scrap data and set name to &quot;scrap&quot;</span></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a><span class="co"># Type the name of the table to view it in the console</span></span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>scrap</span></code></pre></div>
 <pre><code>## # A tibble: 1,132 × 7
 ##    receipt_date item                         origin desti…¹ amount units price…²
 ##    &lt;chr&gt;        &lt;chr&gt;                        &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
@@ -1416,23 +1419,23 @@ Skip a row
 </h3>
 <p>Sometimes you may want to ignore the first row in your data file, especially an EPA file that includes a disclaimer on the first row. Yes EPA, we’re looking at you. Please stop.</p>
 <p>Let’s open the help window with <code>?read_csv</code> and try to find an argument that can help us.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>?read_csv</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>?read_csv</span></code></pre></div>
 <p>There’s a lot of them! But the <code>skip</code> argument looks like it could be helpful. Take a look at the description near the bottom. The default is <code>skip = 0</code>, which reads every line, but we can skip the first line by writing <code>skip = 1</code>. Let’s try.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">skip =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>         <span class="at">skip =</span> <span class="dv">1</span>)</span></code></pre></div>
 <h3>
 Limit the number of rows
 </h3>
 <p>Some types of data have last rows that show the <em>total</em> or report “END OF DATA”. In these cases we may want <code>read_csv</code> to ignore the last row of data, or for large data sets we may only want to pull in a 100 lines of data to see what you’re working with.</p>
 <p>Let’s look through the help window to find an argument that can help us. Type <code>?read_csv</code> and scroll down.</p>
 <p>The <code>n_max</code> argument looks like it could be helpful. The default is <code>n_max = Inf</code>, which means it will read every line, but we can limit the lines we read to only one hundred by using <code>n_max = 100</code>.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in 100 rows</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>small_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">skip =</span> <span class="dv">1</span>, </span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">n_max =</span> <span class="dv">100</span>)</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove the data</span></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(small_data)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="co"># Read in 100 rows</span></span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>small_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>                       <span class="at">skip =</span> <span class="dv">1</span>, </span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a>                       <span class="at">n_max =</span> <span class="dv">100</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" tabindex="-1"></a><span class="co"># Remove the data</span></span>
+<span id="cb33-7"><a href="#cb33-7" tabindex="-1"></a><span class="fu">rm</span>(small_data)</span></code></pre></div>
 <h3>
 See function options
 </h3>
@@ -1507,7 +1510,7 @@ Create a CSV from Excel
 <p>In data analysis you’ll want to look at your data early and often. For that we use a new package called <strong>ggplot2</strong>!</p>
 <p><br><br><br></p>
 <p>Install the package by running</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="note" class="section level3 unnumbered note">
@@ -1518,11 +1521,11 @@ Create a CSV from Excel
 <div id="a-column-plot" class="section level2 unnumbered">
 <h2>A column plot</h2>
 <p>Here’s a simple chart showing the total amount of scrap sold from each origin location.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">y =</span> amount, <span class="at">x =</span> origin)) <span class="sc">+</span> </span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Which origin sold the most scrap?&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_gray</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="fu">ggplot</span>(scrap, <span class="fu">aes</span>(<span class="at">y =</span> amount, <span class="at">x =</span> origin)) <span class="sc">+</span> </span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Which origin sold the most scrap?&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a>  <span class="fu">theme_gray</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 910 rows containing missing values (position_stack).</code></pre>
 <p><img src="/page/Day1_AM_files/figure-html/unnamed-chunk-15-1.png" width="1152" /></p>
 <p>Well, well, well, it looks like there is an <strong>All</strong> category we should look into more. Either there is a town hogging all the scrap or the data needs some cleaning.</p>

@@ -1,5 +1,5 @@
 
-![](../images/rstudio.png){style="width: 85%;"}
+![](../images/rstudio-panes-labeled.png){style="width: 85%;"}
 
 <br>
 
